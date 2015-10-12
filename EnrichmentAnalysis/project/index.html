@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<title>Gene Enrichment Analysis</title>
+
+<meta charset="UTF-8">
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script LANGUAGE="JavaScript" src="js/main.js" type="text/javascript"></script>
+<script LANGUAGE="JavaScript" src="js/jquery-2.1.4.js" type="text/javascript"></script>
+</head>
+
+<body>
+<!--header of the page -->
+<div id="header">
+<h1>Gene Enrichment Analysis Tool</h1>
+</div>
+
+<!--content of the page -->
+<div id="content">
+<form>
+	<div id="statistic_methods">
+		<h2 title="select one analysis method to calculate the p-value">Statistic Methods</h2>
+		<div id="statistic_methods_input">
+		<select>
+		<option value="fisher">fisher's exact</option>
+		<option value="hypogeometric">hypogeometric</option>
+		<option value="chi-squared">chi-squared</option>
+		</select>
+		</div>
+		
+		<div id="statistic_methods_hint">
+			<p class="hint">When the input list is compared with the previously computed background, or is a subset of reference list, choose hypergeometric or fisher, for latter only when your query number is quite small. When the input list has few or no intersections with the reference list, the Chi-square tests are more appropriate. </p>
+		</div>
+	</div>
+	<!--content1 -->
+	<div id="interesting_genes">
+		<h2>Interesting Genes</h2>
+		<div id="interesting_genes_input">
+		<textarea id="textarea_geneList" rows="10" cols="50" placeholder="please input the interesting genes"></textarea>
+		</div>
+		
+		<div id="interesting_genes_hint">
+		<p class="hint">Please make sure your request in the format that contains two rows. first row is ID, second row is GO accession.</p>
+			<pre class="hint">
+For example:
+test_0001	GO:0000001
+test_0002	GO:0000001
+test_0003	GO:0000001
+test_0004	GO:0000001
+test_0005	GO:0000001
+test_0006	GO:0000001
+test_0007	GO:0000001
+test_0008	GO:0000001
+			</pre>
+		</div>
+	</div>
+	<!--content2 -->
+	<div id="reference_background">
+		<h2>Reference Background</h2>
+		<div id="reference_background_input">
+		<textarea id="textarea_backgroundList" rows="10" cols="50" placeholder="please input the reference background"></textarea>
+		</div>
+		
+		<div id="reference_background_hint">
+		<p class="hint">please input the background reference data</p>
+		</div>
+	</div>
+	
+	<!--content2 -->
+	<div id="edit">
+		<button type="button" id="submit" onclick="my_submit()">Submit</button>
+		<button type="button" id="reset" onclick = "my_reset()">Reset</button>
+	</div>
+	<!--content3 -->
+	<div id="analysis_result">
+		<h2>Analysis Result</h2>
+		
+		<p id="result_summary">
+		</p>
+		<table id="result_table" align="center">
+			<tr>
+				<th>GO term</th>
+				<th>Ontology</th>
+				<th>Description</th>
+				<th>Number in input list</th>
+				<th>Number in BG/Ref</th>
+				<th>p-value</th>
+			</tr>
+			
+		</table>
+	</div>
+</form>
+</div>
+
+<!--footer of the page -->
+<div id="footer">
+	<address>
+		&copy;Planteome Project
+	</address>
+</div>
+
+</body>
+</html>

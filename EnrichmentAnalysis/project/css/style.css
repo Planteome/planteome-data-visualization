@@ -1,0 +1,109 @@
+/* Layout style */
+body{
+	padding-top:20px;
+	padding-left:30%;
+	padding-right:30%;
+}
+#header{
+	float:left;
+	width:100%;
+	text-align:center;
+}
+#content{
+	width:100%;
+/* 	height:800px; */
+	float:left;
+}
+
+#footer{
+	float:left;
+	width:100%;
+	height:200px;
+	margin-top:150px;
+	text-align:center;
+}
+
+/* input style */
+#statistic_methods, #interesting_genes,#reference_background, #analysis_result{
+	float:left;
+	width:100%;
+	padding:0;
+	margin:0;
+}
+
+#edit{
+	float:left;
+	width:100%;
+	padding:10px;
+	margin:0;
+}
+
+#submit{
+	width: 80px;
+    height: 30px;
+}
+#reset{
+	width: 80px;
+    height: 30px;
+}
+/* #statistic_methods h2, #interesting_genes h2,#reference_background h2, #analysis_result h2, #edit h2{
+	float:left;
+	width:100%;
+	padding:0;
+	margin:0;
+} */
+
+#statistic_methods_input{
+	float:left;
+	width:400px;
+	padding:0;
+	margin:0;
+}
+
+#interesting_genes_input,#reference_background_input{
+	float:left;
+	width:400px;
+	height:160px;
+	padding:0;
+	margin:0;
+}
+
+#statistic_methods_hint{
+	float:left;
+	width:300px;
+	padding:0;
+	margin:0;
+}
+#interesting_genes_hint,#reference_background_hint{
+	float:left;
+	width:300px;
+	height:160px;
+	padding:0;
+	margin:0;
+}
+
+.hint{
+	font-family: "Arial", Times, serif;
+	margin:0;
+	font-size:12px;
+	
+}
+/* table style */
+#result_table{
+	width:100%;
+	border: 1px solid black;
+    border-collapse: collapse;
+}
+#result_table th{
+	padding:5px 5px 5px 5px;
+	background-color:AliceBlue;
+	border: 1px solid black;
+    border-collapse: collapse;
+}
+#result_table td{
+	border: 1px solid black;
+	/* padding-left: 5px; */
+	text-align: center;
+    border-collapse: collapse;
+}
+
