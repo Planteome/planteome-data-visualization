@@ -9,6 +9,9 @@ function my_submit(){
 		alert("please input the interesting gene list");
 		return false;
 	}
+	
+	$("#result_table").html("<tr><th>GO term</th><th>Ontology</th><th>Description</th><th>Number in input list</th><th>Number in BG/Ref</th><th>p-value</th></tr>")
+	
 	var inputAnnotationData = splitStringToAnnotation(str_geneList);
 	var referAnnotationData = splitStringToAnnotation(str_referList);
 	
@@ -18,6 +21,12 @@ function my_submit(){
 	for(i in ontologyDataList)
 		appendOntologyToRow(ontologyDataList[i]);
 	
+}
+
+function my_reset(){
+	$("#textarea_geneList").val("");
+	$("#textarea_backgroundList").val("");
+	$("#result_table").html("<tr><th>GO term</th><th>Ontology</th><th>Description</th><th>Number in input list</th><th>Number in BG/Ref</th><th>p-value</th></tr>")
 }
 
 function analyizeData(inputData,referenceData){
@@ -108,11 +117,6 @@ function splitStringToAnnotation(str){
 		annotationList.push(annotationData);
 	}
 	return annotationList;
-}
-
-function my_reset(){
-	$("#textarea_geneList").val("");
-	$("#textarea_backgroundList").val("");
 }
 
 /* function appendAnnotationToRow(obj){

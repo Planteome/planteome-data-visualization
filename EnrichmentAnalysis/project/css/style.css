@@ -67,7 +67,9 @@ body{
 	padding:0;
 	margin:0;
 }
-
+#interesting_genes_input textarea,#reference_background_input textarea{
+	resize: none;
+}
 #statistic_methods_hint{
 	float:left;
 	width:300px;
