@@ -17,17 +17,27 @@ function hypergeometric(k,K,n,N){
 function fisher(k,K,n,N){
     let p = undefined;
 
-    let a = k;
-    let b = K - k;
-    let c = n - k;
-    let d = (N - K) - (n - k);
-    let o = N;
+    let px = function(m){
+        let a = m;
+        let b = K - m;
+        let c = n - m;
+        let d = (N - K) - (n - m);
+        let o = N;
 
-    let bc1 = stats.combinations((a + b), a);
-    let bc2 = stats.combinations((c + d), c);
-    let bc3 = stats.combinations(o, (a + c));
+        let bc1 = stats.combinations((a + b), a);
+        let bc2 = stats.combinations((c + d), c);
+        let bc3 = stats.combinations(o, (a + c));
+        
+        let p = (bc1 * bc2) / bc3;
 
-    p = (bc1 * bc2) / bc3;
+        return p;
+    }
+
+    p = 0;
+    for(let m = 0; m <= k; m++){
+        p += px(m);
+    }
+
     return p;
 }
 
