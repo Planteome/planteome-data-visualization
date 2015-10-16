@@ -1,5 +1,4 @@
 'use strict';
-let stats = require('./src/stats.js');
 
 function my_submit(){
 	var str_geneList= $("#textarea_geneList").val();
