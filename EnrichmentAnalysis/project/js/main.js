@@ -1,3 +1,6 @@
+'use strict';
+let stats = require('./src/stats.js');
+
 function my_submit(){
 	var str_geneList= $("#textarea_geneList").val();
 	var str_referList = $("#textarea_backgroundList").val();
@@ -18,6 +21,7 @@ function my_submit(){
 	$("#result_summary").html("the number of input genes is: "+inputAnnotationData.length+" <br> the number of background genes is: "+referAnnotationData.length+"<br>");
 	
 	var ontologyDataList = analyizeData(inputAnnotationData, referAnnotationData);
+	var i;
 	for(i in ontologyDataList)
 		appendOntologyToRow(ontologyDataList[i]);
 	
@@ -31,6 +35,7 @@ function my_reset(){
 
 function analyizeData(inputData,referenceData){
 	var ontolotyIDList = [];
+	var i;
 	for(i in inputData){
 		var txt = inputData[i].ontologyID;
 		if($.inArray(txt, ontolotyIDList) === -1)
@@ -44,7 +49,11 @@ function analyizeData(inputData,referenceData){
 		var numOfRefer = getNumOfRefer(str,referenceData);
 		
 		//calculate the p with using inputData.length, referenceData.length, numOfInput, numOfRefer
-		var p;
+		
+		let test_hypergeo = stats.hypergeometric(numOfInput,numOfRefer,inputData.length,referenceData.length);
+		//
+		var p = test_hypergeo;
+		
 		var m_ontologyACC;
 		var m_description;
 		
@@ -56,6 +65,7 @@ function analyizeData(inputData,referenceData){
 
 function getNumOfInput(str,inputData ){
 	var num = 0;
+	var x;
 	for(x in inputData){
 		if(inputData[x].ontologyID === str)
 			num++;
@@ -65,6 +75,7 @@ function getNumOfInput(str,inputData ){
 
 function getNumOfRefer(str,referenceData){
 	var num = 0;
+	var x;
 	for(x in referenceData){
 		if(referenceData[x].ontologyID === str)
 			num++;
@@ -108,6 +119,7 @@ function splitStringToAnnotation(str){
 	
 	var annotationList = [];
 	var inputData = str.split('\n');
+	var x;
 	for(x in inputData){
 		var trimmedData = inputData[x].trim();
 		if(trimmedData ==="")
@@ -133,7 +145,7 @@ function splitStringToAnnotation(str){
 
 function appendOntologyToRow(obj){
 	var tr1 = document.createElement("tr");
-		
+	var x;	
 	for (x in obj) {
 		var td = document.createElement("td");
  		var node = document.createTextNode(obj[x]);
