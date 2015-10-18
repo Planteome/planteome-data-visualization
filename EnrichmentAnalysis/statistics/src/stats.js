@@ -15,21 +15,22 @@ function hypergeometric(k,K,n,N){
 }
 
 function fisher(k,K,n,N){
-    let p = undefined;
+    let p = 0;
 
-    let px = function(m){
+    function px(m){
         let a = m;
         let b = K - m;
         let c = n - m;
         let d = (N - K) - (n - m);
         let o = N;
 
-        let bc1 = stats.combinations((a + b), a);
-        let bc2 = stats.combinations((c + d), c);
-        let bc3 = stats.combinations(o, (a + c));
-        
-        let p = (bc1 * bc2) / bc3;
+        function pf(x,y){
+            return stats.factorial((x + y));
+        }
 
+        let p = 0;
+        p = (pf(a,b)*pf(c,d)*pf(a,c)*pf(b,d))/(pf(o,0)*pf(a,0)*pf(b,0)*pf(c,0)*pf(d,0));
+        //console.log(`m=${m}, p=${p}`);
         return p;
     }
 
@@ -38,6 +39,7 @@ function fisher(k,K,n,N){
         p += px(m);
     }
 
+    //console.log(`p=${p}`);
     return p;
 }
 

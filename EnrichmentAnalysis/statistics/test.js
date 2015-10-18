@@ -9,6 +9,8 @@ console.log(`hypergeometric test: got ${test_hypergeo}, should be 0.003964583...
 //test from enrichment analysis doc
 let test_fisher = stats.fisher(1,10,12,24);
 console.log(`fisher test: got ${test_fisher}, should be 0.001379728...`);
+test_fisher = stats.fisher(0,10,12,24);
+console.log(`fisher test: got ${test_fisher}, should be 0.000033652...`);
 
 //test from enrichment analysis doc
 let test_chi = stats.chi(1,10,12,24);
