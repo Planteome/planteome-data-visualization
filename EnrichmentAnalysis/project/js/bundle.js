@@ -67674,7 +67674,8 @@ function fisher(k,K,n,N){
     for(let m = 0; m <= k; m++){
         p += px(m);
     }
-
+    console.log('fixmeeeee');
+    p = px(k);
     return p;
 }
 

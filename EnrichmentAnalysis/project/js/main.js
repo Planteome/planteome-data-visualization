@@ -50,9 +50,26 @@ function analyizeData(inputData,referenceData){
 		//calculate the p with using inputData.length, referenceData.length, numOfInput, numOfRefer
 		
 		let test_hypergeo = stats.hypergeometric(numOfInput,numOfRefer,inputData.length,referenceData.length);
-		//
-		var p = test_hypergeo;
-		
+		let test_fisher = stats.fisher(numOfInput,numOfRefer,inputData.length,referenceData.length);
+		let test_chi = stats.chi(numOfInput,numOfRefer,inputData.length,referenceData.length);
+		//choose stat method
+        var test_sel = $('#statistic_methods_input').children()[0].value;
+        var p = '';
+        switch(test_sel){
+            case 'hypergeometric':
+                p = test_hypergeo;
+                break;
+            case 'fisher':
+                p = test_fisher;
+                break;
+            case 'chi-squared':
+                p = test_chi;
+                break;
+            default:
+                console.error(`Invalid selection: ${test_sel}`);
+                break;
+        }
+
 		var m_ontologyACC;
 		var m_description;
 		
