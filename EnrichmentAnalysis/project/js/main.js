@@ -52,6 +52,11 @@ function analyizeData(inputData,referenceData){
 		let test_hypergeo = stats.hypergeometric(numOfInput,numOfRefer,inputData.length,referenceData.length);
 		let test_fisher = stats.fisher(numOfInput,numOfRefer,inputData.length,referenceData.length);
 		let test_chi = stats.chi(numOfInput,numOfRefer,inputData.length,referenceData.length);
+		
+		let test_hypergeo1 = stats.hypergeometric(1,10,12,24);
+		let test_fisher1 = stats.fisher(1,10,12,24);
+		let test_chi1 = stats.chi(1,10,12,24);
+		
 		//choose stat method
         var test_sel = $('#statistic_methods_input').children()[0].value;
         var p = '';
