@@ -66270,23 +66270,24 @@ function E () {
 E.prototype = {
 	on: function (name, callback, ctx) {
     var e = this.e || (this.e = {});
-    
+
     (e[name] || (e[name] = [])).push({
       fn: callback,
       ctx: ctx
     });
-    
+
     return this;
   },
 
   once: function (name, callback, ctx) {
     var self = this;
-    var fn = function () {
-      self.off(name, fn);
+    function listener () {
+      self.off(name, listener);
       callback.apply(ctx, arguments);
     };
-    
-    return this.on(name, fn, ctx);
+
+    listener._ = callback
+    return this.on(name, listener, ctx);
   },
 
   emit: function (name) {
@@ -66294,11 +66295,11 @@ E.prototype = {
     var evtArr = ((this.e || (this.e = {}))[name] || []).slice();
     var i = 0;
     var len = evtArr.length;
-    
+
     for (i; i < len; i++) {
       evtArr[i].fn.apply(evtArr[i].ctx, data);
     }
-    
+
     return this;
   },
 
@@ -66306,21 +66307,22 @@ E.prototype = {
     var e = this.e || (this.e = {});
     var evts = e[name];
     var liveEvents = [];
-    
+
     if (evts && callback) {
       for (var i = 0, len = evts.length; i < len; i++) {
-        if (evts[i].fn !== callback) liveEvents.push(evts[i]);
+        if (evts[i].fn !== callback && evts[i].fn._ !== callback)
+          liveEvents.push(evts[i]);
       }
     }
-    
+
     // Remove event from queue to prevent memory leak
     // Suggested by https://github.com/lazd
     // Ref: https://github.com/scottcorgan/tiny-emitter/commit/c6ebfaa9bc973b33d110a84a307742b7cf94c953#commitcomment-5024910
 
-    (liveEvents.length) 
+    (liveEvents.length)
       ? e[name] = liveEvents
       : delete e[name];
-    
+
     return this;
   }
 };
@@ -67652,21 +67654,22 @@ function hypergeometric(k,K,n,N){
 }
 
 function fisher(k,K,n,N){
-    let p = undefined;
+    let p = 0;
 
-    let px = function(m){
+    function px(m){
         let a = m;
         let b = K - m;
         let c = n - m;
         let d = (N - K) - (n - m);
         let o = N;
 
-        let bc1 = stats.combinations((a + b), a);
-        let bc2 = stats.combinations((c + d), c);
-        let bc3 = stats.combinations(o, (a + c));
-        
-        let p = (bc1 * bc2) / bc3;
+        function pf(x,y){
+            return stats.factorial((x + y));
+        }
 
+        let p = 0;
+        p = (pf(a,b)*pf(c,d)*pf(a,c)*pf(b,d))/(pf(o,0)*pf(a,0)*pf(b,0)*pf(c,0)*pf(d,0));
+        //console.log(`m=${m}, p=${p}`);
         return p;
     }
 
@@ -67675,6 +67678,7 @@ function fisher(k,K,n,N){
         p += px(m);
     }
 
+    //console.log(`p=${p}`);
     return p;
 }
 

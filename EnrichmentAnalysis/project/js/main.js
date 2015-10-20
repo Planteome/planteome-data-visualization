@@ -56,6 +56,7 @@ function analyizeData(inputData,referenceData){
 		let test_hypergeo1 = stats.hypergeometric(1,10,12,24);
 		let test_fisher1 = stats.fisher(1,10,12,24);
 		let test_chi1 = stats.chi(1,10,12,24);
+        console.log(`hyper:${test_hypergeo1} fisher:${test_fisher1} chi:${test_chi1}`);
 		
 		//choose stat method
         var test_sel = $('#statistic_methods_input').children()[0].value;
