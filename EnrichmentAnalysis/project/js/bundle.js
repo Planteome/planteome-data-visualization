@@ -67677,8 +67677,8 @@ function fisher(k,K,n,N){
 /*     for(let m = 0; m <= k; m++){
         p += px(m);
     } */
-	
-	if(n<K){
+
+/*  	if(n<K){
 		for(let m = k; m <= n; m++){
 			p += px(m);
 		}
@@ -67686,8 +67686,19 @@ function fisher(k,K,n,N){
 		for(let m = k; m <= K; m++){
 			p += px(m);
 		}
-	}
+	}  */
 
+	var p_cutoff = px(k);
+	
+	var min1 = (k<n)?k:n;
+	var min2 = (N-K < n)?(N-k):n;
+	
+	for(let m = n-min2; m<=min1; m++){
+		var temp = px(m);
+		if(temp <= p_cutoff)
+			p +=temp;
+	}
+	
     //console.log(`p=${p}`);
     return p;
 }
