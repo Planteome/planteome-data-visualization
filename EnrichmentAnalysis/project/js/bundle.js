@@ -67674,9 +67674,19 @@ function fisher(k,K,n,N){
     }
 
     p = 0;
-    for(let m = 0; m <= k; m++){
+/*     for(let m = 0; m <= k; m++){
         p += px(m);
-    }
+    } */
+	
+	if(n<K){
+		for(let m = k; m <= n; m++){
+			p += px(m);
+		}
+	}else{
+		for(let m = k; m <= K; m++){
+			p += px(m);
+		}
+	}
 
     //console.log(`p=${p}`);
     return p;
