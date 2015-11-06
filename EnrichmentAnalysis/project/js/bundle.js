@@ -67668,7 +67668,8 @@ function fisher(k,K,n,N){
         }
 
         let p = 0;
-        p = (pf(a,b)*pf(c,d)*pf(a,c)*pf(b,d))/(pf(o,0)*pf(a,0)*pf(b,0)*pf(c,0)*pf(d,0));
+        //p = (pf(a,b)*pf(c,d)*pf(a,c)*pf(b,d))/(pf(o,0)*pf(a,0)*pf(b,0)*pf(c,0)*pf(d,0));
+		p = pf(a,b)/pf(o,0)*pf(c,d)/pf(a,0)*pf(a,c)/pf(b,0)*pf(b,d)/pf(c,0)/pf(d,0);
         //console.log(`m=${m}, p=${p}`);
         return p;
     }
