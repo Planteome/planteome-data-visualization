@@ -19,22 +19,15 @@ body{
 	float:left;
 	width:100%;
 	height:200px;
-	margin-top:150px;
+	margin-top:50px;
 	text-align:center;
 }
 
 /* input style */
-#statistic_methods, #interesting_genes,#reference_background, #analysis_result{
+.contentBlock{
 	float:left;
 	width:100%;
 	padding:0;
-	margin:0;
-}
-
-#edit{
-	float:left;
-	width:100%;
-	padding:10px;
 	margin:0;
 }
 
@@ -46,18 +39,28 @@ body{
 	width: 80px;
     height: 30px;
 }
-/* #statistic_methods h2, #interesting_genes h2,#reference_background h2, #analysis_result h2, #edit h2{
-	float:left;
-	width:100%;
-	padding:0;
-	margin:0;
-} */
+
 
 #statistic_methods_input{
 	float:left;
 	width:400px;
 	padding:0;
 	margin:0;
+}
+
+#statistic_methods_hint{
+	float:left;
+	width:300px;
+	padding:0;
+	margin:0;
+}
+
+.settingItemName{
+	width:40%; display:inline-block;padding-bottom:5px;
+}
+
+.settingItemSelect{
+	width:58%;display:inline-block; padding-bottom:5px;
 }
 
 #interesting_genes_input,#reference_background_input{
@@ -70,12 +73,7 @@ body{
 #interesting_genes_input textarea,#reference_background_input textarea{
 	resize: none;
 }
-#statistic_methods_hint{
-	float:left;
-	width:300px;
-	padding:0;
-	margin:0;
-}
+
 #interesting_genes_hint,#reference_background_hint{
 	float:left;
 	width:300px;

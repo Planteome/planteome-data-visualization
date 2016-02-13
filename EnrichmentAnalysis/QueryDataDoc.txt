@@ -1,0 +1,27 @@
+Description of querying data requirement
+***********************************************************
+when users input a gene list contains n genes
+
+Query following data from the database:
+
+-The total amount of genes N
+-For a ontology term, what genes are associated to it?
+-For a gene, what ontology terms are associated to it?
+
+***********************************************************
+First inplement **customized** annotation and **customized** query list
+
+-find if there is repetition
+--if yes, exclude the repetition
+--if not, calculate the total number of genes in the gene list
+-iterate all genes in the list to get all related ontologies
+-for each related ontology, calculate the number of genes in the gene list associated to it
+-for each related ontology, calculate the number of genes in the background associated to it
+
+with using all above numbers and chosen statistic method, we could calculate the p-value of in the significance test.
+
+*************************************************************
+Query from data base: Gene-to-term/term-to-gene http://test.planteome.org/api/
+eg:http://test.planteome.org:8080/gene-to-term?q=TAIR:locus:2032569
+eg:http://test.planteome.org/api/gene-to-term?q=UniProtKB:F1M4Q5&q=UniProtKB:F1M4Q5&q=UniProtKB:E1BYP4
+Query ontology information from database: http://amigo.geneontology.org/amigo/term/GO:0022008/json
