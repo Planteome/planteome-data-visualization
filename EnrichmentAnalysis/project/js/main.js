@@ -18,7 +18,12 @@ function initialize(){
 										"For example: <br/>"+
 										"test_0001	GO:0000001<br/>"+
 										"test_0002	GO:0000002<br/>"+
-										"or the accession ID of gene product. e.g.:<br/>TAIR:locus:2167042"
+										"or the accession ID of gene product. e.g.:<br/>"+
+										"TAIR:locus:1005716561<br/>"+
+										"TAIR:locus:2031476<br/>"+
+										"TAIR:locus:2043067<br/>"+
+										"TAIR:locus:2044851<br/>"+
+										"TAIR:locus:2012612<br/>"
 										);	
 	$("#reference_background_hint p").html("please input the background reference data");
 		
@@ -198,6 +203,8 @@ function my_submit(){
 	var referenceGenesNum;									//N
 	var inputGenes = splitStringToGeneList(str_geneList);
 	var inputGenesNum = inputGenes.length;				//n
+	var cutoff = $('#significanceLevel').val();
+
 	
 	$.when(getOverView(), getOntologyTermsFromGenes(inputGenes)).done(function(overview_data, ol_data){
 			
@@ -206,12 +213,12 @@ function my_submit(){
 		$("#result_summary").html("the number of input genes is: "+inputGenesNum+" <br> the number of background genes is: "+referenceGenesNum+"<br>");
 		//console.log("There are "+referenceGenesNum+" genes in database");
 		
-		//console.log(ol_data[0]);
+		console.log(ol_data[0]);
 		//console.log("get the ontology term List " + ol_data[0].status);
 		var ontologyList = ol_data[0].summary["gene-to-term-summary-count"];
 		
 		$.when(getGenesNumInRefFromOntologys(ontologyList)).done(function(data, textStatus, jqXHR){
-			//console.log(data.summary);
+			console.log(data);
 			var ontologyListRef = data.summary["term-to-gene-summary-count"];
 			
 			for(var i in ontologyList){
@@ -225,21 +232,21 @@ function my_submit(){
 				let test_chi = stats.chi(numOfInput,numOfRefer,n,N);
 				var p = test_chi;
 				
-
-				
+				if(p>cutoff)
+					continue;
 				
 				var m_ontologyACC;
 				var m_description;
 				var m_ontologyData = new ontology(m_ontologyACC,ontoloy_ID, m_description, numOfInput, numOfRefer,p);
 				resultList.push(m_ontologyData);
 			}
-
+			console.log("analysis of data finished");
 			//append to table
 			var i;
 			for(i in resultList)
 				appendOntologyToRow(resultList[i]);					
 		});
-
+		
 	});
 	
 }
@@ -336,12 +343,12 @@ function getOntologyTermsFromGenes(geneList){
 	}
 	link+="s=NCBITaxon:3702";
 	
-	//console.log(link);
+	console.log(link);
 	
 	return $.ajax({
 		 type: "get",
-		 url: "http://test.planteome.org:8080/gene-to-term?q=TAIR:locus:2143261&s=NCBITaxon:3702",
-		 //url: link,
+		 //url: "http://test.planteome.org:8080/gene-to-term?q=TAIR:locus:2143261&s=NCBITaxon:3702",
+		 url: link,
 		 dataType: "json"
 	});
 	
