@@ -1,109 +1,14 @@
-/* Layout style */
-body{
-	padding-top:20px;
-	padding-left:30%;
-	padding-right:30%;
-}
-#header{
-	float:left;
-	width:100%;
-	text-align:center;
-}
-#content{
-	width:100%;
-/* 	height:800px; */
-	float:left;
+.glyphicon.spinning {
+    animation: spin 1s infinite linear;
+    -webkit-animation: spin2 1s infinite linear;
 }
 
-#footer{
-	float:left;
-	width:100%;
-	height:200px;
-	margin-top:50px;
-	text-align:center;
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg); }
+    to { transform: scale(1) rotate(360deg); }
 }
 
-/* input style */
-.contentBlock{
-	float:left;
-	width:100%;
-	padding:0;
-	margin:0;
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
 }
-
-#submit{
-	width: 80px;
-    height: 30px;
-}
-#reset{
-	width: 80px;
-    height: 30px;
-}
-
-
-#statistic_methods_input{
-	float:left;
-	width:400px;
-	padding:0;
-	margin:0;
-}
-
-#statistic_methods_hint{
-	float:left;
-	width:300px;
-	padding:0;
-	margin:0;
-}
-
-.settingItemName{
-	width:40%; display:inline-block;padding-bottom:5px;
-}
-
-.settingItemSelect{
-	width:58%;display:inline-block; padding-bottom:5px;
-}
-
-#interesting_genes_input,#reference_background_input{
-	float:left;
-	width:400px;
-	height:160px;
-	padding:0;
-	margin:0;
-}
-#interesting_genes_input textarea,#reference_background_input textarea{
-	resize: none;
-}
-
-#interesting_genes_hint,#reference_background_hint{
-	float:left;
-	width:300px;
-	height:160px;
-	padding:0;
-	margin:0;
-}
-
-.hint{
-	font-family: "Arial", Times, serif;
-	margin:0;
-	font-size:12px;
-	
-}
-/* table style */
-#result_table{
-	width:100%;
-	border: 1px solid black;
-    border-collapse: collapse;
-}
-#result_table th{
-	padding:5px 5px 5px 5px;
-	background-color:AliceBlue;
-	border: 1px solid black;
-    border-collapse: collapse;
-}
-#result_table td{
-	border: 1px solid black;
-	/* padding-left: 5px; */
-	text-align: center;
-    border-collapse: collapse;
-}
-

@@ -1,41 +1,22 @@
 'use strict';
 
+var show_results = true;
+
 function taxon(name, id){
 	this.taxonId = id;
 	this.taxonName = name;
 }
 
 function initialize(){
-	
-	//initialize hints
-	$("#statistic_methods_hint p").html("When the input list is compared with the previously computed background,"+
-										"or is a subset of reference list, choose hypergeometric or fisher, "+
-										"for latter only when your query number is quite small. When the input" +
-										"list has few or no intersections with the reference list, the Chi-square" +
-										"tests are more appropriate."
-										);
-	$("#interesting_genes_hint p").html("Please make sure your request in the format that contains two rows. first row is ID, second row is GO accession.<br/>"+
-										"For example: <br/>"+
-										"test_0001	GO:0000001<br/>"+
-										"test_0002	GO:0000002<br/>"+
-										"or the accession ID of gene product. e.g.:<br/>"+
-										"TAIR:locus:1005716561<br/>"+
-										"TAIR:locus:2031476<br/>"+
-										"TAIR:locus:2043067<br/>"+
-										"TAIR:locus:2044851<br/>"+
-										"TAIR:locus:2012612<br/>"
-										);	
-	$("#reference_background_hint p").html("please input the background reference data");
-		
 	//initialize the species selet button
 	var taxonList = [];
-	taxonList.push(new taxon("Arabidopsis_thaliana", 3702));
+	taxonList.push(new taxon("Arabidopsis_thaliana", '3702'));
 	taxonList.push(new taxon('Aegilops_tauschii', '37682'));
 	taxonList.push(new taxon('Amborella_trichopoda', '13333'));
 	taxonList.push(new taxon('Arabidopsis_lyrata' , '59689'));
 	taxonList.push(new taxon('Arachis_duranensis', '130453'));
 	taxonList.push(new taxon('Arachis_ipaensis', '130454'));
-	
+
 	/*
 	'Aegilops_tauschii', '37682',
 	'Amborella_trichopoda', '13333',
@@ -43,7 +24,7 @@ function initialize(){
 	'Arabidopsis_thaliana', '3702',
 	'Arachis_duranensis', '130453',
 	'Arachis_ipaensis', '130454',
-	
+
 	//
 	'Batrachochytrium_dendrobatidis', '109871',
 	'Brachypodium_distachyon', '15368',
@@ -162,16 +143,17 @@ function initialize(){
 	 */
 	var i;
 	for(i in taxonList){
-		$("#species_options").append($('<option/>', { 
+		$("#species").append($('<option/>', {
 			value: taxonList[i].taxonId,
 			text : taxonList[i].taxonName
 		}));
 	}
-	
-	
+
+
 }
 
 function my_submit(){
+	show_results = true;
 	var str_geneList= $("#textarea_geneList").val();
 	//var str_referList = $("#textarea_backgroundList").val();
 	if( str_geneList == ""){
@@ -182,79 +164,98 @@ function my_submit(){
 	//	alert("please input the interesting gene list");
 	//	return false;
 	//}
-	
-	$("#result_table").html("<tr><th>GO term</th><th>Ontology</th><th>Description</th><th>Number in input list</th><th>Number in BG/Ref</th><th>p-value</th></tr>")
-	
+
 	/*
 	//static analysis
 	var inputAnnotationData = splitStringToAnnotation(str_geneList);
 	var referAnnotationData = splitStringToAnnotation(str_referList);
-	
+
 	$("#result_summary").html("the number of input genes is: "+inputAnnotationData.length+" <br> the number of background genes is: "+referAnnotationData.length+"<br>");
 		var ontologyDataList = staticAnalyizeData(inputAnnotationData, referAnnotationData);
 
 	var i;
 	for(i in ontologyDataList)
-		appendOntologyToRow(ontologyDataList[i]);		
+		appendOntologyToRow(ontologyDataList[i]);
 	*/
-	
-	// dynamic analysis	
+
+	// dynamic analysis
 	var resultList = [];
 	var referenceGenesNum;									//N
 	var inputGenes = splitStringToGeneList(str_geneList);
 	var inputGenesNum = inputGenes.length;				//n
-	var cutoff = $('#significanceLevel').val();
+	var cutoff = $('#significance').val();
 
-	
+	$('#loading').show();
+
 	$.when(getOverView(), getOntologyTermsFromGenes(inputGenes)).done(function(overview_data, ol_data){
-			
+		if(!show_results){
+			console.log('cancelling terms request due to reset button');
+			return false;
+		}
+
 		var summary = overview_data[0].summary;
 		referenceGenesNum = summary["gene-product-count"];
 		$("#result_summary").html("the number of input genes is: "+inputGenesNum+" <br> the number of background genes is: "+referenceGenesNum+"<br>");
 		//console.log("There are "+referenceGenesNum+" genes in database");
-		
+
 		console.log(ol_data[0]);
 		//console.log("get the ontology term List " + ol_data[0].status);
 		var ontologyList = ol_data[0].summary["gene-to-term-summary-count"];
-		
+
 		$.when(getGenesNumInRefFromOntologys(ontologyList)).done(function(data, textStatus, jqXHR){
+			if(!show_results){
+				console.log('cancelling ref request due to reset button');
+				return false;
+			}
 			console.log(data);
 			var ontologyListRef = data.summary["term-to-gene-summary-count"];
-			
+
 			for(var i in ontologyList){
 				var ontoloy_ID = i;
-				
+
 				var numOfRefer = ontologyListRef[ontoloy_ID];	//K
 				var numOfInput = ontologyList[ontoloy_ID];		//k
 				var N = referenceGenesNum;						//N
 				var n = inputGenesNum;							//n
-				
+
 				let test_chi = stats.chi(numOfInput,numOfRefer,n,N);
 				var p = test_chi;
-				
+
 				if(p>cutoff)
 					continue;
-				
+
 				var m_ontologyACC;
 				var m_description;
 				var m_ontologyData = new ontology(m_ontologyACC,ontoloy_ID, m_description, numOfInput, numOfRefer,p);
 				resultList.push(m_ontologyData);
 			}
+			if(!show_results){
+				console.log('cancelling table filling due to reset button');
+				return false;
+			}
 			console.log("analysis of data finished");
 			//append to table
 			var i;
-			for(i in resultList)
-				appendOntologyToRow(resultList[i]);					
+			for(i in resultList){
+				appendOntologyToRow(resultList[i]);
+			}
+
+			$('#loading').hide();
+			$('#results').show();
 		});
-		
+
 	});
-	
+
 }
 
 function my_reset(){
+	show_results = false;
+	$('#loading').hide();
+	$('#results').hide();
 	$("#textarea_geneList").val("");
 	$("#textarea_backgroundList").val("");
-	$("#result_table").html("<tr><th>GO term</th><th>Ontology</th><th>Description</th><th>Number in input list</th><th>Number in BG/Ref</th><th>p-value</th></tr>")
+	$("#result_table tr").remove();
+	$('#result_summary').html('');
 }
 
 function staticAnalyizeData(inputData,referenceData){
@@ -265,27 +266,27 @@ function staticAnalyizeData(inputData,referenceData){
 		if($.inArray(txt, ontolotyIDList) === -1)
 			ontolotyIDList.push(txt);
 	}
-	
+
 	var ontologyList = [];
 	for(i in ontolotyIDList){
 		var str = ontolotyIDList[i]
 		var numOfInput = getNumOfInput(str,inputData);
 		var numOfRefer = getNumOfRefer(str,referenceData);
-		
+
 		//calculate the p with using inputData.length, referenceData.length, numOfInput, numOfRefer
-		
+
 		let test_hypergeo = stats.hypergeometric(numOfInput,numOfRefer,inputData.length,referenceData.length);
 		let test_fisher = stats.fisher(numOfInput,numOfRefer,inputData.length,referenceData.length);
 		let test_chi = stats.chi(numOfInput,numOfRefer,inputData.length,referenceData.length);
-		
+
 		let test_hypergeo1 = stats.hypergeometric(1,10,12,24);
 		let test_fisher1 = stats.fisher(1,10,12,24);
 		let test_chi1 = stats.chi(1,10,12,24);
         console.log(`hyper:${test_hypergeo1} fisher:${test_fisher1} chi:${test_chi1}`);
-		
+
 		//choose stat method
         //var test_sel = $('#statistic_methods_input').children()[0].value;
-		var test_sel = $('#statisticMethod').val();
+		var test_sel = $('#method').val();
         var p = '';
         switch(test_sel){
             case 'hypergeometric':
@@ -301,14 +302,14 @@ function staticAnalyizeData(inputData,referenceData){
                 console.error(`Invalid selection: ${test_sel}`);
                 break;
         }
-		
-		var cutoff = $('#significanceLevel').val();
+
+		var cutoff = $('#significance').val();
 		if(p>cutoff)
 			continue;
 
 		var m_ontologyACC;
 		var m_description;
-		
+
 		var m_ontologyData = new ontology(m_ontologyACC,str, m_description, numOfInput, numOfRefer,p);
 		ontologyList.push(m_ontologyData);
 	}
@@ -336,23 +337,23 @@ function getOverView(){
 }
 
 function getOntologyTermsFromGenes(geneList){
-	
+
 	var link = "http://test.planteome.org:8080/gene-to-term?";
 	for(var i in geneList){
 		link +="q="+geneList[i]+"&";
 	}
 	link+="s=NCBITaxon:3702";
-	
+
 	console.log(link);
-	
+
 	return $.ajax({
 		 type: "get",
 		 //url: "http://test.planteome.org:8080/gene-to-term?q=TAIR:locus:2143261&s=NCBITaxon:3702",
 		 url: link,
 		 dataType: "json"
 	});
-	
-	
+
+
 	/*
 	$.ajax({
 		 type: "get",
@@ -363,22 +364,22 @@ function getOntologyTermsFromGenes(geneList){
 			console.log("success");
 		 },
 		 error:function (){
-				alert("error");      
+				alert("error");
 		 }
 	});
-	
+
 	*/
 }
 
 function getGenesNumInRefFromOntologys(ontologyList){
-	
+
 	var link = "http://test.planteome.org/api/term-to-gene?s=NCBITaxon:3702";
 	for(var i in ontologyList){
 		link +="&q="+i;
 	}
-	
+
 	//console.log(link);
-	
+
 	return $.ajax({
 		 type: "get",
 		 //url: "http://test.planteome.org:8080/gene-to-term?q=TAIR:locus:2143261&s=NCBITaxon:3702",
@@ -388,7 +389,7 @@ function getGenesNumInRefFromOntologys(ontologyList){
 }
 
 function getOntologyInfo(ontologyID){
-	
+
 	var link = "http://amigo.geneontology.org/amigo/term/GO:0022008/json";
 	console.log(link);
 	return $.ajax({
@@ -421,7 +422,7 @@ function ontology(m_ontologyACC, m_ontologyName,m_description, m_numberOfInput,m
 		m_numberOfReference=0;
 	if(p === undefined)
 		p=0;
-	
+
 	this.ontologyACC = m_ontologyACC;
 	this.ontologyName = m_ontologyName;
 	this.Description = m_description;
@@ -442,7 +443,7 @@ function annotation(a, b) {
 
 function splitStringToAnnotation(str){
 	//var inputData = str.split('\n');          // Split on carriage return
-	
+
 	var annotationList = [];
 	var inputData = str.split('\n');
 	var x;
@@ -458,7 +459,7 @@ function splitStringToAnnotation(str){
 }
 
 function splitStringToGeneList(str){
-    
+
 	//var annotationList = [];
 	var geneIDList = [];
 	var inputData = str.split('\n');	// Split on carriage return
@@ -470,33 +471,33 @@ function splitStringToGeneList(str){
  		/*var txt = inputData[x].split(/\s+/g);
 		var annotationData = new annotation(txt[0], txt[1]);
 		annotationList.push(annotationData); */
-		
-		geneIDList.push(inputData[x]);	
+
+		geneIDList.push(inputData[x]);
 	}
 	return geneIDList;
 }
 /* function appendAnnotationToRow(obj){
 	var tr1 = document.createElement("tr");
-		
+
 	for (x in obj) {
 		var td = document.createElement("td");
  		var node = document.createTextNode(obj[x]);
 		td.appendChild(node);
 		tr1.appendChild(td);
 	}
-	$("#result_table").append(tr1);	
+	$("#result_table").append(tr1);
 } */
 
 function appendOntologyToRow(obj){
 	var tr1 = document.createElement("tr");
-	var x;	
+	var x;
 	for (x in obj) {
-		
-		
+
+
 		var td = document.createElement("td");
  		var node = document.createTextNode(obj[x]);
 		td.appendChild(node);
 		tr1.appendChild(td);
 	}
-	$("#result_table").append(tr1);	
+	$("#result_table").append(tr1);
 }

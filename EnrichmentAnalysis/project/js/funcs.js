@@ -26,8 +26,8 @@ stats.fisher = function(k,K,n,N){
         }
 
         let p = 0;
-        //p = (pf(a,b)*pf(c,d)*pf(a,c)*pf(b,d))/(pf(o,0)*pf(a,0)*pf(b,0)*pf(c,0)*pf(d,0));
-		p = pf(a,b)/pf(o,0)*pf(c,d)/pf(a,0)*pf(a,c)/pf(b,0)*pf(b,d)/pf(c,0)/pf(d,0);
+        p = (pf(a,b)*pf(c,d)*pf(a,c)*pf(b,d))/(pf(o,0)*pf(a,0)*pf(b,0)*pf(c,0)*pf(d,0));
+		//p = pf(a,b)/pf(o,0)*pf(c,d)/pf(a,0)*pf(a,c)/pf(b,0)*pf(b,d)/pf(c,0)/pf(d,0);
         //console.log(`m=${m}, p=${p}`);
         return p;
     }
@@ -37,7 +37,7 @@ stats.fisher = function(k,K,n,N){
         p += px(m);
     } */
 
-/*  	if(n<K){
+  	if(n<K){
 		for(let m = k; m <= n; m++){
 			p += px(m);
 		}
@@ -45,18 +45,22 @@ stats.fisher = function(k,K,n,N){
 		for(let m = k; m <= K; m++){
 			p += px(m);
 		}
-	}  */
-
-	var p_cutoff = px(k);
-
-	var min1 = (k<n)?k:n;
-	var min2 = (N-K < n)?(N-k):n;
-
-	for(let m = n-min2; m<=min1; m++){
-		var temp = px(m);
-		if(temp <= p_cutoff)
-			p +=temp;
 	}
+
+
+/*
+	//two tails fisher's exact test
+	var disproportionDegree = Math.abs(k/K - (n-k)/(N-K));
+
+	var min1 = (n<K)?n:K;
+	for(let m = 0; m<=min1; m++){
+		var t = Math.abs(m/K - (n-m)/(N-K));
+		if(t >= disproportionDegree){
+			var temp = px(m);
+			p +=temp;
+		}
+	}
+	*/
 
     //console.log(`p=${p}`);
     return p;
