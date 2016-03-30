@@ -130,7 +130,9 @@
 	//use (preferably) stats.fisher2 (see below) or fisher2,
 	//both of which properly converts parameter formats from alpha to kn
 	function _fisher2(a,b,c,d){
-		let f32_arr_len = 5000;
+		//if fisher2 is slow, lower this number
+		//for more accuracy, make it bigger
+		let f32_arr_len = 500;
 		let f32_top1 = new Float32Array(f32_arr_len);
 		let f32_bot1 = new Float32Array(f32_arr_len);
 		let f32_top2 = new Float32Array(f32_arr_len);
