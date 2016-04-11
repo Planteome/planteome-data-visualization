@@ -144,6 +144,7 @@ function initialize(){
 		'Vitis_vinifera', '29760',
 		'Zea_mays', '4577',
 		*/
+
 	let e_species = document.querySelector('#species');
 	for(let t of taxonList){
 		e_species.appendChild(taxonFactory(t[0],t[1]));
@@ -158,29 +159,12 @@ function my_submit(){
 		alert('please input the interesting gene list');
 		return false;
 	}
-	//if( str_referList == ''){
-	//	alert('please input the interesting gene list');
-	//	return false;
-	//}
 
-	/*
-	//static analysis
-	var inputAnnotationData = splitStringToAnnotation(str_geneList);
-	var referAnnotationData = splitStringToAnnotation(str_referList);
-
-	$('#result_summary').html('the number of input genes is: '+inputAnnotationData.length+' <br> the number of background genes is: '+referAnnotationData.length+'<br>');
-	var ontologyDataList = staticAnalyizeData(inputAnnotationData, referAnnotationData);
-
-	var i;
-	for(i in ontologyDataList)
-	appendOntologyToRow(ontologyDataList[i]);
-	*/
-
-	// dynamic analysis
 	var resultList = [];
-	var referenceGenesNum;									//N
+
+	var referenceGenesNum;
 	var inputGenes = splitStringToGeneList(str_geneList);
-	var inputGenesNum = inputGenes.length;				//n
+	var inputGenesNum = inputGenes.length;
 	var cutoff = document.querySelector('#significance').value;
 
 	$('#loading').show();
@@ -212,22 +196,53 @@ function my_submit(){
 			for(var i in ontologyList){
 				var ontoloy_ID = i;
 
-				var numOfRefer = ontologyListRef[ontoloy_ID];	//K
-				var numOfInput = ontologyList[ontoloy_ID];		//k
-				var N = referenceGenesNum;						//N
-				var n = inputGenesNum;							//n
+				// K
+				var numOfRefer = ontologyListRef[ontoloy_ID];
+				// k
+				var numOfInput = ontologyList[ontoloy_ID];
+				// N
+				var N = referenceGenesNum;
+				// n
+				var n = inputGenesNum;
 
-				let test_chi = stats.chi(numOfInput,numOfRefer,n,N);
-				var p = test_chi;
+				let test_sel = document.querySelector('#method').value;
+				if(test_sel != 'chi-squared' && test_sel != 'hypergeometric'){
+					if(numOfInput > 500 || numOfRefer > 500 || n > 500 || N > 500){
+						console.log('should use chi or hypergeo for large numbers');
+					}
+				}
 
-				if(p>cutoff)
+				let p = '';
+				switch(test_sel){
+					case 'hypergeometric':
+						p = stats.hypergeometric(numOfInput,numOfRefer,n,N);
+						console.log('hypergeometric');
+						break;
+					case 'fisher':
+						p = stats.fisher(numOfInput,numOfRefer,n,N);
+						console.log('fisher');
+						break;
+					case 'chi-squared':
+						p = stats.chi(numOfInput,numOfRefer,n,N);
+						console.log('chi');
+						break;
+					case 'fisher2':
+						p = stats.fisher2(numOfInput,numOfRefer,n,N);
+						console.log('fisher2');
+						break;
+					default:
+						console.error(`Invalid selection: ${test_sel}`);
+						break;
+				}
+
+				if(p > cutoff && !Number.isNaN(p))
 					continue;
 
-				
+
 				//$.when(getOntologyInfo("GO:0022008")).done(function(data, textStatus, jqXHR){
 				//	console.log(data);
 				//});
-				
+
 				var m_ontologyACC;
 				var m_description;
 				var m_ontologyData = new ontology(m_ontologyACC,ontoloy_ID, m_description, numOfInput, numOfRefer,p);
@@ -238,18 +253,16 @@ function my_submit(){
 				return false;
 			}
 			console.log('analysis of data finished');
+
 			//append to table
-			var i;
-			for(i in resultList){
-				appendOntologyToRow(resultList[i]);
+			for(let i of resultList){
+				appendOntologyToRow(i);
 			}
 
 			$('#loading').hide();
 			$('#results').show();
 		});
-
 	});
-
 }
 
 function my_reset(){
@@ -260,69 +273,6 @@ function my_reset(){
 	document.querySelector('#textarea_backgroundList').value = '';
 	$('#result_table tr').remove();
 	document.querySelector('#result_summary').innerHTML = '';
-}
-
-function staticAnalyizeData(inputData,referenceData){
-	var ontolotyIDList = [];
-	var i;
-	for(i in inputData){
-		var txt = inputData[i].ontologyID;
-		if($.inArray(txt, ontolotyIDList) === -1)
-			ontolotyIDList.push(txt);
-	}
-
-	var ontologyList = [];
-	for(i in ontolotyIDList){
-		var str = ontolotyIDList[i]
-		var numOfInput = getNumOfInput(str,inputData);
-		var numOfRefer = getNumOfRefer(str,referenceData);
-
-		//calculate the p with using inputData.length, referenceData.length, numOfInput, numOfRefer
-
-		let test_hypergeo = stats.hypergeometric(numOfInput,numOfRefer,inputData.length,referenceData.length);
-		let test_fisher = stats.fisher(numOfInput,numOfRefer,inputData.length,referenceData.length);
-		let test_chi = stats.chi(numOfInput,numOfRefer,inputData.length,referenceData.length);
-		let test_fisher2 = stats.fisher2(numOfInput,numOfRefer,inputData.length,referenceData.length);
-
-		let test_hypergeo1 = stats.hypergeometric(1,10,12,24);
-		let test_fisher1 = stats.fisher(1,10,12,24);
-		let test_chi1 = stats.chi(1,10,12,24);
-		let test_fisher21 = stats.fisher2(1,10,12,24);
-		console.log(`hyper:${test_hypergeo1} fisher:${test_fisher1} chi:${test_chi1} fisher2:${test_fisher21}`);
-
-		//choose stat method
-		//var test_sel = $('#statistic_methods_input').children()[0].value;
-		var test_sel = $('#method').val();
-		var p = '';
-		switch(test_sel){
-			case 'hypergeometric':
-				p = test_hypergeo;
-				break;
-			case 'fisher':
-				p = test_fisher;
-				break;
-			case 'chi-squared':
-				p = test_chi;
-				break;
-			case 'fisher2':
-				p = test_fisher2;
-				break;
-			default:
-				console.error(`Invalid selection: ${test_sel}`);
-				break;
-		}
-
-		var cutoff = $('#significance').val();
-		if(p>cutoff)
-			continue;
-
-		var m_ontologyACC;
-		var m_description;
-
-		var m_ontologyData = new ontology(m_ontologyACC,str, m_description, numOfInput, numOfRefer,p);
-		ontologyList.push(m_ontologyData);
-	}
-	return ontologyList;
 }
 
 function getNumOfInput(str,inputData ){
@@ -347,9 +297,9 @@ function getOverView(){
 
 function getOntologyTermsFromGenes(geneList){
 
-	var link = 'http://test.planteome.org:8080/gene-to-term?';
-	for(var i in geneList){
-		link +='q='+geneList[i]+'&';
+	var link = 'http://test.planteome.org/api/gene-to-term?';
+	for(let i of geneList){
+		link +='q='+i+'&';
 	}
 	link+='s=NCBITaxon:3702';
 
@@ -361,29 +311,12 @@ function getOntologyTermsFromGenes(geneList){
 		url: link,
 		dataType: 'json'
 	});
-
-
-	/*
-	   $.ajax({
-type: 'get',
-url: 'http://test.planteome.org:8080/gene-to-term?q=TAIR:locus:2143261&s=NCBITaxon:3702',
-dataType: 'json',
-success: function(data){
-console.log(data);
-console.log('success');
-},
-error:function (){
-alert('error');
-}
-});
-
-*/
 }
 
 function getGenesNumInRefFromOntologys(ontologyList){
 
 	var link = 'http://test.planteome.org/api/term-to-gene?s=NCBITaxon:3702';
-	for(var i in ontologyList){
+	for(let i in ontologyList){
 		link +='&q='+i;
 	}
 
@@ -400,6 +333,7 @@ function getGenesNumInRefFromOntologys(ontologyList){
 function getOntologyInfo(ontologyID){
 /*
 	var link = 'http://test.planteome.org/amigo/term/GO:0022008/json';
+
 	console.log(link);
 	return $.ajax({
 		type: 'get',
@@ -478,25 +412,11 @@ function splitStringToGeneList(str){
 		var trimmedData = inputData[x].trim();
 		if(trimmedData ==='')
 			continue;
-		/*var txt = inputData[x].split(/\s+/g);
-		  var annotationData = new annotation(txt[0], txt[1]);
-		  annotationList.push(annotationData); */
 
 		geneIDList.push(inputData[x]);
 	}
 	return geneIDList;
 }
-/* function appendAnnotationToRow(obj){
-   var tr1 = document.createElement('tr');
-
-   for (x in obj) {
-   var td = document.createElement('td');
-   var node = document.createTextNode(obj[x]);
-   td.appendChild(node);
-   tr1.appendChild(td);
-   }
-   $('#result_table').append(tr1);
-   } */
 
 function appendOntologyToRow(obj){
 	var tr1 = document.createElement('tr');
