@@ -193,19 +193,18 @@ function my_submit(){
 			console.log(data);
 			var ontologyListRef = data.summary['term-to-gene-summary-count'];
 
-			for(var i in ontologyList){
-				var ontoloy_ID = i;
+			let test_sel = document.querySelector('#method').value;
 
+			for(var ontology_ID in ontologyList){
 				// K
-				var numOfRefer = ontologyListRef[ontoloy_ID];
+				var numOfRefer = ontologyListRef[ontology_ID];
 				// k
-				var numOfInput = ontologyList[ontoloy_ID];
+				var numOfInput = ontologyList[ontology_ID];
 				// N
 				var N = referenceGenesNum;
 				// n
 				var n = inputGenesNum;
 
-				let test_sel = document.querySelector('#method').value;
 				if(test_sel != 'chi-squared' && test_sel != 'hypergeometric'){
 					if(numOfInput > 500 || numOfRefer > 500 || n > 500 || N > 500){
 						console.log('should use chi or hypergeo for large numbers');
@@ -239,13 +238,9 @@ function my_submit(){
 					continue;
 
 
-				//$.when(getOntologyInfo("GO:0022008")).done(function(data, textStatus, jqXHR){
-				//	console.log(data);
-				//});
-
 				var m_ontologyACC;
 				var m_description;
-				var m_ontologyData = new ontology(m_ontologyACC,ontoloy_ID, m_description, numOfInput, numOfRefer,p);
+				var m_ontologyData = new ontology(m_ontologyACC,ontology_ID, m_description, numOfInput, numOfRefer,p);
 				resultList.push(m_ontologyData);
 			}
 			if(!show_results){
