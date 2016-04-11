@@ -223,6 +223,11 @@ function my_submit(){
 				if(p>cutoff)
 					continue;
 
+				
+				//$.when(getOntologyInfo("GO:0022008")).done(function(data, textStatus, jqXHR){
+				//	console.log(data);
+				//});
+				
 				var m_ontologyACC;
 				var m_description;
 				var m_ontologyData = new ontology(m_ontologyACC,ontoloy_ID, m_description, numOfInput, numOfRefer,p);
@@ -393,8 +398,8 @@ function getGenesNumInRefFromOntologys(ontologyList){
 }
 
 function getOntologyInfo(ontologyID){
-
-	var link = 'http://amigo.geneontology.org/amigo/term/GO:0022008/json';
+/*
+	var link = 'http://test.planteome.org/amigo/term/GO:0022008/json';
 	console.log(link);
 	return $.ajax({
 		type: 'get',
@@ -402,6 +407,7 @@ function getOntologyInfo(ontologyID){
 		url: link,
 		dataType: 'json'
 	});
+	*/
 }
 
 function getNumOfRefer(str,referenceData){
