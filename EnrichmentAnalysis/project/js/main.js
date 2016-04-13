@@ -367,7 +367,7 @@ function ontology(m_ontologyACC, m_ontologyName,m_description, m_numberOfInput,m
 	this.Description = m_description;
 	this.numberOfInput = m_numberOfInput;
 	this.numberOfReference = m_numberOfReference;
-	this.p_value = p;
+	this.p_value = p.toExponential(5);
 }
 
 function annotation(a, b) {
