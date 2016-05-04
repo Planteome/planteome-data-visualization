@@ -175,7 +175,7 @@ function my_submit(){
 			return false;
 		}
 
-		var summary = overview_data[0].summary;
+		var summary = overview_data[0].data;
 		referenceGenesNum = summary['gene-product-count'];
 		document.querySelector('#result_summary').innerHTML = 'the number of input genes is: ' +
 			inputGenesNum + ' <br> the number of background genes is: ' + referenceGenesNum + '<br>';
@@ -183,7 +183,7 @@ function my_submit(){
 
 		console.log(ol_data[0]);
 		//console.log('get the ontology term List ' + ol_data[0].status);
-		var ontologyList = ol_data[0].summary['gene-to-term-summary-count'];
+		var ontologyList = ol_data[0].data['gene-to-term-summary-count'];
 
 		$.when(getGenesNumInRefFromOntologys(ontologyList)).done(function(data, textStatus, jqXHR){
 			if(!show_results){
@@ -191,7 +191,7 @@ function my_submit(){
 				return false;
 			}
 			console.log(data);
-			var ontologyListRef = data.summary['term-to-gene-summary-count'];
+			var ontologyListRef = data.data['term-to-gene-summary-count'];
 
 			let test_sel = document.querySelector('#method').value;
 
@@ -285,18 +285,18 @@ function getOverView(){
 	//JS doesn't support function override
 	return $.ajax({
 		type: 'get',
-		url: 'http://test.planteome.org/api/overview',
+		url: 'http://test.planteome.org/api/statistics/overview',
 		dataType: 'json'
 	});
 }
 
 function getOntologyTermsFromGenes(geneList){
 
-	var link = 'http://test.planteome.org/api/gene-to-term?';
+	var link = 'http://test.planteome.org/api/statistics/gene-to-term?';
 	for(let i of geneList){
-		link +='q='+i+'&';
+		link +='bioentity='+i+'&';
 	}
-	link+='s=NCBITaxon:3702';
+	link += 'taxon=3702';
 
 	console.log(link);
 
@@ -310,12 +310,13 @@ function getOntologyTermsFromGenes(geneList){
 
 function getGenesNumInRefFromOntologys(ontologyList){
 
-	var link = 'http://test.planteome.org/api/term-to-gene?s=NCBITaxon:3702';
+	var link = 'http://test.planteome.org/api/statistics/term-to-gene?';
 	for(let i in ontologyList){
-		link +='&q='+i;
+		link +='bioentity='+i+'&';
 	}
+	link += 'taxon=3702';
 
-	//console.log(link);
+	console.log(link);
 
 	return $.ajax({
 		type: 'get',
