@@ -312,7 +312,7 @@ function getGenesNumInRefFromOntologys(ontologyList){
 
 	var link = 'http://test.planteome.org/api/statistics/term-to-gene?';
 	for(let i in ontologyList){
-		link +='bioentity='+i+'&';
+		link +='term='+i+'&';
 	}
 	link += 'taxon=3702';
 
