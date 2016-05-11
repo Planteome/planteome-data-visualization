@@ -1,6 +1,8 @@
 'use strict';
 
 var show_results = true;
+var url_stats = 'http://test.planteome.org/api/statistics/';
+var url_amigo = 'http://test.planteome.org/amigo/';
 
 function initialize(){
 	function taxonFactory(name, id){
@@ -154,7 +156,6 @@ function initialize(){
 function my_submit(){
 	show_results = true;
 	var str_geneList = document.querySelector('#textarea_geneList').value;
-	//var str_referList = $('#textarea_backgroundList').val();
 	if( str_geneList == ''){
 		alert('please input the interesting gene list');
 		return false;
@@ -179,10 +180,8 @@ function my_submit(){
 		referenceGenesNum = summary['gene-product-count'];
 		document.querySelector('#result_summary').innerHTML = 'the number of input genes is: ' +
 			inputGenesNum + ' <br> the number of background genes is: ' + referenceGenesNum + '<br>';
-		//console.log('There are '+referenceGenesNum+' genes in database');
 
 		console.log(ol_data[0]);
-		//console.log('get the ontology term List ' + ol_data[0].status);
 		var ontologyList = ol_data[0].data['gene-to-term-summary-count'];
 
 		$.when(getGenesNumInRefFromOntologys(ontologyList)).done(function(data, textStatus, jqXHR){
@@ -243,16 +242,14 @@ function my_submit(){
 				var m_ontologyData = new ontology(m_ontologyACC,ontology_ID, m_description, numOfInput, numOfRefer,p);
 				resultList.push(m_ontologyData);
 			}
+
 			if(!show_results){
 				console.log('cancelling table filling due to reset button');
 				return false;
 			}
 			console.log('analysis of data finished');
 
-			//append to table
-			for(let i of resultList){
-				appendOntologyToRow(i);
-			}
+			getOntologyData(resultList);
 
 			$('#loading').hide();
 			$('#results').show();
@@ -270,29 +267,19 @@ function my_reset(){
 	document.querySelector('#result_summary').innerHTML = '';
 }
 
-function getNumOfInput(str,inputData ){
-	var num = 0;
-	var x;
-	for(x in inputData){
-		if(inputData[x].ontologyID === str)
-			num++;
-	}
-	return num;
-}
-
 //get the overview information from server
 function getOverView(){
 	//JS doesn't support function override
 	return $.ajax({
 		type: 'get',
-		url: 'http://test.planteome.org/api/statistics/overview',
+		url: url_stats + 'overview',
 		dataType: 'json'
 	});
 }
 
 function getOntologyTermsFromGenes(geneList){
 
-	var link = 'http://test.planteome.org/api/statistics/gene-to-term?';
+	var link = url_stats + 'gene-to-term?';
 	for(let i of geneList){
 		link +='bioentity='+i+'&';
 	}
@@ -310,7 +297,7 @@ function getOntologyTermsFromGenes(geneList){
 
 function getGenesNumInRefFromOntologys(ontologyList){
 
-	var link = 'http://test.planteome.org/api/statistics/term-to-gene?';
+	var link = url_stats + 'term-to-gene?';
 	for(let i in ontologyList){
 		link +='term='+i+'&';
 	}
@@ -326,34 +313,11 @@ function getGenesNumInRefFromOntologys(ontologyList){
 	});
 }
 
-function getOntologyInfo(ontologyID){
-/*
-	var link = 'http://test.planteome.org/amigo/term/GO:0022008/json';
-
-	console.log(link);
-	return $.ajax({
-		type: 'get',
-		//url: 'http://test.planteome.org:8080/gene-to-term?q=TAIR:locus:2143261&s=NCBITaxon:3702',
-		url: link,
-		dataType: 'json'
-	});
-	*/
-}
-
-function getNumOfRefer(str,referenceData){
-	var num = 0;
-	var x;
-	for(x in referenceData){
-		if(referenceData[x].ontologyID === str)
-			num++;
-	}
-	return num;
-}
-function ontology(m_ontologyACC, m_ontologyName,m_description, m_numberOfInput,m_numberOfReference,p){
+function ontology(m_ontologyACC, m_ontologyId,m_description, m_numberOfInput,m_numberOfReference,p){
 	if(m_ontologyACC === undefined)
 		m_ontologyACC='';
-	if(m_ontologyName === undefined)
-		m_ontologyName='';
+	if(m_ontologyId === undefined)
+		m_ontologyId='';
 	if(m_description === undefined)
 		m_description='';
 	if(m_numberOfInput === undefined)
@@ -363,44 +327,16 @@ function ontology(m_ontologyACC, m_ontologyName,m_description, m_numberOfInput,m
 	if(p === undefined)
 		p=0;
 
-	this.ontologyACC = m_ontologyACC;
-	this.ontologyName = m_ontologyName;
-	this.Description = m_description;
+	this.ontologyId = m_ontologyId;
+	//this.ontologyACC = m_ontologyACC;
+	this.ontologyName = '';
+	this.description = m_description;
 	this.numberOfInput = m_numberOfInput;
 	this.numberOfReference = m_numberOfReference;
 	this.p_value = p.toExponential(5);
 }
 
-function annotation(a, b) {
-	if(a === undefined)
-		a=0;
-	if(b === undefined)
-		b=0;
-
-	this.geneID = a;
-	this.ontologyID = b;
-}
-
-function splitStringToAnnotation(str){
-	//var inputData = str.split('\n');          // Split on carriage return
-
-	var annotationList = [];
-	var inputData = str.split('\n');
-	var x;
-	for(x in inputData){
-		var trimmedData = inputData[x].trim();
-		if(trimmedData ==='')
-			continue;
-		var txt = inputData[x].split(/\s+/g);
-		var annotationData = new annotation(txt[0], txt[1]);
-		annotationList.push(annotationData);
-	}
-	return annotationList;
-}
-
 function splitStringToGeneList(str){
-
-	//var annotationList = [];
 	var geneIDList = [];
 	var inputData = str.split('\n');	// Split on carriage return
 	var x;
@@ -415,13 +351,34 @@ function splitStringToGeneList(str){
 }
 
 function appendOntologyToRow(obj){
-	var tr1 = document.createElement('tr');
-	var x;
-	for (x in obj) {
-		var td = document.createElement('td');
-		var node = document.createTextNode(obj[x]);
+	let tr1 = document.createElement('tr');
+	for (let x in obj) {
+		let td = document.createElement('td');
+		let node = document.createTextNode(obj[x]);
 		td.appendChild(node);
 		tr1.appendChild(td);
 	}
 	document.querySelector('#result_table').appendChild(tr1);
+}
+
+function getOntologyData(resultList){
+	//append to table
+	for(let i of resultList){
+		let j = JSON.parse(JSON.stringify(i));
+		$.ajax({
+			type: 'get',
+			url: url_amigo + 'term/' + j.ontologyId + '/json',
+			dataType: 'json',
+			success: function(res){
+
+				let name = res.results.name;
+				let des = res.results.definition;
+
+				j.ontologyName = name;
+				j.description = des;
+
+				appendOntologyToRow(j);
+			}
+		});
+	}
 }
