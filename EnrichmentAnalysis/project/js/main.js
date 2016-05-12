@@ -3,6 +3,8 @@
 var show_results = true;
 var url_stats = 'http://test.planteome.org/api/statistics/';
 var url_amigo = 'http://test.planteome.org/amigo/';
+var raw_graph_data = [];
+var sigma_graph;
 
 function initialize(){
 	function taxonFactory(name, id){
@@ -359,6 +361,7 @@ function appendOntologyToRow(obj){
 
 function getOntologyData(resultList){
 	//append to table
+
 	for(let i of resultList){
 		let j = JSON.parse(JSON.stringify(i));
 		$.ajax({
@@ -366,6 +369,7 @@ function getOntologyData(resultList){
 			url: url_amigo + 'term/' + j.ontologyId + '/json',
 			dataType: 'json',
 			success: function(res){
+				//console.log(res);
 
 				let name = res.results.name;
 				let des = res.results.definition;
@@ -374,7 +378,140 @@ function getOntologyData(resultList){
 				j.description = des;
 
 				appendOntologyToRow(j);
+
+				raw_graph_data.push(res.results.topology_graph_json);
+				if(raw_graph_data.length == resultList.length){
+					viewGraph(raw_graph_data);
+				}
 			}
 		});
 	}
+}
+
+function viewGraph(raw_data){
+	let nodes = new Set();
+	let edges = new Set();
+
+	for(let raw_graph of raw_data){
+		let json = JSON.parse(raw_graph);
+
+		for(let n of json.nodes){
+			nodes.add(JSON.stringify({"id":n.id,"label":n.lbl}));
+		}
+
+		for(let e of json.edges){
+			edges.add(JSON.stringify({"id":`${e.sub}x${e.obj}`,"source":e.sub,"target":e.obj}));
+		}
+	}
+
+	let n_arr = [];
+	let e_arr = [];
+	nodes.forEach(n => n_arr.push(JSON.parse(n)));
+	edges.forEach(e => e_arr.push(JSON.parse(e)));
+
+	let sqrt_nodes = Math.floor(Math.sqrt(n_arr.length));
+	for(let i in n_arr){
+		let e_count = 0;
+		for(let e of e_arr){
+			if(e.target == n_arr[i].id){
+				e_count++;
+			}
+		}
+
+		n_arr[i].size = Math.sqrt(e_count * 1.0) * 0.1;
+		n_arr[i].x = Math.floor(i % sqrt_nodes);
+		n_arr[i].y = Math.floor(i / sqrt_nodes);
+	}
+	//document.querySelector('#sigma_graph').style.height = `${sqrt_nodes * 100}px`;
+	//document.querySelector('#sigma_graph').style.width = `${sqrt_nodes * 100}px`;
+
+	let graph = {
+		"nodes": n_arr,
+		"edges": e_arr
+	};
+
+	sigma_graph = new sigma({
+		graph: graph,
+		container: 'sigma_graph',
+		settings: {
+			edgeColor: 'default',
+			defaultEdgeColor: '#000',
+			defaultNodeColor: '#ec5148',
+		},
+		renderers: [
+			{
+				container: document.querySelector('#sigma_graph'),
+				type: 'canvas'
+			}
+		]
+	});
+
+	let config = {
+		barnesHutOptimize: true,
+		iterationsPerRender: 5
+	};
+
+	sigma_graph.startForceAtlas2(config);
+
+	function startAlg(){
+		if(!sigma_graph.isForceAtlas2Running()){
+			sigma_graph.startForceAtlas2();
+		}
+	}
+
+	function stopAlg(){
+		if(sigma_graph.isForceAtlas2Running()){
+			sigma_graph.stopForceAtlas2();
+		}
+	}
+
+	function moveCamera(node){
+		let camera = sigma_graph.camera;
+
+		let preTransform = {
+			x: camera.x,
+			y: camera.y,
+			ratio: 0.0625,
+			angle: camera.angle
+		}
+		camera.goTo(preTransform);
+		sigma_graph.refresh();
+
+		let toTransform = {
+			x: node['read_cam0:x'],
+			y: node['read_cam0:y'],
+			ratio: camera.ratio,
+			angle: camera.angle
+		};
+
+		camera.goTo(toTransform);
+		sigma_graph.refresh();
+	}
+
+	function searchGraph(){
+		let id = document.querySelector('#sigma_search_input').value;
+
+		if(id == undefined || id == null){
+			throw new Error('No node given!');
+		}
+
+		let node = null;
+		for(let n of sigma_graph.graph.nodes()){
+			if(n.id == id){
+				node = n;
+				break;
+			}
+		}
+
+		if(node == null){
+			throw new Error('No node found :(');
+		}
+
+		moveCamera(node);
+	}
+
+
+	(document.querySelector('#start_forcelayout')).onclick = startAlg;
+	(document.querySelector('#stop_forcelayout')).onclick = stopAlg;
+	(document.querySelector('#sigma_search_submit')).onclick = searchGraph;
 }
