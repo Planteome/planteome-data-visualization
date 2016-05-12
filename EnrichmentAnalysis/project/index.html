@@ -129,20 +129,32 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<div class="h3">Result Visualization</div>
+					<p class="help-block">
+						The size of the node is proportional to how many edges are linking to or from it. The color of the node is influenced by the P value calculated above. If there is a P value listed for the term in the table above, then the color is a shade of red - the more red, the higher the correlation (lower P value). The more gray, the less of a correlation there is. If the term is not in the table above (either no P value was calculated or it was not significant enough), the term is a blue node.<br/>
+						The graph is interactive - one can pan and zoom. Hover on nodes to view their label.
+					</p>
+					<br/>
 					<div id="sigma_controls" class="btn-group btn-group-justified" role="group" aria-label="...">
 						<div class="btn-group" role="group">
-							<button id="start_forcelayout" type="button" class="btn btn-default">Start Force Layout</button>
+							<button id="start_forcelayout" type="button" class="btn btn-default">Resume Force Layout</button>
 						</div>
 						<div class="btn-group" role="group">
-							<button id="stop_forcelayout" type="button" class="btn btn-default">Stop Force Layout</button>
+							<button id="stop_forcelayout" type="button" class="btn btn-default">Pause Force Layout</button>
 						</div>
 					</div>
+					<p class='help-block'>
+						Pause and resume the Force Layout algorithm via the Pause and Resume buttons, respectively.<br/>
+					</p>
+					<br/>
 					<div class="input-group">
 						<input id="sigma_search_input" type="text" class="form-control" placeholder="ID to search for...">
 						<span class="input-group-btn">
 							<button id="sigma_search_submit" class="btn btn-default" type="button">Go</button>
 						</span>
 					</div>
+					<p class='help-block'>
+						Search for an entity by entering its entire ID (i.e., "GO:0000001"). If the entity is a node, it will focus and zoom in on that node. If it is not found, nothing will happen.
+					</p>
 				</div>
 				<div class="panel-body">
 					<div id="sigma_graph" class="container sigma"></div>

@@ -1,10 +1,11 @@
 'use strict';
 
-var show_results = true;
-var url_stats = 'http://test.planteome.org/api/statistics/';
-var url_amigo = 'http://test.planteome.org/amigo/';
-var raw_graph_data = [];
-var sigma_graph;
+let show_results = true;
+let url_stats = 'http://test.planteome.org/api/statistics/';
+let url_amigo = 'http://test.planteome.org/amigo/';
+let raw_graph_data = [];
+let resultList = [];
+let sigma_graph;
 
 function initialize(){
 	function taxonFactory(name, id){
@@ -16,7 +17,7 @@ function initialize(){
 	}
 	//initialize the species selet button
 
-	var taxonList = [
+	let taxonList = [
 		['Arabidopsis_thaliana', '3702'],
 		['Aegilops_tauschii', '37682'],
 		['Amborella_trichopoda', '13333'],
@@ -157,18 +158,17 @@ function initialize(){
 
 function my_submit(){
 	show_results = true;
-	var str_geneList = document.querySelector('#textarea_geneList').value;
+	let str_geneList = document.querySelector('#textarea_geneList').value;
 	if( str_geneList == ''){
 		alert('please input the interesting gene list');
 		return false;
 	}
 
-	var resultList = [];
 
-	var referenceGenesNum;
-	var inputGenes = splitStringToGeneList(str_geneList);
-	var inputGenesNum = inputGenes.length;
-	var cutoff = document.querySelector('#significance').value;
+	let referenceGenesNum;
+	let inputGenes = splitStringToGeneList(str_geneList);
+	let inputGenesNum = inputGenes.length;
+	let cutoff = document.querySelector('#significance').value;
 
 	$('#loading').show();
 
@@ -178,13 +178,13 @@ function my_submit(){
 			return false;
 		}
 
-		var summary = overview_data[0].data;
+		let summary = overview_data[0].data;
 		referenceGenesNum = summary['gene-product-count'];
 		document.querySelector('#result_summary').innerHTML = 'the number of input genes is: ' +
 			inputGenesNum + ' <br> the number of background genes is: ' + referenceGenesNum + '<br>';
 
 		console.log(ol_data[0]);
-		var ontologyList = ol_data[0].data['gene-to-term-summary-count'];
+		let ontologyList = ol_data[0].data['gene-to-term-summary-count'];
 
 		$.when(getGenesNumInRefFromOntologys(ontologyList)).done(function(data, textStatus, jqXHR){
 			if(!show_results){
@@ -192,20 +192,20 @@ function my_submit(){
 				return false;
 			}
 			console.log(data);
-			var ontologyListRef = data.data['term-to-gene-summary-count'];
+			let ontologyListRef = data.data['term-to-gene-summary-count'];
 
 			let test_sel = document.querySelector('#method').value;
 			console.log(test_sel);
 
-			for(var ontology_ID in ontologyList){
+			for(let ontology_ID in ontologyList){
 				// K
-				var numOfRefer = ontologyListRef[ontology_ID];
+				let numOfRefer = ontologyListRef[ontology_ID];
 				// k
-				var numOfInput = ontologyList[ontology_ID];
+				let numOfInput = ontologyList[ontology_ID];
 				// N
-				var N = referenceGenesNum;
+				let N = referenceGenesNum;
 				// n
-				var n = inputGenesNum;
+				let n = inputGenesNum;
 
 				if(test_sel != 'chi-squared' && test_sel != 'hypergeometric'){
 					if(numOfInput > 500 || numOfRefer > 500 || n > 500 || N > 500){
@@ -235,10 +235,10 @@ function my_submit(){
 					continue;
 
 
-				var m_ontologyACC;
-				var m_description;
-				var m_ontologyData = new ontology(m_ontologyACC,ontology_ID, m_description, numOfInput, numOfRefer,p);
-				resultList.push(m_ontologyData);
+				let m_ontologyACC;
+				let m_description;
+				let m_ontologyData = new ontology(m_ontologyACC,ontology_ID, m_description, numOfInput, numOfRefer,p);
+				resultList.push(JSON.parse(JSON.stringify(m_ontologyData)));
 			}
 
 			if(!show_results){
@@ -277,7 +277,7 @@ function getOverView(){
 
 function getOntologyTermsFromGenes(geneList){
 
-	var link = url_stats + 'gene-to-term?';
+	let link = url_stats + 'gene-to-term?';
 	for(let i of geneList){
 		link +='bioentity='+i+'&';
 	}
@@ -295,7 +295,7 @@ function getOntologyTermsFromGenes(geneList){
 
 function getGenesNumInRefFromOntologys(ontologyList){
 
-	var link = url_stats + 'term-to-gene?';
+	let link = url_stats + 'term-to-gene?';
 	for(let i in ontologyList){
 		link +='term='+i+'&';
 	}
@@ -325,21 +325,22 @@ function ontology(m_ontologyACC, m_ontologyId,m_description, m_numberOfInput,m_n
 	if(p === undefined)
 		p=0;
 
-	this.ontologyId = m_ontologyId;
+	this.ontologyId = JSON.parse(JSON.stringify(m_ontologyId));
 	//this.ontologyACC = m_ontologyACC;
 	this.ontologyName = '';
 	this.description = m_description;
 	this.numberOfInput = m_numberOfInput;
 	this.numberOfReference = m_numberOfReference;
+	this.p = p;
 	this.p_value = p.toExponential(5);
 }
 
 function splitStringToGeneList(str){
-	var geneIDList = [];
-	var inputData = str.split('\n');	// Split on carriage return
-	var x;
+	let geneIDList = [];
+	let inputData = str.split('\n');	// Split on carriage return
+	let x;
 	for(x in inputData){
-		var trimmedData = inputData[x].trim();
+		let trimmedData = inputData[x].trim();
 		if(trimmedData ==='')
 			continue;
 
@@ -379,8 +380,11 @@ function getOntologyData(resultList){
 
 				appendOntologyToRow(j);
 
+				//data for visualization
 				raw_graph_data.push(res.results.topology_graph_json);
+
 				if(raw_graph_data.length == resultList.length){
+					//parsed all of resultList, time to view graph
 					viewGraph(raw_graph_data);
 				}
 			}
@@ -389,41 +393,91 @@ function getOntologyData(resultList){
 }
 
 function viewGraph(raw_data){
+	//we have alot of duplicate nodes/edges,
+	//because each topology graph contains everything connecting
+	//to that individual node (both in and out of node)
+	//use set to filter the dups out
 	let nodes = new Set();
 	let edges = new Set();
 
 	for(let raw_graph of raw_data){
 		let json = JSON.parse(raw_graph);
 
+		//without stringifying the node objects,
+		//we would have to manually check each node/edge to see
+		//if it was a dup or not,
+		//whether we used JS's Sets or just plain Arrays.
+		//stringifying it allows for shallow compare,
+		//which JS's Sets do for us, quickly.
+		//Since our objects that we are stringifying
+		//are really simple, we aren't worried about illegal JSON.
 		for(let n of json.nodes){
 			nodes.add(JSON.stringify({"id":n.id,"label":n.lbl}));
 		}
 
 		for(let e of json.edges){
+			//TODO: add some sort of label for edges using e.pred (predicate, aka method)
+			//note, only one edge between two nodes is allowed
 			edges.add(JSON.stringify({"id":`${e.sub}x${e.obj}`,"source":e.sub,"target":e.obj}));
 		}
 	}
 
+	//now that we have our sets, expand them into the objects
 	let n_arr = [];
 	let e_arr = [];
 	nodes.forEach(n => n_arr.push(JSON.parse(n)));
 	edges.forEach(e => e_arr.push(JSON.parse(e)));
 
+	//get our worst p_value to be used as the far end of the scale
+	//start with just a verrrry small value instead of 0, because
+	//we want to make sure not to get NaNs when using this
+	//in the denominator
+	let p_worst = 0.00000001;
+	for(let r of resultList){
+		//console.log(r.ontologyId);
+		if(r.p > p_worst){
+			p_worst = r.p;
+		}
+	}
+	console.log(`pworst: ${p_worst}`);
+
 	let sqrt_nodes = Math.floor(Math.sqrt(n_arr.length));
 	for(let i in n_arr){
+		//the more edges with this node,
+		//the larger it will be
+		//to signify importance
 		let e_count = 0;
 		for(let e of e_arr){
-			if(e.target == n_arr[i].id){
+			if(e.target == n_arr[i].id || e.source == n_arr[i].id){
 				e_count++;
 			}
 		}
 
+		//try to get the term's pvalue
+		let p_value = null;
+		for(let r of resultList){
+			if(r.ontologyId == n_arr[i].id){
+				p_value = r.p;
+			}
+		}
+
+		//if we calculated a p_value for this term, then we can rate it,
+		//from grayest (least related) to most red (most related)
+		//if we didn't calculate a p_value, then just give it the color blue
+		let hue = p_value ? 3 : 221;
+		//default colour sat = 81
+		let sat = p_value ? 100*((p_worst - p_value)/p_worst) : 100;
+		n_arr[i].color = `hsl(${hue},${sat}%,60%)`;
+
+		//size = influence = significance in the force layout alg
+		//we get alot of nodes, so make it small
 		n_arr[i].size = Math.sqrt(e_count * 1.0) * 0.1;
+
+		//we need to initialize the node's location to begin the force layout
+		//arrange in a square, starting at the top left, going across, then down
 		n_arr[i].x = Math.floor(i % sqrt_nodes);
 		n_arr[i].y = Math.floor(i / sqrt_nodes);
 	}
-	//document.querySelector('#sigma_graph').style.height = `${sqrt_nodes * 100}px`;
-	//document.querySelector('#sigma_graph').style.width = `${sqrt_nodes * 100}px`;
 
 	let graph = {
 		"nodes": n_arr,
@@ -435,36 +489,58 @@ function viewGraph(raw_data){
 		container: 'sigma_graph',
 		settings: {
 			edgeColor: 'default',
+			//black edges
 			defaultEdgeColor: '#000',
 			defaultNodeColor: '#ec5148',
 		},
 		renderers: [
 			{
+				//make sure its the canvas renderer,
+				//so we all get the same experience
 				container: document.querySelector('#sigma_graph'),
 				type: 'canvas'
 			}
 		]
 	});
 
+	//we have a LARGE graph,
+	//so lets optimize the force layout alg
 	let config = {
+		//this just uses an alg that scales better
 		barnesHutOptimize: true,
-		iterationsPerRender: 5
+		//default is 1
+		//10 helps alot with responsiveness
+		slowDown: 1,
+		//higher means a jumpier graph but less render calls,
+		//lower means smoother but more render calls
+		iterationsPerRender: 1
 	};
 
 	sigma_graph.startForceAtlas2(config);
 
+	//for a button, to unpause the alg
 	function startAlg(){
+		if(!sigma_graph){
+			return;
+		}
+
 		if(!sigma_graph.isForceAtlas2Running()){
 			sigma_graph.startForceAtlas2();
 		}
 	}
 
+	//for another button, to pause the alg
 	function stopAlg(){
+		if(!sigma_graph){
+			return;
+		}
+
 		if(sigma_graph.isForceAtlas2Running()){
 			sigma_graph.stopForceAtlas2();
 		}
 	}
 
+	//zooms to a specific node
 	function moveCamera(node){
 		let camera = sigma_graph.camera;
 
@@ -488,6 +564,8 @@ function viewGraph(raw_data){
 		sigma_graph.refresh();
 	}
 
+	//searches the graph for the id in the input box,
+	//and goes to it if its found
 	function searchGraph(){
 		let id = document.querySelector('#sigma_search_input').value;
 
@@ -510,7 +588,7 @@ function viewGraph(raw_data){
 		moveCamera(node);
 	}
 
-
+	//add button listeners
 	(document.querySelector('#start_forcelayout')).onclick = startAlg;
 	(document.querySelector('#stop_forcelayout')).onclick = stopAlg;
 	(document.querySelector('#sigma_search_submit')).onclick = searchGraph;
