@@ -364,7 +364,7 @@ function getOntologyData(resultList){
 	//append to table
 
 	for(let i of resultList){
-		let j = JSON.parse(JSON.stringify(i));
+		let j = i;
 		$.ajax({
 			type: 'get',
 			url: url_amigo + 'term/' + j.ontologyId + '/json',
@@ -592,4 +592,14 @@ function viewGraph(raw_data){
 	(document.querySelector('#start_forcelayout')).onclick = startAlg;
 	(document.querySelector('#stop_forcelayout')).onclick = stopAlg;
 	(document.querySelector('#sigma_search_submit')).onclick = searchGraph;
+
+	//set up search input autocomplete
+	let search_input = document.querySelector('#sigma_search_input');
+	let awe_list = {list:[],maxItems:20};
+	resultList.forEach(r => awe_list.list.push({"label":r.ontologyName,"value":r.ontologyId}));
+	console.log(awe_list);
+	let awesomplete = new Awesomplete(search_input, awe_list);
+	search_input.parentElement.classList.add('form-control');
+	search_input.parentElement.style.padding = '0px';
+	search_input.style.width = '100%';
 }
