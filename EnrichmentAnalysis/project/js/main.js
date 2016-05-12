@@ -193,6 +193,7 @@ function my_submit(){
 			var ontologyListRef = data.data['term-to-gene-summary-count'];
 
 			let test_sel = document.querySelector('#method').value;
+			console.log(test_sel);
 
 			for(var ontology_ID in ontologyList){
 				// K
@@ -214,22 +215,17 @@ function my_submit(){
 				switch(test_sel){
 					case 'hypergeometric':
 						p = stats.hypergeometric(numOfInput,numOfRefer,n,N);
-						console.log('hypergeometric');
 						break;
 					case 'fisher':
 						p = stats.fisher(numOfInput,numOfRefer,n,N);
-						console.log('fisher');
 						break;
 					case 'chi-squared':
 						p = stats.chi(numOfInput,numOfRefer,n,N);
-						console.log('chi');
 						break;
 					case 'fisher2':
 						p = stats.fisher2(numOfInput,numOfRefer,n,N);
-						console.log('fisher2');
 						break;
 					default:
-						console.error(`Invalid selection: ${test_sel}`);
 						break;
 				}
 
