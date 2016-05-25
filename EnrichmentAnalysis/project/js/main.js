@@ -298,17 +298,19 @@ function getOntologyTermsFromGenes(geneList){
 function getGenesNumInRefFromOntologys(ontologyList){
 
 	var link = url_stats + 'term-to-gene?';
+	var data = '';
 	for(let i in ontologyList){
-		link +='term='+i+'&';
+		data +='term='+i+'&';
 	}
-	link += 'taxon=3702';
+	data += 'taxon=3702';
 
 	console.log(link);
 
 	return $.ajax({
-		type: 'get',
+		type: 'post',
 		//url: 'http://test.planteome.org:8080/gene-to-term?q=TAIR:locus:2143261&s=NCBITaxon:3702',
 		url: link,
+		data: data,
 		dataType: 'json'
 	});
 }
