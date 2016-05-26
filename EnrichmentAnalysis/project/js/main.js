@@ -156,8 +156,20 @@ function initialize(){
 	}
 }
 
+function queryTypeChange(){
+	let x = document.getElementById("queryType").value;
+	if(x == 'userinput')
+		$('#referenceBackground').show();
+	else
+		$('#referenceBackground').hide();
+}
+
 function my_submit(){
 	show_results = true;
+	let resultList = [];
+	let raw_graph_data = [];
+	$('#result_table tr').remove();
+	
 	let str_geneList = document.querySelector('#textarea_geneList').value;
 	if( str_geneList == ''){
 		alert('please input the interesting gene list');
@@ -235,9 +247,9 @@ function my_submit(){
 					continue;
 
 
-				let m_ontologyACC;
+				let m_ontologyName;
 				let m_description;
-				let m_ontologyData = new ontology(m_ontologyACC,ontology_ID, m_description, numOfInput, numOfRefer,p);
+				let m_ontologyData = new ontology(m_ontologyName,ontology_ID, m_description, numOfInput, numOfRefer,p);
 				resultList.push(JSON.parse(JSON.stringify(m_ontologyData)));
 			}
 
@@ -263,6 +275,9 @@ function my_reset(){
 	document.querySelector('#textarea_backgroundList').value = '';
 	$('#result_table tr').remove();
 	document.querySelector('#result_summary').innerHTML = '';
+	
+	let resultList = [];
+	let raw_graph_data = [];
 }
 
 //get the overview information from server
@@ -286,8 +301,7 @@ function getOntologyTermsFromGenes(geneList){
 	console.log(link);
 
 	return $.ajax({
-		type: 'get',
-		//url: 'http://test.planteome.org:8080/gene-to-term?q=TAIR:locus:2143261&s=NCBITaxon:3702',
+		type: 'post',
 		url: link,
 		dataType: 'json'
 	});
@@ -306,16 +320,15 @@ function getGenesNumInRefFromOntologys(ontologyList){
 
 	return $.ajax({
 		type: 'post',
-		//url: 'http://test.planteome.org:8080/gene-to-term?q=TAIR:locus:2143261&s=NCBITaxon:3702',
 		url: link,
 		data: data,
 		dataType: 'json'
 	});
 }
 
-function ontology(m_ontologyACC, m_ontologyId,m_description, m_numberOfInput,m_numberOfReference,p){
-	if(m_ontologyACC === undefined)
-		m_ontologyACC='';
+function ontology(m_ontologyName, m_ontologyId,m_description, m_numberOfInput,m_numberOfReference,p){
+	if(m_ontologyName === undefined)
+		m_ontologyName='';
 	if(m_ontologyId === undefined)
 		m_ontologyId='';
 	if(m_description === undefined)
@@ -328,12 +341,10 @@ function ontology(m_ontologyACC, m_ontologyId,m_description, m_numberOfInput,m_n
 		p=0;
 
 	this.ontologyId = JSON.parse(JSON.stringify(m_ontologyId));
-	//this.ontologyACC = m_ontologyACC;
-	this.ontologyName = '';
+	this.ontologyName = m_ontologyName;
 	this.description = m_description;
 	this.numberOfInput = m_numberOfInput;
 	this.numberOfReference = m_numberOfReference;
-	this.p = p;
 	this.p_value = p.toExponential(5);
 }
 
@@ -352,6 +363,7 @@ function splitStringToGeneList(str){
 }
 
 function appendOntologyToRow(obj){
+	
 	let tr1 = document.createElement('tr');
 	for (let x in obj) {
 		let td = document.createElement('td');

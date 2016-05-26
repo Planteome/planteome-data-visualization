@@ -65,6 +65,16 @@
 						<option value="0.01">0.01</option>
 					</select>
 				</div>
+				
+				<div id="queryType_input" class="form-group">
+					<label for="queryType">
+						Query type:
+					</label>
+					<select class="form-control" id="queryType" onchange="queryTypeChange()">
+						<option value="background">Gene Ontology Database</option>
+						<option value="userinput">user's input reference</option>
+					</select>
+				</div>
 
 
 				<!--interesting genes div -->
@@ -73,11 +83,11 @@
 					<textarea class="form-control" id="textarea_geneList"
 						rows="5" placeholder="please input the interesting genes"></textarea>
 					<p class="help-block">
-						Please make sure your request in the format that contains two rows. first row is ID, second row is GO accession.<br/>
+						<!--Please make sure your request in the format that contains two rows. first row is ID, second row is GO accession.<br/>
 						For example: <br/>
 						test_0001	GO:0000001<br/>
-						test_0002	GO:0000002<br/>
-						or the accession ID of gene product. e.g.:<br/>
+						test_0002	GO:0000002<br/> -->
+						Please input the accession ID of gene products. e.g.:<br/>
 						TAIR:locus:1005716561<br/>
 						TAIR:locus:2031476<br/>
 						TAIR:locus:2043067<br/>
@@ -87,11 +97,13 @@
 				</div>
 
 				<!--reference background div -->
-				<h2>Reference Background</h2>
-				<div id="reference_input" class="form-group">
-					<textarea class="form-control" id="textarea_backgroundList"
-						rows="5" placeholder="please input the reference background"></textarea>
-					<p class="help-block">please input the background reference data</p>
+				<div hidden = "true" id="referenceBackground">
+					<h2>Reference Background</h2>
+					<div  id="reference_input" class="form-group">
+						<textarea class="form-control" id="textarea_backgroundList"
+							rows="5" placeholder="please input the reference background"></textarea>
+						<p class="help-block">please input the background reference data</p>
+					</div>
 				</div>
 
 				<!--buttons -->
@@ -115,8 +127,8 @@
 					<table class="table table-striped">
 						<thead>
 							<tr>
-								<th>GO term</th>
-								<th>Ontology</th>
+								<th>GO ID</th>
+								<th>Ontology name</th>
 								<th>Description</th>
 								<th>Number in input list</th>
 								<th>Number in BG/Ref</th>

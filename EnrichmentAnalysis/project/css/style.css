@@ -17,3 +17,14 @@
 	height: 700px;
 	width: 100%;
 }
+
+label[for=method], label[for=species], label[for = significance], label[for = queryType]
+{
+    width: 13%;
+}
+
+#method, #species, #significance, #queryType
+{
+    width: 86%;
+	display: inline-block;
+}
