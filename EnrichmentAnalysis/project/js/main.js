@@ -195,7 +195,7 @@ function my_submit(){
 		document.querySelector('#result_summary').innerHTML = 'the number of input genes is: ' +
 			inputGenesNum + ' <br> the number of background genes is: ' + referenceGenesNum + '<br>';
 
-		console.log(ol_data[0]);
+		//console.log(ol_data[0]);
 		let ontologyList = ol_data[0].data['gene-to-term-summary-count'];
 
 		$.when(getGenesNumInRefFromOntologys(ontologyList)).done(function(data, textStatus, jqXHR){
@@ -203,11 +203,11 @@ function my_submit(){
 				console.log('cancelling ref request due to reset button');
 				return false;
 			}
-			console.log(data);
+			//console.log(data);
 			let ontologyListRef = data.data['term-to-gene-summary-count'];
 
 			let test_sel = document.querySelector('#method').value;
-			console.log(test_sel);
+			//console.log(test_sel);
 
 			for(let ontology_ID in ontologyList){
 				// K
@@ -293,16 +293,19 @@ function getOverView(){
 function getOntologyTermsFromGenes(geneList){
 
 	let link = url_stats + 'gene-to-term?';
+	let data = '';
+	
 	for(let i of geneList){
-		link +='bioentity='+i+'&';
+		data +='bioentity='+i+'&';
 	}
-	link += 'taxon=3702';
+	data += 'taxon=3702';
 
-	console.log(link);
+	//console.log(link);
 
 	return $.ajax({
 		type: 'post',
 		url: link,
+		data: data,
 		dataType: 'json'
 	});
 }
@@ -316,7 +319,7 @@ function getGenesNumInRefFromOntologys(ontologyList){
 	}
 	data += 'taxon=3702';
 
-	console.log(link);
+	//console.log(link);
 
 	return $.ajax({
 		type: 'post',
