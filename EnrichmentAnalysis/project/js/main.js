@@ -156,20 +156,8 @@ function initialize(){
 	}
 }
 
-function queryTypeChange(){
-	let x = document.getElementById("queryType").value;
-	if(x == 'userinput')
-		$('#referenceBackground').show();
-	else
-		$('#referenceBackground').hide();
-}
-
 function my_submit(){
 	show_results = true;
-	let resultList = [];
-	let raw_graph_data = [];
-	$('#result_table tr').remove();
-	
 	let str_geneList = document.querySelector('#textarea_geneList').value;
 	if( str_geneList == ''){
 		alert('please input the interesting gene list');
@@ -195,7 +183,7 @@ function my_submit(){
 		document.querySelector('#result_summary').innerHTML = 'the number of input genes is: ' +
 			inputGenesNum + ' <br> the number of background genes is: ' + referenceGenesNum + '<br>';
 
-		//console.log(ol_data[0]);
+		console.log(ol_data[0]);
 		let ontologyList = ol_data[0].data['gene-to-term-summary-count'];
 
 		$.when(getGenesNumInRefFromOntologys(ontologyList)).done(function(data, textStatus, jqXHR){
@@ -203,11 +191,11 @@ function my_submit(){
 				console.log('cancelling ref request due to reset button');
 				return false;
 			}
-			//console.log(data);
+			console.log(data);
 			let ontologyListRef = data.data['term-to-gene-summary-count'];
 
 			let test_sel = document.querySelector('#method').value;
-			//console.log(test_sel);
+			console.log(test_sel);
 
 			for(let ontology_ID in ontologyList){
 				// K
@@ -275,14 +263,19 @@ function my_reset(){
 	document.querySelector('#textarea_backgroundList').value = '';
 	$('#result_table tr').remove();
 	document.querySelector('#result_summary').innerHTML = '';
-	
-	let resultList = [];
-	let raw_graph_data = [];
+	resultList = [];
+}
+
+function queryTypeChange(){
+       let x = document.getElementById("queryType").value;
+       if(x == 'userinput')
+               $('#referenceBackground').show();
+       else
+               $('#referenceBackground').hide();
 }
 
 //get the overview information from server
 function getOverView(){
-	//JS doesn't support function override
 	return $.ajax({
 		type: 'get',
 		url: url_stats + 'overview',
@@ -291,16 +284,15 @@ function getOverView(){
 }
 
 function getOntologyTermsFromGenes(geneList){
-
 	let link = url_stats + 'gene-to-term?';
 	let data = '';
-	
+
 	for(let i of geneList){
 		data +='bioentity='+i+'&';
 	}
 	data += 'taxon=3702';
 
-	//console.log(link);
+	console.log(link);
 
 	return $.ajax({
 		type: 'post',
@@ -319,7 +311,7 @@ function getGenesNumInRefFromOntologys(ontologyList){
 	}
 	data += 'taxon=3702';
 
-	//console.log(link);
+	console.log(link);
 
 	return $.ajax({
 		type: 'post',
@@ -344,11 +336,11 @@ function ontology(m_ontologyName, m_ontologyId,m_description, m_numberOfInput,m_
 		p=0;
 
 	this.ontologyId = JSON.parse(JSON.stringify(m_ontologyId));
-	this.ontologyName = m_ontologyName;
+	this.ontologyName = '';
 	this.description = m_description;
 	this.numberOfInput = m_numberOfInput;
 	this.numberOfReference = m_numberOfReference;
-	this.p_value = p.toExponential(5);
+	this.p = p;
 }
 
 function splitStringToGeneList(str){
@@ -366,11 +358,19 @@ function splitStringToGeneList(str){
 }
 
 function appendOntologyToRow(obj){
-	
 	let tr1 = document.createElement('tr');
-	for (let x in obj) {
+	let atts = [
+		obj.ontologyId,
+		obj.ontologyName,
+		obj.description,
+		obj.numberOfInput,
+		obj.numberOfReference,
+		obj.p.toExponential(5)
+	];
+
+	for (let att of atts) {
 		let td = document.createElement('td');
-		let node = document.createTextNode(obj[x]);
+		let node = document.createTextNode(att);
 		td.appendChild(node);
 		tr1.appendChild(td);
 	}
