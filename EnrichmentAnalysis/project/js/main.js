@@ -259,7 +259,7 @@ function my_submit(){
 
 			getOntologyData(resultList);
 
-			$('#loading').hide();
+			//$('#loading').hide();
 			$('#results').show();
 		});
 	});
@@ -395,8 +395,10 @@ function appendOntologyToRow(obj){
 }
 
 function getOntologyData(resultList){
+	
+	var length = resultList.length;
+	var count = 0;
 	//append to table
-
 	for(let i of resultList){
 		let j = i;
 		$.ajax({
@@ -424,8 +426,12 @@ function getOntologyData(resultList){
 					//parsed all of resultList, time to view graph
 					viewGraph(raw_graph_data);
 				}
+				count++;
+				if(count == length-1)
+					$('#loading').hide();
 			}
 		});
+		
 	}
 }
 
