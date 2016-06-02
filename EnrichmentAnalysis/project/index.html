@@ -75,6 +75,18 @@
 						<option value="userinput">user's input reference</option>
 					</select>
 				</div>
+				
+				<div id="ontologyCategory_input" class="form-group">
+					<label for="ontologyCategory">
+						GO category
+					</label>
+					<select class="form-control" id="ontologyCategory" onchange="ontologyCategoryChange()">
+						<option value="all">All</option>
+						<option value="cellular_component" selected="selected">Cellular Component</option>
+						<option value="molecular_function">Molecular Function</option>
+						<option value="biological_process">Biological Process</option>
+					</select>
+				</div>
 
 
 				<!--interesting genes div -->
@@ -133,6 +145,7 @@
 								<th>Number in input list</th>
 								<th>Number in BG/Ref</th>
 								<th>p-value</th>
+								<th>type</th>
 							</tr>
 						</thead>
 						<tbody id="result_table">

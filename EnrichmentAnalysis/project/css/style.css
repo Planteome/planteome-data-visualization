@@ -18,12 +18,12 @@
 	width: 100%;
 }
 
-label[for=method], label[for=species], label[for = significance], label[for = queryType]
+label[for=method], label[for=species], label[for = significance], label[for = queryType], label[for = ontologyCategory]
 {
     width: 13%;
 }
 
-#method, #species, #significance, #queryType
+#method, #species, #significance, #queryType, #ontologyCategory
 {
     width: 86%;
 	display: inline-block;

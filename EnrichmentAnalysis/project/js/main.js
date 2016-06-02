@@ -5,6 +5,7 @@ let url_stats = 'http://test.planteome.org/api/statistics/';
 let url_amigo = 'http://test.planteome.org/amigo/';
 let raw_graph_data = [];
 let resultList = [];
+let ontologyCategory ='';
 let sigma_graph;
 
 function initialize(){
@@ -154,10 +155,19 @@ function initialize(){
 	for(let t of taxonList){
 		e_species.appendChild(taxonFactory(t[0],t[1]));
 	}
+	
+	let x = document.getElementById("ontologyCategory").value;
+	ontologyCategory = x;
 }
 
 function my_submit(){
 	show_results = true;
+	
+	//clear the former results
+	//let resultList = [];
+	//let raw_graph_data = [];
+	$('#result_table tr').remove();
+		
 	let str_geneList = document.querySelector('#textarea_geneList').value;
 	if( str_geneList == ''){
 		alert('please input the interesting gene list');
@@ -267,11 +277,16 @@ function my_reset(){
 }
 
 function queryTypeChange(){
-       let x = document.getElementById("queryType").value;
-       if(x == 'userinput')
-               $('#referenceBackground').show();
-       else
-               $('#referenceBackground').hide();
+	let x = document.getElementById("queryType").value;
+	if(x == 'userinput')
+		   $('#referenceBackground').show();
+	else
+		   $('#referenceBackground').hide();
+}
+
+function ontologyCategoryChange(){
+	let x = document.getElementById("ontologyCategory").value;
+	ontologyCategory = x;
 }
 
 //get the overview information from server
@@ -341,6 +356,7 @@ function ontology(m_ontologyName, m_ontologyId,m_description, m_numberOfInput,m_
 	this.numberOfInput = m_numberOfInput;
 	this.numberOfReference = m_numberOfReference;
 	this.p = p;
+	this.ontologyCategory = '';
 }
 
 function splitStringToGeneList(str){
@@ -365,7 +381,8 @@ function appendOntologyToRow(obj){
 		obj.description,
 		obj.numberOfInput,
 		obj.numberOfReference,
-		obj.p.toExponential(5)
+		obj.p.toExponential(5),
+		obj.ontologyCategory
 	];
 
 	for (let att of atts) {
@@ -391,11 +408,14 @@ function getOntologyData(resultList){
 
 				let name = res.results.name;
 				let des = res.results.definition;
-
+				let category = res.results.ontology;
+				
 				j.ontologyName = name;
 				j.description = des;
-
-				appendOntologyToRow(j);
+				j.ontologyCategory = category;
+				
+				if(ontologyCategory=='all' || category ==ontologyCategory)
+					appendOntologyToRow(j);
 
 				//data for visualization
 				raw_graph_data.push(res.results.topology_graph_json);
