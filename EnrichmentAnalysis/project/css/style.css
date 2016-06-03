@@ -37,3 +37,20 @@ label[for=method], label[for=species], label[for = significance], label[for = qu
 	width: 50%;
     display: inline-block;
 }
+
+#resultSummary {
+    padding-bottom: 0px;
+
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+	padding: 1px;
+}
+
+#resultTable_filter{
+	margin-right:15px;
+}
+
+#dataTables_length{
+	margin-left:15px;
+}

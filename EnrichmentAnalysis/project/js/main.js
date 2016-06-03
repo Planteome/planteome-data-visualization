@@ -159,6 +159,7 @@ function initialize(){
 	
 	let x = document.getElementById("ontologyCategory").value;
 	ontologyCategory = x;
+	
 }
 
 function my_submit(){
@@ -505,6 +506,7 @@ function getOntologyData(resultList){
 					$('#loading').hide();
 					$('#downloadBtn').show();
 					createDownloadFile(downloadContent);
+					$('#resultTable').DataTable();
 				}
 			}
 		});
