@@ -6,7 +6,7 @@ let url_amigo = 'http://test.planteome.org/amigo/';
 let raw_graph_data = [];
 let resultList = [];
 let ontologyCategory ='';
-let sigma_graph;
+let sigma_graph = null;
 
 function initialize(){
 	function taxonFactory(name, id){
@@ -161,6 +161,7 @@ function initialize(){
 }
 
 function my_submit(){
+	my_submitReset();
 	show_results = true;
 	
 	//clear the former results
@@ -265,15 +266,26 @@ function my_submit(){
 	});
 }
 
-function my_reset(){
-	show_results = false;
+function my_submitReset(){
 	$('#loading').hide();
 	$('#results').hide();
-	document.querySelector('#textarea_geneList').value = '';
-	document.querySelector('#textarea_backgroundList').value = '';
 	$('#result_table tr').remove();
 	document.querySelector('#result_summary').innerHTML = '';
+
+	//reset globals
+	raw_graph_data = [];
 	resultList = [];
+	if(sigma_graph){
+		sigma_graph.kill();
+		sigma_graph = null;
+	}
+}
+
+function my_reset(){
+	show_results = false;
+	document.querySelector('#textarea_geneList').value = '';
+	document.querySelector('#textarea_backgroundList').value = '';
+	my_submitReset();
 }
 
 function queryTypeChange(){
