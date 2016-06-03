@@ -51,6 +51,6 @@ label[for=method], label[for=species], label[for = significance], label[for = qu
 	margin-right:15px;
 }
 
-#dataTables_length{
+#resultTable_length{
 	margin-left:15px;
 }
