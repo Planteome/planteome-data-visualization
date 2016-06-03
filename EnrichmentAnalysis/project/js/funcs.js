@@ -12,6 +12,11 @@
  *	NOTES:
  *		to be loaded AFTER bundle.js
  */
+ /*jshint esversion: 6 */
+ /*jshint node: true */
+ /*jshint -W080 */
+ /*jshint laxbreak: true */
+ /*globals stats */
 
 (function(){
 	//converts from the four numbers (a,b,c,d)
@@ -229,7 +234,7 @@
 			try {
 				res = method(...kn_vals).toExponential();
 			} catch (e) {
-				res = `err: ${e.name}, ${e.message}`
+				res = `err: ${e.name}, ${e.message}`;
 			}
 			console.log(`\t${method.name}: ${res}`);
 		}
