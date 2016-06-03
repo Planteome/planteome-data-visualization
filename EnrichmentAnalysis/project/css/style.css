@@ -28,3 +28,12 @@ label[for=method], label[for=species], label[for = significance], label[for = qu
     width: 86%;
 	display: inline-block;
 }
+
+#downloadBtn{
+	float:right;
+}
+
+#result_summary{
+	width: 50%;
+    display: inline-block;
+}

@@ -7,6 +7,7 @@ let raw_graph_data = [];
 let resultList = [];
 let ontologyCategory ='';
 let sigma_graph = null;
+let downloadContent = "";
 
 function initialize(){
 	function taxonFactory(name, id){
@@ -162,12 +163,8 @@ function initialize(){
 
 function my_submit(){
 	my_submitReset();
+	initializeDownloadContent();
 	show_results = true;
-	
-	//clear the former results
-	//let resultList = [];
-	//let raw_graph_data = [];
-	$('#result_table tr').remove();
 		
 	let str_geneList = document.querySelector('#textarea_geneList').value;
 	if( str_geneList == ''){
@@ -194,6 +191,9 @@ function my_submit(){
 		document.querySelector('#result_summary').innerHTML = 'the number of input genes is: ' +
 			inputGenesNum + ' <br> the number of background genes is: ' + referenceGenesNum + '<br>';
 
+		//output the input information to download fileCreatedDate
+		appendInputDesicription(inputGenesNum,referenceGenesNum);
+			
 		console.log(ol_data[0]);
 		let ontologyList = ol_data[0].data['gene-to-term-summary-count'];
 
@@ -269,6 +269,7 @@ function my_submit(){
 function my_submitReset(){
 	$('#loading').hide();
 	$('#results').hide();
+	$('#downloadBtn').hide();
 	$('#result_table tr').remove();
 	document.querySelector('#result_summary').innerHTML = '';
 
@@ -406,6 +407,65 @@ function appendOntologyToRow(obj){
 	document.querySelector('#result_table').appendChild(tr1);
 }
 
+function initializeDownloadContent(){
+	downloadContent ="This is the ontology enrichment analysis result created by Planteome"+"\n";
+	var date = new Date();
+	var str = date.toDateString();
+	downloadContent+=str + "\n";
+}
+
+function appendInputDesicription(inputGenesNum, BackgroundGenes){
+	downloadContent += 'the number of input genes is: ' + inputGenesNum + '\n'+
+					   'the number of background genes is: ' + BackgroundGenes + '\n';
+	
+	downloadContent +="Each column menas:" +'\n'
+	+ "1 Ontology Database ID" +"\n"
+	+ "2 Ontology Name" +"\n"
+	+ "3 number of genes annotated to the ontology in input" +"\n"
+	+ "4 number of genes annotated to the ontology in background" +"\n"
+	+ "5 p-value" +"\n"
+	+ "6 Ontology Category" +"\n"
+	+ "7 Ontology description" +"\n\n";
+	
+}
+
+function appendOntologyToDownload(obj){
+	let atts = [
+		obj.ontologyId,
+		obj.ontologyName,
+		obj.numberOfInput,
+		obj.numberOfReference,
+		obj.p.toExponential(5),
+		obj.ontologyCategory,
+		obj.description,
+	];
+	
+	for (let att of atts) {
+		downloadContent += att +"\t";
+	}
+	downloadContent += "\n";
+}
+
+function createDownloadFile(data){
+	var textFile = null;
+	var makeTextFile = function (text) {
+	var data = new Blob([text], {type: 'text/plain'});
+
+	// If we are replacing a previously generated file we need to
+	// manually revoke the object URL to avoid memory leaks.
+	if (textFile !== null) {
+	  window.URL.revokeObjectURL(textFile);
+	}
+
+	textFile = window.URL.createObjectURL(data);
+
+	return textFile;
+	};
+
+	var link = document.getElementById('downloadBtn');
+	link.href = makeTextFile(data);
+}
+
 function getOntologyData(resultList){
 	
 	var length = resultList.length;
@@ -428,8 +488,10 @@ function getOntologyData(resultList){
 				j.description = des;
 				j.ontologyCategory = category;
 				
-				if(ontologyCategory=='all' || category ==ontologyCategory)
+				if(ontologyCategory=='all' || category ==ontologyCategory){
 					appendOntologyToRow(j);
+					appendOntologyToDownload(j);
+				}
 
 				//data for visualization
 				raw_graph_data.push(res.results.topology_graph_json);
@@ -439,8 +501,11 @@ function getOntologyData(resultList){
 					viewGraph(raw_graph_data);
 				}
 				count++;
-				if(count == length-1)
+				if(count == length-1){
 					$('#loading').hide();
+					$('#downloadBtn').show();
+					createDownloadFile(downloadContent);
+				}
 			}
 		});
 		
