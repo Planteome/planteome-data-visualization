@@ -1,0 +1,10 @@
+{
+	"name": "planteome-data-visualization",
+	"devDependences": {
+	  "jshint": "latest",
+	  "browserify": "latest"
+	},
+	"scripts": {
+	  "test": "jshint EnrichmentAnalysis/project/js/funcs.js"
+	}
+}
