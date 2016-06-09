@@ -395,7 +395,7 @@ function appendOntologyToRow(obj){
 		obj.description,
 		obj.numberOfInput,
 		obj.numberOfReference,
-		obj.p.toExponential(5),
+		obj.p.toExponential(4),
 		obj.ontologyCategory
 	];
 

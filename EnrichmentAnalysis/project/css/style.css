@@ -54,3 +54,7 @@ label[for=method], label[for=species], label[for = significance], label[for = qu
 #resultTable_length{
 	margin-left:15px;
 }
+
+.pvalue {
+	width:51px;
+}
