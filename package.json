@@ -1,0 +1,9 @@
+{
+  "name": "planteome-data-visualization",
+  "devDependencies": {
+    "jshint": "^2.9.2"
+  },
+  "scripts": {
+    "test": "jshint EnrichmentAnalysis/project/js/funcs.js"
+  }
+}
