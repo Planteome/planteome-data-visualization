@@ -8,6 +8,7 @@ let resultList = [];
 let ontologyCategory ='';
 let sigma_graph = null;
 let downloadContent = "";
+let flag_finish = false;
 
 function initialize(){
 	function taxonFactory(name, id){
@@ -194,7 +195,7 @@ function my_submit(){
 
 		//output the input information to download fileCreatedDate
 		appendInputDesicription(inputGenesNum,referenceGenesNum);
-			
+		console.log("return from gene to terms")
 		console.log(ol_data[0]);
 		let ontologyList = ol_data[0].data['gene-to-term-summary-count'];
 
@@ -262,7 +263,7 @@ function my_submit(){
 			getOntologyData(resultList);
 
 			//$('#loading').hide();
-			$('#results').show();
+			//$('#results').show();
 		});
 	});
 }
@@ -340,6 +341,7 @@ function getGenesNumInRefFromOntologys(ontologyList){
 	}
 	data += 'taxon=3702';
 
+	console.log("the send of term to genes");
 	console.log(link);
 
 	return $.ajax({
@@ -497,22 +499,46 @@ function getOntologyData(resultList){
 				//data for visualization
 				raw_graph_data.push(res.results.topology_graph_json);
 
-				if(raw_graph_data.length == resultList.length){
+/* 				if(raw_graph_data.length == resultList.length){
 					//parsed all of resultList, time to view graph
-					viewGraph(raw_graph_data);
-				}
+					//viewGraph(raw_graph_data);
+					visViewGraph(raw_graph_data);
+				} */
 				count++;
-				if(count == length-1){
+/* 				if(count == length-1){
 					$('#loading').hide();
 					$('#downloadBtn').show();
 					createDownloadFile(downloadContent);
 					$('#resultTable').DataTable();
-				}
+				} */
 			}
+		}).done(function(){
+			if(count == length-1){
+				$('#loading').hide();
+				$('#downloadBtn').show();
+				createDownloadFile(downloadContent);
+				$('#resultTable').DataTable();
+				$('#results').show();
+				$('#btn_vis').show();
+		}
+		
 		});
 		
 	}
 }
+
+function visualize(){
+	
+	sessionStorage.setItem('graphData', JSON.stringify(raw_graph_data));
+	sessionStorage.setItem('resultList', JSON.stringify(resultList));
+	
+	window.open("./visualization.html");
+	console.log('vis opened');
+
+}
+
+
+
 
 function viewGraph(raw_data){
 	//we have alot of duplicate nodes/edges,

@@ -58,3 +58,7 @@ label[for=method], label[for=species], label[for = significance], label[for = qu
 .pvalue {
 	width:51px;
 }
+
+.helpBtn{
+	float:right;
+}
