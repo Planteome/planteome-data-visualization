@@ -62,3 +62,7 @@ label[for=method], label[for=species], label[for = significance], label[for = qu
 .helpBtn{
 	float:right;
 }
+
+#sigma_search_input {
+	width : 100%;
+}

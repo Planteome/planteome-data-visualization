@@ -1,5 +1,7 @@
 let raw_graph_data;
 let resultList;
+var NodesProperties = {};
+
 
 function loadView(){
 	
@@ -93,33 +95,20 @@ function visViewGraph(raw_data){
 	//we want to make sure not to get NaNs when using this
 	//in the denominator
 	let p_worst = 0.00000001;
-	for(let r of resultList){
-		//console.log(r.ontologyId);
-		if(r.p > p_worst){
-			p_worst = r.p;
-		}
-	}
-	console.log(`pworst: ${p_worst}`);
 
-	let sqrt_nodes = Math.floor(Math.sqrt(n_arr.length));
 	
-	var max_e_count = 0;
-	var min_e_count = 10000;
 	for(let i in n_arr){
 		//the more edges with this node,
 		//the larger it will be
 		//to signify importance
+		
 		let e_count = 0;
 		for(let e of e_arr){
 			if(e.to == n_arr[i].id || e.from == n_arr[i].id){
 				e_count++;
 			}
 		}
-	
-		if(e_count > max_e_count)
-			max_e_count = e_count;
-		if(e_count < min_e_count)
-			min_e_count = e_count;
+
 	
 		//try to get the term's pvalue
 		let p_value = null;
@@ -134,31 +123,39 @@ function visViewGraph(raw_data){
 		//if we didn't calculate a p_value, then just give it the color blue
 		
 		if(p_value){
-
-			let alpha = 0.3 + ((p_worst - p_value)/p_worst)*0.7;
-			n_arr[i].color = 'rgba(255,0,0,${alpha})';
+			if(p_value > p_worst)
+				p_worst = p_value;
 		}
 		else{
-			n_arr[i].color = `null`;
+			p_value = -1;
 		}
-		
-		//size = influence = significance in the force layout alg
-		//we get alot of nodes, so make it small
-		n_arr[i].size = Math.sqrt(e_count * 1.0) * 0.1;
 
-		//we need to initialize the node's location to begin the force layout
-		//arrange in a square, starting at the top left, going across, then down
-		//n_arr[i].x = Math.floor(i % sqrt_nodes);
-		//n_arr[i].y = Math.floor(i / sqrt_nodes);
+		var propertyName = n_arr[i].id;
+		var propertyItem =  {edgeCount: e_count, pvalue: p_value};
+		NodesProperties[propertyName] = propertyItem;
 	}
+	
+	//console.log(`pworst: ${p_worst}`);
+	//console.log(NodesProperties);
+	
 	
 	var vis_nodes = new vis.DataSet();
 
 	for(let n of n_arr){
+		
 		vis_nodes.add({
 			id: n.id,
 			label: n.label,
+			value: NodesProperties[n.id].edgeCount,
+			title: n.id,
 		});
+		
+		//update the colors of nodes
+		if(NodesProperties[n.id].pvalue != -1){
+			let c = getColorFromPalue(NodesProperties[n.id].pvalue);
+			NodesProperties[n.id].color = c;
+			vis_nodes.update({id: n.id,color: c});
+		}
 	}
 	
 	// create an array with edges
@@ -184,33 +181,68 @@ function visViewGraph(raw_data){
 		
 		var options = {
 			nodes:{
-			  shape:'dot',
-			  size: 20,
-			  color:{
-				border: '#2B7CE9',
-				background:'#D2E5FF',
-			  },
-			  font:{
-				color:'#343434',
-				size: 10,
-			  },
+				shape:'dot',
+				size: 20,
+				
+				color: {
+					border: '#2B7CE9',
+					background: '#97C2FC',
+				},
+				
+				scaling: {
+					min: 10,
+					max: 100,
+					label: {
+						enabled: false,
+						min: 14,
+						max: 30,
+						maxVisible: 30,
+						drawThreshold: 5
+					}
+				},			
+				font:{
+					color:'#343434',
+					size: 10,
+				},
 			},
+
+			
 			edges:{
 				smooth:{
 					type:'continuous'
 				},
 			},
+			
 			layout:{
 				improvedLayout:false,
 			},
+			
 			physics: 
-			{ 
+			{        
+				barnesHut: {
+					gravitationalConstant: -10000,
+					centralGravity: 0.3,
+					springLength: 95,
+					springConstant: 0.04,
+					damping: 0.09,
+					avoidOverlap: 0
+				},
+				forceAtlas2Based: {
+				  gravitationalConstant: -200,
+				  centralGravity: 0.01,
+				  springConstant: 0.08,
+				  springLength: 100,
+				  damping: 0.4,
+				  avoidOverlap: 0
+				},
+				solver: 'barnesHut',
 				stabilization: false,
 			},
+			
 			interaction: {
 				tooltipDelay: 200,
 				hideEdgesOnDrag: true
-			}
+			},
 		};
 		
 		network = new vis.Network(container, data, options);
@@ -218,6 +250,11 @@ function visViewGraph(raw_data){
 		allNodes = vis_nodes.get({returnType:"Object"});
 		
 		network.on("click",neighbourhoodHighlight);
+		
+		// add event listeners
+		network.on('select', function (params) {
+			document.getElementById('selection').innerHTML = 'Selection: ' + params.nodes;
+		});
 	}
 	
 	var allNodes;
@@ -276,8 +313,14 @@ function visViewGraph(raw_data){
 		}
 		else if (highlightActive === true) {
 			// reset all nodes
+			
 			for (var nodeId in allNodes) {
-				allNodes[nodeId].color = {border: '#2B7CE9',background:'#D2E5FF'};
+				
+				if(NodesProperties[nodeId].pvalue!=-1)
+					allNodes[nodeId].color = NodesProperties[nodeId].color;
+				else
+					allNodes[nodeId].color ={border: '#2B7CE9',background:'#D2E5FF'};
+				
 				if (allNodes[nodeId].hiddenLabel !== undefined) {
 				  allNodes[nodeId].label = allNodes[nodeId].hiddenLabel;
 				  allNodes[nodeId].hiddenLabel = undefined;
@@ -316,25 +359,52 @@ function visViewGraph(raw_data){
 	//searches the graph for the id in the input box,
 	//and goes to it if its found
 	function searchGraph(){
+		
 		let id = document.querySelector('#sigma_search_input').value;
 
 		if(id == undefined || id == null){
 			throw new Error('No node given!');
 		}
 
-		let node = null;
-		for(let n of sigma_graph.graph.nodes()){
-			if(n.id == id){
-				node = n;
-				break;
+		var options = {
+			scale: 3.0,
+			animation: {
+				        
+			duration: 1000,
+			easingFunction: 'easeInOutQuad',
 			}
-		}
+		};
 
-		if(node == null){
-			throw new Error('No node found :(');
+      network.focus(id, options);
+    
+	}
+	
+	function getColorFromPalue(p_value){
+		let alpha = ((p_worst - p_value)/p_worst);
+		//console.log(alpha);
+		
+		let d = 0;
+		var c;
+/* 		if(alpha < 0.5){
+			d = 255 - 2*alpha*255;
+			c = 'rgba(0,0,'+d.toString()+',1.0)';
+			//vis_nodes.update({id: n.id, color: c});
+			//n_arr[i].color = 'rgba(0,0,${d},1.0)';
 		}
+		else{
+			d = 2*(alpha- 0.5)*255;
+			c = 'rgba('+d.toString()+',0,0,1.0)';
+			//vis_nodes.update({id: n.id,color: c});
+			//n_arr[i].color = 'rgba(${d},0,0,1.0)';
+		} */
+		
 
-		moveCamera(node);
+		d = Math.floor(255 - alpha*255);
+		//console.log(d);
+		c = 'rgba(255,'+d.toString()+',0,1.0)';
+		
+		//return 'rgba(255,0,0,1.0)';
+		return c;
 	}
 	
   	//add button listeners
@@ -350,5 +420,4 @@ function visViewGraph(raw_data){
 	let awesomplete = new Awesomplete(search_input, awe_list);
 	search_input.parentElement.classList.add('form-control');
 	search_input.parentElement.style.padding = '0px';
-	search_input.style.width = '100%';
 }

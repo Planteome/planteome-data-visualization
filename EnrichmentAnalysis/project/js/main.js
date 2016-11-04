@@ -498,6 +498,20 @@ function getOntologyData(resultList){
 
 				//data for visualization
 				raw_graph_data.push(res.results.topology_graph_json);
+				
+				
+				// "topology_graph_json" :
+				//ontology: JSON blob form of the local relation transitivity graph. Uses various relations (including regulates, occurs in, capable_of).
+				
+				//"regulates_transitivity_graph_json"
+				//ontology: JSON blob form of all immediate neighbors of the term.
+				
+				//"neighborhood_graph_json" 
+				//ontology: JSON blob form of all immediate neighbors of the term; in the case that there are too many neighbors to transport, the number will be artificially reduced.
+				
+				//"neighborhood_limited_graph_json" 
+				//ontology: Only in taxon.
+    
 
 /* 				if(raw_graph_data.length == resultList.length){
 					//parsed all of resultList, time to view graph
