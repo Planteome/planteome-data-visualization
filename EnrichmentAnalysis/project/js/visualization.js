@@ -237,6 +237,7 @@ function visViewGraph(raw_data){
 				},
 				solver: 'barnesHut',
 				stabilization: false,
+				minVelocity:1,
 			},
 			
 			interaction: {
@@ -375,8 +376,8 @@ function visViewGraph(raw_data){
 			}
 		};
 
+	  stopSimulate();
       network.focus(id, options);
-    
 	}
 	
 	function getColorFromPalue(p_value){

@@ -57,7 +57,7 @@
 					</p>
 					<br/-->
 					<div class="input-group">
-						<input id="sigma_search_input" type="text" class="" placeholder="ID to search for...">
+						<input id="sigma_search_input" type="text" class="form-control" placeholder="Input Ontology name to locate and search its ID...">
 						<span class="input-group-btn">
 							<button id="sigma_search_submit" class="btn btn-default" type="button">Go</button>
 						</span>
@@ -74,11 +74,17 @@
 				</div>
 			</div>
 			
+			<button type="button" id="btn_refresh" class="btn btn-primary" onclick="loadView()">Refresh</button>
+			<br/>
+			
 			<p id="selection"></p>
 			<br/>
 			
-			<button type="button" id="btn_refresh" class="btn btn-primary" onclick="loadView()">Refresh</button>
-			<br/>
+			<!--  the tree view of one node -->
+			<div class="panel-body">
+				<div id="vis_graph_tree" class="container sigma"></div>
+			</div>
+
 			
 			<!--footer of the page -->
 			<footer>

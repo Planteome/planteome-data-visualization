@@ -6,11 +6,34 @@ let url_amigo = 'http://test.planteome.org/amigo/';
 let raw_graph_data = [];
 let resultList = [];
 let ontologyCategory ='';
-let sigma_graph = null;
 let downloadContent = "";
-let flag_finish = false;
+var table;
+
+function ontology(m_ontologyName, m_ontologyId,m_description, m_numberOfInput,m_numberOfReference,p){
+	if(m_ontologyName === undefined)
+		m_ontologyName='';
+	if(m_ontologyId === undefined)
+		m_ontologyId='';
+	if(m_description === undefined)
+		m_description='';
+	if(m_numberOfInput === undefined)
+		m_numberOfInput=0;
+	if(m_numberOfReference === undefined)
+		m_numberOfReference=0;
+	if(p === undefined)
+		p=0;
+
+	this.ontologyId = JSON.parse(JSON.stringify(m_ontologyId));
+	this.ontologyName = '';
+	this.description = m_description;
+	this.numberOfInput = m_numberOfInput;
+	this.numberOfReference = m_numberOfReference;
+	this.p = p;
+	this.ontologyCategory = '';
+}
 
 function initialize(){
+
 	function taxonFactory(name, id){
 		let e = document.createElement('option');
 		e.value = id;
@@ -153,6 +176,329 @@ function initialize(){
 		'Zea_mays', '4577',
 		*/
 
+	document.getElementById("help").innerHTML = 
+	"Please input the accession ID of gene products. e.g.:<br/>"+
+	"TAIR:locus:1005716561 <br/>"+
+	"TAIR:locus:2031476<br/> " +
+	"TAIR:locus:2043067<br/> " +
+	"TAIR:locus:2044851<br/> " +
+	"TAIR:locus:2012612<br/> " +
+	"TAIR:locus:2027483<br/> " +
+	"TAIR:locus:2202810<br/> " +
+	"TAIR:locus:2037970<br/> " +
+	"TAIR:locus:2018605<br/> " +
+	"TAIR:locus:2200873<br/> " +
+	"TAIR:locus:2195155<br/> " +
+	"TAIR:locus:2031576<br/> " +
+	"TAIR:locus:2031561<br/> " +
+	"TAIR:locus:2040555<br/> " +
+	"TAIR:locus:2061753<br/> " +
+	"TAIR:locus:2039712<br/> " +
+	"TAIR:locus:2052432<br/> " +
+	"TAIR:locus:2054982<br/> " +
+	"TAIR:locus:2094508<br/> " +
+	"TAIR:locus:2085246<br/> " +
+	"TAIR:locus:2084036<br/> " +
+	"TAIR:locus:2100611<br/> " +
+	"TAIR:locus:2124978<br/>"+
+	"TAIR:locus:2117627     <br/>"+
+	"TAIR:locus:2167042     <br/>"+
+	"TAIR:locus:2153162     <br/>"+
+	"TAIR:locus:2175841     <br/>"+
+	"TAIR:locus:504954689   <br/>"+
+	"TAIR:locus:2826195     <br/>"+
+	"TAIR:locus:2193997     <br/>"+
+	"TAIR:locus:2193997     <br/>"+
+	"TAIR:locus:2058324     <br/>"+
+	"TAIR:locus:2051229     <br/>"+
+	"TAIR:locus:2828051     <br/>"+
+	"TAIR:locus:2053501     <br/>"+
+	"TAIR:locus:2049862     <br/>"+
+	"TAIR:locus:2050756     <br/>"+
+	"TAIR:locus:2078633     <br/>"+
+	"TAIR:locus:2084988     <br/>"+
+	"TAIR:locus:2084988     <br/>"+
+	"TAIR:locus:2075735     <br/>"+
+	"TAIR:locus:2080692     <br/>"+
+	"TAIR:locus:2081546     <br/>"+
+	"TAIR:locus:2079914     <br/>"+
+	"TAIR:locus:2098821     <br/>"+
+	"TAIR:locus:4515103291  <br/>"+
+	"TAIR:locus:2117497     <br/>"+
+	"TAIR:locus:2175428     <br/>"+
+	"TAIR:locus:2180912     <br/>"+
+	"TAIR:locus:2160452     <br/>"+
+	"TAIR:locus:2152773     <br/>"+
+	"TAIR:locus:2149579     <br/>"+
+	"TAIR:locus:2159486     <br/>"+
+	"TAIR:locus:504954705    <br/>"+
+	"TAIR:locus:2185485      <br/>"+
+	"TAIR:locus:504954755    <br/>"+
+	"TAIR:locus:2201786      <br/>"+
+	"TAIR:locus:2206300      <br/>"+
+	"TAIR:locus:2042331      <br/>"+
+	"TAIR:locus:2090285      <br/>"+
+	"TAIR:locus:2123256      <br/>"+
+	"TAIR:locus:2181216      <br/>"+
+	"TAIR:locus:2168968      <br/>"+
+	"TAIR:locus:2036546      <br/>"+
+	"TAIR:locus:2036853      <br/>"+
+	"TAIR:locus:2058939      <br/>"+
+	"TAIR:locus:1005716578   <br/>"+
+	"TAIR:locus:2094063      <br/>"+
+	"TAIR:locus:2120618      <br/>"+
+	"TAIR:locus:2157849      <br/>"+
+	"TAIR:locus:2007422      <br/>"+
+	"TAIR:locus:2033548      <br/>"+
+	"TAIR:locus:2011962      <br/>"+
+	"TAIR:locus:2011962      <br/>"+
+	"TAIR:locus:2030280      <br/>"+
+	"TAIR:locus:2030280      <br/>"+
+	"TAIR:locus:2019627      <br/>"+
+	"TAIR:locus:2199772      <br/>"+
+	"TAIR:locus:2064801      <br/>"+
+	"TAIR:locus:2064821      <br/>"+
+	"TAIR:locus:2050620      <br/>"+
+	"TAIR:locus:2078991      <br/>"+
+	"TAIR:locus:2080492      <br/>"+
+	"TAIR:locus:2080492      <br/>"+
+	"TAIR:locus:2119515      <br/>"+
+	"TAIR:locus:504954871    <br/>"+
+	"TAIR:locus:2149443      <br/>"+
+	"TAIR:locus:2164381      <br/>"+
+	"TAIR:locus:2138743      <br/>"+
+	"TAIR:locus:2138718      <br/>"+
+	"TAIR:locus:2031895      <br/>"+
+	"TAIR:locus:2065553      <br/>"+
+	"TAIR:locus:2125274      <br/>"+
+	"TAIR:locus:2166424      <br/>"+
+	"TAIR:locus:2166424      <br/>"+
+	"TAIR:locus:2028825      <br/>"+
+	"TAIR:locus:2039410      <br/>"+
+	"TAIR:locus:2065939      <br/>"+
+	"TAIR:locus:2039109      <br/>"+
+	"TAIR:locus:2097750      <br/>"+
+	"TAIR:locus:2097658      <br/>"+
+	"TAIR:locus:2089005      <br/>"+
+	"TAIR:locus:2077715      <br/>"+
+	"TAIR:locus:2137717      <br/>"+
+	"TAIR:locus:2152840      <br/>"+
+	"TAIR:locus:2148216      <br/>"+
+	"TAIR:locus:2168586      <br/>"+
+	"TAIR:locus:2007467      <br/>"+
+	"TAIR:locus:2060837      <br/>"+
+	"TAIR:locus:2826180      <br/>"+
+	"TAIR:locus:2079777      <br/>"+
+	"TAIR:locus:2135947      <br/>"+
+	"TAIR:locus:2137380      <br/>"+
+	"TAIR:locus:2143676      <br/>"+
+	"TAIR:locus:2079797      <br/>"+
+	"TAIR:locus:2155593      <br/>"+
+	"TAIR:locus:1005716561   <br/>"+
+	"TAIR:locus:2030482      <br/>"+
+	"TAIR:locus:2196919      <br/>"+
+	"TAIR:locus:2008698      <br/>"+
+	"TAIR:locus:2205871      <br/>"+
+	"TAIR:locus:2030648      <br/>"+
+	"TAIR:locus:2036761      <br/>"+
+	"TAIR:locus:2014574      <br/>"+
+	"TAIR:locus:2031407      <br/>"+
+	"TAIR:locus:2034250      <br/>"+
+	"TAIR:locus:2057243      <br/>"+
+	"TAIR:locus:2066185      <br/>"+
+	"TAIR:locus:2043818      <br/>"+
+	"TAIR:locus:2055552      <br/>"+
+	"TAIR:locus:1009023243   <br/>"+
+	"TAIR:locus:2080717      <br/>"+
+	"TAIR:locus:2088743      <br/>"+
+	"TAIR:locus:2103391      <br/>"+
+	"TAIR:locus:2099192      <br/>"+
+	"TAIR:locus:2122940      <br/>"+
+	"TAIR:locus:2122975      <br/>"+
+	"TAIR:locus:2127948      <br/>"+
+	"TAIR:locus:2126377      <br/>"+
+	"TAIR:locus:2160722      <br/>"+
+	"TAIR:locus:2183394      <br/>"+
+	"TAIR:locus:2148052      <br/>"+
+	"TAIR:locus:2167761      <br/>"+
+	"TAIR:locus:2153358      <br/>"+
+	"TAIR:locus:2152541      <br/>"+
+	"TAIR:locus:2152541      <br/>"+
+	"TAIR:locus:2152556      <br/>"+
+	"TAIR:locus:2152556      <br/>"+
+	"TAIR:locus:2151656      <br/>"+
+	"TAIR:locus:2046901      <br/>"+
+	"TAIR:locus:2046901      <br/>"+
+	"TAIR:locus:2053573      <br/>"+
+	"TAIR:locus:2079379      <br/>"+
+	"TAIR:locus:2130080      <br/>"+
+	"TAIR:locus:2140005      <br/>"+
+	"TAIR:locus:2140005      <br/>"+
+	"TAIR:locus:2170174      <br/>"+
+	"TAIR:locus:2158626      <br/>"+
+	"TAIR:locus:505006113    <br/>"+
+	"TAIR:locus:505006113    <br/>"+
+	"TAIR:locus:2034516      <br/>"+
+	"TAIR:locus:2196287      <br/>"+
+	"TAIR:locus:2016099      <br/>"+
+	"TAIR:locus:2016099      <br/>"+
+	"TAIR:locus:2049470      <br/>"+
+	"TAIR:locus:1005716545   <br/>"+
+	"TAIR:locus:1005716545   <br/>"+
+	"TAIR:locus:2129500      <br/>"+
+	"TAIR:locus:2129500      <br/>"+
+	"TAIR:locus:2116422      <br/>"+
+	"TAIR:locus:2145382      <br/>"+
+	"TAIR:locus:2145382      <br/>"+
+	"TAIR:locus:2163946      <br/>"+
+	"TAIR:locus:2116422      <br/>"+
+	"TAIR:locus:2163011      <br/>"+
+	"TAIR:locus:2174160      <br/>"+
+	"TAIR:locus:2194559      <br/>"+
+	"TAIR:locus:2032382      <br/>"+
+	"TAIR:locus:2025956      <br/>"+
+	"TAIR:locus:2020563      <br/>"+
+	"TAIR:locus:2117512      <br/>"+
+	"TAIR:locus:2174567      <br/>"+
+	"TAIR:locus:2194559      <br/>"+
+	"TAIR:locus:2032382      <br/>"+
+	"TAIR:locus:2025956      <br/>"+
+	"TAIR:locus:2020563      <br/>"+
+	"TAIR:locus:2193977      <br/>"+
+	"TAIR:locus:2091995      <br/>"+
+	"TAIR:locus:4515102612   <br/>"+
+	"TAIR:locus:2038786      <br/>"+
+	"TAIR:locus:2055600      <br/>"+
+	"TAIR:locus:2083579      <br/>"+
+	"TAIR:locus:2136393      <br/>"+
+	"TAIR:locus:2024740      <br/>"+
+	"TAIR:locus:2024745      <br/>"+
+	"TAIR:locus:2018329      <br/>"+
+	"TAIR:locus:2010657      <br/>"+
+	"TAIR:locus:2207225      <br/>"+
+	"TAIR:locus:2033092      <br/>"+
+	"TAIR:locus:2033092      <br/>"+
+	"TAIR:locus:2033097      <br/>"+
+	"TAIR:locus:2205135      <br/>"+
+	"TAIR:locus:2201806      <br/>"+
+	"TAIR:locus:2036024      <br/>"+
+	"TAIR:locus:2012350      <br/>"+
+	"TAIR:locus:2012763      <br/>"+
+	"TAIR:locus:2197364      <br/>"+
+	"TAIR:locus:2027352      <br/>"+
+	"TAIR:locus:2008960      <br/>"+
+	"TAIR:locus:2205314      <br/>"+
+	"TAIR:locus:2006872      <br/>"+
+	"TAIR:locus:2036194      <br/>"+
+	"TAIR:locus:2194075      <br/>"+
+	"TAIR:locus:2027453      <br/>"+
+	"TAIR:locus:2035030      <br/>"+
+	"TAIR:locus:2016392      <br/>"+
+	"TAIR:locus:2013134      <br/>"+
+	"TAIR:locus:2198581      <br/>"+
+	"TAIR:locus:2201138      <br/>"+
+	"TAIR:locus:505006138    <br/>"+
+	"TAIR:locus:2028862      <br/>"+
+	"TAIR:locus:2199917      <br/>"+
+	"TAIR:locus:2032357      <br/>"+
+	"TAIR:locus:2200660      <br/>"+
+	"TAIR:locus:2202805      <br/>"+
+	"TAIR:locus:2205774      <br/>"+
+	"TAIR:locus:2016004      <br/>"+
+	"TAIR:locus:2196899      <br/>"+
+	"TAIR:locus:2029954      <br/>"+
+	"TAIR:locus:2013628      <br/>"+
+	"TAIR:locus:2015726      <br/>"+
+	"TAIR:locus:2034522      <br/>"+
+	"TAIR:locus:2031735      <br/>"+
+	"TAIR:locus:2031740      <br/>"+
+	"TAIR:locus:2038031      <br/>"+
+	"TAIR:locus:2006892      <br/>"+
+	"TAIR:locus:2012728      <br/>"+
+	"TAIR:locus:2008129      <br/>"+
+	"TAIR:locus:2017597      <br/>"+
+	"TAIR:locus:2009665      <br/>"+
+	"TAIR:locus:2197061      <br/>"+
+	"TAIR:locus:2020018      <br/>"+
+	"TAIR:locus:2011045      <br/>"+
+	"TAIR:locus:2205682      <br/>"+
+	"TAIR:locus:2020492      <br/>"+
+	"TAIR:locus:2012050      <br/>"+
+	"TAIR:locus:2027605      <br/>"+
+	"TAIR:locus:2206520      <br/>"+
+	"TAIR:locus:2025961      <br/>"+
+	"TAIR:locus:2010796      <br/>"+
+	"TAIR:locus:2202334      <br/>"+
+	"TAIR:locus:2020638      <br/>"+
+	"TAIR:locus:2020628      <br/>"+
+	"TAIR:locus:2027290      <br/>"+
+	"TAIR:locus:2018416      <br/>"+
+	"TAIR:locus:2196020      <br/>"+
+	"TAIR:locus:2195955      <br/>"+
+	"TAIR:locus:2029471      <br/>"+
+	"TAIR:locus:2032130      <br/>"+
+	"TAIR:locus:2037543      <br/>"+
+	"TAIR:locus:2206400      <br/>"+
+	"TAIR:locus:2016214      <br/>"+
+	"TAIR:locus:2041160      <br/>"+
+	"TAIR:locus:2054090      <br/>"+
+	"TAIR:locus:2046931      <br/>"+
+	"TAIR:locus:2046911      <br/>"+
+	"TAIR:locus:2042634      <br/>"+
+	"TAIR:locus:2053114      <br/>"+
+	"TAIR:locus:2051930      <br/>"+
+	"TAIR:locus:2051426      <br/>"+
+	"TAIR:locus:2050019      <br/>"+
+	"TAIR:locus:2049319      <br/>"+
+	"TAIR:locus:2060415      <br/>"+
+	"TAIR:locus:2059155      <br/>"+
+	"TAIR:locus:2047565      <br/>"+
+	"TAIR:locus:2046688      <br/>"+
+	"TAIR:locus:2059531      <br/>"+
+	"TAIR:locus:2050286      <br/>"+
+	"TAIR:locus:2057366      <br/>"+
+	"TAIR:locus:2057442      <br/>"+
+	"TAIR:locus:2046163      <br/>"+
+	"TAIR:locus:2065724      <br/>"+
+	"TAIR:locus:504955915    <br/>"+
+	"TAIR:locus:2062545 <br/>" +
+	"TAIR:locus:2060263 <br/>" +
+	"TAIR:locus:2060211 <br/>" +
+	"TAIR:locus:2060285 <br/>" +
+	"TAIR:locus:2060216 <br/>" +
+	"TAIR:locus:2046505 <br/>" +
+	"TAIR:locus:2040864 <br/>" +
+	"TAIR:locus:2044782 <br/>" +
+	"TAIR:locus:2063494 <br/>" +
+	"TAIR:locus:2058729 <br/>" +
+	"TAIR:locus:2057946 <br/>" +
+	"TAIR:locus:2061748 <br/>" +
+	"TAIR:locus:2057145 <br/>" +
+	"TAIR:locus:2064163 <br/>" +
+	"TAIR:locus:2039697 <br/>" +
+	"TAIR:locus:2063947 <br/>" +
+	"TAIR:locus:2063078 <br/>" +
+	"TAIR:locus:2058510 <br/>" +
+	"TAIR:locus:2041036 <br/>" +
+	"TAIR:locus:2040976 <br/>" +
+	"TAIR:locus:2050847 <br/>" +
+	"TAIR:locus:2043358 <br/>" +
+	"TAIR:locus:2102082 <br/>" +
+	"TAIR:locus:2074572 <br/>" +
+	"TAIR:locus:2097700 <br/>" +
+	"TAIR:locus:2103040 <br/>" +
+	"TAIR:locus:2082450 <br/>" +
+	"TAIR:locus:2081071 <br/>" +
+	"TAIR:locus:2098545 <br/>" +
+	"TAIR:locus:2079661 <br/>" +
+	"TAIR:locus:2091122 <br/>" +
+	"TAIR:locus:2085089 <br/>" +
+	"TAIR:locus:2103192 <br/>" +
+	"TAIR:locus:2087695 <br/>" +
+	"TAIR:locus:2087964 <br/>" +
+	"TAIR:locus:2086370 <br/>" +
+	"TAIR:locus:2094014 <br/>";
+
 	let e_species = document.querySelector('#species');
 	for(let t of taxonList){
 		e_species.appendChild(taxonFactory(t[0],t[1]));
@@ -161,9 +507,43 @@ function initialize(){
 	let x = document.getElementById("ontologyCategory").value;
 	ontologyCategory = x;
 	
+	
+	$( document ).ajaxError(function( event, jqxhr, settings, thrownError ) {
+		// ( settings.url == "ajax/missing.html" ) {
+			console.log(event);
+			console.log(jqxhr);
+			console.log(settings);
+			console.log(thrownError);
+			showError("Sorry, there is something wrong with the server and we are trying to solve it...");
+		//}
+	});
+	
+	$(document).ready(function(){
+		table = $('#resultTable').DataTable();
+	});
+	
 }
 
 function my_submit(){
+	
+	function splitStringToGeneList(str){
+		let geneIDList = [];
+		let rex = /[\n\r\t]+/
+		let inputData = str.split(rex);	// Split on carriage return
+		
+		//console.log(inputData);
+		
+		let x;
+		for(x in inputData){
+			let trimmedData = inputData[x].trim();
+			if(trimmedData ==='')
+				continue;
+
+			geneIDList.push(trimmedData);
+		}
+		return geneIDList;
+	}
+	
 	my_submitReset();
 	initializeDownloadContent();
 	show_results = true;
@@ -183,11 +563,17 @@ function my_submit(){
 	$('#loading').show();
 
 	$.when(getOverView(), getOntologyTermsFromGenes(inputGenes)).done(function(overview_data, ol_data){
+		
+		console.log("overview data:");
+		console.log(overview_data);
+		console.log("ontology list data:");
+		console.log(ol_data);
+		
 		if(!show_results){
 			console.log('cancelling terms request due to reset button');
 			return false;
 		}
-
+		
 		let summary = overview_data[0].data;
 		referenceGenesNum = summary['gene-product-count'];
 		document.querySelector('#result_summary').innerHTML = 'the number of input genes is: ' +
@@ -195,8 +581,7 @@ function my_submit(){
 
 		//output the input information to download fileCreatedDate
 		appendInputDesicription(inputGenesNum,referenceGenesNum);
-		console.log("return from gene to terms")
-		console.log(ol_data[0]);
+
 		let ontologyList = ol_data[0].data['gene-to-term-summary-count'];
 
 		$.when(getGenesNumInRefFromOntologys(ontologyList)).done(function(data, textStatus, jqXHR){
@@ -204,11 +589,13 @@ function my_submit(){
 				console.log('cancelling ref request due to reset button');
 				return false;
 			}
+			
+			console.log("Gene Nums Data");
 			console.log(data);
+			
 			let ontologyListRef = data.data['term-to-gene-summary-count'];
-
 			let test_sel = document.querySelector('#method').value;
-			console.log(test_sel);
+			//console.log(test_sel);
 
 			for(let ontology_ID in ontologyList){
 				// K
@@ -258,11 +645,14 @@ function my_submit(){
 				console.log('cancelling table filling due to reset button');
 				return false;
 			}
-			console.log('analysis of data finished');
 
 			getOntologyData(resultList);
-
-			//$('#loading').hide();
+			console.log('analysis of data finished');
+			
+			if(resultList.length == 0){
+				$('#loading').hide();
+				showError("Sorry, there is something wrong with the server... We are fixing it and please come back in the future...")
+			}
 			//$('#results').show();
 		});
 	});
@@ -272,16 +662,18 @@ function my_submitReset(){
 	$('#loading').hide();
 	$('#results').hide();
 	$('#downloadBtn').hide();
-	$('#result_table tr').remove();
+	$('#error').hide();
+	
+	//$('#result_table tr').remove();
+	//$('#resultTable').DataTable();
+	
+	table.clear().draw();
+	
 	document.querySelector('#result_summary').innerHTML = '';
 
 	//reset globals
 	raw_graph_data = [];
 	resultList = [];
-	if(sigma_graph){
-		sigma_graph.kill();
-		sigma_graph = null;
-	}
 }
 
 function my_reset(){
@@ -291,7 +683,7 @@ function my_reset(){
 	my_submitReset();
 }
 
-function queryTypeChange(){
+function onclick_QueryTypeChange(){
 	let x = document.getElementById("queryType").value;
 	if(x == 'userinput')
 		   $('#referenceBackground').show();
@@ -299,7 +691,7 @@ function queryTypeChange(){
 		   $('#referenceBackground').hide();
 }
 
-function ontologyCategoryChange(){
+function onclick_ontologyCategoryChange(){
 	let x = document.getElementById("ontologyCategory").value;
 	ontologyCategory = x;
 }
@@ -310,7 +702,10 @@ function getOverView(){
 		type: 'get',
 		url: url_stats + 'overview',
 		dataType: 'json'
-	});
+	})/* .fail(function(){
+		alert("test");
+		
+	}) */;
 }
 
 function getOntologyTermsFromGenes(geneList){
@@ -322,7 +717,7 @@ function getOntologyTermsFromGenes(geneList){
 	}
 	data += 'taxon=3702';
 
-	console.log(link);
+	//console.log(link);
 
 	return $.ajax({
 		type: 'post',
@@ -352,45 +747,103 @@ function getGenesNumInRefFromOntologys(ontologyList){
 	});
 }
 
-function ontology(m_ontologyName, m_ontologyId,m_description, m_numberOfInput,m_numberOfReference,p){
-	if(m_ontologyName === undefined)
-		m_ontologyName='';
-	if(m_ontologyId === undefined)
-		m_ontologyId='';
-	if(m_description === undefined)
-		m_description='';
-	if(m_numberOfInput === undefined)
-		m_numberOfInput=0;
-	if(m_numberOfReference === undefined)
-		m_numberOfReference=0;
-	if(p === undefined)
-		p=0;
 
-	this.ontologyId = JSON.parse(JSON.stringify(m_ontologyId));
-	this.ontologyName = '';
-	this.description = m_description;
-	this.numberOfInput = m_numberOfInput;
-	this.numberOfReference = m_numberOfReference;
-	this.p = p;
-	this.ontologyCategory = '';
-}
+function getOntologyData(resultList){
+	
+	var length = resultList.length;
+	var count = 0;
+	//append to table
+	for(let i of resultList){
+		let j = i;
+		$.ajax({
+			type: 'get',
+			url: url_amigo + 'term/' + j.ontologyId + '/json',
+			dataType: 'json',
+			success: function(res){
+				//console.log(res);
 
-function splitStringToGeneList(str){
-	let geneIDList = [];
-	let inputData = str.split('\n');	// Split on carriage return
-	let x;
-	for(x in inputData){
-		let trimmedData = inputData[x].trim();
-		if(trimmedData ==='')
-			continue;
+				let name = res.results.name;
+				let des = res.results.definition;
+				let category = res.results.ontology;
+				
+				j.ontologyName = name;
+				j.description = des;
+				j.ontologyCategory = category;
+				
+				if(ontologyCategory=='all' || category ==ontologyCategory){
+					appendOntologyToTable(j);
+					appendOntologyToDownload(j);
+				}
 
-		geneIDList.push(inputData[x]);
+				//data for visualization
+				raw_graph_data.push(res.results.topology_graph_json);
+				
+				
+				// "topology_graph_json" :
+				//ontology: JSON blob form of the local relation transitivity graph. Uses various relations (including regulates, occurs in, capable_of).
+				
+				//"regulates_transitivity_graph_json"
+				//ontology: JSON blob form of all immediate neighbors of the term.
+				
+				//"neighborhood_graph_json" 
+				//ontology: JSON blob form of all immediate neighbors of the term; in the case that there are too many neighbors to transport, the number will be artificially reduced.
+				
+				//"neighborhood_limited_graph_json" 
+				//ontology: Only in taxon.
+    
+
+/* 				if(raw_graph_data.length == resultList.length){
+					//parsed all of resultList, time to view graph
+					//viewGraph(raw_graph_data);
+					visViewGraph(raw_graph_data);
+				} */
+				count++;
+/* 				if(count == length-1){
+					$('#loading').hide();
+					$('#downloadBtn').show();
+					createDownloadFile(downloadContent);
+					$('#resultTable').DataTable();
+				} */
+			}
+		}).done(function(){
+			if(count == length-1){
+				createDownloadFile(downloadContent);
+				//$('#resultTable').DataTable();
+				
+				$('#loading').hide();
+				$('#downloadBtn').show();
+				$('#results').show();
+				$('#btn_vis').show();
+		}
+		
+		});
+		
 	}
-	return geneIDList;
 }
 
-function appendOntologyToRow(obj){
-	let tr1 = document.createElement('tr');
+
+function showError(content){
+	
+	$('#error_content').html(content)
+	$('#error').show();
+	$('#loading').hide();
+	
+}
+
+function appendOntologyToTable(obj){
+	
+	table.row.add( [
+			obj.ontologyId,
+			obj.ontologyName,
+			obj.description,
+			obj.numberOfInput,
+			obj.numberOfReference,
+			obj.p.toExponential(4),
+			obj.ontologyCategory
+		] ).draw( false );
+		
+/* 	let tr1 = document.createElement('tr');
+	
 	let atts = [
 		obj.ontologyId,
 		obj.ontologyName,
@@ -407,7 +860,7 @@ function appendOntologyToRow(obj){
 		td.appendChild(node);
 		tr1.appendChild(td);
 	}
-	document.querySelector('#result_table').appendChild(tr1);
+	document.querySelector('#result_table').appendChild(tr1); */
 }
 
 function initializeDownloadContent(){
@@ -469,78 +922,6 @@ function createDownloadFile(data){
 	link.href = makeTextFile(data);
 }
 
-function getOntologyData(resultList){
-	
-	var length = resultList.length;
-	var count = 0;
-	//append to table
-	for(let i of resultList){
-		let j = i;
-		$.ajax({
-			type: 'get',
-			url: url_amigo + 'term/' + j.ontologyId + '/json',
-			dataType: 'json',
-			success: function(res){
-				//console.log(res);
-
-				let name = res.results.name;
-				let des = res.results.definition;
-				let category = res.results.ontology;
-				
-				j.ontologyName = name;
-				j.description = des;
-				j.ontologyCategory = category;
-				
-				if(ontologyCategory=='all' || category ==ontologyCategory){
-					appendOntologyToRow(j);
-					appendOntologyToDownload(j);
-				}
-
-				//data for visualization
-				raw_graph_data.push(res.results.topology_graph_json);
-				
-				
-				// "topology_graph_json" :
-				//ontology: JSON blob form of the local relation transitivity graph. Uses various relations (including regulates, occurs in, capable_of).
-				
-				//"regulates_transitivity_graph_json"
-				//ontology: JSON blob form of all immediate neighbors of the term.
-				
-				//"neighborhood_graph_json" 
-				//ontology: JSON blob form of all immediate neighbors of the term; in the case that there are too many neighbors to transport, the number will be artificially reduced.
-				
-				//"neighborhood_limited_graph_json" 
-				//ontology: Only in taxon.
-    
-
-/* 				if(raw_graph_data.length == resultList.length){
-					//parsed all of resultList, time to view graph
-					//viewGraph(raw_graph_data);
-					visViewGraph(raw_graph_data);
-				} */
-				count++;
-/* 				if(count == length-1){
-					$('#loading').hide();
-					$('#downloadBtn').show();
-					createDownloadFile(downloadContent);
-					$('#resultTable').DataTable();
-				} */
-			}
-		}).done(function(){
-			if(count == length-1){
-				$('#loading').hide();
-				$('#downloadBtn').show();
-				createDownloadFile(downloadContent);
-				$('#resultTable').DataTable();
-				$('#results').show();
-				$('#btn_vis').show();
-		}
-		
-		});
-		
-	}
-}
-
 function visualize(){
 	
 	sessionStorage.setItem('graphData', JSON.stringify(raw_graph_data));
@@ -551,217 +932,3 @@ function visualize(){
 
 }
 
-
-
-
-function viewGraph(raw_data){
-	//we have alot of duplicate nodes/edges,
-	//because each topology graph contains everything connecting
-	//to that individual node (both in and out of node)
-	//use set to filter the dups out
-	let nodes = new Set();
-	let edges = new Set();
-
-	for(let raw_graph of raw_data){
-		let json = JSON.parse(raw_graph);
-
-		//without stringifying the node objects,
-		//we would have to manually check each node/edge to see
-		//if it was a dup or not,
-		//whether we used JS's Sets or just plain Arrays.
-		//stringifying it allows for shallow compare,
-		//which JS's Sets do for us, quickly.
-		//Since our objects that we are stringifying
-		//are really simple, we aren't worried about illegal JSON.
-		for(let n of json.nodes){
-			nodes.add(JSON.stringify({"id":n.id,"label":n.lbl}));
-		}
-
-		for(let e of json.edges){
-			//TODO: add some sort of label for edges using e.pred (predicate, aka method)
-			//note, only one edge between two nodes is allowed
-			edges.add(JSON.stringify({"id":`${e.sub}x${e.obj}`,"source":e.sub,"target":e.obj}));
-		}
-	}
-
-	//now that we have our sets, expand them into the objects
-	let n_arr = [];
-	let e_arr = [];
-	nodes.forEach(n => n_arr.push(JSON.parse(n)));
-	edges.forEach(e => e_arr.push(JSON.parse(e)));
-
-	//get our worst p_value to be used as the far end of the scale
-	//start with just a verrrry small value instead of 0, because
-	//we want to make sure not to get NaNs when using this
-	//in the denominator
-	let p_worst = 0.00000001;
-	for(let r of resultList){
-		//console.log(r.ontologyId);
-		if(r.p > p_worst){
-			p_worst = r.p;
-		}
-	}
-	console.log(`pworst: ${p_worst}`);
-
-	let sqrt_nodes = Math.floor(Math.sqrt(n_arr.length));
-	for(let i in n_arr){
-		//the more edges with this node,
-		//the larger it will be
-		//to signify importance
-		let e_count = 0;
-		for(let e of e_arr){
-			if(e.target == n_arr[i].id || e.source == n_arr[i].id){
-				e_count++;
-			}
-		}
-
-		//try to get the term's pvalue
-		let p_value = null;
-		for(let r of resultList){
-			if(r.ontologyId == n_arr[i].id){
-				p_value = r.p;
-			}
-		}
-
-		//if we calculated a p_value for this term, then we can rate it,
-		//from grayest (least related) to most red (most related)
-		//if we didn't calculate a p_value, then just give it the color blue
-		let hue = p_value ? 3 : 221;
-		//default colour sat = 81
-		let sat = p_value ? 100*((p_worst - p_value)/p_worst) : 100;
-		n_arr[i].color = `hsl(${hue},${sat}%,60%)`;
-
-		//size = influence = significance in the force layout alg
-		//we get alot of nodes, so make it small
-		n_arr[i].size = Math.sqrt(e_count * 1.0) * 0.1;
-
-		//we need to initialize the node's location to begin the force layout
-		//arrange in a square, starting at the top left, going across, then down
-		n_arr[i].x = Math.floor(i % sqrt_nodes);
-		n_arr[i].y = Math.floor(i / sqrt_nodes);
-	}
-
-	let graph = {
-		"nodes": n_arr,
-		"edges": e_arr
-	};
-
-	sigma_graph = new sigma({
-		graph: graph,
-		container: 'sigma_graph',
-		settings: {
-			edgeColor: 'default',
-			//black edges
-			defaultEdgeColor: '#000',
-			defaultNodeColor: '#ec5148',
-		},
-		renderers: [
-			{
-				//make sure its the canvas renderer,
-				//so we all get the same experience
-				container: document.querySelector('#sigma_graph'),
-				type: 'canvas'
-			}
-		]
-	});
-
-	//we have a LARGE graph,
-	//so lets optimize the force layout alg
-	let config = {
-		//this just uses an alg that scales better
-		barnesHutOptimize: true,
-		//default is 1
-		//10 helps alot with responsiveness
-		slowDown: 1,
-		//higher means a jumpier graph but less render calls,
-		//lower means smoother but more render calls
-		iterationsPerRender: 1
-	};
-
-	sigma_graph.startForceAtlas2(config);
-
-	//for a button, to unpause the alg
-	function startAlg(){
-		if(!sigma_graph){
-			return;
-		}
-
-		if(!sigma_graph.isForceAtlas2Running()){
-			sigma_graph.startForceAtlas2();
-		}
-	}
-
-	//for another button, to pause the alg
-	function stopAlg(){
-		if(!sigma_graph){
-			return;
-		}
-
-		if(sigma_graph.isForceAtlas2Running()){
-			sigma_graph.stopForceAtlas2();
-		}
-	}
-
-	//zooms to a specific node
-	function moveCamera(node){
-		let camera = sigma_graph.camera;
-
-		let preTransform = {
-			x: camera.x,
-			y: camera.y,
-			ratio: 0.0625,
-			angle: camera.angle
-		}
-		camera.goTo(preTransform);
-		sigma_graph.refresh();
-
-		let toTransform = {
-			x: node['read_cam0:x'],
-			y: node['read_cam0:y'],
-			ratio: camera.ratio,
-			angle: camera.angle
-		};
-
-		camera.goTo(toTransform);
-		sigma_graph.refresh();
-	}
-
-	//searches the graph for the id in the input box,
-	//and goes to it if its found
-	function searchGraph(){
-		let id = document.querySelector('#sigma_search_input').value;
-
-		if(id == undefined || id == null){
-			throw new Error('No node given!');
-		}
-
-		let node = null;
-		for(let n of sigma_graph.graph.nodes()){
-			if(n.id == id){
-				node = n;
-				break;
-			}
-		}
-
-		if(node == null){
-			throw new Error('No node found :(');
-		}
-
-		moveCamera(node);
-	}
-
-	//add button listeners
-	(document.querySelector('#start_forcelayout')).onclick = startAlg;
-	(document.querySelector('#stop_forcelayout')).onclick = stopAlg;
-	(document.querySelector('#sigma_search_submit')).onclick = searchGraph;
-
-	//set up search input autocomplete
-	let search_input = document.querySelector('#sigma_search_input');
-	let awe_list = {list:[],maxItems:20};
-	resultList.forEach(r => awe_list.list.push({"label":r.ontologyName,"value":r.ontologyId}));
-	console.log(awe_list);
-	let awesomplete = new Awesomplete(search_input, awe_list);
-	search_input.parentElement.classList.add('form-control');
-	search_input.parentElement.style.padding = '0px';
-	search_input.style.width = '100%';
-}

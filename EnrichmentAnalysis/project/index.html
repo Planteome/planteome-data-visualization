@@ -76,7 +76,7 @@
 					<label for="queryType">
 						Query type:
 					</label>
-					<select class="form-control" id="queryType" onchange="queryTypeChange()">
+					<select class="form-control" id="queryType" onchange="onclick_QueryTypeChange()">
 						<option value="background">Gene Ontology Database</option>
 						<option value="userinput">user's input reference</option>
 					</select>
@@ -86,7 +86,7 @@
 					<label for="ontologyCategory">
 						GO category
 					</label>
-					<select class="form-control" id="ontologyCategory" onchange="ontologyCategoryChange()">
+					<select class="form-control" id="ontologyCategory" onchange="onclick_ontologyCategoryChange()">
 						<option value="all">All</option>
 						<option value="cellular_component" selected="selected">Cellular Component</option>
 						<option value="molecular_function">Molecular Function</option>
@@ -100,16 +100,16 @@
 				<div id="interesting_input" class="form-group">
 					<textarea class="form-control" id="textarea_geneList" rows="5" placeholder="please input the interesting genes"></textarea>
 					<button type="button" class="btn btn-default btn-sm helpBtn" data-toggle="collapse" data-target="#help">Help</button>
-					<p id = "help" class="collapse">
-						Please input the accession ID of gene products. e.g.:<br/>
-						TAIR:locus:1005716561<br/>
-						TAIR:locus:2031476<br/>
-						TAIR:locus:2043067<br/>
-						TAIR:locus:2044851<br/>
-						TAIR:locus:2012612
-					</p>
+					<p id = 'help' class='collapse'></p>
 				</div>
-
+				
+				<!--error information-->
+				<div id="error" hidden="true" class="alert alert-danger" role="alert">
+					<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+					<span class="sr-only">Error:</span>
+					<span id= "error_content"> Enter a valid email address</span>
+				</div>
+				
 				<!--reference background div -->
 				<div hidden = "true" id="referenceBackground">
 					<h2>Reference Background</h2>
@@ -126,11 +126,13 @@
 				<button type="button" id="btn_vis" class="btn btn-primary" onclick="visualize()">Visualize</button>
 			</form>
 			<br/>
-			<!--content3 -->
+			
+			<!--processing -->
 			<div id="loading" hidden="true" class="alert alert-warning">
 				<span class="glyphicon glyphicon-refresh spinning"></span> Processing...
 			</div>
 
+			<!--result -->
 			<div hidden="true" id="results">
 				<div class="page-header">
 					<h2>Analysis Result</h2>
@@ -154,13 +156,29 @@
 								<th>type</th>
 							</tr>
 						</thead>
-						<tbody id="result_table">
-						</tbody>
+						<!--tbody id="result_table">
+						</tbody-->
+						
+						<tfoot>
+							<tr>
+								<th>GO ID</th>
+								<th>Name</th>
+								<th>Description</th>
+								<th>Input#</th>
+								<th>Ref#</th>
+								<th class="pvalue">P-val</th>
+								<th>type</th>
+							</tr>
+						</tfoot>
 					</table>
 				</div>
 
 			</div>
 			
+			
+			<!--test--->
+
+	
 			
 			<!--footer of the page -->
 			<footer>
