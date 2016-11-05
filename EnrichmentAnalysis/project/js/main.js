@@ -7,8 +7,12 @@ let raw_graph_data = [];
 let resultList = [];
 let ontologyCategory ='';
 let downloadContent = "";
+let analysisType;
 var table;
+var test_sel;
+var cutoff;
 
+//object Ontology
 function ontology(m_ontologyName, m_ontologyId,m_description, m_numberOfInput,m_numberOfReference,p){
 	if(m_ontologyName === undefined)
 		m_ontologyName='';
@@ -30,6 +34,17 @@ function ontology(m_ontologyName, m_ontologyId,m_description, m_numberOfInput,m_
 	this.numberOfReference = m_numberOfReference;
 	this.p = p;
 	this.ontologyCategory = '';
+}
+
+//object Annotation
+function annotation(m_geneID, m_ontolgoyID) {
+	if(m_geneID === undefined)
+		m_geneID=0;
+	if(m_ontolgoyID === undefined)
+		m_ontolgoyID=0;
+
+    this.geneID = m_geneID;
+    this.ontologyID = m_ontolgoyID;
 }
 
 function initialize(){
@@ -499,6 +514,110 @@ function initialize(){
 	"TAIR:locus:2086370 <br/>" +
 	"TAIR:locus:2094014 <br/>";
 
+	
+	document.getElementById("help_reference").innerHTML = 
+	"Please input the annotations as following:<br/>"+
+"test_0001   GO:0000001</br>"+
+"test_0002   GO:0000001</br>"+
+"test_0003   GO:0000001</br>"+
+"test_0004   GO:0000001</br>"+
+"test_0005   GO:0000001</br>"+
+"test_0006   GO:0000001</br>"+
+"test_0007   GO:0000001</br>"+
+"test_0008   GO:0000001</br>"+
+"test_0009   GO:0000001</br>"+
+"test_0010   GO:0000002</br>"+
+"test_0011   GO:0000002</br>"+
+"test_0012   GO:0000002</br>"+
+"test_0013   GO:0000002</br>"+
+"test_0014   GO:0000002</br>"+
+"test_0015   GO:0000002</br>"+
+"test_0016   GO:0000002</br>"+
+"test_0017   GO:0000003</br>"+
+"test_0018   GO:0000003</br>"+
+"test_0019   GO:0000005</br>"+
+"test_0020   GO:0000006</br>"+
+"test_0021   GO:0000007</br>"+
+"test_0022   GO:0000008</br>"+
+"test_0023   GO:0000009</br>"+
+"test_0024   GO:0000010</br>"+
+"test_0025   GO:0000001</br>"+
+"test_0026   GO:0000001</br>"+
+"test_0027   GO:0000001</br>"+
+"test_0028   GO:0000001</br>"+
+"test_0029   GO:0000002</br>"+
+"test_0030   GO:0000002</br>"+
+"test_0031   GO:0000002</br>"+
+"test_0032   GO:0000018</br>"+
+"test_0033   GO:0000019</br>"+
+"test_0034   GO:0000020</br>"+
+"test_0035   GO:0000021</br>"+
+"test_0036   GO:0000022</br>"+
+"test_0037   GO:0000023</br>"+
+"test_0038   GO:0000024</br>"+
+"test_0039   GO:0000025</br>"+
+"test_0040   GO:0000026</br>"+
+"test_0041   GO:0000027</br>"+
+"test_0042   GO:0000028</br>"+
+"test_0043   GO:0000029</br>"+
+"test_0044   GO:0000030</br>"+
+"test_0045   GO:0000031</br>"+
+"test_0046   GO:0000032</br>"+
+"test_0047   GO:0000033</br>"+
+"test_0048   GO:0000034</br>"+
+"test_0049   GO:0000035</br>"+
+"test_0050   GO:0000036</br>"+
+"test_0051   GO:0000037</br>"+
+"test_0052   GO:0000038</br>"+
+"test_0053   GO:0000039</br>"+
+"test_0054   GO:0000040</br>"+
+"test_0055   GO:0000041</br>"+
+"test_0056   GO:0000042</br>"+
+"test_0057   GO:0000043</br>"+
+"test_0058   GO:0000044</br>"+
+"test_0059   GO:0000045</br>"+
+"test_0060   GO:0000046</br>"+
+"test_0061   GO:0000047</br>"+
+"test_0062   GO:0000048</br>"+
+"test_0063   GO:0000049</br>"+
+"test_0064   GO:0000050</br>"+
+"test_0065   GO:0000051</br>"+
+"test_0066   GO:0000052</br>"+
+"test_0067   GO:0000053</br>"+
+"test_0068   GO:0000054</br>"+
+"test_0069   GO:0000055</br>"+
+"test_0070   GO:0000056</br>"+
+"test_0071   GO:0000057</br>"+
+"test_0072   GO:0000058</br>"+
+"test_0073   GO:0000059</br>"+
+"test_0074   GO:0000060</br>"+
+"test_0075   GO:0000061</br>"+
+"test_0076   GO:0000062</br>"+
+"test_0077   GO:0000063</br>"+
+"test_0078   GO:0000064</br>"+
+"test_0079   GO:0000065</br>"+
+"test_0080   GO:0000066</br>"+
+"test_0081   GO:0000067</br>"+
+"test_0082   GO:0000068</br>"+
+"test_0083   GO:0000069</br>"+
+"test_0084   GO:0000070</br>"+
+"test_0085   GO:0000071</br>"+
+"test_0086   GO:0000072</br>"+
+"test_0087   GO:0000073</br>"+
+"test_0088   GO:0000074</br>"+
+"test_0089   GO:0000075</br>"+
+"test_0090   GO:0000076</br>"+
+"test_0091   GO:0000077</br>"+
+"test_0092   GO:0000078</br>"+
+"test_0093   GO:0000079</br>"+
+"test_0094   GO:0000080</br>"+
+"test_0095   GO:0000081</br>"+
+"test_0096   GO:0000082</br>"+
+"test_0097   GO:0000083</br>"+
+"test_0098   GO:0000084</br>"+
+"test_0099   GO:0000085</br>"+
+"test_0100   GO:0000086</br>";
+	
 	let e_species = document.querySelector('#species');
 	for(let t of taxonList){
 		e_species.appendChild(taxonFactory(t[0],t[1]));
@@ -526,136 +645,55 @@ function initialize(){
 
 function my_submit(){
 	
-	function splitStringToGeneList(str){
-		let geneIDList = [];
-		let rex = /[\n\r\t]+/
-		let inputData = str.split(rex);	// Split on carriage return
-		
-		//console.log(inputData);
-		
-		let x;
-		for(x in inputData){
-			let trimmedData = inputData[x].trim();
-			if(trimmedData ==='')
-				continue;
-
-			geneIDList.push(trimmedData);
-		}
-		return geneIDList;
-	}
-	
 	my_submitReset();
 	initializeDownloadContent();
 	show_results = true;
-		
-	let str_geneList = document.querySelector('#textarea_geneList').value;
-	if( str_geneList == ''){
-		alert('please input the interesting gene list');
-		return false;
+	
+	//get the setting of p-value calculation
+	test_sel = document.querySelector('#method').value;
+	cutoff = document.querySelector('#significance').value;
+	
+	if(analysisType == 'userinput')
+		staticAnalysis();
+	else
+		dynamicAnalysis();
+}
+
+function splitStringToGeneList(str){
+	let geneIDList = [];
+	let rex = /[\n\r\t]+/
+	let inputData = str.split(rex);	// Split on carriage return
+	
+	//console.log(inputData);
+	
+	let x;
+	for(x in inputData){
+		let trimmedData = inputData[x].trim();
+		if(trimmedData ==='')
+			continue;
+
+		geneIDList.push(trimmedData);
 	}
+	return geneIDList;
+}
 
+function splitStringToAnnotation(str){
+	
+	var annotationList = [];
+	let rex = /[\n\r]+/
+	let inputData = str.split(rex);	// Split on carriage return
+	
+	var x;
+	for(x in inputData){
+		var trimmedData = inputData[x].trim();
 
-	let referenceGenesNum;
-	let inputGenes = splitStringToGeneList(str_geneList);
-	let inputGenesNum = inputGenes.length;
-	let cutoff = document.querySelector('#significance').value;
-
-	$('#loading').show();
-
-	$.when(getOverView(), getOntologyTermsFromGenes(inputGenes)).done(function(overview_data, ol_data){
-		
-		console.log("overview data:");
-		console.log(overview_data);
-		console.log("ontology list data:");
-		console.log(ol_data);
-		
-		if(!show_results){
-			console.log('cancelling terms request due to reset button');
-			return false;
-		}
-		
-		let summary = overview_data[0].data;
-		referenceGenesNum = summary['gene-product-count'];
-		document.querySelector('#result_summary').innerHTML = 'the number of input genes is: ' +
-			inputGenesNum + ' <br> the number of background genes is: ' + referenceGenesNum + '<br>';
-
-		//output the input information to download fileCreatedDate
-		appendInputDesicription(inputGenesNum,referenceGenesNum);
-
-		let ontologyList = ol_data[0].data['gene-to-term-summary-count'];
-
-		$.when(getGenesNumInRefFromOntologys(ontologyList)).done(function(data, textStatus, jqXHR){
-			if(!show_results){
-				console.log('cancelling ref request due to reset button');
-				return false;
-			}
-			
-			console.log("Gene Nums Data");
-			console.log(data);
-			
-			let ontologyListRef = data.data['term-to-gene-summary-count'];
-			let test_sel = document.querySelector('#method').value;
-			//console.log(test_sel);
-
-			for(let ontology_ID in ontologyList){
-				// K
-				let numOfRefer = ontologyListRef[ontology_ID];
-				// k
-				let numOfInput = ontologyList[ontology_ID];
-				// N
-				let N = referenceGenesNum;
-				// n
-				let n = inputGenesNum;
-
-				if(test_sel != 'chi-squared' && test_sel != 'hypergeometric'){
-					if(numOfInput > 500 || numOfRefer > 500 || n > 500 || N > 500){
-						console.log('should use chi or hypergeo for large numbers');
-					}
-				}
-
-				let p = '';
-				switch(test_sel){
-					case 'hypergeometric':
-						p = stats.hypergeometric(numOfInput,numOfRefer,n,N);
-						break;
-					case 'fisher':
-						p = stats.fisher(numOfInput,numOfRefer,n,N);
-						break;
-					case 'chi-squared':
-						p = stats.chi(numOfInput,numOfRefer,n,N);
-						break;
-					case 'fisher2':
-						p = stats.fisher2(numOfInput,numOfRefer,n,N);
-						break;
-					default:
-						break;
-				}
-
-				if(p > cutoff && !Number.isNaN(p))
-					continue;
-
-
-				let m_ontologyName;
-				let m_description;
-				let m_ontologyData = new ontology(m_ontologyName,ontology_ID, m_description, numOfInput, numOfRefer,p);
-				resultList.push(JSON.parse(JSON.stringify(m_ontologyData)));
-			}
-
-			if(!show_results){
-				console.log('cancelling table filling due to reset button');
-				return false;
-			}
-
-			getOntologyData(resultList);
-			console.log('analysis of data finished');
-			
-			if(resultList.length == 0){
-				$('#loading').hide();
-				showError("Sorry, there is something wrong with the server... We are fixing it and please come back in the future...")
-			}
-			//$('#results').show();
-		});
-	});
+		if(trimmedData ==='')
+			continue;
+		var txt = inputData[x].split(/[\s\t]+/g);
+		var annotationData = new annotation(txt[0], txt[1]);
+		annotationList.push(annotationData);
+	}
+	return annotationList;
 }
 
 function my_submitReset(){
@@ -684,8 +722,8 @@ function my_reset(){
 }
 
 function onclick_QueryTypeChange(){
-	let x = document.getElementById("queryType").value;
-	if(x == 'userinput')
+	analysisType = document.getElementById("queryType").value;
+	if(analysisType == 'userinput')
 		   $('#referenceBackground').show();
 	else
 		   $('#referenceBackground').hide();
@@ -791,19 +829,8 @@ function getOntologyData(resultList){
 				//"neighborhood_limited_graph_json" 
 				//ontology: Only in taxon.
     
-
-/* 				if(raw_graph_data.length == resultList.length){
-					//parsed all of resultList, time to view graph
-					//viewGraph(raw_graph_data);
-					visViewGraph(raw_graph_data);
-				} */
 				count++;
-/* 				if(count == length-1){
-					$('#loading').hide();
-					$('#downloadBtn').show();
-					createDownloadFile(downloadContent);
-					$('#resultTable').DataTable();
-				} */
+
 			}
 		}).done(function(){
 			if(count == length-1){
@@ -821,6 +848,205 @@ function getOntologyData(resultList){
 	}
 }
 
+//analysis based on user's input reference
+function staticAnalysis(){
+	
+	$('#loading').show();
+	var ontolotyIDList = [];
+	var inputGenesIDList = [];
+	var referGenesIDList = [];
+	var ontologyDataList = [];
+	
+	var str_geneList= $("#textarea_geneList").val();
+	var str_referList = $("#textarea_backgroundList").val();
+	if( str_geneList == ""){
+		showError("please input the interesting gene list");
+		return false;
+	}
+	if( str_referList == ""){
+		showError("please input the interesting gene list");
+		return false;
+	}
+	var inputAnnotationData = splitStringToAnnotation(str_geneList);
+	var referAnnotationData = splitStringToAnnotation(str_referList);
+
+	function getOntologyNumFromAnnoData(str,AnnotationData ){
+		var num = 0;
+		for(var x in AnnotationData){
+			if(AnnotationData[x].ontologyID === str)
+				num++;
+		}
+		return num;
+	}
+
+	for(var i in inputAnnotationData){
+		var txt = inputAnnotationData[i].ontologyID;
+		if($.inArray(txt, ontolotyIDList) === -1)
+			ontolotyIDList.push(txt);
+		
+		txt = inputAnnotationData[i].geneID;
+		if($.inArray(txt, inputGenesIDList) === -1)
+			inputGenesIDList.push(txt);
+	}
+	
+	for(var i in referAnnotationData){
+		txt = referAnnotationData[i].geneID;
+		if($.inArray(txt, referGenesIDList) === -1)
+			referGenesIDList.push(txt);
+	}
+	
+	
+	var n = inputGenesIDList.length;
+	var N = referGenesIDList.length;
+	
+	$("#result_summary").html("the number of input genes is: "+n+" <br> the number of reference genes is: "+N+"<br>");
+	
+	for(var i in ontolotyIDList){
+		var str = ontolotyIDList[i]
+		var numOfInput = getOntologyNumFromAnnoData(str,inputAnnotationData);
+		var numOfRefer = getOntologyNumFromAnnoData(str,referAnnotationData);
+		
+		//calculate the p with using inputData.length, referenceData.length, numOfInput, numOfRefer	
+		let p = caculatePvalue(numOfInput,numOfRefer,n,N)
+		
+		if(p > cutoff && !Number.isNaN(p))
+			continue;
+
+		var m_ontologyACC;
+		var m_description;
+		
+		var m_ontologyData = new ontology(m_ontologyACC,str, m_description, numOfInput, numOfRefer,p);
+		ontologyDataList.push(m_ontologyData);
+	}
+
+	
+	for(var i in ontologyDataList)
+		appendOntologyToTable(ontologyDataList[i]);
+	
+	$('#loading').hide();
+	//$('#downloadBtn').show();
+	$('#results').show();
+}
+
+//analysis based on reference database
+function dynamicAnalysis(){
+	
+	let str_geneList = document.querySelector('#textarea_geneList').value;
+	if( str_geneList == ''){
+		showError('please input the interesting gene list');
+		return false;
+	}
+
+
+	let referenceGenesNum;
+	let inputGenes = splitStringToGeneList(str_geneList);
+	let inputGenesNum = inputGenes.length;
+	//let cutoff = document.querySelector('#significance').value;
+
+	$('#loading').show();
+
+	$.when(getOverView(), getOntologyTermsFromGenes(inputGenes)).done(function(overview_data, ol_data){
+		
+		console.log("overview data:");
+		console.log(overview_data);
+		console.log("ontology list data:");
+		console.log(ol_data);
+		
+		if(!show_results){
+			console.log('cancelling terms request due to reset button');
+			return false;
+		}
+		
+		let summary = overview_data[0].data;
+		referenceGenesNum = summary['gene-product-count'];
+		document.querySelector('#result_summary').innerHTML = 'the number of input genes is: ' +inputGenesNum + ' <br> the number of background genes is: ' + referenceGenesNum + '<br>';
+
+		//output the input information to download fileCreatedDate
+		appendInputDesicription(inputGenesNum,referenceGenesNum);
+
+		let ontologyList = ol_data[0].data['gene-to-term-summary-count'];
+
+		$.when(getGenesNumInRefFromOntologys(ontologyList)).done(function(data, textStatus, jqXHR){
+			if(!show_results){
+				console.log('cancelling ref request due to reset button');
+				return false;
+			}
+			
+			console.log("Gene Nums Data");
+			console.log(data);
+			
+			let ontologyListRef = data.data['term-to-gene-summary-count'];
+			//let test_sel = document.querySelector('#method').value;
+			//console.log(test_sel);
+
+			for(let ontology_ID in ontologyList){
+				// K
+				let numOfRefer = ontologyListRef[ontology_ID];
+				// k
+				let numOfInput = ontologyList[ontology_ID];
+				// N
+				let N = referenceGenesNum;
+				// n
+				let n = inputGenesNum;
+
+				let p = caculatePvalue(numOfInput,numOfRefer,n,N);
+
+				if(p > cutoff && !Number.isNaN(p))
+					continue;
+
+
+				let m_ontologyName;
+				let m_description;
+				let m_ontologyData = new ontology(m_ontologyName,ontology_ID, m_description, numOfInput, numOfRefer,p);
+				resultList.push(JSON.parse(JSON.stringify(m_ontologyData)));
+			}
+
+			if(!show_results){
+				console.log('cancelling table filling due to reset button');
+				return false;
+			}
+
+			getOntologyData(resultList);
+			console.log('analysis of data finished');
+			
+			if(resultList.length == 0){
+				$('#loading').hide();
+				showError("Sorry, there is something wrong with the server... We are fixing it and please come back in the future...")
+			}
+			//$('#results').show();
+		});
+	});
+}
+
+
+function caculatePvalue(numOfInput,numOfRefer,n,N){
+	
+	if(test_sel != 'chi-squared' && test_sel != 'hypergeometric'){
+		if(numOfInput > 500 || numOfRefer > 500 || n > 500 || N > 500){
+			console.log('should use chi or hypergeo for large numbers');
+		}
+	}
+
+	let p = '';
+	switch(test_sel){
+	case 'hypergeometric':
+		p = stats.hypergeometric(numOfInput,numOfRefer,n,N);
+		break;
+	case 'fisher':
+		p = stats.fisher(numOfInput,numOfRefer,n,N);
+		break;
+	case 'chi-squared':
+		p = stats.chi(numOfInput,numOfRefer,n,N);
+		break;
+	case 'fisher2':
+		p = stats.fisher2(numOfInput,numOfRefer,n,N);
+		break;
+	default:
+		break;
+	}
+	
+	return p;
+}
 
 function showError(content){
 	

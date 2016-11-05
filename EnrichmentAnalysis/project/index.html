@@ -78,7 +78,7 @@
 					</label>
 					<select class="form-control" id="queryType" onchange="onclick_QueryTypeChange()">
 						<option value="background">Gene Ontology Database</option>
-						<option value="userinput">user's input reference</option>
+						<option value="userinput">User Define Annotations</option>
 					</select>
 				</div>
 				
@@ -107,16 +107,16 @@
 				<div id="error" hidden="true" class="alert alert-danger" role="alert">
 					<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
 					<span class="sr-only">Error:</span>
-					<span id= "error_content"> Enter a valid email address</span>
+					<span id= "error_content"></span>
 				</div>
 				
 				<!--reference background div -->
 				<div hidden = "true" id="referenceBackground">
 					<h2>Reference Background</h2>
 					<div  id="reference_input" class="form-group">
-						<textarea class="form-control" id="textarea_backgroundList"
-							rows="5" placeholder="please input the reference background"></textarea>
-						<p class="help-block">please input the background reference data</p>
+						<textarea class="form-control" id="textarea_backgroundList" rows="5" placeholder="please input the reference background"></textarea>
+						<button type="button" class="btn btn-default btn-sm helpBtn" data-toggle="collapse" data-target="#help_reference">Help</button>
+						<p id = 'help_reference' class='collapse'></p>
 					</div>
 				</div>
 
