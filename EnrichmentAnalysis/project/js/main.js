@@ -3,8 +3,8 @@
 let show_results = true;
 let url_stats = 'http://test.planteome.org/api/statistics/';
 let url_amigo = 'http://test.planteome.org/amigo/';
-let raw_graph_data = [];
-let resultList = [];
+var raw_graph_data = [];
+var resultList = [];
 let ontologyCategory ='';
 let downloadContent = "";
 let analysisType;
@@ -652,6 +652,7 @@ function my_submit(){
 	//get the setting of p-value calculation
 	test_sel = document.querySelector('#method').value;
 	cutoff = document.querySelector('#significance').value;
+	cutoff = parseFloat(cutoff);
 	
 	if(analysisType == 'userinput')
 		staticAnalysis();
@@ -732,6 +733,29 @@ function onclick_QueryTypeChange(){
 function onclick_ontologyCategoryChange(){
 	let x = document.getElementById("ontologyCategory").value;
 	ontologyCategory = x;
+	
+/* 	$('#loading').show();
+	$('#downloadBtn').hide();
+	$('#results').hide();
+	$('#btn_vis').hide(); */
+	
+	initializeDownloadContent();
+	table.clear().draw();
+	
+	for(let i of resultList){
+			
+		if(ontologyCategory=='all' || i.ontologyCategory ==ontologyCategory){
+			appendOntologyToTable(i);
+			appendOntologyToDownload(i);
+		}
+	};
+	
+/* 	$('#loading').hide();
+	$('#downloadBtn').show();
+	$('#results').show();
+	$('#btn_vis').show(); */
+
+	
 }
 
 //get the overview information from server
@@ -814,7 +838,7 @@ function getOntologyData(resultList){
 				}
 
 				//data for visualization
-				raw_graph_data.push(res.results.topology_graph_json);
+				raw_graph_data.push(res.results);
 				
 				
 				// "topology_graph_json" :

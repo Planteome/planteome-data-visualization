@@ -33,56 +33,83 @@
 		<div class="container" role="main">
 			
 
-			<!--content of the page -->
+			<!--the network view -->
 			
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<div class="h3">Result Visualization</div>
+					<div class="h3">Network Visualization</div>
 					
-					<!--p class="help-block">
-						The size of the node is proportional to how many edges are linking to or from it. The color of the node is influenced by the P value calculated above. If there is a P value listed for the term in the table above, then the color is a shade of red - the more red, the higher the correlation (lower P value). The more gray, the less of a correlation there is. If the term is not in the table above (either no P value was calculated or it was not significant enough), the term is a blue node.<br/>
-						The graph is interactive - one can pan and zoom. Hover on nodes to view their label.
-					</p-->
-					<br/>
-					<div id="sigma_controls" class="btn-group btn-group-justified" role="group" aria-label="...">
-						<div class="btn-group" role="group">
-							<button id="start_forcelayout" type="button" class="btn btn-default">Resume Animation</button>
+					<div class="btn-group" role="group" aria-label="..." >
+						<button type="button" id="btn_refresh" class="btn btn-primary" onclick="loadView()">Refresh</button>
+						<button type="button" id="checkbox_showChildren" class="btn btn-success" onclick="showNodesChildren()">Show Children Nodes</button>
+						<button id="start_forcelayout" type="button" class="btn btn-default">Resume Animation</button>
+						<button id="stop_forcelayout" type="button" class="btn btn-default">Pause Animation</button>
+						
+						<div class="input-group"> 
+							<select class="form-control" id="ontologyCategoryVis" onchange="onclick_ontologyCategoryChangeVis()" disabled>
+								<option value="all"  selected="selected">All</option>
+								<option value="cellular_component">Cellular Component</option>
+								<option value="molecular_function">Molecular Function</option>
+								<option value="biological_process">Biological Process</option>
+							</select>
 						</div>
-						<div class="btn-group" role="group">
-							<button id="stop_forcelayout" type="button" class="btn btn-default">Pause Animation</button>
-						</div>
+						
 					</div>
-					<!--p class='help-block'>
-						Pause and resume the Force Layout algorithm via the Pause and Resume buttons, respectively.<br/>
-					</p>
-					<br/-->
+					
 					<div class="input-group">
-						<input id="sigma_search_input" type="text" class="form-control" placeholder="Input Ontology name to locate and search its ID...">
+						<input id="sigma_search_input" type="text" class="form-control" placeholder="Input Ontology Id to locate or ontology Name to search...">
 						<span class="input-group-btn">
 							<button id="sigma_search_submit" class="btn btn-default" type="button">Go</button>
 						</span>
 					</div>
-					<!--p class='help-block'>
-						This search box has autocomplete enabled - type any part of any of the above terms' names, and select the option from the dropdown list. Or, search for an entity by directly entering its ID (i.e., "GO:0000001"). If a node with the submitted ID is found in the graph, it will focus and zoom in on that node. If it is not found, nothing will happen.
-					</p-->
+
+		
 				</div>
-				<!--div class="panel-body">
-					<div id="sigma_graph" class="container sigma"></div>
-				</div-->
+				
+				<p class="bg-info">The size of the node is decided by the number of children nodes, the color of the node is decided by the p-value.</p>
+
 				<div class="panel-body">
 					<div id="vis_graph2" class="container sigma"></div>
 				</div>
+				
+			</div>
+
+			
+			<!--  the selection Node information for network-->		
+			<div class="panel panel-info">
+				<div class="panel-heading">Selection Infomation</div>
+				<div class="panel-body">
+					<p id="selectedNode"></p>
+				</div>
 			</div>
 			
-			<button type="button" id="btn_refresh" class="btn btn-primary" onclick="loadView()">Refresh</button>
-			<br/>
 			
-			<p id="selection"></p>
-			<br/>
-			
-			<!--  the tree view of one node -->
-			<div class="panel-body">
-				<div id="vis_graph_tree" class="container sigma"></div>
+			<!--  the tree view of one node -->			
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<div class="h3">Hiearchical Visualization</div>
+					
+					<div class="btn-group" role="group" aria-label="..." >
+						<button type="button" id="btn_tree_refresh" class="btn btn-primary" onclick="loadView()">Refresh</button>
+						<button id="start_simulate" type="button" class="btn btn-default">Resume Animation</button>
+						<button id="stop_simulate" type="button" class="btn btn-default">Pause Animation</button>
+						<div class="input-group"> 
+							<select class="form-control" id="ontologyCategoryVis" onchange="onclick_ontologyCategoryChangeVis()" disabled>
+								<option value="all"  selected="selected">All</option>
+								<option value="cellular_component">Cellular Component</option>
+								<option value="molecular_function">Molecular Function</option>
+								<option value="biological_process">Biological Process</option>
+							</select>
+						</div>
+						
+					</div>					
+					
+				</div>
+				
+				<div class="panel-body">
+					<div id="vis_graph_tree" class="container sigma"></div>
+				</div>
+				
 			</div>
 
 			

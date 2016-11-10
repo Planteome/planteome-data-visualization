@@ -70,21 +70,31 @@
 			//console.log(`m=${m}, p=${p}`);
 			return p;
 		}
-
+		
 		p = 0;
-		/*     for(let m = 0; m <= k; m++){
-		       p += px(m);
-		       } */
+
 
 		if(n<K){
 			for(let m = k; m <= n; m++){
-				p += px(m);
+				//p += px(m);
+				p += hypergeometric(m, K, n, N);
 			}
 		}else{
 			for(let m = k; m <= K; m++){
-				p += px(m);
+				//p += px(m);
+				p += hypergeometric(m, K, n, N);
 			}
 		}
+		
+		/*
+		//left tail of fisher's exact test
+		//used for tests, enrichment analysis should use right tail 
+		p = 0;
+		for(let m = 0; m <= k; m++){
+		    //p += px(m);
+			p+= hypergeometric(m, K, n, N);
+		}
+		*/
 
 
 		/*
@@ -222,6 +232,7 @@
 		[2,100,5,1000],
 		[2,7,8,2],
 		[5,1,10,10],
+		[1,9,11,3],
 		[5,5,5,200],
 	];
 	console.log(`tests for stat methods:`);
