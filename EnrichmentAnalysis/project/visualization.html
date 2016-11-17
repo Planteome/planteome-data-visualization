@@ -41,7 +41,7 @@
 					
 					<div class="btn-group" role="group" aria-label="..." >
 						<button type="button" id="btn_refresh" class="btn btn-primary" onclick="loadView()">Refresh</button>
-						<button type="button" id="checkbox_showChildren" class="btn btn-success" onclick="showNodesChildren()">Show Children Nodes</button>
+						<button type="button" id="checkbox_showChildren" class="btn btn-success" onclick="showNodesChildren()">Hide Children Nodes</button>
 						<button id="start_forcelayout" type="button" class="btn btn-default">Resume Animation</button>
 						<button id="stop_forcelayout" type="button" class="btn btn-default">Pause Animation</button>
 						
@@ -66,8 +66,18 @@
 		
 				</div>
 				
-				<p class="bg-info">The size of the node is decided by the number of children nodes, the color of the node is decided by the p-value.</p>
-
+				<p class="bg-info" style="margin-bottom:0px">The size of the node is decided by the number of children nodes, the color of the node is decided by the p-value.</p>
+				<p class="bg-success">Relationship Legend:<br>
+				<isa style="color:#2B7CE9">is a<isa><br>
+				<partof style="color:purple">part of<partof><br>
+				<regulate style="color:#E29640">regualte<regulate><br>
+				<pregulates style="color:#00FF00">positively regulate<pregulates><br>
+				<nregulates style="color:red">negatively regulate<nregulates><br>
+				<occursof style="color:#006600">occurs of <occursof><br>
+				
+				
+				</p>
+				
 				<div class="panel-body">
 					<div id="vis_graph2" class="container sigma"></div>
 				</div>
@@ -79,7 +89,11 @@
 			<div class="panel panel-info">
 				<div class="panel-heading">Selection Infomation</div>
 				<div class="panel-body">
-					<p id="selectedNode"></p>
+					<p id="selectedNode">Selection node: </p>
+					<p id="selectedNodeName">ontology name: </p>
+					<p id="selectedNodepvalue">p value: </p>
+					<p id="selectedNodechildren">children nodes: </p>
+					<p id="selectedNodeparents">parents nodes: </p>
 				</div>
 			</div>
 			
@@ -91,10 +105,9 @@
 					
 					<div class="btn-group" role="group" aria-label="..." >
 						<button type="button" id="btn_tree_refresh" class="btn btn-primary" onclick="loadView()">Refresh</button>
-						<button id="start_simulate" type="button" class="btn btn-default">Resume Animation</button>
-						<button id="stop_simulate" type="button" class="btn btn-default">Pause Animation</button>
+
 						<div class="input-group"> 
-							<select class="form-control" id="ontologyCategoryVis" onchange="onclick_ontologyCategoryChangeVis()" disabled>
+							<select class="form-control" id="treeontologyCategoryVis" onchange="onclick_treeontologyCategoryChangeVis()" disabled>
 								<option value="all"  selected="selected">All</option>
 								<option value="cellular_component">Cellular Component</option>
 								<option value="molecular_function">Molecular Function</option>
@@ -102,6 +115,13 @@
 							</select>
 						</div>
 						
+					</div>	
+
+					<div class="input-group">
+						<input id="tree_search_input" type="text" class="form-control" placeholder="Input Ontology Id to locate or ontology Name to search...">
+						<span class="input-group-btn">
+							<button id="tree_search_submit" class="btn btn-default" type="button">Go</button>
+						</span>
 					</div>					
 					
 				</div>
