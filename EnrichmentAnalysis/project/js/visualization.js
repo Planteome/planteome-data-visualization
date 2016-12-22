@@ -1401,7 +1401,7 @@ function drawNetwork(){
 function clickNode(params) {
 		
 		if(params.nodes.length>0){
-			document.getElementById('selectedNode').innerHTML = 'Selection node: ' + params.nodes;
+			document.getElementById('selectedNode').innerHTML = 'Selection node: ' + "<a onclick='FocusNode(\""+params.nodes+"\")'>"+params.nodes+"</a> ";//params.nodes;
 			document.getElementById('selectedNodeName').innerHTML = 'ontology name: '+ NodesProperties[params.nodes].name;
 			document.getElementById('selectedNodepvalue').innerHTML ='p value: '+ NodesProperties[params.nodes].pvalue.toExponential(4);
 			

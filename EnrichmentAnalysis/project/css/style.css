@@ -78,3 +78,9 @@ footer{
 a {
 	cursor:pointer;
 }
+
+.buttonLine{
+	margin:5px;
+	width:100%;
+	height:30px;
+}

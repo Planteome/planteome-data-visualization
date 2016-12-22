@@ -9,8 +9,11 @@ let ontologyCategory ='';
 let downloadContent = "";
 let analysisType;
 var table;
+var atable;
 var test_sel;
 var cutoff;
+var inputGenes = [];
+var ambiguousData;
 
 //object Ontology
 function ontology(m_ontologyName, m_ontologyId,m_description, m_numberOfInput,m_numberOfReference,p){
@@ -190,9 +193,113 @@ function initialize(){
 		'Vitis_vinifera', '29760',
 		'Zea_mays', '4577',
 		*/
+		
+	document.getElementById("gnames").innerHTML = 
+	"Please input names of the interesting gene products. e.g.:<br/>"+
+"GR1        <br/>"+
+"ENO1       <br/>"+
+"ENOC       <br/>"+
+"LOS2       <br/>"+
+"SAC52      <br/>"+
+"AT1G18540  <br/>"+
+"RPL10B     <br/>"+
+"PRPL11     <br/>"+
+"RP1        <br/>"+
+"RPL3B      <br/>"+
+"SAG24      <br/>"+
+"AT1G74050  <br/>"+
+"AT1G74060  <br/>"+
+"RPL24A     <br/>"+
+"AT2G37190  <br/>"+
+"RPL23AA    <br/>"+
+"RPL16A     <br/>"+
+"AT2G44860  <br/>"+
+"ATL5       <br/>"+
+"STV1       <br/>"+
+"AT3G53430  <br/>"+
+"RPL23AB    <br/>"+
+"AT4G01310  <br/>"+
+"MRPL11     <br/>"+
+"RPL5B      <br/>"+
+"AT5G51610  <br/>"+
+"AT5G60670  <br/>"+
+"RPL20      <br/>"+
+"NFD3       <br/>"+
+"P40        <br/>"+
+"P40        <br/>"+
+"AT2G04390  <br/>"+
+"AT2G05220  <br/>"+
+"AT2G07696  <br/>"+
+"AT2G36160  <br/>"+
+"RPS5B      <br/>"+
+"AT2G45710  <br/>"+
+"AT3G02080  <br/>"+
+"RPSAb      <br/>"+
+"RPSAb      <br/>"+
+"AT3G10610  <br/>"+
+"AT3G11510  <br/>"+
+"RPS5A      <br/>"+
+"AT3G52580  <br/>"+
+"RS27A      <br/>"+
+"AT3G61111  <br/>"+
+"AT4G25740  <br/>"+
+"AT5G04800  <br/>"+
+"AT5G15520  <br/>"+
+"RPS10B     <br/>"+
+"AT5G47930  <br/>"+
+"AT5G52650  <br/>"+
+"AT5G61170  <br/>"+
+"RPS19      <br/>"+
+"APTG1      <br/>"+
+"PNT1       <br/>"+
+"FATB       <br/>"+
+"mtACP2     <br/>"+
+"MTACP-1    <br/>"+
+"FaTA       <br/>"+
+"AT4G13050  <br/>"+
+"ACP5       <br/>"+
+"mtACP3     <br/>"+
+"VPS34      <br/>"+
+"ATG8C      <br/>"+
+"ATG8D      <br/>"+
+"ATG10      <br/>"+
+"ATG2       <br/>"+
+"APG8A      <br/>"+
+"AT5G49540  <br/>"+
+"AT1G07070  <br/>"+
+"AT1G41880  <br/>"+
+"ALATS      <br/>"+
+"ALATS      <br/>"+
+"PSD        <br/>"+
+"PSD        <br/>"+
+"AT1G74270  <br/>"+
+"AT1G76170  <br/>"+
+"AT2G40660  <br/>"+
+"CTEXP      <br/>"+
+"ROL5       <br/>"+
+"AT3G55750  <br/>"+
+"AT3G59980  <br/>"+
+"AT3G59980  <br/>"+
+"AT4G13780  <br/>"+
+"EMB1030    <br/>"+
+"AT5G24840  <br/>"+
+"ERS        <br/>"+
+"ARGAH2     <br/>"+
+"ARGAH1     <br/>"+
+"AT1G13160  <br/>"+
+"AT2G37990  <br/>"+
+"AT4G31520  <br/>"+
+"MOS7       <br/>"+
+"MOS7       <br/>"+
+"AT1G26170  <br/>"+
+"TRN1       <br/>"+
+"SAD2       <br/>"+
+"AT2G46520  <br/>"+
+"XPO1B      <br/>";
 
-	document.getElementById("help").innerHTML = 
-	"Please input the accession ID of gene products. e.g.:<br/>"+
+
+	document.getElementById("gids").innerHTML = 
+	"Please input accession IDs of the interesting gene products. e.g.:<br/>"+
 	"TAIR:locus:1005716561 <br/>"+
 	"TAIR:locus:2031476<br/> " +
 	"TAIR:locus:2043067<br/> " +
@@ -639,11 +746,18 @@ function initialize(){
 	
 	$(document).ready(function(){
 		table = $('#resultTable').DataTable();
+/* 		atable = $('#disambiguityTable').DataTable(
+		{"paging":   false,
+		"info": false,
+		"ordering":false,
+		"searching":false}
+		); */
+		
 	});
 	
 }
 
-function my_submit(){
+function onclick_submit(){
 	
 	my_submitReset();
 	initializeDownloadContent();
@@ -656,8 +770,27 @@ function my_submit(){
 	
 	if(analysisType == 'userinput')
 		staticAnalysis();
-	else
+	else{
+		createDisambigousGeneList();
 		dynamicAnalysis();
+	}
+}
+
+function createDisambigousGeneList(){
+	
+	//console.log(ambiguousData);
+	
+	for(let i of ambiguousData.good)
+		inputGenes.push(i.results[0].id);
+	
+	for(let i of ambiguousData.ugly){
+		
+		let select = $('input[name='+i.input+']:checked').val();
+		let selectedGene = i.results[select].id;
+		inputGenes.push(selectedGene);
+	}
+	
+	console.log(inputGenes);
 }
 
 function splitStringToGeneList(str){
@@ -715,6 +848,21 @@ function my_submitReset(){
 	resultList = [];
 }
 
+function onclick_disambiguity(){
+	let str_geneList = document.querySelector('#textarea_geneList').value;
+	if( str_geneList == ''){
+		showError('please input the interesting gene list');
+		return false;
+	}
+
+	let inputGenes = splitStringToGeneList(str_geneList);
+	
+	disAmbiguateGenes(inputGenes);
+	
+	$('#disam').hide();
+	$('#submit').show();
+}
+
 function my_reset(){
 	show_results = false;
 	document.querySelector('#textarea_geneList').value = '';
@@ -722,12 +870,25 @@ function my_reset(){
 	my_submitReset();
 }
 
+function onchange_InterestingInput(){
+
+	$('#disam').show();
+	$('#submit').hide();
+	
+}
+
 function onclick_QueryTypeChange(){
 	analysisType = document.getElementById("queryType").value;
-	if(analysisType == 'userinput')
-		   $('#referenceBackground').show();
-	else
-		   $('#referenceBackground').hide();
+	if(analysisType == 'userinput'){
+		$('#referenceBackground').show();
+		$('#submit').show();
+		$('#disam').hide();
+	}
+	else{
+		$('#submit').hide();
+		$('#disam').show();
+		$('#referenceBackground').hide();
+	}
 }
 
 function onclick_ontologyCategoryChange(){
@@ -755,7 +916,6 @@ function onclick_ontologyCategoryChange(){
 	$('#results').show();
 	$('#btn_vis').show(); */
 
-	
 }
 
 //get the overview information from server
@@ -768,6 +928,95 @@ function getOverView(){
 		alert("test");
 		
 	}) */;
+}
+
+function disAmbiguateGenes(geneList){
+	
+	let link = 'http://test.planteome.org/api/disambiguation/bioentity?';
+	let data = '';
+	
+	data += 'species=NCBITaxon:3702';
+	
+	for(let i of geneList){
+		data +='&entity='+i;
+	}
+	
+	//http://test.planteome.org/api/disambiguation/bioentity?species=NCBITaxon:3702&entity=AT2G04390&entity=AT3G10610
+	console.log(link+data);
+	$.ajax({
+		type: 'get',
+		url:link,
+		data:data,
+		dataType: 'json',
+		success: function(res){
+			console.log(res.data);
+			
+			ambiguousData = res.data;
+			let ambiguousUglyData = res.data.ugly;
+			
+			if(ambiguousUglyData.length == 0)
+				showSucessText("There is NO ambiguous inputs, you could SUBMIT your analysis!");
+				//console.log('no ambiguous');
+			else{
+				showError("Please select from ambiguous terms to target the gene product...");
+				$('#disambiguity').show();
+			}
+ 			for(let i of ambiguousUglyData){
+				
+				let input = i.input;
+				let ambiguousObjs = i.results;
+				let ambNum = ambiguousObjs.length;
+				
+				appendAmbiguityRowToTable(input, ambNum, ambiguousObjs);
+				
+			}
+		}
+	});
+}
+
+
+function appendAmbiguityRowToTable(input, amNum, amObjs){
+	
+	var tableBody = $('#disambiguityTableBody');
+	
+	tableBody.append($('<tr>')
+		.append($('<td>')
+			.attr('rowspan', amNum)
+			.text(input)
+		)
+		.append($('<td>')
+			.append($('<input>')
+				.attr({
+					type: 'radio',
+					name: input,
+					value: 0,
+					checked: "checked"
+				})
+			)
+			.append($('<span>').text(amObjs[0].id))
+		)
+		.append($('<td>').text(amObjs[0].matched)
+		)
+		
+	);
+	
+	for(let i = 1; i<amNum; i++){
+		tableBody.append($('<tr>')
+			.append($('<td>')			
+				.append($('<input>')
+						.attr({
+							type: 'radio',
+							name: input,
+							value: i
+						})
+					)
+				.append($('<span>').text(amObjs[i].id))
+			)
+			.append($('<td>').text(amObjs[i].matched)
+			)
+		);
+	}	
+	
 }
 
 function getOntologyTermsFromGenes(geneList){
@@ -798,8 +1047,8 @@ function getGenesNumInRefFromOntologys(ontologyList){
 	}
 	data += 'taxon=3702';
 
-	console.log("the send of term to genes");
-	console.log(link);
+/* 	console.log("the send of term to genes");
+	console.log(link); */
 
 	return $.ajax({
 		type: 'post',
@@ -952,29 +1201,24 @@ function staticAnalysis(){
 	$('#results').show();
 }
 
+
+
+
+
 //analysis based on reference database
 function dynamicAnalysis(){
 	
-	let str_geneList = document.querySelector('#textarea_geneList').value;
-	if( str_geneList == ''){
-		showError('please input the interesting gene list');
-		return false;
-	}
-
-
-	let referenceGenesNum;
-	let inputGenes = splitStringToGeneList(str_geneList);
 	let inputGenesNum = inputGenes.length;
 	//let cutoff = document.querySelector('#significance').value;
 
-	$('#loading').show();
+	showText("Processing...");
 
 	$.when(getOverView(), getOntologyTermsFromGenes(inputGenes)).done(function(overview_data, ol_data){
 		
-		console.log("overview data:");
+/* 		console.log("overview data:");
 		console.log(overview_data);
 		console.log("ontology list data:");
-		console.log(ol_data);
+		console.log(ol_data); */
 		
 		if(!show_results){
 			console.log('cancelling terms request due to reset button');
@@ -982,7 +1226,7 @@ function dynamicAnalysis(){
 		}
 		
 		let summary = overview_data[0].data;
-		referenceGenesNum = summary['gene-product-count'];
+		let referenceGenesNum = summary['gene-product-count'];
 		document.querySelector('#result_summary').innerHTML = 'the number of input genes is: ' +inputGenesNum + ' <br> the number of background genes is: ' + referenceGenesNum + '<br>';
 
 		//output the input information to download fileCreatedDate
@@ -996,8 +1240,8 @@ function dynamicAnalysis(){
 				return false;
 			}
 			
-			console.log("Gene Nums Data");
-			console.log(data);
+/* 			console.log("Gene Nums Data");
+			console.log(data); */
 			
 			let ontologyListRef = data.data['term-to-gene-summary-count'];
 			//let test_sel = document.querySelector('#method').value;
@@ -1015,10 +1259,19 @@ function dynamicAnalysis(){
 
 				let p = caculatePvalue(numOfInput,numOfRefer,n,N);
 
+				if(Number.isNaN(p)){
+					console.log(p);
+					continue;
+				}
+				
+				if(p == null){
+					console.log(p);
+					continue;
+				}
+				
 				if(p > cutoff && !Number.isNaN(p))
 					continue;
-
-
+	
 				let m_ontologyName;
 				let m_description;
 				let m_ontologyData = new ontology(m_ontologyName,ontology_ID, m_description, numOfInput, numOfRefer,p);
@@ -1030,11 +1283,13 @@ function dynamicAnalysis(){
 				return false;
 			}
 
+			//console.log('analysis of data finished');
+			showText('analysis of data finished, retrieving ontology data from server...');
+			
 			getOntologyData(resultList);
-			console.log('analysis of data finished');
+			
 			
 			if(resultList.length == 0){
-				$('#loading').hide();
 				showError("Sorry, there is something wrong with the server... We are fixing it and please come back in the future...")
 			}
 			//$('#results').show();
@@ -1074,10 +1329,30 @@ function caculatePvalue(numOfInput,numOfRefer,n,N){
 
 function showError(content){
 	
-	$('#error_content').html(content)
 	$('#error').show();
-	$('#loading').hide();
+	$('#error_content').html(content)
 	
+	$('#loading').hide();
+	$('#success').hide();
+	
+}
+
+function showText(content){
+	
+	$('#loading').show();
+	$('#processingTxt').html(content)
+	
+	$('#error').hide();
+	$('#success').hide();
+}
+
+function showSucessText(content){
+	
+	$('#success').show();
+	$('#success_content').html(content)
+	
+	$('#loading').hide();
+	$('#error').hide();
 }
 
 function appendOntologyToTable(obj){
