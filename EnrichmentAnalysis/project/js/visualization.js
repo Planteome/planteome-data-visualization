@@ -53,6 +53,7 @@ function loadView(){
 
 	selectedCategory = document.getElementById("ontologyCategoryVis").value;
 	
+	flag_showChildren = true;
 	showNodesChildren();
 	
 /* 	var c = document.getElementById("vis_graph2");
@@ -580,17 +581,31 @@ function visViewGraph(raw_data){
 		if((NodesProperties[n.id].hasChildrenWithPvalue != true))
 			continue;
 
-		let c;
+		let c, p_value_text;
 		if(NodesProperties[n.id].pvalue != -1){
 			c = getColorFromPalue(NodesProperties[n.id].pvalue);
 			NodesProperties[n.id].color = c;
+			p_value_text = "\n" + NodesProperties[n.id].pvalue.toExponential(4);
 		}else{
 			c = defaultColor;
+			p_value_text = "";
 		}		
+		
+		//let label_name_short = NodesProperties[n.id].name.match(/([\w+]+)/g);
+		let label_name_short;
+		if(NodesProperties[n.id].name.length > 12)
+			label_name_short = NodesProperties[n.id].name.substring(0, 9)+ "..."
+		else
+			label_name_short = NodesProperties[n.id].name.substring(0, 12);
+		
+		
+		
+		let label_detail = n.id + '\n' + label_name_short + p_value_text;
 		
 		tree_nodes.add({
 			id: n.id,
-			label: n.id,
+			//label: n.id,
+			label: label_detail,
 			//value: NodesProperties[n.id].edgeCount,
 			//level: co%10,
 			title: NodesProperties[n.id].name,
@@ -1471,7 +1486,8 @@ function FocusNode(id){
 
 	stopSimulate();
 	network.focus(id, options);
-
+    networkTree.focus(id, options);
+	
 	if(id != null && id != undefined){
 		network.setSelection({
 		nodes:[id],

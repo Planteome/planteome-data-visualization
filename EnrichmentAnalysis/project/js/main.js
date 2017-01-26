@@ -979,6 +979,11 @@ function appendAmbiguityRowToTable(input, amNum, amObjs){
 	
 	var tableBody = $('#disambiguityTableBody');
 	
+ 	let anode = $('<a>').text(amObjs[0].id).attr({
+		href:"http://amigo.geneontology.org/amigo/gene_product/" + amObjs[0].id,
+		target: "_blank"
+	})
+			
 	tableBody.append($('<tr>')
 		.append($('<td>')
 			.attr('rowspan', amNum)
@@ -993,7 +998,7 @@ function appendAmbiguityRowToTable(input, amNum, amObjs){
 					checked: "checked"
 				})
 			)
-			.append($('<span>').text(amObjs[0].id))
+			.append($('<span>').append(anode))
 		)
 		.append($('<td>').text(amObjs[0].matched)
 		)
@@ -1001,6 +1006,12 @@ function appendAmbiguityRowToTable(input, amNum, amObjs){
 	);
 	
 	for(let i = 1; i<amNum; i++){
+		
+		let anode = $('<a>').text(amObjs[i].id).attr({
+				href:"http://amigo.geneontology.org/amigo/gene_product/" + amObjs[i].id,
+				target: "_blank"
+			})
+		
 		tableBody.append($('<tr>')
 			.append($('<td>')			
 				.append($('<input>')
@@ -1010,7 +1021,7 @@ function appendAmbiguityRowToTable(input, amNum, amObjs){
 							value: i
 						})
 					)
-				.append($('<span>').text(amObjs[i].id))
+				.append($('<span>').append(anode))
 			)
 			.append($('<td>').text(amObjs[i].matched)
 			)
@@ -1356,9 +1367,11 @@ function showSucessText(content){
 }
 
 function appendOntologyToTable(obj){
+	let link = "http://amigo.geneontology.org/amigo/term/" + obj.ontologyId;
+	let idNode = "<a target='_blank' href="+link + ">" + obj.ontologyId + "</a>";
 	
 	table.row.add( [
-			obj.ontologyId,
+			idNode,
 			obj.ontologyName,
 			obj.description,
 			obj.numberOfInput,
