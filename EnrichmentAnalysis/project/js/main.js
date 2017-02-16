@@ -7,6 +7,7 @@ var raw_graph_data = [];
 var resultList = [];
 let ontologyCategory ='';
 let downloadContent = "";
+let downloadContentHeader = "";
 let analysisType;
 var table;
 var atable;
@@ -846,6 +847,7 @@ function my_submitReset(){
 	//reset globals
 	raw_graph_data = [];
 	resultList = [];
+	inputGenes = [];
 }
 
 function onclick_disambiguity(){
@@ -895,12 +897,10 @@ function onclick_ontologyCategoryChange(){
 	let x = document.getElementById("ontologyCategory").value;
 	ontologyCategory = x;
 	
-/* 	$('#loading').show();
-	$('#downloadBtn').hide();
-	$('#results').hide();
-	$('#btn_vis').hide(); */
-	
 	initializeDownloadContent();
+	
+	downloadContent += downloadContentHeader;
+	
 	table.clear().draw();
 	
 	for(let i of resultList){
@@ -911,10 +911,8 @@ function onclick_ontologyCategoryChange(){
 		}
 	};
 	
-/* 	$('#loading').hide();
-	$('#downloadBtn').show();
-	$('#results').show();
-	$('#btn_vis').show(); */
+	//refresh the download file
+	createDownloadFile(downloadContent);
 
 }
 
@@ -981,7 +979,7 @@ function appendAmbiguityRowToTable(input, amNum, amObjs){
 	
 	//http://browser.planteome.org/amigo/gene_product/TAIR:locus:2027483
 	
-	let link = "/amigo/gene_product/" + amObjs[0].id;"
+	//let link = "/amigo/gene_product/" + amObjs[0].id;"
 	
  	let anode = $('<a>').text(amObjs[0].id).attr({
 		href:"http://amigo.geneontology.org/amigo/gene_product/" + amObjs[0].id,
@@ -1416,10 +1414,10 @@ function initializeDownloadContent(){
 }
 
 function appendInputDesicription(inputGenesNum, BackgroundGenes){
-	downloadContent += 'the number of input genes is: ' + inputGenesNum + '\n'+
+	downloadContentHeader = 'the number of input genes is: ' + inputGenesNum + '\n'+
 					   'the number of background genes is: ' + BackgroundGenes + '\n';
 	
-	downloadContent +="Each column menas:" +'\n'
+	downloadContentHeader +="Each column menas:" +'\n'
 	+ "1 Ontology Database ID" +"\n"
 	+ "2 Ontology Name" +"\n"
 	+ "3 number of genes annotated to the ontology in input" +"\n"
@@ -1427,6 +1425,8 @@ function appendInputDesicription(inputGenesNum, BackgroundGenes){
 	+ "5 p-value" +"\n"
 	+ "6 Ontology Category" +"\n"
 	+ "7 Ontology description" +"\n\n";
+	
+	downloadContent += downloadContentHeader;
 	
 }
 
