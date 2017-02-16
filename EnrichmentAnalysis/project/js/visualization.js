@@ -45,6 +45,9 @@ function loadView(){
 	resultList = JSON.parse(resultList);
 
 	
+	console.log(raw_graph_data);
+	console.log(resultList);
+	
 	if(raw_graph_data.length == resultList.length){
 	//parsed all of resultList, time to view graph
 		visViewGraph(raw_graph_data);
@@ -1444,6 +1447,8 @@ function clickNode(params) {
 function getColorFromPalue(p_value){
 	let alpha = ((p_worst - p_value)/p_worst);
 	//console.log(alpha);
+	
+	//(log(p_value) - log(p_worst))/ log(p_worst)
 	
 	let d = 0;
 	var c;

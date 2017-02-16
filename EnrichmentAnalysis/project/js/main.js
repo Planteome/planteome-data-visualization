@@ -979,6 +979,10 @@ function appendAmbiguityRowToTable(input, amNum, amObjs){
 	
 	var tableBody = $('#disambiguityTableBody');
 	
+	//http://browser.planteome.org/amigo/gene_product/TAIR:locus:2027483
+	
+	let link = "/amigo/gene_product/" + amObjs[0].id;"
+	
  	let anode = $('<a>').text(amObjs[0].id).attr({
 		href:"http://amigo.geneontology.org/amigo/gene_product/" + amObjs[0].id,
 		target: "_blank"
@@ -1367,6 +1371,9 @@ function showSucessText(content){
 }
 
 function appendOntologyToTable(obj){
+	
+	let temp = "http://browser.planteome.org/amigo/term/GO:0005618";
+	
 	let link = "http://amigo.geneontology.org/amigo/term/" + obj.ontologyId;
 	let idNode = "<a target='_blank' href="+link + ">" + obj.ontologyId + "</a>";
 	
