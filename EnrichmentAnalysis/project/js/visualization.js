@@ -44,9 +44,11 @@ function loadView() {
     raw_graph_data = sessionStorage.getItem("graphData");
     resultList = sessionStorage.getItem("resultList");
 
+   
+
     raw_graph_data = JSON.parse(raw_graph_data);
     resultList = JSON.parse(resultList);
-
+    console.log(resultList);
 
     if (raw_graph_data.length == resultList.length) {
         //parsed all of resultList, time to view graph
@@ -430,10 +432,12 @@ function visViewGraph(raw_data) {
         let p_value = null;
         let mtype = undefined;
         let on_catagory = null;
+        let inputGenesCount = 1;
         for(let r of resultList) {
             if (r.ontologyId == n_arr[i].id) {
                 p_value = r.p;
                 mtype = r.ontologyCategory;
+                inputGenesCount = r.numberOfInput;
                 //on_catagory = r.ontologyCategory;
             }
         }
@@ -454,6 +458,8 @@ function visViewGraph(raw_data) {
             }
         }
 
+
+
         //if we calculated a p_value for this term, then we can rate it,
         //from grayest (least related) to most red (most related)
         //if we didn't calculate a p_value, then just give it the color blue
@@ -469,7 +475,7 @@ function visViewGraph(raw_data) {
         }
 
         var propertyName = n_arr[i].id;
-        var propertyItem = { name: n_arr[i].label, edgeCount: e_count, pvalue: p_value, parentsEdges: parentsEdgesIds, childrenEdges: childrenEdgesIds, parents: parentNodesIds, children: childrenNodesIds, category: mtype };
+        var propertyItem = { name: n_arr[i].label, inputCount:inputGenesCount, edgeCount: e_count, pvalue: p_value, parentsEdges: parentsEdgesIds, childrenEdges: childrenEdgesIds, parents: parentNodesIds, children: childrenNodesIds, category: mtype };
         NodesProperties[propertyName] = propertyItem;
 
     }
@@ -568,7 +574,8 @@ function visViewGraph(raw_data) {
         vis_nodes.add({
             id: n.id,
             label: NodesProperties[n.id].name,
-            value: NodesProperties[n.id].edgeCount,
+            value: NodesProperties[n.id].inputCount,
+            //value: NodesProperties[n.id].edgeCount,
             title: n.id,
             color: c,
         });
@@ -1419,9 +1426,10 @@ function drawNetwork() {
 function clickNode(params) {
 
     if (params.nodes.length > 0) {
-        document.getElementById('selectedNode').innerHTML = 'Selection node: ' + "<a onclick='FocusNode(\"" + params.nodes + "\")'>" + params.nodes + "</a> ";//params.nodes;
-        document.getElementById('selectedNodeName').innerHTML = 'ontology name: ' + NodesProperties[params.nodes].name;
-        document.getElementById('selectedNodepvalue').innerHTML = 'p value: ' + NodesProperties[params.nodes].pvalue.toExponential(4);
+        document.getElementById('selectedNode').innerHTML = 'Selection Node: ' + "<a onclick='FocusNode(\"" + params.nodes + "\")'>" + params.nodes + "</a> ";//params.nodes;
+        document.getElementById('selectedNodeName').innerHTML = 'Ontology Name: ' + NodesProperties[params.nodes].name;
+        document.getElementById('selectedNodepvalue').innerHTML = 'P value: ' + NodesProperties[params.nodes].pvalue.toExponential(4);
+        document.getElementById('selectedNodeInputCount').innerHTML = 'Input Genes count: ' + NodesProperties[params.nodes].inputCount;
 
         document.getElementById('selectedNodechildren').innerHTML = 'children nodes: ';
         let clist = NodesProperties[params.nodes].children;
@@ -1444,23 +1452,6 @@ function clickNode(params) {
     }
 }
 
-function getTheIndexFromPArray(p_value_log)
-{
-    var c = 0;
-    for (i = 0; i < pvalueList.length ; i++)
-    {
-        let currentVal = pvalueList[i];
-        let diff = currentVal - p_value_log;
-        if(Math.abs(diff) < 0.1)
-        {
-            return i;
-        }
-    }
-    
-    return c;
-}
-
-
 function getColorFromPalue(p_value) {
     let p_value_log = Math.log10(p_value);
 
@@ -1472,19 +1463,6 @@ function getColorFromPalue(p_value) {
 
     let d = 0;
     var c;
-    /* 		if(alpha < 0.5){
-            d = 255 - 2*alpha*255;
-            c = 'rgba(0,0,'+d.toString()+',1.0)';
-            //vis_nodes.update({id: n.id, color: c});
-            //n_arr[i].color = 'rgba(0,0,${d},1.0)';
-        }
-        else{
-            d = 2*(alpha- 0.5)*255;
-            c = 'rgba('+d.toString()+',0,0,1.0)';
-            //vis_nodes.update({id: n.id,color: c});
-            //n_arr[i].color = 'rgba(${d},0,0,1.0)';
-        } */
-
 
     d = Math.floor(255 - alpha * 255);
     c = 'rgba(255,' + d.toString() + ',0,1.0)';
