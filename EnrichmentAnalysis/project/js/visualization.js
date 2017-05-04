@@ -743,7 +743,7 @@ function distributeNodesForTreeVisualization() {
     var nodeDis = 200;
     //var treeDis = 500;
     var step = 0.25;	//get by using network.getBoundingBox
-    var levelDis = 150;
+    var levelDis = 250;
 
     //var hlevelNodesList={};
     //let vlevelNodesList={};
@@ -949,6 +949,18 @@ function distributeNodesForTreeVisualization() {
     }
 
     //get parents shown
+    function getParentAll(nodeId) {
+
+        var parentsWithChildrenHasPvList = [];
+        var allParents = NodesProperties[nodeId].parents;
+
+        return allParents;
+
+
+
+    }
+	
+	//get parents shown
     function getParent(nodeId) {
 
         var parentsWithChildrenHasPvList = [];
@@ -1079,7 +1091,9 @@ function distributeNodesForTreeVisualization() {
     for (i in NodesProperties) {
 
         //setVLevel(i, 0);
-
+        if (!NodesProperties[i].hasChildrenWithPvalue)
+            continue;
+		
         if (getParent(i).length == 0) {
             toppestNodesList.push(i);
             setVLevel(i, 0);
@@ -1088,7 +1102,7 @@ function distributeNodesForTreeVisualization() {
     }
 
     if (toppestNodesList.length == 0)
-        console.warn("there is none nodes without parents");
+        console.warn("there is no nodes without parents");
 
 
 
@@ -1142,7 +1156,7 @@ function distributeNodesForTreeVisualization() {
     for (var i = 0; i < toppestNodesList.length; i++) {
 
         let nid = toppestNodesList[i];
-        setHLevel(nid, 2 * i * mostNodesLevelNodesCount);
+        setHLevel(nid, 1.2 * i * mostNodesLevelNodesCount);
 
         let level = getHLevel(nid);
 
@@ -1233,12 +1247,12 @@ function drawTree() {
         },
 
         edges: {
-            smooth: {
+            //smooth: {
                 //type: 'continuous',
-                type: 'diagonalCross',
+            //    type: 'diagonalCross',
                 //forceDirection: 'vertical',
-                roundness: 0.2
-            },
+            //    roundness: 0.2
+            //},
             arrows: { to: true },
             width: 3,
             selectionWidth: 6,
@@ -1353,9 +1367,9 @@ function drawNetwork() {
 
 
         edges: {
-            smooth: {
+/*             smooth: {
                 type: 'continuous'
-            },
+            }, */
 
             arrows: {
                 to: { enabled: true, scaleFactor: 1 }

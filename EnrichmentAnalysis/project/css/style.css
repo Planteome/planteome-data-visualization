@@ -55,6 +55,15 @@ label[for=method], label[for=species], label[for = significance], label[for = qu
 	margin-left:15px;
 }
 
+#ontologyCategory2{
+	width: 30%; float: right;
+}
+
+#ontologyCategory_input{
+	display: inline-block;
+    width: 100%;
+}
+
 .pvalue {
 	width:51px;
 }

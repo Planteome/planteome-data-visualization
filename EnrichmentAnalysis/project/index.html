@@ -91,10 +91,11 @@
 						<option value="cellular_component" selected="selected">Cellular Component</option>
 						<option value="molecular_function">Molecular Function</option>
 						<option value="biological_process">Biological Process</option>
+						<option value="plant_anatomy">Plant Anatomy</option>
+						<option value="plant_trait_ontology">Plant Trait</option>
 					</select>
 				</div>
-
-
+				
 				<!--interesting genes div -->
 				<h2>Interesting Genes</h2>
 				<div id="interesting_input" class="form-group">
@@ -174,10 +175,10 @@
 				</div>				
 
 				<!--buttons -->
-				<button type="button" id="disam" class="btn btn-success" onclick="onclick_disambiguity()">Disambiguity</button>
+				<button type="button" id="disam" class="btn btn-success" onclick="onclick_disambiguity()">Disambiguate</button>
 				<button type="button" hidden="true" id="submit" class="btn btn-primary" onclick="onclick_submit()">Submit</button>
 				<button type="button" id="reset" class="btn btn-default" onclick="my_reset()">Reset</button>
-				<button type="button" id="btn_vis" class="btn btn-primary" onclick="visualize()">Visualize</button>
+				<button type="button" hidden="true" id="toggleAmbiguousTable"class="btn btn-info" onclick="onclick_toggleDisambiguousTalbe()">Toggle Ambiguous Table</button>
 			</form>
 			<br/>
 			
@@ -192,6 +193,17 @@
 				<div class="page-header">
 					<h2>Analysis Result</h2>
 				</div>
+				
+				<div id="ontologyCategory_input" class="form-group">
+					<select class="form-control" id="ontologyCategory2" onchange="onclick_ontologyCategoryChange2()">
+						<option value="all">All</option>
+						<option value="cellular_component" selected="selected">Cellular Component</option>
+						<option value="molecular_function">Molecular Function</option>
+						<option value="biological_process">Biological Process</option>
+						<option value="plant_anatomy">Plant Anatomy</option>
+						<option value="plant_trait_ontology">Plant Trait</option>
+					</select>
+				</div>				
 				
 				<div class="panel panel-default">
 					<div id="resultSummary" class="panel-body">
@@ -230,16 +242,16 @@
 
 			</div>
 			
-			
-			<!--test--->
-
+			<button type="button" hidden="true" id="btn_vis" class="btn btn-warning" onclick="visualize()">Visualize</button>
 	
 			
 			<!--footer of the page -->
 			<footer>
 				<br/>
 				<address>
-					&copy;Planteome Project
+					&copy;Planteome Project 2017<br/>
+					Version 1.0 beta<br/>
+					Bug Report: qub@oregonstate.com<br/>
 				</address>
 			</footer>
 		</div>

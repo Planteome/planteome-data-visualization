@@ -63,240 +63,237 @@ function initialize(){
 	//initialize the species selet button
 
 	let taxonList = [
-		['Arabidopsis_thaliana', '3702'],
-		['Aegilops_tauschii', '37682'],
-		['Amborella_trichopoda', '13333'],
-		['Arabidopsis_lyrata' , '59689'],
-		['Arachis_duranensis', '130453'],
-		['Arachis_ipaensis', '130454'],
+	   ['Arabidopsis_thaliana', '3702'],
+	   ['Aegilops_tauschii', '37682'],
+	   ['Amborella_trichopoda', '13333'],
+	   ['Arabidopsis_lyrata' , '59689'],
+	   ['Arachis_duranensis', '130453'],
+	   ['Arachis_ipaensis', '130454'],
+	   ['Aegilops_tauschii', '37682',                 ],
+	   ['Amborella_trichopoda', '13333',              ],
+	   ['Arabidopsis_lyrata' , '59689',               ],
+	   ['Arabidopsis_thaliana', '3702',               ],
+	   ['Arachis_duranensis', '130453',               ],
+	   ['Arachis_ipaensis', '130454',                 ],
+       [                                              ],
+	   ['Batrachochytrium_dendrobatidis', '109871',   ],
+	   ['Brachypodium_distachyon', '15368',           ],
+	   ['Brachypodium_sylvaticum.Corv', '29664',      ],
+	   ['Brachypodium_sylvaticum.Greece', '29664',    ],
+	   ['Brachypodium_sylvaticum.Spain', '29664',     ],
+	   ['Brassica_oleracea', '3712',                  ],
+	   ['Brassica_rapa' ,'3711',                      ],
+	   ['Caenorhabditis_elegans', '6239',             ],
+	   ['Cajanus_cajan', '3821',                      ],
+	   ['Cannabis_sativa.Purple.Kush', '3483',        ],
+	   ['Capsella_rubella', '81985',                  ],
+	   ['Capsicum_annuum', '4072',                    ],
+	   ['Carica_papaya', '3649',                      ],
+	   ['Chlamydomonas_reinhardtii', '3055',          ],
+	   ['Cicer_arietinum', '3827',                    ],
+	   ['Citrullus_lanatus', '3654',                  ],
+	   ['Citrus_clementina', '85681',                 ],
+	   ['Citrus_sinensis', '2711',                    ],
+	   ['Coffea_canephora', '49390',                  ],
+	   ['Cucumis_sativus', '3659',                    ],
+	   ['Danio_rerio', '7955',                        ],
+	   ['Drosophila_melanogaster', '7227',            ],
+	   ['Ectocarpus_siliculosus', '2880',             ],
+	   ['Elaphocordyceps_capitata', '45325',          ],
+	   ['Elaphocordyceps_ophioglossoides', '71617',   ],
+	   ['Elaphocordyceps_paradoxa', '94208',          ],
+	   ['Epichloe_festucae', '35717',                 ],
+	   ['Escherichia_coli', '562',                    ],
+	   ['Eucalyptus_grandis', '71139',                ],
+	   ['Fragaria_vesca', '57918',                    ],
+	   ['Fusarium_graminearum', '5518',               ],
+	   ['Fusarium_oxysporum.4287', '660037',          ],
+	   ['Fusarium_verticillioides', '117187',         ],
+	   ['Gadus_morhua', '8049',                       ],
+	   ['Gasterosteus_aculeatus', '69293',            ],
+	   ['Glycine_max', '3847',                        ],
+	   ['Gossypium_raimondii', '29730',               ],
+	   ['Homo_sapiens', '9606',                       ],
+	   ['Hordeum_vulgare', '4513',                    ],
+	   ['Jatropha_curcas', '180498',                  ],
+	   ['Kalanchoe_laxiflora', '1670617',             ],
+	   ['Laccaria_bicolor', '29883',                  ],
+	   ['Leersia_perrieri', '77586',                  ],
+	   ['Linum_usitatissimum', '4006',                ],
+	   ['Magnaporthe_grissa', '148305',               ],
+	   ['Malus_domestica', '3750',                    ],
+	   ['Manihot_esculenta', '3983',                  ],
+	   ['Medicago_truncatula', '3880',                ],
+	   ['Mimulus_guttatus', '4155',                   ],
+	   ['Mus_musculus', '10090',                      ],
+	   ['Musa_acuminata', '4641',                     ],
+	   ['Nectria_haematococca', '140110',             ],
+	   ['Nelumbo_nucifera', '4432',                   ],
+	   ['Neurospora_crassa', '5141',                  ],
+	   ['Nostoc_punctiforme', '272131',               ],
+	   ['Oncorhynchus_mykiss', '8022',                ],
+	   ['Oryza_australiensis', '4532',                ],
+	   ['Oryza_barthii', '65489',                     ],
+	   ['Oryza_brachyantha', '4533',                  ],
+	   ['Oryza_glaberrima', '4538',                   ],
+	   ['Oryza_glumaepatula', '40148',                ],
+	   ['Oryza_granulata', '110450',                  ],
+	   ['Oryza_kasalath', '4527',                     ],
+	   ['Oryza_longistaminata', '4528',               ],
+	   ['Oryza_meridionalis', '40149',                ],
+	   ['Oryza_minuta', '63629',                      ],
+	   ['Oryza_nivara', '4536',                       ],
+	   ['Oryza_officinalis', '4535',                  ],
+	   ['Oryza_punctata', '4537',                     ],
+	   ['Oryza_rufipogon', '4529',                    ],
+	   ['Oryza_sativa.indica.gramene', '39946',       ],
+	   ['Oryza_sativa.indica.iplant', '39946',        ],
+	   ['Oryza_sativa.indica.IR29', '39946',          ],
+	   ['Oryza_sativa.indica.pokkali', '39946',       ],
+	   ['Oryza_sativa.japonica.iplant', '39947',      ],
+	   ['Oryza_sativa.japonica.IRGSP', '39947',       ],
+	   ['Oryza_sativa.japonica.MSU', '39947',         ],
+	   ['Oryzias_latipes', '8090',                    ],
+	   ['Pediculus_humanus', '121225',                ],
+	   ['Phaseolus_vulgaris', '3885',                 ],
+	   ['Phoenix_dactylifera', '42345',               ],
+	   ['Phyllostachys_heterocycla', '38705',         ],
+	   ['Physcomitrella_patens', '3218',              ],
+	   ['Phytophthora_infestans', '4787',             ],
+	   ['Picea_abies', '3329',                        ],
+	   ['Pinus_taeda', '3352',                        ],
+	   ['Populus_trichocarpa', '3694',                ],
+	   ['Populus_trichocarpa.ver3', '3694',           ],
+	   ['Prunus_persica', '3760',                     ],
+	   ['Rattus_norvegicus', '10116',                 ],
+	   ['Rhizopus_oryzae', '64495',                   ],
+	   ['Ricinus_communis', '3988',                   ],
+	   ['Saccharomyces_cerevisiae', '4932',           ],
+	   ['Salvia_hispancia.salba', '49212',            ],
+	   ['Salvia_splendens', '180675',                 ],
+	   ['Schizosaccharomyces_pombe', '4896',          ],
+	   ['Selaginella_moellendorffii', '88036',        ],
+	   ['Setaria_italica', '4555',                    ],
+	   ['Solanum_lycopersicum', '4081',               ],
+	   ['Solanum_tuberosum', '4113',                  ],
+	   ['Sorghum_bicolor', '4558',                    ],
+	   ['Synechocystis_pcc6803', '1148',              ],
+	   ['Takifugu_rubripes', '31033',                 ],
+	   ['Tetraodon_nigroviridis', '99883',            ],
+	   ['Theobroma_cacao', '3641',                    ],
+	   ['Tolypocladium_inflatum', '29910',            ],
+	   ['Trichodesmium_erythraeum', '1206',           ],
+	   ['Triticum_aestivum', '4565',                  ],
+	   ['Triticum_monococcum.DV92', '4568',           ],
+	   ['Triticum_monococcum.G3116', '4568',          ],
+	   ['Triticum_turgidum', '4571',                  ],
+	   ['Triticum_urartu', '4572',                    ],
+	   ['Vitis_vinifera', '29760',                    ],
+	   ['Zea_mays', '4577',                           ]
 	];
-
-	/*
-	   'Aegilops_tauschii', '37682',
-	   'Amborella_trichopoda', '13333',
-	   'Arabidopsis_lyrata' , '59689',
-	   'Arabidopsis_thaliana', '3702',
-	   'Arachis_duranensis', '130453',
-	   'Arachis_ipaensis', '130454',
-
-	   'Batrachochytrium_dendrobatidis', '109871',
-	   'Brachypodium_distachyon', '15368',
-	   'Brachypodium_sylvaticum.Corv', '29664',
-	   'Brachypodium_sylvaticum.Greece', '29664',
-	   'Brachypodium_sylvaticum.Spain', '29664',
-	   'Brassica_oleracea', '3712',
-	   'Brassica_rapa' ,'3711',
-	   'Caenorhabditis_elegans', '6239',
-	   'Cajanus_cajan', '3821',
-	   'Cannabis_sativa.Purple.Kush', '3483',
-	   'Capsella_rubella', '81985',
-	   'Capsicum_annuum', '4072',
-	   'Carica_papaya', '3649',
-	   'Chlamydomonas_reinhardtii', '3055',
-	   'Cicer_arietinum', '3827',
-	   'Citrullus_lanatus', '3654',
-	   'Citrus_clementina', '85681',
-	   'Citrus_sinensis', '2711',
-	   'Coffea_canephora', '49390',
-	   'Cucumis_sativus', '3659',
-	   'Danio_rerio', '7955',
-	   'Drosophila_melanogaster', '7227',
-	   'Ectocarpus_siliculosus', '2880',
-	   'Elaphocordyceps_capitata', '45325',
-	   'Elaphocordyceps_ophioglossoides', '71617',
-	   'Elaphocordyceps_paradoxa', '94208',
-	   'Epichloe_festucae', '35717',
-	   'Escherichia_coli', '562',
-	   'Eucalyptus_grandis', '71139',
-	   'Fragaria_vesca', '57918',
-	   'Fusarium_graminearum', '5518',
-	   'Fusarium_oxysporum.4287', '660037',
-	   'Fusarium_verticillioides', '117187',
-	   'Gadus_morhua', '8049',
-	   'Gasterosteus_aculeatus', '69293',
-	   'Glycine_max', '3847',
-	   'Gossypium_raimondii', '29730',
-	   'Homo_sapiens', '9606',
-	   'Hordeum_vulgare', '4513',
-	   'Jatropha_curcas', '180498',
-	   'Kalanchoe_laxiflora', '1670617',
-	   'Laccaria_bicolor', '29883',
-	   'Leersia_perrieri', '77586',
-	   'Linum_usitatissimum', '4006',
-	   'Magnaporthe_grissa', '148305',
-	   'Malus_domestica', '3750',
-	   'Manihot_esculenta', '3983',
-	   'Medicago_truncatula', '3880',
-	   'Mimulus_guttatus', '4155',
-	   'Mus_musculus', '10090',
-	   'Musa_acuminata', '4641',
-	   'Nectria_haematococca', '140110',
-	   'Nelumbo_nucifera', '4432',
-	   'Neurospora_crassa', '5141',
-	   'Nostoc_punctiforme', '272131',
-	   'Oncorhynchus_mykiss', '8022',
-	   'Oryza_australiensis', '4532',
-	   'Oryza_barthii', '65489',
-	   'Oryza_brachyantha', '4533',
-	   'Oryza_glaberrima', '4538',
-	   'Oryza_glumaepatula', '40148',
-	   'Oryza_granulata', '110450',
-	   'Oryza_kasalath', '4527',
-	'Oryza_longistaminata', '4528',
-		'Oryza_meridionalis', '40149',
-		'Oryza_minuta', '63629',
-		'Oryza_nivara', '4536',
-		'Oryza_officinalis', '4535',
-		'Oryza_punctata', '4537',
-		'Oryza_rufipogon', '4529',
-		'Oryza_sativa.indica.gramene', '39946',
-		'Oryza_sativa.indica.iplant', '39946',
-		'Oryza_sativa.indica.IR29', '39946',
-		'Oryza_sativa.indica.pokkali', '39946',
-		'Oryza_sativa.japonica.iplant', '39947',
-		'Oryza_sativa.japonica.IRGSP', '39947',
-		'Oryza_sativa.japonica.MSU', '39947',
-		'Oryzias_latipes', '8090',
-		'Pediculus_humanus', '121225',
-		'Phaseolus_vulgaris', '3885',
-		'Phoenix_dactylifera', '42345',
-		'Phyllostachys_heterocycla', '38705',
-		'Physcomitrella_patens', '3218',
-		'Phytophthora_infestans', '4787',
-		'Picea_abies', '3329',
-		'Pinus_taeda', '3352',
-		'Populus_trichocarpa', '3694',
-		'Populus_trichocarpa.ver3', '3694',
-		'Prunus_persica', '3760',
-		'Rattus_norvegicus', '10116',
-		'Rhizopus_oryzae', '64495',
-		'Ricinus_communis', '3988',
-		'Saccharomyces_cerevisiae', '4932',
-		'Salvia_hispancia.salba', '49212',
-		'Salvia_splendens', '180675',
-		'Schizosaccharomyces_pombe', '4896',
-		'Selaginella_moellendorffii', '88036',
-		'Setaria_italica', '4555',
-		'Solanum_lycopersicum', '4081',
-		'Solanum_tuberosum', '4113',
-		'Sorghum_bicolor', '4558',
-		'Synechocystis_pcc6803', '1148',
-		'Takifugu_rubripes', '31033',
-		'Tetraodon_nigroviridis', '99883',
-		'Theobroma_cacao', '3641',
-		'Tolypocladium_inflatum', '29910',
-		'Trichodesmium_erythraeum', '1206',
-		'Triticum_aestivum', '4565',
-		'Triticum_monococcum.DV92', '4568',
-		'Triticum_monococcum.G3116', '4568',
-		'Triticum_turgidum', '4571',
-		'Triticum_urartu', '4572',
-		'Vitis_vinifera', '29760',
-		'Zea_mays', '4577',
-		*/
 		
 	document.getElementById("gnames").innerHTML = 
 	"Please input names of the interesting gene products. e.g.:<br/>"+
-"GR1        <br/>"+
-"ENO1       <br/>"+
-"ENOC       <br/>"+
-"LOS2       <br/>"+
-"SAC52      <br/>"+
-"AT1G18540  <br/>"+
-"RPL10B     <br/>"+
-"PRPL11     <br/>"+
-"RP1        <br/>"+
-"RPL3B      <br/>"+
-"SAG24      <br/>"+
-"AT1G74050  <br/>"+
-"AT1G74060  <br/>"+
-"RPL24A     <br/>"+
-"AT2G37190  <br/>"+
-"RPL23AA    <br/>"+
-"RPL16A     <br/>"+
-"AT2G44860  <br/>"+
-"ATL5       <br/>"+
-"STV1       <br/>"+
-"AT3G53430  <br/>"+
-"RPL23AB    <br/>"+
-"AT4G01310  <br/>"+
-"MRPL11     <br/>"+
-"RPL5B      <br/>"+
-"AT5G51610  <br/>"+
-"AT5G60670  <br/>"+
-"RPL20      <br/>"+
-"NFD3       <br/>"+
-"P40        <br/>"+
-"P40        <br/>"+
-"AT2G04390  <br/>"+
-"AT2G05220  <br/>"+
-"AT2G07696  <br/>"+
-"AT2G36160  <br/>"+
-"RPS5B      <br/>"+
-"AT2G45710  <br/>"+
-"AT3G02080  <br/>"+
-"RPSAb      <br/>"+
-"RPSAb      <br/>"+
-"AT3G10610  <br/>"+
-"AT3G11510  <br/>"+
-"RPS5A      <br/>"+
-"AT3G52580  <br/>"+
-"RS27A      <br/>"+
-"AT3G61111  <br/>"+
-"AT4G25740  <br/>"+
-"AT5G04800  <br/>"+
-"AT5G15520  <br/>"+
-"RPS10B     <br/>"+
-"AT5G47930  <br/>"+
-"AT5G52650  <br/>"+
-"AT5G61170  <br/>"+
-"RPS19      <br/>"+
-"APTG1      <br/>"+
-"PNT1       <br/>"+
-"FATB       <br/>"+
-"mtACP2     <br/>"+
-"MTACP-1    <br/>"+
-"FaTA       <br/>"+
-"AT4G13050  <br/>"+
-"ACP5       <br/>"+
-"mtACP3     <br/>"+
-"VPS34      <br/>"+
-"ATG8C      <br/>"+
-"ATG8D      <br/>"+
-"ATG10      <br/>"+
-"ATG2       <br/>"+
-"APG8A      <br/>"+
-"AT5G49540  <br/>"+
-"AT1G07070  <br/>"+
-"AT1G41880  <br/>"+
-"ALATS      <br/>"+
-"ALATS      <br/>"+
-"PSD        <br/>"+
-"PSD        <br/>"+
-"AT1G74270  <br/>"+
-"AT1G76170  <br/>"+
-"AT2G40660  <br/>"+
-"CTEXP      <br/>"+
-"ROL5       <br/>"+
-"AT3G55750  <br/>"+
-"AT3G59980  <br/>"+
-"AT3G59980  <br/>"+
-"AT4G13780  <br/>"+
-"EMB1030    <br/>"+
-"AT5G24840  <br/>"+
-"ERS        <br/>"+
-"ARGAH2     <br/>"+
-"ARGAH1     <br/>"+
-"AT1G13160  <br/>"+
-"AT2G37990  <br/>"+
-"AT4G31520  <br/>"+
-"MOS7       <br/>"+
-"MOS7       <br/>"+
-"AT1G26170  <br/>"+
-"TRN1       <br/>"+
-"SAD2       <br/>"+
-"AT2G46520  <br/>"+
-"XPO1B      <br/>";
+    "GR1        <br/>"+
+    "ENO1       <br/>"+
+    "ENOC       <br/>"+
+    "LOS2       <br/>"+
+    "SAC52      <br/>"+
+    "AT1G18540  <br/>"+
+    "RPL10B     <br/>"+
+    "PRPL11     <br/>"+
+    "RP1        <br/>"+
+    "RPL3B      <br/>"+
+    "SAG24      <br/>"+
+    "AT1G74050  <br/>"+
+    "AT1G74060  <br/>"+
+    "RPL24A     <br/>"+
+    "AT2G37190  <br/>"+
+    "RPL23AA    <br/>"+
+    "RPL16A     <br/>"+
+    "AT2G44860  <br/>"+
+    "ATL5       <br/>"+
+    "STV1       <br/>"+
+    "AT3G53430  <br/>"+
+    "RPL23AB    <br/>"+
+    "AT4G01310  <br/>"+
+    "MRPL11     <br/>"+
+    "RPL5B      <br/>"+
+    "AT5G51610  <br/>"+
+    "AT5G60670  <br/>"+
+    "RPL20      <br/>"+
+    "NFD3       <br/>"+
+    "P40        <br/>"+
+    "P40        <br/>"+
+    "AT2G04390  <br/>"+
+    "AT2G05220  <br/>"+
+    "AT2G07696  <br/>"+
+    "AT2G36160  <br/>"+
+    "RPS5B      <br/>"+
+    "AT2G45710  <br/>"+
+    "AT3G02080  <br/>"+
+    "RPSAb      <br/>"+
+    "RPSAb      <br/>"+
+    "AT3G10610  <br/>"+
+    "AT3G11510  <br/>"+
+    "RPS5A      <br/>"+
+    "AT3G52580  <br/>"+
+    "RS27A      <br/>"+
+    "AT3G61111  <br/>"+
+    "AT4G25740  <br/>"+
+    "AT5G04800  <br/>"+
+    "AT5G15520  <br/>"+
+    "RPS10B     <br/>"+
+    "AT5G47930  <br/>"+
+    "AT5G52650  <br/>"+
+    "AT5G61170  <br/>"+
+    "RPS19      <br/>"+
+    "APTG1      <br/>"+
+    "PNT1       <br/>"+
+    "FATB       <br/>"+
+    "mtACP2     <br/>"+
+    "MTACP-1    <br/>"+
+    "FaTA       <br/>"+
+    "AT4G13050  <br/>"+
+    "ACP5       <br/>"+
+    "mtACP3     <br/>"+
+    "VPS34      <br/>"+
+    "ATG8C      <br/>"+
+    "ATG8D      <br/>"+
+    "ATG10      <br/>"+
+    "ATG2       <br/>"+
+    "APG8A      <br/>"+
+    "AT5G49540  <br/>"+
+    "AT1G07070  <br/>"+
+    "AT1G41880  <br/>"+
+    "ALATS      <br/>"+
+    "ALATS      <br/>"+
+    "PSD        <br/>"+
+    "PSD        <br/>"+
+    "AT1G74270  <br/>"+
+    "AT1G76170  <br/>"+
+    "AT2G40660  <br/>"+
+    "CTEXP      <br/>"+
+    "ROL5       <br/>"+
+    "AT3G55750  <br/>"+
+    "AT3G59980  <br/>"+
+    "AT3G59980  <br/>"+
+    "AT4G13780  <br/>"+
+    "EMB1030    <br/>"+
+    "AT5G24840  <br/>"+
+    "ERS        <br/>"+
+    "ARGAH2     <br/>"+
+    "ARGAH1     <br/>"+
+    "AT1G13160  <br/>"+
+    "AT2G37990  <br/>"+
+    "AT4G31520  <br/>"+
+    "MOS7       <br/>"+
+    "MOS7       <br/>"+
+    "AT1G26170  <br/>"+
+    "TRN1       <br/>"+
+    "SAD2       <br/>"+
+    "AT2G46520  <br/>"+
+    "XPO1B      <br/>";
 
 
 	document.getElementById("gids").innerHTML = 
@@ -861,8 +858,8 @@ function onclick_disambiguity(){
 	
 	disAmbiguateGenes(inputGenes);
 	
-	$('#disam').hide();
-	$('#submit').show();
+/* 	$('#disam').hide();
+	$('#submit').show(); */
 }
 
 function my_reset(){
@@ -870,13 +867,34 @@ function my_reset(){
 	document.querySelector('#textarea_geneList').value = '';
 	document.querySelector('#textarea_backgroundList').value = '';
 	my_submitReset();
+	
+	$('#disam').show();
+	$('#submit').hide();
+	$('#btn_vis').hide();
+	
+	//clear the ambiguous table
+	var tableBody = $('#disambiguityTableBody');
+	tableBody.html("");	
+	
+	$('#disambiguity').hide();
+	$('#toggleAmbiguousTable').hide();
+	$('#error').hide();	
+	
 }
 
+//when the input gene list is changed
 function onchange_InterestingInput(){
 
 	$('#disam').show();
 	$('#submit').hide();
 	
+	//clear the ambiguous table
+	var tableBody = $('#disambiguityTableBody');
+	tableBody.html("");	
+	
+	$('#disambiguity').hide();
+	$('#toggleAmbiguousTable').hide();
+	$('#error').hide();
 }
 
 function onclick_QueryTypeChange(){
@@ -894,6 +912,8 @@ function onclick_QueryTypeChange(){
 }
 
 function onclick_ontologyCategoryChange(){
+	
+	//upper selection
 	let x = document.getElementById("ontologyCategory").value;
 	ontologyCategory = x;
 	
@@ -913,7 +933,38 @@ function onclick_ontologyCategoryChange(){
 	
 	//refresh the download file
 	createDownloadFile(downloadContent);
+	
+	//lower selection
+	$('#ontologyCategory2').val(x);
+	//$('#ontologyCategory2 option[value='+x+']').attr('selected','selected');
+	//$("#ontologyCategory2").val(x).change();
+}
 
+function onclick_ontologyCategoryChange2(){
+	
+	//upper selection
+	let x = document.getElementById("ontologyCategory2").value;
+	ontologyCategory = x;
+	
+	initializeDownloadContent();
+	
+	downloadContent += downloadContentHeader;
+	
+	table.clear().draw();
+	
+	for(let i of resultList){
+			
+		if(ontologyCategory=='all' || i.ontologyCategory ==ontologyCategory){
+			appendOntologyToTable(i);
+			appendOntologyToDownload(i);
+		}
+	};
+	
+	//refresh the download file
+	createDownloadFile(downloadContent);
+	
+	//upper selection
+	$('#ontologyCategory').val(x);
 }
 
 //get the overview information from server
@@ -956,8 +1007,20 @@ function disAmbiguateGenes(geneList){
 				showSucessText("There is NO ambiguous inputs, you could SUBMIT your analysis!");
 				//console.log('no ambiguous');
 			else{
+				
+				//show information
 				showError("Please select from ambiguous terms to target the gene product...");
+				
+				//reset the buttons
 				$('#disambiguity').show();
+				$('#toggleAmbiguousTable').show();
+				$('#disam').hide();
+				$('#submit').show();
+				
+				//clear the ambiguous table
+				var tableBody = $('#disambiguityTableBody');
+				tableBody.html("");
+				
 			}
  			for(let i of ambiguousUglyData){
 				
@@ -972,17 +1035,31 @@ function disAmbiguateGenes(geneList){
 	});
 }
 
+function onclick_toggleDisambiguousTalbe(){
+	
+	var query = $('#disambiguityTableBody');
+	var isVisible = query.is(':visible');
+	
+	if (isVisible === true) {
+		$('#disambiguityTableBody').hide();
+	}
+	else{
+		$('#disambiguityTableBody').show();
+	}
+		
+}
+
 
 function appendAmbiguityRowToTable(input, amNum, amObjs){
 	
 	var tableBody = $('#disambiguityTableBody');
 	
 	//http://browser.planteome.org/amigo/gene_product/TAIR:locus:2027483
-	
+	//"http://amigo.geneontology.org/amigo/gene_product/"
 	//let link = "/amigo/gene_product/" + amObjs[0].id;"
 	
  	let anode = $('<a>').text(amObjs[0].id).attr({
-		href:"http://amigo.geneontology.org/amigo/gene_product/" + amObjs[0].id,
+		href:"http://browser.planteome.org/amigo/gene_product/" + amObjs[0].id,
 		target: "_blank"
 	})
 			
@@ -1010,7 +1087,7 @@ function appendAmbiguityRowToTable(input, amNum, amObjs){
 	for(let i = 1; i<amNum; i++){
 		
 		let anode = $('<a>').text(amObjs[i].id).attr({
-				href:"http://amigo.geneontology.org/amigo/gene_product/" + amObjs[i].id,
+				href:"http://browser.planteome.org/amigo/gene_product/" + amObjs[i].id,
 				target: "_blank"
 			})
 		
@@ -1270,6 +1347,11 @@ function dynamicAnalysis(){
 				// n
 				let n = inputGenesNum;
 
+				if(numOfRefer == 0)
+					continue;
+				if(numOfInput == 0)
+					continue;
+				
 				let p = caculatePvalue(numOfInput,numOfRefer,n,N);
 
 				if(Number.isNaN(p)){
@@ -1370,9 +1452,9 @@ function showSucessText(content){
 
 function appendOntologyToTable(obj){
 	
-	let temp = "http://browser.planteome.org/amigo/term/GO:0005618";
-	
-	let link = "http://amigo.geneontology.org/amigo/term/" + obj.ontologyId;
+	//"http://browser.planteome.org/amigo/term/GO:0005618";
+	let link = "http://browser.planteome.org/amigo/term/" + obj.ontologyId;
+	//let link = "http://amigo.geneontology.org/amigo/term/" + obj.ontologyId;
 	let idNode = "<a target='_blank' href="+link + ">" + obj.ontologyId + "</a>";
 	
 	table.row.add( [
