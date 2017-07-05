@@ -41,7 +41,7 @@
 					
 					<div class="btn-group" role="group" aria-label="..." >
 						<button type="button" id="btn_refresh" class="btn btn-primary" onclick="loadView()">Refresh</button>
-						<button type="button" id="checkbox_showChildren" class="btn btn-success" onclick="showNodesChildren()">Hide Children Nodes</button>
+						<button type="button" id="checkbox_showChildren" class="btn btn-success" onclick="onclick_showNodesChildren()">Show Children Nodes</button>
 						<button id="start_forcelayout" type="button" class="btn btn-default">Resume Animation</button>
 						<button id="stop_forcelayout" type="button" class="btn btn-default">Pause Animation</button>
 						
@@ -92,6 +92,7 @@
 				<div class="panel-heading">Selection Infomation</div>
 				<div class="panel-body">
 					<p id="selectedNode">Selection Node: </p>
+					<p id="selectedNodeCatergory">Selection Node: </p>
 					<p id="selectedNodeName">Ontology Name: </p>
 					<p id="selectedNodepvalue">P value: </p>
                     <p id="selectedNodeInputCount">Input Genes Count: </p>

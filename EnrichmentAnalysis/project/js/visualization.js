@@ -15,11 +15,8 @@ var pvalueList = [];
 var hlevelNodesList = {};
 let vlevelNodesList = {};
 
-var flag_showChildren = true;
+var flag_showChildren = false;
 var flag_highlightActive = false;
-var allNodes;
-var allEdges;
-
 
 //dataset for network view
 var vis_nodes;
@@ -35,6 +32,44 @@ var networkTree;		// for tree visualization
 var selectedCategory;
 var getCategoriesFinished = false;
 
+/*
+NodeProperty Object
+*/
+class NodeProperty{
+	constructor(label, inputGenesCount, e_count, p_value, parentsEdgesIds, childrenEdgesIds, parentNodesIds, childrenNodesIds, mtype) {
+		this.name = label;
+		this.color = defaultWhiteColor;
+		this.inputCount = inputGenesCount;
+		this.edgeCount = e_count;
+		this.pvalue = p_value;
+		this.parentsEdges = parentsEdgesIds;
+		this.childrenEdges = childrenEdgesIds;
+		this.parents = parentNodesIds;
+		this.children = childrenNodesIds;
+		this.category = mtype;
+		this.networkx = 0;
+		this.networky = 0;
+		this.treex = 0;
+		this.treey = 0;
+		this.vlevel = 0;
+		this.hletvel = 0;
+		this.hasChildrenWithPvalue = false;
+	}
+}
+
+/*
+EdgeProperty Object
+*/
+class EdgeProperty{
+	constructor() {
+		this.from = undefined;
+		this.to = undefined;
+		this.color = undefined;
+		this.type = undefined;
+	}	
+}
+
+
 function loadView() {
 
 
@@ -48,7 +83,7 @@ function loadView() {
 
     raw_graph_data = JSON.parse(raw_graph_data);
     resultList = JSON.parse(resultList);
-    console.log(resultList);
+    //console.log(resultList);
 
     if (raw_graph_data.length == resultList.length) {
         //parsed all of resultList, time to view graph
@@ -58,8 +93,8 @@ function loadView() {
 
     selectedCategory = document.getElementById("ontologyCategoryVis").value;
 
-    flag_showChildren = true;
-    showNodesChildren();
+    flag_showChildren = false;
+    showNodes();
 
     /* 	var c = document.getElementById("vis_graph2");
         var ctx = c.getContext("2d");
@@ -76,65 +111,94 @@ function loadView() {
 function onclick_ontologyCategoryChangeVis() {
 
     selectedCategory = document.getElementById("ontologyCategoryVis").value;
-
-    var updateArray = [];
+	
+	showNodes();
+	
+/*     var updateArray = [];
     var updateEdgeArray = [];
 
-    for (var nodeId in NodesProperties) {
-
+	
+	var ids = vis_nodes.getIds();
+	
+	for (var nodeId of ids) {	
         let c;
         let l;
+		let h = false;
         if (NodesProperties[nodeId].category == selectedCategory || selectedCategory == 'all') {
 
             c = NodesProperties[nodeId].color;
             l = NodesProperties[nodeId].name;
 
-            /* 			if(c == undefined)
-                            c = defaultColor; */
-
             if (!flag_showChildren && (NodesProperties[nodeId].hasChildrenWithPvalue == false)) {
-                c = defaultWhiteColor;
-                l = undefined;
+
+				h = true;
             }
+			
+			
         } else {
-            c = defaultWhiteColor;
-            l = undefined;
+			h = true;
         }
 
         updateArray.push({
             id: nodeId,
+			hidden: h,
             label: l,
             color: c,
         })
+		
+    }
+    vis_nodes.update(updateArray);
 
-        var edgesList = NodesProperties[nodeId].parentsEdges;
+	
+	var eids = vis_edges.getIds();
+	for (var edgeId of eids) {
+		
+        let c;
+        let l;
+		let res = true;
+     
+		var fromNodeId = EdgesProperties[edgeId].from;
+		var toNodeId = EdgesProperties[edgeId].to;
+		
+		
+		if (NodesProperties[fromNodeId].category == selectedCategory || selectedCategory == 'all') {
 
-        if (c == defaultWhiteColor) {
-
-
-
-            for(ei of edgesList) {
-                updateEdgeArray.push({
-                    id: ei,
-                    color: defaultWhiteColor,
-                })
+            if (!flag_showChildren && (NodesProperties[fromNodeId].hasChildrenWithPvalue == false)) {
+				res = false;
             }
+        }else{
+			res = false;
+		}
+		
+		if (NodesProperties[toNodeId].category == selectedCategory || selectedCategory == 'all') {
+
+            if (!flag_showChildren && (NodesProperties[toNodeId].hasChildrenWithPvalue == false)) {
+				res = false;
+            }
+        }else{
+			res = false;
+		}
+		
+
+        if (!res) {
+
+			updateEdgeArray.push({
+				id: edgeId,
+				hidden: true,
+			})
+
         }
-        else {
+         else {
 
-            for(ei of edgesList) {
-                updateEdgeArray.push({
-                    id: ei,
-                    color: EdgesProperties[ei].color,
-                })
-            }
+			updateEdgeArray.push({
+				id: edgeId,
+				hidden:false,
+			})
+          			
         }
     }
+    vis_edges.update(updateEdgeArray); */
 
-    //vis_nodes.remove(deleteArray);
-
-    vis_edges.update(updateEdgeArray);
-    vis_nodes.update(updateArray);
 
 }
 
@@ -209,125 +273,139 @@ function onclick_treeontologyCategoryChangeVis() {
 
     stopSimulate();
 }
-function showNodesChildren() {
-    //flag_showChildren = $('#checkbox_showChildren').is(':checked'); 
-    flag_showChildren = (flag_showChildren + 1) % 2
+
+
+function onclick_showNodesChildren(){
+	
+	flag_showChildren = (flag_showChildren + 1) % 2
     if (flag_showChildren)
         $('#checkbox_showChildren').html("Hide Children Nodes");
     else
         $('#checkbox_showChildren').html("Show Children Nodes");
+	
+	showNodes();
+	
+}
 
+function showNodes() {
+
+	//network.storePositions();
+		
 
     var updateArray = [];
     var updateEdgeArray = [];
+	var deleteArray = [];
+	var deleteEdgeArray = []
 
-    if (flag_showChildren) {
+	for (var nodeId in NodesProperties) {
 
-        for (var nodeId in NodesProperties) {
+		//get the color of node
+		let c = NodesProperties[nodeId].color;
+		let l = NodesProperties[nodeId].name;
+				
+		if (!flag_showChildren && NodesProperties[nodeId].hasChildrenWithPvalue != true) {
 
-            //if(NodesProperties[nodeId].hasChildrenWithPvalue == true)
+			var exist = vis_nodes.get(nodeId)
+			if(exist != null)
+			{
+				
+				let pos = network.getPositions([nodeId]);
+				if(pos[nodeId].hasOwnProperty('x') && pos[nodeId].hasOwnProperty('y')){
+					NodesProperties[nodeId].networkx = pos[nodeId].x;
+					NodesProperties[nodeId].networky = pos[nodeId].y;
+				}
+				
+				deleteArray.push({
+					id: nodeId
+				})
+			}
 
-            //get the color of node
-            let c = NodesProperties[nodeId].color;
-            let l = NodesProperties[nodeId].name;
+		} else {
 
-            /* 			if(c == undefined)
-                            c = defaultColor; */
+			if (getCategoriesFinished && selectedCategory != 'all' && NodesProperties[nodeId].category != selectedCategory) {
+				
+				var exist = vis_nodes.get(nodeId)
+				if(exist != null)
+				{
+				
+					let pos = network.getPositions([nodeId]);
+					if(pos[nodeId].hasOwnProperty('x') && pos[nodeId].hasOwnProperty('y')){
+						NodesProperties[nodeId].networkx = pos[nodeId].x;
+						NodesProperties[nodeId].networky = pos[nodeId].y;
+					}
+					
+					deleteArray.push({
+						id: nodeId
+					})
+					
+				}
+				
+				
+			
+				
+			}else{
+				
+				if(NodesProperties[nodeId].networkx == 0 && NodesProperties[nodeId].networky ==0){
+					
+					updateArray.push({
+						id: nodeId,
+						label: l,
+						color: c,
+						hidden: false,
+					})					
+					
+				}else{
+					updateArray.push({
+						id: nodeId,
+						label: l,
+						color: c,
+						x: NodesProperties[nodeId].networkx,
+						y: NodesProperties[nodeId].networky,
+						hidden: false,
+					})
+				}
+				
 
-            if (getCategoriesFinished && selectedCategory != 'all' && NodesProperties[nodeId].category != selectedCategory) {
+			}
+		}
+		
+	}
+		
+		
+	vis_nodes.update(updateArray);
+	vis_nodes.remove(deleteArray);
+		
+	for (var edgeId in EdgesProperties) {
+		
+		let c;
+		let l;
+		let h = false;
+	 
+		var fromNodeId = EdgesProperties[edgeId].from;
+		var toNodeId = EdgesProperties[edgeId].to;
+		
+		var fromnode = vis_nodes.get(fromNodeId);
+		var tonode = vis_nodes.get(toNodeId)
+		
+		if(fromnode == null || tonode == null){
+			h = true;
+		}
+		else if (fromnode.hidden == true || tonode.hidden == true) {
+			h = true;
+		}
 
-                c = defaultWhiteColor;
-                l = undefined;
+		updateEdgeArray.push({
+			id: edgeId,
+			hidden: h,
+			from: EdgesProperties[edgeId].from,
+			to: EdgesProperties[edgeId].to,
+			title: EdgesProperties[edgeId].from + " " + EdgesProperties[edgeId].type + " " + EdgesProperties[edgeId].to,
+			color: EdgesProperties[edgeId].color,
+		})
 
-            }
+	}
 
-            updateArray.push({
-                id: nodeId,
-                label: l,
-                color: c,
-            })
-
-            var edgesList = NodesProperties[nodeId].parentsEdges;
-
-            if (c == defaultWhiteColor) {
-                for(ei of edgesList) {
-                    updateEdgeArray.push({
-                        id: ei,
-                        color: defaultWhiteColor,
-                    })
-                }
-            }
-            else {
-
-                for(ei of edgesList) {
-                    updateEdgeArray.push({
-                        id: ei,
-                        color: EdgesProperties[ei].color,
-                    })
-                }
-            }
-        }
-
-        //vis_nodes.add(updateArray);
-        //network.setOptions({physics:true});
-    } else {
-
-        for (var nodeId in NodesProperties) {
-
-            let c, l;
-            if (NodesProperties[nodeId].hasChildrenWithPvalue == true) {
-
-                c = NodesProperties[nodeId].color;
-                l = NodesProperties[nodeId].name;
-                /* 				if(c == undefined)
-                                    c = defaultColor; */
-
-                if (getCategoriesFinished && selectedCategory != 'all' && NodesProperties[nodeId].category != selectedCategory) {
-
-                    c = defaultWhiteColor;
-                    l = undefined;
-
-                }
-
-
-            } else {
-                c = defaultWhiteColor;
-                l = undefined;
-            }
-
-            updateArray.push({
-                id: nodeId,
-                label: l,
-                color: c,
-            })
-
-            var edgesList = NodesProperties[nodeId].parentsEdges;
-
-            if (c == defaultWhiteColor) {
-                for(ei of edgesList) {
-                    updateEdgeArray.push({
-                        id: ei,
-                        color: defaultWhiteColor,
-                    })
-                }
-            }
-            else {
-
-                for(ei of edgesList) {
-                    updateEdgeArray.push({
-                        id: ei,
-                        color: EdgesProperties[ei].color,
-                    })
-                }
-            }
-        }
-
-        //vis_nodes.remove(deleteArray);
-
-    }
-
-    vis_nodes.update(updateArray);
-    vis_edges.update(updateEdgeArray);
+	vis_edges.update(updateEdgeArray);
 
 }
 
@@ -380,10 +458,15 @@ function visViewGraph(raw_data) {
             edges.add(JSON.stringify({ "id": `${e.sub}x${e.obj}`, "from": e.sub, "to": e.obj, /* 'type':e.pred */ }));
 
             let eid = `${e.sub}x${e.obj}`;
-            EdgesProperties[eid] = {};
+            //EdgesProperties[eid] = {};
+			
+			EdgesProperties[eid] = new EdgeProperty();
+			
             EdgesProperties[eid].from = e.sub;
-            EdgesProperties[eid].to = e.obj;
-            if (!EdgesProperties[eid].hasOwnProperty('type'))
+            EdgesProperties[eid].to = e.obj;		
+			
+			//if (!EdgesProperties[eid].hasOwnProperty('type'))
+			if (EdgesProperties[eid].type == undefined)
                 EdgesProperties[eid].type = e.pred;
             else {
                 cosole.log(EdgesProperties[`${e.sub}x${e.obj}`]);
@@ -476,8 +559,10 @@ function visViewGraph(raw_data) {
         }
 
         var propertyName = n_arr[i].id;
-        var propertyItem = { name: n_arr[i].label, inputCount:inputGenesCount, edgeCount: e_count, pvalue: p_value, parentsEdges: parentsEdgesIds, childrenEdges: childrenEdgesIds, parents: parentNodesIds, children: childrenNodesIds, category: mtype };
-        NodesProperties[propertyName] = propertyItem;
+        //var propertyItem = { name: n_arr[i].label, inputCount:inputGenesCount, edgeCount: e_count, pvalue: p_value, parentsEdges: parentsEdgesIds, childrenEdges: childrenEdgesIds, parents: parentNodesIds, children: childrenNodesIds, category: mtype };
+		var propertyItem = new NodeProperty(n_arr[i].label, inputGenesCount, e_count, p_value, parentsEdgesIds, childrenEdgesIds, parentNodesIds, childrenNodesIds, mtype);
+		
+		NodesProperties[propertyName] = propertyItem;
 
     }
 
@@ -572,14 +657,16 @@ function visViewGraph(raw_data) {
             NodesProperties[n.id].color = c;
         }
 
-        vis_nodes.add({
-            id: n.id,
-            label: NodesProperties[n.id].name,
-            value: NodesProperties[n.id].inputCount,
-            //value: NodesProperties[n.id].edgeCount,
-            title: n.id,
-            color: c,
-        });
+		if(NodesProperties[n.id].hasChildrenWithPvalue == true){
+			vis_nodes.add({
+				id: n.id,
+				label: NodesProperties[n.id].name,
+				value: NodesProperties[n.id].inputCount,
+				//value: NodesProperties[n.id].edgeCount,
+				title: n.id,
+				color: c,
+			});
+		}
     }
 
     //console.log(haschildrenNodecount);
@@ -629,6 +716,11 @@ function visViewGraph(raw_data) {
 
     for(let e of e_arr) {
 
+		if(NodesProperties[e.from].hasChildrenWithPvalue != true)
+			continue;
+		if(NodesProperties[e.to].hasChildrenWithPvalue != true)
+			continue;
+	
         vis_edges.add({
             id: e.id,
             from: e.from,
@@ -1355,13 +1447,13 @@ function drawNetwork() {
                     enabled: false,
                     min: 14,
                     max: 30,
-                    maxVisible: 30,
-                    drawThreshold: 5
+                    maxVisible: 40,
+                    drawThreshold: 1
                 }
             },
             font: {
                 color: '#343434',
-                size: 10,
+                size: 20,
             },
         },
 
@@ -1370,7 +1462,9 @@ function drawNetwork() {
 /*             smooth: {
                 type: 'continuous'
             }, */
-
+			
+			//physics: false,
+			
             arrows: {
                 to: { enabled: true, scaleFactor: 1 }
             },
@@ -1387,24 +1481,25 @@ function drawNetwork() {
 		{
 		    enabled: false,
 		    barnesHut: {
-		        gravitationalConstant: -10000,
+		        gravitationalConstant: -80000,
 		        centralGravity: 0.3,
-		        springLength: 200,
+		        springLength: 50,
 		        springConstant: 0.04,
 		        damping: 0.09,
 		        avoidOverlap: 0
 		    },
+		
 		    forceAtlas2Based: {
 		        gravitationalConstant: -200,
 		        centralGravity: 0.01,
 		        springConstant: 0.08,
-		        springLength: 100,
+		        springLength: 50,
 		        damping: 0.4,
-		        avoidOverlap: 0
+		        avoidOverlap: 1
 		    },
 		    solver: 'barnesHut',
-		    stabilization: false,
-		    minVelocity: 10,
+		    stabilization: true,
+		    minVelocity: 1,
 		},
 
         interaction: {
@@ -1415,13 +1510,11 @@ function drawNetwork() {
 
     network = new vis.Network(container, data, options);
 
-    allNodes = vis_nodes.get({ returnType: "Object" });
-    allEdges = vis_edges.get({ returnType: "Object" });
+    // allNodes = vis_nodes.get({ returnType: "Object" });
+    // allEdges = vis_edges.get({ returnType: "Object" });
 
     network.on("click", clickEvent);
 
-    // add event listeners
-    //network.on('select', clickNode);
 
     network.on("beforeDrawing", function creatWhieBackground(ctx) {
 
@@ -1442,6 +1535,7 @@ function clickNode(params) {
 
     if (params.nodes.length > 0) {
         document.getElementById('selectedNode').innerHTML = 'Selection Node: ' + "<a onclick='FocusNode(\"" + params.nodes + "\")'>" + params.nodes + "</a> ";//params.nodes;
+		document.getElementById('selectedNodeCatergory').innerHTML = 'Ontology Name: ' + NodesProperties[params.nodes].category;
         document.getElementById('selectedNodeName').innerHTML = 'Ontology Name: ' + NodesProperties[params.nodes].name;
         document.getElementById('selectedNodepvalue').innerHTML = 'P value: ' + NodesProperties[params.nodes].pvalue.toExponential(4);
         document.getElementById('selectedNodeInputCount').innerHTML = 'Input Genes count: ' + NodesProperties[params.nodes].inputCount;
@@ -1513,6 +1607,9 @@ function FocusNode(id) {
 
 function clickEvent(params) {
 
+    allNodes = vis_nodes.get({ returnType: "Object" });
+    allEdges = vis_edges.get({ returnType: "Object" });
+
     clickNode(params);
 
     //console.log(params);
@@ -1542,12 +1639,16 @@ function clickEvent(params) {
         var allConnectedNodes = [];
 
         // get the second degree nodes
-        for (i = 1; i < degrees; i++) {
+        //for (i = 1; i < degrees; i++) {
             for (j = 0; j < connectedNodes.length; j++) {
-                allConnectedNodes = allConnectedNodes.concat(network.getConnectedNodes(connectedNodes[j]));
+				
+				var temp = network.getConnectedNodes(connectedNodes[j]);
+                allConnectedNodes = allConnectedNodes.concat(temp);
             }
-        }
-
+        //}
+		
+		//console.log(allConnectedNodes);
+		
         function getClickedNodeColor(nodeId, r, g, b, a) {
             let newc;
             if (NodesProperties[nodeId].pvalue != -1) {
@@ -1563,16 +1664,19 @@ function clickEvent(params) {
         // all second degree nodes get a different color and their label back
         for (i = 0; i < allConnectedNodes.length; i++) {
             //allNodes[allConnectedNodes[i]].color = 'rgba(0,0,255,0.3)';
-            allNodes[allConnectedNodes[i]].color = getClickedNodeColor(allConnectedNodes[i], 0, 0, 76, 1.0);
+            var colorrr = getClickedNodeColor(allConnectedNodes[i], 0, 0, 76, 1.0);
+			
+			allNodes[allConnectedNodes[i]].color = colorrr;
+			
             if (allNodes[allConnectedNodes[i]].hiddenLabel !== undefined) {
                 allNodes[allConnectedNodes[i]].label = allNodes[allConnectedNodes[i]].hiddenLabel;
                 allNodes[allConnectedNodes[i]].hiddenLabel = undefined;
             }
 
-            let edges = NodesProperties[allConnectedNodes[i]].parentsEdges;
-            for(eid of edges) {
-                allEdges[eid].color = EdgesProperties[eid].color;
-            }
+            // let edges = NodesProperties[allConnectedNodes[i]].parentsEdges;
+            // for(eid of edges) {
+                // allEdges[eid].color = EdgesProperties[eid].color;
+            // }
 
         }
 
@@ -1589,6 +1693,11 @@ function clickEvent(params) {
             for(eid of edges) {
                 allEdges[eid].color = EdgesProperties[eid].color;
             }
+			let edges2 = NodesProperties[connectedNodes[i]].childrenEdges;
+			for(eid of edges2) {
+				if(allEdges.hasOwnProperty(eid))
+					allEdges[eid].color = EdgesProperties[eid].color;
+			}
         }
 
         // the main node gets its own color and its label back.
@@ -1603,13 +1712,23 @@ function clickEvent(params) {
         for(eid of edges) {
             allEdges[eid].color = EdgesProperties[eid].color;
         }
+		let edges2 = NodesProperties[selectedNode].childrenEdges;
+        for(eid of edges2) {
+			if(allEdges.hasOwnProperty(eid))
+				allEdges[eid].color = EdgesProperties[eid].color;
+        }
+		
+		
 
     }
     else if (flag_highlightActive === true) {
         // reset all nodes and edges
-        let c, l;
-        for (var nodeId in allNodes) {
 
+        for (var nodeId in allNodes) {
+			
+			let c, l;
+			let h = false;
+		
             if (NodesProperties[nodeId].pvalue != -1) {
                 c = NodesProperties[nodeId].color;
                 l = NodesProperties[nodeId].name;
@@ -1620,20 +1739,22 @@ function clickEvent(params) {
             }
 
             if (!flag_showChildren && (NodesProperties[nodeId].hasChildrenWithPvalue == false)) {
-                c = defaultWhiteColor;
-                l = undefined;
+                // c = defaultWhiteColor;
+                // l = undefined;
+				h = true;
             }
 
             if (getCategoriesFinished && selectedCategory != 'all' && NodesProperties[nodeId].category != selectedCategory) {
-                c = defaultWhiteColor;
-                l = undefined;
+                // c = defaultWhiteColor;
+                // l = undefined;
+				h = true;
             }
 
             allNodes[nodeId].color = c;
             allNodes[nodeId].label = l;
+			allNodes[nodeId].hidden = h;
 
-
-            let edges = NodesProperties[nodeId].parentsEdges;
+/*             let edges = NodesProperties[nodeId].parentsEdges;
             if (c == defaultWhiteColor) {
                 for(eid of edges) {
                     allEdges[eid].color = defaultWhiteColor;
@@ -1642,8 +1763,43 @@ function clickEvent(params) {
                 for(eid of edges) {
                     allEdges[eid].color = EdgesProperties[eid].color;
                 }
-            }
+            } */
         }
+		
+		
+		for (var edgeId in allEdges) {
+			
+			let h = false;
+		 
+			var fromNodeId = EdgesProperties[edgeId].from;
+			var toNodeId = EdgesProperties[edgeId].to;
+			
+			var fromnode = vis_nodes.get(fromNodeId);
+			var tonode = vis_nodes.get(toNodeId)
+			
+			
+			if(fromnode == null || tonode == null){
+				h = true;
+			}
+			else if (fromnode.hidden == true || tonode.hidden == true) {
+				h = true;
+			}
+
+			
+/* 			allEdges[edgeId].color = c;
+            allEdges[edgeId].label = l; */
+			allEdges[edgeId].color = EdgesProperties[edgeId].color;
+			allEdges[edgeId].hidden = h;
+/* 			updateEdgeArray.push({
+				id: edgeId,
+				hidden: h,
+				from: EdgesProperties[edgeId].from,
+				to: EdgesProperties[edgeId].to,
+				title: EdgesProperties[edgeId].from + " " + EdgesProperties[edgeId].type + " " + EdgesProperties[edgeId].to,
+				color: EdgesProperties[edgeId].color,
+			}) */
+
+		}
 
         flag_highlightActive = false
     }
