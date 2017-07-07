@@ -14,7 +14,8 @@
 		<link rel="stylesheet" href="./css/style.css">
 		<link rel="stylesheet" href="./include/dist/vis.css"  type="text/css" />
 		<script src='./js/bundle.js'></script>
-		<script src='./js/funcs.js'></script>	
+		<script src='./js/funcs.js'></script>
+		<script src='./js/settings.js'></script>	
 		<script src="./include/sigmajs/sigma.min.js"></script>
 		<script src="./include/sigmajs/plugins/sigma.layout.forceAtlas2.min.js"></script>
 		<script src="./include/awesomplete/awesomplete.min.js"></script>
@@ -58,7 +59,7 @@
 					<label for="species">
 						Species:
 					</label>
-					<select class="form-control" id="species">
+					<select class="form-control" id="species" onchange="onclick_speciesChange()">
 					</select>
 				</div>
 
@@ -133,9 +134,9 @@
 				</div>
 				
 				<!--disambiguity -->
-				<div id="disambiguity" hidden="true">
+				<div>
 
-					<div class="panel panel-default">
+					<div id="disambiguity" hidden="true" class="panel panel-default">
 			
 						<table id="disambiguityTable" class="table table-hover" width="100%">
 							<thead>
@@ -171,14 +172,21 @@
 						
 						</table>
 					</div>
+					
+					<div id="badGenesPanel" hidden="true" class="panel panel-danger">
+						<div class="panel-heading">Genes cannot be recognized!</div>
+						<div class="panel-body">
+							<p id="badGenes"></p>
+						</div>
+					</div>
 
 				</div>				
 
 				<!--buttons -->
 				<button type="button" id="disam" class="btn btn-success" onclick="onclick_disambiguity()">Disambiguate</button>
-				<button type="button" hidden="true" id="submit" class="btn btn-primary" onclick="onclick_submit()">Submit</button>
+				<button type="button" hidden="true" id="submit" class="btn btn-primary" onclick="onclick_submit()">Analyize</button>
 				<button type="button" id="reset" class="btn btn-default" onclick="my_reset()">Reset</button>
-				<button type="button" hidden="true" id="toggleAmbiguousTable"class="btn btn-info" onclick="onclick_toggleDisambiguousTalbe()">Toggle Ambiguous Table</button>
+				<button type="button" hidden="true" id="toggleAmbiguousTable"class="btn btn-info" onclick="onclick_toggleDisambiguousTalbe()">Toggle Ambiguous Input Table</button>
 			</form>
 			<br/>
 			

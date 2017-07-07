@@ -14,7 +14,8 @@
 		<link rel="stylesheet" href="./css/style.css">
 		<link rel="stylesheet" href="./include/dist/vis.css"  type="text/css" />
 		<script src='./js/bundle.js'></script>
-		<script src='./js/funcs.js'></script>	
+		<script src='./js/funcs.js'></script>
+		<script src='./js/settings.js'></script>	
 		<script src="./include/sigmajs/sigma.min.js"></script>
 		<script src="./include/sigmajs/plugins/sigma.layout.forceAtlas2.min.js"></script>
 		<script src="./include/awesomplete/awesomplete.min.js"></script>
@@ -89,15 +90,15 @@
 			
 			<!--  the selection Node information for network-->		
 			<div class="panel panel-info">
-				<div class="panel-heading">Selection Infomation</div>
+				<div class="panel-heading">Infomation</div>
 				<div class="panel-body">
-					<p id="selectedNode">Selection Node: </p>
-					<p id="selectedNodeCatergory">Selection Node: </p>
+					<p id="selectedNode">Selected Ontology Term: </p>
+					<p id="selectedNodeCatergory">Ontology Category: </p>
 					<p id="selectedNodeName">Ontology Name: </p>
-					<p id="selectedNodepvalue">P value: </p>
-                    <p id="selectedNodeInputCount">Input Genes Count: </p>
-					<p id="selectedNodechildren">children nodes: </p>
-					<p id="selectedNodeparents">parents nodes: </p>
+					<p id="selectedNodepvalue">P Value: </p>
+                    <p id="selectedNodeInputCount">Number of input genes (associated to the selected term): </p>
+					<p id="selectedNodechildren">Children Terms: </p>
+					<p id="selectedNodeparents">Parents Terms: </p>
 				</div>
 			</div>
 			
@@ -145,7 +146,7 @@
 				<address>
 					&copy;Planteome Project 2017<br/>
 					Version 1.0 beta<br/>
-					Bug Report: qub@oregonstate.com<br/>
+					contact: qub@oregonstate.com<br/>
 				</address>
 			</footer>
 		</div>

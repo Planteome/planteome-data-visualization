@@ -1,20 +1,25 @@
 'use strict';
 
+let url_browse = settings.url_AmigoLink;
+let url_ApiLink = settings.url_ApiLink;
+
 let show_results = true;
-let url_stats = 'http://test.planteome.org/api/statistics/';
-let url_amigo = 'http://test.planteome.org/amigo/';
+
 var raw_graph_data = [];
 var resultList = [];
-let ontologyCategory ='';
 let downloadContent = "";
 let downloadContentHeader = "";
-let analysisType;
 var table;
-var atable;
-var test_sel;
-var cutoff;
-var inputGenes = [];
+var inputGenes = [];	
 var ambiguousData;
+
+//var atable;
+let ontologyCategory ='';	//selected ontology category
+let analysisType;			//selected query type: input reference or online database
+var test_sel;				//selected statistic method
+var cutoff;					//cut off p-value
+var speciesID = '3702';		//taxon ID
+
 
 //object Ontology
 function ontology(m_ontologyName, m_ontologyId,m_description, m_numberOfInput,m_numberOfReference,p){
@@ -38,6 +43,7 @@ function ontology(m_ontologyName, m_ontologyId,m_description, m_numberOfInput,m_
 	this.numberOfReference = m_numberOfReference;
 	this.p = p;
 	this.ontologyCategory = '';
+	this.associatedGenes = [];
 }
 
 //object Annotation
@@ -721,29 +727,24 @@ function initialize(){
 		e_species.appendChild(taxonFactory(t[0],t[1]));
 	}
 	
+	//set the default selection
+	$('#species').val(speciesID);
+
+	
 	let x = document.getElementById("ontologyCategory").value;
 	ontologyCategory = x;
 	
 	
 	$( document ).ajaxError(function( event, jqxhr, settings, thrownError ) {
-		// ( settings.url == "ajax/missing.html" ) {
-			console.log(event);
-			console.log(jqxhr);
-			console.log(settings);
-			console.log(thrownError);
-			showError("Sorry, there is something wrong with the server and we are trying to solve it...");
-		//}
+		console.log(event);
+		console.log(jqxhr);
+		console.log(settings);
+		console.log(thrownError);
+		showError("Sorry, there is something wrong with the server and we are trying to solve it...");
 	});
 	
 	$(document).ready(function(){
 		table = $('#resultTable').DataTable();
-/* 		atable = $('#disambiguityTable').DataTable(
-		{"paging":   false,
-		"info": false,
-		"ordering":false,
-		"searching":false}
-		); */
-		
 	});
 	
 }
@@ -769,8 +770,6 @@ function onclick_submit(){
 
 function createDisambigousGeneList(){
 	
-	//console.log(ambiguousData);
-	
 	for(let i of ambiguousData.good)
 		inputGenes.push(i.results[0].id);
 	
@@ -781,15 +780,12 @@ function createDisambigousGeneList(){
 		inputGenes.push(selectedGene);
 	}
 	
-	console.log(inputGenes);
 }
 
 function splitStringToGeneList(str){
 	let geneIDList = [];
 	let rex = /[\n\r\t]+/
 	let inputData = str.split(rex);	// Split on carriage return
-	
-	//console.log(inputData);
 	
 	let x;
 	for(x in inputData){
@@ -827,8 +823,6 @@ function my_submitReset(){
 	$('#downloadBtn').hide();
 	$('#error').hide();
 	
-	//$('#result_table tr').remove();
-	//$('#resultTable').DataTable();
 	
 	table.clear().draw();
 	
@@ -841,6 +835,7 @@ function my_submitReset(){
 }
 
 function onclick_disambiguity(){
+	
 	let str_geneList = document.querySelector('#textarea_geneList').value;
 	if( str_geneList == ''){
 		showError('please input the interesting gene list');
@@ -849,10 +844,13 @@ function onclick_disambiguity(){
 
 	let inputGenes = splitStringToGeneList(str_geneList);
 	
+	//clear the ambiguous table
+	var tableBody = $('#disambiguityTableBody');
+	tableBody.html("");
+	
 	disAmbiguateGenes(inputGenes);
 	
-/* 	$('#disam').hide();
-	$('#submit').show(); */
+	
 }
 
 function my_reset(){
@@ -861,7 +859,7 @@ function my_reset(){
 	document.querySelector('#textarea_backgroundList').value = '';
 	my_submitReset();
 	
-	$('#disam').show();
+	//$('#disam').show();
 	$('#submit').hide();
 	$('#btn_vis').hide();
 	
@@ -871,6 +869,9 @@ function my_reset(){
 	
 	$('#disambiguity').hide();
 	$('#toggleAmbiguousTable').hide();
+	
+	$('#badGenesPanel').hide();
+	
 	$('#error').hide();	
 	
 }
@@ -878,7 +879,7 @@ function my_reset(){
 //when the input gene list is changed
 function onchange_InterestingInput(){
 
-	$('#disam').show();
+	//$('#disam').show();
 	$('#submit').hide();
 	
 	//clear the ambiguous table
@@ -887,6 +888,9 @@ function onchange_InterestingInput(){
 	
 	$('#disambiguity').hide();
 	$('#toggleAmbiguousTable').hide();
+	
+	$('#badGenesPanel').hide();
+	
 	$('#error').hide();
 }
 
@@ -902,6 +906,14 @@ function onclick_QueryTypeChange(){
 		$('#disam').show();
 		$('#referenceBackground').hide();
 	}
+}
+
+function onclick_speciesChange(){
+	
+	let x = document.getElementById("species").value;
+	speciesID = x;
+	
+	onchange_InterestingInput();
 }
 
 function onclick_ontologyCategoryChange(){
@@ -929,8 +941,7 @@ function onclick_ontologyCategoryChange(){
 	
 	//lower selection
 	$('#ontologyCategory2').val(x);
-	//$('#ontologyCategory2 option[value='+x+']').attr('selected','selected');
-	//$("#ontologyCategory2").val(x).change();
+
 }
 
 function onclick_ontologyCategoryChange2(){
@@ -964,42 +975,54 @@ function onclick_ontologyCategoryChange2(){
 function getOverView(){
 	return $.ajax({
 		type: 'get',
-		url: url_stats + 'overview',
+		//url: url_stats + 'overview',
+		url:url_ApiLink +'statistics/overview',
 		dataType: 'json'
-	})/* .fail(function(){
-		alert("test");
-		
-	}) */;
+	});
 }
 
 function disAmbiguateGenes(geneList){
 	
-	let link = 'http://test.planteome.org/api/disambiguation/bioentity?';
+	let link = url_ApiLink +'disambiguation/bioentity?'
 	let data = '';
 	
-	data += 'species=NCBITaxon:3702';
+	data += 'species=NCBITaxon:' + speciesID;
 	
 	for(let i of geneList){
 		data +='&entity='+i;
 	}
 	
-	//http://test.planteome.org/api/disambiguation/bioentity?species=NCBITaxon:3702&entity=AT2G04390&entity=AT3G10610
-	console.log(link+data);
 	$.ajax({
-		type: 'get',
+		type: 'post',
 		url:link,
 		data:data,
 		dataType: 'json',
 		success: function(res){
-			console.log(res.data);
+			//console.log(res.data);
 			
 			ambiguousData = res.data;
 			let ambiguousUglyData = res.data.ugly;
+			let ambiguousBadData = res.data.bad;
 			
-			if(ambiguousUglyData.length == 0)
+			if(ambiguousUglyData.length == 0 && ambiguousBadData.length == 0){
 				showSucessText("There is NO ambiguous inputs, you could SUBMIT your analysis!");
-				//console.log('no ambiguous');
-			else{
+				//$('#disam').hide();
+				$('#submit').show();
+			}
+			
+			if(ambiguousBadData.length != 0){
+				showError("There are genes not in the selected taxon...");
+				$('#badGenesPanel').show();
+				$('#badGenes').html("")
+				let bglist = ambiguousBadData;
+				for(let i of bglist) {
+					$('#badGenes').append("<span class=\"label label-warning\">" + i.input + "</span> ");
+				}
+			}else{
+				$('#badGenesPanel').hide();
+			}
+			
+			if(ambiguousUglyData.length != 0){
 				
 				//show information
 				showError("Please select from ambiguous terms to target the gene product...");
@@ -1007,14 +1030,20 @@ function disAmbiguateGenes(geneList){
 				//reset the buttons
 				$('#disambiguity').show();
 				$('#toggleAmbiguousTable').show();
-				$('#disam').hide();
+				//$('#disam').hide();
 				$('#submit').show();
 				
 				//clear the ambiguous table
-				var tableBody = $('#disambiguityTableBody');
-				tableBody.html("");
+				// var tableBody = $('#disambiguityTableBody');
+				// tableBody.html("");
 				
+			}else{
+				
+				$('#error').hide();
+				$('#disambiguity').hide();
+				$('#toggleAmbiguousTable').hide();
 			}
+			
  			for(let i of ambiguousUglyData){
 				
 				let input = i.input;
@@ -1047,12 +1076,8 @@ function appendAmbiguityRowToTable(input, amNum, amObjs){
 	
 	var tableBody = $('#disambiguityTableBody');
 	
-	//http://browser.planteome.org/amigo/gene_product/TAIR:locus:2027483
-	//"http://amigo.geneontology.org/amigo/gene_product/"
-	//let link = "/amigo/gene_product/" + amObjs[0].id;"
-	
  	let anode = $('<a>').text(amObjs[0].id).attr({
-		href:"http://browser.planteome.org/amigo/gene_product/" + amObjs[0].id,
+		href: url_browse+"gene_product/" + amObjs[0].id,
 		target: "_blank"
 	})
 			
@@ -1080,7 +1105,7 @@ function appendAmbiguityRowToTable(input, amNum, amObjs){
 	for(let i = 1; i<amNum; i++){
 		
 		let anode = $('<a>').text(amObjs[i].id).attr({
-				href:"http://browser.planteome.org/amigo/gene_product/" + amObjs[i].id,
+				href:url_browse + "gene_product/" + amObjs[i].id,
 				target: "_blank"
 			})
 		
@@ -1103,13 +1128,15 @@ function appendAmbiguityRowToTable(input, amNum, amObjs){
 }
 
 function getOntologyTermsFromGenes(geneList){
-	let link = url_stats + 'gene-to-term?';
+	//let link = url_stats + 'gene-to-term?';
+	let link = url_ApiLink + 'statistics/gene-to-term?';
+	
 	let data = '';
 
 	for(let i of geneList){
 		data +='bioentity='+i+'&';
 	}
-	data += 'taxon=3702';
+	data += 'taxon=' + speciesID;
 
 	//console.log(link);
 
@@ -1122,16 +1149,15 @@ function getOntologyTermsFromGenes(geneList){
 }
 
 function getGenesNumInRefFromOntologys(ontologyList){
-	let link = url_stats + 'term-to-gene?';
+	//let link = url_stats + 'term-to-gene?';
+	let link = url_ApiLink + 'statistics/term-to-gene?';
+	
 	let data = '';
 
 	for(let i in ontologyList){
 		data +='term='+i+'&';
 	}
-	data += 'taxon=3702';
-
-/* 	console.log("the send of term to genes");
-	console.log(link); */
+	data += 'taxon=' + speciesID;
 
 	return $.ajax({
 		type: 'post',
@@ -1151,10 +1177,9 @@ function getOntologyData(resultList){
 		let j = i;
 		$.ajax({
 			type: 'get',
-			url: url_amigo + 'term/' + j.ontologyId + '/json',
+			url: url_browse + 'term/' + j.ontologyId + '/json',
 			dataType: 'json',
 			success: function(res){
-				//console.log(res);
 
 				let name = res.results.name;
 				let des = res.results.definition;
@@ -1191,7 +1216,6 @@ function getOntologyData(resultList){
 		}).done(function(){
 			if(count == length-1){
 				createDownloadFile(downloadContent);
-				//$('#resultTable').DataTable();
 				
 				$('#loading').hide();
 				$('#downloadBtn').show();
@@ -1280,7 +1304,6 @@ function staticAnalysis(){
 		appendOntologyToTable(ontologyDataList[i]);
 	
 	$('#loading').hide();
-	//$('#downloadBtn').show();
 	$('#results').show();
 }
 
@@ -1292,16 +1315,10 @@ function staticAnalysis(){
 function dynamicAnalysis(){
 	
 	let inputGenesNum = inputGenes.length;
-	//let cutoff = document.querySelector('#significance').value;
 
 	showText("Processing...");
 
 	$.when(getOverView(), getOntologyTermsFromGenes(inputGenes)).done(function(overview_data, ol_data){
-		
-/* 		console.log("overview data:");
-		console.log(overview_data);
-		console.log("ontology list data:");
-		console.log(ol_data); */
 		
 		if(!show_results){
 			console.log('cancelling terms request due to reset button');
@@ -1316,6 +1333,8 @@ function dynamicAnalysis(){
 		appendInputDesicription(inputGenesNum,referenceGenesNum);
 
 		let ontologyList = ol_data[0].data['gene-to-term-summary-count'];
+		
+		//console.log(ol_data);
 
 		$.when(getGenesNumInRefFromOntologys(ontologyList)).done(function(data, textStatus, jqXHR){
 			if(!show_results){
@@ -1323,12 +1342,8 @@ function dynamicAnalysis(){
 				return false;
 			}
 			
-/* 			console.log("Gene Nums Data");
-			console.log(data); */
 			
 			let ontologyListRef = data.data['term-to-gene-summary-count'];
-			//let test_sel = document.querySelector('#method').value;
-			//console.log(test_sel);
 
 			for(let ontology_ID in ontologyList){
 				// K
@@ -1371,7 +1386,6 @@ function dynamicAnalysis(){
 				return false;
 			}
 
-			//console.log('analysis of data finished');
 			showText('analysis of data finished, retrieving ontology data from server...');
 			
 			getOntologyData(resultList);
@@ -1380,7 +1394,6 @@ function dynamicAnalysis(){
 			if(resultList.length == 0){
 				showError("Sorry, there is something wrong with the server... We are fixing it and please come back in the future...")
 			}
-			//$('#results').show();
 		});
 	});
 }
@@ -1388,11 +1401,11 @@ function dynamicAnalysis(){
 
 function caculatePvalue(numOfInput,numOfRefer,n,N){
 	
-	if(test_sel != 'chi-squared' && test_sel != 'hypergeometric'){
-		if(numOfInput > 500 || numOfRefer > 500 || n > 500 || N > 500){
-			console.log('should use chi or hypergeo for large numbers');
-		}
-	}
+	// if(test_sel != 'chi-squared' && test_sel != 'hypergeometric'){
+		// if(numOfInput > 500 || numOfRefer > 500 || n > 500 || N > 500){
+			// console.log('should use chi or hypergeo for large numbers');
+		// }
+	// }
 
 	let p = '';
 	switch(test_sel){
@@ -1445,9 +1458,10 @@ function showSucessText(content){
 
 function appendOntologyToTable(obj){
 	
-	//"http://browser.planteome.org/amigo/term/GO:0005618";
-	let link = "http://browser.planteome.org/amigo/term/" + obj.ontologyId;
-	//let link = "http://amigo.geneontology.org/amigo/term/" + obj.ontologyId;
+
+	//let link = "http://browser.planteome.org/amigo/term/" + obj.ontologyId;
+	let link = url_browse + "term/" + obj.ontologyId;
+	
 	let idNode = "<a target='_blank' href="+link + ">" + obj.ontologyId + "</a>";
 	
 	table.row.add( [
@@ -1460,25 +1474,6 @@ function appendOntologyToTable(obj){
 			obj.ontologyCategory
 		] ).draw( false );
 		
-/* 	let tr1 = document.createElement('tr');
-	
-	let atts = [
-		obj.ontologyId,
-		obj.ontologyName,
-		obj.description,
-		obj.numberOfInput,
-		obj.numberOfReference,
-		obj.p.toExponential(4),
-		obj.ontologyCategory
-	];
-
-	for (let att of atts) {
-		let td = document.createElement('td');
-		let node = document.createTextNode(att);
-		td.appendChild(node);
-		tr1.appendChild(td);
-	}
-	document.querySelector('#result_table').appendChild(tr1); */
 }
 
 function initializeDownloadContent(){

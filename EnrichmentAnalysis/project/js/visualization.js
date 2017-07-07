@@ -1,4 +1,5 @@
-let url_amigo = 'http://test.planteome.org/amigo/';
+let url_amigo = settings.url_AmigoLink;
+
 let raw_graph_data;
 let resultList;
 // #2B7CE9 : dark blue
@@ -38,6 +39,7 @@ NodeProperty Object
 class NodeProperty{
 	constructor(label, inputGenesCount, e_count, p_value, parentsEdgesIds, childrenEdgesIds, parentNodesIds, childrenNodesIds, mtype) {
 		this.name = label;
+		this.treelabel = label;
 		this.color = defaultWhiteColor;
 		this.inputCount = inputGenesCount;
 		this.edgeCount = e_count;
@@ -113,93 +115,6 @@ function onclick_ontologyCategoryChangeVis() {
     selectedCategory = document.getElementById("ontologyCategoryVis").value;
 	
 	showNodes();
-	
-/*     var updateArray = [];
-    var updateEdgeArray = [];
-
-	
-	var ids = vis_nodes.getIds();
-	
-	for (var nodeId of ids) {	
-        let c;
-        let l;
-		let h = false;
-        if (NodesProperties[nodeId].category == selectedCategory || selectedCategory == 'all') {
-
-            c = NodesProperties[nodeId].color;
-            l = NodesProperties[nodeId].name;
-
-            if (!flag_showChildren && (NodesProperties[nodeId].hasChildrenWithPvalue == false)) {
-
-				h = true;
-            }
-			
-			
-        } else {
-			h = true;
-        }
-
-        updateArray.push({
-            id: nodeId,
-			hidden: h,
-            label: l,
-            color: c,
-        })
-		
-    }
-    vis_nodes.update(updateArray);
-
-	
-	var eids = vis_edges.getIds();
-	for (var edgeId of eids) {
-		
-        let c;
-        let l;
-		let res = true;
-     
-		var fromNodeId = EdgesProperties[edgeId].from;
-		var toNodeId = EdgesProperties[edgeId].to;
-		
-		
-		if (NodesProperties[fromNodeId].category == selectedCategory || selectedCategory == 'all') {
-
-            if (!flag_showChildren && (NodesProperties[fromNodeId].hasChildrenWithPvalue == false)) {
-				res = false;
-            }
-        }else{
-			res = false;
-		}
-		
-		if (NodesProperties[toNodeId].category == selectedCategory || selectedCategory == 'all') {
-
-            if (!flag_showChildren && (NodesProperties[toNodeId].hasChildrenWithPvalue == false)) {
-				res = false;
-            }
-        }else{
-			res = false;
-		}
-		
-
-        if (!res) {
-
-			updateEdgeArray.push({
-				id: edgeId,
-				hidden: true,
-			})
-
-        }
-         else {
-
-			updateEdgeArray.push({
-				id: edgeId,
-				hidden:false,
-			})
-          			
-        }
-    }
-    vis_edges.update(updateEdgeArray); */
-
-
 }
 
 function onclick_treeontologyCategoryChangeVis() {
@@ -208,6 +123,7 @@ function onclick_treeontologyCategoryChangeVis() {
 
     var updateArray = [];
     var updateEdgeArray = [];
+	var deleteNodeArray = [];
 
     var finalnodeList = [];
     for (var nodeId in NodesProperties) {
@@ -219,48 +135,64 @@ function onclick_treeontologyCategoryChangeVis() {
                 continue;
 
             c = NodesProperties[nodeId].color;
-            l = NodesProperties[nodeId].name;
+            l = NodesProperties[nodeId].treelabel;
 
             /* 			if(c == undefined)
                             c = defaultColor; */
+						
+			updateArray.push({
+				id: nodeId,
+				color: c,
+				label: l,
+				title: NodesProperties[nodeId].name,
+				x: NodesProperties[nodeId].treex,
+				y: NodesProperties[nodeId].treey,
+			})	
+			
+			finalnodeList.push(nodeId);
 
         } else {
-            c = defaultWhiteColor;
-            l = undefined;
+            // c = defaultWhiteColor;
+            // l = undefined;
+			
+			deleteNodeArray.push({
+				id: nodeId
+			})
+			
         }
 
-        updateArray.push({
-            id: nodeId,
-            color: c,
-        })
+        // updateArray.push({
+            // id: nodeId,
+            // color: c,
+        // })
 
-        var edgesList = NodesProperties[nodeId].parentsEdges;
+        // var edgesList = NodesProperties[nodeId].parentsEdges;
 
-        if (c == defaultWhiteColor) {
+        // if (c == defaultWhiteColor) {
 
-            for(ei of edgesList) {
-                updateEdgeArray.push({
-                    id: ei,
-                    color: defaultWhiteColor,
-                })
-            }
-        }
-        else {
+            // for(ei of edgesList) {
+                // updateEdgeArray.push({
+                    // id: ei,
+                    // color: defaultWhiteColor,
+                // })
+            // }
+        // }
+        // else {
 
-            finalnodeList.push(nodeId);
+            // finalnodeList.push(nodeId);
 
-            for(ei of edgesList) {
-                updateEdgeArray.push({
-                    id: ei,
-                    color: EdgesProperties[ei].color,
-                })
-            }
-        }
+            // for(ei of edgesList) {
+                // updateEdgeArray.push({
+                    // id: ei,
+                    // color: EdgesProperties[ei].color,
+                // })
+            // }
+        // }
     }
 
-    //vis_nodes.remove(deleteArray);
+	tree_nodes.remove(deleteNodeArray);
 
-    tree_edges.update(updateEdgeArray);
+    // tree_edges.update(updateEdgeArray);
     tree_nodes.update(updateArray);
 
     networkTree.fit({
@@ -635,7 +567,6 @@ function visViewGraph(raw_data) {
     tree_edges = new vis.DataSet();
 
 
-    distributeNodesForNetwork();
 
     //create the nodes dataset for network
     var haschildrenNodecount = 0;
@@ -700,15 +631,14 @@ function visViewGraph(raw_data) {
 
         let label_detail = n.id + '\n' + label_name_short + p_value_text;
 
+		NodesProperties[n.id].treelabel = label_detail;
+		
+		
         tree_nodes.add({
             id: n.id,
-            //label: n.id,
-            label: label_detail,
-            //value: NodesProperties[n.id].edgeCount,
-            //level: co%10,
+            label: NodesProperties[n.id].treelabel,
             title: NodesProperties[n.id].name,
             color: c,
-            //hidden: NodesProperties[n.id].hidden,
             x: NodesProperties[n.id].treex,
             y: NodesProperties[n.id].treey,
         });
@@ -823,11 +753,6 @@ function visViewGraph(raw_data) {
     let treeawesomplete = new Awesomplete(tree_search_input, tree_awe_list);
     tree_search_input.parentElement.classList.add('form-control');
     tree_search_input.parentElement.style.padding = '0px';
-}
-
-//distriubte the nodes to a circle and seperate based on category
-function distributeNodesForNetwork() {
-
 }
 
 //distribute the nodes to a tree
@@ -1332,6 +1257,12 @@ function drawTree() {
                 x: 5,
                 y: 5
             },
+			
+			scaling: {
+                label: {
+                    drawThreshold: 1,
+                }
+            },
             font: {
                 color: '#343434',
                 size: 30,
@@ -1535,7 +1466,7 @@ function clickNode(params) {
 
     if (params.nodes.length > 0) {
         document.getElementById('selectedNode').innerHTML = 'Selection Node: ' + "<a onclick='FocusNode(\"" + params.nodes + "\")'>" + params.nodes + "</a> ";//params.nodes;
-		document.getElementById('selectedNodeCatergory').innerHTML = 'Ontology Name: ' + NodesProperties[params.nodes].category;
+		document.getElementById('selectedNodeCatergory').innerHTML = 'Ontology Category: ' + NodesProperties[params.nodes].category;
         document.getElementById('selectedNodeName').innerHTML = 'Ontology Name: ' + NodesProperties[params.nodes].name;
         document.getElementById('selectedNodepvalue').innerHTML = 'P value: ' + NodesProperties[params.nodes].pvalue.toExponential(4);
         document.getElementById('selectedNodeInputCount').innerHTML = 'Input Genes count: ' + NodesProperties[params.nodes].inputCount;
