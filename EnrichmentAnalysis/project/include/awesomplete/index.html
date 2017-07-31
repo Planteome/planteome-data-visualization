@@ -238,7 +238,7 @@ new Awesomplete(input, {
 			<tr>
 				<td><code>sort</code></td>
 				<td>Controls how list items are ordered.</td>
-				<td>Sort function (will be passed directly to <code>Array.prototype.sort()</code>) to sort the items after they have been filtered and before they are truncated and converted to HTML elements.</td>
+				<td>Sort function (will be passed directly to <code>Array.prototype.sort()</code>) to sort the items after they have been filtered and before they are truncated and converted to HTML elements. If value is <code>false</code>, sorting will be disabled.</td>
 				<td>Sorted by length first, order second.</td>
 			</tr>
 			<tr>
@@ -297,12 +297,12 @@ We can also <strong>generate list items based on user's input</strong>. See E-ma
 		<tbody>
 			<tr>
 				<td><code>awesomplete-select</code></td>
-				<td>The user has made a selection (either via pressing enter or clicking on an item), but it has not been applied yet.</td>
+				<td>The user has made a selection (either via pressing enter or clicking on an item), but it has not been applied yet. Callback will be passed an object with <code>text</code> (selected suggestion) and <code>origin</code> (DOM element) properties.</td>
 				<td>Yes. The selection will not be applied and the popup will not close.</td>
 			</tr>
 			<tr>
 				<td><code>awesomplete-selectcomplete</code></td>
-				<td>The user has made a selection (either via pressing enter or clicking on an item), and it has been applied.</td>
+				<td>The user has made a selection (either via pressing enter or clicking on an item), and it has been applied. Callback will be passed an object with a <code>text</code> property containing the selected suggestion.</td>
 				<td>No</td>
 			</tr>
 			<tr>
@@ -312,12 +312,12 @@ We can also <strong>generate list items based on user's input</strong>. See E-ma
 			</tr>
 			<tr>
 				<td><code>awesomplete-close</code></td>
-				<td>The popup just closed.</td>
+				<td>The popup just closed. Callback will be passed an object with a <code>reason</code> property that indicates why the event was fired. Reasons include <code>"blur"</code>, <code>"esc"</code>, <code>"submit"</code>, <code>"select"</code>, and <code>"nomatches"</code>.</td>
 				<td>No</td>
 			</tr>
 			<tr>
 				<td><code>awesomplete-highlight</code></td>
-				<td>The highlighted item just changed (in response to pressing an arrow key or via an API call).</td>
+				<td>The highlighted item just changed (in response to pressing an arrow key or via an API call). Callback will be passed an object with a <code>text</code> property containing the highlighted suggestion.</td>
 				<td>No</td>
 			</tr>
 		</tbody>
@@ -365,6 +365,10 @@ We can also <strong>generate list items based on user's input</strong>. See E-ma
 				<td><code>evaluate()</code></td>
 				<td>Evaluates the current state of the widget and regenerates the list of suggestions or closes the popup if none are available. You need to call it if you dynamically set <code>list</code> while the popup is open.</td>
 			</tr>
+			<tr>
+				<td><code>destroy()</code></td>
+				<td>Clean up and remove the instance from the input.</td>
+			</tr>
 		</tbody>
 	</table>
 </section>
@@ -377,7 +381,7 @@ We can also <strong>generate list items based on user's input</strong>. See E-ma
 	<h2>E-mail autocomplete</h2>
 	<label>Type an email: <input type="email"></label>
 	<pre class="language-markup"><code>&lt;input type="email" /></code></pre>
-	<pre class="language-javascript"><code><script>new Awesomplete($('input[type="email"]'), {
+	<pre class="language-javascript"><code><script>new Awesomplete('input[type="email"]', {
 	list: ["aol.com", "att.net", "comcast.net", "facebook.com", "gmail.com", "gmx.com", "googlemail.com", "google.com", "hotmail.com", "hotmail.co.uk", "mac.com", "me.com", "mail.com", "msn.com", "live.com", "sbcglobal.net", "verizon.net", "yahoo.com", "yahoo.co.uk"],
 	data: function (text, input) {
 		return input.slice(0, input.indexOf("@")) + "@" + text;
@@ -390,9 +394,13 @@ We can also <strong>generate list items based on user's input</strong>. See E-ma
 	<h2>Multiple values</h2>
 	<label>Tags (comma separated): <input data-list="CSS, JavaScript, HTML, SVG, ARIA, MathML" data-multiple data-minchars="1" /></label>
 	<pre class="language-markup"><code>&lt;input data-list="CSS, JavaScript, HTML, SVG, ARIA, MathML" data-multiple /></code></pre>
-	<pre class="language-javascript"><code><script>new Awesomplete($('input[data-multiple]'), {
+	<pre class="language-javascript"><code><script>new Awesomplete('input[data-multiple]', {
 	filter: function(text, input) {
 		return Awesomplete.FILTER_CONTAINS(text, input.match(/[^,]*$/)[0]);
+	},
+
+	item: function(text, input) {
+		return Awesomplete.ITEM(text, input.match(/[^,]*$/)[0]);
 	},
 
 	replace: function(text) {
@@ -418,7 +426,7 @@ ajax.send();</script></code></pre>
 	<h2>Combobox dropdown</h2>
 	<label>Type or click dropdown: <input data-list="CSS, JavaScript, HTML, SVG, ARIA, MathML" class="dropdown-input" /><button class="dropdown-btn" type="button"><span class="caret"></span></button></label>
 	<pre class="language-markup"><code>&lt;input data-list="CSS, JavaScript, HTML, SVG, ARIA, MathML" class="dropdown-input" /></code></pre>
-	<pre class="language-javascript"><code><script>var comboplete = new Awesomplete(Awesomplete.$('input.dropdown-input'), {
+	<pre class="language-javascript"><code><script>var comboplete = new Awesomplete('input.dropdown-input', {
 	minChars: 0,
 });
 Awesomplete.$('.dropdown-btn').addEventListener("click", function() {
@@ -454,6 +462,7 @@ Awesomplete.$('.dropdown-btn').addEventListener("click", function() {
 
 <script src="prism/prism.js" defer></script>
 
+<iframe src="http://ghbtns.com/github-btn.html?user=leaverou&repo=awesomplete&type=watch&count=true&size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true" class="github-star"></iframe>
 <a href="https://twitter.com/share" class="twitter-share-button" data-via="LeaVerou" data-size="large">Tweet</a>
 <script async src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=leaveroume" id="_carbonads_js"></script>
 

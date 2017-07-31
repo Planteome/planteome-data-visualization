@@ -74,20 +74,19 @@ class EdgeProperty{
 
 function loadView() {
 
-
-
     console.log('vis begin');
 
     raw_graph_data = sessionStorage.getItem("graphData");
     resultList = sessionStorage.getItem("resultList");
 
-   
-
+  
     raw_graph_data = JSON.parse(raw_graph_data);
     resultList = JSON.parse(resultList);
-    //console.log(resultList);
+    console.log(resultList);
 
-    if (raw_graph_data.length == resultList.length) {
+	var length = Object.keys(resultList).length;
+	
+    if (raw_graph_data.length == length) {
         //parsed all of resultList, time to view graph
         visViewGraph(raw_graph_data);
     }
@@ -449,14 +448,22 @@ function visViewGraph(raw_data) {
         let mtype = undefined;
         let on_catagory = null;
         let inputGenesCount = 1;
-        for(let r of resultList) {
-            if (r.ontologyId == n_arr[i].id) {
-                p_value = r.p;
-                mtype = r.ontologyCategory;
-                inputGenesCount = r.numberOfInput;
-                //on_catagory = r.ontologyCategory;
-            }
-        }
+		
+        // for(let r of resultList) {
+            // if (r.ontologyId == n_arr[i].id) {
+                // p_value = r.p;
+                // mtype = r.ontologyCategory;
+                // inputGenesCount = r.numberOfInput;
+            // }
+        // }
+		
+		let id = n_arr[i].id;
+		if(resultList.hasOwnProperty(id)){
+			let r = resultList[id];
+			p_value = r.p;
+			mtype = r.ontologyCategory;
+			inputGenesCount = r.numberOfInput;
+		}
 
         let e_count = 0;
         for(let e of e_arr) {
@@ -738,21 +745,34 @@ function visViewGraph(raw_data) {
 
     //set up search input autocomplete
     let search_input = document.querySelector('#sigma_search_input');
-    let awe_list = { list: [], maxItems: 20 };
-    resultList.forEach(r => awe_list.list.push({ "label": r.ontologyName, "value": r.ontologyId }));
-
+    let awe_list = { list: [], maxItems: 10 };
+    
+	//resultList.forEach(r => awe_list.list.push({ "label": r.ontologyName, "value": r.ontologyId }));
+	for (var r in resultList){
+		if (resultList.hasOwnProperty(r)) {
+			 awe_list.list.push({ "label": resultList[r].ontologyName, "value": resultList[r].ontologyId });
+		}
+	}
+	console.log(awe_list);
+	
     let tree_search_input = document.querySelector('#tree_search_input');
-    let tree_awe_list = { list: [], maxItems: 20 };
-    resultList.forEach(r => tree_awe_list.list.push({ "label": r.ontologyName, "value": r.ontologyId }));
-    //console.log(awe_list);
+    let tree_awe_list = { list: [], maxItems: 10 };
+    //resultList.forEach(r => tree_awe_list.list.push({ "label": r.ontologyName, "value": r.ontologyId }));
+	for (var r in resultList){
+		if (resultList.hasOwnProperty(r)) {
+			 tree_awe_list.list.push({ "label": resultList[r].ontologyName, "value": resultList[r].ontologyId });
+		}
+	}
+	console.log(tree_awe_list);
+    
 
     let awesomplete = new Awesomplete(search_input, awe_list);
     search_input.parentElement.classList.add('form-control');
     search_input.parentElement.style.padding = '0px';
 
     let treeawesomplete = new Awesomplete(tree_search_input, tree_awe_list);
-    tree_search_input.parentElement.classList.add('form-control');
-    tree_search_input.parentElement.style.padding = '0px';
+    // tree_search_input.parentElement.classList.add('form-control');
+    // tree_search_input.parentElement.style.padding = '0px';
 }
 
 //distribute the nodes to a tree

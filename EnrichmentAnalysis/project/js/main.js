@@ -6,7 +6,7 @@ let url_ApiLink = settings.url_ApiLink;
 let show_results = true;
 
 var raw_graph_data = [];
-var resultList = [];
+var resultList = {};
 let downloadContent = "";
 let downloadContentHeader = "";
 var table;
@@ -830,7 +830,7 @@ function my_submitReset(){
 
 	//reset globals
 	raw_graph_data = [];
-	resultList = [];
+	resultList = {};
 	inputGenes = [];
 }
 
@@ -928,11 +928,19 @@ function onclick_ontologyCategoryChange(){
 	
 	table.clear().draw();
 	
-	for(let i of resultList){
+	// for(let i of resultList){
 			
-		if(ontologyCategory=='all' || i.ontologyCategory ==ontologyCategory){
-			appendOntologyToTable(i);
-			appendOntologyToDownload(i);
+		// if(ontologyCategory=='all' || i.ontologyCategory ==ontologyCategory){
+			// appendOntologyToTable(i);
+			// appendOntologyToDownload(i);
+		// }
+	// };
+	
+	for(let i in resultList){
+			
+		if(ontologyCategory=='all' || resultList[i].ontologyCategory ==ontologyCategory){
+			appendOntologyToTable(resultList[i]);
+			appendOntologyToDownload(resultList[i]);
 		}
 	};
 	
@@ -956,11 +964,11 @@ function onclick_ontologyCategoryChange2(){
 	
 	table.clear().draw();
 	
-	for(let i of resultList){
+	for(let i in resultList){
 			
-		if(ontologyCategory=='all' || i.ontologyCategory ==ontologyCategory){
-			appendOntologyToTable(i);
-			appendOntologyToDownload(i);
+		if(ontologyCategory=='all' || resultList[i].ontologyCategory ==ontologyCategory){
+			appendOntologyToTable(resultList[i]);
+			appendOntologyToDownload(resultList[i]);
 		}
 	};
 	
@@ -1168,7 +1176,86 @@ function getGenesNumInRefFromOntologys(ontologyList){
 }
 
 
+
 function getOntologyData(resultList){
+	
+	//var length = resultList.length;
+	var length = Object.keys(resultList).length;
+	var count = 0;
+	var ids= "";
+	// for(let i in resultList){
+		// ids += "entity=" + resultList[i].ontologyId + "&";
+	// }
+	
+	let link  = url_ApiLink + 'entity/terms?';
+	
+	//append to table
+	
+	for(let i in resultList){
+		
+		$.ajax({
+			type: 'post',
+			url: link,
+			data: "entity=" + resultList[i].ontologyId,
+			dataType: 'json',
+			success: function(res){
+		
+				if(res.status =="failure")
+					console.error("error:get data unsuccess!");
+				else{
+				
+					let result = res.data;
+					
+					for(let item of result){
+						let name = item.annotation_class_label;
+						let des = item.description;
+						let category = item.source;
+						
+						resultList[i].ontologyName = name;
+						resultList[i].description = des;
+						resultList[i].ontologyCategory = category;
+						
+						if(ontologyCategory=='all' || category ==ontologyCategory){
+							appendOntologyToTable(resultList[i]);
+							appendOntologyToDownload(resultList[i]);
+						}
+
+						//data for visualization
+						raw_graph_data.push(item);
+						
+						
+						// "topology_graph_json" :
+						//ontology: JSON blob form of the local relation transitivity graph. Uses various relations (including regulates, occurs in, capable_of).
+						
+						//"regulates_transitivity_graph_json"
+						//ontology: JSON blob form of all immediate neighbors of the term.
+						
+						//"neighborhood_graph_json" 
+						//ontology: JSON blob form of all immediate neighbors of the term; in the case that there are too many neighbors to transport, the number will be artificially reduced.
+						
+						//"neighborhood_limited_graph_json" 
+						//ontology: Only in taxon.
+
+						count++;
+					}
+				}
+			}
+		}).done(function(){
+			if(count == length-1){
+				createDownloadFile(downloadContent);
+				
+				$('#loading').hide();
+				$('#downloadBtn').show();
+				$('#results').show();
+				$('#btn_vis').show();
+		}
+		
+		});
+	}
+	
+}
+
+function getOntologyData_separate(resultList){
 	
 	var length = resultList.length;
 	var count = 0;
@@ -1378,7 +1465,8 @@ function dynamicAnalysis(){
 				let m_ontologyName;
 				let m_description;
 				let m_ontologyData = new ontology(m_ontologyName,ontology_ID, m_description, numOfInput, numOfRefer,p);
-				resultList.push(JSON.parse(JSON.stringify(m_ontologyData)));
+				//resultList.push(JSON.parse(JSON.stringify(m_ontologyData)));
+				resultList[ontology_ID] = JSON.parse(JSON.stringify(m_ontologyData));
 			}
 
 			if(!show_results){

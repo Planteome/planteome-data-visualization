@@ -88,6 +88,11 @@ a {
 	cursor:pointer;
 }
 
+.awesomplete {
+	width: 100%;
+	height: 34px;
+}
+
 .buttonLine{
 	margin:5px;
 	width:100%;
