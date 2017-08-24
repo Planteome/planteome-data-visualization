@@ -1669,7 +1669,23 @@ function clickEvent(params) {
 				allEdges[eid].color = EdgesProperties[eid].color;
         }
 		
-		
+		// transform the object into an array
+		var updateArray = [];
+		for (nodeId in allNodes) {
+			if (allNodes.hasOwnProperty(nodeId)) {
+				updateArray.push(allNodes[nodeId]);
+			}
+		}
+
+		EdgeUpdateArray = [];
+		for (eId in allEdges) {
+			if (allEdges.hasOwnProperty(eId)) {
+				EdgeUpdateArray.push(allEdges[eId]);
+			}
+		}
+
+		vis_nodes.update(updateArray);
+		vis_edges.update(EdgeUpdateArray);		
 
     }
     else if (flag_highlightActive === true) {
@@ -1753,25 +1769,25 @@ function clickEvent(params) {
 		}
 
         flag_highlightActive = false
-    }
+		
+		// transform the object into an array
+		var updateArray = [];
+		for (nodeId in allNodes) {
+			if (allNodes.hasOwnProperty(nodeId)) {
+				updateArray.push(allNodes[nodeId]);
+			}
+		}
 
-    // transform the object into an array
-    var updateArray = [];
-    for (nodeId in allNodes) {
-        if (allNodes.hasOwnProperty(nodeId)) {
-            updateArray.push(allNodes[nodeId]);
-        }
-    }
+		EdgeUpdateArray = [];
+		for (eId in allEdges) {
+			if (allEdges.hasOwnProperty(eId)) {
+				EdgeUpdateArray.push(allEdges[eId]);
+			}
+		}
 
-    EdgeUpdateArray = [];
-    for (eId in allEdges) {
-        if (allEdges.hasOwnProperty(eId)) {
-            EdgeUpdateArray.push(allEdges[eId]);
-        }
+		vis_nodes.update(updateArray);
+		vis_edges.update(EdgeUpdateArray);		
     }
-
-    vis_nodes.update(updateArray);
-    vis_edges.update(EdgeUpdateArray);
 
 }
 
