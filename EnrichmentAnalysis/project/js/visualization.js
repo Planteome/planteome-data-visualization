@@ -78,12 +78,17 @@ function loadView() {
 
     raw_graph_data = sessionStorage.getItem("graphData");
     resultList = sessionStorage.getItem("resultList");
-
+	inputGenes = sessionStorage.getItem("inputGenes");
+	speciesId = sessionStorage.getItem('speciesID');
   
     raw_graph_data = JSON.parse(raw_graph_data);
     resultList = JSON.parse(resultList);
-    console.log(resultList);
+	inputGenes = JSON.parse(inputGenes);
+    // console.log(resultList);
 
+	/*Load Matrix View*/
+	loadMatrixView(inputGenes, resultList, speciesId);
+	
 	var length = Object.keys(resultList).length;
 	
     if (raw_graph_data.length == length) {
@@ -96,17 +101,7 @@ function loadView() {
 
     flag_showChildren = false;
     showNodes();
-
-    /* 	var c = document.getElementById("vis_graph2");
-        var ctx = c.getContext("2d");
-        var clientHeight = document.getElementById('vis_graph2').clientHeight;
-        var clientWeight = document.getElementById('vis_graph2').clientWidth;
-        console.log(clientHeight);
-        console.log(clientWeight);
-        
-        ctx.fillStyle = 'rgba(255, 0, 255, 1.0)';
-        ctx.fillRect(-clientWeight,-clientHeight,2*clientWeight,2*clientHeight); */
-
+	
 }
 
 function onclick_ontologyCategoryChangeVis() {
@@ -369,7 +364,8 @@ function visViewGraph(raw_data) {
     let edges = new Set();
 
     for(let raw_graph of raw_data) {
-        let json = JSON.parse(raw_graph.topology_graph_json);
+        // let json = JSON.parse(raw_graph.topology_graph_json);
+		let json = JSON.parse(raw_graph);
 
     //without stringifying the node objects,
     //we would have to manually check each node/edge to see
@@ -753,7 +749,7 @@ function visViewGraph(raw_data) {
 			 awe_list.list.push({ "label": resultList[r].ontologyName, "value": resultList[r].ontologyId });
 		}
 	}
-	console.log(awe_list);
+	// console.log(awe_list);
 	
     let tree_search_input = document.querySelector('#tree_search_input');
     let tree_awe_list = { list: [], maxItems: 10 };
@@ -763,7 +759,7 @@ function visViewGraph(raw_data) {
 			 tree_awe_list.list.push({ "label": resultList[r].ontologyName, "value": resultList[r].ontologyId });
 		}
 	}
-	console.log(tree_awe_list);
+	// console.log(tree_awe_list);
     
 
     let awesomplete = new Awesomplete(search_input, awe_list);
@@ -1791,3 +1787,53 @@ function clickEvent(params) {
 
 }
 
+var flag_showVisNetwork = true;
+var flag_showVisTree = true;
+var flag_showMatrix = true;
+function toggleVisNetwork(){
+	
+	flag_showVisNetwork = !flag_showVisNetwork;
+	if(flag_showVisNetwork){
+		$('#netvis_inputs').show();
+		$('#netvis_search').show();
+		$('#netvis_graph').show();
+	}
+	else if(!flag_showVisNetwork){
+		$('#netvis_inputs').hide();
+		$('#netvis_search').hide();
+		$('#netvis_graph').hide();
+	}
+	
+}
+
+function toggleVisTree(){
+	
+	flag_showVisTree = !flag_showVisTree;
+	if(flag_showVisTree){
+		$('#treevis_inputs').show();
+		$('#treevis_search').show();
+		$('#treevis_graph').show();
+	}
+	else if(!flag_showVisTree){
+		$('#treevis_inputs').hide();
+		$('#treevis_search').hide();
+		$('#treevis_graph').hide();
+	}
+	
+}
+
+function toggleVisMatrix(){
+	
+	flag_showMatrix = !flag_showMatrix;
+	if(flag_showMatrix){
+		$('#matrixvis_inputs').show();
+		$('#matrixvis_search').show();
+		$('#matrixvis_graph').show();
+	}
+	else if(!flag_showMatrix){
+		$('#matrixvis_inputs').hide();
+		$('#matrixvis_search').hide();
+		$('#matrixvis_graph').hide();
+	}
+	
+}

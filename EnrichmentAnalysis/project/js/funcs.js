@@ -226,28 +226,28 @@
 	stats.fisher = fisher;
 	stats.fisher2 = fisher2;
 
-	let test_vals = [
-		[12,5,29,2],
-		[100,2,1000,5],
-		[2,100,5,1000],
-		[2,7,8,2],
-		[5,1,10,10],
-		[1,9,11,3],
-		[5,5,5,200],
-	];
-	console.log(`tests for stat methods:`);
-	for(let alpha_vals of test_vals){
-		let kn_vals = alpha_to_kn(...alpha_vals);
+	// let test_vals = [
+		// [12,5,29,2],
+		// [100,2,1000,5],
+		// [2,100,5,1000],
+		// [2,7,8,2],
+		// [5,1,10,10],
+		// [1,9,11,3],
+		// [5,5,5,200],
+	// ];
+	// console.log(`tests for stat methods:`);
+	// for(let alpha_vals of test_vals){
+		// let kn_vals = alpha_to_kn(...alpha_vals);
 
-		console.log(`for (k,K,n,N) == (${kn_vals})`);
-		for(let method of [stats.hypergeometric, stats.chi, stats.fisher, stats.fisher2]){
-			let res = 0;
-			try {
-				res = method(...kn_vals).toExponential();
-			} catch (e) {
-				res = `err: ${e.name}, ${e.message}`;
-			}
-			console.log(`\t${method.name}: ${res}`);
-		}
-	}
+		// console.log(`for (k,K,n,N) == (${kn_vals})`);
+		// for(let method of [stats.hypergeometric, stats.chi, stats.fisher, stats.fisher2]){
+			// let res = 0;
+			// try {
+				// res = method(...kn_vals).toExponential();
+			// } catch (e) {
+				// res = `err: ${e.name}, ${e.message}`;
+			// }
+			// console.log(`\t${method.name}: ${res}`);
+		// }
+	// }
 })();

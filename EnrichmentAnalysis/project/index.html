@@ -100,8 +100,8 @@
 				<!--interesting genes div -->
 				<h2>Interesting Genes</h2>
 				<div id="interesting_input" class="form-group">
-					<textarea class="form-control" id="textarea_geneList" rows="20" onchange="onchange_InterestingInput()" placeholder="please input the interesting genes"></textarea>
-					<div class="buttonLine">
+					<textarea class="form-control" id="textarea_geneList" rows="10" onchange="onchange_InterestingInput()" placeholder="please input the interesting genes"></textarea>
+					<div class="buttonLine" id="exampleInputButtons">
 						<button type="button" class="btn btn-default btn-sm helpBtn" data-toggle="collapse" data-target="#gnames">example input gene names</button>
 						<button type="button" class="btn btn-default btn-sm helpBtn" data-toggle="collapse" data-target="#gids">example input gene Ids</button>
 					</div>
@@ -121,7 +121,7 @@
 				<div hidden = "true" id="referenceBackground">
 					<h2>Reference Background</h2>
 					<div  id="reference_input" class="form-group">
-						<textarea class="form-control" id="textarea_backgroundList" rows="5" placeholder="please input the reference background"></textarea>
+						<textarea class="form-control" id="textarea_backgroundList" rows="10" placeholder="please input the reference background"></textarea>
 						<button type="button" class="btn btn-default btn-sm helpBtn" data-toggle="collapse" data-target="#help_reference">Help</button>
 						<p id = 'help_reference' class='collapse'></p>
 					</div>
@@ -202,7 +202,7 @@
 					<h2>Analysis Result</h2>
 				</div>
 				
-				<div id="ontologyCategory_input" class="form-group">
+				<div id="ontologyCategory_input2" hidden="true">
 					<select class="form-control" id="ontologyCategory2" onchange="onclick_ontologyCategoryChange2()">
 						<option value="all">All</option>
 						<option value="cellular_component" selected="selected">Cellular Component</option>

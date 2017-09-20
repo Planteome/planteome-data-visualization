@@ -59,9 +59,10 @@ label[for=method], label[for=species], label[for = significance], label[for = qu
 	width: 30%; float: right;
 }
 
-#ontologyCategory_input{
+#ontologyCategory_input, #ontologyCategory_input2{
 	display: inline-block;
     width: 100%;
+	/* hidden:true; */
 }
 
 .pvalue {
@@ -102,4 +103,26 @@ a {
 .toggleShow{
 	display:inline-block;
 	float:right;
+}
+
+/*the matrix view */
+svg {
+  font: 10px sans-serif;
+}
+
+.background {
+  fill: #eee;
+}
+
+line {
+  stroke: #fff;
+}
+
+text.active {
+  fill: red;
+}
+
+#vis_graph_matrix{
+	overflow:auto;
+	width:1000;
 }

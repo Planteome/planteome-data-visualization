@@ -43,7 +43,7 @@ function ontology(m_ontologyName, m_ontologyId,m_description, m_numberOfInput,m_
 	this.numberOfReference = m_numberOfReference;
 	this.p = p;
 	this.ontologyCategory = '';
-	this.associatedGenes = [];
+	// this.associatedGenes = [];
 }
 
 //object Annotation
@@ -88,10 +88,10 @@ function initialize(){
 	
 	
 	$( document ).ajaxError(function( event, jqxhr, settings, thrownError ) {
-		console.log(event);
-		console.log(jqxhr);
-		console.log(settings);
-		console.log(thrownError);
+		// console.log(event);
+		// console.log(jqxhr);
+		// console.log(settings);
+		// console.log(thrownError);
 		showError("Sorry, there is something wrong with the server and we are trying to solve it...");
 	});
 	
@@ -116,8 +116,9 @@ function onclick_submit(){
 	cutoff = document.querySelector('#significance').value;
 	cutoff = parseFloat(cutoff);
 	
-	if(analysisType == 'userinput')
+	if(analysisType == 'userinput'){
 		staticAnalysis();
+	}
 	else{
 		createDisambigousGeneList();
 		dynamicAnalysis();
@@ -127,13 +128,13 @@ function onclick_submit(){
 function createDisambigousGeneList(){
 	
 	for(let i of ambiguousData.good)
-		inputGenes.push(i.results[0].id);
+		inputGenes.push({"input": i.input, "id": i.results[0].id});
 	
 	for(let i of ambiguousData.ugly){
 		
 		let select = $('input[name='+i.input+']:checked').val();
 		let selectedGene = i.results[select].id;
-		inputGenes.push(selectedGene);
+		inputGenes.push({"input": i.input,"id":selectedGene});
 	}
 	
 }
@@ -149,7 +150,7 @@ function splitStringToGeneList(str){
 		if(trimmedData ==='')
 			continue;
 
-		geneIDList.push(trimmedData);
+		geneIDList.push({"input":trimmedData, "id":null});
 	}
 	return geneIDList;
 }
@@ -210,57 +211,84 @@ function onclick_disambiguity(){
 }
 
 function my_reset(){
-	show_results = false;
-	document.querySelector('#textarea_geneList').value = '';
-	document.querySelector('#textarea_backgroundList').value = '';
-	my_submitReset();
 	
-	//$('#disam').show();
-	$('#submit').hide();
-	$('#btn_vis').hide();
-	
-	//clear the ambiguous table
-	var tableBody = $('#disambiguityTableBody');
-	tableBody.html("");	
-	
-	$('#disambiguity').hide();
-	$('#toggleAmbiguousTable').hide();
-	
-	$('#badGenesPanel').hide();
-	
-	$('#error').hide();	
+	var r = confirm("Current results and inputs will be reset, do you really want to continue?");
+    if (r == true) {
+		show_results = false;
+		document.querySelector('#textarea_geneList').value = '';
+		document.querySelector('#textarea_backgroundList').value = '';
+		my_submitReset();
+		
+		//$('#disam').show();
+		$('#submit').hide();
+		$('#btn_vis').hide();
+		
+		//clear the ambiguous table
+		var tableBody = $('#disambiguityTableBody');
+		tableBody.html("");	
+		
+		$('#disambiguity').hide();
+		$('#toggleAmbiguousTable').hide();
+		
+		$('#badGenesPanel').hide();
+		
+		$('#error').hide();	
+	    
+	} else {
+        return
+    }
 	
 }
 
 //when the input gene list is changed
 function onchange_InterestingInput(){
 
-	//$('#disam').show();
-	$('#submit').hide();
-	
-	//clear the ambiguous table
-	var tableBody = $('#disambiguityTableBody');
-	tableBody.html("");	
-	
-	$('#disambiguity').hide();
-	$('#toggleAmbiguousTable').hide();
-	
-	$('#badGenesPanel').hide();
-	
-	$('#error').hide();
+	analysisType = document.getElementById("queryType").value;
+	if(analysisType == 'userinput'){
+		$('#submit').show();
+		$('#disam').hide();
+		$('#disambiguity').hide();
+		$('#toggleAmbiguousTable').hide();
+		$('#badGenesPanel').hide();
+		$('#error').hide();
+		var tableBody = $('#disambiguityTableBody');
+		tableBody.html("");	
+	}
+	else{
+		$('#submit').hide();
+		
+		//clear the ambiguous table
+		var tableBody = $('#disambiguityTableBody');
+		tableBody.html("");	
+		
+		$('#disambiguity').hide();
+		$('#toggleAmbiguousTable').hide();
+		$('#badGenesPanel').hide();
+		$('#error').hide();
+	}
 }
 
 function onclick_QueryTypeChange(){
+	
+
+	my_submitReset();
+
 	analysisType = document.getElementById("queryType").value;
 	if(analysisType == 'userinput'){
 		$('#referenceBackground').show();
 		$('#submit').show();
 		$('#disam').hide();
+		$('#exampleInputButtons').hide();
+		$('#ontologyCategory_input').hide();
+		$('#ontologyCategory_input2').hide();
 	}
 	else{
 		$('#submit').hide();
 		$('#disam').show();
 		$('#referenceBackground').hide();
+		$('#exampleInputButtons').show();
+		$('#ontologyCategory_input').show();
+		$('#ontologyCategory_input2').show();
 	}
 }
 
@@ -340,7 +368,7 @@ function getOverView(){
 	return $.ajax({
 		type: 'get',
 		//url: url_stats + 'overview',
-		url:url_ApiLink +'statistics/overview',
+		url:url_ApiLink +'statistics/overview?species=NCBITaxon:'+speciesID,
 		dataType: 'json'
 	});
 }
@@ -353,7 +381,7 @@ function disAmbiguateGenes(geneList){
 	data += 'species=NCBITaxon:' + speciesID;
 	
 	for(let i of geneList){
-		data +='&entity='+i;
+		data +='&entity='+i.input;
 	}
 	
 	$.ajax({
@@ -498,9 +526,9 @@ function getOntologyTermsFromGenes(geneList){
 	let data = '';
 
 	for(let i of geneList){
-		data +='bioentity='+i+'&';
+		data +='bioentity='+i.id+'&';
 	}
-	data += 'taxon=' + speciesID;
+	data += 'species=NCBITaxon:' + speciesID;
 
 	//console.log(link);
 
@@ -521,7 +549,7 @@ function getGenesNumInRefFromOntologys(ontologyList){
 	for(let i in ontologyList){
 		data +='term='+i+'&';
 	}
-	data += 'taxon=' + speciesID;
+	data += 'species=NCBITaxon:' + speciesID;
 
 	return $.ajax({
 		type: 'post',
@@ -577,7 +605,7 @@ function getOntologyData(resultList){
 						}
 
 						//data for visualization
-						raw_graph_data.push(item);
+						raw_graph_data.push(item.topology_graph_json);
 						
 						
 						// "topology_graph_json" :
@@ -982,12 +1010,12 @@ function createDownloadFile(data){
 }
 
 function visualize(){
-	
+		
 	sessionStorage.setItem('graphData', JSON.stringify(raw_graph_data));
 	sessionStorage.setItem('resultList', JSON.stringify(resultList));
+	sessionStorage.setItem('inputGenes', JSON.stringify(inputGenes));
+	sessionStorage.setItem('speciesID', speciesID);
 	
 	window.open("./visualization.html");
-	console.log('vis opened');
-
 }
 
