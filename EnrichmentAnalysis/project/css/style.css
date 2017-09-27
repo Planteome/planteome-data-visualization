@@ -105,19 +105,6 @@ a {
 	float:right;
 }
 
-/*the matrix view */
-svg {
-  font: 10px sans-serif;
-}
-
-.background {
-  fill: #eee;
-}
-
-line {
-  stroke: #fff;
-}
-
 text.active {
   fill: red;
 }
@@ -125,4 +112,22 @@ text.active {
 #vis_graph_matrix{
 	overflow:auto;
 	width:1000;
+}
+
+.page-header{
+	padding-bottom:15px;
+}
+
+.bg-info{
+	margin-bottom:0px;
+	color:#006600";
+}
+
+.bar{
+	width:80px;
+	height:25px;
+	display:inline-block;
+	text-align: center;
+	vertical-align: middle;
+	line-height:25px;
 }

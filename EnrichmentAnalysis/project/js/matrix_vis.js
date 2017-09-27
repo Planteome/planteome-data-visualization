@@ -2,6 +2,8 @@ let url_ApiLink = settings.url_ApiLink;
 let url_browse = settings.url_AmigoLink;
 var ontologyList = {};
 var pvalueList = [];
+var count_x_elements,count_y_elements;
+var width,height;
 
 function getColorFromPalue(p_value) {
     let p_value_log = Math.log10(p_value);
@@ -39,7 +41,7 @@ function getOntologyTermsFromGene(geneId, geneName, speciesID) {
 	})
 }
 
-function getMatrixData(inputGenes, ontologyTerms, speciesId) {
+function getMatrixData(inputGenes, ontologyTerms, speciesId, selectedCategory) {
 
 	var getDataFlag = $.Deferred();
 
@@ -63,6 +65,10 @@ function getMatrixData(inputGenes, ontologyTerms, speciesId) {
 
 	let index = 0;
 	for (let i in ontologyTerms) {
+		
+		if(selectedCategory != "all" && ontologyTerms[i].ontologyCategory != selectedCategory)
+			continue;
+		
 		matrixData["nodes2"].push({
 			"name": ontologyTerms[i].ontologyId
 		})
@@ -97,7 +103,10 @@ function getMatrixData(inputGenes, ontologyTerms, speciesId) {
 		for (let ontologyid in ontologyList) {
 
 			let index2 = node2Array.indexOf(ontologyid);
-
+			
+			if(index2 <0)
+				continue;
+			
 			for (let geneid of ontologyList[ontologyid].associatedGenes) {
 				let index1 = node1Array.indexOf(geneid);
 				matrixData["links"].push({
@@ -116,34 +125,17 @@ function getMatrixData(inputGenes, ontologyTerms, speciesId) {
 function loadMatrixView(inputGenes, ontologyTerms, speciesId) {
 
 	$('#vis_graph_matrix').empty();
-
+	
+	selectedCategory = document.getElementById("matrixOntologyCategoryVis").value;
+	
 	var margin = {
 		top: 100,
 		right: 0,
 		bottom: 10,
 		left: 100
 	};
-	
-	var count_x_elements = Object.keys(ontologyTerms).length,
-		count_y_elements = inputGenes.length;
-	
-	var width = 15 * count_x_elements,
-		height = 15 * count_y_elements;
 
-	var y = d3.scaleBand().range([0, height]),
-	x = d3.scaleBand().range([0, width]),
-	z = d3.scaleLinear().domain([0, 4]).clamp(true);
-	//c = d3.scale.category10().domain(d3.range(10));
-	// c = d3.scaleOrdinal(d3.schemeCategory10);
-
-	var svg = d3.select("#vis_graph_matrix").append("svg")
-		.attr("width", width + margin.left + margin.right)
-		.attr("height", height + margin.top + margin.bottom)
-		.style("margin-left", 0 + "px")
-		.append("g")
-		.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-	$.when(getMatrixData(inputGenes, ontologyTerms, speciesId)).done(function (res) {
+	$.when(getMatrixData(inputGenes, ontologyTerms, speciesId, selectedCategory)).done(function (res) {
 		
 		// get the matrix
 		var data = res;
@@ -154,6 +146,28 @@ function loadMatrixView(inputGenes, ontologyTerms, speciesId) {
 		n1 = nodes1.length,
 		n2 = nodes2.length;
 
+		count_x_elements = n2;
+		count_y_elements = n1;
+
+		width = 15 * count_x_elements;
+		height = 15 * count_y_elements;
+
+		$('#saveImage').width(width);
+		$('#saveImage').height(height);
+			
+		var y = d3.scaleBand().range([0, height]),
+		x = d3.scaleBand().range([0, width]),
+		z = d3.scaleLinear().domain([0, 4]).clamp(true);	
+
+		var svg = d3.select("#vis_graph_matrix").append("svg")
+			.attr("width", width + margin.left + margin.right)
+			.attr("height", height + margin.top + margin.bottom)
+			.style("margin-left", 0 + "px")
+			.style("font-size", "10px")
+			.style("font-family", "sans-serif")
+			.append("g")
+			.attr("transform", "translate(" + margin.left + "," + margin.top + ")");		
+		
 		// Compute index per node.
 		nodes1.forEach(function (node, i) {
 			node.index = i;
@@ -202,6 +216,24 @@ function loadMatrixView(inputGenes, ontologyTerms, speciesId) {
 				let p_b = ontologyTerms[nodes2[b].name].p;
 				return p_a - p_b;
 			}),
+			pvalue2: d3.range(n2).sort(function (a, b) {
+				
+				let p_a = ontologyTerms[nodes2[a].name].p;
+				let p_b = ontologyTerms[nodes2[b].name].p;
+				return p_b - p_a;
+			}),			
+			catagory: d3.range(n2).sort(function (a, b) {
+				
+				let c_a = ontologyTerms[nodes2[a].name].ontologyCategory;
+				let c_b = ontologyTerms[nodes2[b].name].ontologyCategory;
+				if(c_a != c_b)
+					return c_a - c_b;
+				else{
+					let p_a = ontologyTerms[nodes2[a].name].p;
+					let p_b = ontologyTerms[nodes2[b].name].p;
+					return p_a - p_b
+				}
+			}),
 			//group: d3.range(n).sort(function(a, b) { return nodes[b].group - nodes[a].group; })
 		};
 
@@ -212,7 +244,9 @@ function loadMatrixView(inputGenes, ontologyTerms, speciesId) {
 		svg.append("rect")
 		.attr("class", "background")
 		.attr("width", width)
-		.attr("height", height);
+		.attr("height", height)
+		.style("fill", "#eee")
+
 
 		var row = svg.selectAll(".row")
 			.data(matrix)
@@ -224,7 +258,8 @@ function loadMatrixView(inputGenes, ontologyTerms, speciesId) {
 			.each(row);
 
 		row.append("line")
-		.attr("x2", width);
+		.attr("x2", width)
+		.style("stroke", "#fff");
 
 		row.append("a")
 		.attr("href", function (d, i) {
@@ -249,11 +284,12 @@ function loadMatrixView(inputGenes, ontologyTerms, speciesId) {
 			});
 
 		column.append("line")
-		.attr("x1", -width);
+		.attr("x1", -width)
+		.style("stroke", "#fff");
 
 		column.append("a")
 		.attr("href", function (d, i) {
-			return url_browse + "gene_product/" + nodes2[i].name;
+			return url_browse + "term/" + nodes2[i].name;
 		})
 		.attr("target", "_blank")
 		.append("text")
@@ -292,7 +328,15 @@ function loadMatrixView(inputGenes, ontologyTerms, speciesId) {
 					return color;
 				})
 				.on("mouseover", mouseover)
-				.on("mouseout", mouseout);
+				.on("mouseout", mouseout)				
+				.append("svg:title")
+				.text(function(d) { 
+					let term = nodes2[d.x].name;
+					let name = ontologyTerms[term].ontologyName;
+					let p_value = ontologyTerms[term].p;
+					let category = ontologyTerms[term].ontologyCategory;
+					return name+" \n"+p_value+"\n"+category; 
+				});
 		}
 
 		// console.log(z.domain());
@@ -311,9 +355,15 @@ function loadMatrixView(inputGenes, ontologyTerms, speciesId) {
 
 		$("#order_x, #order_y").change( function () {
 			// clearTimeout(timeout);
+			// $("#animationNotification").show();
 			let x_order = $("#order_x").val();
 			let y_order = $("#order_y").val();
 			order(x_order, y_order);
+			
+			// let time = count_x_elements*count_y_elements*2 + 200;
+			// setTimeout(function(){ 
+				// $("#animationNotification").hide(); 
+			// }, time);
 		});
 
 		function order(x_order, y_order) {
@@ -321,8 +371,8 @@ function loadMatrixView(inputGenes, ontologyTerms, speciesId) {
 			x.domain(orders[x_order]);
 			y.domain(orders[y_order]);
 
-			var tx = svg.transition().duration(5000/count_x_elements);
-			var ty = svg.transition().duration(5000/count_y_elements);
+			var tx = svg.transition().duration(100);
+			var ty = svg.transition().duration(100);
 			
 			ty.selectAll(".row")
 			.delay(function (d, i) {
@@ -330,6 +380,9 @@ function loadMatrixView(inputGenes, ontologyTerms, speciesId) {
 			})
 			.attr("transform", function (d, i) {
 				return "translate(0," + y(i) + ")";
+			}).each(function(d, i){
+				// if(i == count_y_elements-1)
+					// $("#animationNotification").hide();
 			})
 			.selectAll(".cell")
 			.delay(function (d) {
@@ -346,11 +399,61 @@ function loadMatrixView(inputGenes, ontologyTerms, speciesId) {
 			.attr("transform", function (d, i) {
 				return "translate(" + x(i) + ")rotate(-90)";
 			});
+			
+			// let c = 0;
+			// d3.selectAll(".column")
+			// .each(function(d, i){
+				// // if(i == count_x_elements-1)
+					// // $("#animationNotification").hide();
+				
+			// }).transition()
+			// .on("end", function(){
+				// $("#animationNotification").hide();
+			// });
+		
 		}
 
 		// var timeout = setTimeout(function() {
 		// order("group");
 		// d3.select("#order").property("selectedIndex", 2).node().focus();
 		// }, 5000);
+		
+		$("#animationNotification").hide(); 
 	});
 }
+
+function downloadMatrixView(){
+	var html = d3.select("svg")
+	.attr("version", 1.1)
+	.attr("xmlns", "http://www.w3.org/2000/svg")
+	.node().parentNode.innerHTML;
+
+	var imgsrc = 'data:image/svg+xml;base64,'+ btoa(html);
+
+	var canvas = document.getElementById('saveImage');
+	canvas.width = width + 100;
+	canvas.height = height + 100;
+	
+	context = canvas.getContext("2d");
+
+	var image = new Image;
+	image.src = imgsrc;
+	image.onload = function() {
+		
+		context.drawImage(image, 0, 0);
+		var a = document.createElement("a");
+		a.download = "matrix_view.png";
+		a.href = canvas.toDataURL("image/png");
+		a.click();
+	};
+}
+
+function onclick_matrixOntologyCategoryChangeVis(){
+
+	/*Load Matrix View*/
+	$('#animationNotification').show();
+	var ontologyList = {};
+	var pvalueList = [];
+	loadMatrixView(inputGenes, resultList, speciesId);
+}
+

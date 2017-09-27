@@ -1,16 +1,17 @@
 let url_amigo = settings.url_AmigoLink;
 
-let raw_graph_data;
-let resultList;
-// #2B7CE9 : dark blue
-// #D2E5FF : light blue
-// #71E618 : green
+var raw_graph_data;
+var resultList;
+var inputGenes;
+var speciesId;
+
 var defaultColor = { border: '#2B7CE9', background: '#D2E5FF', highlight: { background: '#71E618' } };
 var defaultWhiteColor = 'rgba(255,255,255,0.0)';
 
 var NodesProperties = {};
 var EdgesProperties = {};
-var pvalueList = [];
+var p_valueList = [];
+var pvalueLogList = [];
 
 //for tree distribute
 var hlevelNodesList = {};
@@ -486,7 +487,8 @@ function visViewGraph(raw_data) {
         if (p_value) {
 
             let p_value_log = Math.log10(p_value);
-            pvalueList.push(p_value_log);
+            pvalueLogList.push(p_value_log);
+			p_valueList.push(p_value);
 
         }
         else {
@@ -503,8 +505,12 @@ function visViewGraph(raw_data) {
 
     //sort the array of pvalueList
 
-    pvalueList.sort(function (a, b) { return b - a });
-
+    p_valueList.sort(function (a, b) { return b - a });
+	pvalueLogList.sort(function (a, b) { return b - a });
+	
+	//create legend bar
+	createLegend();
+	
     //send the category based on relationship
     for (let i in n_arr) {
 
@@ -1512,9 +1518,9 @@ function clickNode(params) {
 function getColorFromPalue(p_value) {
     let p_value_log = Math.log10(p_value);
 
-    let indexofCurrentp = pvalueList.indexOf(p_value_log);
+    let indexofCurrentp = pvalueLogList.indexOf(p_value_log);
 
-    let sizeofarray = pvalueList.length;
+    let sizeofarray = pvalueLogList.length;
 
     let alpha = indexofCurrentp / sizeofarray;
 
@@ -1837,3 +1843,41 @@ function toggleVisMatrix(){
 	}
 	
 }
+
+function onclick_help(){
+	window.open("./help.html");
+}
+
+function createLegend(){
+	
+	var dataset = [];
+	var l = p_valueList.length;
+	var step = Math.floor(l/9);
+	for(let i = 0; i<10; i++){
+		let p = p_valueList[i*step];
+		dataset.push(p);
+	}
+
+	
+	var legend = d3.selectAll(".legend").selectAll("div")
+	.data(dataset)
+	.enter()
+	.append("div")
+	.attr("class", "bar")
+	.style("background-color", function(d) {
+		let color = getColorFromPalue(d);
+		return color;
+	})
+	.text(function(d) {
+		// var barHeight = d * 5;  //Scale up by factor of 5
+		return d.toExponential(3);
+	});
+	
+	// div.bar {
+	// display: inline-block;
+	// width: 20px;
+	// height: 75px;
+	// background-color: teal;
+	// margin-right: 2px;
+	
+};

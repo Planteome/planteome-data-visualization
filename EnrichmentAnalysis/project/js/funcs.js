@@ -121,18 +121,47 @@
 		let df = 1; //always
 
 		let obs_a = k;
-		let exp_a = (n / N) * (K / N) * N;
+		let exp_a = (n / N) * K;
 		let obs_b = K - k;
-		let exp_b = ((N - n) / N) * (K / N) * N;
+		// let exp_b = ((N - n) / N) * K;
+		let exp_b = K - exp_a
 		let obs_c = n - k;
-		let exp_c = (n / N) * ((N - K) / N) * N;
+		// let exp_c = (n / N) * (N - K);
+		let exp_c = n - exp_a
 		let obs_d = (N - n) - (K - k);
-		let exp_d = ((N - n) / N) * ((N - K) / N) * N;
+		// let exp_d = ((N - n) / N) * (N - K);
+		let exp_d = N - n - (K - exp_a);
 
 		let cell_a = Math.pow((obs_a - exp_a), 2) / exp_a;
 		let cell_b = Math.pow((obs_b - exp_b), 2) / exp_b;
 		let cell_c = Math.pow((obs_c - exp_c), 2) / exp_c;
 		let cell_d = Math.pow((obs_d - exp_d), 2) / exp_d;
+
+		let x = cell_a + cell_b + cell_c + cell_d;
+
+		p = stats.chisquared.pdf(x, df);
+		return p;
+	}
+	
+	
+	function yatesChi(k,K,n,N){
+		let p = undefined;
+
+		let df = 1; //always
+
+		let obs_a = k;
+		let exp_a = (n / N) * K;
+		let obs_b = K - k;
+		let exp_b = K - exp_a
+		let obs_c = n - k;
+		let exp_c = n - exp_a
+		let obs_d = (N - n) - (K - k);
+		let exp_d = N - n - (K - exp_a);
+
+		let cell_a = Math.pow(Math.abs(obs_a - exp_a) - 0.5, 2) / exp_a;
+		let cell_b = Math.pow(Math.abs(obs_b - exp_b) - 0.5, 2) / exp_b;
+		let cell_c = Math.pow(Math.abs(obs_c - exp_c) - 0.5, 2) / exp_c;
+		let cell_d = Math.pow(Math.abs(obs_d - exp_d) - 0.5, 2) / exp_d;
 
 		let x = cell_a + cell_b + cell_c + cell_d;
 
@@ -225,6 +254,7 @@
 	stats.chi = chi;
 	stats.fisher = fisher;
 	stats.fisher2 = fisher2;
+	stats.yatesChi = yatesChi;
 
 	// let test_vals = [
 		// [12,5,29,2],

@@ -83,7 +83,7 @@ function initialize(){
 	$('#species').val(speciesID);
 
 	
-	let x = document.getElementById("ontologyCategory").value;
+	let x = $(".ontologyCategory").val();
 	ontologyCategory = x;
 	
 	
@@ -100,10 +100,22 @@ function initialize(){
 	});
 	
 	//reset buttons
-	$('#submit').hide();
-	$('#btn_vis').hide();
-	$('#toggleAmbiguousTable').hide();
+	$('.btn_submit').hide();
+	$('.btn_vis').hide();
+	$('.btn_toggleAmbiguousTable').hide();
+	
+
 }
+
+$(document).ready(function(){
+	
+	$(".ontologyCategory")
+	.change(function () {
+		let x = $( this ).val();
+		onclick_ontologyCategoryChange(x);
+	});
+});
+
 
 function onclick_submit(){
 	
@@ -206,7 +218,8 @@ function onclick_disambiguity(){
 	tableBody.html("");
 	
 	disAmbiguateGenes(inputGenes);
-	
+	$('#disambiguityTableBody').show();
+
 	
 }
 
@@ -220,16 +233,16 @@ function my_reset(){
 		my_submitReset();
 		
 		//$('#disam').show();
-		$('#submit').hide();
-		$('#btn_vis').hide();
+		$('.btn_submit').hide();
+		$('.btn_vis').hide();
 		
 		//clear the ambiguous table
 		var tableBody = $('#disambiguityTableBody');
 		tableBody.html("");	
 		
-		$('#disambiguity').hide();
-		$('#toggleAmbiguousTable').hide();
+		$('.btn_toggleAmbiguousTable').hide();
 		
+		$('.disambiguity_panel').hide();
 		$('#badGenesPanel').hide();
 		
 		$('#error').hide();	
@@ -245,24 +258,26 @@ function onchange_InterestingInput(){
 
 	analysisType = document.getElementById("queryType").value;
 	if(analysisType == 'userinput'){
-		$('#submit').show();
-		$('#disam').hide();
-		$('#disambiguity').hide();
-		$('#toggleAmbiguousTable').hide();
+		$('.btn_submit').show();
+		$('.btn_disam').hide();
+		$('.btn_toggleAmbiguousTable').hide();
+
+		$('.disambiguity_panel').hide();
 		$('#badGenesPanel').hide();
 		$('#error').hide();
 		var tableBody = $('#disambiguityTableBody');
 		tableBody.html("");	
 	}
 	else{
-		$('#submit').hide();
+		$('.btn_submit').hide();
 		
 		//clear the ambiguous table
 		var tableBody = $('#disambiguityTableBody');
 		tableBody.html("");	
 		
-		$('#disambiguity').hide();
-		$('#toggleAmbiguousTable').hide();
+		$('.btn_toggleAmbiguousTable').hide();
+
+		$('.disambiguity_panel').hide();
 		$('#badGenesPanel').hide();
 		$('#error').hide();
 	}
@@ -275,16 +290,18 @@ function onclick_QueryTypeChange(){
 
 	analysisType = document.getElementById("queryType").value;
 	if(analysisType == 'userinput'){
+		$('.btn_submit').show();
+		$('.btn_disam').hide();
+		
 		$('#referenceBackground').show();
-		$('#submit').show();
-		$('#disam').hide();
 		$('#exampleInputButtons').hide();
 		$('#ontologyCategory_input').hide();
 		$('#ontologyCategory_input2').hide();
 	}
 	else{
-		$('#submit').hide();
-		$('#disam').show();
+		$('.btn_submit').hide();
+		$('.btn_disam').show();
+		
 		$('#referenceBackground').hide();
 		$('#exampleInputButtons').show();
 		$('#ontologyCategory_input').show();
@@ -300,10 +317,10 @@ function onclick_speciesChange(){
 	onchange_InterestingInput();
 }
 
-function onclick_ontologyCategoryChange(){
+function onclick_ontologyCategoryChange(x){
 	
 	//upper selection
-	let x = document.getElementById("ontologyCategory").value;
+	// let x = $(".ontologyCategory").val();
 	ontologyCategory = x;
 	
 	initializeDownloadContent();
@@ -311,14 +328,6 @@ function onclick_ontologyCategoryChange(){
 	downloadContent += downloadContentHeader;
 	
 	table.clear().draw();
-	
-	// for(let i of resultList){
-			
-		// if(ontologyCategory=='all' || i.ontologyCategory ==ontologyCategory){
-			// appendOntologyToTable(i);
-			// appendOntologyToDownload(i);
-		// }
-	// };
 	
 	for(let i in resultList){
 			
@@ -332,36 +341,11 @@ function onclick_ontologyCategoryChange(){
 	createDownloadFile(downloadContent);
 	
 	//lower selection
-	$('#ontologyCategory2').val(x);
+	$('.ontologyCategory').val(x);
 
 }
 
-function onclick_ontologyCategoryChange2(){
-	
-	//upper selection
-	let x = document.getElementById("ontologyCategory2").value;
-	ontologyCategory = x;
-	
-	initializeDownloadContent();
-	
-	downloadContent += downloadContentHeader;
-	
-	table.clear().draw();
-	
-	for(let i in resultList){
-			
-		if(ontologyCategory=='all' || resultList[i].ontologyCategory ==ontologyCategory){
-			appendOntologyToTable(resultList[i]);
-			appendOntologyToDownload(resultList[i]);
-		}
-	};
-	
-	//refresh the download file
-	createDownloadFile(downloadContent);
-	
-	//upper selection
-	$('#ontologyCategory').val(x);
-}
+
 
 //get the overview information from server
 function getOverView(){
@@ -399,7 +383,7 @@ function disAmbiguateGenes(geneList){
 			if(ambiguousUglyData.length == 0 && ambiguousBadData.length == 0){
 				showSucessText("There is NO ambiguous inputs, you could SUBMIT your analysis!");
 				//$('#disam').hide();
-				$('#submit').show();
+				$('.btn_submit').show();
 			}
 			
 			if(ambiguousBadData.length != 0){
@@ -420,10 +404,10 @@ function disAmbiguateGenes(geneList){
 				showError("Please select from ambiguous terms to target the gene product...");
 				
 				//reset the buttons
-				$('#disambiguity').show();
-				$('#toggleAmbiguousTable').show();
-				//$('#disam').hide();
-				$('#submit').show();
+				$('.btn_submit').show();
+				$('.btn_toggleAmbiguousTable').show();
+
+				$('.disambiguity_panel').show();
 				
 				//clear the ambiguous table
 				// var tableBody = $('#disambiguityTableBody');
@@ -432,8 +416,8 @@ function disAmbiguateGenes(geneList){
 			}else{
 				
 				$('#error').hide();
-				$('#disambiguity').hide();
-				$('#toggleAmbiguousTable').hide();
+				$('.disambiguity_panel').hide();
+				$('.btn_toggleAmbiguousTable').hide();
 			}
 			
  			for(let i of ambiguousUglyData){
@@ -530,7 +514,7 @@ function getOntologyTermsFromGenes(geneList){
 	}
 	data += 'species=NCBITaxon:' + speciesID;
 
-	//console.log(link);
+	console.log(link+"&"+data);
 
 	return $.ajax({
 		type: 'post',
@@ -628,10 +612,11 @@ function getOntologyData(resultList){
 			if(count == length-1){
 				createDownloadFile(downloadContent);
 				
+				$('.btn_vis').show();
+				
 				$('#loading').hide();
 				$('#downloadBtn').show();
 				$('#results').show();
-				$('#btn_vis').show();
 		}
 		
 		});
@@ -688,10 +673,11 @@ function getOntologyData_separate(resultList){
 			if(count == length-1){
 				createDownloadFile(downloadContent);
 				
+				$('.btn_vis').show();
+				
 				$('#loading').hide();
 				$('#downloadBtn').show();
 				$('#results').show();
-				$('#btn_vis').show();
 		}
 		
 		});
@@ -838,6 +824,9 @@ function dynamicAnalysis(){
 					continue;
 				}
 				
+				if(p == 0)
+					console.log(p);
+				
 				if(p == null){
 					console.log(p);
 					continue;
@@ -889,9 +878,16 @@ function caculatePvalue(numOfInput,numOfRefer,n,N){
 		break;
 	case 'chi-squared':
 		p = stats.chi(numOfInput,numOfRefer,n,N);
+		
+		// if(p == 0)
+			// console.log("i:"+numOfInput+" R:"+numOfRefer+" n:"+n+" N:"+N);
+		
 		break;
 	case 'fisher2':
 		p = stats.fisher2(numOfInput,numOfRefer,n,N);
+		break;
+	case 'yates':
+		p = stats.yatesChi(numOfInput,numOfRefer,n,N);
 		break;
 	default:
 		break;
@@ -1018,4 +1014,9 @@ function visualize(){
 	
 	window.open("./visualization.html");
 }
+
+function onclick_help(){
+	window.open("./help.html");
+}
+
 

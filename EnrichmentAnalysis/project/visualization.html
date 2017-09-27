@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en-US">
 	<head>
-		<title>Gene Enrichment Analysis</title>
+		<title>Data Visualization</title>
 
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,8 +16,6 @@
 		<script src='./js/bundle.js'></script>
 		<script src='./js/funcs.js'></script>
 		<script src='./js/settings.js'></script>	
-		<script src="./include/sigmajs/sigma.min.js"></script>
-		<script src="./include/sigmajs/plugins/sigma.layout.forceAtlas2.min.js"></script>
 		<script src="./include/awesomplete/awesomplete.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>		
@@ -31,9 +29,13 @@
 	
 	<!-- <body role="document" onload = "loadView()"> -->
 	<body role="document" onload = "loadView()">
-
-	
+		
 		<div class="container" role="main">
+			
+			<div class="page-header" id="header">
+				<h1 align="center">Data Visualization</h1>
+				<button type="button" onclick="onclick_help()" class="btn btn-default btn-sm helpBtn">manual</button>
+			</div>	
 			
 			<!--  the selection Node information for network-->		
 			<div class="panel panel-info">
@@ -91,18 +93,16 @@
 				
 				<div id="netvis_graph">
 				
-					<p class="bg-info" style="margin-bottom:0px">The size of the node is decided by the number of children nodes, the color of the node is decided by the p-value.</p>
+					<p class="bg-info">The size of the node is decided by the number of children nodes, the color of the node is decided by the p-value.</p>
 					<p class="bg-success">Relationship Legend:<br>
-					<isa style="color:#2B7CE9">is a<isa><br>
-					<partof style="color:purple">part of<partof><br>
-					<regulate style="color:#E29640">regualte<regulate><br>
-					<pregulates style="color:#00FF00">positively regulate<pregulates><br>
-					<nregulates style="color:red">negatively regulate<nregulates><br>
-					<occursof style="color:#006600">occurs in <occursof><br>
-					
-					
+					<span class="badge" style="background-color:#2B7CE9">is a</span>
+					<span class="badge" style="background-color:purple">part of</span>
+					<span class="badge" style="background-color:#E29640">regualte</span>
+					<span class="badge" style="background-color:#00FF00">positively regulate</span>
+					<span class="badge" style="background-color:red">negatively regulate</span>
+					<span class="badge" style="background-color:#006600">occurs in </span><br>
 					</p>
-					
+					<div class="legend"> </div>
 					<div class="panel-body" >
 						<div id="vis_graph2" class="container sigma"></div>
 					</div>
@@ -145,7 +145,7 @@
 					</div>					
 					
 				</div>
-				
+				<div class="legend"> </div>
 				<div class="panel-body" id="treevis_graph">
 					<div id="vis_graph_tree" class="container sigma"></div>
 				</div>
@@ -162,26 +162,49 @@
 					</div>
 					
 					<div class="btn-group" role="group" aria-label="..." id="matrixvis_inputs">
-						<button type="button" id="btn_matrix_refresh" class="btn btn-primary" onclick="loadMatrixView()">Refresh</button>
-						<div class="input-group"> 
+						<!-- <div class="input-group">  -->
+							<button type="button" id="btn_matrix_refresh" class="btn btn-primary" onclick="loadMatrixView()">Refresh</button>
+							<button type="button" id="downloadSvg" class="btn btn-default" onclick="downloadMatrixView()">Download</button>
+						<!-- </div> -->
+						<div class="input-group-btn">
+							<select class="form-control" id="matrixOntologyCategoryVis" onchange="onclick_matrixOntologyCategoryChangeVis()">
+								<option value="all"  selected="selected">All</option>
+								<option value="cellular_component">Cellular Component</option>
+								<option value="molecular_function">Molecular Function</option>
+								<option value="biological_process">Biological Process</option>
+								<option value="plant_anatomy">Plant Anatomy</option>
+								<option value="plant_trait_ontology">Plant Trait</option>
+							</select>			
+						</div>
+						<div class="input-group-btn">						
 							<select class="form-control" id="order_y">
 								<option value="name1">by gene names</option>
 								<option value="count1" selected>by number of associated ontology terms </option>
 							</select>
- 
+						</div>
+						<div class="input-group-btn">
 							<select class="form-control" id="order_x">
 								<option value="name2">by ontology terms</option>
 								<option value="count2">by number of associated genes</option>
-								<option value="pvalue" selected>by p-value</option>
+								<option value="pvalue" selected>by p-value ascending</option>
+								<option value="pvalue2" >by p-value descending</option>
+								<option value="catagory">by ontology category</option>
 							</select>
 						</div>
+
 					</div>
 						
 				</div>
-				
+				<div id="animationNotification" hidden="true" class="alert alert-warning">
+					<span class="glyphicon glyphicon-refresh spinning"></span>
+					<span id = "processingTxt"> Processing...</span>
+				</div>
+				<div class="legend"> </div>
 				<div class="panel-body" id="matrixvis_graph">
+					
 					<div id="vis_graph_matrix"></div>
 				</div>
+				<canvas id="saveImage" style="display:none"></canvas>
 				
 			</div>
 
@@ -192,7 +215,7 @@
 				<address>
 					&copy;Planteome Project 2017<br/>
 					Version 1.0 beta<br/>
-					contact: qub@oregonstate.com<br/>
+					<a href="http://planteome.org/contact" target="_blank"> Contact</a> <br/>
 				</address>
 			</footer>
 		</div>
