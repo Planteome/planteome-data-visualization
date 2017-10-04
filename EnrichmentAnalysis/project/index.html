@@ -74,30 +74,32 @@
 				
 				<div id="queryType_input" class="form-group">
 					<label for="queryType">
-						Query type:
+						Query Type:
 					</label>
 					<select class="form-control" id="queryType" onchange="onclick_QueryTypeChange()">
-						<option value="background">Gene Ontology Database</option>
+						<option value="background">Planteome Onology Database</option>
 						<option value="userinput">User Define Annotations</option>
 					</select>
 				</div>
 				
 				<div id="ontologyCategory_input" class="form-group">
 					<label for="ontologyCategory">
-						GO category
+						Ontology Category
 					</label>
 					<select class="form-control ontologyCategory" id="ontologyCategory">
-						<option value="all">All</option>
-						<option value="cellular_component" selected="selected">Cellular Component</option>
-						<option value="molecular_function">Molecular Function</option>
-						<option value="biological_process">Biological Process</option>
-						<option value="plant_anatomy">Plant Anatomy</option>
-						<option value="plant_trait_ontology">Plant Trait</option>
+						<option value="all">All Categories</option>
+						<option value="cellular_component" selected="selected">GO:Cellular Component</option>
+						<option value="molecular_function">GO:Molecular Function</option>
+						<option value="biological_process">GO:Biological Process</option>
+						<option value="plant_anatomy">PO:Plant Anatomy</option>
+						<option value="plant_structure_development_stage">PO:Plant structure development stage</option>
+						<option value="plant_trait_ontology">TO:Plant Trait</option>
+						<option value="plant_environment_ontology">EO:Plant environment</option>
 					</select>
 				</div>
 				
 				<!--interesting genes div -->
-				<h2>Interesting Genes</h2>
+				<h2>Gene List</h2>
 				<div id="interesting_input" class="form-group">
 					<textarea class="form-control" id="textarea_geneList" rows="10" onchange="onchange_InterestingInput()" placeholder="please input the interesting genes"></textarea>
 					<div class="buttonLine" id="exampleInputButtons">
@@ -153,26 +155,6 @@
 							</thead>
 						
 						<tbody id= "disambiguityTableBody">
-<!-- 							<tr>
-								<td rowspan="2">YYYY</td>
-								<td > <input type="radio" name="gender" value="1"> HR Information</td>
-								<td > HR Information</td>
-							</tr>
-							<tr> 
-								<td > <input type="radio" name="gender" value="2"> test </td>
-								<td > HR Information</td>
-							</tr>
-							
-							<tr>
-								<td rowspan="2">YYYY</td>
-								<td > <input type="radio" name="gender2" value="1"> HR Information</td>
-								<td > HR Information</td>
-							</tr>
-							<tr> 
-								<td > <input type="radio" name="gender2" value="2"> test </td>
-								<td > match</td>
-							</tr> -->
-							
 						</tbody>
 						
 						</table>
@@ -210,13 +192,15 @@
 				</div>
 				
 				<div id="ontologyCategory_input2" hidden="true">
-					<select id="ontologyCategory2" class="form-control ontologyCategory"">
-						<option value="all">All</option>
-						<option value="cellular_component" selected="selected">Cellular Component</option>
-						<option value="molecular_function">Molecular Function</option>
-						<option value="biological_process">Biological Process</option>
-						<option value="plant_anatomy">Plant Anatomy</option>
-						<option value="plant_trait_ontology">Plant Trait</option>
+					<select id="ontologyCategory2" class="form-control ontologyCategory">
+						<option value="all">All Categories</option>
+						<option value="cellular_component" selected="selected">GO:Cellular Component</option>
+						<option value="molecular_function">GO:Molecular Function</option>
+						<option value="biological_process">GO:Biological Process</option>
+						<option value="plant_anatomy">PO:Plant Anatomy</option>
+						<option value="plant_structure_development_stage">PO:Plant structure development stage</option>
+						<option value="plant_trait_ontology">TO:Plant Trait</option>
+						<option value="plant_environment_ontology">EO:Plant environment</option>
 					</select>
 				</div>				
 				
@@ -229,13 +213,13 @@
 					<table id="resultTable" class="display" cellspacing="0" width="100%">
 						<thead>
 							<tr>
-								<th>GO ID</th>
+								<th>Ontology ID</th>
 								<th>Name</th>
+								<th>Category</th>
 								<th>Description</th>
 								<th>Input#</th>
 								<th>Ref#</th>
 								<th class="pvalue">P-val</th>
-								<th>type</th>
 							</tr>
 						</thead>
 						<!--tbody id="result_table">
@@ -243,13 +227,13 @@
 						
 						<tfoot>
 							<tr>
-								<th>GO ID</th>
+								<th class="table_onotlogyId">Ontology ID</th>
 								<th>Name</th>
+								<th>Category</th>
 								<th>Description</th>
 								<th>Input#</th>
 								<th>Ref#</th>
-								<th class="pvalue">P-val</th>
-								<th>type</th>
+								<th class="table_pvalue">P-val</th>
 							</tr>
 						</tfoot>
 					</table>

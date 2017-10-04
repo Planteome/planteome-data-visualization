@@ -70,12 +70,14 @@
 						
 						<div class="input-group"> 
 							<select class="form-control" id="ontologyCategoryVis" onchange="onclick_ontologyCategoryChangeVis()" disabled>
-								<option value="all"  selected="selected">All</option>
-								<option value="cellular_component">Cellular Component</option>
-								<option value="molecular_function">Molecular Function</option>
-								<option value="biological_process">Biological Process</option>
-								<option value="plant_anatomy">Plant Anatomy</option>
-								<option value="plant_trait_ontology">Plant Trait</option>
+								<option value="all" selected="selected">All Categories</option>
+								<option value="cellular_component" >GO:Cellular Component</option>
+								<option value="molecular_function">GO:Molecular Function</option>
+								<option value="biological_process">GO:Biological Process</option>
+								<option value="plant_anatomy">PO:Plant Anatomy</option>
+								<option value="plant_structure_development_stage">PO:Plant structure development stage</option>
+								<option value="plant_trait_ontology">TO:Plant Trait</option>
+								<option value="plant_environment_ontology">EO:Plant environment</option>
 							</select>
 						</div>
 						
@@ -93,8 +95,9 @@
 				
 				<div id="netvis_graph">
 				
-					<p class="bg-info">The size of the node is decided by the number of children nodes, the color of the node is decided by the p-value.</p>
-					<p class="bg-success">Relationship Legend:<br>
+					<p class="bg-info">The size of the node is decided by the number of children nodes
+					<br>The color of the node is decided by the p-value.
+					<br>Relationships
 					<span class="badge" style="background-color:#2B7CE9">is a</span>
 					<span class="badge" style="background-color:purple">part of</span>
 					<span class="badge" style="background-color:#E29640">regualte</span>
@@ -126,12 +129,14 @@
 
 						<div class="input-group"> 
 							<select class="form-control" id="treeontologyCategoryVis" onchange="onclick_treeontologyCategoryChangeVis()" disabled>
-								<option value="all"  selected="selected">All</option>
-								<option value="cellular_component">Cellular Component</option>
-								<option value="molecular_function">Molecular Function</option>
-								<option value="biological_process">Biological Process</option>
-								<option value="plant_anatomy">Plant Anatomy</option>
-								<option value="plant_trait_ontology">Plant Trait</option>
+								<option value="all" selected="selected">All Categories</option>
+								<option value="cellular_component" >GO:Cellular Component</option>
+								<option value="molecular_function">GO:Molecular Function</option>
+								<option value="biological_process">GO:Biological Process</option>
+								<option value="plant_anatomy">PO:Plant Anatomy</option>
+								<option value="plant_structure_development_stage">PO:Plant structure development stage</option>
+								<option value="plant_trait_ontology">TO:Plant Trait</option>
+								<option value="plant_environment_ontology">EO:Plant environment</option>
 							</select>
 						</div>
 						
@@ -145,7 +150,17 @@
 					</div>					
 					
 				</div>
+
+				<p class="bg-info">Relationship
+					<span class="badge" style="background-color:#2B7CE9">is a</span>
+					<span class="badge" style="background-color:purple">part of</span>
+					<span class="badge" style="background-color:#E29640">regualte</span>
+					<span class="badge" style="background-color:#00FF00">positively regulate</span>
+					<span class="badge" style="background-color:red">negatively regulate</span>
+					<span class="badge" style="background-color:#006600">occurs in </span><br>
+				</p>
 				<div class="legend"> </div>
+				
 				<div class="panel-body" id="treevis_graph">
 					<div id="vis_graph_tree" class="container sigma"></div>
 				</div>
@@ -168,27 +183,29 @@
 						<!-- </div> -->
 						<div class="input-group-btn">
 							<select class="form-control" id="matrixOntologyCategoryVis" onchange="onclick_matrixOntologyCategoryChangeVis()">
-								<option value="all"  selected="selected">All</option>
-								<option value="cellular_component">Cellular Component</option>
-								<option value="molecular_function">Molecular Function</option>
-								<option value="biological_process">Biological Process</option>
-								<option value="plant_anatomy">Plant Anatomy</option>
-								<option value="plant_trait_ontology">Plant Trait</option>
+								<option value="all" selected="selected">All Categories</option>
+								<option value="cellular_component" >GO:Cellular Component</option>
+								<option value="molecular_function">GO:Molecular Function</option>
+								<option value="biological_process">GO:Biological Process</option>
+								<option value="plant_anatomy">PO:Plant Anatomy</option>
+								<option value="plant_structure_development_stage">PO:Plant structure development stage</option>
+								<option value="plant_trait_ontology">TO:Plant Trait</option>
+								<option value="plant_environment_ontology">EO:Plant environment</option>
 							</select>			
 						</div>
 						<div class="input-group-btn">						
 							<select class="form-control" id="order_y">
-								<option value="name1">by gene names</option>
-								<option value="count1" selected>by number of associated ontology terms </option>
+								<option value="name1">rows are sorted by gene names</option>
+								<option value="count1" selected>rows are sorted by number of associated terms </option>
 							</select>
 						</div>
 						<div class="input-group-btn">
 							<select class="form-control" id="order_x">
-								<option value="name2">by ontology terms</option>
-								<option value="count2">by number of associated genes</option>
-								<option value="pvalue" selected>by p-value ascending</option>
-								<option value="pvalue2" >by p-value descending</option>
-								<option value="catagory">by ontology category</option>
+								<option value="name2">columns are sorted by ontology ID</option>
+								<option value="count2">columns are sorted by number of associated genes</option>
+								<option value="pvalue" selected>columns are sorted by p-value ascending</option>
+								<option value="pvalue2" >columns are sorted by p-value descending</option>
+								<option value="catagory">columns are sorted by ontology category and p-value</option>
 							</select>
 						</div>
 

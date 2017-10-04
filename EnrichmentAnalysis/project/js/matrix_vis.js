@@ -284,7 +284,7 @@ function loadMatrixView(inputGenes, ontologyTerms, speciesId) {
 			});
 
 		column.append("line")
-		.attr("x1", -width)
+		.attr("x1", -height)
 		.style("stroke", "#fff");
 
 		column.append("a")
@@ -454,6 +454,10 @@ function onclick_matrixOntologyCategoryChangeVis(){
 	$('#animationNotification').show();
 	var ontologyList = {};
 	var pvalueList = [];
+	
+	$('#order_y').val('count1');
+	$('#order_x').val('pvalue');
+	
 	loadMatrixView(inputGenes, resultList, speciesId);
 }
 

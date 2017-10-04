@@ -65,8 +65,19 @@ label[for=method], label[for=species], label[for = significance], label[for = qu
 	/* hidden:true; */
 }
 
-.pvalue {
-	width:51px;
+.bg-info{
+	padding-left: 10px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
+
+.table_onotlogyId{
+	width:80px;
+	padding-left:5px;
+}
+
+.table_pvalue {
+	width:65px;
 }
 
 .helpBtn{

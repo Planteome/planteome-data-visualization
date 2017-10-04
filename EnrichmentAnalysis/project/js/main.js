@@ -935,11 +935,11 @@ function appendOntologyToTable(obj){
 	table.row.add( [
 			idNode,
 			obj.ontologyName,
+			obj.ontologyCategory,
 			obj.description,
 			obj.numberOfInput,
 			obj.numberOfReference,
 			obj.p.toExponential(4),
-			obj.ontologyCategory
 		] ).draw( false );
 		
 }
