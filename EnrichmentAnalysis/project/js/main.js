@@ -137,6 +137,12 @@ function onclick_submit(){
 	}
 }
 
+function convertToLegalString(str){
+	var str_withdash;
+	str_withdash = str.replace(/\./g, "\\.");
+	return str_withdash;
+}
+
 function createDisambigousGeneList(){
 	
 	for(let i of ambiguousData.good)
@@ -144,7 +150,9 @@ function createDisambigousGeneList(){
 	
 	for(let i of ambiguousData.ugly){
 		
-		let select = $('input[name='+i.input+']:checked').val();
+		name = convertToLegalString(i.input);
+		
+		let select = $('input[name='+name+']:checked').val();
 		let selectedGene = i.results[select].id;
 		inputGenes.push({"input": i.input,"id":selectedGene});
 	}
@@ -447,7 +455,6 @@ function onclick_toggleDisambiguousTalbe(){
 		
 }
 
-
 function appendAmbiguityRowToTable(input, amNum, amObjs){
 	
 	var tableBody = $('#disambiguityTableBody');
@@ -555,10 +562,20 @@ function getOntologyData(resultList){
 		// ids += "entity=" + resultList[i].ontologyId + "&";
 	// }
 	
+	if(length == 0){
+		$('.btn_vis').hide();
+		$('#loading').hide();
+		$('#downloadBtn').hide();
+		$('#results').hide();
+		
+		showSucessText("There is no enriched ontologies, please input more genes.");
+		
+		return;
+	}
+	
 	let link  = url_ApiLink + 'entity/terms?';
 	
 	//append to table
-	
 	for(let i in resultList){
 		
 		$.ajax({
