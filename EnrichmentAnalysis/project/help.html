@@ -16,16 +16,123 @@
 
 <body>
 
-<h1>User Manual</h1>
+<h1>OAT User Manual</h1>
 <hr>
 
-<h2>Input</h2>
+<h2>Contents</h2>
+<ul>
+  <li><a href="#Sec_Overview">Overview</a></li>
+  <li><a href="#Sec_Input">Input Data</a></li>
+  <li><a href="#Sec_StatisticAnalysis">Sec_StatisticAnalysis</a></li>
+  <li><a href="#Sec_DynamicAnalysis">Dynamic Analysis</a></li>
+	  <ul>
+		  <li><a href="#Sec_Disambiguate">Disambiguation Input Genes</a></li>
+		  <li><a href="#Sec_API">Planteome Query API</a></li>
+	  </ul>
+  <li><a href="#Sec_DataVis">Analysis Results</a></li>
+  <ul>
+	  <li><a href="#Sec_AnalsyisTable">Analysis Results Table</a></li>
+	  <li><a href="#Sec_Visualization">Visualizations</a></li>
+		<ul>
+			<li><a href="#Sec_Color_Scheme">Color Scheme</a></li>
+			<li><a href="#Sec_Search">Search and Locate Node</a></li>
+			<li><a href="#Sec_NetworkVis">Network Visualization</a></li>
+			<li><a href="#Sec_HierachicalVis">Hierarchical Visualization</a></li>
+			<li><a href="#Sec_MatrixVis">Matrix Visualization</a></li>
+		</ul>
+  </ul>
+</ul>
+
+<h2 id="Sec_Overview">Overview</h2>
+	<p>The Ontology Enrichment Analysis Tool (OAT) supports two ways to conduct the ontology enrichemnet analysis: <a href="#Sec_StatisticAnalysis">Statistic analysis</a> and <a href="#Sec_DynamicAnalysis">Dynamic analysis</a>. The statistic analysis allow users to find enriched ontology terms based on user's input annotations. The dynamic analysis will find the enriched onology terms from the database of <a href="http://planteome.org/" target="_blank">Planteome</a>. OAT supplies three main statistic matheods to calculate the significant p-values for each ontology terms associated with the input gene list. After finding the significant enriched ontolog terms from supported ontology categories, such as GO:CC, GO:MF, GO:BP, PO, TO, EO, the OAT  provides three types of <a href="#Sec_Visualization">visualizations</a> to help users to analyze the enriched terms.</p> 
+
+<h2 id="Sec_Input">Input Data</h2>
+	<p>For <a href="#Sec_StatisticAnalysis">Statistic analysis</a>, the users need to input a list of annotations in form of 
+	<br><br>
+	<b>Gene_ID Ontology_Term</b>
+	<br><br>
+	which are two strings separated by spaces or tabs to be the <b>Reference Background</b>. Then a list of "Gene_ID" should be input in the <b>Gene List</b>.</p>
+
+	<p>For example, the string "fakeGeneID_0001 GO:0000001" can be a valid input annotation. It is suggested that different annotations should be separated by line breaks.</p>
+	<p>For <a href="#Sec_StatisticAnalysis">Dynamic analysis</a>, the users need to input a list of interesting genes. The genes can be specified by the name of the gene product (e.g. AT1G65620 )or by the unique database ID of the gene product (e.g. TAIR:locus:2034163).</p>
+	The user can switch between different analysis method by selecting from the <b>Query Type</b>.
+	<br><br>
+	<img src="./images/userinput.png" width="600px" alt="SwitchAnalysisMethod">
+	<br><br>
+	Besides swithching between querying from different databases, from the <b>Setting</b> panel, users can also set parameters for the statistic analysis such as statistic analysis method, the species(taxon) of the input genes, the cut-off significant p-value, and the specific ontology database.
 
 
-<h2>Statistic Analysis</h2>
+<h2 id="Sec_StatisticAnalysis">Statistic Analysis</h2>
+	<p>The statistic analysis allow users to find enriched ontology terms based on user's input annotations. Based on user's <a href="#Sec_Input">input data</a>, OAT can find the ontology terms which are significant enriched by the input gene list. </p> 
+
+	<img src="./images/staticAnalysis.png" width="300px" alt="staticAnalysis">
 
 
-<h2>Data Visualization</h2>
+<h2 id="Sec_DynamicAnalysis">Dynamic Analysis</h2>
+	<p>The dynamic analysis will find the enriched onology terms from the database of <a href="http://planteome.org/" target="_blank">Planteome</a>. The ontology curators keep updating the annotation database to ensure it contains the most comprehensive ontology information.</p> 
 
+	<p>After <a href="#Sec_Input">inputing</a> the interested gene list, the users can process the analysis by following buttons.</p>
+	<img src="./images/buttons.png" width="300px" alt="buttons">
+
+	<p><b>Submit</b> will submit the input gene list to <a href="#Sec_Disambiguate">disambiguation</a> and create the final input gene list.</P>
+
+	<p><b>Analyze</b> will submit the disambiguated input gene list to OAT. OAT utilizes the <a href="#Sec_API">Planteome Query APIs</a> to conduct the significant analysis with considering the user's input parameters. A <a href="#Sec_AnalsyisTable">table</a> of the analysis results will be shown to </P>
+
+	<p><b>Visualize</b> will create a new page in which all the enriched terms will be used to create <a href="#Sec_Visualization">visualzation</a> results to help users to study the structure of the enriched ontology terms.  </P>
+
+	<h3 id="Sec_Disambiguate">Disambiguation Input Genes</h3>
+
+		<p>Since different genes can have the same name, to conduct accurate enrichement analsyis, OAT requires users to specify the intented input genes from all the ambiguous input gene names. To avoid this trivial procedure, <a href="#Sec_Input"> unique gene IDs</a> are encouraged to be used.</P>
+		<p>In the process of disambiguation, all the genes not appear in the database will be listed as following:</P>
+		<img src="./images/unrecognizedGenes.png" width="300px" alt="unre">
+		<p>Recognized genes with ambiguities will be listed to allow users to select the prefered ones.</P>
+		<img src="./images/disambiguate.png" width="300px" alt="disam">
+
+
+	<h3 id="Sec_API">Planteome Query API</h3>
+		<a href="http://planteome.org/" target="_blank">Planteome</a> provides a series of <a href="https://github.com/geneontology/amigo/blob/master/bin/README.md" target="_blank">APIs</a> to query the onotology data, annoation data, and gene product data.
+
+<h2 id="Sec_DataVis">Analysis Results</h2>
+	
+	<h3 id="Sec_AnalsyisTable">Analysis Results Table</h3>
+		<p>All the enriched ontology terms are listed in a table for users to study details of each ontology terms. OAT provides convenient functionalities such as downloading the table, sorting the table, linking ontology terms to  <a href="http://planteome.org/" target="_blank">Planteome</a> database, filtering the data based on ontology categories, and quick search among analysis results. </p>
+		<img src="./images/analysisTable.png" width="300px" alt="table">
+
+	<h3 id="Sec_Visualization">Visualizations</h3>
+		<p>Three types of visualizations are provided in OAT, they are
+			<ul>
+			  <li>Network Visualization</li>
+			  <li>Hierarchical Visualization</li>
+			  <li>Matrix Visualization</li>
+			</ul>
+		</p>
+		<p>The selected nodes in the network visualization and hierarchical visualization are shown as following.</p>
+		<img src="./images/selected.png" width="300px" alt="unre">
+		<p>Users can click the the shown parent nodes and children nodes to locate them in these two visualziations quickly.</p>
+		
+		<h4 id="Sec_Color_Scheme">Color Scheme</h4>
+			<p>Each ontology node is assigned a color based on its significant p-value. Higher significance (less p-value) results in more red, less significant (higher p-value) ones will be colored in yellow.</p>
+	
+		<h4 id="Sec_Search">Search and Locate Node</h4>
+			<p>A quick search functionaly is provided so that the users can search among all the enriched nodes.</p>
+			<p>The locating is requires the input of a valid Ontology ID. Aftering typing some strings in the search input box, the OAT will list all the ontology terms whose name contains the input string.</p>
+			<img src="./images/searched.png" width="300px" alt="unre">
+			<p>Aftering selcting from all the listed onology terms. The ontology ID will be automatically shown in the input box. By clicking the button <b>Go</b>, the node in the input box will be centered in the canvas.</p>
+			<img src="./images/search.png" width="300px" alt="unre">
+
+	
+		<h4 id="Sec_NetworkVis">Network Visualization</h4>
+			<p>All the nodes of the enriched ontology terms are located in the canvas based on force-directed method. The initial layout put all the nodes in a cirle, after clicking the button <b>Resume Animation</b>, the nodes will be relocated based on their adjacency infomation. This procedure will be animated. Note that this animation can be slow when there are significant number of enriched terms.</p>
+			<img src="./images/network.png" width="300px" alt="unre">
+
+			
+		<h4 id="Sec_HierachicalVis">Hierarchical Visualization</h4>
+			<p>The nodes in one onotlogy category is clustered toghther and distributed hierarchically.</p>
+			<img src="./images/hierarchical.png" width="300px" alt="unre">
+			
+		<h4 id="Sec_MatrixVis">Matrix Visualization</h4>
+			<p>An annotation matrix is displayed to show which genes are associated with which enriched ontology terms. OAT allows sorting the rows and columns of the matrix based on different schemes.</p>
+			<img src="./images/matrixVis.png" width="300px" alt="unre">
+	
 </body>
 </html>
