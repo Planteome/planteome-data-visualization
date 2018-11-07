@@ -30,16 +30,6 @@
 		<script LANGUAGE="JavaScript" src="./include/DataTables-1.10.12/media/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
 		<script type="text/javascript" src="./include/dist/vis.js"></script>
 		<script LANGUAGE="JavaScript" src="js/main.js" type="text/javascript"></script>
-
-		<!-- function to insert text in textarea box -->
-		<script type="text/javascript">
-			function insertText(elemID, text)
-			{
-				var elem = document.getElementById(elemID);
-				elem.innerHTML = "";
-				elem.innerHTML += text;
-			}
-		</script>
 	</head>
 	
 	<body role="document" onload = "initialize()">
@@ -130,8 +120,8 @@
 <!--						<button type="button" class="btn btn-default btn-sm helpBtn" data-toggle="collapse" data-target="#gnames">example input gene names</button>
 						<button type="button" class="btn btn-default btn-sm helpBtn" data-toggle="collapse" data-target="#gids">example input gene Ids</button>
 -->
-						<input type="button" class="btn btn-default btn-sm helpBtn" value="Example gene ids" onclick="insertText('textarea_geneList', 'TAIR:locus:1005716516\nTAIR:locus:2031476\nTAIR:locus:2043067\nTAIR:locus:2044851\nTAIR:locus:2012612\nTAIR:locus:2027483\nTAIR:locus:2202810\nTAIR:locus:2037970\nTAIR:locus:2018605\nTAIR:locus:2200873\nTAIR:locus:2195155\nTAIR:locus:2031576\nTAIR:locus:2031561\nTAIR:locus:2040555\nTAIR:locus:2061753\nTAIR:locus:2039712\nTAIR:locus:2052432\nTAIR:locus:2054982\nTAIR:locus:2094508\nTAIR:locus:2094014');">
-						<input type="button" class="btn btn-default btn-sm helpBtn" value="Example gene names/symbols" onclick="insertText('textarea_geneList', 'GR1\nENO1\nENOC\nLOS2\nSAC52\nAT1G18540\nRPL10B\nPRPL11\nRP1\nRPL3B\nSAG24\nAT1G74050\nAT1G74060\nRPL24A\nAT2G37190\nRPL23AA\nRPL16A\nAT2G44860\nXPO1B');">
+						<input type="button" class="btn btn-default btn-sm helpBtn" value="Example gene ids" onclick="insertText( 'TAIR:locus:1005716516\nTAIR:locus:2031476\nTAIR:locus:2043067\nTAIR:locus:2044851\nTAIR:locus:2012612\nTAIR:locus:2027483\nTAIR:locus:2202810\nTAIR:locus:2037970\nTAIR:locus:2018605\nTAIR:locus:2200873\nTAIR:locus:2195155\nTAIR:locus:2031576\nTAIR:locus:2031561\nTAIR:locus:2040555\nTAIR:locus:2061753\nTAIR:locus:2039712\nTAIR:locus:2052432\nTAIR:locus:2054982\nTAIR:locus:2094508\nTAIR:locus:2094014');">
+						<input type="button" class="btn btn-default btn-sm helpBtn" value="Example gene names/symbols" onclick="insertText('GR1\nENO1\nENOC\nLOS2\nSAC52\nAT1G18540\nRPL10B\nPRPL11\nRP1\nRPL3B\nSAG24\nAT1G74050\nAT1G74060\nRPL24A\nAT2G37190\nRPL23AA\nRPL16A\nAT2G44860\nXPO1B');">
 					</div>
 
 				</div>

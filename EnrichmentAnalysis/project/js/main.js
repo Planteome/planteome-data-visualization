@@ -116,6 +116,14 @@ $(document).ready(function(){
 	});
 });
 
+function insertText(str)
+{
+/* 	var elem = document.getElementById(elemID);
+	elem.innerHTML = "";
+	elem.innerHTML += text; */
+	
+	$('#textarea_geneList').val(str);
+}
 
 function onclick_submit(){
 	
@@ -236,8 +244,11 @@ function my_reset(){
 	var r = confirm("Current results and inputs will be reset, do you really want to continue?");
     if (r == true) {
 		show_results = false;
-		document.querySelector('#textarea_geneList').value = '';
-		document.querySelector('#textarea_backgroundList').value = '';
+/* 		document.querySelector('#textarea_geneList').value = '';
+		document.querySelector('#textarea_backgroundList').value = ''; */
+		$('#textarea_geneList').val(" ");
+		$('#textarea_backgroundList').val(" ");
+		
 		my_submitReset();
 		
 		//$('#disam').show();
@@ -365,6 +376,7 @@ function getOverView(){
 	});
 }
 
+
 function disAmbiguateGenes(geneList){
 	
 	let link = url_ApiLink +'disambiguation/bioentity?'
@@ -434,6 +446,9 @@ function disAmbiguateGenes(geneList){
 				let ambiguousObjs = i.results;
 				let ambNum = ambiguousObjs.length;
 				
+				
+				ambNum = removeDuplicatedAmbiguousRes(ambNum, ambiguousObjs);
+				
 				appendAmbiguityRowToTable(input, ambNum, ambiguousObjs);
 				
 			}
@@ -464,12 +479,47 @@ function onclick_toggleDisambiguousTalbe(){
 		
 }
 
+function removeDuplicatedAmbiguousRes(amNum, amObjs){
+	
+	let num = amNum;
+	for(let i = 1; i< amNum; i++){
+		let res = false;
+		for(let j = 0; j<i; j++){
+			
+			if (!amObjs.hasOwnProperty(i) || !amObjs.hasOwnProperty(j))
+				continue;
+			
+			if(amObjs[i].id ==  amObjs[j].id){
+				res = true;
+				break;
+			}
+		}
+		
+		if(res){
+			delete amObjs[i];
+			num--;
+		}
+	}
+	
+	return num;
+}
+
+
+
 function appendAmbiguityRowToTable(input, amNum, amObjs){
 	
 	var tableBody = $('#disambiguityTableBody');
 	
- 	let anode = $('<a>').text(amObjs[0].id).attr({
-		href: url_browse+"gene_product/" + amObjs[0].id,
+	let firstIndex = 0;
+	for(let i = 0; i<amObjs.length; i++){
+		if(amObjs.hasOwnProperty(i)){
+			firstIndex = i;
+			break;
+		}
+	}
+	
+ 	let anode = $('<a>').text(amObjs[firstIndex].id).attr({
+		href: url_browse+"gene_product/" + amObjs[firstIndex].id,
 		target: "_blank"
 	})
 			
@@ -483,18 +533,21 @@ function appendAmbiguityRowToTable(input, amNum, amObjs){
 				.attr({
 					type: 'radio',
 					name: input,
-					value: 0,
+					value: firstIndex,
 					checked: "checked"
 				})
 			)
 			.append($('<span>').append(anode))
 		)
-		.append($('<td>').text(amObjs[0].matched)
+		.append($('<td>').text(amObjs[firstIndex].matched)
 		)
 		
 	);
 	
-	for(let i = 1; i<amNum; i++){
+	for(let i = firstIndex+1; i<amObjs.length; i++){
+		
+		if (!amObjs.hasOwnProperty(i))
+			continue;
 		
 		let anode = $('<a>').text(amObjs[i].id).attr({
 				href:url_browse + "gene_product/" + amObjs[i].id,
