@@ -389,7 +389,7 @@ function disAmbiguateGenes(geneList){
 			let ambiguousBadData = res.data.bad;
 			
 			if(ambiguousUglyData.length == 0 && ambiguousBadData.length == 0){
-				showSucessText("There is NO ambiguous inputs, you could SUBMIT your analysis!");
+				showSucessText("There are NO ambiguous inputs, please choose Analyze");
 				//$('#disam').hide();
 				$('.btn_submit').show();
 			}

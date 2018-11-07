@@ -30,6 +30,15 @@
 		<script LANGUAGE="JavaScript" src="./include/DataTables-1.10.12/media/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
 		<script type="text/javascript" src="./include/dist/vis.js"></script>
 		<script LANGUAGE="JavaScript" src="js/main.js" type="text/javascript"></script>
+
+		<!-- function to insert text in textarea box -->
+		<script type="text/javascript">
+			function insertText(elemID, text)
+			{
+				var elem = document.getElementById(elemID);
+				elem.innerHTML += text;
+			}
+		</script>
 	</head>
 	
 	<body role="document" onload = "initialize()">
@@ -84,8 +93,8 @@
 						Query Type:
 					</label>
 					<select class="form-control" id="queryType" onchange="onclick_QueryTypeChange()">
-						<option value="background">Planteome Onology Database</option>
-						<option value="userinput">User Define Annotations</option>
+						<option value="background">Planteome Ontology Database</option>
+						<option value="userinput">User Defined Annotations</option>
 					</select>
 				</div>
 				
@@ -99,22 +108,28 @@
 						<option value="molecular_function">GO:Molecular Function</option>
 						<option value="biological_process">GO:Biological Process</option>
 						<option value="plant_anatomy">PO:Plant Anatomy</option>
-						<option value="plant_structure_development_stage">PO:Plant structure development stage</option>
+						<option value="plant_structure_development_stage">PO:Plant Structure Development Stage</option>
 						<option value="plant_trait_ontology">TO:Plant Trait</option>
-						<option value="plant_environment_ontology">EO:Plant environment</option>
+						<option value="plant_experimental_conditions_ontology">PECO:Plant Experimental Conditions</option>
 					</select>
 				</div>
 				
 				<!--interesting genes div -->
 				<h2>Gene List</h2>
 				<div id="interesting_input" class="form-group">
-					<textarea class="form-control" id="textarea_geneList" rows="10" onchange="onchange_InterestingInput()" placeholder="please input the interesting genes"></textarea>
+					<textarea class="form-control" id="textarea_geneList" rows="10" onchange="onchange_InterestingInput()" placeholder="please input genes"></textarea>
+				<button type="button" class="btn btn-success btn_disam" onclick="onclick_disambiguity()">Submit</button>
+				<button type="button" hidden="true" class="btn btn-primary btn_submit" onclick="onclick_submit()">Analyze</button>
+				<button type="button" class="btn btn-default btn_reset" onclick="my_reset()">Reset</button>
+				<button type="button" style="display: none;" class="btn btn-info btn_toggleAmbiguousTable" onclick="onclick_toggleDisambiguousTalbe()">Hide Ambiguous Input Table</button>
+				<button type="button" hidden="true" class="btn btn-warning btn_vis" onclick="visualize()">Visualize</button>
 					<div class="buttonLine" id="exampleInputButtons">
-						<button type="button" class="btn btn-default btn-sm helpBtn" data-toggle="collapse" data-target="#gnames">example input gene names</button>
+<!--						<button type="button" class="btn btn-default btn-sm helpBtn" data-toggle="collapse" data-target="#gnames">example input gene names</button>
 						<button type="button" class="btn btn-default btn-sm helpBtn" data-toggle="collapse" data-target="#gids">example input gene Ids</button>
+-->
+						<input type="button" value="Example gene ids" onclick="insertText('textarea_geneList', 'TAIR:locus:1005716516\nTAIR:locus:2031476\nTAIR:locus:2043067\nTAIR:locus:2044851\nTAIR:locus:2012612\nTAIR:locus:2027483\nTAIR:locus:2202810\nTAIR:locus:2037970\nTAIR:locus:2018605\nTAIR:locus:2200873\nTAIR:locus:2195155\nTAIR:locus:2031576\nTAIR:locus:2031561\nTAIR:locus:2040555\nTAIR:locus:2061753\nTAIR:locus:2039712\nTAIR:locus:2052432\nTAIR:locus:2054982\nTAIR:locus:2094508\nTAIR:locus:2094014');">
+						<input type="button" value="Example gene names/symbols" onclick="insertText('textarea_geneList', 'GR1\nENO1\nENOC\nLOS2\nSAC52\nAT1G18540\nRPL10B\nPRPL11\nRP1\nRPL3B\nSAG24\nAT1G74050\nAT1G74060\nRPL24A\nAT2G37190\nRPL23AA\nRPL16A\nAT2G44860\nXPO1B');">
 					</div>
-					<p id = 'gids' class='collapse'></p>
-					<p id = 'gnames' class='collapse'></p>
 
 				</div>
 				
@@ -141,11 +156,6 @@
 					<span id= "success_content"></span>
 				</div>
 				
-				<button type="button" class="btn btn-success btn_disam" onclick="onclick_disambiguity()">Disambiguate</button>
-				<button type="button" hidden="true" class="btn btn-primary btn_submit" onclick="onclick_submit()">Analyze</button>
-				<button type="button" class="btn btn-default btn_reset" onclick="my_reset()">Reset</button>
-				<button type="button" style="display: none;" class="btn btn-info btn_toggleAmbiguousTable" onclick="onclick_toggleDisambiguousTalbe()">Toggle Ambiguous Input Table</button>
-				<button type="button" hidden="true" class="btn btn-warning btn_vis" onclick="visualize()">Visualize</button>
 				
 				<!--disambiguity -->
 				<div>
@@ -155,8 +165,8 @@
 						<table id="disambiguityTable" class="table table-hover" width="100%">
 							<thead>
 								<tr class="success">
-									<th> Name</th>
-									<th>Ambiguouse IDs</th>
+									<th>Name</th>
+									<th>Ambiguous IDs</th>
 									<th title="in which way the gene product match with the input"> Match type</th>
 								</tr>
 							</thead>
@@ -176,12 +186,14 @@
 					
 					<!--buttons -->
 					<div hidden="true" class="disambiguity_panel">
-						<button type="button" class="btn btn-success btn_disam" onclick="onclick_disambiguity()">Disambiguate</button>
-						<button type="button" hidden="true" class="btn btn-primary btn_submit" onclick="onclick_submit()">Analyize</button>
+						<button type="button" class="btn btn-success btn_disam" onclick="onclick_disambiguity()">Submit</button>
+						<button type="button" hidden="true" class="btn btn-primary btn_submit" onclick="onclick_submit()">Analyze</button>
 						<button type="button" class="btn btn-default btn_reset" onclick="my_reset()">Reset</button>
-						<button type="button" style="display: none;" class="btn btn-info btn_toggleAmbiguousTable" onclick="onclick_toggleDisambiguousTalbe()">Toggle Ambiguous Input Table</button>
+						<button type="button" style="display: none;" class="btn btn-info btn_toggleAmbiguousTable" onclick="onclick_toggleDisambiguousTalbe()">Hide Ambiguous Input Table</button>
 						<button type="button" hidden="true" class="btn btn-warning btn_vis" onclick="visualize()">Visualize</button>
 					</div>					
+					<p id = 'gids' class='collapse'></p>
+					<p id = 'gnames' class='collapse'></p>
 				</div>				
 			</form>
 			<br/>
@@ -205,9 +217,9 @@
 						<option value="molecular_function">GO:Molecular Function</option>
 						<option value="biological_process">GO:Biological Process</option>
 						<option value="plant_anatomy">PO:Plant Anatomy</option>
-						<option value="plant_structure_development_stage">PO:Plant structure development stage</option>
+						<option value="plant_structure_development_stage">PO:Plant Structure Development Stage</option>
 						<option value="plant_trait_ontology">TO:Plant Trait</option>
-						<option value="plant_environment_ontology">EO:Plant environment</option>
+						<option value="plant_experimental_conditions_ontology">PECO:Plant Experimental Conditions</option>
 					</select>
 				</div>				
 				
