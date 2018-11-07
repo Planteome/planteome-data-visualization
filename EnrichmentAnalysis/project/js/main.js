@@ -911,6 +911,9 @@ function dynamicAnalysis(){
 					continue;
 				}
 				
+				if(ontology_ID.includes("BFO")|| ontology_ID.includes("PATO"))
+					continue;
+				
 				if(p > cutoff && !Number.isNaN(p))
 					continue;
 	
