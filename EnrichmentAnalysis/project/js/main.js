@@ -441,7 +441,16 @@ function disAmbiguateGenes(geneList){
 	});
 }
 
+var flag_showAmbiguousTable = true;
+
 function onclick_toggleDisambiguousTalbe(){
+	
+	flag_showAmbiguousTable = !flag_showAmbiguousTable;
+	
+	if(flag_showAmbiguousTable)
+		$('#HideAmbiguousBtn').text("Hide Ambiguous Input Table");
+	else
+		$('#HideAmbiguousBtn').text("Show Ambiguous Input Table");
 	
 	var query = $('#disambiguityTableBody');
 	var isVisible = query.is(':visible');

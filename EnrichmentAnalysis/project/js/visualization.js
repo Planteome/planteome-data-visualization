@@ -406,15 +406,15 @@ function visViewGraph(raw_data) {
 
             if (type == 'is_a')
                 c = '#2B7CE9';
-            else if (type == 'part of')
+            else if (type == 'part_of')
                 c = 'purple';
             else if (type == 'regulates')
                 c = '#E29640';
-            else if (type == 'positively regulates')
+            else if (type == 'positively_regulates')
                 c = '#00FF00';
-            else if (type == 'negatively regulates')
+            else if (type == 'negatively_regulates')
                 c = 'red';
-            else if (type == 'occurs in')
+            else if (type == 'occurs_in')
                 c = '#006600';
             else
                 c = '##00FFFF'
@@ -1799,6 +1799,12 @@ var flag_showMatrix = true;
 function toggleVisNetwork(){
 	
 	flag_showVisNetwork = !flag_showVisNetwork;
+	
+	if(flag_showVisNetwork)
+		$('#btn_toggleShowNetworkVis').text("Hide Network Visualization");
+	else
+		$('#btn_toggleShowNetworkVis').text("Show Network Visualization");
+	
 	if(flag_showVisNetwork){
 		$('#netvis_inputs').show();
 		$('#netvis_search').show();
@@ -1815,6 +1821,12 @@ function toggleVisNetwork(){
 function toggleVisTree(){
 	
 	flag_showVisTree = !flag_showVisTree;
+	
+	if(flag_showVisTree)
+		$('#btn_toggleShowTreeVis').text("Hide Hiearchical Visualization");
+	else
+		$('#btn_toggleShowTreeVis').text("Show Hiearchical Visualization");
+	
 	if(flag_showVisTree){
 		$('#treevis_inputs').show();
 		$('#treevis_search').show();
@@ -1831,6 +1843,12 @@ function toggleVisTree(){
 function toggleVisMatrix(){
 	
 	flag_showMatrix = !flag_showMatrix;
+	
+	if(flag_showMatrix)
+		$('#btn_toggleShowMatrixVis').text("Hide Association Visualization");
+	else
+		$('#btn_toggleShowMatrixVis').text("Show Association Visualization");
+	
 	if(flag_showMatrix){
 		$('#matrixvis_inputs').show();
 		$('#matrixvis_search').show();
