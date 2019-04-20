@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "290393",
+    "ThreadId": "85242",
+    "Html": "<p>A bibliography usually looks like</p>\r\n<p>&nbsp;</p>\r\n<p>Deleuze, Gilles: &quot;Book Name&quot;, etc.</p>\r\n<p>Entries by the same author will follow as</p>\r\n<p>-. &quot;Book Name&quot;</p>\r\n<p>BibWord produces a redundancy by repeating the author's name for every entry.</p>\r\n<p>Event the word citation styles (take any of them) do it properly.</p>\r\n<p>The question is: How can I change the BibWord style to provide this functionallity.</p>\r\n<p>It would also be nice, if one could format the symbol in front of the next row (-.)</p>\r\n<p>Otherwise I really enjoy working with the BibWord framework! Great work!</p>",
+    "PostedDate": "2010-02-13T00:03:29.243-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "290409",
+    "ThreadId": "85242",
+    "Html": "<p>BibWord does&nbsp;not support this. It is one of the sacrifices I had to make in order to keep the formatting simple. It is one of the things I'm looking into for a next version though. But that version will probably only appear around the time Word 2010 gets released.</p>",
+    "PostedDate": "2010-02-13T03:05:35.687-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "290443",
+    "ThreadId": "85242",
+    "Html": "<p>Sounds good. I am looking forward to this feature in the next version. Cheers, A.</p>",
+    "PostedDate": "2010-02-13T06:02:15.653-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

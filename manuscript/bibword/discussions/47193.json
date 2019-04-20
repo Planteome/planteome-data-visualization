@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "157892",
+    "ThreadId": "47193",
+    "Html": "First, let me say that you have my eternal thanks for creating this.<br>\r\n<br>\r\nI cannot get BibWord Extender to launch. I have tried putting the .exe file in multiple locations, and I have tried 1.2 and 1.1. No matter what I do, I get the following error: &quot;The application failed to initialize properly (0xc0000135).&quot;<br>\r\n<br>\r\nIs there something I've done wrong?<br>\r\n",
+    "PostedDate": "2009-02-15T17:50:30.06-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "157951",
+    "ThreadId": "47193",
+    "Html": "Do you have version 3.5 of the .Net framework installed?\r\n",
+    "PostedDate": "2009-02-16T00:15:08.813-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "159927",
+    "ThreadId": "47193",
+    "Html": "I have installed it now. BibWord Extender runs, and reports success, but the file remains unchanged. Is there another step I've left out?<br>\r\n<br>\r\n[Edit] Problem resolved. Thanks again, this really has saved me a lot of time! [/edit]<br>\r\n",
+    "PostedDate": "2009-02-19T15:51:38.357-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

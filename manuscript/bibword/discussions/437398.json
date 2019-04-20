@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1018474",
+    "ThreadId": "437398",
+    "Html": "\r\n<div>\r\n<p></p>\r\n<p><span style=\"font-size:11.0pt; line-height:150%; font-family:\">I see that macros can do things like convert all in-text citations to static text and remove all uncited sources from a document.</span></p>\r\n<p><span style=\"font-size:11.0pt; line-height:150%; font-family:\">I am interested to know whether macros can work within particular fields of a Reference.</span></p>\r\n<p><span style=\"font-size:11.0pt; line-height:150%; font-family:\">The example I would like to see is a macro that could delete all the comments field entries in a completed Reference List.</span></p>\r\n<p><span style=\"font-size:11.0pt; line-height:150%; font-family:\">When references are being compiled the comments field is a convenient place to record queries against particular sources.</span></p>\r\n<p><span style=\"font-size:11.0pt; line-height:150%; font-family:\">When all the queries are resolved, it can take time to edit all the sources with comments and delete them one by one.</span></p>\r\n<p><span style=\"font-size:11.0pt; line-height:150%; font-family:\">Can we do this in one go with a macro?</span></p>\r\n<p style=\"line-height:normal\"><span style=\"font-size:11.0pt; font-family:\"></span></p>\r\n</div>\r\n",
+    "PostedDate": "2013-03-20T12:14:33.303-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1018577",
+    "ThreadId": "437398",
+    "Html": "According to the documentation of the Word Object Model it is not possible to set fields of sources. However when I experimented with it back in 2007 when the feature was first introduced, I noticed that you could change properties of a source as long as the properties were originally defined. You could use this 'bug' to your advantage to remove the comments with a macro like this:<br />\n<pre><code>Sub Test()\n    Dim s As Source\n    \n    For Each s In ActiveDocument.Bibliography.Sources\n        If InStr(s.XML, &quot;&lt;b:Comments&gt;&quot;) &gt; 0 Then\n            s.Field(&quot;Comments&quot;) = &quot;&quot;\n        End If\n    Next\nEnd Sub</code></pre>\n\n",
+    "PostedDate": "2013-03-20T15:05:23.443-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1019730",
+    "ThreadId": "437398",
+    "Html": "\r\n<div>\r\n<p><span style=\"font-size:11.0pt; line-height:150%; font-family:\">Thanks Yves, the macro works perfectly!</span></p>\r\n<p><span style=\"font-size:11.0pt; line-height:150%; font-family:\">I appreciate your assistance here, and also deeply appreciate the work you have done in making BibWord available.\r\n</span></p>\r\n</div>\r\n",
+    "PostedDate": "2013-03-22T11:25:42.607-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

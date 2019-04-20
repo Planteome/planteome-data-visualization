@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Very strange behavior has been seen after a 2-column bibliography in Word 2011 (Mac). \n\nIf you follow the bibliography with a page break, e.g. using a heading style with embedded forced page break, some text from the following page appears as un-editable duplicate text on the page where the bibliography ends - very strange and spooky.  This appears to be a bug in Word 2011 triggered by the bibliography layout.\n\nI discovered the issue w. IEEE Order by Reference.  Using the same style in Word 2010 (Windows) did not show the issue. Conclusion: Related to Word 2011.\n\nUsing any of the (few) build-in bibliography styles in Word 2011 could not trigger the same issue. Conclusion: Related to the combination of the IEEE style and Word 2011.  \n\nNext I looked in the source and compared to previous version (2.9 vs. 2.8).  The change is limited and seems to relate to support for Word 2013 only.  I then removed those few consecutive lines from the style and retested.  The hypnosis being that that last change introduced the issue.  Same issue, and the conclusion being that the problem must have been there for a long time (or new in Word 2011).\n\nNext I tried different BibWord styles, and that lead me to home in on 1 vs. 2 column styles.  All the 2 column styles showed same issue, none of the 1 column showed the issue.  Note: It was a random sample of styles, so there may be non-working 1 column styles and working 2 column styles (I very much doubt the latter). \n\nThe main conclusion must be that when a style generates a 2-column table as bibliography then it triggers a bug in Word 2011.  I guess we can rule out an error in the way BibWord generate the bibliography, as it works fine in Word 2010.\n\nA hack (this is not a fix) is to insert a continuous section break after the bibliography.  It remains to be seen what negative side effects a section break has to my document  :-(  I would really like to find a less intrusive hack than a section break, but none identified so far.\n\nI have no idea on how to report this as a bug against Microsoft.  I do not have insight into what really goes on when a bibliography is generated.\n\nA BibWord solution could be to change strategy on how to generate bibliographies with a hanging indent, something like:\nCitation<tab>entry, for first entry line and\n<tab>entry, for the following lines\nand then leave it up to the Bibliography paragraph style to layout correctly.\n\nBut why should BibWord accommodate for a bug in Word 2011?\n\nIf anybody knows of a non 2-column style with hanging citation in IEEE style, please share.\n\nDetails:\nWord 2011 version 14.3.6\nMac OSX 10.8.4\nBibWord IEEE - Reference Order of April 1, 2013 version 2.9\n\n\nRegards\nMikael",
+    "LastUpdatedDate": "2015-01-15T23:34:35.14-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "bibword",
+    "ReportedDate": "2013-07-30T05:11:40.25-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "IEEE bibliography style on Mac",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 11180
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "It's not just Word 2011, or the Mac environment.\nI have exactly this problem using Word 2007 on a PC. Exactly the same fix (a continuous section break after the bibliography table) works for me too.",
+      "PostedDate": "2015-01-15T23:34:35.14-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

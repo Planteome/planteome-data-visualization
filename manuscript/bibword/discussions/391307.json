@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "898721",
+    "ThreadId": "391307",
+    "Html": "\r\n<p>Dear All,</p>\r\n<p>My son has recently migrated from a Windows PC using MS Office 2010 to a MacBook using MS Office 2011.&nbsp; Prior to the migration I managed to create a BibWord style sheet to support the variety of Oxford Citation style used at his university.&nbsp; To\r\n do this I used the structure and layout that Yves has based his styles on and slowly modified it until we got the results we were after, it wasn't perfect but it met my son's needs.</p>\r\n<p>After my son migrated I used the instructions in this project on how to install style sheets into MS Office 2011 on a Mac.&nbsp; Unfortunately it didn't succeed, MS Office 2011 just ignored my existing style sheet completely.</p>\r\n<p>Attempt 2 was based on taking another of Yves style sheets that did work on the Mac and modifying it to provide the style requirements.&nbsp; It got further than attempt 1 but only in that MS Office 2011 now tells us there is an unknown style available.&nbsp;\r\n The downside is that deleting the file from the Styles folder doesn't stop MS Office 2011 continuing to tell us that there is an unknown style present.&nbsp; The even bigger downside is that if my son tries to edit the sources using one of the existing MS\r\n Office styles then MS Word just shuts down without warning.</p>\r\n<p>So can anyone suggest how I can remove my obviously corrupted style from MS Office 2011 completely?</p>\r\n<p>Can anyone suggest where I might start looking for why the file is causing problems?&nbsp; It was edited using AltovaXMLSpy which didn't report any problems with the xml file.</p>\r\n<p>Cheers,</p>\r\n<p>Dave</p>\r\n",
+    "PostedDate": "2012-08-13T04:36:46.823-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "900592",
+    "ThreadId": "391307",
+    "Html": "<p>Have you tried opening the xsl file on the Mac with a text editior, adding a space as the very first character, saving the xsl, removing the space again, and saving the xsl again? Mac OS X seems&nbsp;to care a lot about the Byte-Order-Mark at the beginning of the file. Editing the file on a Windows system often results in the BOM being lost.</p>\r\n<p>Word for Mac can only load the styles which are available. The fact that after removal the style is still listed after you restart Word suggests that it might be cached somewhere else as well. I don't have a Mac, so I can't really help you with the problematic style. You can always mail me a copy and if I have some time, I'll take a look, but I can't promise anything.</p>",
+    "PostedDate": "2012-08-17T05:42:37.423-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "904096",
+    "ThreadId": "391307",
+    "Html": "<p>Hi Yves,<br /> <br /> I've just tried that this weekend and we have some progress.&nbsp; MS Word 2011 recognises the style name and lists it in the options drop dow list.&nbsp; It also still lists the unknown style as well.</p>\r\n<p>Unfortunately the crash behaviour described above still occurs when you try to enter a citation record.</p>\r\n<p>No joy yet in trying to find the cached version of the old style file.</p>\r\n<p>Cheers,</p>\r\n<p>Dave.</p>",
+    "PostedDate": "2012-08-26T01:07:45.967-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "921432",
+    "ThreadId": "391307",
+    "Html": "<p>Hi,</p>\r\n<p>I've had a problem with other style (ABNT). Word did'nt recognized the ABNT XSL file. The solution was to change the file name. The name was ABNT_Author.XSL. I've changed it to ABNT.XSL and it works now. Did you try something like that?</p>\r\n<p>Regards.</p>\r\n<p>Leandro</p>",
+    "PostedDate": "2012-10-03T12:02:50.613-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

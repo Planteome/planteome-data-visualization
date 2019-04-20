@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "730485",
+    "ThreadId": "287357",
+    "Html": "\r\n<p><span>I need to</span><span>&nbsp;</span><span>follow the</span><span>&nbsp;</span><span>ABNT standard,</span><span>&nbsp;</span><span>that allows</span><span>&nbsp;</span><span>two</span><span>&nbsp;</span><span>types of citations</span><span>:</span></p>\r\n<ul>\r\n<li><span style=\"color:#888888\">Bla bla bla as <span style=\"color:#000000\">Erick (2010)</span> said.</span>\r\n</li><li><span style=\"color:#888888\">Bla bla bla <span style=\"color:#000000\">(ERICK, 2010)</span>.</span>\r\n</li></ul>\r\n<p><span>&nbsp;</span></p>\r\n<p>The ABNT style found here follows just the second type. Yes, I know it isn't nice, since we lose standardzation. But it's what ABNT want us to do...</p>\r\n<p><span>I was</span><span>&nbsp;</span><span>thinking of</span><span>&nbsp;</span><span>how to create</span><span>&nbsp;</span><span>this changeable formatting</span><span>, through</span><span>&nbsp;</span><span>a</span><span>&nbsp;</span><span>custom</span><span>&nbsp;</span><span>option</span><span>,\r\n such as &quot;</span><span>\\</span><span>x&quot;</span><span>. But I really don't understood where changing on my .xsl about it. Any help, please?</span></p>\r\n",
+    "PostedDate": "2012-01-25T06:24:16.43-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "732600",
+    "ThreadId": "287357",
+    "Html": "<p>Unfortunately you can not define custom flags. The only option is to abuse one of the existing flags (prefix, suffix, page, volume, language).</p>\r\n<p>I once made an example style illustrating how this&nbsp;effect can be obtained. You could try to adjust that one: <a href=\"http://bibword.codeplex.com/releases/view/20331\">http://bibword.codeplex.com/releases/view/20331</a>&nbsp;</p>",
+    "PostedDate": "2012-01-30T05:27:20.22-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "799703",
+    "ThreadId": "287357",
+    "Html": "<p>As far as I've figured out, there's no problem with being able to use both of those; just suppress the author when you want the first type, and write it by hand. But for my journals, there's a third option: no parentheses whatsoever. The way it works is:</p>\n<p>Erick (2010) said this. I read it in Erick 2010. The claim is similar to quantifier theory (Erica 2010).</p>\n<p>To get the middle one, as far as I know I need to convert the whole thing to plain text. The alternative is to not include parentheses, but then if you add them, Word always adds a space.</p>\n<p>I suppose the problem with either option is that you can't automatically remove all of them?</p>",
+    "PostedDate": "2012-02-24T19:40:30.89-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

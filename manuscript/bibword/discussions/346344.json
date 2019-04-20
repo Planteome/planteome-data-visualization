@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "801851",
+    "ThreadId": "346344",
+    "Html": "\r\n<p>Hi there,</p>\r\n<p>I have a question regarding the appearance of the citations in the text when using the IEEE numerical order template. When i have to cite more than one source of consecutive order it is no problem to generate the following appearance:</p>\r\n<p>[3,4,5,6,7]</p>\r\n<p>Is it possible to generate the following appearance if theres more than two consecutive sources?</p>\r\n<p>[3-7]</p>\r\n<p>Also instead of for example [2,3,4,5,10] it should look like [2-5,10].</p>\r\n<p>Can something like that be done by editing the XSL file?</p>\r\n<p>Thanks!</p>\r\n<p>Alex</p>\r\n",
+    "PostedDate": "2012-02-27T02:47:25.01-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "802406",
+    "ThreadId": "346344",
+    "Html": "<p>No. See <a href=\"http://bibword.codeplex.com/wikipage?title=FAQ&amp;referringTitle=Home#Q3\">http://bibword.codeplex.com/wikipage?title=FAQ&amp;referringTitle=Home#Q3</a>&nbsp;for the full explaination.</p>\r\n<p>Of course, you can easily write a macro which does this in a postprocessing step. Just go over every citation field and process its contents.</p>",
+    "PostedDate": "2012-02-27T22:53:23.817-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "802414",
+    "ThreadId": "346344",
+    "Html": "<p>Thanks for the answer!</p>",
+    "PostedDate": "2012-02-27T23:11:56.89-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

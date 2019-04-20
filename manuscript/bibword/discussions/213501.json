@@ -1,0 +1,170 @@
+[
+  {
+    "Id": "446137",
+    "ThreadId": "213501",
+    "Html": "<p>Hi. First of all thank you for this useful IEEE&nbsp;style which is the most perfect one I have found on the internet. Then, I have two questions:</p>\r\n<p>1-My main text is in a language other than English and I want my in-text citations(which are reference order numbers) to be shown in that language, while the bibliography shown in English. Is there any way to achieve this?</p>\r\n<p>2-What is the name of programming language used to create XSL files for bibliography styles? Where can I find a guide to learn this language so that I can create my own stle file?</p>",
+    "PostedDate": "2010-05-22T04:10:58.35-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "446260",
+    "ThreadId": "213501",
+    "Html": "<p>Regarding 1:</p>\r\n<p>BibWord styles are in one language only (by my&nbsp;explicit choice, not by limitation). The one you are refering to is already in English. So your bibliography should be what you want. With regard to in-text citations, I'm not sure I can follow you. I would think that numbers are pretty much language independent. Or are you using another number set than arabic numerals. If so, post back with more info on your scheme&nbsp;as it will probably require a little low-level editing in the stylesheet to get it working.</p>\r\n<p>Regarding 2:</p>\r\n<p>BibWord was created with the idea that writing entire stylesheets from scratch is too much work for a normal person. BibWord concentrates all important formatting information in a single variable called data allowing style creators to focus on 50-100 lines of code rather than 3000. Furthermore, it requires only basic xml understanding and no real knowledge of xslt. It also comes with cleanup funtionality which removes incorrect punctuation and handling of missing fields. To start creating new styles, you just grab any of the existing styles and start editing it. Alternatively, you can start from the master template at <a href=\"http://bibword.codeplex.com/releases/view/36507\">http://bibword.codeplex.com/releases/view/36507</a>&nbsp;. On that page you can also find a manual. Together with the information on the &quot;Documentation&quot; tab, you should get a long way in creating your own style.</p>\r\n<p>Of course, some people really want to start from scratch, if that is the case, learning everything will take some time. For starters there is XSL, the eXtensible Stylesheet Language which is what you would call the programming language. With it, you write XSLT, XSL transformations. Those transformation take XML documents as input and generate new documents. Those are mostly XML, HTML, or text documents. For a full overview of what XSLT is, see its specification at <a href=\"http://www.w3.org/TR/xslt\">http://www.w3.org/TR/xslt</a>. There are tutorials on the topic all over the web, but a pretty good starting one is <a href=\"http://www.w3schools.com/xsl/\">http://www.w3schools.com/xsl/</a>. Maybe the most important thing about XSLT is that it is a recurrent programming language. It does not work like any normal language with classes and objects you are probably used to.</p>\r\n<p>Once you know the language, you are halfway there. Next you will have to figure out what exactly the input format is which is send to your XSLT. Microsoft has not released any information on that subject. Your best option (and also a good way to learn XSLT) is to write a function which takes any XML document as input, and just dumps everything again to the output (neatly formatted). Once you figured out all that information, you can start creating your style.</p>\r\n<p>One thing to keep to ask yourself when creating a style is: how thorough will I be? For example, you can assume that a journal article will always have an author, a title, a journal name, and a publication date. But what if one or more&nbsp;of those pieces of information is missing? Will you have fallback values, or will you support alternative formatting, or will you just end up with ugly illogical punctuation? If you want to cover all options, the style will become rather complicated. If you are just going for the very basics, you might want to start from two blog postings by Microsoft. They really only cover the surface on the subject, but they are a start:</p>\r\n<ul>\r\n<li><a href=\"http://blogs.msdn.com/microsoft_office_word/archive/2007/12/14/bibliography-citations-1011.aspx\">http://blogs.msdn.com/microsoft_office_word/archive/2007/12/14/bibliography-citations-1011.aspx</a></li>\r\n<li><a href=\"http://blogs.msdn.com/microsoft_office_word/archive/2009/04/29/bibliography-citations-102-building-custom-styles.aspx\">http://blogs.msdn.com/microsoft_office_word/archive/2009/04/29/bibliography-citations-102-building-custom-styles.aspx</a></li>\r\n</ul>",
+    "PostedDate": "2010-05-22T14:22:43.313-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "451646",
+    "ThreadId": "213501",
+    "Html": "<p>Thank you very much for your detailed answer.</p>\r\n<p>Regarding my 1st question, my main text is in Persian(which is similar to Arabic,but has some differences)&nbsp;with&nbsp;few words in English. In general, for the parts of the text which are typed in&nbsp;Persian,&nbsp;because I want word2007 to show the numbers correctly(i.e. in Persian) I have set the &quot;Numeral&quot; (in word options&gt;&gt;advanced) to context and it works perfectly. But when I insert a citation in a part of the text which is typed in Persian, the in-text citation (i.e. the number of the reference) is shown in English. I want to have the in-text citation(the number of the reference)&nbsp;in Persian&nbsp;and the reference information which is shown in bibliography in English. What should I do?</p>",
+    "PostedDate": "2010-06-04T03:22:29.543-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "451814",
+    "ThreadId": "213501",
+    "Html": "<p>Out of curiosity, does the &quot;ISO 690 - Numerical Reference&quot; style which comes Word 2007/2010 display your in-text citation numbers correctly?</p>\r\n<p>Anyways, I added support for:</p>\r\n<ul>\r\n<li>Persian (Extended Arabic-Indic)</li>\r\n<li>Arabic (Arabic-Indic)</li>\r\n<li>Devanagari</li>\r\n</ul>\r\n<p>You can find a zip archive containing the&nbsp;Persian and Arabic version of the IEEE style at&nbsp;<a href=\"http://www.sendspace.com/file/9059ij\">http://www.sendspace.com/file/9059ij</a>&nbsp;</p>\r\n<p>(Note the file will most likely be removed in a day or 2)</p>",
+    "PostedDate": "2010-06-04T11:03:57.22-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "463034",
+    "ThreadId": "213501",
+    "Html": "<p>I tested &quot;ISO 690-Numerical Reference&quot;. It does not show&nbsp;my in-text citation numbers in Persian and it shows them in English.</p>\r\n<p>Thank you for your&nbsp;uploading that zip archieve, but unfortunately, I do not have access to that site (<a href=\"http://www.sendspace.com\">www.sendspace.com</a>) because of filtering limitations; Most of the file sharing sites&nbsp;have been filtered and blocked&nbsp;in my country.&nbsp;Would you please do me a favor and upload that archieve&nbsp;on <a href=\"http://www.4shared.com\">www.4shared.com</a> which can be accessed in my country?</p>",
+    "PostedDate": "2010-07-03T04:50:02.32-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "463086",
+    "ThreadId": "213501",
+    "Html": "<p>You can find them at <a href=\"http://www.4shared.com/file/lvlht7eW/IEEE_Reference_Exotic.html\">http://www.4shared.com/file/lvlht7eW/IEEE_Reference_Exotic.html</a></p>",
+    "PostedDate": "2010-07-03T08:41:18.883-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "463185",
+    "ThreadId": "213501",
+    "Html": "<p>Thanks a lot for your favor.</p>\r\n<p>There is a problem with the persian and arabic&nbsp;styles: the in-text brackets are vice-versa, i.e. the in-text citation is shown&nbsp;as ]3[ instead of [3].</p>",
+    "PostedDate": "2010-07-03T20:21:15.127-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "463197",
+    "ThreadId": "213501",
+    "Html": "<p>I guess that's because they are assuming LTR writing instead of RTL.<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span> <span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>I'm not all that familiar with RTL writing but if it's only the brackets that form a problem<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span><span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>,<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span> <span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>y<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>o<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>u<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span> <span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>c<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>o<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>u<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>l<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>d<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span> <span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>o<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>p<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>e<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>n<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span> <span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>t<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>h<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>e<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span> <span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>s<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>t<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>y<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>l<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>e<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span> <span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>a<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>n<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>d<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span> <span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>l<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>o<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>o<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>k<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span> <span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>f<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>o<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>r<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span> <span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>t<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>h<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>e<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span> <span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>f<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>o<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>l<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>l<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>o<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>w<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>i<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>n<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>g<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span> <span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>t<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>w<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>o<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span> <span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>l<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>i<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>n<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span></span>e<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>s<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>:</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">openbracket</span><span style=\"color:blue\">&gt;</span>[<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">openbracket</span><span style=\"color:blue\">&gt;</span>\r\n<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">closebracket</span><span style=\"color:blue\">&gt;</span>]<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">closebracket</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p><span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>Just switching the brackets might work.<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span></p>",
+    "PostedDate": "2010-07-03T23:59:11.983-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "463264",
+    "ThreadId": "213501",
+    "Html": "<p>Thank you very much.&nbsp;Switching the brackets solved the problem as you guessed.</p>",
+    "PostedDate": "2010-07-04T11:15:29.527-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "661602",
+    "ThreadId": "213501",
+    "Html": "<blockquote style=\"padding-bottom: 0px; font-style: italic; margin: 0.25em 1em 0px; padding-left: 0.25em; padding-right: 0.25em; padding-top: 0px; border: #ccc 0.1em solid;\"><strong>yves wrote:</strong><br />\r\n<p>Out of curiosity, does the \"ISO 690 - Numerical Reference\" style which comes Word 2007/2010 display your in-text citation numbers correctly?</p>\r\n<p>Anyways, I added support for:</p>\r\n<ul>\r\n<li>Persian (Extended Arabic-Indic) </li>\r\n<li>Arabic (Arabic-Indic) </li>\r\n<li>Devanagari </li>\r\n</ul>\r\n<p>You can find a zip archive containing the&nbsp;Persian and Arabic version of the IEEE style at&nbsp;<a href=\"http://www.sendspace.com/file/9059ij\">http://www.sendspace.com/file/9059ij</a>&nbsp;</p>\r\n<p>(Note the file will most likely be removed in a day or 2)</p>\r\n</blockquote>\r\n<p><br />Hi</p>\r\n<p>Would you please re-upload the package on 4shared?&nbsp;It has been removed from 4shared.</p>\r\n<p>I lost my hard disk and I do not have this package anymore.</p>\r\n<p>Thank you in advance.</p>",
+    "PostedDate": "2011-08-22T08:53:30.287-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "661654",
+    "ThreadId": "213501",
+    "Html": "<p>Try <a href=\"http://www.4shared.com/file/3dPGh29w/IEEE_Reference_Exotic.html\">http://www.4shared.com/file/3dPGh29w/IEEE_Reference_Exotic.html</a></p>",
+    "PostedDate": "2011-08-22T10:59:41.777-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "661799",
+    "ThreadId": "213501",
+    "Html": "<p>Thank you!</p>",
+    "PostedDate": "2011-08-22T15:14:21.993-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "743433",
+    "ThreadId": "213501",
+    "Html": "<p>Hi yves</p>\r\n<p>When I use this style, numbers appear in BOLD form. I want to have REGULAR numbers.</p>\r\n<p>Could you modify this style codes so that numbers will appear in REGULAR form.</p>\r\n<p>Thank You</p>",
+    "PostedDate": "2012-02-06T09:52:30.473-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "743639",
+    "ThreadId": "213501",
+    "Html": "<p>It has to do with your template, not with the XSLT But there is a workaround. See <a href=\"http://bibword.codeplex.com/discussions/249047\">http://bibword.codeplex.com/discussions/249047</a>&nbsp;</p>",
+    "PostedDate": "2012-02-06T11:56:22.367-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "745189",
+    "ThreadId": "213501",
+    "Html": "<p>Thank you so much.</p>\r\n<p>That Macro worked correctly.</p>",
+    "PostedDate": "2012-02-07T07:00:21-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "745257",
+    "ThreadId": "213501",
+    "Html": "<p>Hi yves</p>\r\n<p>I want to change the order appearance of author's first name and last name and write author's last name firstly, then first name.</p>\r\n<p>I can replace it manually in manage sources, but can you help me to change the code to satisfy this request?</p>\r\n<p>Thank you in advance.</p>",
+    "PostedDate": "2012-02-07T07:42:36.097-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "923011",
+    "ThreadId": "213501",
+    "Html": "\r\n<p>hi</p>\r\n<p>i have a problem like this (persian number for in-text citation) &#65279;yves!</p>\r\n<p>so&nbsp;would u plz email &#65279;&#65279;ieee-referenc-exotic&#65279;&#65279;&#65279;&nbsp;&#65279;&#65279;&#65279;&#65279;to me or re-upload it on 4shared?(<a href=\"mailto:poordaraei@gmail.com\">poordaraei@gmail.com</a>)</p>\r\n<p>thx so much</p>\r\n",
+    "PostedDate": "2012-10-07T03:11:25.507-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1127601",
+    "ThreadId": "213501",
+    "Html": "Hi<br />\n<br />\nI have this problem too (persian number for in-text citation) ﻿yves!<br />\n<br />\nWould you please email ﻿﻿ieee-referenc-exotic﻿﻿﻿ ﻿﻿﻿﻿to me or re-upload it on <a href=\"mailto:4shared?(m.ramezani85@yahoo.com)\n\nthank\" rel=\"nofollow\">4shared?(m.ramezani85@yahoo.com)\n\nthank</a> you so much<br />\n",
+    "PostedDate": "2013-11-21T08:57:33.383-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1193084",
+    "ThreadId": "213501",
+    "Html": "Hi\r<br />\n<br />\nI have the same problem. It means  I want my in-text citations to be shown in persian.\r<br />\nWould you please reupload the Persian and Arabic version of the IEEE style on 4shrared?<br />\n",
+    "PostedDate": "2014-01-23T04:11:31.03-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1262886",
+    "ThreadId": "213501",
+    "Html": "Hi\r<br />\n<br />\nI have this problem too (persian number for in-text citations) ﻿yves!\r<br />\n<br />\nWould you please email ﻿﻿ieee-referenc-exotic﻿﻿﻿ ﻿﻿﻿﻿to me or re-upload it on 4shared? <a href=\"mailto:(b.soltanif@yahoo.com)\" rel=\"nofollow\">(b.soltanif@yahoo.com)</a><br />\n<br />\nThanks<br />\n",
+    "PostedDate": "2014-07-05T03:27:06.653-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1291351",
+    "ThreadId": "213501",
+    "Html": "Hi all,<br />\nSpecial thanks to dear yves.<br />\nThat file was removed from the server. Could you please also send me the file.<br />\n<a href=\"narmtarkib@gmail.com\" rel=\"nofollow\">my email address</a>: <a href=\"mailto:narmtarkib@gmail.com\" rel=\"nofollow\">narmtarkib@gmail.com</a><br />\n",
+    "PostedDate": "2014-08-19T06:46:21.737-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,65 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Fixed in version 2.2 of the IEEE style sheet.",
+    "ClosedDate": "2008-05-26T07:46:42.98-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "When having a first and/or middle name consisting out of more than 1 initial (e.g. Johnson, A. A. A.) only the first two (e.g. A. A. Johnson) will be printed/abbreviated. This bug is caused by the way the functions AbbreviateName and AbbreviateNamePart2 work.",
+    "LastUpdatedDate": "2013-05-16T05:29:24.62-07:00",
+    "PlannedForRelease": "IEEE Style (v.2.1)",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "bibword",
+    "ReportedDate": "2008-05-25T15:50:29.053-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "No more than 2 intials can be displayed in the IEEE style",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 969
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Solved in version 2.2 of the IEEE style.",
+      "PostedDate": "2008-05-26T07:41:20.397-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-05-26T07:42:23.82-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-05-26T07:46:42.98-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:20:27.983-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:29:24.62-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

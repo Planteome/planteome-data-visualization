@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "119370",
+    "ThreadId": "35921",
+    "Html": "[Apologies if this has been definitively discussed but I haven't been able to find it here (or definitively treated elsewhere).  ]$0$0$0$0In the styles that have been distributed to date here in this very useful CodePlex area, I have not been able to find one that lets me say:$0$0$0$0<span style=\"font-family:Verdana;font-size:13px;line-height:16px\">&quot;Jones (2001) revolutionized the field of trauma surgery.&quot;</span>$0$0$0<span style=\"font-family:Verdana;font-size:13px;line-height:16px\">$0</span>$0$0<span style=\"font-family:Verdana;font-size:13px;line-height:16px\">As an aside, some styles in LaTeX will select automatically between [Jones, 2001], (Jones, 2001), and &quot;Jones (2001)&quot;, depending on context.  But I don't need automatic selection here, I just want to be able to do it within the Bibliiography citation system in MS Word 2007.</span>$0$0<span style=\"font-family:Verdana;font-size:13px;line-height:16px\">$0</span>$0$0<span style=\"font-family:Verdana;font-size:13px;line-height:16px\">I suppose one possibility is to Edit Citation, suppress everything except the year, and then key in the &quot;Jones&quot; part by hand.  But that seems not particularly clean.  Another possibility is to adopt a writing style that eschews this kind of active voice statement but for certain purposes it is really just very useful to be able to say things this way.</span>$0$0<span style=\"font-family:Verdana;font-size:13px;line-height:16px\">$0</span>$0$0<span style=\"font-family:Verdana;font-size:13px;line-height:16px\">Many thanks in advance.</span>$0$0<span style=\"font-family:Verdana;font-size:13px;line-height:16px\">$0</span>$0$0<span style=\"font-family:Verdana;font-size:13px;line-height:16px\">-- </span>$0$0<span style=\"font-family:Verdana;font-size:13px;line-height:16px\">Danny</span>$0$0<span style=\"font-family:Verdana;font-size:13px;line-height:16px\">$0</span>$0$0",
+    "PostedDate": "2008-09-18T06:24:57.87-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "119410",
+    "ThreadId": "35921",
+    "Html": "What you require is not really possible with the bibliographic tools in Word 2007. For starters, the in-text citation formatting tool has no access to the context. That is, all it gets is your source. It processes that source and returns a result. For all it knows, your document is empty and just contains this one source.<br>\r\n<br>\r\nIt is not possible to add a flag which can switch between &quot;(Jones, 2001)&quot; and &quot;Jones (2001)&quot;. All citations have to be in the same form. It's unfortunate, and clearly a lacking functionality. But I think it's a good thing from a consistency point of view. The brackets are actually not part of the citation anyways. They are the things to show before the first and after the last citation in a group of citations. In your example, there is only one citation, but there could be several. In which case you would get &quot;(Jones, 2001; Doe, 2002)&quot; and &quot;Jones (2001; Doe, 2002)&quot;. Clearly the latter is not what you&nbsp;want to get.<br>\r\n<br>\r\nI once made a style containing a dirty hack to solve your problem. I abused the '\\p' switch you can attach to a citation. As I didn't have a function for it, I just assigned it a number and then, in the processing step, used its value to decide how to format my element. But as I said, it's&nbsp;a dirty hack, one you should&nbsp;only use as a last resort. If you are creating your own stylesheet, I can provide you some pointers on how to do it this way. If you are using one of the predefined ones, it will probably be too hard to do it in the first place.<br>\r\n<br>\r\nYves\r\n",
+    "PostedDate": "2008-09-18T10:48:48.857-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "119520",
+    "ThreadId": "35921",
+    "Html": "Thanks Yves.  Just knowing it's not possible (or very very hard or kludgy) is good too.  Great work here.",
+    "PostedDate": "2008-09-19T01:19:38.613-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

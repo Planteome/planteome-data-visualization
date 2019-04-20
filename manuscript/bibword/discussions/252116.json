@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "590102",
+    "ThreadId": "252116",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I am using:</p>\r\n<p>- MS Word 2010<br>\r\n- Citation Style Harverd angila</p>\r\n<p>I want to use citation like &quot;According to AuthorName (Year)......&quot;</p>\r\n<p>To achieve this I inserted two citation e.g. (AuthorName, Year) (AuthorName, Year) and after Suppress Year in first and Name in the second. so citation looks like e.g (AuthorName)(Year).</p>\r\n<p>Now my questions:</p>\r\n<p>1- Am I using the recommend practice to use citation like above?</p>\r\n<p>2- I couldn't able to remove ( ) from author name.</p>\r\n<p>Your suggestion will be highly appreciated.</p>\r\n<p>Thanks</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2011-04-01T03:13:42.837-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "590480",
+    "ThreadId": "252116",
+    "Html": "<p>Set the openbracket and closebracket elements to empty in the stylesheet&nbsp;if you don't want any brackets.</p>\r\n<p>So where you now have</p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre>      <span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">openbracket</span><span style=\"color: blue;\">&gt;</span>(<span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">openbracket</span><span style=\"color: blue;\">&gt;</span>\r\n      <span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">closebracket</span><span style=\"color: blue;\">&gt;</span>)<span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">closebracket</span><span style=\"color: blue;\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>you would get</p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre>      <span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">openbracket</span><span style=\"color: blue;\">&gt;</span><span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">openbracket</span><span style=\"color: blue;\">&gt;</span>\r\n      <span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">closebracket</span><span style=\"color: blue;\">&gt;</span><span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">closebracket</span><span style=\"color: blue;\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>But I honestly wouldn't recommend this practice at all. If you always use author (date), I would rewrite the style to fit that specific format. It is not all that hard. First I would remove the brackets as explained above. Then I would add the brackets again in the format string around the year and whatever else you have in your in-text citations. Example for books:</p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre>      <span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">source</span> <span style=\"color: red;\">type</span><span style=\"color: blue;\">=</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">Book</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">&gt;</span>\r\n        <span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">format</span><span style=\"color: blue;\">&gt;</span>{%CitationPrefix%}{%Author:1|Editor:1|\"Anon.\"%}{, %Year|\"n.d.\"%}{%YearSuffix%}{, %CitationPages:p.:pp.:a2%}{%CitationSuffix%}<span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">format</span><span style=\"color: blue;\">&gt;</span>\r\n      <span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">source</span><span style=\"color: blue;\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>would become</p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre>      <span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">source</span> <span style=\"color: red;\">type</span><span style=\"color: blue;\">=</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">Book</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">&gt;</span>\r\n        <span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">format</span><span style=\"color: blue;\">&gt;</span>{%CitationPrefix%}{%Author:1|Editor:1|\"Anon.\"%}<strong><span style=\"color: #ff0000;\"> (</span></strong>{, %Year|\"n.d.\"%}{%YearSuffix%}{, %CitationPages:p.:pp.:a2%}<strong><span style=\"color: #ff0000;\">)</span></strong>{%CitationSuffix%}<span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">format</span><span style=\"color: blue;\">&gt;</span>\r\n      <span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">source</span><span style=\"color: blue;\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>It's pretty much the same for the other types of sources in that list.</p>",
+    "PostedDate": "2011-04-01T14:26:41.867-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "620374",
+    "ThreadId": "252116",
+    "Html": "<p>Thanks, but I just need to remove brakets at some places not everywhere how could I accomplish that?</p>\n<p>at the moment, I am just converting citation to static text and then removing brakets.</p>",
+    "PostedDate": "2011-05-30T10:28:48.173-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "620445",
+    "ThreadId": "252116",
+    "Html": "<p>You can't.</p>\r\n<p>The intention of the styles is to create a consistent look and feel, switching between (Doe, 2011) and Doe (2011) through your text is not consistent at all.</p>\r\n<p>What you could do is keep the surrounding brackets, then suppress the author whenever you don't want it and type the author in front of the brackets manually. This is also what MS suggests. Personally, I think it is a bad idea as it decouples part of your source from the citation field (and it gives your text an inconsistent look).</p>",
+    "PostedDate": "2011-05-30T13:48:53.11-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

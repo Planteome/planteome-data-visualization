@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "273742",
+    "ThreadId": "79903",
+    "Html": "<p>Can anyone explain how to install the new styles - directions on the website are not very clear and i can't figure it out, not v good at this stuff! Any help would be appreciated! Thanks!</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-06T04:53:46.713-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "273762",
+    "ThreadId": "79903",
+    "Html": "<p>What part of <a href=\"http://bibword.codeplex.com/wikipage?title=Styles&referringTitle=Documentation\">http://bibword.codeplex.com/wikipage?title=Styles&amp;referringTitle=Documentation</a>&nbsp;don't you understand?</p>\r\n<p>Assuming you have Windows Vista and installed Office to the default location, you can just press the Windows button and in the &quot;Start Search&quot; field, type &quot;%programfiles%\\Microsoft Office\\Office12\\Bibliography\\Style&quot;. That should lead you to the directory where you can put the bibliography styles.</p>\r\n<p>Assuming you have Windows XP and installed Office to the default location, you can just press the Start button and select&nbsp;Run. In the dialog, type &quot;%programfiles%\\Microsoft Office\\Office12\\Bibliography\\Style&quot;. That should lead you to the directory where you can put the bibliography styles.</p>",
+    "PostedDate": "2010-01-06T05:39:32.61-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "273802",
+    "ThreadId": "79903",
+    "Html": "<p>That worked - thanks a million!</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-06T07:15:35.327-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

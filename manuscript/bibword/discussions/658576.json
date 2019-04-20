@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1485590",
+    "ThreadId": "658576",
+    "Html": "Are there any updates to this file path?  /Library/AppSupport/Microsoft/Office365/Citations/ <br />\nThis is the file path specified at this location:\r<br />\n<a href=\"http://bibword.codeplex.com/wikipage?title=Styles&amp;referringTitle=Home\" rel=\"nofollow\">http://bibword.codeplex.com/wikipage?title=Styles&referringTitle=Home</a>\r<br />\nI can't find this location on my Mac.<br />\n",
+    "PostedDate": "2016-10-07T14:29:12.27-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1493018",
+    "ThreadId": "658576",
+    "Html": "I am encountering the same issue. There is no Office365 folder within my Microsoft folder in Application Support. I have tried searching for an Office365 folder or Citations or Bibliography folder located elsewhere without success. Any advice would be appreciated!<br />\n",
+    "PostedDate": "2017-02-21T04:05:17.763-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1493364",
+    "ThreadId": "658576",
+    "Html": "I was able to find the correct file path for my Mac.\r<br />\n<br />\n~/Library/Group Containers/UBF8T346G9.Office/User Content/Citations\r<br />\n<br />\nI found the file path by opening word then going to the menu &quot;Word &gt; Preferences &gt; File Locations&quot; In there it listed the file path for User templates which showed me where Office 2016 was installed.<br />\n",
+    "PostedDate": "2017-02-27T12:55:56.243-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1498434",
+    "ThreadId": "658576",
+    "Html": "I have added the downloaded styles folder to this location mentioned by DRock84 and Word on my Mac still does not update the list of available styles. I am using the most current version of Word for Mac.\r<br />\n<br />\nAny ideas? This has literally driven me insane trying to install this!<br />\n",
+    "PostedDate": "2017-11-20T03:17:47.69-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1306860",
+    "ThreadId": "568024",
+    "Html": "In the bibliography, second and subsequent authors are displayed as initials:<br />\n<ol>\n<li>\nMorgan DL SMDMC. Aboriginal philosophy and its impact on health care outcomes. Aust NZ J Public Health. 1997; 21(6): p. 597-601.<br />\n</li>\n</ol>\nIt should be:\r<br />\nMorgan DL, Slade MD, Morgan CMA<br />\n",
+    "PostedDate": "2014-09-21T18:11:53.253-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1306971",
+    "ThreadId": "568024",
+    "Html": "Check under &lt;list name=&quot;author&quot; id=&quot;1&quot;&gt;:\r<br />\n<br />\nShould be something like:<br />\n<pre><code>    &lt;single_prefix&gt;&lt;/single_prefix&gt;\n    &lt;multi_prefix&gt;&lt;/multi_prefix&gt;\n    &lt;corporate&gt;{%Corporate%}&lt;/corporate&gt;\n    &lt;first_person&gt;{%Last% }{%First:a%}{%Middle:a%}&lt;/first_person&gt;\n    &lt;other_persons&gt;{%Last% }{%First:a%}{%Middle:a%}&lt;/other_persons&gt;.\n</code></pre>\n\nYou may find that the last name for ‘other persons’ has been abbreviated as: {%Last:a% }.<br />\n",
+    "PostedDate": "2014-09-22T03:42:53.143-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

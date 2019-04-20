@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "588268",
+    "ThreadId": "251660",
+    "Html": "\r\n<p>Firstly, may I thank you for a fantastic rendition of the Vancouver style for Word.</p>\r\n<p>I have a title for a journal article that uses the &lt; symbol (eg &quot;children &lt;1 year old&quot;). When creating the bibliography, the reference stops at the &lt; symbol and inverts it, not including any further data.</p>\r\n<p>Is there a way of preventing this?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks,</p>\r\n<p>Sion</p>\r\n",
+    "PostedDate": "2011-03-29T08:29:42.053-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "588473",
+    "ThreadId": "251660",
+    "Html": "<p>I haven't had a chance to try this myself, but try replacing &lt; with &amp;lt; in the title and see if that works.</p>",
+    "PostedDate": "2011-03-29T14:25:38.033-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

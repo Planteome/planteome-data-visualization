@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1009248",
+    "ThreadId": "435122",
+    "Html": "Yves, you've saved me hours of frustration with BibWord. Thanks!\r<br />\n<br />\nI'm trying to figure out the best way to cite multiple, adjacent references using Bibword's Vancouver style.  Specifically, I want this:\r<br />\n<br />\n<em>I love mangoes (1,2,3)</em>\r<br />\n<br />\nto read like this:\r<br />\n<br />\n<em>I love mangoes (1-3)</em>.\r<br />\n<br />\nI think it has already been said that there's no fix for this because it's an inherent limitation that citations aren't aware of their positions in groups:  <a href=\"http://bibword.codeplex.com/discussions/53363\" rel=\"nofollow\">http://bibword.codeplex.com/discussions/53363</a>.\r<br />\n<br />\nIf I understand the problem correctly, monkeying with the style's separator element won't change things because there's no way to make it conditional; I'm either going to get a comma all the time or a hyphen all the time. And even if I did separate &quot;1&quot; and &quot;3&quot; with a hyphen, Bibword wouldn't realize there was a &quot;2&quot; between.\r<br />\n<br />\nSo, basically, I'm planning to use the citation manager to keep my serial citations, i.e., &quot;(1,2,3)&quot; until the very end of my draft, then change them to static text and manually change them to &quot;(1-3).&quot;\r<br />\n<br />\nDo I have this right? Does anyone have a better suggestion?\r<br />\n<br />\nThanks,\r<br />\n<br />\nPhil<br />\n",
+    "PostedDate": "2013-03-02T08:15:56.233-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

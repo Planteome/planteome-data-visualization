@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1088149",
+    "ThreadId": "455462",
+    "Html": "The Macro CitationsToStaticText() doesn't work for the styles that I downloaded from this websyte while it perfectly works with the default styles of word. Also the Word's command &quot;convert to static text&quot; for a single citation doesn't work. does anyone know why this happens? <br />\nthanks<br />\n",
+    "PostedDate": "2013-09-04T03:06:57.61-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1088262",
+    "ThreadId": "455462",
+    "Html": "On top of my head I can only think of one reason: the use of hyperlinks for you in-text citations. Try disabling those and see if that helps.\r<br />\n<br />\nIn the style file, change<br />\n<pre><code>&lt;citation_as_link&gt;yes&lt;/citation_as_link&gt;</code></pre>\n\ninto<br />\n<pre><code>&lt;citation_as_link&gt;no&lt;/citation_as_link&gt;</code></pre>\n\n",
+    "PostedDate": "2013-09-04T08:13:43.97-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1088600",
+    "ThreadId": "455462",
+    "Html": "perfect, it works!!! \r<br />\ncan I also ask what features I'll lose when disabling citation as link?\r<br />\nThanks!!!<br />\n",
+    "PostedDate": "2013-09-04T23:22:33.41-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1093288",
+    "ThreadId": "455462",
+    "Html": "You only loose the ability to click on an in-text citation and automatically go to the entry in the bibliography. Yves On Thu, Sep 5, 2013 at 8:22 AM, giancarlosoavi &lt;[email removed]&gt; wrote:<br />\n",
+    "PostedDate": "2013-09-16T12:54:11.673-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

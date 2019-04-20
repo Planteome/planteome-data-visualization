@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "692337",
+    "ThreadId": "277935",
+    "Html": "\r\n<p>I'm using the IEEE citation (http://bibword.codeplex.com/releases/view/19764) and it's working great, my only problem is I have an 'x' on the first line before the first entry and after the last entry in the works cited/bibliography.&nbsp; Does anyone know\r\n how to get rid of this?</p>\r\n",
+    "PostedDate": "2011-11-01T13:18:45.647-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "692565",
+    "ThreadId": "277935",
+    "Html": "<p>Those x's are hidden. Just turn off the display of hidden symbols (&para;) and they will be gone.</p>\r\n<p>The x's are necessary to work around a bug in Word. Without the hidden x's (or any other non space character) Word will add whitespace in front and after your bibliography.</p>",
+    "PostedDate": "2011-11-02T01:32:44.077-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

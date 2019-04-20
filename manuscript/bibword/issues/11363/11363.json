@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello, I wish to request for more APA in-text citation styles for MS word 2007 like \"author (year)\", \"author and author (year)\", \"author, et al. (year)\" etc. If that is still possible, that would be a life-saver",
+    "LastUpdatedDate": "2013-10-26T04:27:20.093-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "bibword",
+    "ReportedDate": "2013-10-26T04:27:20.093-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Request for more APA in-text citation styles for MS Word 2007",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 11363
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "477120",
+    "ThreadId": "222638",
+    "Html": "<p>How can I add or remove Source Types in Word 2007?&nbsp; Also, how can I find out/change which Fields are relevant to which Types?&nbsp; I've found I can specify the Recommended Fields by defining them as&nbsp;&lt;b:ImportantField&gt; in the current Bibliographic Style, but I can't see how to change (or find out which are) all the relevant&nbsp;fields for each Type.</p>\r\n<p>When I edited my customised version of the Harvard - Anglia* style for Cardiff Medical School, the Style Report makes use of a field %ThesisType% which contains the text from a field displayed as 'Report Type' in the Bibloiography entry dialogue.&nbsp; So how can I find out what field name to pull across?</p>\r\n<p>All new to me, only been playing for a couple of days.</p>\r\n<p>Thanks for your help,</p>\r\n<p>Tim</p>",
+    "PostedDate": "2010-08-05T14:23:04.287-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "477249",
+    "ThreadId": "222638",
+    "Html": "<p>Removing source types is easy, just don't implement them. Set the flag in BibWord to not display errors and it will silenty go over all the sources which have a type it doesn't know how to represent.</p>\r\n<p>Adding source types is a bit harder. Officially it is not supported as adding new source types will result in xml which is no longer valid according to the open xml scheme for bibliographies. In reality,&nbsp;Word doesn't care about validity though, so you can add new types if you really want to.</p>\r\n<p>Adding a new source type to a BibWord style is as easy as copying one of the other source types and changing it's name. Making a new source type show up in the edit source dialog is a bit trickier. It involves editing bibform.xml a localized file (so different for different languages of Office) on your system. There are a couple of threads on this topic. For example: <a href=\"http://bibword.codeplex.com/Thread/View.aspx?ThreadId=76871\">http://bibword.codeplex.com/Thread/View.aspx?ThreadId=76871</a>&nbsp;and <a href=\"http://bibword.codeplex.com/Thread/View.aspx?ThreadId=207321\">http://bibword.codeplex.com/Thread/View.aspx?ThreadId=207321</a>&nbsp; . Also, at <a href=\"http://groups.google.com/group/microsoft.public.word.docmanagement/browse_thread/thread/8a28a5a9a2a607d7/5b594105d46d9ba7?hl=en&pli=1\">http://groups.google.com/group/microsoft.public.word.docmanagement/browse_thread/thread/8a28a5a9a2a607d7/5b594105d46d9ba7?hl=en&amp;pli=1</a>&nbsp;there is a post I made covering part of the topic. I admit the information is a bit fragmented and if I ever have some time, I will try to generate a proper document with instructions.</p>\r\n<p>Note that BibWord contains a workaround in case you want to keep everything valid. You can use the &quot;type&quot; field. The documentation contains more information on this topic.</p>",
+    "PostedDate": "2010-08-05T23:42:05.353-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

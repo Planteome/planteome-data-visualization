@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "286802",
+    "ThreadId": "83416",
+    "Html": "<p>I am writing a thesis using word 2007. Everything was fine when there were only several dozens sources in my document.</p>\r\n<p>Currenty, my thesis is around 150 pages, contains around 500 sources and references almost all of them. Refreshing the citations takes several hours (select all, pressing F9). Any ideas what could be causing the problem? Is there any workaround?</p>\r\n<p>Regards,</p>\r\n<p>Martin</p>",
+    "PostedDate": "2010-02-07T08:18:35.453-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "286816",
+    "ThreadId": "83416",
+    "Html": "<p>The more sources you have, the slower&nbsp;it becomes&nbsp;due to the 'bad' way xsl gets loaded and processed in Office. It looks as if for every in-text citation and bibliography the same xslt gets loaded, executed and then again unloaded causing a huge overhead. Also, Office uses an old xslt processor (which doesn't compile stylesheets for faster execution)&nbsp;compared to the one in .Net. And then there is the preprocessing of in-text citations where Word calculates some extra fields and therefore has to check all other in-text citations before it can format a single citations. But still, several hours seem amazingly long. If it really takes that long, I'm surprised you didn't kill Word assuming it became unresponsive.</p>\r\n<p>Anyway, does this happen with all the styles? Or just with the BibWord ones? BibWord is running on top of XSLT and requires extra parsing, so it will be slower than the direct processing. But the difference shouldn't be that much. I doubt there is anything you can do to speed it up.</p>\r\n<p>Suggestions:</p>\r\n<ul>\r\n<li>Turn off any virusscan you have running. I'm not sure if it will help anything, but the constant loading of the xsl could cause your virusscan to go into overdrive.</li>\r\n<li>Only update the fields when you need to. So wait until you have&nbsp;finished your entire document. If you want an updated bibliography, you could just update that field by itself.</li>\r\n<li>Run a macro which updates each field at a time. You might get a feeling if something particular is getting slow or not.</li>\r\n</ul>",
+    "PostedDate": "2010-02-07T09:14:45.273-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "287000",
+    "ThreadId": "83416",
+    "Html": "<p>You are right about something 'bad' in Office :). Yesterday I've discovered that it hepls when I refresh fields chapter by chapter. Refresh per chapter took around 30 minutes (chapter is about 40-50 pages). It looks like it has memory leaks. During refresh RAM consumed by Word goes from 50 to 500-800 Mb and it is not released until&nbsp;Word is closed.&nbsp;After each chapter was refreshed, I saved the document and closed Word. I guess I will avoid refreshing fields until I am done with the document...</p>\r\n<p>I think this is not bibword specific. I've tried switching to APA. I could not wait for hours, but can say that first few minutes showed similar simptoms (memory leaks, high CPU).</p>\r\n<p>Another workaround which apperas to work well:</p>\r\n<ul>\r\n<li>Copy and paste document fragment (i.e. chapter) to a blank docx, hit refresh, copy and paste back to original docx... Refresh takes less than a minute when there are less than 200 sources and copy takes only sources referenced by the fragment to the new docx. The issue is that it could break numbering and references from other parts of the document.</li>\r\n</ul>",
+    "PostedDate": "2010-02-07T23:52:45.173-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1083606",
+    "ThreadId": "83416",
+    "Html": "This looks the same as my issue in:\r<br />\n<br />\n<a href=\"https://bibword.codeplex.com/workitem/11212\" rel=\"nofollow\">https://bibword.codeplex.com/workitem/11212</a>\r<br />\n<br />\nDoes anyone know if the xslt processing was improved between word 2007 and later versions?<br />\n",
+    "PostedDate": "2013-08-22T06:02:56.727-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1088275",
+    "ThreadId": "83416",
+    "Html": "There are still little bugs in there which were reported back in 2007 and only require a single line of code to fix. Yet, they still haven't fixed them. So my guess would be that the chance of an update to the underlying engine is rather small.<br />\n",
+    "PostedDate": "2013-09-04T08:23:14.79-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1088312",
+    "ThreadId": "83416",
+    "Html": "I've done some experiments and it looks like the slow performance is not necessarily the same issue as the issue that causes word to crash/hang/freeze.\r<br />\n<br />\nI believe I have diagnosed the cause of hang/crash/freeze problem when a user tries to &quot;update citations and bibliography&quot; with a large number of sources - It appears to be <strong>caused by Word's UNDO handling</strong>.\r<br />\n<br />\nBasically for every single citation update it seems to create an undo entry in the undo stack. In my case each one of these is between 8Mb and 14Mb (I'm guessing the difference relates to the number of times a source is cited in the document). So for 900+ sources, we are looking at an undo stack of 7 to 13 Gigs. Add in the application and document and we are talking about another 45Mb on top. I don't know if there's a finite addressable limit of a 32bit app, but it looks like what's happening is that as the &quot;update citations and bibliography&quot; proceeds, it just creates a <strong>HUGE UNDO STACK</strong> which eventually exceeds either some internal address limit or operating system limit or physical resources limit (in my case it gets to about 1.8Gb in RAM). Then it falls over. Since it falls over when Task Manager shows I still have plenty of memory left - I think it's an internal limit.\r<br />\n<br />\nHow did I come to this conclusion?\r<br />\n<br />\nI've spent days researching. I previously tried switching off the autosave - no change.\r<br />\nI monitored the memory use by the process winword.exe while manually updating my citations one at a time. The app with a blank doc takes about 25Mb. Add in my doc and it rises to 45Mb. Edit the first citation - rises to 57Mb, edit next - 69Mb, and so on. I quickly get to 150 or 170Mb before I chicken-out, exit &quot;manage sources,&quot; and save the doc. I verify sources.xml is also updated. \r<br />\n<br />\nSAVE does NOT clear the undo stack - there's no change in memory before and after SAVE.\r<br />\n<br />\nOn the ribbon, the Undo button offers multiple instances of &quot;<strong>select bibliography style</strong>&quot; even after save.\r<br />\n<br />\nIn older versions of word you could turn off the UNDO function, but it appears from Word 2007 and up you can't. <strong>If anyone knows of a way to disable UNDO in Word, that should solve this issue</strong>.\r<br />\n<br />\nOn other fora I hear that there has been no significant change in Word 2010 or 2013 in this area.\r<br />\n<br />\nIt's a diagnosis but not a solution.<br />\n",
+    "PostedDate": "2013-09-04T09:30:42.427-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1133661",
+    "ThreadId": "83416",
+    "Html": "FIXED (kinda) in 64 bit edition of word fo office 365!\r<br />\n<br />\nI eventually found a phone number and got through to MS tech support. Uninstalled office 365. Re installed the 64 bit edition of Office 365 (MS hide this under the &quot;languages and advanced options&quot; link). Ran Update citations and bibliography on the problem doc. It ran for 3 hours and I watched the winword process go up to 3.2 Gb for a while. \r<br />\n<br />\nBut it completed WITHOUT CRASHING!!\r<br />\n<br />\nTherefore it is the memory limit in the 32 bit app that is making it fall over, BUT there has to be a smarter way to code this transaction both from a memory use standpoint and a performance standpoint.\r<br />\n<br />\nAlong the way, MS confirmed that the renaming the undo via a macro does not in fact disable the undo stack in word versions post 2003, so I was on-the-money blaming the bloated undo stack.<br />\n",
+    "PostedDate": "2013-12-10T09:04:07.087-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

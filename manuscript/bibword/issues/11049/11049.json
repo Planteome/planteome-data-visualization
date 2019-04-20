@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi, I have tweaked a style for the harvard style I use and I've managed to update the bibliography, however I'm having trouble trying to update the citation in text.  For books and book sections I use author, date, but when I add a direct quote I need to add the page numbers, (author, date, p. n).  I've tried changing different parts and searching for a solution, but nothing I do will add the page number in the citation in text.\n\nIs there a way to update the style to add this functionality?\n\nThanks!",
+    "LastUpdatedDate": "2013-05-30T12:06:31.677-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "bibword",
+    "ReportedDate": "2013-05-30T12:06:31.677-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Adding page number for direct quotes",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 11049
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

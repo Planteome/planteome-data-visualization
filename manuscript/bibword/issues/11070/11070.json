@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I'm sorry this must seem like an incredibly stupid question since I haven't seen this question anywhere else but I have downloaded the zip file of all the xml and xsl files for the different referencing styles but I have no idea what to do with it now.",
+    "LastUpdatedDate": "2013-07-30T05:15:48.88-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "bibword",
+    "ReportedDate": "2013-06-10T03:56:57.29-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "How do I get BibWord Working?",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 11070
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "See installation notes here: https://bibword.codeplex.com/releases/view/15852",
+      "PostedDate": "2013-07-30T05:15:48.88-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

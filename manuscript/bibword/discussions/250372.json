@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "583094",
+    "ThreadId": "250372",
+    "Html": "\r\n<p>hi.</p>\r\n<p>I use IEEE reference order. But I have a problem with the brackets. The first 9 positions of the bibliography are ok but all items from postion 10 have troubles the the brackets. Here is my output:</p>\r\n<p style=\"padding-left:30px\">&nbsp;</p>\r\n<pre>[9] Richard Cyganiak and Anja Jentzsch. (2010, September) The Linked Open Data cloud\r\ndiagram. [Online]. http://richard.cyganiak.de/2007/10/lod/lod-datasets_2010-09-\r\n22_colored.html\r\n\r\n[10 Christian Bizer, Anja Jentzsch, and Richard Cyganiak. (2011, Februar) State of the\r\n   ] LOD Cloud. [Online]. http://lod-cloud.net/state</pre>\r\n<p>thanks in advance!</p>\r\n<p>ulrike</p>\r\n<p style=\"padding-left:30px\">&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2011-03-19T11:31:13.423-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "583132",
+    "ThreadId": "250372",
+    "Html": "<p>See <a href=\"http://bibword.codeplex.com/wikipage?title=Styles_FAQ&amp;referringTitle=Documentation#Q15\">http://bibword.codeplex.com/wikipage?title=Styles_FAQ&amp;referringTitle=Documentation#Q15</a></p>",
+    "PostedDate": "2011-03-19T13:42:53.317-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "583209",
+    "ThreadId": "250372",
+    "Html": "<p>Thanks! I didn't noticed this i&nbsp; the FAQ.</p>",
+    "PostedDate": "2011-03-20T00:32:32.247-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

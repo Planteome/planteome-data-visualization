@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "150720",
+    "ThreadId": "45192",
+    "Html": "I've created my own bibliography style. I know that I can find my added page information by this xml path /b:Citation/b:Pages. But when I want to disable author, year or title I don't know the path. Can anybody help me?<br>\r\n",
+    "PostedDate": "2009-01-25T10:27:20.077-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "150789",
+    "ThreadId": "45192",
+    "Html": "<p>In case one or more of the flags is set, empty elements are added to the list.</p>\r\n<p>suppress author: /b:Citation/b:NoAuthor<br>\r\nsuppress title: /b:Citation/b:NoTitle<br>\r\nsuppress year: /b:Citation/b:NoYear<br>\r\n<br>\r\nYves</p>\r\n",
+    "PostedDate": "2009-01-25T17:59:08.95-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "150858",
+    "ThreadId": "45192",
+    "Html": "yes, this works. Thank you<br>\r\n",
+    "PostedDate": "2009-01-26T01:49:48.07-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

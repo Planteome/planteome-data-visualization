@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "425873",
+    "ThreadId": "207894",
+    "Html": "<p>I'm using the ISO 690 Numerical template. When I insert a reference for a journal article, the title appears first then the author. I'd like for the author to come up first, then the article title. Is there any way to do this?</p>",
+    "PostedDate": "2010-03-31T02:30:52.087-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "426120",
+    "ThreadId": "207894",
+    "Html": "<p>Yes, edit the style :-)</p>\r\n<p>See if <a href=\"http://bibword.codeplex.com/releases/view/17634\">http://bibword.codeplex.com/releases/view/17634</a>&nbsp;helps.</p>",
+    "PostedDate": "2010-03-31T11:10:15.617-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "426122",
+    "ThreadId": "207894",
+    "Html": "<p>I'm afraid I have no idea where to start with editing the style. Could you point me in the direction of the bit to edit?</p>",
+    "PostedDate": "2010-03-31T11:19:21.857-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "426129",
+    "ThreadId": "207894",
+    "Html": "<p>I no longer edit any of the styles that come with Word. They are just too messy. BibWord was designed to avoid such a&nbsp;mess in the future.</p>\r\n<p>However, the style I pointed to&nbsp;is an adaptation of the ISO 690 (non numerical) style where the author is always put first. Your options are to extend this method to the numerical version or to&nbsp;locate the differences with the original style and then&nbsp;'copy' those differences to the ISO 690&nbsp;- Numerical Reference style.</p>\r\n<p>Personally, I would go for the first option, as adding a simple number in front is pretty straightforward.</p>",
+    "PostedDate": "2010-03-31T11:47:43.193-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "426139",
+    "ThreadId": "207894",
+    "Html": "<p>Straightforward enough that someone with no style editing/html knowledge can do it?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-03-31T12:15:55.087-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "426175",
+    "ThreadId": "207894",
+    "Html": "<p>Well, maybe not, but some simple thinking should get you on your way. For starters, if you use a numbered style, you would want to remove the sorting. So any</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">xsl</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">sort</span> <span style=\"color:Red\">select</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">b:SortingString</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Blue\">/&gt;</span>\r\n</pre>\r\n</div>\r\n<p>&nbsp;would probably have to be replaced by a</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">xsl</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">sort</span> <span style=\"color:Red\">select</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">b:RefOrder</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">data-type</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">number</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">/&gt;</span>\r\n</pre>\r\n</div>\r\n<p>Then adding a number in front of a bibliography entry would be done by tracking down the start of each entry, which is typically a html paragraph</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">xsl</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">element</span> <span style=\"color:Red\">name</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">p</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>and add a</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">xsl</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">value-of</span> <span style=\"color:Red\">select</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">b:RefOrder</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">/&gt;</span>\r\n</pre>\r\n</div>\r\n<p>followed by a period, or surrounded by brackets.&nbsp;</p>\r\n<p>But what you should be asking yourself if this is really the format that you want. I'm no expert on the ISO 690 format, but I would think that once you start changing the stylesheet, it is no longer ISO 690 compliant. So what type of style are you actually trying to create? Is it a specific one? Or are you just looking for a numbered style where the author is always the first element? In the latter case, you might want to consider some of the numeric styles on this&nbsp;site like the IEEE one.</p>",
+    "PostedDate": "2010-03-31T13:56:36.143-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "426178",
+    "ThreadId": "207894",
+    "Html": "<p>Ah great. Thank you.</p>\r\n<p>I don't need it to be ISO compliant, it's just that this style suits my needs best (ignoring the ordering issues).</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-03-31T14:08:07.157-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

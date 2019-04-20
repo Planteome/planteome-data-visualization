@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "660097",
+    "ThreadId": "269593",
+    "Html": "\r\n<p>Thanks for all the great work Yves. &nbsp;I have a situation where my university expects the following:&nbsp;</p>\r\n<p>First time contributor(s) are cited in thesis:&nbsp;(Smith, Smith and Smith, 2011)</p>\r\n<p>Second time contributors are cited in thesis (Smith, et al., 2011)</p>\r\n<p>Any ideas on how to do that I have been using Harvard Leeds as the basis for my changes, but I just cannot work out how to do this.</p>\r\n<p>Regards,</p>\r\n<p>Sean</p>\r\n",
+    "PostedDate": "2011-08-18T09:41:22.633-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "660098",
+    "ThreadId": "269593",
+    "Html": "<p>Sorry, I have found the answer to my question: &nbsp;It is impossible to do.</p>\r\n<p><a href=\"http://bibword.codeplex.com/discussions/231791\">http://bibword.codeplex.com/discussions/231791</a></p>",
+    "PostedDate": "2011-08-18T09:44:33.203-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

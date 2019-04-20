@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "290098",
+    "ThreadId": "85132",
+    "Html": "<p>Hi. Thank you for an extremely useful tool! Is it in any way possible to add line breaks to the bibliography (e.g. between the author and the title)? I have tried with &amp;lt;/br&amp;gt; , but it does not seem to work?</p>\r\n<p>Best regards</p>\r\n<p>Jakob</p>",
+    "PostedDate": "2010-02-12T05:48:38.89-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "290291",
+    "ThreadId": "85132",
+    "Html": "<p>You just put your <strong>/</strong> wrong. It's</p>\r\n<p style=\"padding-left:30px\">&amp;lt;br&amp;gt;</p>\r\n<p>or</p>\r\n<p style=\"padding-left:30px\">&amp;lt;br /&amp;gt;</p>",
+    "PostedDate": "2010-02-12T12:45:53.467-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "292011",
+    "ThreadId": "85132",
+    "Html": "<p>Of course! Thank you very much:-).</p>\r\n<p>/Jakob</p>",
+    "PostedDate": "2010-02-17T23:46:56.947-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

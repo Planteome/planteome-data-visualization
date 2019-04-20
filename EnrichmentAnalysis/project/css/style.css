@@ -129,16 +129,54 @@ text.active {
 	padding-bottom:15px;
 }
 
-.bg-info{
-	margin-bottom:0px;
-	color:#006600";
+input.vis-configuration.vis-config-range {
+    display: inline-block;
+    width:375px;
 }
 
-.bar{
+div.vis-configuration.vis-config-label.vis-config-s3 {
+    width: 50px;
+}
+
+div.vis-configuration.vis-config-item.vis-config-s3 {
+    width: 500px;
+}
+
+div.vis-configuration.vis-config-item.vis-config-s2 {
+    width: 50px;
+}
+
+div.vis-configuration.vis-config-item.vis-config-s0{
+    width: 50px;
+}
+
+img.bigger {
+    width: 1000px;
+}
+
+.bar {
 	width:80px;
 	height:25px;
 	display:inline-block;
 	text-align: center;
 	vertical-align: middle;
 	line-height:25px;
+}
+
+.bg-info {
+	margin-bottom:0px;
+    color:#006600;
+}
+
+.bar {
+	width:80px;
+	height:25px;
+	display:inline-block;
+	text-align: center;
+	vertical-align: middle;
+	line-height:25px;
+}
+
+.popover-content {
+    word-break: break-all;
 }

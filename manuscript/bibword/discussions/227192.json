@@ -1,0 +1,98 @@
+[
+  {
+    "Id": "493405",
+    "ThreadId": "227192",
+    "Html": "<p>I just found out that in the ASA style, with the &quot;book section&quot; type, the &quot;book author&quot; filed is missing... This is a fault I guess, isn't it?</p>",
+    "PostedDate": "2010-09-14T10:18:24.12-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "495370",
+    "ThreadId": "227192",
+    "Html": "<p>I will check as soon as I have some time, I'm pretty swamped right now.</p>",
+    "PostedDate": "2010-09-18T04:47:43.617-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "495380",
+    "ThreadId": "227192",
+    "Html": "<p>ok, thanks for your help</p>",
+    "PostedDate": "2010-09-18T05:12:10.133-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "504693",
+    "ThreadId": "227192",
+    "Html": "<p>hello yves, any news? cheers...</p>",
+    "PostedDate": "2010-10-09T01:46:51.09-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "508163",
+    "ThreadId": "227192",
+    "Html": "<p>I finally got some time to look into this issue.</p>\r\n<p>According to examples I found online, the &quot;book author&quot; is not used. It's the author and the editor which are used. I also verified this&nbsp;with EndNote. So I think the style is correct. If you have examples to the contrary, please provide them so I can look into them.</p>\r\n<p>Example from <a href=\"http://www.willamette.edu/cla/sociology/asastyle/index.php\">http://www.willamette.edu/cla/sociology/asastyle/index.php</a>:</p>\r\n<p style=\"padding-left:30px\">Nathan, Peter E. and Raymond S. Niaura. 1987. &quot;Prevention of Alcohol Problems.&quot; Pp. 333-354 in <em>Treatment and Prevention of Alcohol Problems: A Resource Manual</em>, edited by W.M. Cox. Orlando, FL: Academic Press, Inc.</p>\r\n<p>Example from <a href=\"http://www.uwp.edu/departments/library/guides/asa.htm\">http://www.uwp.edu/departments/library/guides/asa.htm</a></p>\r\n<p style=\"padding-left:30px\">Brewer, John D. 1998. &quot;Sensitivity in Field Research: A Study of Policing in Northern Ireland.&quot; Pp. 29-37 in <em>Seeing Ourselves: Classic, Contemporary, and Cross-Cultural Readings in Sociology</em>, edited by John J. Macionis and Nijole V. Benokraitis. Upper Saddle River, NJ: Prentice Hall.</p>\r\n<p>Example from&nbsp; EndNote</p>\r\n<p style=\"padding-left:30px\">Author. Year. &quot;Title.&quot; Pp.　Pages in　<em>Book Title</em>|,　vol.　Volume|,　<em>Series Title</em>|,　edited　by　Editor|.　City|:　Publisher|.</p>",
+    "PostedDate": "2010-10-16T00:32:53.457-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "509626",
+    "ThreadId": "227192",
+    "Html": "<p>thanks yves...</p>\r\n<p>&nbsp;</p>\r\n<p>I would say that all styles should follow them same rules in terms of corresponding main fields, shouldn't they? in chicago style for instance, the &quot;book section&quot; type contains a &quot;book author&quot; field. as i had built my bibliography using that style, that's the field i filled in normally for that kind of references. so i would say that &quot;new&quot; styles should respect these categories. otherwise it would be impossible to switch from one style to the other without loosing important information, no?</p>",
+    "PostedDate": "2010-10-19T14:42:47.423-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "509777",
+    "ThreadId": "227192",
+    "Html": "<p>You don't really 'loose' the information. The information remains stored in your document, the output of the style just doesn't contain it. What a style outputs, is purely the choice of the style. For example, some styles want the DOI to be included with every electronic entry. Other styles just don't care about that type of information.</p>\r\n<p>The book author field is available in the ASA style, it is just not an 'important field'.</p>",
+    "PostedDate": "2010-10-20T00:13:42.163-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "509828",
+    "ThreadId": "227192",
+    "Html": "<p>The problem is that it is not available in ASA style. To acess it (e.g. to &quot;manage sources), I have to switch to Chicago style. In the ASA style, it simply does not appear. Is there a way at least to copy the way the it is output in Chicago style into ASA style? If not, I would have to built up everything from another style.</p>\r\n<p>&nbsp;</p>\r\n<p>I still hold that this is a misbehavior of ASA style: &quot;Editor&quot; and &quot;Book Author&quot; are two different things!</p>",
+    "PostedDate": "2010-10-20T02:15:28.857-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "509943",
+    "ThreadId": "227192",
+    "Html": "<p>You're mistaken, the book author field is available in the ASA style, it is just not an 'important field'.</p>\r\n<p>Word has two sets of fields which it displays:</p>\r\n<ol>\r\n<li>The important fields: those are the fields specific to that style. Basically, data entered in those fields will show up in your bibliography given you don't change the output style. By default, those are the ones shown in your input dialog.</li>\r\n<li>All bibliography fields: those are the common set, including the important ones that are available to all styles. They are defined separately in a file called bibform.xml.</li>\r\n</ol>\r\n<p>As the ASA style has no output format including the book author,&nbsp;the field is not considered&nbsp;an important field. It does remain in the list of common fields though.&nbsp;You can display all availbale fields when entering a source by selecting the checkbox next to &quot;Show All Bibliography Fields&quot; at the bottom of the input window.</p>\r\n<p>Note that if you always wanted the book author to be listed when using ASA, you could promote the field to an important field. In the xml look for</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>      <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">source</span> <span style=\"color:red\">type</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">BookSection</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">&gt;</span>\r\n        <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">b</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ImportantField</span><span style=\"color:blue\">&gt;</span>b:Author/b:Author/b:NameList<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">b</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ImportantField</span><span style=\"color:blue\">&gt;</span>\r\n        <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">b</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ImportantField</span><span style=\"color:blue\">&gt;</span>b:Author/b:Editor/b:NameList<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">b</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ImportantField</span><span style=\"color:blue\">&gt;</span>\r\n        <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">b</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ImportantField</span><span style=\"color:blue\">&gt;</span>b:Title<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">b</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ImportantField</span><span style=\"color:blue\">&gt;</span>\r\n        <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">b</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ImportantField</span><span style=\"color:blue\">&gt;</span>b:BookTitle<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">b</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ImportantField</span><span style=\"color:blue\">&gt;</span>\r\n        <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">b</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ImportantField</span><span style=\"color:blue\">&gt;</span>b:Edition<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">b</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ImportantField</span><span style=\"color:blue\">&gt;</span>\r\n        <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">b</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ImportantField</span><span style=\"color:blue\">&gt;</span>b:ShortTitle<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">b</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ImportantField</span><span style=\"color:blue\">&gt;</span>\r\n        <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">b</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ImportantField</span><span style=\"color:blue\">&gt;</span>b:Volume<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">b</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ImportantField</span><span style=\"color:blue\">&gt;</span>\r\n        <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">b</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ImportantField</span><span style=\"color:blue\">&gt;</span>b:Year<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">b</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ImportantField</span><span style=\"color:blue\">&gt;</span>\r\n        <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">b</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ImportantField</span><span style=\"color:blue\">&gt;</span>b:City<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">b</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ImportantField</span><span style=\"color:blue\">&gt;</span>\r\n        <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">b</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ImportantField</span><span style=\"color:blue\">&gt;</span>b:StateProvince<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">b</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ImportantField</span><span style=\"color:blue\">&gt;</span>\r\n        <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">b</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ImportantField</span><span style=\"color:blue\">&gt;</span>b:Publisher<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">b</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ImportantField</span><span style=\"color:blue\">&gt;</span>\r\n        <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">b</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ImportantField</span><span style=\"color:blue\">&gt;</span>b:Pages<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">b</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ImportantField</span><span style=\"color:blue\">&gt;</span>\r\n      <span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">source</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>and add the following line:</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre style=\"padding-left:30px\"><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">b</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ImportantField</span><span style=\"color:blue\">&gt;</span>b:Author/b:BookAuthor/b:NameList<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">b</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">ImportantField</span><span style=\"color:blue\">&gt;</span></pre>\r\n</div>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-10-20T07:28:24.26-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "511049",
+    "ThreadId": "227192",
+    "Html": "\r\n<p>thanks yves!</p>\r\n<p>&nbsp;</p>\r\n<p>i managed to make the book author filed important, but it is still not output at the bibliography...</p>\r\n<p>&nbsp;</p>\r\n<p>one could argue that in a book with sections, the book author and the book editor are the same person, but there are books like compilations, in which the book author is the author of all sections, but not the editor.</p>\r\n",
+    "PostedDate": "2010-10-22T05:29:38.893-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "511113",
+    "ThreadId": "227192",
+    "Html": "\r\n<p>I agree with your reasoning. However, I follow one simple rule when creating stylesheets:</p>\r\n<p style=\"padding-left:30px\"><em>If I have no 'official' definition on how an entry should look, then I don't add it to the style.</em></p>\r\n<p>If I wouldn't follow that rule, I would be adding something which I&nbsp;believe to be correct but which very well might be incorrect. So if you can find an 'official' sample including book authors (and not what you personally believe is correct), I will\r\n adjust the style. Otherwise, I won't.</p>\r\n",
+    "PostedDate": "2010-10-22T07:24:58.877-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "511342",
+    "ThreadId": "227192",
+    "Html": "\r\n<p>I would say in the case of &quot;book section&quot; it is more a matter of taste if you put the name of the person who appears as the author of the book (being he co-author, organizer or editor) in a &quot;book author&quot; or a &quot;editor&quot; field.</p>\r\n<p>&nbsp;</p>\r\n<p>What is important, I would say, is that all styles follow the same logic - which does not seem to be the case. chicago style e.g. uses the &quot;book author&quot; field, as well as ABNT, while the Harvard styles follow the ASA logic of using the &quot;editor&quot; field.</p>\r\n<p>&nbsp;</p>\r\n<p>I guess I will have to decide for myself if I change my whole bibliography, now that I decided to adopt the ASA style (I had build it with Chicago style)</p>\r\n<p>&nbsp;</p>\r\n<p>cheers</p>\r\n",
+    "PostedDate": "2010-10-22T15:07:16.89-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

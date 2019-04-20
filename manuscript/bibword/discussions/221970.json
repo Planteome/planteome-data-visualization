@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "474652",
+    "ThreadId": "221970",
+    "Html": "<p>Hello together, I use this style sheet and I am pleased to have it.</p>\r\n<p>But there are two little things hopefully you can help me to change them.</p>\r\n<p>1) In the bibliography a reference is seen so: [1]. Philip Strabe, Good stuff, 1965</p>\r\n<p>How can I&nbsp;delete this point after the reference number?</p>\r\n<p>2) With this style sheet you can add a page number directly when you quote something. But it is in german: [1 S.10]</p>\r\n<p>How can I get instead of the S. a p. for page?</p>\r\n<p>Thank you very much.</p>\r\n<p>Cheers, Daniel&nbsp;</p>",
+    "PostedDate": "2010-07-30T02:53:37.183-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "474742",
+    "ThreadId": "221970",
+    "Html": "<p>1) Without exact knowledge of the style you are using and where you got it, this is impossible to answer.</p>\r\n<p>2) The abbrevation you see depends on the culture you are writing your text in. A flawed design if you ask me, but that is how Microsoft&nbsp;made the entire thing. Right click on your reference in Word and choose &quot;Edit Field...&quot;. In the dialog, you will see something along the lines of &quot;CITATION Doe10 \\l 1031&quot;. The four digits are the culture to be used. &quot;1031&quot; is used for German in Germany. If you want English, try &quot;1033&quot;.</p>",
+    "PostedDate": "2010-07-30T06:32:33.847-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "475367",
+    "ThreadId": "221970",
+    "Html": "<p>Good morning, the second issue works great: changing 1031 to 1033 is a brilliant solution. Thank you.</p>\r\n<p>I uploaded the style file, which I use:</p>\r\n<div><a href=\"http://rapidshare.com/files/410530850/WW_ISO690Nmerical.zip\">http://rapidshare.com/files/410530850/WW_ISO690Nmerical.zip</a></div>\r\n<div>Perhaps this helps you to find a solution for the first issue.</div>\r\n<div>Many Thanks!</div>\r\n<div>Daniel</div>",
+    "PostedDate": "2010-08-02T02:47:16.473-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "475395",
+    "ThreadId": "221970",
+    "Html": "There is a piece of code looking like this:<br><br>\r\n\r\n&lt;!-- Anpassungen Wordwelt im Literaturverzeichnis --&gt;<br>\r\n&lt;xsl:call-template name=&quot;templ_prop_OpenBracket_WW&quot;/&gt;<br>\r\n&lt;xsl:value-of select=&quot;b:RefOrder&quot;/&gt;<br>\r\n&lt;xsl:call-template name=&quot;templ_prop_CloseBracket_WW&quot;/&gt;<br>\r\n&lt;xsl:call-template name=&quot;templ_prop_Dot&quot;/&gt;<br>\r\n&lt;xsl:call-template name=&quot;templ_prop_Space&quot;/&gt;<br>\r\n<br>\r\nRemove the line containing templ_prop_Dot if you don't want a dot after the brackets.",
+    "PostedDate": "2010-08-02T05:10:31.32-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "475413",
+    "ThreadId": "221970",
+    "Html": "<p>Thank you very much, it works!</p>",
+    "PostedDate": "2010-08-02T05:55:30.607-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,71 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi, Yves. \n\nI've just bought and installed MS Office 365 and when I try to use the ABNT_Author style, it doesn't appear in the row of applied stiles.\n\nI've already put the ABTN_Author.XSL file on both paths:\n\nC:\\Program Files\\Microsoft Office 15\\root\\office15\\Bibliography\\Style and\nC:\\Users\\Cirilo\\AppData\\Roaming\\Microsoft\\Bibliography\\Style, but Word doesn't load the style.\n\nIs there any other solution? Thanks.",
+    "LastUpdatedDate": "2014-11-08T04:47:07.247-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "bibword",
+    "ReportedDate": "2013-05-17T08:11:23.29-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "ABNT_Author Style isn't loaded on Word 365",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 2,
+    "Id": 11030
+  },
+  "FileAttachments": [
+    {
+      "FileId": 3605,
+      "FileName": "ABNT Style on Word 365.png",
+      "DownloadUrl": ".\\3605"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "I have the same Issue with with Office2010 as well, did you find any solution. I tried installing CSE.",
+      "PostedDate": "2013-06-02T04:10:48.113-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-06-02T04:10:54.663-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi Mayaortonprice,\r\n\r\nWith Office 2010, there is no problem. You only need to copy the style file .XSL to the folder C:\\Program Files\\Microsoft Office\\Office14\\Bibliography\\Style. I've tested this solution with Windows XP and Windows 7.",
+      "PostedDate": "2013-06-04T14:59:13.84-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I just got it working using this path: %AppData%\\Microsoft\\Templates\\LiveContent\\15\\Managed\\Word Document Bibliography Styles (just copy and paste this on the address bar of Windows Explorer)!",
+      "PostedDate": "2014-09-25T14:13:49.297-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I've tried CiriloLS and orlando2bjr paths with no success. \norlando2bjr, did you just copy and paste the xsl files?\nThanks",
+      "PostedDate": "2014-11-08T04:47:07.247-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

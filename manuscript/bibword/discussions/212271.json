@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "441503",
+    "ThreadId": "212271",
+    "Html": "<p>Author list in citation should not be separeted by &quot;e&quot; (that means &quot;and&quot; in portuguese).</p>\r\n<p>According to Brazilian ABNT, both citation and bibliography should have author list sapareted by &quot;;&quot;, no matter how many authors.</p>",
+    "PostedDate": "2010-05-11T07:23:11.177-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "441638",
+    "ThreadId": "212271",
+    "Html": "<p>Do you have an official reference to that? Every week I get mails on this subject all stating different formatting rules for in-text citations. I would gladly fix it, if someone could provide me with exact documentation.</p>",
+    "PostedDate": "2010-05-11T11:17:05.853-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "682223",
+    "ThreadId": "212271",
+    "Html": "<p>Quotations should be submitted according to ABNT NBR 10520</p>\n<p><strong>5</strong> General presentation</p>\n<p>1) In quotations, calls the author's name, the institution responsible or title included in the sentence should be in lower case and, when in brackets, should be capitalized.</p>\n<p style=\"padding-left: 60px;\">Examples: The irony would be just an implicit form of heterogeneity shown, according to the classification proposed by Authier-Reiriz (1982).</p>\n<p style=\"padding-left: 60px;\">\"Despite appearances, the deconstruction of logocentrism is not a psychoanalysis of philosophy [...]\" (DERRIDA, 1967, p. 293).</p>\n<p><strong>5.1</strong> Specify the text (s) page (s), volume (s) take (s) or section (s) on the source consulted, in direct quotations. This (s) (s) must follow the date, separate (s) and preceded by a comma (s) by the term, that (s) features in a comprehensive way. In indirect quotations, details of the (s) page (s) consulted (s) is optional.</p>\n<p>Examples: The production of lithium starts at Searles Lake, California, in 1928 (Mumford, 1949, p. 513).</p>\n<p>Oliveira and Leonardos (1943, p. 146) say that \"[...] the series against San Roque with small porphyritic granite is very clear. \"</p>\n<p>Meyer part of a passage from the chronicle of \"May 14\" by The Week: \"There was sun, sun and great, that Sunday in 1888, when the Senate voted for the law, ruling that sanctioned [...] (ASSIS , 1994, v. 3, p. 583).</p>\n<p><strong>5.2</strong> Direct quotations in the text of up to three lines should be contained in double quotes. Single quotes are used to indicate quote within the quote.</p>\n<p style=\"padding-left: 60px;\">Examples: Barbour (1971, p. 35) describes: \"The study of the morphology of the land asset [...] [...]\"</p>\n<p style=\"padding-left: 60px;\">or</p>\n<p style=\"padding-left: 60px;\">\"Do not move, pretend you're dead.\" <span style=\"color: #ff0000;\">(CLARAC; BONNIN, 1985, p. 72).</span></p>\n<p style=\"padding-left: 60px;\">According to S&aacute; (1995, p. 27): \"[...] through the same 'art talk' covering so extensive and significant part of our everyday existence [...]\"</p>\n<p><strong>5.3</strong> Direct quotations in the text, with more than three lines should be highlighted with a decrease of 4 cm left margin, with less than the letter of the text used and without the quotes. In the case of typewritten texts, one must only observe the retreat.</p>\n<p style=\"padding-left: 60px;\"><span style=\"font-size: 10pt;\">Example: </span></p>\n<p style=\"padding-left: 60px;\"><span style=\"font-size: 10pt;\" lang=\"EN-US\">The conference allows individuals to participate in a regional or national meeting without leaving their place of origin. Common types of call include the use of television, telephone and computer. Through audio conferencing, using the local phone company, an audio signal can be emitted in a room of any size. </span><span style=\"font-size: 10pt;\">(NICHOLS, 1993, p. 181).</span></p>",
+    "PostedDate": "2011-10-10T12:22:49.593-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

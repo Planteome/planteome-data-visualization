@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "178956",
+    "ThreadId": "53208",
+    "Html": "Hi there,<br>\r\n<br>\r\nI have got a problem with the alignment of the column 2 using table style bibliographies. all of my styles use halign=left but the column is always formatted with justify. I guess there might be a problem about the bibliography-style, but looking in word it tells me, the bibliography table is formatted in standard, not in bibliography. Where do I have to change my settings to get alignment left in the table? I really have no more ideas.<br>\r\n<br>\r\nThanks a lot for any help!<br>\r\n<br>\r\nClaudia<br>\r\n",
+    "PostedDate": "2009-04-14T05:12:30.293-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "178982",
+    "ThreadId": "53208",
+    "Html": "<p>Basically, the layout in HTML for a table in BibWord is:</p>\r\n<p><span style=\"font-family:'courier new';color:#0000ff;font-size:10pt\">&lt;</span><span style=\"font-family:'courier new';color:#a31515;font-size:10pt\">table</span><span style=\"font-family:'courier new';color:#0000ff;font-size:10pt\">&gt;<br>\r\n  &lt;</span><span style=\"font-family:'courier new';color:#a31515;font-size:10pt\">tr</span><span style=\"font-family:'courier new';color:#0000ff;font-size:10pt\">&gt;<br>\r\n    &lt;</span><span style=\"font-family:'courier new';color:#a31515;font-size:10pt\">td</span><span style=\"font-family:'courier new';font-size:10pt\"> <span style=\"color:#ff0000\">align</span><span style=\"color:#0000ff\">=&quot;$HALIGN&quot;</span> <span style=\"color:#ff0000\">valign</span><span style=\"color:#0000ff\">=&quot;$VALIGN&quot;&gt;<br>\r\n      &lt;</span><span style=\"color:#a31515\">p</span> <span style=\"color:#ff0000\">class</span><span style=\"color:#0000ff\">=&quot;MsoBibliograpy&quot;&gt;</span>text first column<span style=\"color:#0000ff\">&lt;/</span><span style=\"color:#a31515\">p</span><span style=\"color:#0000ff\">&gt;<br>\r\n    &lt;/</span><span style=\"color:#a31515\">td</span><span style=\"color:#0000ff\">&gt;<br>\r\n    &lt;</span><span style=\"color:#a31515\">td</span> <span style=\"color:#ff0000\">align</span><span style=\"color:#0000ff\">=&quot;$HALIGN&quot;</span> <span style=\"color:#ff0000\">valign</span><span style=\"color:#0000ff\">=&quot;$VALIGN&quot;&gt;<br>\r\n      &lt;</span><span style=\"color:#a31515\">p</span> <span style=\"color:#ff0000\">class</span><span style=\"color:#0000ff\">=&quot;MsoBibliograpy&quot;&gt;</span>text second column<span style=\"color:#0000ff\">&lt;/</span><span style=\"color:#a31515\">p</span><span style=\"color:#0000ff\">&gt;<br>\r\n    </span><span style=\"font-family:'courier new';color:#0000ff;font-size:10pt\">&lt;/</span><span style=\"font-family:'courier new';color:#a31515;font-size:10pt\">td</span><span style=\"font-family:'courier new';color:#0000ff;font-size:10pt\">&gt;<br>\r\n  &lt;/</span><span style=\"font-family:'courier new';color:#a31515;font-size:10pt\">tr</span><span style=\"font-family:'courier new';color:#0000ff;font-size:10pt\">&gt;</span><span style=\"font-family:'courier new';font-size:10pt\"><br>\r\n<span style=\"color:#0000ff\">&lt;/</span><span style=\"color:#a31515\">table</span><span style=\"color:#0000ff\">&gt;</span></span></span></p>\r\n<p>The halign and valign parameters in BibWord are for the table cell properties. They only indirectly affect the text within a cell. To set the text alignment within a cell the MsoBibliography style (shown in Word as a localized version of the word 'Bibliography') should be used.</p>\r\n<p>If your bibliography is not in the 'Bibliography' style, then something is wrong.</p>\r\n<p>Which style (or BibWord version) are you using?</p>\r\n<p>What happens if you switch the reference style to APA (the one available in Word by default)? Is the style of the bibliography still 'Normal'? Or is it 'Bibliography' now?</p>\r\n",
+    "PostedDate": "2009-04-14T06:14:04.96-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "179013",
+    "ThreadId": "53208",
+    "Html": "thanks for this fast answer.<br><br>I use a style I prepared myself. If I use APA, the bibliography-style in Word is used. The BibWord-Style used is 2008.7.30. <br><br>Probably I did some wreck to the style right at the beginning. But where do I have to search for the error to switch back to the correct word-style?<br><br>Thanks for your help!!!<br><br>Claudia<br>-- <br>Neu: GMX FreeDSL Komplettanschluss mit DSL 6.000 Flatrate + Telefonanschluss f�r nur 17,95 Euro/mtl.!* http://dslspecial.gmx.de/freedsl-surfflat/?ac=OM.AD.PD003K11308T4569a",
+    "PostedDate": "2009-04-14T07:02:06.48-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "179026",
+    "ThreadId": "53208",
+    "Html": "<p>You are using a very old version of BibWord (1.0). A lot of bugs have been fixed since. I suggest you update to the latest version (2.3) which you can find at <a href=\"http://bibliography.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=23850\">http://bibliography.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=23850</a></p>\r\n<p>All you have to do is copy the &quot;data&quot; element (&lt;xsl:variable name=&quot;data&quot;&gt;...&lt;/xsl:variable&gt;) from your current style to the new one. The formatting should be exactly the same. There just are a lot of bugs fixed and more formatting options for those who need them.</p>\r\n<p>Let me know if that fixes things.</p>\r\n",
+    "PostedDate": "2009-04-14T07:17:40.987-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "179034",
+    "ThreadId": "53208",
+    "Html": "Thanks a lot!!! I already downloaded it, but did not update my xml-file. I will report as soon as I've changed to the new version. This will be next week, though, because I have to attend a conference the rest of the week and won't be able to get online.<br><br>thank you again<br><br>Claudia<br><br>-------- Original-Nachricht --------<br>&gt; Datum: 14 Apr 2009 07:18:06 -0700<br>&gt; Von: yves &lt;notifications@codeplex.com&gt;<br>&gt; An: querpfeife@gmx.de<br>&gt; Betreff: Re: alignment left [bibliography:53208]<br><br>&gt; From: yves<br>&gt; <br>&gt; You are using a very old version of BibWord (1.0). A lot of bugs have been<br>&gt; fixed since. I suggest you update to the�latest version (2.3) which you<br>&gt; can find at<br>&gt; http://bibliography.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=23850All you have to do is copy the &quot;data&quot; element (&lt;xsl:variable<br>&gt; name=&quot;data&quot;&gt;...&lt;/xsl:variable&gt;) from your current style to the new one. The<br>&gt; formatting should be exactly the same. There just are a lot of bugs fixed<br>&gt; and more formatting options for those who need them.Let me know if that<br>&gt; fixes things. <br>&gt; <br>&gt; <br><br>-- <br>Neu: GMX FreeDSL Komplettanschluss mit DSL 6.000 Flatrate + Telefonanschluss f�r nur 17,95 Euro/mtl.!* http://dslspecial.gmx.de/freedsl-surfflat/?ac=OM.AD.PD003K11308T4569a",
+    "PostedDate": "2009-04-14T07:31:16.217-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

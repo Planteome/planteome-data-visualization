@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1432325",
+    "ThreadId": "640595",
+    "Html": "Hi, using the bibword styles in office 2016 preview (on both win and osx version), installing them as usual, doesn't seem to work. Am I missing something obvious or is it to be expected?<br />\n<br />\nedit: Actually, some of the styles do work: the ones that I can't use are CMSFootnote and MHRAFootnote, sorry<br />\n<br />\nThank you in advance<br />\n",
+    "PostedDate": "2015-06-29T09:59:50.567-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1432328",
+    "ThreadId": "640595",
+    "Html": "I did it. MHRAFootnote had a different code under the &quot;Handle the different types of input documents.&quot; section, I copied it from the working styles and now everything is ok.\r<br />\n<br />\nThis was the different / missing code to change:<br />\n<pre><code>&lt;xsl:choose&gt;\n      &lt;!-- Gets the name of the style as it will be displayed in Word 2007 / 2010. --&gt;\n      &lt;xsl:when test=&quot;b:StyleName&quot;&gt;\n        &lt;xsl:value-of select=&quot;msxsl:node-set($data)/general/stylename&quot;/&gt;\n      &lt;/xsl:when&gt;\n\n      &lt;!-- Gets the version information for the style in Word 2007 / 2010. --&gt;\n      &lt;xsl:when test=&quot;b:Version&quot;&gt;\n        &lt;xsl:value-of select=&quot;msxsl:node-set($data)/general/version&quot;/&gt;\n      &lt;/xsl:when&gt;\n\n      &lt;!-- Sets a version number in Word 2013. --&gt;\n      &lt;xsl:when test=&quot;b:XslVersion&quot;&gt;\n        &lt;xsl:choose&gt;\n          &lt;xsl:when test=&quot;msxsl:node-set($data)/general/version2013&quot;&gt;\n            &lt;xsl:value-of select=&quot;msxsl:node-set($data)/general/version2013&quot;/&gt;\n          &lt;/xsl:when&gt;\n          &lt;xsl:otherwise&gt;\n            &lt;!-- Fallback method : use a dummy version number of 1. --&gt;\n            &lt;xsl:text&gt;1&lt;/xsl:text&gt;\n          &lt;/xsl:otherwise&gt;\n        &lt;/xsl:choose&gt;\n      &lt;/xsl:when&gt;\n\n      &lt;!-- Set the name of the style in Word 2013. --&gt;\n      &lt;xsl:when test=&quot;b:StyleNameLocalized&quot;&gt;\n        &lt;xsl:value-of select=&quot;msxsl:node-set($data)/general/stylename&quot;/&gt;\n      &lt;/xsl:when&gt;</code></pre>\n\n",
+    "PostedDate": "2015-06-29T10:47:15.24-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1468001",
+    "ThreadId": "640595",
+    "Html": "Hi,\r<br />\n<br />\nI Just found your post, after asking for help about getting MHRA to work with 2016.  I have no idea how you got it to work.  Can you give me some pointers (where to put which file and what code to change in which file) please?\r<br />\n<br />\nThanks.<br />\n",
+    "PostedDate": "2016-03-25T11:15:47.797-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1468018",
+    "ThreadId": "640595",
+    "Html": "Hi, it's quite some time since I worked on it and I ended up modifying and using CMSFootnote, so I deleted my modified version of the MHRA. If you need, if I find some time tomorrow I'll give MHRA a try and (if I manage to recall what I did last year) report back to you.\r<br />\n<br />\nP.S. I'm not an expert in this kind of things, so even if I succeed, the result won't be &quot;perfect&quot;<br />\n",
+    "PostedDate": "2016-03-25T15:05:51.55-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

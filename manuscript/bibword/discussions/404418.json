@@ -1,0 +1,234 @@
+[
+  {
+    "Id": "946327",
+    "ThreadId": "404418",
+    "Html": "\r\n<p>I am trying to install some of the styles for Word 2013, but the path to the bibliography style folder seems to have changed, and I can't seem to find anything that looks right. Does anybody know how to get this working in Word 2013?</p>\r\n",
+    "PostedDate": "2012-11-23T21:37:36.923-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "951794",
+    "ThreadId": "404418",
+    "Html": "\r\n<p>I have the same issue using the new Microsoft Surface RT.&nbsp; It comes with Office 2013 already installed.&nbsp; I have posted this problem on the Surface Forum Website.&nbsp; Here is the URL:&nbsp;\r\n<a href=\"http://www.surfaceforums.net/forum/microsoft-surface-general-discussion/1955-microsoft-word-surface-rt-citation-styles-limitation.html\">\r\nhttp://www.surfaceforums.net/forum/microsoft-surface-general-discussion/1955-microsoft-word-surface-rt-citation-styles-limitation.html</a></p>\r\n<p>I would like to use the Chicago Style for footnotes, which I have already done on Office 2010.&nbsp; I have found some directories to put the Style into, but they don't get recognized by Word.&nbsp; These directories include:&nbsp;</p>\r\n<p>1) C:\\Users\\user_name\\AppData\\Roaming\\Microsoft\\Bibli ography\\Style<br>\r\nand<br>\r\n2) C:\\Program Files\\Microsoft Office\\Office15\\Bibliography\\Style</p>\r\n<p>3)C:\\Users\\&quot;User&quot;\\AppData\\Roaming\\Microsoft\\Template s\\LiveContent\\15\\Managed\\Word Document Bibliography Styles .</p>\r\n<p>I'm thinking that the CMSfootnotes style needs to be updated to work with Office 2013</p>\r\n<p>Making this work would be fantastic, since I hate having to use another machine just to insert a citation.</p>\r\n<p>Thanks</p>\r\n",
+    "PostedDate": "2012-12-05T09:58:22.513-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "951842",
+    "ThreadId": "404418",
+    "Html": "\r\n<p>I don't have access to a system with Word 2013. So I can't experiment. But if you can send me one of the XSL files from your computer (e.g. Chicago.xsl) I&nbsp;might be able to deduce&nbsp;what changed.&nbsp;</p>\r\n",
+    "PostedDate": "2012-12-05T11:30:40.413-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "951920",
+    "ThreadId": "404418",
+    "Html": "\r\n<p>Yves, I'm having the same problem with the CSE template. &nbsp;It doesn't work with Word 2013 as they have completely changed the files to use tests that are validated. I don't have the time to rewrite it in time for my paper. &nbsp;I can't figure out how to attach\r\n the built-in xml sheet to this as it keeps freezing with the code snippet as it's quite large. &nbsp;could you please email me at lluciano1@msn.com and I'll send you one of the files.</p>\r\n",
+    "PostedDate": "2012-12-05T13:42:30.92-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "951981",
+    "ThreadId": "404418",
+    "Html": "\r\n<p>Yves,</p>\r\n<p>I replied to the e-mail sent to me from your last post.&nbsp; I attached&nbsp;an XSL file from Office 2013.&nbsp; Hopefully you got it.</p>\r\n<p>I appreciate your help.</p>\r\n",
+    "PostedDate": "2012-12-05T16:19:07.813-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "956736",
+    "ThreadId": "404418",
+    "Html": "\r\n<p>Hi! I'm also having the same problem. I was wondering if this was already resolved? Thanks! I'm trying to insert the AMA Style of citation.</p>\r\n",
+    "PostedDate": "2012-12-16T17:25:07.99-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "958393",
+    "ThreadId": "404418",
+    "Html": "\r\n<div dir=\"ltr\">As far as I know, it hasn't been resolved yet. I just finished my exams this past week so I'll try to play around with the new citation formats and see if I can get something working. I ended up typing in manually in my document in the meantime.<br>\r\n<br>\r\nLisa<br>\r\n<br>\r\n<div>\r\n<div id=\"SkyDrivePlaceholder\"></div>\r\n<hr id=\"stopSpelling\">\r\nFrom: [email removed]<br>\r\nTo: [email removed]<br>\r\nDate: Sun, 16 Dec 2012 17:25:18 -0800<br>\r\nSubject: Re: Word 2013 Installation? [bibword:404418]<br>\r\n<br>\r\nFrom: namestupid70<br>\r\n<div id=\"ecxThreadNotificationPostBody\">Hi! I'm also having the same problem. I was wondering if this was already resolved? Thanks! I'm trying to insert the AMA Style of citation.<br>\r\n</div>\r\n<div id=\"ecxThreadNotificationFooter\">Read the <a href=\"http://bibword.codeplex.com/discussions/404418#post956736\" target=\"_blank\">\r\nfull discussion online</a>.<br>\r\nTo add a post to this discussion, reply to this email (<a href=\"mailto:bibword@discussions.codeplex.com?subject=[bibword:404418]\">bibword@discussions.codeplex.com</a>)<br>\r\nTo start a new discussion for this project, email <a href=\"mailto:bibword@discussions.codeplex.com\">\r\nbibword@discussions.codeplex.com</a><br>\r\nYou are receiving this email because you subscribed to this discussion on CodePlex. You can\r\n<a href=\"https://bibword.codeplex.com/discussions/404418/unsubscribe/\" target=\"_blank\">\r\nunsubscribe</a> on CodePlex.com.<br>\r\nPlease note: Images and attachments will be removed from emails. Any posts to this discussion will also be available online at CodePlex.com<br>\r\n</div>\r\n</div>\r\n</div>\r\n",
+    "PostedDate": "2012-12-19T05:45:38.007-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "986018",
+    "ThreadId": "404418",
+    "Html": "\r\n<p>In response to the last two posts:&nbsp; as far as I know, this has not been resolved.&nbsp; Yves, I'm curious to know if there has been any progress concerning this issue.&nbsp; Have you had an opportunity to look at the XSL file I sent?&nbsp; Or have you learned anything\r\n new?&nbsp; Thanks</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2013-01-12T18:12:03.253-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "986277",
+    "ThreadId": "404418",
+    "Html": "\r\n<p>Sorry but I can't find the XSL if you send it to me. Please try again. Mail it to the mail address you can find in the bibword XSL files.</p>\r\n",
+    "PostedDate": "2013-01-13T23:17:23.113-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "986420",
+    "ThreadId": "404418",
+    "Html": "\r\n<p>Thanks for styles.</p>\r\n<p>At first glance, there are two new fields in the XSL.</p>\r\n<p>An <strong>XslVersion </strong>number which is basically the version of the style (6 for APA 6th edition, 15 for Chicago 15th edition, ...)&nbsp;as far as I can derive from the examples I have.</p>\r\n<p>The second one is <strong>StyleNameLocalized </strong>which is the name of a style hardcoded for every language Word has for UI (very bad design, especially since they have a localization tree for everything else).&nbsp;I'm guessing a single value will do here.</p>\r\n<p>So, if anyone would be so kind to test the following and report back on success/failure (I don't have Office 2013, so I'm flying blind):</p>\r\n<p>In the BibWord XSL you are using, look for the following lines:</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:green\">&lt;!-- Handle the different types of input documents. --&gt;</span>\r\n<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">template</span> <span style=\"color:red\">match</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">/</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">&gt;</span>\r\n\r\n  <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">choose</span><span style=\"color:blue\">&gt;</span>\r\n    <span style=\"color:green\">&lt;!-- Gets the name of the style as it will be displayed in Word 2007. --&gt;</span>\r\n    <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">when</span> <span style=\"color:red\">test</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">b:StyleName</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>And then change them to (basically you are injecting a few extra lines)</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:green\">&lt;!-- Handle the different types of input documents. --&gt;</span>\r\n<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">template</span> <span style=\"color:red\">match</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">/</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">&gt;</span>\r\n\r\n  <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">choose</span><span style=\"color:blue\">&gt;</span>\r\n    <span style=\"color:green\">&lt;!-- Sets a dummy version number. --&gt;</span>\r\n    <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">when</span> <span style=\"color:red\">test</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">b:XslVersion</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">&gt;</span>\r\n      <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">text</span><span style=\"color:blue\">&gt;</span>10<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">text</span><span style=\"color:blue\">&gt;</span>\r\n    <span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">when</span><span style=\"color:blue\">&gt;</span>\r\n\r\n    <span style=\"color:green\">&lt;!-- We do not do localization, just use the default name. --&gt;</span>\r\n    <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">when</span> <span style=\"color:red\">test</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">b:StyleNameLocalized</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">&gt;</span>\r\n      <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">value-of</span> <span style=\"color:red\">select</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">msxsl:node-set($data)/general/stylename</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">/&gt;</span>\r\n    <span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">when</span><span style=\"color:blue\">&gt;</span>\t\r\n\t\r\n    <span style=\"color:green\">&lt;!-- Gets the name of the style as it will be displayed in Word 2007. --&gt;</span>\r\n    <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">when</span> <span style=\"color:red\">test</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">b:StyleName</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n<p><strong>Please report back on success and/or failure. Only with your input I can adapt all styles to work with Word 2013.</strong></p>\r\n</div>\r\n",
+    "PostedDate": "2013-01-14T05:27:36.84-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "986755",
+    "ThreadId": "404418",
+    "Html": "\r\n<p>Thank you for patiently working for this.</p>\r\n<p>You are an angel. I tried it with AMA.xml and it works! Thank you thank you!</p>\r\n",
+    "PostedDate": "2013-01-14T15:44:44.753-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "986770",
+    "ThreadId": "404418",
+    "Html": "\r\n<div>Yves,</div>\r\n<div>&nbsp;</div>\r\n<div>I am very grateful for your help!&nbsp; This worked beautifully once I found the correct directory to add the updated XSL spreadsheet&nbsp;into.&nbsp; It is different from my Windows 7 machine.&nbsp; On my Surface (which uses Windows RT) I have to put it into the following\r\n directory:</div>\r\n<div>C:\\Users\\user_name\\AppData\\Roaming\\Microsoft\\Bibliography\\Style</div>\r\n<div>Only this directory would work.&nbsp; I'm not sure what the others are for, especially since they have copies of the default XSL sheets in them.&nbsp; In any case, this worked, and I am a&nbsp;very happy Word 2013 user.&nbsp; This was the only major limitation I was facing\r\n on my Surface RT.</div>\r\n<div>Thanks again, a hundred times over.</div>\r\n",
+    "PostedDate": "2013-01-14T16:24:12.843-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "986895",
+    "ThreadId": "404418",
+    "Html": "\r\n<p>I'm glad it works.</p>\r\n<p>I'll do my best to update all styles later this week.</p>\r\n<p>Thanks for testing.</p>\r\n",
+    "PostedDate": "2013-01-15T01:15:07.123-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1006505",
+    "ThreadId": "404418",
+    "Html": "Hi Yves\r<br />\n<br />\nI am obviously doing something wrong.\r<br />\n<br />\nI have added the extra code pasted the update C:\\Users\\user_name\\AppData\\Roaming\\Microsoft\\Bibliography\\Style, but still I am not able to view it in the bibliography.\r<br />\n<br />\nI have also tried adding it C:\\Program Files\\Microsoft Office 15\\root\\office15\\bibliography\\style but it is looking for a .BAK file.\r<br />\n<br />\nIs there maybe another download for Office 2013? If not will I have to amend all the .XSL files\r<br />\n<br />\nPlease can you assist?\r<br />\n<br />\nWhat is the IEEE download?\r<br />\n<br />\nThanks\r<br />\nAlbert<br />\n",
+    "PostedDate": "2013-02-25T12:23:00.483-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1006551",
+    "ThreadId": "404418",
+    "Html": "Hi Yves \r<br />\n<br />\nI am obviously doing something wrong. \r<br />\n<br />\nI have added the extra code pasted the update C:\\Users\\user_name\\AppData\\Roaming\\Microsoft\\Bibliography\\Style, but still I am not able to view it in the bibliography. \r<br />\n<br />\nI have also tried adding it C:\\Program Files\\Microsoft Office 15\\root\\office15\\bibliography\\style but it is looking for a .BAK file. \r<br />\n<br />\nIs there maybe another download for Office 2013? If not will I have to amend all the .XSL files \r<br />\n<br />\nPlease can you assist? \r<br />\n<br />\nWhat is the IEEE download? \r<br />\n<br />\nThanks \r<br />\nAlbert<br />\n",
+    "PostedDate": "2013-02-25T13:50:45.38-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1018427",
+    "ThreadId": "404418",
+    "Html": "Hi mates,\r<br />\n<br />\nI am also struggling to put it to work.\r<br />\n<br />\nMy issue regards to the ABNT style as well.\r<br />\n<br />\nYves, could you rescue us?<br />\n<pre><code>-&lt;xsl:template match=&quot;/&quot;&gt;-&lt;xsl:choose&gt;\n&lt;!-- Sets a dummy version number. --&gt;\n-&lt;xsl:when test=&quot;b:XslVersion&quot;&gt;&lt;xsl:text&gt;10&lt;/xsl:text&gt;&lt;/xsl:when&gt;\n&lt;!-- We do not do localization, just use the default name. --&gt;\n-&lt;xsl:when test=&quot;b:StyleNameLocalized&quot;&gt;&lt;xsl:value-of select=&quot;msxsl:node-set($data)/general/stylename&quot;/&gt;&lt;/xsl:when&gt;\n&lt;!-- Gets the name of the style as it will be displayed in Word 2007. --&gt;\n-&lt;xsl:when test=&quot;b:StyleName&quot;&gt;&lt;xsl:value-of select=&quot;msxsl:node-set($data)/general/stylename&quot;/&gt;&lt;/xsl:when&gt;\n&lt;!-- Gets the version information for the style. --&gt;\n-&lt;xsl:when test=&quot;b:Version&quot;&gt;&lt;xsl:value-of select=&quot;msxsl:node-set($data)/general/version&quot;/&gt;&lt;/xsl:when&gt;\n&lt;!-- Gets a description of the style. (Word 2008 or later) --&gt;\n-&lt;xsl:when test=&quot;b:Description&quot;&gt;&lt;xsl:value-of select=&quot;msxsl:node-set($data)/general/description&quot;/&gt;&lt;/xsl:when&gt;\n&lt;!-- Gets the URL for updates. (Word 2008 or later) --&gt;\n-&lt;xsl:when test=&quot;b:UpdateURL&quot;&gt;&lt;xsl:value-of select=&quot;msxsl:node-set($data)/general/URL&quot;/&gt;&lt;/xsl:when&gt;\n&lt;!-- Retrieve the most important fields for a certain type of citation. --&gt;\n-&lt;xsl:when test=&quot;b:GetImportantFields&quot;&gt;&lt;xsl:variable name=&quot;type&quot; select=&quot;b:GetImportantFields/b:SourceType&quot;/&gt;-&lt;b:ImportantFields&gt;&lt;xsl:copy-of select=&quot;msxsl:node-set($data)/importantfields/source[@type = $type]/*&quot;/&gt;&lt;/b:ImportantFields&gt;&lt;/xsl:when&gt;</code></pre>\n\n",
+    "PostedDate": "2013-03-20T11:03:47.63-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1018581",
+    "ThreadId": "404418",
+    "Html": "It works. Make sure you insert the correct lines. The instructions are clear, but are easy to mess up. \r<br />\n<br />\nSomeone send me an XSL file earlier today which is incorrectly formatted. A part of the stylename test was gone. Basically there was only the opening of the when tag, it was never closed. So paying attention to the details is important.<br />\n",
+    "PostedDate": "2013-03-20T15:13:38.73-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1022166",
+    "ThreadId": "404418",
+    "Html": "Just did a few on my Surface RT with Office 2013. Works great. Using it with JabRef since I lost my Endnote capabilities. Export Ref database to JabRef, export to BibTex.xml for Word and import. Use your Styles to handle references.<br />\nthank you Sir for flying blindly ;)<br />\nOne silly noob question. For the ACS style you created (American Chemical Society), it's based on a source from 2009 I assume. Most recently the title of the reference is not included. So it should look like this: Koerner, H.; Kelley, J. J.; Vaia, R. A. <em>Macromolecules</em> <strong>2008</strong>, <em>41</em> (13), 4709.<br />\nHow would I go about to change the style to reflect this? <br />\nthanks again<br />\n<br />\nedit1: nevermind. Found the &lt;format&gt; line for JournalArticle and was able to fix it. Beautiful. Thank you.<br />\n<br />\nedit2: I do have a problem at the moment that I cannot figure out how to fix. The ACS style with superscript does not actually do superscript. The reference numbering shows up as regular font. I can superscript the reference numbers by changing font settings, however whenever I update references they go back to regular font. Any idea how to fix that?<br />\n<br />\nedit3: actually, it seems to work fine in Office 2010 and reference numbers are superscript. Not in 2013 though.<br />\n",
+    "PostedDate": "2013-03-27T17:38:53.7-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1022192",
+    "ThreadId": "404418",
+    "Html": "It worked!<br />\n<br />\nThanks Yves!<br />\n<br />\nThe thing is to find the right root. Since I haven't removed my prior Office, I was inserting on the same root<br />\n",
+    "PostedDate": "2013-03-27T19:50:34.59-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1029244",
+    "ThreadId": "404418",
+    "Html": "Sorry for the question, but how can I edit the xsl file.<br />\n<br />\nWhen I opened it in Internet Explorer I was not able to edit and insert the lines you recomened. I tried opening with Word Pad, but did not work. After I saved, I tried to open in Internet Explorer and the file seens to be with problem.<br />\n<br />\nCould you please help me?<br />\n<br />\nThank you<br />\n",
+    "PostedDate": "2013-04-11T15:29:21.953-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1029255",
+    "ThreadId": "404418",
+    "Html": "\r\n<div>\r\n<p><span style=\"font-size:11.0pt; font-family:\">Flávia, não precisa mais editar nada porque a versão que o Yves colocou já funciona no 2013.</span></p>\r\n<p><span style=\"font-size:11.0pt; font-family:\"></span></p>\r\n<p><span style=\"font-size:11.0pt; font-family:\">Agora se você quiser alterar alguma norma ABNT, divide com o resto do pessoal, se possível.</span></p>\r\n<p><span style=\"font-size:11.0pt; font-family:\"></span></p>\r\n<div>\r\n<div style=\"border:none; border-top:solid #E1E1E1 1.0pt; padding:3.0pt 0cm 0cm 0cm\">\r\n<p><b><span style=\"font-size:11.0pt; font-family:\">De:</span></b><span style=\"font-size:11.0pt; font-family:\"> FlaviaFreitas [email removed]\r\n<br>\r\n<b>Enviada em:</b> quinta-feira, 11 de abril de 2013 19:29<br>\r\n<b>Para:</b> Felippe De Medeiros Oliveira<br>\r\n<b>Assunto:</b> Re: Word 2013 Installation? [bibword:404418]</span></p>\r\n</div>\r\n</div>\r\n<p></p>\r\n<p><span style=\"font-size:9.0pt; font-family:\">From: FlaviaFreitas</span></p>\r\n<div id=\"ThreadNotificationPostBody\" style=\"margin-bottom:24.0pt\">\r\n<p><span style=\"font-size:9.0pt; font-family:\">Sorry for the question, but how can I edit the xsl file.\r\n<br>\r\n<br>\r\nWhen I opened it in Internet Explorer I was not able to edit and insert the lines you recomened. I tried opening with Word Pad, but did not work.\r\n<br>\r\n<br>\r\nCould you please help me? <br>\r\n<br>\r\nThank you</span></p>\r\n</div>\r\n</div>\r\n",
+    "PostedDate": "2013-04-11T16:12:55.927-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1029264",
+    "ThreadId": "404418",
+    "Html": "Felipe,\r<br />\n<br />\nOnde eu consigo essa versão?\r<br />\n<br />\nObrigada,\r<br />\nFlávia<br />\n",
+    "PostedDate": "2013-04-11T16:42:17.58-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1029266",
+    "ThreadId": "404418",
+    "Html": "Felipe,\r<br />\n<br />\nEu consegui editar e estava com o mesmo problema que você, eu não desinstalei o Office antigo, e não estava colocando no lugar certo. Ficou mais difícil, mas consegui!!!\r<br />\n<br />\nA versão que eu tenho é uma já modificada, pelo o que vi pelo Yves já com as correções necessárias para por ex 2 ou mais autores. Essa versão chama-se Universidade. Você a tem?\r<br />\n<br />\nFlávia<br />\n",
+    "PostedDate": "2013-04-11T16:48:10.967-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1029430",
+    "ThreadId": "404418",
+    "Html": "<strong>FlaviaFreitas wrote:</strong><br />\n<blockquote>\nSorry for the question, but how can I edit the xsl file.<br />\n<br />\nWhen I opened it in Internet Explorer I was not able to edit and insert the lines you recomened. I tried opening with Word Pad, but did not work. After I saved, I tried to open in Internet Explorer and the file seens to be with problem.<br />\n<br />\nCould you please help me?<br />\n<br />\nThank you<br />\n</blockquote>\nThere is no longer a need to edit the files. They have all been upgraded about 10 days ago to support Word 2013.\r<br />\n<br />\nIf you still want to edit an XSL file, any text editor will do. So notepad and wordpad should both work. It might be better to use an xml editor though as that will most likely tell you are you messing up the document by getting unbalanced tags or other problematic issues.<br />\n",
+    "PostedDate": "2013-04-12T02:17:42.467-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1029543",
+    "ThreadId": "404418",
+    "Html": "Yves, thank you for the update. Were you able to address the problem with superscript in Word 2013? See my post above. Superscript styles work fine in Word 2010, but as soon as I start the bibliography manager in 2013 superscript disappeas. Superscript comes back when I take the document into Word 2010.<br />\n",
+    "PostedDate": "2013-04-12T06:09:17.117-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1029653",
+    "ThreadId": "404418",
+    "Html": "I don't have Word 2013 yet, so I can't test. <br />\n<br />\nBut you got me wondering if they finally might have fixed that bug and now correctly process HTML for in-text citations. You can test yourself by changing one of the format strings from<br />\n<br />\n&lt;format&gt;{%RefOrder%}&lt;/format&gt;<br />\n<br />\nto<br />\n<br />\n&lt;format&gt;{&amp;lt;sup&amp;gt;%RefOrder%&amp;lt;/sup&amp;gt;}&lt;/format&gt;<br />\n",
+    "PostedDate": "2013-04-12T08:41:33.803-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1030381",
+    "ThreadId": "404418",
+    "Html": "tried a few things but could not get it to do superscript correctly with your suggested change. \r<br />\n<br />\ncheers<br />\n",
+    "PostedDate": "2013-04-14T21:01:53.977-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1065912",
+    "ThreadId": "404418",
+    "Html": "The whole thing is in the correct path! Thanks for the answer__<br />\n",
+    "PostedDate": "2013-07-08T21:17:58.573-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1076824",
+    "ThreadId": "404418",
+    "Html": "I cant intall vancouver style to office 2013.\r<br />\n<br />\nCan you help me?<br />\n",
+    "PostedDate": "2013-08-05T08:36:55.947-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

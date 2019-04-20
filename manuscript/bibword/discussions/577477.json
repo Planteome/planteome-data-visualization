@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1341029",
+    "ThreadId": "577477",
+    "Html": "Aloha ! i have some big problem with references, my university requires long version of footnotes (so it should looks like this in bibliography) could WE maybe give me some tips how do do this: <img src=\"http://i60.tinypic.com/vfkvux.jpg\" alt=\"Image\" /><br />\n",
+    "PostedDate": "2015-01-12T04:18:07.67-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1341386",
+    "ThreadId": "577477",
+    "Html": "Yves' xsl, 'CMSFootnote.XSL', will insert footnote citations in three forms: full, short &amp; 'ibid'.<br />\nHowever, this will not create a bibliography.<br />\nSome time ago I started editing the XSL to include a bibliography.<br />\nI have never finished editing it, but I am happy to share it with you.<br />\nSend me an email, if you wish, and I will give you more details.<br />\n<br />\nLionel Crator,<br />\nTau Editing.<br />\nProfessional Language Practitioner.<br />\n<a href=\"mailto:Tau.Editing@Yahoo.co.za\" rel=\"nofollow\">Tau.Editing@Yahoo.co.za</a><br />\n",
+    "PostedDate": "2015-01-13T02:21:16.743-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

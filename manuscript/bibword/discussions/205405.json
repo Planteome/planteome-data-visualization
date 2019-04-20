@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "419914",
+    "ThreadId": "205405",
+    "Html": "<p>I'm currently writing a report using the IEEE style downloaded from your site. It works well for in-text citations although when i go to make the bibliography the only styles that appear are MLA, APA, Chicago, and Turabian. If I try and create the bibliography, all of my in text citations are changed. Is there a fix for this?</p>",
+    "PostedDate": "2010-03-18T11:58:07.503-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "419987",
+    "ThreadId": "205405",
+    "Html": "<p>See <a href=\"http://bibword.codeplex.com/wikipage?title=Styles_FAQ#Q2\">http://bibword.codeplex.com/wikipage?title=Styles_FAQ#Q2</a></p>",
+    "PostedDate": "2010-03-18T14:32:24.407-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -14821,7 +14821,7 @@ return /******/ (function(modules) { // webpackBootstrap
           this.wrapper.appendChild(this.domElements[i]);
         }
 
-        this._showPopupIfNeeded();
+        //this._showPopupIfNeeded();
       }
 
       /**
@@ -15087,7 +15087,7 @@ return /******/ (function(modules) { // webpackBootstrap
     }, {
       key: '_removePopup',
       value: function _removePopup() {
-        if (this.popupDiv.html !== undefined) {
+        if (this.popupDiv.html !== undefined && this.popupDiv.html.parentNode !== null) {
           this.popupDiv.html.parentNode.removeChild(this.popupDiv.html);
           clearTimeout(this.popupDiv.hideTimeout);
           clearTimeout(this.popupDiv.deleteTimeout);

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "482274",
+    "ThreadId": "224090",
+    "Html": "<p>Any ideas how I could modify the ASA style to get a space after the colon in citations?</p>\r\n<p>&nbsp;</p>\r\n<p>Arruti (2006:67) should be Arruti (2006: 67)</p>",
+    "PostedDate": "2010-08-19T04:45:51.957-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "482417",
+    "ThreadId": "224090",
+    "Html": "<p>Change the format string. Page numbers in in-text citations are currently displayed using</p>\r\n<p>\r\n<p style=\"padding-left:30px\">{:%CitationPages:::e%}</p>\r\n<p>a change into</p>\r\n</p>\r\n<p style=\"padding-left:30px\">{: %CitationPages:::e%}</p>\r\n<p>should do the trick.</p>",
+    "PostedDate": "2010-08-19T10:42:24.113-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "482437",
+    "ThreadId": "224090",
+    "Html": "<p>It did... Thanks again!</p>",
+    "PostedDate": "2010-08-19T11:39:45.523-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

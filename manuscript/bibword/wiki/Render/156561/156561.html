@@ -1,0 +1,15 @@
+<div class="wikidoc"><h2>BibWord Extender</h2><a href="https://bibword.codeplex.com/releases/view/24823">Latest version (v.2.0)</a>
+<h4>Introduction</h4>Microsoft Word handles the formatting of citations in a rather odd way. Each citation is seen as a separate entity, i.e., a citation is mostly unrelated to the other citations and completely unrelated to any bibliography in the same document. Although this approach might have some advantages, it also has a lot of drawbacks. For example, it is not possible to communicate the position of a source in a bibliography to its citation. Hence, the possibilities for numbered references are rather limited.<br /><br /><i>BibWord Extender</i> is an external tool which allows certain styles developed using the <a href="https://bibword.codeplex.com/wikipage?title=BibWord&referringTitle=BibWord%20Extender">BibWord</a> template to overcome some of the shortcomings in the Word bibliography system. The tool interacts with a special part of a BibWord bibliography stylesheet and updates all sources in a Word document.
+<h4>Extended Sources</h4>Using <i>BibWord Extender</i>, the following extra nodes can be added to a source:
+<ul><li><b>BibOrder</b>: a variable indicating the order of a source in a bibliography. This can be useful for in-text citations as Word only allows the use of the in-text reference order. To use this variable, the <i>sortkey</i> element has to be defined by the style. </li>
+<li><b>YearSuffix</b>: a variable providing a one character suffix for years. This can be useful if multiple works written by the same author in the same year are cited in the text and are otherwise indistinguishable. To use this variable, both the <i>sortkey</i> and the <i>yearsuffix</i> element have to be defined by the style.</li></ul>
+More information on the variables can be found in the &#39;BibWord Guide&#39; which comes with <a href="https://bibword.codeplex.com/wikipage?title=BibWord&referringTitle=BibWord%20Extender">BibWord</a>.
+<h4>Usage</h4>The common way to work with the BibWord Extender is:
+<ol><li>Create your document.</li>
+<li>Select the bibliography style you want to use.</li>
+<li>Save your document and close Word 2007.</li>
+<li>Run the BibWord Extender tool.</li>
+<li>Open your document and select the style again (so all citation and bibliography fields get updated).</li></ol>
+<h4>BibWord Extender on Mac OS X</h4>As of version 2.0, BibWord Extender can be used on Mac OS X through Mono. See the latest release on how to do so.
+<h4>Naming Convention</h4>Although you can name styles which require BibWord Extender any way you want, it would be nice if they all ended with a star (*). That way users might more easily realise that they need an extra tool if they want their in-text citations and bibliography to be formatted correctly.
+<h4>History</h4>See <a href="https://bibword.codeplex.com/wikipage?title=History&referringTitle=BibWord%20Extender&ANCHOR#Extender">project history</a>.</div><div class="ClearBoth"></div>

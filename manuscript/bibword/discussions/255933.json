@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "605675",
+    "ThreadId": "255933",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>BibWord looks good but my organisation has me stuck in a 2003 time warp.</p>\r\n<p>Is there any BibWord support for Word 2003 ?</p>\r\n<p>BibWord's home page suggest support for 2007 onward.</p>\r\n<p>Thanks !</p>\r\n",
+    "PostedDate": "2011-05-01T20:05:47.437-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "605818",
+    "ThreadId": "255933",
+    "Html": "<p>The citation and bibliography features were&nbsp;first added to Word 2007 by Microsoft. BibWord builds on those features so no, you can't use it with Word 2003.</p>",
+    "PostedDate": "2011-05-02T05:37:03.05-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

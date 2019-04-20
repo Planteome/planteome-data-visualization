@@ -1,0 +1,74 @@
+[
+  {
+    "Id": "483763",
+    "ThreadId": "224556",
+    "Html": "<p>First off, this is a fantastic piece of software and has saved me so much time.</p>\r\n<p>&nbsp;</p>\r\n<p>I'm making changes to the Harvard - Exeter style as its extremely similar to my university's style.<br><br>There are 2 small changes I need to make to the web site reference.</p>\r\n<p>1)<br>&quot;Available:&quot; needs to change to &quot;Available from&quot;</p>\r\n<p>&nbsp;</p>\r\n<p>2)<br>The URL should be encapsulated in &lt;&gt;</p>\r\n<p>&nbsp;</p>\r\n<p>I've been trying to edit the styles on my own, but when I use bibword extender to reload the styles my new one doesn't show up. Can someone please help?</p>\r\n<p>thanks,</p>\r\n<p>Richard</p>",
+    "PostedDate": "2010-08-23T12:50:21.81-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "485940",
+    "ThreadId": "224556",
+    "Html": "<p>Regarding 1:</p>\r\n<p>A simple find/replace operation in the xslt should do the trick:</p>\r\n<ul>\r\n<li>find what (without the quotes): &quot;Available:&quot;</li>\r\n<li>replace with (without the quotes): &quot;Available from&quot;</li>\r\n</ul>\r\n<p>Regarding 2:</p>\r\n<p>There seems to be an inconsistency in the current style on how URLs are displayed (some are shown as hyperlinks and some aren't). As soon as I have some more time, I will look into this. But for now, you could do the following two find/replace operations in the xslt:</p>\r\n<li style=\"padding-left:30px\">find what (without the quotes): &quot;%URL%&quot;</li>\r\n<li style=\"padding-left:30px\">replace with (without the quotes): &quot;&amp;lt;%URL%&amp;gt;&quot;</li>\r\n<p>and</p>\r\n<li style=\"padding-left:30px\">find what (without the quotes): &quot;%URL:l%&quot;</li>\r\n<li style=\"padding-left:30px\">replace with (without the quotes): &quot;&amp;lt;%URL:l%&amp;gt;&quot;</li>\r\n<p>Let me know if that doesn't fix the issue.</p>",
+    "PostedDate": "2010-08-28T02:08:16.143-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "677201",
+    "ThreadId": "224556",
+    "Html": "<p>Hello,</p>\r\n<p>I did not want to start a new topic, so i decide to write in this old one. Sorry for any inconvenience.</p>\r\n<p>I have similar problem. I'm modified MHRA Footnotes with the same reason as rober159. Now i have only problem with URLs. In line wchich starts: source type=\"InternetSite\" i tried to modify on many different ways \"%URL%\". It seems that when i use option L i can't change any citation values like pages. In any other ways i cant display full http link encapsuled in &lt;&gt;. For now i just type \"&amp;lt; %URL% &amp;gt;\" but it brakes the line where link starts.</p>",
+    "PostedDate": "2011-09-27T08:19:45.833-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "677285",
+    "ThreadId": "224556",
+    "Html": "<p>What do you mean by \"i can't change any citation values like pages\"? What are you doing exactly to try to change those values?</p>",
+    "PostedDate": "2011-09-27T10:52:28.593-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "677995",
+    "ThreadId": "224556",
+    "Html": "<p>When I've added my citation i tried to edit values of this citation. There should be options like suppress year, author etc. and there i usually can type pages for this citation. For Internet site (even before editing in xsl file) i click on citation and there is no options like edit citation or edit source. I even can't convert it to static text. It happens only when I add URL adress to the source. I tried to modify xsl to handle this issue, but any methods i used won't let me avoid this problem. For now i just type space to separate \"&lt;&gt;\" from \"%URL%\".</p>\r\n<p>Thanks for help</p>",
+    "PostedDate": "2011-09-28T22:11:07.067-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "678107",
+    "ThreadId": "224556",
+    "Html": "<blockquote style=\"padding-right: 0.25em; padding-left: 0.25em; padding-bottom: 0px; margin: 0.25em 1em 0px; padding-top: 0px; font-style: italic; border: #ccc 0.1em solid;\"><strong>khuzzuk wrote:</strong><br />\r\n<p>There should be options like suppress year, author etc. and there i usually can type pages for this citation.</p>\r\n</blockquote>\r\n<p>No there shouldn't be. The context menu of hyperlinking takes precedence over all other context menus.</p>\r\n<p>Try placing your outside any hyperlink in your in-text citation and then right-click so the normal context menus can be displayed.</p>\r\n<p>Tip: if your citation is something like (1, 2) then you can show the context menu for the first one by putting your cursor between \"1\" and \",\" and for the second one by putting your cursor between \"2\" and \")\".</p>",
+    "PostedDate": "2011-09-29T03:58:23.96-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "678119",
+    "ThreadId": "224556",
+    "Html": "<p>My citation don't contain any hyperlinks. I just type URL in source manager and then i just place citation. When i click on it i can get to \"citation options\", but there is only two out of four - there is only \"convert to static text\" and \"actualize sources\". There should be also \"edit source\" and \"edit citation\". For some reason a can't get those two. There is no context menu of hyperlink becouse i dont have any of them. In xsl file for citation i use option \"%URL\", not %URL:l%\". When I try to use&nbsp;\"&amp;lt;%URL%&amp;gt;\" then in citation there is no URL at all, but when i use&nbsp;\"&amp;lt;%URL:l%&amp;gt;\" i cant modify citation options which i described before. It is no an hyperlink issue.</p>\r\n<p>Sorry for unclear explanation of my problem.</p>",
+    "PostedDate": "2011-09-29T04:32:51.067-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "678146",
+    "ThreadId": "224556",
+    "Html": "<p>Which version of Word are you using? Because I have never seen the exact term&nbsp;'actualize sources' on any Windows version.</p>\r\n<p>The fact that you don't see any hyperlinks doesn't mean they aren't there. For example, if you would be able to ctrl+click the in-text/footnote citation to get to the bibliography then there would be a hyperlink there.</p>\r\n<p>Instead of \"&amp;lt;%URL%&amp;gt;\" try using \"&amp;lt;&amp;lt;span/&amp;gt;%URL%&amp;gt;\". This was a fix introduced in the mainline BibWord releases (non footnote) a while ago.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2011-09-29T05:28:05.267-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "678159",
+    "ThreadId": "224556",
+    "Html": "<p>Thank you very much. This solution solved the problem completely. I'm using polish version, so i don't know exact source naming of options, this was my free translation. There was no hyperlinks, i know about those formated as normal text, but ctrl+click didn't result in any way. This was probably bug and it is now fixed with your trick.</p>",
+    "PostedDate": "2011-09-29T06:04:54.547-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

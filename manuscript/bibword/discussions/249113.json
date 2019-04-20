@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "578133",
+    "ThreadId": "249113",
+    "Html": "\r\n<p>While working on in-text citations of the AMA style I stumbled on another problem.</p>\r\n<p>The style organises all citations in the citation sequence (order). And it works perfectly.</p>\r\n<p>But sometimes you have to use several citations in one place (inside brackets). Or you decide to add some citations to already existing ones.<br>\r\nFor example: [122, 51, 32, 78].</p>\r\n<p>According to the requirements of the university I work for - all numbers within brackets must be sorted from the lowest to the highest number: &nbsp;[32, 51, 78, 122].<br>\r\nDo you think it's possible to improve the XSL script so that the numbers are sorted in this way&nbsp;after updating the bibliography?</p>\r\n<p>Regards,<br>\r\nProzac</p>\r\n",
+    "PostedDate": "2011-03-09T16:55:23.393-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "578232",
+    "ThreadId": "249113",
+    "Html": "<p>No. Due to a design flaw this is not possible. In-text citations are not aware of their neighbours or their position within a group. So it is not possible to write code to sort them, even if you would do it from scratch.</p>\r\n<p>It might be possible to write a complex macro which grabs the field code for each citation field and then tries to sort them but that's going to be a lot of work as flags have to be taken into account.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2011-03-09T23:16:12.997-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "578570",
+    "ThreadId": "249113",
+    "Html": "<p>Yeah, I thought so :-(<br />Thanks yves.</p>\r\n<p>It would be more comfortable if Word could show (display) those numbers in the citation list (the list which appears after clicking the Insert Citation button).<br />This way I could check the numbers assigned to citations I want to insert and add them in a desired order.</p>\r\n<p>BTW, are there any improvements in Word 2010 comparing to 2007 in this area?</p>",
+    "PostedDate": "2011-03-10T11:02:40.063-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "578578",
+    "ThreadId": "249113",
+    "Html": "<p>You can change what is displayed in that list. See the last post by me at <a href=\"http://bibword.codeplex.com/discussions/41611\">http://bibword.codeplex.com/discussions/41611</a></p>\r\n<p>In your case, you probably want to use b:RefOrder over b:Tag and not take b:RefOrder into account when building your b:SortKey.</p>\r\n<p>Not however that the numbers are pretty useless if the citations is not yet cited in the text as the number reflects the reference order. Uncited sources will just get a number higher than the highest cited one.</p>",
+    "PostedDate": "2011-03-10T11:16:37.01-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "578648",
+    "ThreadId": "249113",
+    "Html": "<p>Hmm... You are right. The numbers are useful only for already cited sources.<br />I think the alphabetical order of the \"Insert Citation...\" list (with authors names) is the best idea since it is much easier to find a given source.<br />But some additional info in the list would be helpful. So maybe the best solution would be to display numbers and also (probably more useful) to somehow mark all cited sources.</p>",
+    "PostedDate": "2011-03-10T12:49:13.083-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "579166",
+    "ThreadId": "249113",
+    "Html": "<p>I modified the code you posted in the mentioned link.<br />I thought the following format would look better for me:<br /><strong>Author - [ref No]</strong><br /><em>Title and rest</em></p>\r\n<p>And here is the code:<br />&lt;b:DisplayAuthor&gt;<br />&nbsp; &nbsp;&lt;xsl:value-of select=\"$displayAuthor\"/&gt;<br />&nbsp; &nbsp;&lt;xsl:text&gt; - [&lt;/xsl:text&gt;<br />&nbsp; &nbsp;&lt;xsl:value-of select=\"b:RefOrder\"/&gt; &nbsp;<br />&nbsp; &nbsp;&lt;xsl:text&gt;]&lt;/xsl:text&gt;<br />&lt;/b:DisplayAuthor&gt;</p>\r\n<p>Is it correct?</p>\r\n<p>If I don't want to change the the way the list is sorted then I don't have to implement any changes in the &lt;b:SortKey&gt; section, right?</p>\r\n<p>It would be really wonderful if it was possible to somehow mark all cited items in the list.</p>",
+    "PostedDate": "2011-03-11T10:41:29.857-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "579465",
+    "ThreadId": "249113",
+    "Html": "<p>I believe that should work.</p>\r\n<p>The sources passed to the xsl are not aware of their environment. They have no idea if they have been cited or not.</p>\r\n<p>The information on which sources have been cited and which have not is stored in the Word object model though. So in theory you could create your own dropdown in Word where you take this information into account. A lot of work, but doable.</p>",
+    "PostedDate": "2011-03-12T07:10:17.923-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "579490",
+    "ThreadId": "249113",
+    "Html": "<p>I see. Once again, thanks for your help and all advices!</p>",
+    "PostedDate": "2011-03-12T09:02:33.44-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

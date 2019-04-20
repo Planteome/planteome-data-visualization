@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "178215",
+    "ThreadId": "52994",
+    "Html": "Hello again!<div><br></div><div>I've noticed something weird about the style I'm writing: if I choose to display URL, I <span style=\"font-style:italic\">need</span> to set it to show up as a link, otherwise it won't work. Is there a way to solve this?</div><div><br></div><div>This is my code:</div><div><br></div><div>&lt;format&gt;{%Author|Editor:3|Title%.}{ &amp;lt;b&amp;gt;%Title|ShortTitle%&amp;lt;/b&amp;gt;.}.{ %City%{ (%StateProvince%)}{: %Publisher%{, %Year%}}}{. Disponível em: &amp;lt;%URL:l%&amp;gt;.{ Acesso em: %DayAccessed%{ %MonthAccessed:s%}{ %YearAccessed%}}}.&lt;/format&gt;<br></div><div><br></div><div>I needed it to be URL, with no addtional parameter, between these (&lt; &gt;) guys.</div><div><br></div><div>Sorry for bothering again!</div>",
+    "PostedDate": "2009-04-11T11:42:45.103-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "178255",
+    "ThreadId": "52994",
+    "Html": "<p>You can use the following workaround: replace</p>\r\n<p>    &amp;lt;%URL:l%&amp;gt;</p>\r\n<p>with</p>\r\n<p>    &amp;lt;&amp;lt;span style=&quot;display:none;&quot;&amp;gt; &amp;lt;/span&amp;gt;%URL%&amp;gt;</p>\r\n<p>The issue is because you are placing the url between &lt; and &gt;. The stylesheet generates HTML and passes it to Word. Due to the way BibWord works, &lt;http://www.yoururl.com&gt; gets seen as a HTML tag. As it is an unprocessable tag, it is ignored by Word (this is correct behaviour from Word). I'm going to look into it, but I doubt this can be fixed as it would imply a totally different treatment of strings for formatting.</p>\r\n<p>Yves</p>\r\n",
+    "PostedDate": "2009-04-11T15:49:45.033-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "178271",
+    "ThreadId": "52994",
+    "Html": "Aah, that worked! Thank you very much again, Yves! I guessed it wouldn't work when I wrote &amp;gt; and &amp;lt;. I thought &quot;Hmm, if Word renders that as HTML code when I'm trying to get bold, I don't think this is gonna work. ... And it didn't, heh. Still, I can't understand how it works when you add the l parameter...<div><br></div><div>Again, thanks!</div>",
+    "PostedDate": "2009-04-11T18:26:46.59-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "178311",
+    "ThreadId": "52994",
+    "Html": "<p>It works with the 'l' parameter because you created a valid tag inside. Basically, you get something looking like this:</p>\r\n<p>    &lt;&lt;a href=&quot;http://www.yoururl.com&quot;&gt;http://www.yoururl.com&lt;/a&gt;&gt;</p>\r\n<p>Tags are defined by &lt; followed by a character. As in this case, &lt; is followed by another instance of &lt;, the HTML parser is smart enough to not see the first &lt; as the beginning of a tag.</p>\r\n<p>Thinking along those lines, my original workaround can even be bettered by just using an empty, meaningless tag rather than a hidden portion:</p>\r\n<p>    &amp;lt;&amp;lt;span/&amp;gt;%URL%&amp;gt;</p>\r\n<p>which, would result in HTML looking like this:</p>\r\n<p>&lt;&lt;span/&gt;http://www.yoururl.com&gt;</p>\r\n",
+    "PostedDate": "2009-04-12T02:43:45.59-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

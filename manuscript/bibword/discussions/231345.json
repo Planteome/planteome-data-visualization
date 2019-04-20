@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "508868",
+    "ThreadId": "231345",
+    "Html": "<p>Hi,</p>\r\n<p>I use the NATURE Stylesheet in Word2008 (Mac). What I dislike is that citations (shown as numbers) in the text are written in bold. For a comment how to change the format in the stylesheet I would be very thankful.</p>\r\n<p>SCHEM</p>",
+    "PostedDate": "2010-10-18T09:22:04.007-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "508898",
+    "ThreadId": "231345",
+    "Html": "<p>The stylesheet does not put the in-text citations in bold. However, there seems to be a 'feature' in Word where the in-text citations inherit the style of the Heading 2 character style. So if that style&nbsp;uses bold, the in-text citations will probably end up in bold as well.&nbsp;</p>\r\n<p>The solution which should work on all systems (even those not supporting macros)&nbsp;is breaking the link between the paragraph and character style by linking a different character style to the paragraph style. That way, you would be able to keep the heading 2 formatting separate from the citations. However, as far as I know, this is not possible through the Word interface (but I could be mistaken). It can be done by directly changing the link in the underlying&nbsp;xml, but that is cumbersome an can only be done by specialists.</p>\r\n<p>In the Windows versions of Word, you can apply direct formatting using a macro to get around the issue. The macro at <a href=\"http://bibword.codeplex.com/wikipage?title=Styles_FAQ#Q9\">http://bibword.codeplex.com/wikipage?title=Styles_FAQ#Q9</a>&nbsp;works for superscript, but you can easily adapt it&nbsp;for&nbsp;removing any bold formatting. I'm guessing you could do it manually as well on a Mac version. It's a bit of work, but it should be doable.</p>\r\n<p>As to why the link between the heading 2 character style and in-text citations exist in the first place, nobody at Microsoft could ever answer me.</p>",
+    "PostedDate": "2010-10-18T10:22:16.633-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

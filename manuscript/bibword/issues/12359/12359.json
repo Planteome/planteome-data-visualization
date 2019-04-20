@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "THis was translated from another post here initially written in spanish:\nfor Windows 10 office 2016 x64:\nc: /Users / xxx (user) / AppData (if you don't see AppData: Open Folder Options by clicking the Start button , clicking Control Panel, clicking Appearance and Personalization, and then clicking Folder Options. Click the View tab.Under Advanced settings, click Show hidden files and folders, and then click OK.) / Roaming / Microsoft / Bibliography / Style (and opens this folder. Then you open your folder containing the styles of BibWord and copy all the styles you need in this folder: Close the program and restart word.",
+    "LastUpdatedDate": "2016-03-22T14:07:19.04-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "bibword",
+    "ReportedDate": "2016-03-22T14:07:19.04-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Office 2016 new path for Bibliography styles",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 12359
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

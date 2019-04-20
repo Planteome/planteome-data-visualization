@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1226838",
+    "ThreadId": "540180",
+    "Html": "I would like to use the proper APA guidelines and use both  &quot; Author (Year) &quot; and &quot; (Author, Year) &quot; in the same document.\r<br />\n<br />\nSee the following examples:\r<br />\n&quot;According to Brockmann (1999) the following applies ... &quot;\r<br />\n&quot;Research was carried out and no evidence was found (Franklin, 2001).&quot;\r<br />\n<br />\nIs this possible?<br />\n",
+    "PostedDate": "2014-03-26T02:59:36.35-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1226842",
+    "ThreadId": "540180",
+    "Html": "I would advise you not to do it, as a consistent writing style is much more appreciated by readers. That said, if you right click on an in-text citation, you should have an option 'Edit Citation', there you can suppress the author. You would then manually have to type the name in front of the brackets. \r<br />\n<br />\nThere is no way to offer two different fully functional formatting styles for in-text citations in the same document by default in Word. If you are adventurous and have some xslt skills, you could abuse one of the field switches and create your own implementation supporting just this.<br />\n",
+    "PostedDate": "2014-03-26T03:08:12.693-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

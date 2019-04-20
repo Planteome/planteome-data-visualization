@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2010-03-08T00:22:44.327-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi there, I wonder if any of you can help me...\n \nWhenever I click on the download button, a box appears asking me to agree or disagree to the T&Cs.  Obviously I agree to them.  The box then disaapears and the little help bar at the top of the internet explorer window (below the tabs) appears.  I click on this and select 'download file'.  Then ... nothing happens!!  How can I download this tool?  I have been able to download it before but I had to install a new harddrive and so I now need it again (because it's a bloody  useful thing!)\n \nAny advice would be great,\n \nThanks",
+    "LastUpdatedDate": "2013-05-16T05:29:23.857-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "bibword",
+    "ReportedDate": "2010-03-05T04:03:47.763-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Bib word wont download!",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 5503
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "I'm guessing this is related to http://codeplex.codeplex.com/Thread/View.aspx?ThreadId=155508\r\n\r\nI propose you contact CodePlex directly as is suggested in that thread.",
+      "PostedDate": "2010-03-08T00:22:35.96-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-03-08T00:22:44.327-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:20:27.103-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:29:23.857-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

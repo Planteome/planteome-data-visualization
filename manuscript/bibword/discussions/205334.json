@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "419548",
+    "ThreadId": "205334",
+    "Html": "<p>Hello everyone,</p>\r\n<p>First of all, I'd like to stay that I'm new here, and still somewhat of a novice when using Microsoft Word 2007 styles.&nbsp; I'm currently writing my MS thesis, and came across the IEEE_Reference style within this package: http://bibword.codeplex.com/releases/view/15852#ReviewsAnchor</p>\r\n<p>It is a lifesaver!&nbsp; <span id=ReviewListText0>My only qualm is something odd I regarding formatting inheritance of the in-text citations.</span></p>\r\n<p><span id=ReviewListText0>I noticed  that when I change the font format of &quot;Heading 2&quot; in word, it changes  the font format of the in-text references.  For example, if I use underlined or italicized  font in &quot;Heading 2&quot;, it applies this to the references.  I haven't  noticed this with other headings.&nbsp; Is there an easy way to fix this?  Or, perhaps I'm unaware of something  going wrong on my end.</span></p>\r\n<p><br>Any help would be greatly appreciated, as I'm trying to finish this by a quickly approaching deadline *eek*</p>\r\n<p>Thank you in advance,</p>\r\n<p>Paul</p>",
+    "PostedDate": "2010-03-17T23:03:18.497-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "419569",
+    "ThreadId": "205334",
+    "Html": "<p>In-text citations cannot be assigned a style from inside the xsl. Word gets rid of most styling information when inserting the transformation result. As a result it is for example not possible to provide superscripted in-text citations through a stylesheet. I guess Microsoft&nbsp;picked this approach as in-text citations tend to&nbsp;be part of a paragraph.</p>\r\n<p>As to why you see the behaviour that you see, some of your styles must be linked in some way. It's a common error in IEEE templates (they probably all originate from the same master document containing the issue).</p>\r\n<p>There are 3 possible solutions:</p>\r\n<ol>\r\n<li>Fix your template. If you find out what style is going haywire, you might be able to fix it.</li>\r\n<li>Disable linking of in-text citations. Look for &lt;citation_as_link&gt; in the xsl and set the value to no.&nbsp;<a href=\"http://bibword.codeplex.com/Thread/View.aspx?ThreadId=75754\">Similar reports</a> on this issue showed that the hyperlinking is somehow affected by other styles.</li>\r\n<li>Apply a macro overwriting all in-text citation formatting information. See <a href=\"http://bibword.codeplex.com/wikipage?title=Styles_FAQ#Q9\">http://bibword.codeplex.com/wikipage?title=Styles_FAQ#Q9</a>&nbsp;for the macro. This macro sets all in-text citations to superscript, you might want to change the line responsible for that into something more appropriate (you could even try just removing it to see if that fixes things). The line is:<br>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>s.Font.Superscript = <span style=\"color:Blue\">True</span></pre>\r\n</div>\r\n</li>\r\n</ol>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-03-18T00:50:31.087-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "419864",
+    "ThreadId": "205334",
+    "Html": "<p>Hello yves,</p>\r\n<p>Thank you for the speedy response.</p>\r\n<p>1. This sounds like a good option.&nbsp; Unfortunately, I'm not sure how to do this.&nbsp; Is the template a master word document located somewhere?&nbsp; I'm a noob to xsl code, but see that the line &lt;xsl:template ...&gt; occurs quite often; I assume this is referencing the above said template.</p>\r\n<p>2. I did this, and it worked.&nbsp; Unfortunately, I need my citations to be linked between in-text and the reference page for university approval.</p>\r\n<p>3. Do I apply the macro within the IEEE_Reference style sheet, at the end?&nbsp; I've never used them before.</p>\r\n<p>&nbsp;</p>\r\n<p>Thank you again!</p>\r\n<p>EDIT: I just figured out how to use (3), and it seems to work if I simply remove the following line: s.Font.Superscript = True.</p>\r\n<pre><span style=\"color:Blue\"></span></pre>",
+    "PostedDate": "2010-03-18T09:57:59.113-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "419885",
+    "ThreadId": "205334",
+    "Html": "<p>Regarding 1: It has nothing to do with the xslt, it has to do with the document template (dot, dotm)&nbsp;you started from. This could even be an existing&nbsp;document of which you deleted the content and then started again. Somewhere in there, there must be a connection which links styles together resulting in the behaviour you observe.</p>\r\n<p>Regarding 3: You can apply this whenever you want. If you add a new citation (or after you added a dozen new citations), you should just reapply the macro. It just applies the same style to all in-text citations whenever it is executed.</p>",
+    "PostedDate": "2010-03-18T10:44:24.03-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "422487",
+    "ThreadId": "205334",
+    "Html": "<p>Hi, yup I have the same problem. &nbsp;My in text reference is some how related to heading two. &nbsp;I would rather keep the hyperlink, and not have to dabble in macros. &nbsp;</p>\r\n<p>Since I know that the heading two is affecting the problem, is there a way to break the link to intext citations?. &nbsp;I have tried style inspector and modifying styles but I am still unaware of how to break the link. &nbsp;</p>\r\n<p>If I change the referencing style to ISO numerical reference the intext citation is completely ok. &nbsp;This leads me to the question of why the ISO numerical would be fine but the IEEE reference order causes this change (as it is based on the iso numerical order). &nbsp;</p>\r\n<p>I did however start my document of with another document from which I deleted certain parts. &nbsp;And the problem does&nbsp;disappear&nbsp;when I start my own document and set my own styles. &nbsp;Perhaps this problem can be traced to the templates provided by the IEEE <a href=\"http://www.ieee.org/web/publications/authors/transjnl/index.html#template\">http://www.ieee.org/web/publications/authors/transjnl/index.html#template</a>. &nbsp;Since this template is quite widespread, there should be a simple way to remove the linking.</p>\r\n<p>Either way I would like to know how to break the link between the heading 2 styles and the intext reference, without having to resort to excessive coding or macros.</p>\r\n<p>Thanks for the Referencing order.</p>\r\n<p>Regards</p>",
+    "PostedDate": "2010-03-23T04:08:21.997-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "422597",
+    "ThreadId": "205334",
+    "Html": "<p>Add hyperlinking to the ISO numerical reference style and you will see the same behaviour. It's the hyperlinking that is causing the behaviour.</p>\r\n<p>A reference style outputs HTML which is then converted by Word to WordML. You don't have any control on how that conversion happens. For some dark mysterious reason, the &lt;a&gt; tag used to allow hyperlinking from in-text citations gets translated into &quot;Heading 2 Char&quot; style on that IEEE document.</p>\r\n<p>To make matters worse, you have limited to no options for formatting in-text citations through the reference style. Word tends to remove any formatting information with the exception of the most basic (i, b, u). An illustration of this behaviour is the inability to add superscripted in-text citations through the xslt. So defining your own style in the IEEE&nbsp;reference style to overwrite the current behaviour is not possible.</p>\r\n<p>If you want to solve this through the styles in Word, I can think of only one way. Remove the &quot;Heading 2&quot; style and create a new one. Either don't make it linked, or link it to another style than the &quot;Heading 2 Char&quot; character style. Then change the &quot;Heading 2 Char&quot; style (which is now no longer linked to the &quot;Heading 2&quot; linked style) to follow normal formatting. As to how to delete a linked heading style in Word, you will have to check with someone who is more knowledgable about Word than I am.</p>",
+    "PostedDate": "2010-03-23T08:24:51.807-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

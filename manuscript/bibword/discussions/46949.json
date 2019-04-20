@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "157050",
+    "ThreadId": "46949",
+    "Html": "Thank you for your bibliography extension. At the moment I`ll use the &quot;ISO 690 First Element and Date&quot; for an document. I`d like to change one issue...<br>\r\nThe authors are sorted. If there are more than one references to the same author, the style will make a dash instead of the author. How could I remove the dash and see the author again?<br>\r\ne.g.:<br>\r\n<strong><span lang=EN-US style=\"font-size:12pt;line-height:150%;font-family:'garamond','serif'\">Porter, Michael E. 1991. </span></strong><em><span lang=EN-US style=\"font-size:12pt;line-height:150%;font-family:'garamond','serif'\">National</span></em><strong><span lang=EN-US style=\"font-size:12pt;line-height:150%;font-family:'garamond','serif'\">...<br>\r\n—. 1990.</span></strong><span lang=EN-US style=\"font-size:12pt;line-height:150%;font-family:'garamond','serif'\"> <em>The Competitive Advan....<br>\r\n</em>Thanks<em><br>\r\n</em></span>\r\n",
+    "PostedDate": "2009-02-12T07:11:28.277-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "157058",
+    "ThreadId": "46949",
+    "Html": "That's a Microsoft style, not one related to BibWord. Those are harder to change and less intuitive to work with.<br>\r\n<br>\r\nI suggest you start by making a copy with a new name and edit that one to give it your own name. (<a href=\"http://www.codeplex.com/bibliography/Wiki/View.aspx?title=FAQ#Q8\">http://www.codeplex.com/bibliography/Wiki/View.aspx?title=FAQ#Q8</a>)<br>\r\n<br>\r\nThe dashes are caused by the execution of a template called: templ_prop_ISO690_SameAuthor. So you should remove any reference to it.<br>\r\n<br>\r\nAt first glance, without doing any testing (so check for yourself), the parts you should get rid of are:<br>\r\n<br>\r\n<span style=\"font-size:10pt;color:blue;font-family:'courier new'\">&lt;</span><span style=\"font-size:10pt;color:#2b91af;font-family:'courier new'\">xsl:when</span> <span style=\"font-size:10pt;color:red;font-family:'courier new'\">test</span><span style=\"font-size:10pt;color:blue;font-family:'courier new'\">=</span><span style=\"font-size:10pt;font-family:'courier new'\">&quot;<span style=\"color:blue\">(/b:Bibliography/b:Source[position()=$prevBook]/b:SourceType = 'JournalArticle' or /b:Bibliography/b:Source[position()=$prevBook]/b:SourceType = 'ConferenceProceedings') and /b:Bibliography/b:Source[position()=$prevBook]/b:Title = b:Title</span>&quot;<span style=\"color:blue\">&gt;<br>\r\n  &lt;</span><span style=\"color:#2b91af\">xsl:call-template</span> <span style=\"color:red\">name</span><span style=\"color:blue\">=</span>&quot;<span style=\"color:blue\">templ_prop_ISO690_SameAuthor</span>&quot;<span style=\"color:blue\">/&gt;&lt;</span><span style=\"color:#2b91af\">xsl:call-template</span> <span style=\"color:red\">name</span><span style=\"color:blue\">=</span>&quot;<span style=\"color:blue\">templ_prop_Dot</span>&quot;<span style=\"color:blue\">/&gt;<br>\r\n&lt;/</span><span style=\"color:#2b91af\">xsl:when</span><span style=\"color:blue\">&gt;<br>\r\n<br>\r\n AND <br>\r\n<br>\r\n<p style=\"margin:0cm 0cm 0pt;text-align:left\" align=left><span style=\"font-size:10pt;color:blue;font-family:'courier new'\">&lt;</span><span style=\"font-size:10pt;color:#2b91af;font-family:'courier new'\">xsl:when</span> <span style=\"font-size:10pt;color:red;font-family:'courier new'\">test</span><span style=\"font-size:10pt;color:blue;font-family:'courier new'\">=</span><span style=\"font-size:10pt;font-family:'courier new'\">&quot;<span style=\"color:blue\">/b:Bibliography/b:Source[position()=$prevBook]/b:Author/b:Main = b:Author/b:Main</span>&quot;<span style=\"color:blue\">&gt;<br>\r\n  &lt;</span><span style=\"color:#2b91af\">xsl:if</span> <span style=\"color:red\">test</span><span style=\"color:blue\"> =</span>&quot;<span style=\"color:blue\">string-length(b:Author/b:Main)&gt;0</span>&quot;<span style=\"color:blue\">&gt;<br>\r\n    &lt;</span><span style=\"color:#2b91af\">xsl:call-template</span> <span style=\"color:red\">name</span><span style=\"color:blue\">=</span>&quot;<span style=\"color:blue\">templ_prop_ISO690_SameAuthor</span>&quot;<span style=\"color:blue\">/&gt;&lt;</span><span style=\"color:#2b91af\">xsl:call-template</span> <span style=\"color:red\">name</span><span style=\"color:blue\">=</span>&quot;<span style=\"color:blue\">templ_prop_Dot</span>&quot;<span style=\"color:blue\">/&gt;<br>\r\n  &lt;/</span><span style=\"color:#2b91af\">xsl:if</span><span style=\"color:blue\">&gt;</span>\r\n<p style=\"margin:0cm 0cm 0pt;text-align:left\" align=left><span style=\"font-size:10pt;color:blue;font-family:'courier new'\">&lt;/</span><span style=\"font-size:10pt;color:#2b91af;font-family:'courier new'\">xsl:when</span><span style=\"font-size:10pt;color:blue;font-family:'courier new'\">&gt;</span></p>\r\n</span></p>\r\n</span></span>\r\n",
+    "PostedDate": "2009-02-12T07:32:01.843-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "165792",
+    "ThreadId": "46949",
+    "Html": "Hi Yves,<br>\r\nthx for your help. <br>\r\nIt works perfect. <br>\r\n<br>\r\n",
+    "PostedDate": "2009-03-08T04:30:07.76-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

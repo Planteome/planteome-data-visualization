@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "831970",
+    "ThreadId": "354486",
+    "Html": "\r\n<p>Hi, how can I use the &quot; apud &quot; key,</p>\r\n<p>I need to use apud to use a reference from another reference that I dont have access. i.e. an indirect quotation. In english I believe you can change &quot; apud &quot; for &quot; in &quot;.</p>\r\n<p>I am using the ABNT style.</p>\r\n",
+    "PostedDate": "2012-05-03T19:18:30.527-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "832051",
+    "ThreadId": "354486",
+    "Html": "<p>I don't think the open xml specificiation provides something for indirect citation. Perhaps you could 'abuse' the book section type.</p>",
+    "PostedDate": "2012-05-04T00:13:52.053-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "921438",
+    "ThreadId": "354486",
+    "Html": "<p>Try this: You can click with right button of the mouse on the citation e select the \"edit field\" option. Then, you can put in the end of the sentence:&nbsp;&nbsp;\\f \"apud \"</p>",
+    "PostedDate": "2012-10-03T12:09:29.72-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

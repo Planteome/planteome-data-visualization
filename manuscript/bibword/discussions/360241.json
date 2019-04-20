@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "851296",
+    "ThreadId": "360241",
+    "Html": "\r\n<p>Good day everybody!</p>\r\n<p>&nbsp;</p>\r\n<p>I found a very nice feature while making my WordPress blog that I would like to see implemented into Microsoft Word documents. When I want to insert a reference all I have to do is surround it by [ref] and [/ref] and the reference is automatically added\r\n at the end of my post.&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>Obviously this would require some sort of &quot;Show/Hide&quot; function so that you could see your reference. But I think this method is a lot more user friendly than the current methods used in Word.</p>\r\n<p>&nbsp;</p>\r\n<p>Does anyone have an idea on how to implement this?</p>\r\n",
+    "PostedDate": "2012-06-19T19:29:30.343-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "851522",
+    "ThreadId": "360241",
+    "Html": "<p>I would think that the functionality you are hinting at already exists in Word in a slightly different form: fields. More specifically the footnote/endnote functionality which is built into Word through the use of bookmarks and references.</p>",
+    "PostedDate": "2012-06-20T06:30:56.037-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

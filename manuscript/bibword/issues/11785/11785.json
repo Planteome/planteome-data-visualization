@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "This is a known issue in Word for Mac. A fix is documented in the FAQ: https://bibword.codeplex.com/wikipage?title=Styles_FAQ&referringTitle=Documentation#Q2",
+    "ClosedDate": "2014-07-17T00:37:38.96-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Thank you for this. I have a problem though. I downloaded and installed the bibliography styles then I did a in text citation and selected the Vancouver style, all of the styles I just added where there to choose from. Then I selected insert/document elements/bibliography to create a bibliography list at the end of the document. The elements gallery appears and then i am asked to confirm the citation style in a drop down menu on the left side of document. In the drop down menu none of the citation style I added from this download are there only the 4 default styles. Would please happen to know of a solution for this? It would be most appreciated. Thank you Andrew﻿",
+    "LastUpdatedDate": "2014-07-17T00:37:38.96-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "bibword",
+    "ReportedDate": "2014-07-16T12:50:57.883-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "No issue"
+    },
+    "Summary": "new citation styles added to intext section only not when creating bibliography",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 11785
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

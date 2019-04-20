@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "657954",
+    "ThreadId": "269020",
+    "Html": "<p>Hi,<br /> <br /> First of all, I would like to thank Yves very much for producing the Harvard Exeter style sheet for referencing in MS Word. I had a few minor issues/adjustments to this style sheet and I managed to sort them out myself.<br /> <br /> But, I have a question to ask related to referencing two authors in text and in the list of references, as I&rsquo;m not sure where to edit the XSL for this issue.<br /> <br /> In the text, according to the Harvard referencing style (and also at <a href=\"http://education.exeter.ac.uk/dll/studyskills/harvard_referencing.htm\"> http://education.exeter.ac.uk/dll/studyskills/harvard_referencing.htm</a>) two authors should be referenced only with their last names, e.g. McCarthy and Hatcher (1996: 69-70).<br /> <br /> Then in the list this reference should be: McCarthy, P. and Hatcher, C. (1996) Speaking persuasively: Making the most of your presentations, Sydney: Allen and Unwin.<br /> <br /> The issue is that in the text I have two authors with their first name initials (as I insert their names as corporate authors), as McCarthy, P. and Hatcher, C. (1996) and not as per instructions with just their last names - . McCarthy and Hatcher (1996: 69-70).  Page numbers are not an issue.<br /> <br /> If I do not insert their first name initials in the &ldquo;enter new citation&rdquo; form in MS Word, I would not have (obviously) their respective first name initials in the list of references/bibliography.<br /> <br /> I need to sort this out and I&rsquo;m happy to edit the XSL file.<br /> <br /> My question is &ndash; how/where I should change this in the HarvardExeter.XSL file?<br /> <br /> Many thanks,<br /> <br /> woroth</p>",
+    "PostedDate": "2011-08-14T03:39:12.847-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "658014",
+    "ThreadId": "269020",
+    "Html": "<p>Why would you add them as corporate authors? If you enter them as corporate authors rather than 'person' authors, they are considered one entity and not 2 persons. There is no formatting on that level. There is also no reason to have formatting on that level.&nbsp;</p>\r\n<p>If you see \"McCarthy, P. and Hatcher, C.\"&nbsp;you are assuming&nbsp;that McCarthy and Hatcher are last names and P. and C. are their initials but there is no proof for that. Though strangely formatted, it could be the name of some type of foundation set up by these two people in the past and therefore should remain untouched.</p>\r\n<p>There is a <strong>format-corporate</strong> template inside the XSL. If you really wanted it, you could override it and replace it with your own formatting. But honestly, I think you are on the wrong track.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2011-08-14T09:04:18.567-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "658034",
+    "ThreadId": "269020",
+    "Html": "<p>Hi Yves,</p>\r\n<p>Thanks for very quick reply indeed. Ignore the bit about the corporate authors, mea culpa.</p>\r\n<p>The point is that the format in the text (for two authors) is not corresponding with the Harvard referencing style (as per Exeter, but also other Universities in the UK), as their initials shouldn&rsquo;t be displayed when referenced in the text, but only in the reference list.</p>\r\n<p>So, in the text - <strong>McCarthy and Hatcher (1996)</strong> and in the list <strong>McCarthy, P. and Hatcher, C. (1996)</strong> Speaking persuasively: Making the most of your presentations, Sydney: Allen and Unwin.</p>\r\n<p>If the &ldquo;Author&rdquo; part of the &ldquo;Edit Source&rdquo; form is being used, and two authors are typed in the box, only the first author will be displayed in the text.</p>\r\n<p>Unless there is a trick or I&rsquo;m doing something incorrectly? How should I achieve this to be as per Harvard referencing guidelines?</p>\r\n<p>Any help or advice much appreciated!</p>\r\n<p>Thanks,</p>\r\n<p>woroth</p>",
+    "PostedDate": "2011-08-14T09:57:09.32-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "658043",
+    "ThreadId": "269020",
+    "Html": "<p>The current settings of the Harvard Exeter style do not show the first name initials for in-text citations. Only the last names are shown (unless there are none, then the first name is picked). So I get the feeling you might be entering the names incorrectly.</p>\r\n<p>In the \"Edit Source\" form, there should be an \"Edit\" button next to the Author field. Click it. Check that each author is on a separate line in the new dialog that pops up. If not, remove them all and add them one by one.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2011-08-14T10:22:42.807-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "658048",
+    "ThreadId": "269020",
+    "Html": "<p>Hi Yves,</p>\r\n<p>Many thanks for your help - this was very useful tip and I wasn't aware that this is the way you should enter information on more than one author. Now it is displayed as guidance requires, so great stuff!</p>\r\n<p>All the best,</p>\r\n<p>woroth</p>",
+    "PostedDate": "2011-08-14T10:39:49.663-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

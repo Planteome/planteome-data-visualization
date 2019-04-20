@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "235716",
+    "ThreadId": "69286",
+    "Html": "<p>I found, that Word inserts a blank in front of the in-text-citations.</p>\r\n<p>So what I get is &quot;text [1]&quot; instead of &quot;text[1]&quot; which I needed.&nbsp;</p>\r\n<p>Is there any way to get rid of this leading space?</p>",
+    "PostedDate": "2009-09-17T11:39:18.997-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "235780",
+    "ThreadId": "69286",
+    "Html": "<p>It is Word which puts the space there, not the output of the citation formatting.</p>\r\n<p>What you could try is to switch to &quot;Design Mode&quot;. That way, citation fields become unlocked and you could remove the space by hand. Note that Word might actually update the fields at some point, so I'm not sure if that is such a good idea.</p>\r\n<p>Alternatively, when you finish your document, you could convert all your citations to static text after which you can edit them all you want, including removing any leading space. You could probably extend the macro at <a href=\"http://bibword.codeplex.com/Wiki/View.aspx?title=Styles_FAQ#Q10\">http://bibword.codeplex.com/Wiki/View.aspx?title=Styles_FAQ#Q10</a>&nbsp;to fit your needs.</p>",
+    "PostedDate": "2009-09-17T14:44:58.72-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "235803",
+    "ThreadId": "69286",
+    "Html": "<p>Thank you very much for your fast answer. I really appreciate your dedication to this project and to helping people.</p>\r\n<p>I already guessed, that Word itself is causing the trouble here. Finding that, if you use other &quot;textfields&quot;, Word doesn&acute;t necessarily enter the space, I wonder if one could fix that for citations as well. But I couldn&acute;t figure out where the textfield-interpreting routine is located. Do you have any suggestions?</p>",
+    "PostedDate": "2009-09-17T15:33:31.173-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "235924",
+    "ThreadId": "69286",
+    "Html": "<p>I'm afraid not. I don't think that part of Word is open&nbsp;(open as in, there is XSL or other&nbsp;code available to edit by hand).</p>",
+    "PostedDate": "2009-09-18T00:53:40.427-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "235936",
+    "ThreadId": "69286",
+    "Html": "<p>The &quot;Design Mode&quot; doesn&acute;t work for me at this stage, because after updating the fields, the format will be overwritten as well as the numbers. So I&acute;ve got again the leading space.</p>\r\n<p>I will use the static-text-workaround after completion of my document.</p>\r\n<p>Thank you.</p>",
+    "PostedDate": "2009-09-18T01:22:39.41-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "650885",
+    "ThreadId": "69286",
+    "Html": "<p>Hi</p>\n<p>I found the leading space only occured if I tried to insert a citation between pre-existing parertheses, for example. However, if I inserted the citation first and then put paretheses around it no leading space appeared.</p>\n<p>( citation, year) versus (citation, year)</p>\n<p>Using the BibWordExtender v2 on the document when citations are in correct format, though,&nbsp;will make the leading spaces appear again... So&nbsp;before using the BibWordExtender tool it pays off to&nbsp;make sure that all references are added to the source list otherwise the citation formatting will go pear shaped again.</p>\n<p>Weird or Word?</p>\n<p>&nbsp;</p>",
+    "PostedDate": "2011-08-01T18:37:38.383-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

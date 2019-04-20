@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "281004",
+    "ThreadId": "81820",
+    "Html": "<p>Dear All,</p>\r\n<p>I am new here. Forgive me if I post again a question already posted.</p>\r\n<p>I have just found Bibword and Bibstyles and I think it is an interesting tool.</p>\r\n<p>I would like to know how can I slighlty change some features of a Style (namely, Harvard).</p>\r\n<p>I see that when I insert a citation in the text body, it is always within round brackets: this is ok when the citation is&nbsp; in the text, but it is not ok when it goes into a foot-note (at the beginning of a foot-note). So, I would like to change the code in order to never get automatically the parentheses.</p>\r\n<p>The question is: how can I modify the code?</p>\r\n<p>Beside, I do not understand how use BibWord. I have downloaded the guide but I do not understand its use.</p>\r\n<p>&nbsp;</p>\r\n<p>Thakns for the help you can provide,</p>\r\n<p>Regards</p>\r\n<p>Gm</p>",
+    "PostedDate": "2010-01-24T01:37:06.553-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "281039",
+    "ThreadId": "81820",
+    "Html": "<p>A BibWord stylesheet groups all formatting info into a single place inside the XSL file: the <em>data</em> variable. So to find out where things are stored, just look for</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">xsl</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">variable</span> <span style=\"color:Red\">name</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">data</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>In it there are a number of child elements defining the behaviour for certain sections. You might want to look to the <em>citation</em> element. Two elements are of importance to you.: <em>openbracket</em> and <em>closebracket</em>. By keeping those elements empty, no surrounding brackets will be shown around (grouped) in-text citations.</p>\r\n<p>Note thqt Word 2007 does not know the difference between in-text citations and footnote citations while Word 2008 for Mac does. In the latter case, you probably shouldn't change the brackets of the <em>citation</em> element but rather of the <em>footnotecitation</em> element.</p>\r\n<p>Yves</p>",
+    "PostedDate": "2010-01-24T06:19:33.793-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "281064",
+    "ThreadId": "81820",
+    "Html": "<p>Hi Yves,</p>\r\n<p>thanks for the quick reply and for providing me with details.</p>\r\n<p>I will try to modify those elements.</p>\r\n<p>Can you tell me what program open the xsl file, so that I can change the elements and save the modified file again.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>\r\n<p>Regards</p>\r\n<p>Gm</p>",
+    "PostedDate": "2010-01-24T08:40:06.913-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "281426",
+    "ThreadId": "81820",
+    "Html": "<p>Any text editor should do. For example notepad.</p>",
+    "PostedDate": "2010-01-25T07:27:31.713-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "282386",
+    "ThreadId": "81820",
+    "Html": "<p>Hi Yves,</p>\r\n<p>sorry for the reply. Thanks for the hint: I managed to delete the parentheses.</p>\r\n<p>One more question: in Harvard style, I would like to write the author name in small capital. Is it possible to change the code to achieve this?</p>\r\n<p>Thanks</p>\r\n<p>All the best,</p>\r\n<p>Gm</p>",
+    "PostedDate": "2010-01-27T08:25:17.987-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "282479",
+    "ThreadId": "81820",
+    "Html": "<p>Yes. Basically, you add the CSS for small caps around the %Last% variable.</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Red\">&amp;lt;</span>span style=&quot;font-variant: small-caps&quot;<span style=\"color:Red\">&amp;gt;</span>%Last%<span style=\"color:Red\">&amp;lt;</span>/span<span style=\"color:Red\">&amp;gt;</span>\r\n</pre>\r\n</div>\r\n<p>See also&nbsp;<a href=\"http://bibword.codeplex.com/Thread/View.aspx?ThreadId=54459\">http://bibword.codeplex.com/Thread/View.aspx?ThreadId=54459</a></p>\r\n<p>Yves</p>",
+    "PostedDate": "2010-01-27T13:00:48.187-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

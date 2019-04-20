@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "275316",
+    "ThreadId": "80327",
+    "Html": "<p>I've been creating an adaptation of Turabian with BibWord.</p>\r\n<p>I know it is not supported, but I am satisfied and say, like so many have said: Thanks Yves, it works!</p>\r\n<p>I encounter two limitations and seek advice:</p>\r\n<p>1st: Turabian requires that the quotation style changes when a reference has already been quoted once. BibWord is not able to take this in account as it cannot be aware of how many occasions a reference is used in a text.</p>\r\n<p>&nbsp;&nbsp;&nbsp; I came up with the following work-around that I want to share. Maybe some one might profit from it. It does require some attention.</p>\r\n<p>&nbsp;&nbsp;&nbsp; I have created two BibWord templates; one for long style, another for short style. When my document is ready I apply both the styles and save two versions of the document, Then I use Word's Review capacities and combine the two versions of the document (Under Compare). This generates a new document in which the differences between the two documents are hightlighted, During a full review of the document one can either &quot;Accept&quot; or &quot;Reject&quot; the changes, thus either applying the long or the short style of Turabian.</p>\r\n<p>&nbsp;</p>\r\n<p>2nd: Turabian defines a short reference to a book like Last_Name_Author, &quot;ShortTitle,&quot; CitationPages.</p>\r\n<p>&nbsp;&nbsp;&nbsp; I haven't been successful in defining a format that handles that optional comma within the quotationmarks of the title well. I can make it appear when the CitationPages is given, simply by omitting it from the title and making it a part of {,&quot; %CitationPages%}. But how can I apply that second comma if CitationPages is not used?</p>\r\n<p>&nbsp;&nbsp;&nbsp; I fear it might not be possible after all...</p>\r\n<p>Thanks</p>",
+    "PostedDate": "2010-01-10T04:03:18.21-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "275361",
+    "ThreadId": "80327",
+    "Html": "<p>Regarding your first issue. I once created a style where I 'abused' the suppress flags to get a similar output. Then it would be up to the user to decide if a citation was cited before or not (I guess a macro could solve this) and to select the correct suppresion option. See <a href=\"http://bibword.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=20331\">http://bibword.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=20331</a></p>\r\n<p>Regarding the second issue. You can make use of the fact that by default, BibWord&nbsp;displays each variable only once. So you could use something along:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>{%Author:1%, }{&quot;%ShortTitle%,&quot; %CitationPages%}{&quot;%ShortTitle%&quot;}\r\n</pre>\r\n</div>\r\n<p>If both the ShortTitle and the CitationPages are available,&nbsp;the first&nbsp;part will be validated. Then the second ShortTitle will be ignored&nbsp;as it has been used before. If the&nbsp;CitationPages variable is empty, the first part will become empty and&nbsp;ShortTitle will&nbsp;remain marked as unused. The second part will then become valid.</p>\r\n<p>Note that this only works if you don't or variables like %ShortTitle|Title%. Of course, if you assume the Author is available, you could include that one into the conditions so only one result gets printed.</p>",
+    "PostedDate": "2010-01-10T09:01:09.223-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "275410",
+    "ThreadId": "80327",
+    "Html": "<p>Clever!</p>\r\n<p>Thanks.</p>",
+    "PostedDate": "2010-01-10T12:13:58.433-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

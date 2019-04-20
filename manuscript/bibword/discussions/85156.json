@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "290174",
+    "ThreadId": "85156",
+    "Html": "<p>Firstly, I'd like to say a big 'thank you' for all the information and work that's been put into this site.&nbsp; I would not have got anywhere without the information and examples here.</p>\r\n<p>I've created a simple style which uses numerical references.&nbsp; When I insert the bibliography, the entries are sorted by type (e.g Report, Book etc), then by reference number.&nbsp; I'd like to be able to insert / sort the bibliography by reference order.&nbsp; Can anyone (Yves?!) give me a hint on how to go about figuring this out?</p>\r\n<p>Many thanks in advance.</p>",
+    "PostedDate": "2010-02-12T09:26:08.337-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "290290",
+    "ThreadId": "85156",
+    "Html": "<p>The sorting depends on the value of the&nbsp;<strong>sortkey</strong> element. If you want a bibliography to be sorted by reference order, you should just leave the element blank (or even remove it).</p>",
+    "PostedDate": "2010-02-12T12:42:08.497-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "290770",
+    "ThreadId": "85156",
+    "Html": "<p>Thank you for your very quick reply.&nbsp; I've seen your templates etc and they are superb - I've developed a couple of styles using them, and they work perfectly (thank you again!). I'm now trying to write styles myself, without the template, and I was wondering if it was possible to get a bit more info on the process for sorting the references?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-02-15T02:19:58.063-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "290789",
+    "ThreadId": "85156",
+    "Html": "<p>In case of bibliographies, Word 2007 sends an xml looking like the following to the stylesheet:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">b</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">Bibliography</span><span style=\"color:Blue\">&gt;</span>\r\n  <span style=\"color:Green\">&lt;!-- Some localization information with language specific strings --&gt;</span>\r\n  <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">b</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">Source</span><span style=\"color:Blue\">&gt;</span>\r\n    <span style=\"color:Green\">&lt;!-- A source. --&gt;</span>\r\n  <span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">b</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">Source</span><span style=\"color:Blue\">&gt;</span>\r\n  <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">b</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">Source</span><span style=\"color:Blue\">&gt;</span>\r\n    <span style=\"color:Green\">&lt;!-- A source. --&gt;</span>\r\n  <span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">b</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">Source</span><span style=\"color:Blue\">&gt;</span>\r\n  <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">b</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">Source</span><span style=\"color:Blue\">&gt;</span>\r\n    <span style=\"color:Green\">&lt;!-- A source. --&gt;</span>\r\n  <span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">b</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">Source</span><span style=\"color:Blue\">&gt;</span>\r\n  <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">b</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">Source</span><span style=\"color:Blue\">&gt;</span>\r\n    <span style=\"color:Green\">&lt;!-- A source. --&gt;</span>\r\n  <span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">b</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">Source</span><span style=\"color:Blue\">&gt;</span>\r\n<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">b</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">Bibliography</span><span style=\"color:Blue\">&gt;</span></pre>\r\n</div>\r\n<p>There is no specific order in them, so it is up to you to sort them. If your sorting mechanism is simple, for example reference order, you can do it in one go:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">xsl</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">for-each</span> <span style=\"color:Red\">select</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">/b:Bibliography/b:Source</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">&gt;</span>\r\n  <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">xsl</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">sort</span> <span style=\"color:Red\">select</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">b:RefOrder</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">data-type</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">number</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">/&gt;</span>\r\n\r\n  <span style=\"color:Green\">&lt;!-- Handle the displaying of each source. --&gt;</span>\r\n<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">xsl</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">for-each</span><span style=\"color:Blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>If&nbsp;you want to make something more complex, like BibWord allows, you will have to create some type of 2 pass filtering. First you copy each Source but add an extra&nbsp;element (BibWord uses SortKey) where you provide a sorting&nbsp;string. Then you can do the same as above and use the sorting string in your select.</p>\r\n<p>To see this at work in BibWord, check out the templates <em>format-bibliography</em> which adds the sortkey element and then <em>format-bibliography-as-paragraphs</em> which actually sorts the items according to the sortkey.</p>\r\n<p>Note that a third reordering might be required if you intend to take a look at the previous source in a sorted sequence.</p>",
+    "PostedDate": "2010-02-15T03:50:15.67-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "290804",
+    "ThreadId": "85156",
+    "Html": "<p>Thank you :)</p>",
+    "PostedDate": "2010-02-15T05:02:13.713-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

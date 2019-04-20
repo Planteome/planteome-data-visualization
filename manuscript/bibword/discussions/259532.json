@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "620340",
+    "ThreadId": "259532",
+    "Html": "\r\n<p>The journal Science appears to have its own unique citation style, and I was wondering if anyone has creates a style for it.&nbsp; I'm not familiar with XML, and it would take me a while to learn... time that I really need to dedicate to the content of my\r\n paper, not the formatting of references.&nbsp; I'm just hoping someone has already addressed this.&nbsp; If not, I may just opt out of using citation management and do the work manually.</p>\r\n<p>The details for their citation style for Science can be found at:</p>\r\n<p><a href=\"http://www.sciencemag.org/site/feature/contribinfo/prep/res/refs.xhtml\">http://www.sciencemag.org/site/feature/contribinfo/prep/res/refs.xhtml</a></p>\r\n<p>Thanks.</p>\r\n<p>VH&nbsp;</p>\r\n",
+    "PostedDate": "2011-05-30T08:48:42.427-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "620448",
+    "ThreadId": "259532",
+    "Html": "<p>The idea of BibWord is that you don't have to know XML but can instead restrict yourself to a pretty straightforward conditional language on top of xml (actually xsl). To simplify things, everything which makes a style unique is specified in the first 100 lines (approx) of the style. Make your life easier by picking one of the styles which almost look like what you want and then start by adjusting that one.</p>",
+    "PostedDate": "2011-05-30T13:51:50.047-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "620525",
+    "ThreadId": "259532",
+    "Html": "<p>Thank you.&nbsp; I may try to figure it out, but the content of my paper has  to come first.&nbsp; My one lingering concern is what happens when I submit  the Word document when using a custom citation style?&nbsp; Will the document  appear as it does on my computer, or will I have to send the XLS file  along with instructions on where to copy it to?</p>",
+    "PostedDate": "2011-05-30T19:06:36.933-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,161 @@
+<div class="wikidoc"><h2>Format Strings</h2><h3>Table of Contents</h3><ul><li><a href="#Intro">Introduction</a></li>
+<li><a href="#Variables">Variables&#47;Parameters</a></li>
+<li><a href="#Conditions">Conditional Brackets</a></li>
+<li><a href="#Examples">Examples</a>
+<ul><li><a href="#ex1">Example bibliography format string</a></li>
+<li><a href="#ex2">Example contributor format strings</a></li>
+<li><a href="#ex3">Example sorting format strings</a></li></ul></li></ul>
+<a name="Introduction"></a>
+<h3>Introduction</h3>Format strings are the core of BibWord. They are responsible for the way
+<ul><li>a (footnote)citation looks</li>
+<li>a bibliography entry looks</li>
+<li>a bibliography is sorted</li>
+<li>decisions are made for year suffices</li>
+<li>the name of a single contributor looks</li></ul>
+Hence, understanding how format strings work, is understanding 90% of BibWord.<br /><a name="Variables"></a>
+<h3>Variables/Parameters</h3>Variables or parameters are defined in between <i><b>percentage</b></i> (<i><b>%</b></i>) marks. A basic example of a variable is<br /><br /><pre>
+     %First%
+</pre>which represents the first name of a person. For a full list of all possible parameters, please check the guide coming with BibWord.<br /><br />Extra options can be assigned to a parameter by adding a <i><b>colon</b></i> (<i><b>:</b></i>) after the parameter&#39;s name followed by one or more symbols. An example is:<br /><br /><pre>
+     %First:u%
+</pre>which indicates that the first name should be displayed in upper case characters. For a full list of all options of each parameter, please check the guide coming with BibWord.<br /><br />Parameters can also be combined so that if the first part has no value, the value of a second or latter part can be displayed instead. This type of parameter or&#39;ing is done using the <i><b>vertical bar</b></i> (<i><b>|</b></i>) symbol. An example is:<br /><br /><pre>
+     %First:l|Last:u%
+</pre>which indicates that if the first name is available, it should be displayed in lower case characters. If it is not available, then the last name of a person should be displayed in upper case characters if available.<br /><br />Instead of parameters, literal strings can also be used. This is done by placing the string between double quotes. An example is:<br /><br /><pre>
+     %Last:u|&quot;Anon&quot;%
+</pre>which displays the last name of a person in upper case characters if available. If the last name is not available, &quot;Anon&quot;, without the quotes, will be displayed. Using literal strings it is possible to guarantee that always something will be shown.
+<h5>Pages, a special parameter</h5>The <i>Pages</i> parameter does not follow the regular syntax. Instead, it consists of 3 sets of options separated by a <i><b>colon</b></i> (<i><b>:</b></i>) after the parameter&#39;s name. The first set indicates the prefix to show if <i>Pages</i> contains a single page number. The second indicates the prefix to show if <i>Pages</i> contains a range of pages. The third one contains the remaining options. An example is:<br /><br /><pre>
+     %Pages:p. :pp. :a2%
+</pre><br /><a name="Conditions"></a>
+<h3>Conditional Brackets</h3><i><b>Braces</b></i> (<i><b>{</b></i> and <i><b>}</b></i>) are used by BibWord as conditional brackets. Conditional brackets ensure that data only gets displayed if each parameter within the conditional brackets has a value. That way, leading or trailing literal strings will not be displayed if not required. A basic example is:<br /><br /><pre>
+  {Vol. %Volume%}
+</pre>which displays &quot;Vol. x&quot; if the variable Volume has an actual value, or displays nothing otherwise. Note that if you do an or&#39;ing of a parameter with a literal string, there will always be output shown. For example:<br /><br /><pre>
+  {%Edition|&quot;1st&quot;% edition}
+</pre>will display the content of the Edition parameter if available followed by &quot; edition&quot; or, if the parameter is not available, just &quot;1st edition&quot;. So in this example, the conditional brackets are not required.<br /><br />Conditional brackets can also be nested. This can be interesting if the way you wish to display a parameter depends on the availability of other parameters. Take the following example:<br /><br /><pre>
+  { %Volume%{(%Issue%)} }{ no. %Issue% }
+</pre>Depending on the availability of the two parameters Volume and Issue there are 4 different outcomes:
+<ul><li>Volume is available, Issue is available: Volume(Issue) </li>
+<li>Volume is available, Issue is <i>not</i> available: Volume </li>
+<li>Volume is <i>not</i> available, Issue is available: no. Issue </li>
+<li>Volume is <i>not</i> available, Issue is <i>not</i> available: -</li></ul>
+Note that unless the <i><b>r</b></i> option is added to a parameter, a parameter can only be used once. That explains why you do not get &quot;Volume(Issue) no. Issue&quot; for the first outcome.<br /><br /><i><b>Warning:</b> Conditional brackets should always be used in a balanced way. When your style does not output anything, you should verify if your brackets are balanced.</i><br /><a name="Examples"></a>
+<h3>Examples</h3><a name="ex1"></a>
+<h4>Example bibliography format string</h4>Consider the following journal articles:
+<ul><li>Doe, John. 2009. Creating bibliography styles using BibWord. <i>Modern Bibliography Tools</i>. <b>25</b>(3):513-22.</li>
+<li>Bibliographies throughout the ages. 2007. <i>Modern Bibliography Tools</i>. 3:15-18.</li>
+<li>Doe, Jane. 2005. Bibliographies for dummies. <i>Modern Bibliography Tools</i>. 51-57.</li></ul>
+Now we are going to create a format string step by step.<br /><br />The first element in the format string is the author followed by a period:<br /><br /><pre>
+  {%Author:1%.}
+</pre>In case there is no author, like in the second example, the title is used instead:<br /><br /><pre>
+  {%Author:1|Title%.}
+</pre>Next the year is displayed:<br /><br /><pre>
+  {%Author:1|Title%.}{ %Year%.}
+</pre>After the year, the title is displayed:<br /><br /><pre>
+  {%Author:1|Title%.}{ %Year%.}{ %Title%.}
+</pre>But what if there is no author? Then the title is already displayed in front of the year. This is not an issue for BibWord as by default, different variables can only be displayed once. So if the title is already displayed at the beginning, it won&#39;t be displayed anymore. <br /><br />Next we add the name of the journal:<br /><br /><pre>
+  {%Author:1|Title%.}{ %Year%.}{ %Title%.}{ %JournalName%.}
+</pre>As you can see from the examples, the name of the journal is displayed in italics. The result of the formatting is actually html code, so to obtain italics, the html italics element &lt;i&gt;&lt;/i&gt; can be used:<br /><br /><pre>
+  {%Author:1|Title%.}{ %Year%.}{ %Title%.}{ &amp;lt;i&amp;gt;%JournalName%&amp;lt;/i&amp;gt;.}
+</pre>Note that you should use &amp;lt; for &lt; and &amp;gt; for &gt;.<br /><br />So far, the format string was pretty straightforward. Now comes a slightly more difficult part. The difficulty lies in the fact that the formatting changes depending on the elements that are available. The easiest solution is to consider each of the possible cases and generate a format string for them. So here we have:<br /><br /><pre>
+  { &amp;lt;b&amp;gt;%Volume%&amp;lt;/b&amp;gt;(%Issue%):%Pages:::a2%}
+  { &amp;lt;b&amp;gt;%Volume%&amp;lt;/b&amp;gt;(%Issue%)}
+  { &amp;lt;b&amp;gt;%Volume%&amp;lt;/b&amp;gt;:%Pages:::a2%}
+  { %Issue%:%Pages:::a2%}
+  { &amp;lt;b&amp;gt;%Volume%&amp;lt;/b&amp;gt;}
+  { %Issue%}
+  { %Pages:::a2%}
+</pre>Two points to explain here. The first is the volume being displayed in bold. Just like the &lt;i&gt;&lt;/i&gt; element can be used for italics, the &lt;b&gt;&lt;/b&gt; element can be used for bold.<br /><br />The &#39;a2&#39; as options for the Pages parameter indicates that page ranges should be <i>a</i>bbreviated and that the second part of the range should have a length of at least 2.<br /><br />As BibWord does not allow the reuse of the same element by default, you can put the different format strings after each other starting with those with the most parameters to cover all the cases:<br /><br /><pre>
+  { &amp;lt;b&amp;gt;%Volume%&amp;lt;/b&amp;gt;(%Issue%):%Pages:::a2%}{ &amp;lt;b&amp;gt;%Volume%&amp;lt;/b&amp;gt;(%Issue%)}{ &amp;lt;b&amp;gt;%Volume%&amp;lt;/b&amp;gt;:%Pages:::a2%}{ %Issue%:%Pages:::a2%}
+  { &amp;lt;b&amp;gt;%Volume%&amp;lt;/b&amp;gt;}{ %Issue%}{ %Pages:::a2%}
+</pre> So now that everything is covered, both parts can be put after each other, and a final period can be added:<br /><br /><pre>
+  {%Author:1|Title%.}{ %Year%.}{ %Title%.}{ &amp;lt;i&amp;gt;%JournalName%&amp;lt;/i&amp;gt;.}{ &amp;lt;b&amp;gt;%Volume%&amp;lt;/b&amp;gt;(%Issue%):%Pages:::a2%}
+  { &amp;lt;b&amp;gt;%Volume%&amp;lt;/b&amp;gt;(%Issue%)}{ &amp;lt;b&amp;gt;%Volume%&amp;lt;/b&amp;gt;:%Pages:::a2%}{ %Issue%:%Pages:::a2%}
+  { &amp;lt;b&amp;gt;%Volume%&amp;lt;/b&amp;gt;}{ %Issue%}{ %Pages:::a2%}.
+</pre><br /><a name="ex2"></a>
+<h4>Example contributor format strings</h4><pre>
+First : Henry
+Middle: Alfred
+Last  : Kissinger
+</pre><br /><pre>
+KISSINGER               : {%Last:u%}
+Kissinger               : {%Last%}
+Kissinger, Henry        : {%Last%}{, %First%}
+Kissinger, Henry Alfred : {%Last%}{, %First|Middle%}{ %Middle%}
+Kissinger, H. A.        : {%Last%}{, %First:adsp|Middle:adsp%}{ %Middle:adsp%}
+Kissinger, H.A.         : {%Last%}{, %First:adp|Middle:adp%}{%Middle:adp%}
+Kissinger, H.           : {%Last%}{, %First:adp%}
+Kissinger, H A          : {%Last%}{, %First:ads|Middle:ads%}{ %Middle:ads%}
+Kissinger, HA           : {%Last%}{, %First:a|Middle:a%}{%Middle:a%}
+Kissinger, H            : {%Last%}{, %First:as%}
+Kissinger Henry         : {%Last%}{ %First%}
+Kissinger Henry Alfred  : {%Last%}{ %First%}{ %Middle%}
+Kissinger H. A.         : {%Last%}{ %First:adsp%}{ %Middle:adsp%}
+Kissinger H.A.          : {%Last%}{ %First:adp|Middle:adp%}{%Middle:adp%}
+Kissinger H.            : {%Last%}{ %First:adp%}
+Kissinger H A           : {%Last%}{ %First:ads%}{ %Middle:ads%}
+Kissinger HA            : {%Last%}{ %First:a|Middle:a%}{%Middle:a%}
+Kissinger H             : {%Last%}{ %First:as%}
+Henry Kissinger         : {%First% }{%Last%}
+Henry Alfred Kissinger  : {%First% }{%Middle% }{%Last%}
+H. A. Kissinger         : {%First:adsp% }{%Middle:adsp% }{%Last%}
+H.A. Kissinger          : {%First:adp%}{%Middle:adp%}{ %Last%}
+H. Kissinger            : {%First:adp%}{ %Last%}
+H A Kissinger           : {%First:ads% }{%Middle:ads% }{%Last%}
+HA Kissinger            : {%First:a%}{%Middle:a%}{ %Last%}
+H Kissinger             : {%First:as%}{ %Last%}
+</pre><br /><a name="ex3"></a>
+<h4>Example sorting format strings</h4><pre>
+Order of appearance                   : nothing, this is the default setting for BibWord
+Author + Title                        : {%Author:10%} {%Title:a%}
+Author + Year + Title                 : {%Author:10|Title:a%} {%Year%} {%Title:a%}
+First Author + Year + Other Authors   : {%Author:11r%} {%Year%} {%Author:12%}
+First Author + # of Authors + Year    : {%Author:11r%} {%Author:c%} {%Year%}
+Date (ascending - oldest first)       : {%Year|&quot;0000&quot;%}{%Month:n|&quot;01&quot;%}{%Day:n|&quot;01&quot;%}
+Date (descending - most recent first) : {%Year:i|&quot;9999&quot;%}{%Month:in|&quot;12&quot;%}{%Day:in|&quot;31&quot;%}
+</pre> with the following options for formatting the author:<br /><br /><div style="color:Black;background-color:White;"><pre>
+<span style="color:Blue;">&lt;</span><span style="color:#A31515;">list</span> <span style="color:Red;">id</span><span style="color:Blue;">=</span><span style="color:Black;">&quot;</span><span style="color:Blue;">10</span><span style="color:Black;">&quot;</span> <span style="color:Red;">name</span><span style="color:Blue;">=</span><span style="color:Black;">&quot;</span><span style="color:Blue;">all_contributors</span><span style="color:Black;">&quot;</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">single_prefix</span><span style="color:Blue;">&gt;</span><span style="color:Blue;">&lt;/</span><span style="color:#A31515;">single_prefix</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">multi_prefix</span><span style="color:Blue;">&gt;</span><span style="color:Blue;">&lt;/</span><span style="color:#A31515;">multi_prefix</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">corporate</span><span style="color:Blue;">&gt;</span>{%Corporate%}<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">corporate</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">first_person</span><span style="color:Blue;">&gt;</span>{%Last|First|Middle%}{ %First%}{ %Middle%}<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">first_person</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">other_persons</span><span style="color:Blue;">&gt;</span>{%Last|First|Middle%}{ %First%}{ %Middle%}<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">other_persons</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">separator_between_if_two</span><span style="color:Blue;">&gt;</span> <span style="color:Blue;">&lt;/</span><span style="color:#A31515;">separator_between_if_two</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">separator_between_if_more_than_two</span><span style="color:Blue;">&gt;</span> <span style="color:Blue;">&lt;/</span><span style="color:#A31515;">separator_between_if_more_than_two</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">separator_before_last</span><span style="color:Blue;">&gt;</span><span style="color:Blue;">&lt;/</span><span style="color:#A31515;">separator_before_last</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">max_number_of_persons_to_display</span><span style="color:Blue;">&gt;</span>500<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">max_number_of_persons_to_display</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">number_of_persons_to_display_if_more_than_max</span><span style="color:Blue;">&gt;</span>500<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">number_of_persons_to_display_if_more_than_max</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">overflow</span><span style="color:Blue;">&gt;</span><span style="color:Blue;">&lt;/</span><span style="color:#A31515;">overflow</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">single_suffix</span><span style="color:Blue;">&gt;</span><span style="color:Blue;">&lt;/</span><span style="color:#A31515;">single_suffix</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">multi_suffix</span><span style="color:Blue;">&gt;</span><span style="color:Blue;">&lt;/</span><span style="color:#A31515;">multi_suffix</span><span style="color:Blue;">&gt;</span>
+<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">list</span><span style="color:Blue;">&gt;</span>
+
+<span style="color:Blue;">&lt;</span><span style="color:#A31515;">list</span> <span style="color:Red;">id</span><span style="color:Blue;">=</span><span style="color:Black;">&quot;</span><span style="color:Blue;">11</span><span style="color:Black;">&quot;</span> <span style="color:Red;">name</span><span style="color:Blue;">=</span><span style="color:Black;">&quot;</span><span style="color:Blue;">first_contributor</span><span style="color:Black;">&quot;</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">single_prefix</span><span style="color:Blue;">&gt;</span><span style="color:Blue;">&lt;/</span><span style="color:#A31515;">single_prefix</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">multi_prefix</span><span style="color:Blue;">&gt;</span><span style="color:Blue;">&lt;/</span><span style="color:#A31515;">multi_prefix</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">corporate</span><span style="color:Blue;">&gt;</span>{%Corporate%}<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">corporate</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">first_person</span><span style="color:Blue;">&gt;</span>{%Last|First|Middle%}{ %First%}{ %Middle%}<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">first_person</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">other_persons</span><span style="color:Blue;">&gt;</span><span style="color:Blue;">&lt;/</span><span style="color:#A31515;">other_persons</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">separator_between_if_two</span><span style="color:Blue;">&gt;</span> <span style="color:Blue;">&lt;/</span><span style="color:#A31515;">separator_between_if_two</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">separator_between_if_more_than_two</span><span style="color:Blue;">&gt;</span> <span style="color:Blue;">&lt;/</span><span style="color:#A31515;">separator_between_if_more_than_two</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">separator_before_last</span><span style="color:Blue;">&gt;</span><span style="color:Blue;">&lt;/</span><span style="color:#A31515;">separator_before_last</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">max_number_of_persons_to_display</span><span style="color:Blue;">&gt;</span>500<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">max_number_of_persons_to_display</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">number_of_persons_to_display_if_more_than_max</span><span style="color:Blue;">&gt;</span>500<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">number_of_persons_to_display_if_more_than_max</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">overflow</span><span style="color:Blue;">&gt;</span><span style="color:Blue;">&lt;/</span><span style="color:#A31515;">overflow</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">single_suffix</span><span style="color:Blue;">&gt;</span><span style="color:Blue;">&lt;/</span><span style="color:#A31515;">single_suffix</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">multi_suffix</span><span style="color:Blue;">&gt;</span><span style="color:Blue;">&lt;/</span><span style="color:#A31515;">multi_suffix</span><span style="color:Blue;">&gt;</span>
+<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">list</span><span style="color:Blue;">&gt;</span>
+
+<span style="color:Blue;">&lt;</span><span style="color:#A31515;">list</span> <span style="color:Red;">id</span><span style="color:Blue;">=</span><span style="color:Black;">&quot;</span><span style="color:Blue;">12</span><span style="color:Black;">&quot;</span> <span style="color:Red;">name</span><span style="color:Blue;">=</span><span style="color:Black;">&quot;</span><span style="color:Blue;">second_and_later_contributor</span><span style="color:Black;">&quot;</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">single_prefix</span><span style="color:Blue;">&gt;</span><span style="color:Blue;">&lt;/</span><span style="color:#A31515;">single_prefix</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">multi_prefix</span><span style="color:Blue;">&gt;</span><span style="color:Blue;">&lt;/</span><span style="color:#A31515;">multi_prefix</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">corporate</span><span style="color:Blue;">&gt;</span>{%Corporate%}<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">corporate</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">first_person</span><span style="color:Blue;">&gt;</span><span style="color:Blue;">&lt;/</span><span style="color:#A31515;">first_person</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">other_persons</span><span style="color:Blue;">&gt;</span>{%Last|First|Middle%}{ %First%}{ %Middle%}<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">other_persons</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">separator_between_if_two</span><span style="color:Blue;">&gt;</span> <span style="color:Blue;">&lt;/</span><span style="color:#A31515;">separator_between_if_two</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">separator_between_if_more_than_two</span><span style="color:Blue;">&gt;</span> <span style="color:Blue;">&lt;/</span><span style="color:#A31515;">separator_between_if_more_than_two</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">separator_before_last</span><span style="color:Blue;">&gt;</span><span style="color:Blue;">&lt;/</span><span style="color:#A31515;">separator_before_last</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">max_number_of_persons_to_display</span><span style="color:Blue;">&gt;</span>500<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">max_number_of_persons_to_display</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">number_of_persons_to_display_if_more_than_max</span><span style="color:Blue;">&gt;</span>500<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">number_of_persons_to_display_if_more_than_max</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">overflow</span><span style="color:Blue;">&gt;</span><span style="color:Blue;">&lt;/</span><span style="color:#A31515;">overflow</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">single_suffix</span><span style="color:Blue;">&gt;</span><span style="color:Blue;">&lt;/</span><span style="color:#A31515;">single_suffix</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">multi_suffix</span><span style="color:Blue;">&gt;</span><span style="color:Blue;">&lt;/</span><span style="color:#A31515;">multi_suffix</span><span style="color:Blue;">&gt;</span>
+<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">list</span><span style="color:Blue;">&gt;</span>
+</pre></div></div><div class="ClearBoth"></div>

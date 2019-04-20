@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1326802",
+    "ThreadId": "573365",
+    "Html": "Hi I'm trying to modify the APA.XSL for Word for citations and bibliography and need some support.<br />\n<br />\nWhat i did so far is that i modified the citations area in this way (line 4849 ff.):<br />\n<br />\n...<br />\n&lt;!-- CUSTOM BEGIN --&gt;\n&lt;xsl:call-template name=&quot;templ_prop_ListSeparator&quot;/&gt;<br />\n&lt;xsl:call-template name=&quot;templ_prop_NonBreakingSpace&quot;/&gt;<br />\n&lt;!-- INSERT HERE --&gt;\n&lt;xsl:if test=&quot;string-length($year) &gt; 0&quot;&gt;<br />\n   &lt;xsl:call-template name=&quot;templ_prop_NonBreakingSpace&quot;/&gt;<br />\n   &lt;xsl:call-template name=&quot;templ_prop_OpenBracket&quot;/&gt;<br />\n   &lt;xsl:value-of select=&quot;$year&quot;/&gt;<br />\n   &lt;xsl:call-template name=&quot;templ_prop_CloseBracket&quot;/&gt;<br />\n&lt;/xsl:if&gt;<br />\n&lt;!-- CUSTOM END --&gt;\n...<br />\n<br />\n<strong>The result is, for citations:</strong><br />\n Jobs, (2014), S. 5-22<br />\nApple Inc., (2014), S. 5-22<br />\n<br />\n<strong>The result is, what ist fine, for bibliography:</strong><br />\nJobs, S. (2014). My Life at Apple. Cupertino: Apple Publishing.<br />\nApple Inc. (2014). My Life at Apple. Cupertino: Apple Publishing.<br />\n<br />\n<strong>What i try but what i do not getting work, is, for citations:</strong><br />\nJobs, S. (2014), S. 5-22<br />\nApple Inc. (2014), S. 5-22<br />\n<br />\n<strong>Is there anybody out there who can give me a clue:</strong><br />\n(a) how to insert the first capital of the authors first name like it's in the bibliography, i can't find it?<br />\n(b) how to avoid the &quot;,&quot; when to autor is an organization?<br />\n<br />\nThanks!<br />\n",
+    "PostedDate": "2014-11-27T07:19:21.043-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1328997",
+    "ThreadId": "573365",
+    "Html": "Any idea?<br />\n",
+    "PostedDate": "2014-12-04T23:39:13.97-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

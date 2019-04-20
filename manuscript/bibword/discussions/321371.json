@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "773214",
+    "ThreadId": "321371",
+    "Html": "\r\n<p>Hi, I am a student at the North-West University, South Africa.</p>\r\n<p>We use a variation on Harvard,(Supposedly), that looks like this, please note&nbsp;I&nbsp;use * to indicate spaces:</p>\r\n<p>Enslin,*Q.**2006.**The title.**New York:*Wiley.**270p.</p>\r\n<p>I am trying to make a style for this&nbsp;referencing&nbsp;style, however I can't seem to get those double spaces.</p>\r\n<p>If anybody can help me with that I'll be&nbsp;thankful.</p>\r\n",
+    "PostedDate": "2012-02-16T22:46:22.2-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "774005",
+    "ThreadId": "321371",
+    "Html": "<p>BibWord does a cleanup by automatically removing invalid punctuation (e.g. ',.' becomes '.'). One of the things it does is change every succession of multiple spaces into a single space.</p>\r\n<p>Fortunately, there is a rather easy workaround as explained at <a href=\"http://bibword.codeplex.com/discussions/64162\">http://bibword.codeplex.com/discussions/64162</a></p>",
+    "PostedDate": "2012-02-17T02:00:19.93-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

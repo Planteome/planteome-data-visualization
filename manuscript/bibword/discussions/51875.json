@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "174052",
+    "ThreadId": "51875",
+    "Html": "Hey guys!<br>\r\n<br>\r\nToday I started customizing the &quot;HarvardAnglia&quot; style and everything looks perfect except of one small thing. I'm trying to add the Year at the end of &quot;BookSection&quot; for several hours, but without having success. Right now it looks like the following:<br>\r\n<br>\r\n&lt;source type=&quot;BookSection&quot;&gt;\r\n&lt;column id=&quot;1&quot;&gt;\r\n&lt;halign&gt;left&lt;/halign&gt;\r\n&lt;valign&gt;top&lt;/valign&gt;\r\n&lt;format&gt;\r\n{&lt;b&gt;%Author:2|Editor:3|BookAuthor:2%{ (%Year|&quot;n.d&quot;%{%YearSuffix%})&lt;/b&gt;:}}{ &quot;%Title|ShortTitle%&quot;}{, in:{\r\n%Editor:3|BookAuthor:2%} (Hrsg.): &lt;i&gt;%BookTitle%&lt;/i&gt;{, %Edition:%. Edition},}{ %City%{: %Publisher%}}{ %Publisher%}{, Available: %URL%{\r\n[{{%DayAccessed% }%MonthAccessed:s% }%YearAccessed%]}}{, %Pages:S. :S. %.}.\r\n&lt;/format&gt;\r\n&lt;/column&gt;\r\n&lt;sortkey&gt;{%Author:0|Editor:0|BookAuthor:0|Title|ShortTitle%}{ %Year%}{ %Title|ShortTitle%}&lt;/sortkey&gt;\r\n&lt;/source&gt;\r\n<br>\r\n<br>\r\nWhat can I do to add the year at the end of the row &quot;BookSection&quot;??\r\n",
+    "PostedDate": "2009-03-31T13:15:43.84-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "174098",
+    "ThreadId": "51875",
+    "Html": "<p>By default each variable can only be used once. To achieve this result, BibWord keeps an internal list during formatting of variables which you already used. This allows for complex conditional formatting schemes. For example for Volume and Issue you could create something like this:</p>\r\n<p>{ %Volume%{(%Issue%)} }{ no. %Issue% }</p>\r\n<p>If both Volume(5) and <i>Issue</i>(3) are available then one would get <i>5(3)</i>. As <i>Issue</i> is already used, there would be no trailing <i>no. 3</i>. If only <i>Issue</i>(3) is available, one would get <i>no. 3</i>. </p>\r\n<p>BibWord provides a workaround by means of the <b>r</b> option for variables. With the option, you can ensure that whenever a variable is used, it is not added to the used list. That way, it can be reused later on.</p>\r\n<p>For your example, the format code would look like (look for the bold r):</p>\r\n<p><span style=\"color:#0000ff;font-size:13px\">&lt;</span><span style=\"color:#a31515;font-size:13px\">format</span><span style=\"color:#0000ff;font-size:13px\">&gt;</span><span style=\"font-size:13px\">{%Author:2|Editor:3|&quot;Anon.&quot;%,}{ %Year:<b>r</b>|&quot;n.d.&quot;%{%YearSuffix%}.}{ %Title|ShortTitle%.}{ In{ %Editor:3|BookAuthor:2%} </span><span style=\"color:#ff0000;font-size:13px\">&amp;lt;</span><span style=\"font-size:13px\">i</span><span style=\"color:#ff0000;font-size:13px\">&amp;gt;</span><span style=\"font-size:13px\">%BookTitle|ShortTitle%</span><span style=\"color:#ff0000;font-size:13px\">&amp;lt;</span><span style=\"font-size:13px\">/i</span><span style=\"color:#ff0000;font-size:13px\">&amp;gt;</span><span style=\"font-size:13px\">.{ %Edition:o% ed.}}{ %City%}{: %Publisher%}.{ Ch. %ChapterNumber%.}{ %Pages:p.:pp.:a2%.}{ %Year%.}</span><span style=\"color:#0000ff;font-size:13px\">&lt;/</span><span style=\"color:#a31515;font-size:13px\">format</span><span style=\"color:#0000ff;font-size:13px\">&gt;</span></p>\r\n<p>For more information on other formatting options, check out the BibWord Guide that comes with each release of BibWord.</p>\r\n",
+    "PostedDate": "2009-03-31T14:43:58.9-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "174724",
+    "ThreadId": "51875",
+    "Html": "Thank you very much for your help!!<br>\r\n",
+    "PostedDate": "2009-04-02T02:23:03.763-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

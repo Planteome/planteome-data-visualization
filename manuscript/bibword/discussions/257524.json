@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "612390",
+    "ThreadId": "257524",
+    "Html": "\r\n<p>Hey there,</p>\r\n<p>first of all thanks for the contribution, It has been very helpful to have other citation styles.</p>\r\n<p>I'm writing because I would like to change the order and style of the bibliography strings, and I haven't been able to do so.</p>\r\n<p>I would like the bibliographies strings to appear like this:</p>\r\n<p>&nbsp;</p>\r\n<p>Author, Article title. <span style=\"text-decoration:underline\">Journal name</span>, volume(issue): pages, month &amp; year.</p>\r\n<p>For example 1 author:</p>\r\n<p>SIEGEL, Arthur L. The miniature job training and evaluation approach: additional findings.\r\n<span style=\"text-decoration:underline\">Personnel Psychology</span>, 36(1): 41-56, Spring 1983</p>\r\n<p>&nbsp;</p>\r\n<p>If someone could tell me where to edit, or if he can edit the order and style i would be very grateful.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks !</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<table border=\"0\" cellspacing=\"0\" cellpadding=\"4\" width=\"530\" height=\"239\" bgcolor=\"#233aaa\">\r\n<tbody>\r\n<tr>\r\n<td width=\"30%\" bgcolor=\"#ffffff\"></td>\r\n<td width=\"69%\" bgcolor=\"#ffffff\"></td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n",
+    "PostedDate": "2011-05-13T06:54:18.85-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "612546",
+    "ThreadId": "257524",
+    "Html": "<p>That's a non-BibWord style. I don't work with those type of style anymore.</p>\r\n<p>Editing such a style means you will have to dig deep into the xsl and figure out where what is stored. Look for</p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre><span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">xsl</span><span style=\"color: blue;\">:</span><span style=\"color: #a31515;\">when</span> <span style=\"color: red;\">test</span><span style=\"color: blue;\">=</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">b:Bibliography</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>then inside that when structure, look for JournalArticle to find the pieces responsible for formatting journal articles. IIRC it is spread over several parts, first indicating that the title should be first, then doing something about the authors and year, and finally handling all the rest way down in the code.&nbsp;</p>",
+    "PostedDate": "2011-05-13T12:08:06.16-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "619616",
+    "ThreadId": "257524",
+    "Html": "<p>Sounds little complicated for someone who's affraid of programming :S</p>\r\n<p>&nbsp;</p>\r\n<p>hahaha</p>\r\n<p>&nbsp;</p>\r\n<p>thanks for the answer, i saw it earlier but never replied.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>Seba!</p>",
+    "PostedDate": "2011-05-27T15:55:02.333-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

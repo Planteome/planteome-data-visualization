@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "478733",
+    "ThreadId": "223106",
+    "Html": "Hi, I tried to download the Harvard style for my word 2007. But, it does not run as an application. It opens in the Win RAR file. I do not know how to run this file . please help me. thank You",
+    "PostedDate": "2010-08-10T11:44:21.617-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "478807",
+    "ThreadId": "223106",
+    "Html": "<p>All style files on this site are either zip-archives or pure xslt files. In case of zip-archives (which will open with WinRAR) you have to extract the content to the correct directory.</p>\r\n<p>To locate the correct directory, see <a href=\"http://bibword.codeplex.com/releases/view/15852\">http://bibword.codeplex.com/releases/view/15852</a></p>",
+    "PostedDate": "2010-08-10T13:52:15.127-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

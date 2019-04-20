@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "552546",
+    "ThreadId": "242574",
+    "Html": "\r\n<p>We are using the IEEE add-on Style in our group and are considering whether to investigate having our IT group distribute the Style across the organization.</p>\r\n<p>Is there a way to be auto-notified whenever particular Styles are updated?</p>\r\n",
+    "PostedDate": "2011-01-20T05:10:13.407-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "552858",
+    "ThreadId": "242574",
+    "Html": "\r\n<p>Updated where?</p>\r\n<p>Within your organization you could push them like you do with Windows updates.</p>\r\n<p>On this site there is a RSS and mail notification system but you can't specify this for a single style.</p>\r\n",
+    "PostedDate": "2011-01-20T13:39:17.367-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "553186",
+    "ThreadId": "242574",
+    "Html": "\r\n<p>When a specific Style is updated, I wanted to know if notifications go out to subscribers so that we can then push the updates out within our organization.</p>\r\n<p>It sounds like there isn't a way to subscribe to get updates about a particular style, but there is a way to subscribe to get notifications of updates to all styles.</p>\r\n<p>Thanks for the information.</p>\r\n",
+    "PostedDate": "2011-01-21T05:27:27.08-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

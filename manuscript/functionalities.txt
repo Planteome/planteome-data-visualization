@@ -1,0 +1,10 @@
+------------------------
+add legend into the matrix view
+user manual 
+add links to go back to default page
+make images bigger in manual
+left click image makes it bigger
+be able to adjust the size of labels in network
+show ontology term after the id in the matrix view
+show the gene ids in the matrix view
+use zatero to manage references

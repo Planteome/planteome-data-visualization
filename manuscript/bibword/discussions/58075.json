@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "196358",
+    "ThreadId": "58075",
+    "Html": "<p>Hi,</p>\r\n<p>I'm searching a XML schema or a example XML for a citation (not the source.xml).I need the xml with all availabe tags, like b:LastAuthor, etc.</p>\r\n<p>&nbsp;</p>\r\n<p>Greetz</p>\r\n<p>csc</p>",
+    "PostedDate": "2009-06-01T04:20:34.36-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "196408",
+    "ThreadId": "58075",
+    "Html": "<p>There is no schema available as far as I know.</p>\r\n<p>It is actually very doubtful that there is a schema considering that the input to the XSLT is a schema violation by itself. For example, a citation is deliverd as:</p>\r\n<p>&lt;b:Citation&gt;<br>&nbsp; ...<br>&nbsp; &lt;b:Source&gt;<br>&nbsp;&nbsp;&nbsp; ...<br>&nbsp;&nbsp;&lt;/b:Source&gt;<br>&lt;/b:Citation&gt;</p>\r\n<p>where the b, according to the stylesheets stands for &quot;<a href=\"http://schemas.openxmlformats.org/officeDocument/2006/bibliography\">http://schemas.openxmlformats.org/officeDocument/2006/bibliography</a>&quot;. If you check that schema, you will notice that a Citation element is nowhere defined. Same goes for FirstAuthor, LastAuthor, Bibliography, MinAuthors, ...</p>\r\n<p>The easiest way to see what is available is to make a dump. In your stylesheet, you just&nbsp;&quot;listen&quot; for an b:Citation element, and when one arrives, you just output its entire content again as an xml tree. It looks a bit ugly in Word, but its a way to get started.</p>\r\n<p>The list I can think of on top of my head:</p>\r\n<ul>\r\n<li>FirstAuthor: indicates if this is the first citation in a group of in-text citations</li>\r\n<li>LastAuthor: indicates if this is the last citation in a group of in-text citations</li>\r\n<li>MinAuthors: see <a href=\"http://blogs.msdn.com/microsoft_office_word/archive/2009/04/29/bibliography-citations-102-building-custom-styles.aspx\">http://blogs.msdn.com/microsoft_office_word/archive/2009/04/29/bibliography-citations-102-building-custom-styles.aspx</a></li>\r\n<li>RepeatedAuthor: see <a href=\"http://blogs.msdn.com/microsoft_office_word/archive/2009/04/29/bibliography-citations-102-building-custom-styles.aspx\">http://blogs.msdn.com/microsoft_office_word/archive/2009/04/29/bibliography-citations-102-building-custom-styles.aspx</a></li>\r\n<li>NoAuthor: indicates that the&nbsp;author should be suppressed (\\n flag)</li>\r\n<li>NoTitle: indicates that the title should be suppressed (\\t flag)</li>\r\n<li>NoYear: indicates that the year should be suppressed (\\y flag)</li>\r\n<li>Volume: indicates the volume specific for this in-text citation (\\v flag)</li>\r\n<li>Pages: indicates the page range specific for this in-text citation (contrary to the one in the source) (\\p flag)</li>\r\n<li>PagePrefix: the prefix to show in front of the in-text citation (\\f flag)</li>\r\n<li>PageSuffix: the suffix to show at the end of the in-text citation (\\s flag)</li>\r\n<li>Source: the actual source (which can contain its own Volume and Pages)</li>\r\n<li>Locals: localized strings. They might be of interest if you create an international stylesheet but they have serious drawbacks as sometimes different languages require slightly different wording not supported by the definitions.</li>\r\n</ul>\r\n<p>On a final note, because the algorithms to decide the main author are fishy in my opinion (different styles can have different opinions about who the main author is), the usage of MinAuthors and RepeatedAuthor for in-text citations, should be considered carefully.</p>",
+    "PostedDate": "2009-06-01T07:38:53.907-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

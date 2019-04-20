@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "601600",
+    "ThreadId": "254961",
+    "Html": "\r\n<p>Hello everyone,<br>\r\n<br>\r\nI'm having trouble whenever I use either the&nbsp; IEEE - Reference Order style or the just the older IEEE style in Word 2010. All my sources are in place but whenever I try to insert a citation into text, it does not include an index (reference) number.&nbsp;\r\n All it shows is &quot;[]&quot;. In the source manager it does show in the current list, the citation number with each entry (e.g., Citation: [3]) but in the Master list it displays the citation as just [[index].&nbsp; I toggled the code in the document and it appears\r\n to show the correct field code, (e.g., &quot; {CITATION RCH98 \\1 1033}. I've troubleshooted and few things and cannot figure out what is going on. It worked fine when I did it in Word 2007. Any suggestions to fix the issue?&nbsp;</p>\r\n<p>Thanks!</p>\r\n",
+    "PostedDate": "2011-04-22T09:35:35.13-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "601829",
+    "ThreadId": "254961",
+    "Html": "<p>Does it work with the styles which come with Word 2010 out of the box? Especially check with \"ISO 690 - Numerical Reference\".</p>",
+    "PostedDate": "2011-04-23T01:31:21.833-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "601935",
+    "ThreadId": "254961",
+    "Html": "<p>Thanks for the reply. Yes, it actually puts in a physical number in the \"in text\" citation, e.g.&nbsp; \"(2).&nbsp; But even with the ISO 690 Numerical Reference, the source manager still displays the same results as before in the master/current list.&nbsp; What does it mean then that the ISO 609 Numerical puts in an index number? I guess that is good but I do not want to use that particular style.</p>\r\n<p>Thanks...</p>",
+    "PostedDate": "2011-04-23T11:43:40.293-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "601958",
+    "ThreadId": "254961",
+    "Html": "<p>The behaviour displayed by the source manager is normal. You should see \"index\" when using the master list instead of a number.</p>\r\n<p>The fact that ISO 690 displays the entries correctly implies that there is nothing wrong with input to the stylesheet.</p>\r\n<p>Have you by any chance changed something to the stylesheet. The only thing I can think of is that a {} or % is unbalanced in the format string for the in-text citation. Try downloading the stylesheet again and replacing your current one.</p>",
+    "PostedDate": "2011-04-23T14:39:57.54-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "601976",
+    "ThreadId": "254961",
+    "Html": "<p>Hi yves,</p>\r\n<p>No, I did not change anything in the stylesheet--I know better!&nbsp; Anyway, I tried re-downloading and replacing the current sheets...still to no avail.&nbsp; It's weird, again, only the \"[]\" shows in the text without the citation, but when I toggle the code,&nbsp; the correct citation reference shows up. Apart from the IEEE and ISO Numerical styles, the other defaults work fine but they don't provide a numerical reference. This is frustrating, perhaps it's just another one of those MS Word mystery issues. If you can provide any further troubleshooting steps or suggestions that will be great.</p>\r\n<p>Thanks...</p>",
+    "PostedDate": "2011-04-23T15:30:23.093-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "602051",
+    "ThreadId": "254961",
+    "Html": "<p>Are you now saying that the ISO Numerical style which comes with Word doesn't work correctly either? From your previous posts I tought it did work. If the ISO 690 Numerical style isn't working correctly either, then the problem isn't with the stylesheets but with Word. Something must be wrong with the installation. Except for an uninstall followed by a reinstall there is nothing I can suggest in that case.</p>",
+    "PostedDate": "2011-04-24T01:04:05.553-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "602153",
+    "ThreadId": "254961",
+    "Html": "<p>My apologies...I miss typed...I meant to say, \"Apart from the IEEE, the other defaults work fine but they don't provide a numerical reference. Of course the default ISO Numerical style works fine.\"</p>\r\n<p>Thanks...</p>",
+    "PostedDate": "2011-04-24T10:24:42.907-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "917210",
+    "ThreadId": "396824",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>Can someone tell me how can I achieve this kind of reference notation:</p>\r\n<p>[J&auml;rvinen ja Heikkinen, 2004] Kimmo J&auml;rvinen ja Topi Heikkinen, Kehitysaskeleita tulevaisuuteen. Talentum, Helsinki, 2001.</p>\r\n<p>The <strong>problem</strong> is that I need to repeat the author names in the same reference and I only get this:&nbsp;[J&auml;rvinen ja Heikkinen, 2004] Anon., n.d., Kehitysaskeleita tulevaisuuteen. Talentum, Helsinki, 2001.</p>\r\n<p>Is there any way I can modify my Harvard Anglia style to do this kind of formatting?</p>\r\n",
+    "PostedDate": "2012-09-25T06:14:38.82-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "917229",
+    "ThreadId": "396824",
+    "Html": "<p>By default BibWord only picks up the first occurence of a variable. This allows for&nbsp;some basic if-constructs (see <a href=\"http://bibword.codeplex.com/wikipage?title=BibWord%20Format%20Strings&amp;referringTitle=Documentation\">http://bibword.codeplex.com/wikipage?title=BibWord%20Format%20Strings&amp;referringTitle=Documentation</a>&nbsp;just before 'Contributor Format Strings' for an example).</p>\r\n<p>However, you can override this default behaviour by adding an 'r'-flag after the variable. This way the variable can be reused a second time. For example, to reuse the Year variable %Year% would become %Year<strong>:r</strong>%.</p>",
+    "PostedDate": "2012-09-25T06:41:13.69-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "917235",
+    "ThreadId": "396824",
+    "Html": "<blockquote style=\"border: solid .1em #ccc; font-style: italic; margin: .25em 1em 0 1em; padding: 0 .25em 0 .25em;\"><strong>yves wrote:</strong><br />\r\n<p>By default BibWord only picks up the first occurence of a variable. This allows for&nbsp;some basic if-constructs (see <a href=\"http://bibword.codeplex.com/wikipage?title=BibWord%20Format%20Strings&amp;referringTitle=Documentation\"> http://bibword.codeplex.com/wikipage?title=BibWord%20Format%20Strings&amp;referringTitle=Documentation</a>&nbsp;just before 'Contributor Format Strings' for an example).</p>\r\n<p>However, you can override this default behaviour by adding an 'r'-flag after the variable. This way the variable can be reused a second time. For example, to reuse the Year variable %Year% would become %Year<strong>:r</strong>%.</p>\r\n</blockquote>\r\n<p>Thanks, that seemed to work nicely. Btw, sorry about spamming your email, did not know you were also actively here. My apologies.</p>",
+    "PostedDate": "2012-09-25T06:48:03.947-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

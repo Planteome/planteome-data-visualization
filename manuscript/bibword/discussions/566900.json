@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1302898",
+    "ThreadId": "566900",
+    "Html": "We have a customer for whom we're customizing Word to add a special bibliography style. Their style requires some of the fields in their bibliography colored red when the citation is generated, for internal review purposes. (We are using the footnotes style instead of bibliography at the end of the document - thanks for that, by the way.)\r<br />\n<br />\nI've edited the bibliography style and added to the bibform.xml without any trouble. I have been able to configure the citations and adding new source types or data fields as required by the customer. I have also been able to change the generated text as needed, such as making entries bold, italic or small caps. But, the red text eludes me, which makes me wonder if this is even possible to do. Any ideas?<br />\n",
+    "PostedDate": "2014-09-09T08:20:14.867-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1303734",
+    "ThreadId": "566900",
+    "Html": "I know that Word's HTML capabilities are limited, but I'm not sure if it excludes colour or not.<br />\n<br />\nAt any rate, I know for a fact that even up to 2013, Citations and Bibliographies are not aware of each other (i.e., when calling for the template for a bibliography, Word does not tell the template about sources which have already been cited).<br />\n<br />\nUnfortunately, that pretty much puts a spanner in the works of colouring only things which have been cited, but you may be able to add colour at any rate. <br />\n",
+    "PostedDate": "2014-09-11T11:50:52.683-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1303736",
+    "ThreadId": "566900",
+    "Html": "My experience with handling text attributes is very limited and I have a note that Yves states that “In-text citations inherit the style of their surroundings. Only limited formatting (bold, underline, italic) can be applied to them through the reference style.”\r<br />\n<br />\nYou can try the following procedure, which has to be applied to the relevant sections of text within each applicable, single field (laborious though this is):\r<br />\n<br />\n&lt;font color=&quot;red&quot;&gt;whatever the text is&lt;/font&gt; \r<br />\nThis outputs the bracketed text in red text.\r<br />\n<br />\nHope this helps,\r<br />\n<br />\nLionel,\r<br />\nTau Editing,\r<br />\nProfessional language Practitioner.<br />\n",
+    "PostedDate": "2014-09-11T12:03:26.747-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

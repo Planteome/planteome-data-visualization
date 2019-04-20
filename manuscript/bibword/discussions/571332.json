@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1319260",
+    "ThreadId": "571332",
+    "Html": "Hi,\r<br />\nCan someone help me; I tried to use ACM style, but It's not working. I received the below error + the format is still not according to ACM ...\r<br />\n&quot;Unsupported source type (InternetSite) for source Blo14.&quot;\r<br />\nThanks<br />\n",
+    "PostedDate": "2014-11-05T00:44:15.7-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1319281",
+    "ThreadId": "571332",
+    "Html": "Unsupported source type means that the source type is not supported. \r<br />\n<br />\nThe most likely reason is that, at the time the style was created, ACM did not provide official guidelines on how to format an InternetSite. As such, no formatting rules for it are available. If you check the <a href=\"http://www.acm.org/publications/word_style\" rel=\"nofollow\">ACM site</a> you will notice that it still has no information on how a web site reference should be added.\r<br />\n<br />\nBesides, if you read the <a href=\"https://bibword.codeplex.com/releases/view/19777\" rel=\"nofollow\">download page</a> (you commented on it, so I assume you read it), you will notice that only the following types are supported:\r<br />\n<br />\nArticleInAPeriodical\r<br />\nBook\r<br />\nBookSection\r<br />\nConferenceProceedings\r<br />\nJournalArticle\r<br />\nMisc\r<br />\nReport &gt; Thesis\r<br />\n<br />\nIf there are formatting errors in the entries which are provided, then please describe the exact error (e.g. &quot;Kennedy, John&quot; should be &quot;KENNEDY, J&quot;). Saying that the format is not according to ACM without saying what is wrong with it will not get you much help.<br />\n",
+    "PostedDate": "2014-11-05T01:36:51.657-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "566569",
+    "ThreadId": "246140",
+    "Html": "\r\n<p>Dear all,</p>\r\n<p>I've just downloaded BibWord and its sytles. Thank you very much, you did a great job!</p>\r\n<p>Now I come to a little problem I have. I created a new type extension (Conference paper) in order to use it for the Harvard &quot;SAGE&quot; style I created. Everything works properly, except for the fact that in the sources list window, when I enter a new &quot;Conference\r\n paper&quot; the Author is not displayed. Below an example:</p>\r\n<p>Citation: (Feather, 1999)</p>\r\n<p>Bibliography: Feather M (1999) Internet and child victimisation. Paper presented at\r\n<em>Children and Crime: Victims and Offenders Conference</em>. Brisbane, Australia, 17-18 June.</p>\r\n<p>This is perfect; however, in the sources window it appears as:</p>\r\n<p>Internet and child victimisation (1999)</p>\r\n<p>...and this causes me some problems, since it is not possible to see the author in order to manage all the things.</p>\r\n<p>Is there any idea about that? I looked in the discussion section, but I haven't found anything.</p>\r\n<p>Thank you in advance.</p>\r\n<p>&nbsp;</p>\r\n<p><span lang=\"EN-US\" style=\"font-size:11pt\"><br>\r\n</span></p>\r\n",
+    "PostedDate": "2011-02-15T09:05:19.423-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "566677",
+    "ThreadId": "246140",
+    "Html": "<p>The sources window gets created through the Author2String.xsl (talk about incorrect naming...)&nbsp;which is located one directory up from where bibliography styles are stored. The XSL generates a b:DisplayAuthor value indicating what should be shown for the author. If you check the code of the MainContributors template, you will notice that there is a switch there for every type of source. So if you defined new ones, you will have to add them there as well.</p>\r\n<p>This is why BibWord suggests to stick to&nbsp;the existing types but override the Type field to provide some kind of 'subselection'. That way, this type of glitches can be prevented.</p>",
+    "PostedDate": "2011-02-15T12:17:34.203-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "566757",
+    "ThreadId": "246140",
+    "Html": "<p>Dear Yves,</p>\r\n<p>thanks a lot for your quick reply! I added the strings in the Author2String.xsl and solved the problem. Invaluable help ;)</p>",
+    "PostedDate": "2011-02-15T14:10:33.387-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "566766",
+    "ThreadId": "246140",
+    "Html": "<p>Just another thing: I also modified (adding the specific strings) the file AUTHOR.XSL (in the directory Bibliogrphy --&gt; Sort).</p>\r\n<p>Thank you again, good night</p>",
+    "PostedDate": "2011-02-15T14:37:27.98-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "844733",
+    "ThreadId": "358341",
+    "Html": "\r\n<p>I work for an editing company, and I am woefully new at Word 2010. I am looking to download the BibWord styles. I managed to download the zip files but what I need is a step-by-step tutorial on how to drop them into Word. There is nothing on this site that\r\n I have found that has this. I am not the most computer literate person on the block. I usually learn from messing things up. Thanks in advance.</p>\r\n",
+    "PostedDate": "2012-06-04T17:43:45.673-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "844816",
+    "ThreadId": "358341",
+    "Html": "\r\n<p>See <a href=\"http://bibword.codeplex.com/wikipage?title=Styles&referringTitle=Documentation&ANCHOR#Installation\">\r\nhttp://bibword.codeplex.com/wikipage?title=Styles&amp;referringTitle=Documentation&amp;ANCHOR#Installation</a></p>\r\n<p>Also see <a href=\"http://bibword.codeplex.com/releases/view/15852\">http://bibword.codeplex.com/releases/view/15852</a>&nbsp;and the remarks about 64 vs 32 bit that some users made in the comments.</p>\r\n",
+    "PostedDate": "2012-06-04T23:14:51.387-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

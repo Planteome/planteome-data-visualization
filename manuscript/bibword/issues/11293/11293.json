@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "There is no alternative known. For 2007 and 2010, Word only looks under program files.\nThis is not a BibWord issue.",
+    "ClosedDate": "2013-09-25T22:32:37.38-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Am I right in thinking that it is impossible to install this for Word 2010 if you are not an administrator on the machine?\n\nIt doesn't seem to work if I put the styles in my own appdata folder as per the Word 2013 instructions and not having admin rights on my machine I can't write to anything under C:\\Program Files",
+    "LastUpdatedDate": "2013-09-25T22:32:37.38-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "bibword",
+    "ReportedDate": "2013-09-24T04:49:55.647-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Installation as non-admin Word 2010",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 11293
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

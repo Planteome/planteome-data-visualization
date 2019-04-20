@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "178796",
+    "ThreadId": "53168",
+    "Html": "When writing a list of references at the end of a sentence, you want them to appear like this: (Stilwell et al., 2007; Edwards &amp; Hammersmith., 1958; Patel., 1999), with a semicolon between references, rather than like this: (Stilwell et al., 2007)(Edwards &amp; Hammersmith., 1958)(Patel., 1999), with brackets between references<div>But I can't find a way to do it automatically.  I have resigned to converting to static text and editing out the brackets.  What a bummer.  Any help anyone?</div><div>Cheers</div><div>Stils</div>",
+    "PostedDate": "2009-04-13T21:47:22.3-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "178819",
+    "ThreadId": "53168",
+    "Html": "See <a href=\"http://bibliography.codeplex.com/Wiki/View.aspx?title=FAQ#Q1\">http://bibliography.codeplex.com/Wiki/View.aspx?title=FAQ#Q1</a>\r\n",
+    "PostedDate": "2009-04-13T23:03:40.737-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

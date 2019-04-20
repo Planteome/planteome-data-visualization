@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi\nFirstly I would like to thank you for your awesome job on BibWord. It really helped me out.\nSecondly, I have created a referencing style based on my university's guidelines, and using your xml templates. The referencing style is a numbered style.\nI would like to ask why the citations inside text boxes have different ordering than to those outside. Whenever I add a citation in a text-box, it becomes the last source in the bibliography, regardless of the order in which the citations are. For example, if I have citations A & B in text-boxes, and citation X outside a text box, the order of the bibliography becomes: 1.X 2.A 3.B\nI was wondering if there is a way to fix this.\nThanks",
+    "LastUpdatedDate": "2014-04-22T23:27:36.28-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "bibword",
+    "ReportedDate": "2014-04-22T23:27:36.28-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Citation order not the same in text boxes!",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 11682
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

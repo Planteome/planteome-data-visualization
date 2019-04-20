@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "488377",
+    "ThreadId": "225840",
+    "Html": "<p>Is there a way how to change the language of a bibliography, so that some fill words (like &quot;retrieved&quot; for web resources) are shown in the correct document language (ASA style)?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks!</p>",
+    "PostedDate": "2010-09-02T10:09:54.11-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "488468",
+    "ThreadId": "225840",
+    "Html": "<p>No. After seeing the language issues with the styles which came with Word, I specifically choose to make BibWord styles to be in one language only.</p>\r\n<p>Of course, as bibliographies tend to contain only limited 'fill words', you could easily go over the data element in the xslt&nbsp;and translate it yourself. It is probably done in less than 10 minutes.</p>",
+    "PostedDate": "2010-09-02T13:21:28.877-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "488483",
+    "ThreadId": "225840",
+    "Html": "<p>ok, I'll try that... thanks!</p>",
+    "PostedDate": "2010-09-02T13:43:16.357-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,90 @@
+[
+  {
+    "Id": "492463",
+    "ThreadId": "226925",
+    "Html": "<p>Hi,</p>\r\n<p>Thanks for the great work. I have just added the extra styles and the BibWord extender 2.0.</p>\r\n<p>I have using the Harvard - Anglia style and need to reference some interviews and some emails (under miscellaneous).</p>\r\n<p>In both in-text citation and bibliography it shows:</p>\r\n<p><span lang=EN-GB><strong>(Unsupported source type (Interview) for source Fer10.</strong>)</span></p>\r\n<p><strong>(Unsupported source type (Misc) for source Sen10)</strong></p>\r\n<p><strong>Is there any way around this?</strong></p>\r\n<p>&nbsp;</p>\r\n<p>Thanks in advance!</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-09-12T06:03:41.83-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "492486",
+    "ThreadId": "226925",
+    "Html": "<p>If you see unsupported source type messages, this means that there is no information available on how to format such an entry. I never implement types of which there is no specific defintion by the style guide because the result might or might not be correct.</p>\r\n<p>Of course, if you are convinced that you know the correct&nbsp;way of formatting, you can always write them yourself. It shouldn't be all that hard as you have&nbsp;format strings for all other types at your disposal.</p>",
+    "PostedDate": "2010-09-12T09:15:04.7-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "540543",
+    "ThreadId": "226925",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I tried copying the interview styles from Harvard - Leeds XSLT.</p>\r\n<p>Searched for the interview string and inserted the tags under <em>importantfields, citation, bibiliography, extension\r\n</em>tags.</p>\r\n<p>However, my bibiliography shows:</p>\r\n<p>Anon., 2010.</p>\r\n<p>Instead of say</p>\r\n<p>Smith, J., 2010. Interview with the Author on ...</p>\r\n<p>Please can you help me fix this.</p>\r\n",
+    "PostedDate": "2010-12-26T07:24:31.93-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "540547",
+    "ThreadId": "226925",
+    "Html": "\r\n<p>BTW,</p>\r\n<p>Here's the guide to the referencing style I need to use:</p>\r\n<p>http://www.library.otago.ac.nz/pdf/harvard_citing_and_referencing_guide_2007.pdf</p>\r\n<p>Anglia seems the closest match.</p>\r\n",
+    "PostedDate": "2010-12-26T07:31:21.993-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "540548",
+    "ThreadId": "226925",
+    "Html": "\r\n<p>According to the format string for interviews in Harvard Leeds, the first field is the Interviewee. Have you actually filled in information in the Interviewee field? Or have you used Author or something else?</p>\r\n<p>Also, in Harvard Leeds, the interviewee is formatted according to the specficiations for list 2 (%Interviewee:<strong>2</strong>%). Are you sure that the style you are trying to use has such a list defined?</p>\r\n",
+    "PostedDate": "2010-12-26T07:42:45.077-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "540555",
+    "ThreadId": "226925",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I belive I have: http://cid-666e8fd074170ae2.office.live.com/self.aspx/Public/interview-source.png</p>\r\n<p>I didn't create a new style. Just copied the stuff over from Leeds. So, I belive the list 2 is defined: &lt;list name=&quot;author&quot; id=&quot;2&quot;&gt; Maybe I'm looking at the wrong place.</p>\r\n<p>BTW, if I switch the referencing style to Leeds, I see</p>\r\n<p>Smith, J. 2010.</p>\r\n<p>only. No Interview with .. part.</p>\r\n",
+    "PostedDate": "2010-12-26T08:01:11.96-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "540557",
+    "ThreadId": "226925",
+    "Html": "\r\n<p>Add an r option after the first year variable so it can be reused.</p>\r\n<p>So</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>{%Interviewee:2%.}{ %Year%{%YearSuffix%}.}{ Interview with the author on{ {%Day%} %Month:s%} %Year%.}{ %City%.}{ %Comments%}.<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>becomes&nbsp;</p>\r\n<div id=\"x__mcePaste\" style=\"width:1px; height:1px; overflow:hidden; top:0px; left:-10000px\">\r\n&#65279;</div>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>{%Interviewee:2%.}{ %Year<span style=\"color:#0000ff\"><strong>:r</strong></span>%{%YearSuffix%}.}{ Interview with the author on{ {%Day%} %Month:s%} %Year%.}{ %City%.}{ %Comments%}.<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n",
+    "PostedDate": "2010-12-26T08:07:10.677-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "540561",
+    "ThreadId": "226925",
+    "Html": "\r\n<p>Sorry, didn't seem to help.</p>\r\n<p>Still the same issue.</p>\r\n",
+    "PostedDate": "2010-12-26T08:31:16.56-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "540578",
+    "ThreadId": "226925",
+    "Html": "\r\n<p>I just tried it. Works perfectly here.</p>\r\n<p>I also tried copying interview (bibliography)&nbsp;from Leeds to Anglia and that worked as well.</p>\r\n",
+    "PostedDate": "2010-12-26T09:40:28.69-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "540669",
+    "ThreadId": "226925",
+    "Html": "\r\n<p>Would you be able to send the XSLT?</p>\r\n<p>Would really appreciate it.</p>\r\n",
+    "PostedDate": "2010-12-26T18:12:52.227-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "540723",
+    "ThreadId": "226925",
+    "Html": "\r\n<p>Mail me directly (my address is at the top of the stylesheets normally) as I don't have your address.</p>\r\n",
+    "PostedDate": "2010-12-27T00:46:06.713-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

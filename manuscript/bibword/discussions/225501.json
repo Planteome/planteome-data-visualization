@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "487108",
+    "ThreadId": "225501",
+    "Html": "<p>It appears there has not been a project started to develop a style to  match the American Society of Mechanical Engineers (ASME) reference  template as found here: <a title=\"References - ASME\" href=\"http://www.asme.org/Publications/ConfProceedings/Author/References_2.cfm\">http://www.asme.org/Publications/ConfProceedings/Author/References_2.cfm</a> .&nbsp; Am I mistaken, and does one exist or in the works?&nbsp; If there not-  know there is a demand out there!&nbsp; Personally, I defaulted to Zotero b/c  someone has already developed the ASME template, but an ASME .bib file  would always be handy as well- it's just a little too time intensive for  one ME (and amateur programmer) to tackle. Thanks.</p>",
+    "PostedDate": "2010-08-31T10:48:01.763-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "487139",
+    "ThreadId": "225501",
+    "Html": "<p>This style seems to be closely related to the one used by IEEE. You might want to start from that one.</p>",
+    "PostedDate": "2010-08-31T11:55:23.677-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "487149",
+    "ThreadId": "225501",
+    "Html": "<p>Unfortunately, close only counts in horseshoes and hand grenades.&nbsp; It does use numerical references and square brackets, it's just that you would have to manually move the date of each reference, which isn't horrible, but it WOULD be nice to have an ASME specific code.&nbsp; Thank you.</p>",
+    "PostedDate": "2010-08-31T12:21:18.877-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "487175",
+    "ThreadId": "225501",
+    "Html": "<p>My point was that you could start from the IEEE style to create your own for ASME. In-text citations would already be correct and if all you would need was to move the year, you would simply have to look for %Year% and it's surrounding braces ({}) and move the entire structure accordingly. The entire idea of BibWord is to help to create new styles, not that I create new styles on request. This is just a spare time project for me.</p>",
+    "PostedDate": "2010-08-31T13:01:18.74-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "487185",
+    "ThreadId": "225501",
+    "Html": "<p>Point taken, and appreciated.&nbsp; The closest style I had before downloading your IEEE was the ISO690 square bracket - and that code does not seem as simple to modify as your IEEE code which was why I didn't want to mess with editing.&nbsp; I will give it a go with your IEEE and see what happens.&nbsp; Thanks again!</p>",
+    "PostedDate": "2010-08-31T13:17:36.007-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "504368",
+    "ThreadId": "225501",
+    "Html": "<p>Hey Picante- &nbsp;were you able to get the&nbsp;restyling for ASME done?&nbsp;</p>",
+    "PostedDate": "2010-10-08T09:58:17.907-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "504472",
+    "ThreadId": "225501",
+    "Html": "<p>I was able to make a bit of progress, basically to the point that I just need to move commas and periods around.&nbsp; I ran out of time to hassle with it though.&nbsp; Zotero has a MS Word add in and someone had already made an ASME format so I ended up using that.&nbsp; When i have time I would like to finish the formatting so that I'll also have a built in Word bib format. Thanks.</p>",
+    "PostedDate": "2010-10-08T12:11:52.14-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1352224",
+    "ThreadId": "225501",
+    "Html": "Just wondering If you ever got around to building the ASME citation style, if not I'm attempting to write my own version by converting the given IEEE file <br />\n",
+    "PostedDate": "2015-02-13T07:29:45.687-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

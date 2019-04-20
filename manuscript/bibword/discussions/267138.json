@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "649905",
+    "ThreadId": "267138",
+    "Html": "<p>Hello,</p>\n<p>I need a solution for such problem in bibliography. If in citation author and title occurs for the first time, there should be normal citation:</p>\n<p>Author, Title, City, Year.</p>\n<p>If the same author occurs in next citations with the same title I need to have citation like this:</p>\n<p>Author, First word of title... (three dots),City, Year</p>\n<p>I suppose it's not very difficult, but I'm really not skilled in xml.</p>",
+    "PostedDate": "2011-07-30T01:29:41.797-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "649913",
+    "ThreadId": "267138",
+    "Html": "<p>It's (almost) impossible.</p>\r\n<p>There is a design flaw (well in my opinion) in the citation and bibliography tools in that an in-text or footnote citation is not aware of its surroundings. That is, your citation won't be able to tell if it is the first time, the second, the third, ... time it is used. So Word is not automatically capable of doing what you want.</p>\r\n<p>You could try to guide Word by providing an indication with each&nbsp;citation telling it what type of&nbsp;format you expect. I once made such a style as a proof-of-concept: <a href=\"http://bibword.codeplex.com/releases/view/20331\">http://bibword.codeplex.com/releases/view/20331</a>&nbsp;. You could use that one as a guideline but it's going to require some xslt knowledge to get where you want.</p>",
+    "PostedDate": "2011-07-30T02:37:41.077-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "650122",
+    "ThreadId": "267138",
+    "Html": "<p>Thank you,</p>\r\n<p>It's indeed too complicated form me. I choose the citation option \"no title\", and changed &lt;notitle&gt;, erasing \"shorttitle\" from the list, so the effect is almost the same. Nevertheless another problem emerged:</p>\r\n<p>In the command line I left %Title|ShortTitle%, so, when I choose notitle option, I have citation with short title, but I need short title to be displayed like this:</p>\r\n<p>ShortTitle... (three dots).</p>\r\n<p>Is it possible to add this symbol to command line? It must be like %Title|ShortTitle...%, as I need this ... only after short title in \"notitle\" option.</p>\r\n<p>This could be solved by inserting \"Cinderella...\" in \"Short Title\" field, but in such case I have only one dot (Cinderella.) in citation. So, if there was no possibility of adding three dots to format line, could I add this dots into \"Short Title\" field?</p>",
+    "PostedDate": "2011-07-30T23:43:03.75-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

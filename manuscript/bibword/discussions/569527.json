@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "1312330",
+    "ThreadId": "569527",
+    "Html": "I have a problem with um Style Bibligrafia. I had to create for the faculty where I teach. The bibliography style is based in Brazilian ABNT, because I'm in Brazil. ABNT is based on APA.\r<br />\n<br />\nThe style that I created for Word 2010. But over ara some students file using Word 2013, but in 2013 my style is not recognized.\r<br />\n<br />\nYou need to add some line, some code in the xsl file, Word 2013 to recognize the style?\r<br />\n<br />\nThanks!!<br />\n",
+    "PostedDate": "2014-10-10T15:21:15.913-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1314207",
+    "ThreadId": "569527",
+    "Html": "Word 2013 requires a couple of new elements in a style to be recognized.\r<br />\n<br />\nThe easiest way to 'upgrade' your style is to download the latest template version from <a href=\"https://bibword.codeplex.com/releases/view/104366\" rel=\"nofollow\">here</a> . \r<br />\n<br />\nIn both styles, find the data variable (&lt;xsl:variable name=&quot;data&quot;&gt;...&lt;/xsl:variable&gt;) . Replace the one in the template you downloaded with the one from your style for Word 2010. The new style should now work in all versions of Word up to Word 2013.<br />\n",
+    "PostedDate": "2014-10-16T23:26:11.133-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1314676",
+    "ThreadId": "569527",
+    "Html": "I have the same issue. I have been trying to get word 2011  (MAC) to accept the xsl file I use within word 2010 on my pc. I copy the file in to the correct place for a MAC but it doesn't appear. Is there something I need to change?\r<br />\n<br />\nI have also tried to put it in word 2011 for pc but it doesn't work here either. \r<br />\n<br />\nAny help would be greatly appreciated. \r<br />\n<br />\nThanks,\r<br />\nJamie<br />\n",
+    "PostedDate": "2014-10-18T14:57:48.163-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1314796",
+    "ThreadId": "569527",
+    "Html": "<strong>JamiePenn1993 wrote:</strong><br />\n<blockquote>\nI have the same issue. I have been trying to get word 2011  (MAC) to accept the xsl file I use within word 2010 on my pc. I copy the file in to the correct place for a MAC but it doesn't appear. Is there something I need to change?<br />\n</blockquote>\nI doubt it is the same issue. Styles working Word 2010 for Windows should work in Word 2011 for Mac. Are you sure they are not showing up? There is a bug in Word for Mac. See <a href=\"https://bibword.codeplex.com/wikipage?title=Styles_FAQ#Q2\" rel=\"nofollow\">FAQ</a>\r<br />\n<br />\n<strong>JamiePenn1993 wrote:</strong><br />\n<blockquote>\nI have also tried to put it in word 2011 for pc but it doesn't work here either. <br />\n</blockquote>\nThere is no Word 2011 for pc (Windows). There is a Word 2013 and 365. For those, the stylesheet needs to be updated. Information can be found in this discussion forum.<br />\n",
+    "PostedDate": "2014-10-19T12:17:29.843-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1314892",
+    "ThreadId": "569527",
+    "Html": "Thanks for the reply Yves. \r<br />\n<br />\nThe XSL file works fine in word 2010 my apologies. It is in word 2011 (MAC) which I cant get it to work. I cant seem to find the bug in which you are talking about could you point me in the right direction then I can make the necessary changes for the university students. It definitely doesn't appear in the MAC version, I will make the changes so that it works on 2013. \r<br />\n<br />\nCould you point me in the right direction, or paste the changes here I need to make so that the MAC version can see it (you talk about a bug). Is this something which I can change quickly?\r<br />\n<br />\nThanks again,\r<br />\nJamie<br />\n",
+    "PostedDate": "2014-10-20T01:04:47.74-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1318698",
+    "ThreadId": "569527",
+    "Html": "Yves.\r<br />\n<br />\n<br />\nIt worked perfectly! Thank you. When you have made any updates, I will make available<br />\n",
+    "PostedDate": "2014-11-03T11:43:34.03-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1327271",
+    "ThreadId": "569527",
+    "Html": "Yves\r<br />\n<br />\n<br />\nGot a presentable model for my college. I hope to improve. It took also make changes in BibForm because the studies are conducted in brazilian Portuguese \r<br />\n<br />\nOnly one problem.\r<br />\n<br />\nWhen a book has no author, the first significant word, excluded the articles should appear in uppercase. But I can not do that. I put all items of Portuguese language, but is missing that they are ignored when capitalize.\r<br />\n<br />\nIt is possible in Word?\r<br />\n<br />\nI enclose my style &quot;Praecones&quot; version &quot;2014.m&quot;\r<br />\n<br />\n<a href=\"https://www.dropbox.com/s/aawidvionpbm1pe/Praecones%202014%20m.xsl?dl=0\" rel=\"nofollow\">https://www.dropbox.com/s/aawidvionpbm1pe/Praecones%202014%20m.xsl?dl=0</a>\r<br />\n<br />\nAleixa<br />\n",
+    "PostedDate": "2014-11-29T12:08:34.73-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

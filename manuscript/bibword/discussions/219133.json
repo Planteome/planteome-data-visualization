@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "466245",
+    "ThreadId": "219133",
+    "Html": "<p>Hi,</p>\r\n<p>I would like to use citations in my document, but I would like them to be hidden by default. They are for my own reference and shouldn't be printed in the final document.</p>\r\n<p>&nbsp;</p>\r\n<p>Is there any way I can modify the included citations so that the font of the inline citations is set to &quot;Hidden&quot;?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks!</p>\r\n<p>Scott</p>",
+    "PostedDate": "2010-07-12T04:35:44.32-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "466404",
+    "ThreadId": "219133",
+    "Html": "<p>Check out the macro at <a href=\"http://bibword.codeplex.com/wikipage?title=Styles_FAQ&referringTitle=Documentation#Q9\">http://bibword.codeplex.com/wikipage?title=Styles_FAQ&amp;referringTitle=Documentation#Q9</a></p>\r\n<p>It's intended to make all in-text citations appear in superscript. You can easily adapt it to format the text as hidden. Just change</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>s.Font.Superscript = <span style=\"color:blue\">True</span>\r\n</pre>\r\n</div>\r\n<p>into</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre>s.Font.Hidden = <span style=\"color:blue\">True</span>\r\n</pre>\r\n</div>",
+    "PostedDate": "2010-07-12T09:43:29.27-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "466685",
+    "ThreadId": "219133",
+    "Html": "<p>Thanks!</p>",
+    "PostedDate": "2010-07-13T02:57:44.637-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

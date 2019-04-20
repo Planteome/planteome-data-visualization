@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "916859",
+    "ThreadId": "396723",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I need to change the style in which the inserted bibliography is written.</p>\r\n<p>For example, I want the reference authors written in bold, the publisher in italic , and the title between quotation marks.</p>\r\n<p>How can I change the default format of the bibliography?</p>\r\n<p>Thanks so much in advance.</p>\r\n<p>Regards,</p>\r\n<p>Aya.</p>\r\n",
+    "PostedDate": "2012-09-24T13:23:42.907-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "917225",
+    "ThreadId": "396723",
+    "Html": "<p>The XSLTs output HTML. So if you want things like bold and&nbsp;italics, just use the basic HTML tags. Note that you should escape the &lt;&nbsp;and &gt; symbols using&nbsp;&amp;lt; and &amp;gt; . There are several styles which do this, use one of those as a guideline or check the examples at <a href=\"http://bibword.codeplex.com/wikipage?title=BibWord%20Format%20Strings&amp;referringTitle=Documentation\">http://bibword.codeplex.com/wikipage?title=BibWord%20Format%20Strings&amp;referringTitle=Documentation</a>&nbsp;</p>",
+    "PostedDate": "2012-09-25T06:34:02.76-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "917265",
+    "ThreadId": "396723",
+    "Html": "\r\n<p>Thank you so much for the reply.</p>\r\n<p>Now I understood that I could use a string like:</p>\r\n<p style=\"padding-left:30px\">{%Author:1|Title%.}{ %Year%.}{ %Title%.}{ &amp;lt;i&amp;gt;%JournalName%&amp;lt;/i&amp;gt;.}</p>\r\n<p>in order to format my bibliography.</p>\r\n<p>However, i don't know where to write it, and how to apply.</p>\r\n<p>I am currently using the <a href=\"http://bibword.codeplex.com/releases/view/15028\">\r\nISO 690 Numerical Extension style</a> of BibWord .</p>\r\n<p>Thanks,</p>\r\n<p>Aya</p>\r\n",
+    "PostedDate": "2012-09-25T07:18:54.25-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

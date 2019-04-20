@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "433563",
+    "ThreadId": "210029",
+    "Html": "Hi, I need to sort bibliography by type of source, like:\r\n\r\nBooks\r\n1. author, book\r\n2. author, book\r\n3. author, book\r\n\r\nBook Section\r\n\r\n4. author, book\r\n5. author, book\r\n\r\nJournal\r\n6. author, book\r\n\r\nand so on...\r\n\r\nI've tried this article: http://bibword.codeplex.com/Thread/View.aspx?ThreadId=74667&ProjectName=bibword\r\nbut i just don't get it... where do i need to put code... I'm using template ISO 690 Numerical References.. and when i open it i see lots of lines of code :).  \r\n\r\nHelp me, please!\r\n\r\nThanks, elza\r\n\r\n",
+    "PostedDate": "2010-04-21T03:43:30.057-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "433589",
+    "ThreadId": "210029",
+    "Html": "<p>The ISO 690 Numerical Reference style is NOT a BibWord style. It is one of the (unstructured) styles that come with Word. However, the code in the thread you referenced is for a BibWord style. Hence, you can't use that code in your case.</p>\r\n<p>I no longer work with the styles that come with Word. Their structure is too awkward to manipulate. However, I can provide you with some information. With regards to the ISO 690&nbsp;styles, look for the lines containing&nbsp;&quot;&lt;xsl:sort&nbsp;select&quot;. They are commonly grouped. If you want extra sorting options, you will have to look in there.</p>\r\n<p>However, there is something else to take into account: <strong>the numbers for in-text citations can only be in the order of reference</strong>. This is very important! For example, if you wanted your bibliography to be sorted by type and then by name and number the sorted entries accordingly, then you can NOT use those number for your in-text citations.</p>\r\n<p><em>BibWord styles can get around this limitation using the BibWord Extender tool.</em></p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-04-21T05:27:43.217-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "433609",
+    "ThreadId": "210029",
+    "Html": "Thank your for your quick answer. \r\nDo you have any BibWord style, where references can be sort by type of source? \r\nThanks, elza",
+    "PostedDate": "2010-04-21T06:17:28.553-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "433775",
+    "ThreadId": "210029",
+    "Html": "<p>No.</p>\r\n<p>You could start from one of the styles that already use the BibOrder field (e.g. IEEE - Alphabetical) and extend the SortKey. If you would use {%SourceType% } as the first variable in your SortKey elements, you could group them by type. For more information on format strings see the <a title=\"Format Strings\" href=\"http://bibword.codeplex.com/wikipage?title=BibWord Format Strings&referringTitle=Documentation\">documentation</a>.</p>",
+    "PostedDate": "2010-04-21T10:46:37.613-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

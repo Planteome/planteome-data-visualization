@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1052106",
+    "ThreadId": "445818",
+    "Html": "Hi, I have tweaked a style for the Harvard style I use and I've managed to update the bibliography, however I'm having trouble trying to update the citation in text. For books and book sections I use author, date, but when I add a direct quote I need to add the page numbers, (author, date, p. n). I've tried changing different parts and searching for a solution, but nothing I do will add the page number in the citation in text.\r<br />\n<br />\nIs there a way to update the style to add this functionality?\r<br />\n<br />\nThanks!<br />\n",
+    "PostedDate": "2013-06-03T05:16:01.4-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1052312",
+    "ThreadId": "445818",
+    "Html": "If you right-click on a in-text citation, you normally have an option 'Edit Citation' (not 'Edit Source'). In the dialog you have the option to add a page number. The Harvard styles on this site will automatically pick them up.\r<br />\n<br />\nIf you want to do it in your own style, you will need to process 'CitationPages' rather than 'Pages'.<br />\n",
+    "PostedDate": "2013-06-03T12:21:07.18-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1052502",
+    "ThreadId": "445818",
+    "Html": "<strong>Yves wrote:</strong><br />\n<blockquote>\nIf you right-click on a in-text citation, you normally have an option 'Edit Citation' (not 'Edit Source'). In the dialog you have the option to add a page number. The Harvard styles on this site will automatically pick them up.<br />\n<br />\nIf you want to do it in your own style, you will need to process 'CitationPages' rather than 'Pages'.<br />\n</blockquote>\nThanks Yves for replying, that's great.<br />\n",
+    "PostedDate": "2013-06-04T00:47:34.343-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

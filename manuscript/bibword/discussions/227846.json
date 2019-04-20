@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "495972",
+    "ThreadId": "227846",
+    "Html": "<p>Hello,<br>I'm using the French version of Word 2010.<br><br>I've downloaded the APA - DOI style, but  I've been forced to convert the XML file into an XSL file to make it  work.<br><br>Nevertheless, when I try to create a new source with this style, I  don't see the DOI field (when I open both APA - DOI and APA files with Oxygen  XML editor, I've the impression that they've the same XSL codes). Is it normal ?  If not, could you help me to fix the problem ?<br><br>Many thanks,<br><br>R&eacute;my  LASSERRE.</p>",
+    "PostedDate": "2010-09-20T05:54:48.677-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "496137",
+    "ThreadId": "227846",
+    "Html": "<p>The style file (APA -&nbsp;DOI.xsl)&nbsp;has the extension xsl when you download it. If it doesn't, then your&nbsp;browser is changing file types. That sounds rather dangerous to me. Anyway, the style file is the same in every language. If you only copy this file,&nbsp;the source editor in Word will not provide you with a field to enter the DOI code. However, if you already entered DOI information through some other tool into the document, then the style will display the information in the bibliography.</p>\r\n<p>The bibform file (bibform.xml) has the extension xml.&nbsp;There is a different version for every language the user interface of Word&nbsp;exists in. This file is responsible for the DOI field showing up in Word when you enter or edit a source. It has no influence on how your source is displayed in your bibliography. If you are using a non-English copy of Word you will either have to adapt your own bibform.xml or replace it with the English one I provided. Note that if you replace yours with the one provided here the entire source dialog will become English.</p>",
+    "PostedDate": "2010-09-20T11:36:42.217-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "496251",
+    "ThreadId": "227846",
+    "Html": "<p>Thank you for answering me so quickly.</p>\r\n<p>I prefer the first solution because I want to display the DOI information in the bibliography. Where can I enter this information in my document to do so ?</p>\r\n<p>Best regards,</p>\r\n<p>R&eacute;my LASSERRE.</p>",
+    "PostedDate": "2010-09-20T16:44:52.15-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "496349",
+    "ThreadId": "227846",
+    "Html": "<p>I think you are misunderstanding what I'm trying to explain.</p>\r\n<p>Basically the bibliography tool in Word consists of 2 parts:</p>\r\n<ul>\r\n<li>the first&nbsp;part is responsible for showing the dialog in Word where you can enter the information (author, title, ...). This is the task of bibform.xml.</li>\r\n<li>the second part is responsible for actually generating the bibliography from the data you entered. This is the task of APA - DOI.xsl.</li>\r\n</ul>\r\n<p>There is <em>NO</em> (direct) connection between those two parts. Hence, you can change one part without affecting the other part.</p>\r\n<p>You <em>need</em> bibform.xml or your translated version to enter the data into the dialog. Only when you entered the data, the APA - DOI.xsl can&nbsp;incorporate it when generating the bibliography...</p>",
+    "PostedDate": "2010-09-21T00:31:09.813-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "496378",
+    "ThreadId": "227846",
+    "Html": "<p>I'm sorry because I didn't understand your first explanations. Now, it's perfectly clear that I need to download both bibform and APA - DOI files. What got me wrong is the expression &quot;other available downloads&quot; on the page&nbsp;<a href=\"http://bibword.codeplex.com/releases/view/44118\">http://bibword.codeplex.com/releases/view/44118</a> so I thought it was optional to download <em>bibform.xml</em>.</p>\r\n<p>For everybody to understand, the same way you wrote &quot;<em><strong>The file attached to this release is for an English - International version of Microsoft Word 2007/2010, i.e., the LCID code is 1033</strong></em>&quot;,&nbsp;you should write on this page that &quot;<em><strong>you need to download both bibform and APA - DOI files&nbsp;to create a DOI field in the dialog and to display the DOI information in the bibliography</strong></em>&quot;.</p>\r\n<p>At the end, you should warn everybody to never use the Opera browser to download APA - DOI.xsl, because I checked it and it force you to download the file with the extension xml.</p>\r\n<p>Thank you sincerely,</p>\r\n<p>R&eacute;my LASSERRE.</p>",
+    "PostedDate": "2010-09-21T01:56:02.9-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

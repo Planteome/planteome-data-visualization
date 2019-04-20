@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "582710",
+    "ThreadId": "250287",
+    "Html": "<p>Hi,</p>\n<p>for some reasons, I had to switch from LaTeX to word for my thesis. Now I got the bibliography and citations styled and formatted as I wanted but I have one little problem left:</p>\n<p>I deleted the &lt;closebracket&gt; and &lt;openbracket&gt; contents to decide myself, if and when I want to add parentheses to my citations. All of this works fine BUT Word seems to want to have a space in front of the citation. So, when I enclose the citation like  this: (Smith et al., 2007) it end up like this: (<span style=\"color: #ff00ff;\">_</span>Smith et al., 2007).</p>\n<p>This is not the case if it is in the text, e.g. \" in the paper by Smith et al., 2007\" etc. (no double space in front of \"Smith\"). I guess Word tries to auto-separate the citation from what came before and it doesn't if it finds a space there.</p>\n<p>&nbsp;</p>\n<p>Is there any way to suppress this behavior. Help is very much appreciated. Oh yes I use Word 2010 and a modified version of HarvardAnglia.XSL (i think).</p>\n<p>Regards,</p>\n<p>Mathias</p>",
+    "PostedDate": "2011-03-18T09:29:38.077-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "582890",
+    "ThreadId": "250287",
+    "Html": "<p>I haven't tried it myself, but according to <a href=\"http://www.wordbanter.com/showthread.php?t=120446\">http://www.wordbanter.com/showthread.php?t=120446</a>&nbsp;wrapping the in-text citation in a quote works.</p>",
+    "PostedDate": "2011-03-18T16:16:34.177-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "583295",
+    "ThreadId": "250287",
+    "Html": "<blockquote style=\"border: 0.1em solid #cccccc; font-style: italic; margin: 0.25em 1em 0pt; padding: 0pt 0.25em;\"><strong>yves wrote:</strong><br />\n<p>I haven't tried it myself, but according to <a href=\"http://www.wordbanter.com/showthread.php?t=120446\"> http://www.wordbanter.com/showthread.php?t=120446</a>&nbsp;wrapping the in-text citation in a quote works.</p>\n</blockquote>\n<p>Indeed, this works. After trying this a little, I found they way it works for me:</p>\n<ol>\n<li>Create a quote with the text &lt;space&gt;&lt;close parenthenses&gt;. </li>\n<li>Temporaryly create a citation field nearby (I'm not sure this is necessary but it works that way for me) </li>\n<li>Remove quotation marks in the quote field </li>\n<li>Copy the citation in between the space and the next symbol \")\" in my case. </li>\n<li>Remove the initial space; actualise field. </li>\n</ol>\n<p>This way, it really works. Quite a difficult workaround. I would like it better if Word would easily allow for a customized citation formatting (also, different for each citation) similar to the \"suppress year/author\" function.</p>\n<p>&nbsp;</p>\n<p>Thanks again,</p>\n<p>Mathias</p>",
+    "PostedDate": "2011-03-20T06:58:30.047-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

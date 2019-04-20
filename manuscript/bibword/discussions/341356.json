@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "795226",
+    "ThreadId": "341356",
+    "Html": "\r\n<p>Hello!</p>\r\n<p>I have a problem with the citation of InternetSites.</p>\r\n<p>Generally I want the typographic alignment of the bibliography to be set to justification. The problem with internet sites is that word wrapping doesn't work with the URL. The URL usually is a quite long &quot;word&quot; and it will usually be placed in a second line.\r\n Hence the information in the first line will be stretched over the complete width. Thus it may happen that the spacings between the single word may become ridiculously large.</p>\r\n<p>Is there a possibility either to word wrap the URL for example at one of the slashes or to set the typographic alignment to a left alignment for the source type InternetSite?</p>\r\n<p>Thanks for your help!</p>\r\n<p>Alex</p>\r\n",
+    "PostedDate": "2012-02-22T08:16:46.007-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "796121",
+    "ThreadId": "341356",
+    "Html": "<p>If you add the 's' option to %URL% variables, then the URL will be automatically split after a \"/\" if necessary. See also the documentation.</p>\r\n<p>If you require more splitting then just after a '/', look for the line</p>\r\n<p>﻿<span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">xsl</span><span style=\"color: blue;\">:</span><span style=\"color: #a31515;\">with-param</span> <span style=\"color: red;\">name</span><span style=\"color: blue;\">=</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">afterChars</span><span style=\"color: black;\">\"</span> <span style=\"color: red;\">select</span><span style=\"color: blue;\">=</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">'/'</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">/&gt;</span></p>\r\n<p>Change the value inside the select to fit your needs. If you want to split after every character, you can leave the select blank: select=\"''\".</p>",
+    "PostedDate": "2012-02-22T12:20:52.84-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "797114",
+    "ThreadId": "341356",
+    "Html": "<p>Thank you for the quick reply! Works perfectly!</p>",
+    "PostedDate": "2012-02-23T00:39:52.647-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

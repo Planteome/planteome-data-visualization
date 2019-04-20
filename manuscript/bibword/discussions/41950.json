@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "139240",
+    "ThreadId": "41950",
+    "Html": "Is there any way in xsl to detect any other switches than those predefined by Microsoft? For example passing a switch like { CITATION tag /x }.\r\n",
+    "PostedDate": "2008-12-10T03:27:36.437-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "139246",
+    "ThreadId": "41950",
+    "Html": "Unfortunately not. Word translates the switches internally to xml elements which it sends to the stylesheet. If you try to add extra elements, it just doesn't know how to translate them.<br>\r\n<br>\r\nI agree that they should at least have defined a simple custom switch where the arguments could be used for processing. Personally, if I need something like that, I abuse the \\f switch. For 'innocent' users, \\f could very well mean 'format' instead of 'prefix'.\r\n",
+    "PostedDate": "2008-12-10T04:20:00.75-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "140249",
+    "ThreadId": "41950",
+    "Html": "<p style=\"margin:0mm 0mm 10pt\"><span style=\"font-family:calibri\">Yves it's a huge job what you did with these templates. </span></p>\r\n<p style=\"margin:0mm 0mm 10pt\"><span style=\"font-family:calibri\">Since I'm a BibTeX user I made an export filter for JabRef for proper export to Word2007 XML, but I wished to use my own styles (Book-&gt;bib:Book, Article-&gt;bib:Article, etc.). I then took your Harvard - Anglia* style and modified it to achieve the style required for the Animal Behaviour journal. The reason why I’m sending you this note is that I’ve added a twist in the modification. I’ve changed a bit of your code and abused the \\v parameter so that now, when citing works, there are two modes: </span></p>\r\n<blockquote dir=ltr style=\"margin-right:0px\">\r\n<p style=\"margin:0mm 0mm 10pt\"><span style=\"font-family:calibri\">A) Text: {CITATION LebarBajec_2003a} =&gt; Lebar Bajec et al. (2003a) </span></p>\r\n<p style=\"margin:0mm 0mm 10pt\"><span style=\"font-family:calibri\">B) In parentheses: {CITATION LebarBajec_2003a \\t} =&gt; (Lebar Bajec et al. 2003a) </span></p>\r\n</blockquote>\r\n<p style=\"margin:0mm 0mm 10pt\"><span style=\"font-family:calibri\">Additionally when citing multiple works you can get the following: </span></p>\r\n<blockquote dir=ltr style=\"margin-right:0px\">\r\n<p style=\"margin:0mm 0mm 10pt\"><span style=\"font-family:calibri\">A) {CITATION LebarBajec_2003a \\m Moskon_2007 \\m Nathan_2008} <br>\r\nLebar Bajec et al. (2003a), Moškon et al. (2007) and Nathan &amp; Barbosa (2008) </span></p>\r\n<p style=\"margin:0mm 0mm 10pt\"><span style=\"font-family:calibri\">B) {CITATION LebarBajec_2003a \\t \\m Moskon_2007 \\t \\m Nathan_2008 \\t} <br>\r\n(Lebar Bajec et al. 2003a; Moškon et al. 2007; Nathan &amp; Barbosa 2008) </span></p>\r\n<span style=\"font-family:calibri\">\r\n<p style=\"margin:0mm 0mm 10pt\"><span style=\"font-family:calibri\">C) {CITATION LebarBajec_2003a \\m LebarBajec_2003b \\n \\y \\m LebarBajec_2005 \\n } <br>\r\nLebar Bajec et al. (2003a, b, 2005)</span></p>\r\n<p style=\"margin:0mm 0mm 10pt\"><span style=\"font-family:calibri\">D) {CITATION LebarBajec_2003a \\t \\m LebarBajec_2003b \\t \\n \\y \\m LebarBajec_2005 \\t \\n } <br>\r\n(Lebar Bajec et al. 2003a, b, 2005)</span></p>\r\n<p style=\"margin:0mm 0mm 10pt\">or even <br>\r\nE) {CITATION LebarBajec_2003a \\m LebarBajec_2003b \\n \\y \\m <span style=\"font-family:calibri\">Nathan_2008</span>} <br>\r\nLebar Bajec et al. (2003a, b) and Nathan &amp; Barbosa (2008)</p>\r\n</span>\r\n<p style=\"margin:0mm 0mm 10pt\"> </p>\r\n<p style=\"margin:0mm 0mm 10pt\"><span style=\"font-family:calibri\">F) {CITATION LebarBajec_2003a \\t \\m LebarBajec_2003b \\t \\n \\y \\m Moskon_2007 \\t} <br>\r\n(Lebar Bajec et al. 2003a, b; Nathan &amp; Barbosa 2008)</span></p>\r\n</blockquote>\r\n<p style=\"margin:0mm 0mm 10pt\"><span style=\"font-family:calibri\">The \\v parameter was abused for writing in possessive mode:</span></p>\r\n<blockquote dir=ltr style=\"margin-right:0px\">\r\n<p style=\"margin:0mm 0mm 10pt\"><span style=\"font-family:calibri\">{CITATION Nathan_2008 \\v&quot;’s&quot;} work …<br>\r\n</span><span style=\"font-family:calibri\">Nathan &amp; Barbosa<span style=\"font-family:calibri\">’</span>s (2008) work …</span></p>\r\n</blockquote>\r\n<p style=\"margin:0mm 0mm 10pt\"><span style=\"font-family:calibri\">Send me an e-mail if you think the code might come handy. </span></p>\r\n",
+    "PostedDate": "2008-12-13T06:27:42.037-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

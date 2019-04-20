@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "694527",
+    "ThreadId": "278530",
+    "Html": "\r\n<p>Hi</p>\r\n<p>I downloaded the bibliography styles for harvard referencing it includes some very good examples from leeds university, anglia university and exeter university</p>\r\n<p>I attend Oxford Brookes University and the punctuation is ever so slightly different than those included</p>\r\n<p>is it possible to have this corrected and another style for Harvard Brookes included</p>\r\n<p>Below are some examples</p>\r\n<p></p>\r\n<p><span style=\"font-family:HelveticaNeue-Light; font-size:x-small\"><span style=\"font-family:HelveticaNeue-Light; font-size:x-small\"><span style=\"font-family:HelveticaNeue-Light; font-size:x-small\"><span style=\"font-family:HelveticaNeue-Light; font-size:x-small\"><span style=\"font-family:HelveticaNeue-Light; font-size:x-small\"><font face=\"HelveticaNeue-Light\" size=\"2\"></p>\r\n<p>Baylis N and Morris I (2006) <em><span style=\"font-family:HelveticaNeue-LightItalic; font-size:x-small\"><em><span style=\"font-family:HelveticaNeue-LightItalic; font-size:x-small\">The skills of well-being.\r\n</span></em></span></em></p>\r\n</font></span></span></span></span></span>\r\n<p><span style=\"font-family:HelveticaNeue-Light; font-size:x-small\"><span style=\"font-family:HelveticaNeue-Light; font-size:x-small\">Tonbridge Wells: Wellington College.</span></span></p>\r\n<p></p>\r\n<p></p>\r\n<p></p>\r\n<p>&nbsp;</p>\r\n<p></p>\r\n<p>The Main difference being the full stop after the title of a book and a full stop at the end</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2011-11-06T13:55:18.343-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "697084",
+    "ThreadId": "278530",
+    "Html": "<p>BibWord was developed to make changing styles easier. Changing stuff like a full stop is something you should do yourself.</p>\r\n<p>On a side note, it is impossible to generate a style from a single example. One would need at least a dozen examples per type (journal article, book, ...) to make a decent attempt at creating a style. E.g. what is the year is not known? Or there is no author but there is an editor or translator instead. Or ...</p>",
+    "PostedDate": "2011-11-11T08:32:27.107-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

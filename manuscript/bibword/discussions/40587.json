@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "134633",
+    "ThreadId": "40587",
+    "Html": "This is my first attempt at doing any editing of XSL files, so bear with me.<br>\r\n<br>\r\nI wanted to create a style that would mimic a specific journal format (ACS). Used your template, and tried to save it as an XSL file in the same folder where the other styles are stored. Your guide was easy to follow, and I thought it had worked, but nothing shows up in Word (the template isn't visible) When I tried to reopen the file, I get the following error message:<br>\r\n<p>The XML page cannot be displayed\r\n</p>\r\n<p style=\"font-family:verdana;font-style:normal;font-variant:normal;font-weight:normal;font-size:8pt;line-height:11pt\">Cannot view XML input using XSL style sheet.\r\nPlease correct the error and then click the <a>Refresh</a> button, or try\r\nagain later.\r\n</p>\r\n<hr>\r\n<p style=\"font-family:verdana;font-style:normal;font-variant:normal;font-weight:bold;font-size:8pt;line-height:11pt\">End tag 'source' does not match the start\r\ntag 'importantfields'. Error processing resource 'file:///C:/Program Files\r\n(x86)/...</p>\r\nWhat am I missing?<br>\r\n<br>\r\nI have a backup copy of the style I made, but it is as a .txt file<br>\r\n",
+    "PostedDate": "2008-11-23T15:54:06.223-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "134634",
+    "ThreadId": "40587",
+    "Html": "Update: I think I fixed the <br>\r\n&quot;End tag 'source' does not match the start\r\ntag 'importantfields'. Error processing resource 'file:///C:/Program Files\r\n(x86)/...&quot;<br>\r\nproblem. Now the stylesheet will open in my internet browser, when I dbl click on it. But it still doesn't show up in the list of styles, in word.<br>\r\n",
+    "PostedDate": "2008-11-23T16:03:38.9-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "134648",
+    "ThreadId": "40587",
+    "Html": "Found my mistake(s), and got it working.<br>\r\n",
+    "PostedDate": "2008-11-23T17:49:12.923-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

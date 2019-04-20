@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "431391",
+    "ThreadId": "209429",
+    "Html": "<p>Hi. Thank you for an awesome program. According to the manual, bibword should clean up the punctuation. However, I have a an reference coming out with &quot;,.&quot; punctuation, which should have been converted to &quot;.&quot; . Any idea of where the error could be?</p>\r\n<p>Best regards</p>\r\n<p>Jakob</p>",
+    "PostedDate": "2010-04-15T05:03:48.673-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "431400",
+    "ThreadId": "209429",
+    "Html": "<p>I will need a bit more information to answer that.</p>\r\n<ul>\r\n<li>What's the format string used to generate the output?</li>\r\n<li>What's fields from the format string are used by the source?</li>\r\n<li>(What style are you using?)</li>\r\n</ul>",
+    "PostedDate": "2010-04-15T05:19:59.867-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "431407",
+    "ThreadId": "209429",
+    "Html": "<p>Hi. The format string is as follows:</p>\r\n<p>&lt;format&gt;{&amp;lt;b&amp;gt;%Author:1%&amp;lt;/b&amp;gt;&amp;lt;br/&amp;gt;}{&amp;lt;i&amp;gt;%Title%&amp;lt;/i&amp;gt; &amp;lt;br/&amp;gt;}{in &amp;lt;i&amp;gt;%ConferenceName%&amp;lt;/i&amp;gt;, }{vol. %Volume%, }{%Pages:p. :pp. %, }{%Comments%, }{ Online:&amp;#xA0;%URL%, }{%City|CountryRegion%, }{%CountryRegion%, }{{ %Month:s%} %Year%}.&lt;/format&gt;</p>\r\n<p>&nbsp;</p>\r\n<p>Only the author, title and city field contains data.</p>\r\n<p>The result is</p>\r\n<p><strong>Author<br></strong><em>title</em><strong><br></strong>City,.<strong>&nbsp;</strong></p>\r\n<p>&nbsp;</p>\r\n<p>I would like to get rid of that comma:-) The style is home-brewed...</p>",
+    "PostedDate": "2010-04-15T05:25:08.92-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "431413",
+    "ThreadId": "209429",
+    "Html": "<p>Hmm, it looks like there might be a bug in the cleanup routine.</p>\r\n<p>I don't have access to my development computer right now, but I think it is caused by the combination of comma space period. A comma followed by a space is not cleaned up. A space followed by a period is. Unfortunately, the resulting comma followed by a period, isn't cleaned up anymore. Try removing the space.</p>\r\n<p>So instead of:</p>\r\n<p style=\"padding-left:30px\">{%City|CountryRegion%, }{%CountryRegion%, }}{{ %Month:s%} %Year%}.</p>\r\n<p>try:</p>\r\n<p style=\"padding-left:30px\">{%City|CountryRegion%,}{ %CountryRegion%,}}{{ %Month:s%} %Year%}.</p>\r\n<p>On a side note, as your month and year have a leading space, you would have entered two spaces anyway (which would get cleaned up to one).</p>",
+    "PostedDate": "2010-04-15T05:37:19.463-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "431421",
+    "ThreadId": "209429",
+    "Html": "<p>Hi</p>\r\n<p>Thank you for a very quick diagnose! Now it works super. It would certainly increase the ease of implementing a style, if the cleanup routine took some iterations to eradicate all combinations.</p>\r\n<p>Best regards,</p>\r\n<p>Jakob</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-04-15T05:50:49.253-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

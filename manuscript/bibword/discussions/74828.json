@@ -1,0 +1,90 @@
+[
+  {
+    "Id": "256093",
+    "ThreadId": "74828",
+    "Html": "<p>Can someone help me either to create a customized reference form, modify and existing file... or maybe there is one out there that I can use already?</p>\r\n<p>I'm using mac:word2008.&nbsp;</p>\r\n<p>I need something that will cite throughout the paper as follows (Brown 2001; Smith 2002; Fox 2003) -notice the sequence from oldest to newest</p>\r\n<p>and in the works cited use this format&nbsp;</p>\r\n<p style=\"margin:0.0px 0.0px 0.0px 0.0px;font:8.0px Times\">&nbsp;</p>\r\n<div><span style=\"font-family:Helvetica, 'Microsoft Sans Serif', Arial, Geneva, sans-serif;font-size:small\"><span>Luckhurst BE, Luckhurst K (1978) Analysis of the influence of substrate on coral reef fish communities. Mar Biol 49:317-323</span></span></div>\r\n<div></div>\r\n<div><span style=\"font-family:Helvetica, 'Microsoft Sans Serif', Arial, Geneva, sans-serif;font-size:small\"><span>Thank you!</span></span></div>\r\n<div><span style=\"font-family:Helvetica, 'Microsoft Sans Serif', Arial, Geneva, sans-serif;font-size:small\"><span><br></span></span></div>",
+    "PostedDate": "2009-11-11T12:20:28.967-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "256132",
+    "ThreadId": "74828",
+    "Html": "<p>The sequence of in-text citations cannot be manipulated automatically. You can do it manually. See <a href=\"http://bibword.codeplex.com/wikipage?title=FAQ#Q2\">http://bibword.codeplex.com/wikipage?title=FAQ#Q2</a>&nbsp;for more information.</p>\r\n<p>It seems like you are&nbsp;looking for&nbsp;an author-date style. There are a couple of Harvard variants on this site which will do partially what you want. The easiest option is probably starting from one of them and editing it to fit your needs.</p>\r\n<p>More information on the formatting can be found at</p>\r\n<li style=\"padding-left:30px\">the short and incomplete tutorial at <a href=\"http://bibword.codeplex.com/wikipage?title=Tutorial\">http://bibword.codeplex.com/wikipage?title=Tutorial</a> </li>\r\n<li style=\"padding-left:30px\">the&nbsp;manual at <a href=\"http://bibword.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=34918#DownloadId=89196\">http://bibword.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=34918#DownloadId=89196</a> </li>\r\n<p>Some starting points. For bibliography entries, you probably want to format your authors using the following string:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>{%Last|First|Middle%} {%First:a%}{%Middle:a%}</pre>\r\n</div>\r\n<p>And the entry itself (assuming 49 is the volume or issue&nbsp;number) something along the lines:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>{%Author:0|Title%}{ (%Year%)}{ %Title%.}{ %JournalName%}{ %Volume|Issue%{:%Pages:::%}}{ %Pages:::%}\r\n</pre>\r\n</div>\r\n<p>The first part (%Author:0|Title%)&nbsp;ensures that if there is no known author, the title is displayed first before the year. In your example, the output would become:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>Analysis of the influence of substrate on coral reef fish communities (1978) Mar Biol 49:317-323\r\n</pre>\r\n</div>\r\n<p>If the work has an author, the title of the work is displayed after the year. Then you have the journal name. Finally, the volume or issue and the pages are displayed. The repitition of the Pages variable at the end is a failsafe mechanism. If you don't specify a volume or an issue, the pages will be displayed without a colon in front of them, e.g.</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>Luckhurst BE, Luckhurst K (1978) Analysis of the influence of substrate on coral reef fish communities. Mar Biol 317-323\r\n</pre>\r\n</div>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-11-11T14:24:29.067-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "256160",
+    "ThreadId": "74828",
+    "Html": "<p>Thanks for the info.</p>\r\n<p>I'm afraid that this is way beyond my understanding of the xsl file and how to modify it. &nbsp;I don't really have any idea what to take out... where to find them.. and so forth. &nbsp;I think it might just be easier to manually change my references by hand.... and less frustrating. &nbsp;I wish it was easier. &nbsp;This is a very common format for most scientific papers. &nbsp;I'm surprised that a format isn't easier to come by. &nbsp;There has to be someone out there that has done this already. &nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>thanks again. &nbsp;</p>",
+    "PostedDate": "2009-11-11T15:51:07.33-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "256218",
+    "ThreadId": "74828",
+    "Html": "<blockquote style=\"border:solid .1em #ccc;font-style:italic;margin:.25em 1em 0 1em;padding:0 .25em 0 .25em\"><strong>chriscol wrote:</strong><br>\r\n<p>This is a very common format for most scientific papers.</p>\r\n</blockquote>\r\n<p>That is what everybody claims about his or her format. I have seen dozens of formats looking almost like yours, all with their tiny differences: year not&nbsp;between parentheses, title in italics, periods between every element, ... The fact is, that except for some really large bodies like APA, ASA, and AMA, most styles are limited to a specific university or/and a handfull of journals.</p>\r\n<p>I doubt you will find anything easier than BibWord. BibWord concentrates everything you&nbsp;need to format an entry into a single data variable. Basically, of the more than 3000 lines of code in a BibWord xsl, you only need&nbsp;the&nbsp;code inside the following structure:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">xsl</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">variable</span> <span style=\"color:Red\">name</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">data</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">&gt;</span>\r\n  <span style=\"color:Green\">&lt;!-- The only part of the code that matters to format citations and bibliographies. --&gt;</span>\r\n<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">xsl</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">variable</span><span style=\"color:Blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>And even of those, you probably only need to change 50 lines or so if you start from an existing style.</p>\r\n<p>I am working on a better documentation for BibWord, so I am interested in learning which parts of the above links I posted were not clear to you.</p>",
+    "PostedDate": "2009-11-11T23:34:43.343-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "256484",
+    "ThreadId": "74828",
+    "Html": "<p>I don't see&nbsp;<span style=\"font-family:Consolas, 'Courier New', Courier, monospace;white-space:pre\"><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">variable</span> <span style=\"color:red\">name</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">data</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">&gt; only </span></span></p>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">&lt;xsl:with-param name = &quot;data&quot;&gt;</div>\r\n<p>\r\n<p>&lt;xsl:with-param name = &quot;data&quot;&gt;, but line shows up 50 plus time throughout the file. &nbsp;It's a matter of finding these places. &nbsp;</p>\r\n<p>&nbsp;</p>\r\n<div></div>\r\n</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-11-12T13:44:01.56-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "256498",
+    "ThreadId": "74828",
+    "Html": "<p>That doesn't sound like a BibWord file at all. Which file are you looking in? If it is one of those that come with Word 2008 (APA.XSL, Chicago.XSL, ...), then you are as good as on your own. I can give you pointers, but you need a decent xslt knowledge, and a lot of time on your hands to change those files. BibWord was created to avoid the mess those files are.</p>\r\n<p>In my original reply, I suggested to start from one of the Harvard styles <em>on this site.</em> I didn't give any specific links there, so I'll do it this time:</p>\r\n<ul>\r\n<li>Harvard AGPS - <a href=\"http://bibword.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=22931\">http://bibword.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=22931</a></li>\r\n<li>Harvard Anglia - <a href=\"http://bibword.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=19783\">http://bibword.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=19783</a></li>\r\n<li>Harvard Exeter - <a href=\"http://bibword.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=22890\">http://bibword.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=22890</a>&nbsp;</li>\r\n<li>Harvard Leeds - <a href=\"http://bibword.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=19776\">http://bibword.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=19776</a></li>\r\n</ul>\r\n<p>Those are BibWord styles, and those are according to the format I talked about.</p>",
+    "PostedDate": "2009-11-12T14:25:57.693-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "258922",
+    "ThreadId": "74828",
+    "Html": "<p>Oh okay, now I'm understanding this more. &nbsp;I think I missed the whole template thing. &nbsp;Okay, so I need to find those areas and change them... I'll try.</p>",
+    "PostedDate": "2009-11-19T18:57:13.827-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "262915",
+    "ThreadId": "74828",
+    "Html": "<p>thanks for all your help.... I'm having trouble editing the bibliography format&nbsp;</p>\r\n<p>if I wanted to change with way to Author is displayed say instead of Smith, S.F, Barry, D.P. ... &nbsp;I wanted Smith SF, Barry DP (for a Journal Article) would I change some part of the following section which is under bibliography</p>\r\n<p>&lt;format&gt;{%Author:2%{ (%Year|&quot;n.d&quot;%{%YearSuffix%}) }}{ '%Title|ShortTitle%'{, &amp;lt;i&amp;gt;%JournalName%&amp;lt;/i&amp;gt;}}{ &amp;lt;i&amp;gt;%JournalName%&amp;lt;/i&amp;gt;}{, vol. %Volume%}{, no. %Issue%}{, %Month:s%{ %Year%}}{, %Pages:p. :pp. %}{, Available: %URL:l|StandardNumber%{ [{{%DayAccessed% }%MonthAccessed:s% }%YearAccessed%]}}.&lt;/format&gt;</p>\r\n<p>&nbsp;</p>\r\n<p>I'm guessing something to do with the first part {%Author:2% ???&nbsp;</p>\r\n<p>Thank you&nbsp;</p>",
+    "PostedDate": "2009-12-02T12:56:45.967-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "262940",
+    "ThreadId": "74828",
+    "Html": "<p>The &quot;2&quot; at the end of Author tells BibWord that the list with id&nbsp;equal to&nbsp;2 should be used to format the authors. For more information about what&nbsp;the&nbsp;&quot;list&quot; element contains, see <a href=\"http://bibword.codeplex.com/wikipage?title=BibWord Format Contributors\">http://bibword.codeplex.com/wikipage?title=BibWord%20Format%20Contributors</a>&nbsp;(including a full example)</p>\r\n<p>For a whole set of possible format strings for contributors (<em>first_person</em>, <em>other_persons</em>), including the one you want, see <a href=\"http://bibword.codeplex.com/wikipage?title=BibWord Format Strings#ex2\">http://bibword.codeplex.com/wikipage?title=BibWord%20Format%20Strings#ex2</a>&nbsp;.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-12-02T14:09:24.16-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "275749",
+    "ThreadId": "74828",
+    "Html": "<p>Thanks for all your help.. I pretty much have what I need now. &nbsp;I have a question about the sequence of in-text citations. &nbsp;I saw above that you reference FAQ Q2. &nbsp;Is this something that I would need to change for every in-text citation? &nbsp;and does this change occur in the bibword file?</p>",
+    "PostedDate": "2010-01-11T09:03:02.727-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "275773",
+    "ThreadId": "74828",
+    "Html": "<p>The order in which in-text citations are displayed inside your document depends on the order they are inserted by you.</p>\r\n<p>Your BibWord file cannot change that behaviour. All citation styles only get one source at a time. They have no knowledge of other citations in the same group (with the exception of the fact that they know they are there).</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-11T09:55:27.08-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

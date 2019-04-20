@@ -18,8 +18,8 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 		<link rel="stylesheet" href="./include/awesomplete/awesomplete.css" />
 		<link rel="stylesheet" href="./include/DataTables-1.10.12/media/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" href="./include/dist/vis.css"  type="text/css" />
 		<link rel="stylesheet" href="./css/style.css">
-		<link rel="stylesheet" href="./include/dist/vis.css"  type="text/css" />
 		<script src='./js/bundle.js'></script>
 		<script src='./js/funcs.js'></script>
 		<script src='./js/settings.js'></script>	
@@ -41,6 +41,7 @@
 			
 			<div class="page-header" id="header">
 				<h1 align="center">Data Visualization</h1>
+                <a href="./index.html">Go Back to Analysis Page</a>
 			</div>	
 			<div style="display:inline-block; width: 100%">
 				<button type="button" onclick="onclick_help()" class="btn btn-default btn-sm helpBtn">manual</button>
@@ -63,13 +64,12 @@
 			<!--the network view -->
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<div class="h3">Network Visualization
-						<div class = "toggleShow"> 
-							<button type="button" id="btn_toggleShowNetworkVis" class="btn btn-primary" onclick="toggleVisNetwork()">Hide Network Visualization</button>
-						</div>
-					</div>
-					
-					
+					<div class="h3">Network Visualization</div>
+                    
+                    <div class = "btn-group">
+                        <button type="button" class="btn btn-primary" onclick="toggleNetworkConfiguration()">toggle configuration</button>
+                        <button type="button" id="btn_toggleShowNetworkVis" class="btn btn-primary" onclick="toggleVisNetwork()">Hide Network Visualization</button>
+                    </div>
 					
 					<div class="btn-group" role="group" aria-label="..." id="netvis_inputs">
 						<button type="button" id="btn_refresh" class="btn btn-primary" onclick="loadView()">Refresh</button>

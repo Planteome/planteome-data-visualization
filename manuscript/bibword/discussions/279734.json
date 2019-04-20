@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "699322",
+    "ThreadId": "279734",
+    "Html": "\r\n<p>I write my thesis with a variation of the IEEE-Reference order, and it works fine for the references in the main text.&nbsp;<br>\r\nNow the problem:<br>\r\nI add a reference in a footnote on the page 1, and then some normal references in the main text on page 2 and page 3.<br>\r\nI would now expect that the reference in the footnate on the first page appears as [1], but instead it appears as [3]!</p>\r\n<p>It seems that the number of the references in the footnotes are only calculated after word went all thought&nbsp;the main text.<br>\r\n<br>\r\nIs there a way to fix this?</p>\r\n",
+    "PostedDate": "2011-11-16T20:34:58.58-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "700062",
+    "ThreadId": "279734",
+    "Html": "<p>No.</p>\r\n<p>This is the way Word does things. Word first has to format the entire text before it can decide on which page a footnote belongs. If you would look at the internals of a docx you would see a separate file for the footnotes. They are not part of the main story.</p>",
+    "PostedDate": "2011-11-18T01:59:18.023-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

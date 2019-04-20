@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "478633",
+    "ThreadId": "223073",
+    "Html": "<p>Hi Yves,&nbsp;</p>\r\n<p>Firstly, thank you for creating such an immensly useful tool. I am currently using a Harvard style which I have customized to my own requirements. I would like to insert a line break between each entry in my bibliography to make it easier to read, but cannot figure out what command to insert (see example below). Would you have any ideas on how to do this? Also, is it possible to replace the title &quot;Bibliography&quot; that appears at the top of the bibliography field with another title like &quot;References&quot;?</p>\r\n<p>I would like to change this:</p>\r\n<p><span style=\"white-space:pre\"> </span>Birkhoff, G. (1950) Hydrodynamics, A Study of Logic and Similitude, Ist ed. (Princeton University Press, Princeton, NJ). &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style=\"white-space:pre\"> </span>Bleakney, W. and A.H. Taub (1949) Interaction of shock waves. Rev. Mod. Phys. 21, 584-605.</p>\r\n<p>to this:</p>\r\n<p>&nbsp;&nbsp;<span style=\"white-space:pre\"> </span>Birkhoff, G. (1950) Hydrodynamics, A Study of Logic and Similitude, Ist ed. (Princeton University Press, Princeton, NJ).Bleakney, W. and A.H. Taub (1949) Interaction of shock waves. Rev. Mod. <span style=\"white-space:pre\"> </span>Phys. &nbsp; &nbsp; &nbsp;21, 584-605.</p>\r\n<p>&nbsp;&nbsp;<span style=\"white-space:pre\"> </span>Birkhoff, G. (1950) Hydrodynamics, A Study of Logic and Similitude, Ist ed. (Princeton University Press, Princeton, NJ).Bleakney, W. and A.H. Taub (1949) Interaction of shock waves. Rev. Mod. <span style=\"white-space:pre\"> </span>Phys. &nbsp; &nbsp;21, 584-605.</p>",
+    "PostedDate": "2010-08-10T08:25:28.273-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "478806",
+    "ThreadId": "223073",
+    "Html": "<p>Each bibliography entry is formatted in its own paragraph by default. Unless you are using a very bizar format string, it is impossible not to have a line break.</p>\r\n<p>Anyway, extra&nbsp;line breaks can be added using the html &lt;br&gt; command. Just add &amp;lt;br&amp;gt; (or &amp;lt;br/&amp;gt;)&nbsp;to your string.</p>",
+    "PostedDate": "2010-08-10T13:49:50.297-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Excellent work. Unlike Microsoft's files, BibWord makes possible to create new styles or modify them according to the editors requirements, with minimum effort (and xslt knowledge). Being a professional author of scholarly texts, this is great and I recommend my students to use it for their papers.\n\nI'd like to ask whether there is a way to have the authors' initials appear in the in-text citations, only for different authors with the same last name.\n\nExample:\n(Peterson K., 2008; Peterson R.A., 2002; Lewis, 1999; Rogers, 1965)\n\nTwo different Petersons, but only one Lewis and only one Rogers. Some styles, including APA, require that in this case the authors' initials should be mentioned too.\n\nI guess that an additional option is needed for %First% and %Middle% in the <namelists> (<first_person> and <other_persons>) that would allow initials to appear for non-unique author names. An additional template, checking for non-unique author names is also needed. Unfortunately, my knowledge to create this option and the corresponding template, is insufficient.\n\nAnother option, I guess, would be to include this in a new BibWordExtender version, which anyway resolves the significant problems with the year extensions.\n\nThanks for any help\nAleg51",
+    "LastUpdatedDate": "2016-04-23T01:08:21.647-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "bibword",
+    "ReportedDate": "2016-04-23T01:08:21.647-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "In-text citations problem",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 12380
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

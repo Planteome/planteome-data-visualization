@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "485434",
+    "ThreadId": "225000",
+    "Html": "<p>Is there an update for APA 6th edition, or can the APA style by altered?</p>",
+    "PostedDate": "2010-08-26T16:35:13.833-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "485942",
+    "ThreadId": "225000",
+    "Html": "<p>The APA style that comes with Word was created (and is hopefully maintained) by Microsoft. This project has no link with Microsoft. Any requests regarding that style should be directed to them.</p>\r\n<p>Personally, I have no intention of taking over Microsofts (and APAs)&nbsp;work and implementing an APA 6th edition style. However, if the only change you are interested in is the DOI one, then you might want to check out the proof-of-concept I created at <a href=\"http://bibword.codeplex.com/releases/view/44118\">http://bibword.codeplex.com/releases/view/44118</a></p>",
+    "PostedDate": "2010-08-28T02:21:20.88-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

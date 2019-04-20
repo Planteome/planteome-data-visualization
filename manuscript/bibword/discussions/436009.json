@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "1012785",
+    "ThreadId": "436009",
+    "Html": "This site has been great so far, glad to have a Vancouver XSL to use.\r<br />\n<br />\nIt's perfect except for the citations. I want them to appear superscript in-text. I read your FAQ workaround here:\r<br />\n<br />\n<a href=\"http://bibword.codeplex.com/wikipage?title=Styles_FAQ#Q9\" rel=\"nofollow\">http://bibword.codeplex.com/wikipage?title=Styles_FAQ#Q9</a>\r<br />\n<br />\nHowever, as somewhat of an amateur, I don't know what to do with that macro (or even what a macro is)! I opened the XSL file in Visual Studio 2005, Wordpad etc but I really don't know what I'm doing (even after a lot og googling!)! Could you take me through it step-by-step how to alter the referencing style in word to allow Vancouver citations to appear superscript?\r<br />\n<br />\nI realise it's a limitation of Word and this is the only workaround, but I just don't know how to go about it. I can superscript all the citations manually, but there are a lot of them!\r<br />\n<br />\nAny help appreciated. Thanks.<br />\n",
+    "PostedDate": "2013-03-09T10:11:13.857-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1017333",
+    "ThreadId": "436009",
+    "Html": "For more information on how to use macros, check out the following excellent guide: <a href=\"http://www.gmayor.com/installing_macro.htm\" rel=\"nofollow\">http://www.gmayor.com/installing_macro.htm</a><br />\n",
+    "PostedDate": "2013-03-18T14:53:28.24-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1017363",
+    "ThreadId": "436009",
+    "Html": "Thanks very much, I followed the guide and created a working macro! Much appreciated.\r<br />\n<br />\nI had one more question, which isn't so important but I wondered if it could be done.\r<br />\n<br />\nI want the in-text citations to appear immediately after the punctuation mark (period, comma) without a space, and without any spaces between the citations, so that citations aren't included in the word count.\r<br />\n<br />\nIs there a macro for that? I couldn't see one in the FAQ or searching Google.<br />\n",
+    "PostedDate": "2013-03-18T15:53:58.563-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1022039",
+    "ThreadId": "436009",
+    "Html": "Yves, can you offer any advice in response to my other questions?\r<br />\n<br />\nThanks.<br />\n",
+    "PostedDate": "2013-03-27T14:18:44.76-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1022557",
+    "ThreadId": "436009",
+    "Html": "Thanks for the tutorial. I used the macro and worked well. Now I have the same problem as cannibalwombat. Can you help us again, Yves?<br />\n",
+    "PostedDate": "2013-03-28T10:42:41.113-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1022801",
+    "ThreadId": "436009",
+    "Html": "Please use the search functionality of the forum. There are several topics on the leading space thing, including: <a href=\"http://bibword.codeplex.com/discussions/250287\" rel=\"nofollow\">http://bibword.codeplex.com/discussions/250287</a><br />\n",
+    "PostedDate": "2013-03-28T23:46:25.557-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1371131",
+    "ThreadId": "436009",
+    "Html": "Hi everyone,<br />\n<pre><code> I want to do the same to allow Vancouver citations to appear superscript, and I will be grateful if somebody share the .XSL file, with the modifications that you have made to get this objective, I don't have the enough knowledge to do it by  myself because I have never written a code with this Programming language.\n</code></pre>\n\nRegards<br />\n",
+    "PostedDate": "2015-03-21T14:07:52.29-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1371157",
+    "ThreadId": "436009",
+    "Html": "I'm sorry, I tried to do it by myself and I got it, obviously with help of your comments and links.\r<br />\n<br />\nThank you<br />\n",
+    "PostedDate": "2015-03-21T19:44:36.843-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

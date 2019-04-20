@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1345796",
+    "ThreadId": "578586",
+    "Html": "I try to create my own style based on others style to better suit the journal I publish with. However, the citation in the text always comes with a underline on the reference order. I attached the code here but I didnt recognize anything that indicate under line\r<br />\n<br />\ne.g. [1], &quot;1&quot; always have a underline\r<br />\n<br />\nthanks in advance<br />\n<pre><code>-&lt;citation&gt;\n\n&lt;openbracket&gt;[&lt;/openbracket&gt;\n\n&lt;closebracket&gt;]&lt;/closebracket&gt;\n\n&lt;separator&gt;,&lt;/separator&gt;\n\n\n-&lt;source type=&quot;Placeholder&quot;&gt;\n\n&lt;format&gt;%Tag%&lt;/format&gt;\n\n&lt;/source&gt;\n\n\n-&lt;source type=&quot;Book&quot;&gt;\n\n&lt;format&gt;{%RefOrder%}&lt;/format&gt;\n\n&lt;/source&gt;\n\n\n-&lt;source type=&quot;BookSection&quot;&gt;\n\n&lt;format&gt;{%RefOrder%}&lt;/format&gt;\n\n&lt;/source&gt;\n\n\n-&lt;source type=&quot;JournalArticle&quot;&gt;\n\n&lt;format&gt;{%RefOrder%}&lt;/format&gt;\n\n&lt;/source&gt;\n\n\n-&lt;source type=&quot;ArticleInAPeriodical&quot;&gt;\n\n&lt;format&gt;{%RefOrder%}&lt;/format&gt;\n\n&lt;/source&gt;\n\n\n-&lt;source type=&quot;ConferenceProceedings&quot;&gt;\n\n&lt;format&gt;{%RefOrder%}&lt;/format&gt;\n\n&lt;/source&gt;\n\n\n-&lt;source type=&quot;Report&quot;&gt;\n\n&lt;format&gt;{%RefOrder%}&lt;/format&gt;\n\n&lt;/source&gt;\n\n\n-&lt;source type=&quot;InternetSite&quot;&gt;\n\n&lt;format&gt;{%RefOrder%}&lt;/format&gt;\n\n&lt;/source&gt;\n\n\n-&lt;source type=&quot;DocumentFromInternetSite&quot;&gt;\n\n&lt;format&gt;{%RefOrder%}&lt;/format&gt;\n\n&lt;/source&gt;\n\n\n-&lt;source type=&quot;ElectronicSource&quot;&gt;\n\n&lt;format&gt;{%RefOrder%}&lt;/format&gt;\n\n&lt;/source&gt;\n\n\n-&lt;source type=&quot;Patent&quot;&gt;\n\n&lt;format&gt;{%RefOrder%}&lt;/format&gt;\n\n&lt;/source&gt;\n\n\n-&lt;source type=&quot;Misc&quot;&gt;\n\n&lt;format&gt;{%RefOrder%}&lt;/format&gt;\n\n&lt;/source&gt;\n\n\n-&lt;source type=&quot;Standard&quot;&gt;\n\n&lt;format&gt;{%RefOrder%}&lt;/format&gt;\n\n&lt;/source&gt;\n\n\n-&lt;source type=&quot;Thesis&quot;&gt;\n\n&lt;format&gt;{%RefOrder%}&lt;/format&gt;\n\n&lt;/source&gt;\n\n&lt;/citation&gt;</code></pre>\n\n",
+    "PostedDate": "2015-01-26T06:46:05.367-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1348747",
+    "ThreadId": "578586",
+    "Html": "Check the <a href=\"https://bibword.codeplex.com/wikipage?title=Styles_FAQ&amp;referringTitle=Documentation#Q16\" rel=\"nofollow\">FAQ</a>. The example there talks about bold, but I'm pretty certain your underline issue is caused by the same thing.\r<br />\n<br />\nSo adding a line similar to &quot;s.Font.Bold = False&quot; should work: &quot;s.Font.Underline = False&quot;<br />\n",
+    "PostedDate": "2015-02-03T13:02:16.063-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

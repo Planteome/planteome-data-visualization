@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "102556",
+    "ThreadId": "30836",
+    "Html": "<div class=radEditorContent id=\"ctl00_ctl00_Content_TabContentPanel_Content_PostRepeater_ctl14_BodyDiv\">I have done my own style, and everything looks just as I want it to. Just one thing left. The pagenumbers. How can I print the page numbers that are induvidual for each reference. Thus, I dont want to print out the page numbers that can be set in the source manager. Does anyone know what this paremeter is named or know&nbsp;another way to print the numbers? I know I can type them in manually, but anyway, would be nice to solve it.<br>\r\n<br>\r\nThank you in advance! </div>\r\n",
+    "PostedDate": "2008-07-03T13:39:11.673-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "103042",
+    "ThreadId": "30836",
+    "Html": "<div class=radEditorContent id=\"ctl00_ctl00_Content_TabContentPanel_Content_PostRepeater_ctl16_BodyDiv\">The page numbers of a source are stored in <em>/b:Citation/b:Source/b:Pages</em>.<br>\r\n<br>\r\nThe page numbers entered with the \\p switch of the citation field (or by&nbsp;right-clicking an in-text citation and picking &quot;Edit Citation&quot; instead of &quot;Edit Source&quot;) are stored in <em>/b:Citation/b:Pages</em>.<br>\r\n<br>\r\nHTH </div>\r\n",
+    "PostedDate": "2008-07-07T05:40:06.293-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "655944",
+    "ThreadId": "30836",
+    "Html": "<p>Hey Yves,</p>\n<p>I am using the IEEE_Alphabetical tool (which is great by the way, thanks) and I would like to add page numbers to book citations (i.e. [23, p. 456]). How do I have to modify the .xsl sheet to get what I want?</p>\n<p>The \"Edit Citation\" stuff and the \"\\p (page numer)\" does not work. The page number is accepted and safed but does not appear in the citation...</p>\n<p>Thanking you in anticipation!</p>",
+    "PostedDate": "2011-08-10T09:07:37.637-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "657328",
+    "ThreadId": "30836",
+    "Html": "<p>The page number doesn't appear because that functionality is not defined in the format string. You can easily do this yourself.</p>\r\n<p>Change all occurences of</p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre><span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">format</span><span style=\"color: blue;\">&gt;</span>{%BibOrder|\"BO\"%}<span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">format</span><span style=\"color: blue;\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>into</p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre><span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">format</span><span style=\"color: blue;\">&gt;</span>{%CitationPrefix%}{%BibOrder|\"BO\"%}{, %CitationPages:p.:%}{, %CitationVolume%}{%CitationSuffix%}<span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">format</span><span style=\"color: blue;\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>This will support all flags (pages, volume, prefix, and suffix.</p>",
+    "PostedDate": "2011-08-12T11:37:57.56-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

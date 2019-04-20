@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "177192",
+    "ThreadId": "52689",
+    "Html": "Hi guys,<br>\r\nI need help for chaning ISO690.<br>\r\n<br>\r\nIn the text the citation should look like /Fink2002/<br>\r\n<br>\r\nIt should look like<br>\r\n<p>/Fink2002/ Author, N.: Title : Subtitle. Edition. Place : Publisher, Year</p>\r\n<p> </p>\r\n<p></p>\r\n<p></p>\r\n<p></p>\r\n<p></p>\r\n<table width=594 cellspacing=0 cellpadding=0 border=0 style=\"border-collapse:collapse\">\r\n    <tbody>\r\n        <tr style=\"page-break-inside:avoid\">\r\n            <td valign=top style=\"padding:4.25pt;width:85.15pt\">\r\n            <p>/FINK2002/</p>\r\n            <p></p>\r\n            <p></p>\r\n            </td>\r\n            <td valign=top style=\"padding:4.25pt;width:360.1pt\">\r\n            <p>Finkenzeller, K.: RFID-Handbuch&nbsp;:&nbsp;Grundlagen und praktische Anwendungen induktiver Funkanlagen, Transponder und kontaktloser Chipkarten. 3., aktualisierte und erweiterte Auflage. München&nbsp;:&nbsp;Hanser, 2002</p>\r\n            </td>\r\n        </tr>\r\n    </tbody>\r\n</table>\r\n<br>\r\nI hope that there is someone willing to help me, I'm a XML noob.<br>\r\n<br>\r\nThanks guys,<br>\r\n<br>\r\nsergioone<br>\r\n<br>\r\n",
+    "PostedDate": "2009-04-08T07:47:59.177-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "177253",
+    "ThreadId": "52689",
+    "Html": "What exactly are you looking for?<br>\r\n<br>\r\nIf the only thing you want is to change the numerical reference number (b:RefOrder) by the tag (b:Tag), then that is pretty easy to do.<br>\r\n<br>\r\nHowever, the ISO690 style does not place the author first for journal articles or conference proceedings (which might be what you require). I posted an alternative a while back which always shows the author first (<a href=\"http://bibliography.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=17634\">http://bibliography.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=17634</a>) but it might not be the format you are looking for.<br>\r\n<br>\r\nIf one of the two above styles is what you are looking for in terms of bibliography formatting, I can easily help you switching the RefOrder for the Tag. If it is not, you might have to create an entire style from scratch. In that case, I can give you an example for one entry in BibWord (e.g. a book or journal article), but you will have to do the rest yourself.<br>\r\n<br>\r\nYves\r\n",
+    "PostedDate": "2009-04-08T10:01:07.203-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

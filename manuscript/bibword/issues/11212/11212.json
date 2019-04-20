@@ -1,0 +1,105 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I have a large document in Word 2007, with approximately 900 citations.\n\nEvery time I attempt to \"update citations & bibliography\" it hangs.\n\nI have run it in word safe mode. I have run the pc in safe mode. I have run it without backup, without autosave, without antivirus. I have disabled screensavers. I ran the office repair - no change. All to no avail. \n\nIt takes several hours to fall over, and the couple of times I watched the winword process memory usage, i saw it fall over at about the same memory use - about 1.8Gb. This computer still shows only 60% memory used so it's not like it's running out of RAM/swap space. It's behaving like an internal coding hard-limit on memory allocation was reached.\n\nAll the event viewer shows me is:\nFaulting application winword.exe, version 12.0.6668.5000, stamp 5083137f, faulting module mso.dll, version 12.0.6662.5000, stamp 4fd67dd1, debug? 0, fault address 0x00b12066.\n\nIs anyone else having this issue?\nIs this fixed in Word 2010 or 2013?\nDoes anyone have any suggested workarounds?",
+    "LastUpdatedDate": "2013-12-10T09:05:18.903-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "bibword",
+    "ReportedDate": "2013-08-19T06:58:14.027-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Update citations and Bibliography Hanging",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 11212
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Follow up:\nI Read Yves' description in another post of the knuckle-headed way the xslt gets loaded/unloaded for every citation.\r\n\r\nOne possible work-around may be to strip out anything from the xslt that isn't \"used\" - skeletonize it - to make it quicker to load/unload and take less memory. I have no idea how to:-\r\n\r\n1) establish the superset of elements are \"in use\" in my doc plus those that are required for a well-formed stylesheet\r\n\r\n2) create a script to trim them out.\r\n\r\nMy vi days were long ago and I'm not aware there's an equivalent on the PC. I'm not a Perl or python person. Isn't it sad we're talking about computing from yesteryear to overcome Microsoft's  shortcomings?\r\n\r\nI'm using the nature style, any hints, suggestions would be appreciated since I am still dead in the water.",
+      "PostedDate": "2013-08-22T06:47:40.977-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I believe I have diagnosed the cause of this problem - It appears to be __caused by Word's UNDO handling__. \r\n\r\nBasically for every single citation update it seems to create an undo entry in the undo stack. In my case each one of these is between 8Mb and 14Mb (I'm guessing the difference relates to the number of times a source is cited in the document). So for 900+ sources, we are looking at an undo stack of 7 to 13 Gigs. Add in the application and document and we are talking about another 45Mb on top. I don't know if there's a finite addressable limit of a 32bit app, but it looks like what's happening is that as the \"update citations and bibliography\" proceeds, it just creates a HUGE UNDO STACK which eventually exceeds either some internal address limit or operating system limit or physical resources limit (in my case it gets to about 1.8Gb in RAM). Then it falls over. Since it falls over when Task Manager shows I still have plenty of memory left - I think it's an internal limit. \r\n\r\nHow did I come to this conclusion? \r\n\r\nI've spent days researching. I previously tried switching off the autosave - no change. \nI monitored the memory use by the process winword.exe while manually updating my citations one at a time. The app with a blank doc takes about 25Mb. Add in my doc and it rises to 45Mb. Edit the first citation - rises to 57Mb, edit next - 69Mb, and so on. I quickly get to 150 or 170Mb before I chicken-out, exit \"manage sources,\" and save the doc. I verify sources.xml is also updated. \r\n\r\nSAVE does NOT clear the undo stack - there's no change in memory before and after SAVE. \r\n\r\nOn the ribbon, the Undo button offers multiple instances of \"select bibliography style\" even after save. \r\n\r\nIn older versions of word you could turn off the UNDO function, but it appears from Word 2007 and up you can't. If anyone knows of a way to disable UNDO in Word, that should solve this issue. \r\n\r\nOn other fora I hear that there has been no significant change in Word 2010 or 2013 in this area. \r\n\r\nIt's a diagnosis but not a solution.",
+      "PostedDate": "2013-09-04T09:34:03.667-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "If that is really the cause, you could disable the undo stack before formatting the citations and bibliography.\r\n\r\nSee http://www.ehow.com/how_6909785_disable-undo-action-ms-word.html for information on how to disable the undo stack.\n",
+      "PostedDate": "2013-09-04T10:02:24.663-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I saw that but it looks like all the macro is doing is disabling the undo button, ie switching off user access to undo. What we have here (if I'm right) is the update citations and bibliography triggering the undo \"under the hood\", with no user intervention. I can try the macro route as you suggest, but I'm skeptical that it actually will turn off the stack. I'll be happy if I'm wrong, and happier still  if it solves this (otherwise insurmountable) issue.\r\n\r\nin Excel and older versions of word you can set the number of undo levels. setting it to 0 (or 1, I can't remember) has the effect of switching it off. Unfortunately MS removed that for 2007 and up.",
+      "PostedDate": "2013-09-04T10:31:39.113-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "The best I have been able to find is not actually a solution:\nSub UndoLevels()\n' UndoLevels Macro\nActiveDocument.UndoClear\nEnd Sub\r\n\r\nBut that just clears the undo stack at the time it is run. I need to disable it indefinitely, until I switch it on again. [Looks like you can in excel ](http://msdn.microsoft.com/en-us/library/office/ms477952(v=office.12).aspx)but not word. the 'undoLevels' property and most others in that link are not recognized in word 2007.\n",
+      "PostedDate": "2013-09-04T11:47:20.9-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "... and the macro trick in that link - creating a macro in the same name as the Undo/ctrlZ command, also doesn't work in word 2007:\nSub EditUndo()\n' EditUndo Macro\n' Reverses the last action\nMsgBox \"This function has been temporarily disabled\", 16\nEnd Sub\r\n\r\nIn older versions of Word this macro re-purposes the undo command, and you get the regular undo back by deleting or renaming the macro. There are a bunch of complaints out there that it no longer worked when people upgraded to 2007. As far as I can it isn't re-enabled in 2010 or 2013.",
+      "PostedDate": "2013-09-04T18:15:29.163-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I just saw that Visio has:-\r\n\r\napplicaton.UndoEnabled = False\r\n\r\nwhich would be perfect - but that isn't available in word.",
+      "PostedDate": "2013-09-04T18:19:32.62-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I upgraded to Office 365 and I can confirm the issue persists in that version.",
+      "PostedDate": "2013-09-10T13:13:10.04-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Yves,\r\n\r\nI'm desperate. I can't find a way around this. Renaming EditUndo doesn't work (it disables Ctrl+Z in Office 365 but doesn't disable the undo stack). I can't get Microsoft to pay attention to this. I've been searching for workarounds but none so far.\r\n\r\nSo... do you know how the RefOrder value is calculated and set?\r\n\r\nI'm thinking of trying to create a macro that effectively does the \"Update Citations and Bibliography\" function but invoking UndoClear for each citation to burst the bloated undo stack.\r\n\r\nIf I can update the RefOrder value via a macro I think I will have solved this, but I can't find anything on calculating RefOrder, bearing in mind that one source may have more than one citation in the text.\r\n\r\n",
+      "PostedDate": "2013-09-14T16:28:54.27-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "If it really is the undo stack causing the issue, you could update fields one at a time while constantly truncating the undo stack.\r\n\r\nSomething like this:\r\n\r\n```\nSub UpdateFieldsOneAtATime()\n    \n    ' Changing the style will trigger an update of everything.\n    ' So you should not do this. If really necessary, I would\n    ' do this directly in the open xml of the file (so outside\n    ' Word).\n    'ActiveDocument.Bibliography.BibliographyStyle = \"Nature\"\n    \n    ' Define variable.\n    Dim fld As Field\n    \n    ' Truncate the undo stack.\n    ActiveDocument.UndoClear\n    \n    ' Process all fields\n    For Each fld In ActiveDocument.Fields\n        ' Update the in-text citations and truncate the undo stack.\n        If fld.Type = wdFieldCitation Then\n            fld.Update\n            ActiveDocument.UndoClear\n        End If\n        \n        ' Update the bibliography and truncate the undo stack.\n        If fld.Type = wdFieldBibliography Then\n            fld.Update\n            ActiveDocument.UndoClear\n        End If\n    Next\r\n\r\nEnd Sub\n```",
+      "PostedDate": "2013-09-15T00:55:46.96-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "OK - I was Wrong. It was not the Undo Stack that is bloating and eventually crashing.\r\n\r\nWhen I ran your macro (thanks by the way - it worked perfectly on a test document) word exhibited all the same symptoms as using the application's own \"update citations and bibliography\" command. It ran for 3 hours and 40 minutes then crashed, with the winword process swelling from 39Mb at the start to about 1.1Gb at the time it crashed. Just like using word's internal command.\r\n\r\nWhat I was able to do with your macro, was to add a statement to save the document at every update:\r\n\r\n```\nIf ActiveDocument.Saved = False Then ActiveDocument.Save\n```\r\n\r\nI know this will be expensive in execution speed, but not as expensive as a month on this issue with no resolution and 2 years work down the drain. I have tested it on a truncated version of the document (it's slower than molasses) but at least I will be able to figure out how far it got, and maybe manually update the remainder, perhaps. Anyway, even with the many saves, the winword process still bloats in memory. I wonder if they are loading a copy of sources.xml into RAM for every citation?? Whatever Word is doing it is hogging memory and it doesn't scale.\r\n\r\nStill no interest from Microsoft.\r\n\r\nThanks a bunch Yves, you have been very helpful. If I ever do get 'proof of life' in Microsoft I'll direct them to this site for other things they need to improve (like XSL handling). Talking of which, is it worth starting a \"wish list\" and/or a \"bug list\" for word citations, on this forum, that the community can add to?",
+      "PostedDate": "2013-09-16T13:39:32.337-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "OK I set the macro going last night - with the save-as-you-go line in the loop.\nAbout 3h 30 mins in it failed (as expected). I looked at the last-saved file. Word had only processed 308 citations out of about 900 (i would know exactly if I could update the citations!).\r\n\r\nThe macro was stopped at a file permission error on the ActiveDocument.Save line. The Word window was titled ~WRL3153.tmp. It displayed a dialog saying \"The disk is full. Free some space... (etc)\" yet I am showing 287Gb free. I searched for ~WRL3153.tmp but it had disappeared. Maybe the temp file grew until it couldn't any more. Perhaps it grew to ?16Gb which I recall is the largest file addressable by a 32 bit app??\r\n\r\nAnyway, I had hoped the save-as-you-go approach would get me 80% of the way there, but I' stuck at about 30%. And whatever Word is doing in memory it's even more screwy than I thought.",
+      "PostedDate": "2013-09-17T05:12:43.063-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "FIXED (kinda) in 64 bit edition of word for office 365!\r\n\r\nI eventually found a phone number and got through to MS tech support. Uninstalled office 365. Re installed the 64 bit edition of Office 365 (MS hide this under the \"languages and advanced options\" link). Ran Update citations and bibliography on the problem doc. It ran for 3 hours and I watched the winword process go up to 3.2 Gb for a while. \r\n\r\nBut it completed WITHOUT CRASHING!!\r\n\r\nTherefore it is the memory limit in the 32 bit app that is making it fall over, BUT there has to be a smarter way to code this transaction both from a memory use standpoint and a performance standpoint.\r\n\r\nAlong the way, MS confirmed that the renaming the undo via a macro does not in fact disable the undo stack in word versions post 2003, so I was on-the-money blaming the bloated undo stack.",
+      "PostedDate": "2013-12-10T09:05:18.903-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

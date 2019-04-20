@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "473590",
+    "ThreadId": "221669",
+    "Html": "Any ideas if there is a way to get the text after the &quot;\\f&quot; field codes displayed in italics, e.g. in &quot;cf. Arruti (2008)&quot; get an italic &quot;cf.&quot; ?",
+    "PostedDate": "2010-07-28T03:33:00.147-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "473879",
+    "ThreadId": "221669",
+    "Html": "If you are using a BibWord style, just wrap it inside html tags for italics. Those are one of the few HTML formatting settings which actually work for in-text citations:\r\n\r\n    {&lt;i&gt;%CitationPrefix%&lt;/i&gt;}\r\n\r\nIf you are using one of the styles that come with Word, look for where the b:PagePrefix element is displayed and wrap it inside HTML tags for italics.",
+    "PostedDate": "2010-07-28T13:28:39.15-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "474131",
+    "ThreadId": "221669",
+    "Html": "thanks yves... I'm not quite sure how to do that. I'm using ASA style, and the field says:\r\n\r\nCITATION Arr06 \\p 121 \\n  \\y  \\t  \\l 1031 \\f &quot;ib.&quot;\r\n\r\nWhere should I exactly put the HTML tag? I only want the &quot;ib.&quot; to appear in italics, not the whole citation...",
+    "PostedDate": "2010-07-29T02:38:34.847-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "474155",
+    "ThreadId": "221669",
+    "Html": "<p>If you want every possible prefix to be in italics, you would have to do that directly inside ASA.xsl. Look for</p>\r\n<p>&nbsp;&nbsp;&nbsp; {%CitationPrefix%}</p>\r\n<p>and replace by</p>\r\n<p>&nbsp;&nbsp;&nbsp; {&amp;lt;i&amp;gt;%CitationPrefix%&amp;lt;/i&amp;gt;}</p>\r\n<p>If you are only interested in this one case, just type it in your field code. Where you have &quot;ib.&quot;, write &quot;&amp;lt;i&amp;gt;ib.&amp;lt;/i&amp;gt;&quot;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-07-29T03:37:11.72-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "482265",
+    "ThreadId": "221669",
+    "Html": "<p>that worked very well, thank yves!</p>",
+    "PostedDate": "2010-08-19T04:28:44.103-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

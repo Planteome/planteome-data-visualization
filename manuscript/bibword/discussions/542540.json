@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1235117",
+    "ThreadId": "542540",
+    "Html": "Hi,\r<br />\nVancouver is of great help, but I am going to expose a couple of issue.\r<br />\n<br />\n1) Considering I copy and paste the list of authors throgh the &quot;insert citation&quot; button of word 2013 directly from pubmed, id:\r<br />\n<br />\nVecchio R, Marchese S, Ferla F, Spataro L, Intagliata E.\r<br />\n<br />\nmay I ask you to fix the script in order not to force me to add each author in the classic way;\r<br />\n<br />\nVecchio, R; Marchese, S; Ferla, F; Spataro, L; Intagliata, E. which is very frustrating.\r<br />\n<br />\n2) I noticed there is something wrong with the &quot;preview (vancouver)&quot; in the &quot;manage sources&quot; of the references ribbon where it appears in a sort of &quot;narrowed form&quot;.\r<br />\n<br />\nThank you again for considering possible solutions.\r<br />\nKind regards.<br />\n",
+    "PostedDate": "2014-04-17T09:59:46.957-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1235385",
+    "ThreadId": "542540",
+    "Html": "Your first point has nothing to do with BibWord. Word provides the parsing functionality to convert a 'contributor string' into a set of valid names. The same rule is used for all formatting styles.\r<br />\n<br />\nLuckely, this functionality is also offered through an XSLT stylesheet. In the directory where the Word executable is found (commonly under '%programfiles%\\Microsoft Office\\Office XX' with XX being a number) there is a subdirectory <strong>bibliography</strong>. In it, you will find <strong>Author2XML.XSL</strong>. This file does all the author parsing for you, you will need to adapt it to fit your needs.\r<br />\n<br />\nMake sure you make a backup before you alter the file.\r<br />\n<br />\n<br />\nRegarding your second point, can you provide a screenshot or more information as I don't understand what you mean by &quot;narrowed form&quot;.<br />\n",
+    "PostedDate": "2014-04-18T04:39:42.617-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1235457",
+    "ThreadId": "542540",
+    "Html": "\r\n<div dir=\"ltr\">\r\n<div style=\"font-size:10pt; font-family:'Arial'; color:#000000\">\r\n<div>\r\n<div style=\"font-size:small; text-decoration:none; font-family:\">Of course thanks again for the precious information you gave me.</div>\r\n<div dir=\"ltr\">\r\n<div style=\"font-size:10pt; font-family:'Arial'; color:#000000\">\r\n<div></div>\r\n<div>Concerning the Author2xml file I took a look at it and, at glance, it seemed to be very difficult to me.</div>\r\n<div></div>\r\n<div>I understood what you mean but I remember in the previous version of Word, when I used Vancouver with Word 2010, in order to solve my little problem I adjusted the following script:</div>\r\n<div></div>\r\n<div>&lt;/source&gt;</div>\r\n<div>&lt;source type=&quot;JournalArticle&quot;&gt;</div>\r\n<div>&lt;column id=&quot;1&quot;&gt;</div>\r\n<div>&lt;halign&gt;right&lt;/halign&gt;</div>\r\n<div>&lt;valign&gt;top&lt;/valign&gt;</div>\r\n<div>&lt;format&gt;{%RefOrder%.}&lt;/format&gt;</div>\r\n<div>&lt;/column&gt;</div>\r\n<div>&lt;column id=&quot;2&quot;&gt;</div>\r\n<div>&lt;halign&gt;left&lt;/halign&gt;</div>\r\n<div>&lt;valign&gt;top&lt;/valign&gt;</div>\r\n<div>&lt;format&gt;{%Author:1%. }{%Title%. }{%JournalName%. }{%Year%{ %Month:s%{ %Day%}};}{%Volume%}{(%Issue%)}{:%Pages%.}{ %DOI%.}{ %Comments%.}&lt;/format&gt;</div>\r\n<div>&lt;/column&gt;</div>\r\n<div>&lt;sortkey&gt;&lt;/sortkey&gt;</div>\r\n<div>&lt;/source&gt;</div>\r\n<div></div>\r\n<div>simply I changed %Author:1% for %Author% without :1 and it worked greatly till I installed the new version: Word 2013;</div>\r\n<div>It was immediate: I copied and pasted the list of Author and it appeared in the final reference as I had inserted it.</div>\r\n<div></div>\r\n<div>(as you see I made few other changes in that script to fit the final appearence of the reference)</div>\r\n<div></div>\r\n<div>Eventually, if there is nothing to do I will probably add something like: “standardnumber” in the place of Author where I will paste the list of Author so as to rapidly fit the result.</div>\r\n<div></div>\r\n<div></div>\r\n<div>With regards to the narrowed form of the preview I attached a screenshot with an arrow to the problem. Sorry but as you see my version is in italian language.</div>\r\n<div></div>\r\n<div>I am looking forward to hearing from you.</div>\r\n<div></div>\r\n<div>Best wishes.</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n",
+    "PostedDate": "2014-04-18T09:32:40.3-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

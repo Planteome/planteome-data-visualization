@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "1349268",
+    "ThreadId": "579542",
+    "Html": "Dear all,\r<br />\n<br />\nI have a problem with citations in words. In all styles I have tried so far citations in the main text are <em>at best</em> displayed as &quot;(Author, 2001)&quot;. However, I would like to get it automatically as &quot;Author (2001)&quot;. Is this possible?\r<br />\n<br />\nIs there a style that does this automatically?\r<br />\nCan I program this myself? \r<br />\n<br />\nThanks a lot for your help in advance,\r<br />\nmh<br />\n",
+    "PostedDate": "2015-02-05T03:12:49.613-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1355600",
+    "ThreadId": "579542",
+    "Html": "BibWord is designed to create your own styles. So yes, you can create this yourself. <br />\n<br />\nUsing a BibWord style, removing the surrounding brackets would be as simple as letting the openbracket and closebracket elements empty.<br />\n<pre><code>    &lt;citation&gt;\n      &lt;openbracket&gt;&lt;/openbracket&gt;\n      &lt;closebracket&gt;&lt;/closebracket&gt;\n      &lt;!-- a lot of other code --&gt;\n    &lt;/citation&gt;</code></pre>\n\nThen, in the formatting of an in-text citation, you just specify that the year has to be between brackets. So something like below<br />\n<pre><code>    &lt;citation&gt;\n      &lt;!-- a lot of other code --&gt;\n       &lt;source type=&quot;Book&quot;&gt;\n        &lt;format&gt;{%Author:0%{ (%Year%)}}&lt;/format&gt;\n      &lt;/source&gt;     \n      &lt;!-- a lot of other code --&gt;\n    &lt;/citation&gt;</code></pre>\n\n",
+    "PostedDate": "2015-02-25T06:01:18.747-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1356721",
+    "ThreadId": "579542",
+    "Html": "Hi Yves,\r<br />\n<br />\nThanks very much for your software, it's so much easier than trying to understand Microsoft's XML code!\r<br />\n<br />\nFurther to mohelm's question, is it possible to use a switch to toggle between the two styles? I don't need to use the &quot;suppress title&quot; option, so was hoping to use it for a different purpose, i.e. when unselected the citation appears as &quot;(Author, 2001)&quot;, and when selected it appears as &quot;Author (2001)&quot;.\r<br />\n<br />\nIf this is not possible, is there another option, e.g. using the &quot;\\f&quot; switch mentioned on page 15 of your manual?\r<br />\n<br />\nThanks,\r<br />\n<br />\nMichael<br />\n",
+    "PostedDate": "2015-02-28T00:14:43.753-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1363341",
+    "ThreadId": "579542",
+    "Html": "Hi,\r<br />\n<br />\nJust wondering if this is possible?\r<br />\n If not, that's fine as I can manually work around it. It would just be more elegant to include it in the code.\r<br />\n<br />\nThanks,\r<br />\n<br />\nMichael<br />\n",
+    "PostedDate": "2015-03-13T23:13:18.327-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1363362",
+    "ThreadId": "579542",
+    "Html": "It is but it will require you to do some programming.\r<br />\n<br />\nThe xml being processed by the xslt will contain a <strong>/b:Citation/b:PagePrefix</strong> element if you specify a \\f. But without testing I would expect that element to be empty if you didn't provide an actual prefix. You would be better of using one of the suppression flags (<strong>/b:Citation/b:NoAuthor</strong>, <strong>/b:Citation/b:NoTitle</strong>, or <strong>/b:Citation/b:NoYear</strong>).\r<br />\n<br />\nIn BibWord, the <strong>format-citation</strong> is responsible for all formatting of in-text citations. You will find the different flags being used in there if you want some examples.<br />\n",
+    "PostedDate": "2015-03-14T03:22:14.843-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1363571",
+    "ThreadId": "579542",
+    "Html": "Thanks Yves, I'll look into it.<br />\n",
+    "PostedDate": "2015-03-15T15:47:35.337-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

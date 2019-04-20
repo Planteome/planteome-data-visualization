@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1136826",
+    "ThreadId": "474297",
+    "Html": "I am hoping someone can help me...<br />\n<br />\nI downloaded the Chicago footnotes xsl and put it in the correct folder with the other 4 styles that come with the program. When I open Word, it does not recognize it--just a greyed-out &quot;Unknown&quot;. Per an earlier post, I did modify the template by inserting-and-deleting a space at the beginning, but that had no effect.<br />\n<br />\nDoes anyone have any suggestions? The other styles available in the zip file appear to work just fine.<br />\n<br />\nEDIT: I got it to appear by changing the first line from iso etc. to utf-8, and by copying the file from my downloads folder and pasting it into the styles folder. For some reason, it wasn't responding to the drag-and-drop. However, all my sources now say unspecified format. Do I need to re-enter my bibliography and start over?<br />\n",
+    "PostedDate": "2013-12-16T11:14:42.937-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

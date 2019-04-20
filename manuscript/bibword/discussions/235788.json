@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "526135",
+    "ThreadId": "235788",
+    "Html": "\r\n<div>\r\n<div>\r\n<p>Why is there an MLA 6th Edition citation .xsl file for Word 2007 and Word 2010, but not MLA 7th Edition that came out in 2009? If these people considering writing so important and like it so much, why can't I find ANYONE who has taken the MLA 7th Format\r\n and made an MLA.XSL file for Word so people can just hit References/Bibliography or citations and just enter it in word rather than having to do it manually or find a citation generation online?</p>\r\n<p>Out of all the people in the world, not ONE of them is interested in English, Word, or students enough to make the file? At least for aesthetic purposes?</p>\r\n<p><a rel=\"nofollow\" href=\"http://beckelman.net/image.axd?picture=WindowsLiveWriter/Word2007BibliographyandCitationsFeature_7E0C/image_thumb_1.png\">http://beckelman.net/image.axd?picture=WindowsLiveWriter/Word2007BibliographyandCitationsFeature_7E0C/image_thumb_1.png</a></p>\r\n</div>\r\n</div>\r\n",
+    "PostedDate": "2010-11-23T15:15:08.943-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "526142",
+    "ThreadId": "235788",
+    "Html": "\r\n<p>This site does not handle the styles which come with Word.</p>\r\n<blockquote style=\"border:solid .1em #ccc; font-style:italic; margin:.25em 1em 0 1em; padding:0 .25em 0 .25em\">\r\n<strong>nirv wrote:</strong><br>\r\n<p>Why is there an MLA 6th Edition citation .xsl file for Word 2007 and Word 2010, but not MLA 7th Edition that came out in 2009?</p>\r\n</blockquote>\r\n<p>When Microsoft released the citations and bibliography tool they indicated that the styles that came with it were example styles. They stated that it would be up to the organizations using a specific referencing format (publishers, libraries, ...) to create\r\n an XSL for their own style. So it is up to MLA to create one for their 7th edition. I always suggest people to contact MLA and ask them about such style. One mail probably won't change a thing, but if enough people ask, they might finally do something about\r\n it and spend some of the money you paid for their book on creating something useful. So visit\r\n<a href=\"http://www.mla.org/contact\">http://www.mla.org/contact</a> and write them.</p>\r\n<blockquote style=\"border:solid .1em #ccc; font-style:italic; margin:.25em 1em 0 1em; padding:0 .25em 0 .25em\">\r\n<strong>nirv wrote:</strong><br>\r\n<p>If these people considering writing so important and like it so much, why can't I find ANYONE who has taken the MLA 7th Format and made an MLA.XSL file for Word so people can just hit References/Bibliography or citations and just enter it in word rather\r\n than having to do it manually or find a citation generation online?</p>\r\n<p>Out of all the people in the world, not ONE of them is interested in English, Word, or students enough to make the file? At least for aesthetic purposes?</p>\r\n</blockquote>\r\n<p>Well you seem to be interested, why not give it a go yourself? There is plenty of example material available on this site if you wanted to use BibWord. Personally, as the changes between edition 6 and 7 are probably minor (some underlining, italics, ...)\r\n I would start from the MLA.xsl that came with Word. Harder to edit than BibWord styles, but you probably learn some new things along the way which is always nice. And who knows, once you did the MLA one, you might find a passion for it and do the APA one as\r\n well.</p>\r\n<p>Besides I imagine there are already MLA 7th edition styles. They probably just&nbsp;aren't made public because their authors don't see a merit for themselves.</p>\r\n",
+    "PostedDate": "2010-11-23T15:47:00.4-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1035719",
+    "ThreadId": "235788",
+    "Html": "I really hate to create an account on a message board just to voice what seems like a rant, but I'm not sure where else would be relevant to express these thoughts, so...\r<br />\n<br />\nOffice 2007 and Office 2010 both have full support for MLA 7th Edition. To say that Office 2011 is somehow different is absolute crap.\r<br />\n<br />\nThis isn't Bibword's fault; it is clearly Microsoft's. That being said, I can't understand why Bibword, if you folks are going to bother producing various different paper/citing formats, would skip over adding the latest versions for APA and MLA.\r<br />\n<br />\nAnd as for telling the OP here that they should just roll up their sleeves and create one of these things themselves is not exactly helpful advice, particularly if you're not a coder and have no way to act on such a suggestion.\r<br />\n<br />\nAgain, I apologize for the rant, but this really angered me.<br />\n",
+    "PostedDate": "2013-04-25T09:11:24.033-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

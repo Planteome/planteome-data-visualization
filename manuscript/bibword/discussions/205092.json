@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "418642",
+    "ThreadId": "205092",
+    "Html": "Hi,<br>\r\nI am writing my Master Thesis and I have some problems displaying the Tag Name.<br>\r\nAll I want is that instead of the standard display of the source - &quot;(Author Last name, Year)&quot; - I would like to display it like this: &quot;[Tag Name]&quot;.<br>\r\n\r\nI am using my own Bibliography style.<br>\r\nI was able to change the brackets from () to [].<br>\r\nBut I can not display the Tag Name.<br>\r\n\r\nMy code:<br>\r\n<code>&lt;!-- Defines the output format as (Author, Year)--&gt; <br>\r\n\r\n        &lt;xsl:text&gt;[&lt;/xsl:text&gt; <br>\r\n\r\n&lt;xsl:value-of select=&quot;b:Author/b:Author/b:NameList/b:Person/b:Last&quot;/&gt; <br>\r\n\r\n        &lt;xsl:text&gt;, &lt;/xsl:text&gt; <br>\r\n\r\n        &lt;xsl:value-of select=&quot;b:Year&quot;/&gt; <br>\r\n\r\n        &lt;xsl:text&gt;]&lt;/xsl:text&gt;</code><br>\r\n\r\nHope someone can help.<br>\r\nMatic",
+    "PostedDate": "2010-03-16T05:13:07.863-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "418657",
+    "ThreadId": "205092",
+    "Html": "<p>It doesn't look like this has anything to do with BibWord.</p>\r\n<p>Anyway, can't you just select the tag like you are now selecting the name and the year? So something like:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">xsl</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">text</span><span style=\"color:Blue\">&gt;</span>[<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">xsl</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">text</span><span style=\"color:Blue\">&gt;</span> \r\n<span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">xsl</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">value-of</span> <span style=\"color:Red\">select</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">b:Tag</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">/&gt;</span> \r\n<span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">xsl</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">text</span><span style=\"color:Blue\">&gt;</span>]<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">xsl</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">text</span><span style=\"color:Blue\">&gt;</span></pre>\r\n</div>",
+    "PostedDate": "2010-03-16T06:00:00.75-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "418668",
+    "ThreadId": "205092",
+    "Html": "Unfortunately not.<br>\r\nI don't know why, but this just will not work.",
+    "PostedDate": "2010-03-16T06:35:37.97-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "418813",
+    "ThreadId": "205092",
+    "Html": "<p>Does the original code work? I'm talking about the one with the author and the year. Do they display correctly?</p>\r\n<p>Assuming the original code worked, what does your code display?</p>\r\n<p>Do you have access to the entire b:Source element? If it's a watered down version it might not have a b:Tag child. It would be strange, but it is possible as you only posted a real short piece of code which gives almost nothing to work with.</p>\r\n<p>As you are clearly starting from another style, have you tried contacting the author of that style?</p>\r\n<p>On a side note, displaying the brackets directly like that will cause problems when you want to combine multiple citations: [tag1, tag2, tag3]</p>",
+    "PostedDate": "2010-03-16T11:21:21.637-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "419145",
+    "ThreadId": "205092",
+    "Html": "<p>I think it could be possible that it does not have the whole b:Source element.</p>\r\n<p>But NO idea how to make this work...</p>\r\n<p>The original code works yes.</p>\r\n<p>&nbsp;</p>\r\n<p>The whole file can be viewed <a href=\"http://edu.fh-kaernten.at/t05mrma/www/MasterThesis.xsl\">here</a>.</p>",
+    "PostedDate": "2010-03-17T04:05:54.787-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "419174",
+    "ThreadId": "205092",
+    "Html": "<p>For starters,</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">xsl</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">value-of</span> <span style=\"color:Red\">select</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">b:Tag/b:Name</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">/&gt;</span>\r\n</pre>\r\n</div>\r\n<p>does not exist. The tag field is stored inside the b:Tag element.</p>\r\n<p>Next, at that point in the code, you are not inside the b:Source element, hence&nbsp;accessing its children (b:Tag) won't work at all. A quick and dirty way that&nbsp;will work is:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">xsl</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">value-of</span> <span style=\"color:Red\">select</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">/b:Citation/b:Source/b:Tag</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">/&gt;</span>\r\n</pre>\r\n</div>\r\n<p>I get the feeling that&nbsp;you have little&nbsp;to no xslt experience. It is of course your choice to proceed as you are, but you might want to consider using the BibWord template to start from. It should make your life easier.</p>",
+    "PostedDate": "2010-03-17T05:24:28.163-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

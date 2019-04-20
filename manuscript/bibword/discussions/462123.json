@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1107264",
+    "ThreadId": "462123",
+    "Html": "Hi, need urgent help with Vancouver citations. Need to:\r<br />\n<br />\n*Remove parenthesis in the superscript text citation (already used macro to change to superscript)\r<br />\n*Remove the &quot;p.&quot; that appears before page numbers in the citations.\r<br />\n<br />\nWould it be possible? Many thanks in advance!\r<br />\nAna<br />\n",
+    "PostedDate": "2013-10-14T10:26:28.373-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1108661",
+    "ThreadId": "462123",
+    "Html": "<strong>AMH wrote:</strong><br />\n<blockquote>\n*Remove parenthesis in the superscript text citation (already used macro to change to superscript)<br />\n</blockquote>\nJust remove the content of the openbracket and closebracket elements.<br />\n<pre><code>&lt;openbracket&gt;&lt;/openbracket&gt;\n&lt;closebracket&gt;&lt;/closebracket&gt;</code></pre>\n\n<strong>AMH wrote:</strong><br />\n<blockquote>\n*Remove the &quot;p.&quot; that appears before page numbers in the citations.<br />\n</blockquote>\nJust change the format strings under the citations element. For more info on format strings, see <a href=\"https://bibword.codeplex.com/wikipage?title=BibWord%20Format%20Strings&amp;referringTitle=Documentation\" rel=\"nofollow\">here</a>.<br />\n",
+    "PostedDate": "2013-10-17T02:05:48.097-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1109486",
+    "ThreadId": "462123",
+    "Html": "Many thanks for info &amp; fast reply! \r<br />\nIt works and it was a lot easier to do than expected, since I have no experience at all editing styles. \r<br />\nHope my tutor doesn't ask for more format citing changes to finalise my Masther thesis.\r<br />\nThanks again!\r<br />\nAna <br />\n",
+    "PostedDate": "2013-10-19T04:58:03.667-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

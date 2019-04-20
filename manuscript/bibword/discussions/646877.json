@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1450617",
+    "ThreadId": "646877",
+    "Html": "hi guys, i wanna set for citation in text the feature et al. (in italics if possible) if there ismore than two authors\r<br />\nEx : (Pavela S. et al. , 2010) for 3 or more authors\r<br />\nor (Pavela S. , Abott , 2010) for just two authors\r<br />\n<br />\ni figured out this code :\r<br />\n&lt;max_number_of_persons_to_display&gt;2&lt;/max_number_of_persons_to_display&gt;\t  &lt;number_of_persons_to_display_if_more_than_max&gt;1&lt;/number_of_persons_to_display_if_more_than_max&gt;\r<br />\n&lt;overflow&gt;, &lt;i&gt;et al.&lt;/i&gt;&lt;/overflow&gt; \r<br />\n<br />\nbut i don't know where to put it.<br />\nThank you for helping me out<br />\n",
+    "PostedDate": "2015-11-01T07:46:16.833-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

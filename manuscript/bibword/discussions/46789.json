@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "156472",
+    "ThreadId": "46789",
+    "Html": "Hi can you help please?<br>\r\n<br>\r\nI have tried BibWord Extender<br>\r\nI assumed that a year suffix would automatically be added after the year &quot;1996&quot;, so in this case it would be &quot;1996a&quot; and &quot;1996b&quot; respectively, in the following Harvard style references?<br>\r\n<p style=\"margin:0cm 0cm 0pt\"><span style=\"font-size:13px\">\r\n<p>&nbsp;</p>\r\n<p style=\"margin:0cm 0cm 0pt\"><span style=\"font-size:13px\">Refugee Council, 1996. <i>The state of Asylum: A critique of asylum policy in the UK</i>. The Refugee Council.</span></p>\r\n<p style=\"margin:0cm 0cm 0pt\"><span style=\"font-size:13px\">Refugee Council, 1996. <i>Update: The impact of the social security regulations</i>. The Refugee Council.</span></p>\r\n<p style=\"margin:0cm 0cm 0pt\">&nbsp;</p>\r\n</span></p>\r\n<p style=\"margin:0cm 0cm 0pt\"><span style=\"font-size:13px\"><br>\r\nI've missed something or probably done something wrong, thanks</span></p>\r\n",
+    "PostedDate": "2009-02-10T16:54:48.92-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "156560",
+    "ThreadId": "46789",
+    "Html": "Have you followed the steps described in the usage section of the Extender tool (<a href=\"http://www.codeplex.com/bibliography/Wiki/View.aspx?title=BibWord Extender\">http://www.codeplex.com/bibliography/Wiki/View.aspx?title=BibWord%20Extender</a>)? Make sure you update your citations and bibliography after you used the tool by selecting the style again in Word from the dropdown menu.<br>\r\n",
+    "PostedDate": "2009-02-10T23:37:47.057-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "156574",
+    "ThreadId": "46789",
+    "Html": "Thanks very much, it worked ok.<br>\r\n<br>\r\nI think I didn't go through all the steps when I ran the extender before.\r\n",
+    "PostedDate": "2009-02-11T00:29:53.177-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

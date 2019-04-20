@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "987088",
+    "ThreadId": "429677",
+    "Html": "\r\n<p>Hi</p>\r\n<p>&nbsp;</p>\r\n<p>I've made a bibliography with the IEEE Numbering style and it works fine.</p>\r\n<p>[1] Author A, Title A, ....</p>\r\n<p>[2] Author B, Title B, ....</p>\r\n<p>[3] Author B, Title C, ....</p>\r\n<p>...</p>\r\n<p>But now I try to insert some citations into my document, but the displayed numbers in text are wrong.</p>\r\n<p>For example: I want to add a cite from Auhor B, Title B -&gt; In bib [2], but the citation in my text always displays [1]. If I add some more citations it's only counting up the numbers and doesn't display the number of the bib entry. The hyperlink itself\r\n is ok and word jumps to the correct place in the bibliography.</p>\r\n<p>Hope someone knows a solution to this issue or do i use IEEE wrong?</p>\r\n<p>Greetings</p>\r\n<p>Joe&nbsp;</p>\r\n",
+    "PostedDate": "2013-01-15T06:55:04.4-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "987282",
+    "ThreadId": "429677",
+    "Html": "\r\n<p>The in-text citations and bibliography in Word are nothing more than fields. Hence they need to be updated after changes are made.</p>\r\n<p>Try&nbsp;selecting another style from the dropdown and then select the IEEE style back. This will force two updates, but is probably the easiest way to fix things if you are not&nbsp;really familiar working with Word.&nbsp;</p>\r\n",
+    "PostedDate": "2013-01-15T13:05:58.8-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

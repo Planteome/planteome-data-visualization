@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "236785",
+    "ThreadId": "69570",
+    "Html": "<p>Hi, I'd like the Bibliography styles as follow:</p>\r\n<p>Debreu, G., 1951. The coefficient of resource utilisation. Econometrica 19 (3), 273&ndash;292.</p>\r\n<p>Deprins, D., Simar, L., Tulkens, H., 1984. Measuring labourefficiency in post offices. In: Marchand, M., Pestieau, P.,Tulkens, H. (Eds.), The Performance of Public Enterprises: Concepts and Measurement. Elsevier Science Publishers, Amsterdam, pp. 243&ndash;267.</p>\r\n<p>Koopmans, 1957. Activity Analysis of Production and Allocation. John Wiley, New York.</p>\r\n<p>And intext citation as:</p>\r\n<p>(Athanassopoulos, 1997) or&nbsp;(Drake and Howcroft, 1995; Howcroft, 1992) or (Schaffnit et al., 1997; Taylor et al., 1997)</p>\r\n<p>How can I do?</p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size:12pt\" lang=EN-US>&nbsp;</span></p>",
+    "PostedDate": "2009-09-21T01:44:44.04-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "236813",
+    "ThreadId": "69570",
+    "Html": "<p>Well, you should start by getting the latest template of <a title=\"BibWord v.2.5\" href=\"http://bibword.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=27210\">BibWord</a>. There is also a guide there with information on how and what to format. Also looking at the other styles on this site, might help you get along the way.</p>\r\n<p>If this is your first style you try to create, you could start from the&nbsp;<a title=\"Harvard - Exeter style\" href=\"http://bibword.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=22890\">Harvard - Exeter</a> style and change that one.</p>\r\n<p>In-text citations are pretty much formed as you want. The style does allow to show up to&nbsp;three authors for in-text citations before it is abbreviated to one author followed by 'et al.'. In your example you seem to stop at two. But that can easily done by changing&nbsp;the value of &quot;max_number_of_persons_to_display&quot; from 3 to 2 in the appropriate namelist.</p>\r\n<p>For the bibliography names are already displayed correctly. The only thing you might want to change here is the separator between names. In some cases, like before the last name, 'and' is displayed. But you can change that in the namelist for authors. For the rest, you will pretty much have to order the elements in the different bibliography format strings the way you want. Only minor changes seem to be necessary.</p>",
+    "PostedDate": "2009-09-21T03:04:58.95-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "237251",
+    "ThreadId": "69570",
+    "Html": "<p>First, thanks for your suggest!</p>\r\n<p>I think that editing the bibliography is hard for me.</p>\r\n<p>But i'll try. :)</p>",
+    "PostedDate": "2009-09-22T04:12:59.63-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

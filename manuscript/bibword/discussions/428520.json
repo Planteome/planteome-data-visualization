@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "983103",
+    "ThreadId": "428520",
+    "Html": "\r\n<p>I have some unused citations that I want to remove from the Bibliography. The macro given in http://bibword.codeplex.com/wikipage?title=Styles_FAQ#Q11 does not work on Word for Mac 2011.</p>\r\n<p>Is there a workaround?</p>\r\n<p>Thanks.</p>\r\n",
+    "PostedDate": "2013-01-04T09:32:49.387-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1088147",
+    "ThreadId": "428520",
+    "Html": "The same happens on my PC with the Macro CitationsToStaticText()\r<br />\nThis macro doesn't for the styles that I downloaded from this websyte while it perfectly works with the default styles of word. \r<br />\ndid you also notice this? did you find a solution?\r<br />\nthanks<br />\n",
+    "PostedDate": "2013-09-04T03:05:56.533-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "551406",
+    "ThreadId": "242288",
+    "Html": "\r\n<p><span style=\"font-size:10pt; color:black\">I am using the &quot;IEEE - Reference Order&quot; Style, &quot;InternetSite&quot; (Web Site) type of source.\r\n</span></p>\r\n<p><span style=\"font-size:10pt; color:black\">I think the &ldquo;Name of Web Page&rdquo; field is switched with the &ldquo;Name of Web Site.&quot;</span></p>\r\n<p>I interpret &quot;Name of Web Page&quot; to be the field that houses the title of the individual page.\r\n<br>\r\nAnd I interpret &quot;Name of Web Site&quot; to be the filed that houses the name of the parent website.<br>\r\nIs that right?</p>\r\n<p>If so, when I add data to my citation using that logic, I get the following entry.&nbsp; (Notice that the title of the web page does not appear. Only the parent website name appears. The name of the web page is &quot;Before We are Democrats or Republicans, We\r\n are Americans&quot; and the parent website is www.whitehouse.gov.)</p>\r\n<p style=\"padding-left:60px\"><span style=\"font-size:12pt; color:#0000ff\">U.S. Government. (2011, January) http://www.whitehouse.gov/. [Online].\r\n<a href=\"http://www.whitehouse.gov/blog/2011/01/15/weekly-address-we-are-democrats-or-republicans-we-are-americans\">\r\nhttp://www.whitehouse.gov/blog/2011/01/15/weekly-address-we-are-democrats-or-republicans-we-are-americans</a></span></p>\r\n<p>When I switch the style to Chicago, I get the following entry (in which the title of the web page appears in italics).</p>\r\n<p style=\"padding-left:60px\"><span style=\"color:#0000ff\">U.S. Government. <em>Before We are Democrats or Republicans, We are Americans.</em> January 2011. http://www.whitehouse.gov/blog/2011/01/15/weekly-address-we-are-democrats-or-republicans-we-are-americans.</span></p>\r\n<p>It seems to me that the two fields are just called up in the wrong way. Is this intentional?</p>\r\n",
+    "PostedDate": "2011-01-18T11:10:28.54-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "551524",
+    "ThreadId": "242288",
+    "Html": "\r\n<p>Yes, this is intentional. The title of the website is always preferred over the title of the individual page as far as I can tell from the IEEE documentation. Only if the website has no title, the title of the&nbsp;individual page will be used. This is also\r\n illustrated in the fact that documents from internet sites use the exact same formatting.</p>\r\n<p>Note that the title of a website is not its base address. So in your example the title of the website is actually &quot;The White House&quot; and not &quot;<a href=\"http://www.whitehouse.gov\">http://www.whitehouse.gov</a>&quot; as you entered it.</p>\r\n",
+    "PostedDate": "2011-01-18T14:17:05.583-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "552542",
+    "ThreadId": "242288",
+    "Html": "\r\n<p>Thanks so much for the help and explanation!</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2011-01-20T05:07:15.6-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

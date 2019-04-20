@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "163191",
+    "ThreadId": "48878",
+    "Html": "<p style=\"margin-right:0px\" dir=ltr>Hi,<br>\r\n<br>\r\nI'm writing my diploma thesis and have problems with my bibliography style. I'm searching for somethink like this:<br>\r\n<br>\r\n<a href=\"http://img520.imageshack.us/img520/1706/temp2jj8.gif\">http://img520.imageshack.us/img520/1706/temp2jj8.gif</a><br>\r\n<br>\r\nIf you can see, I need a Tag , then a tabulator and then the source<br>\r\n<br>\r\n[Fin05] Finke, R. (2005). Grundlagen des Risikomanagements. Weinheim: Wiley-VCH. <br>\r\nor<br>\r\n[ErRo06] Erben, R., &amp; Romeike, F. (2006). Allein auf stürmischer See. Weinheim: Wiley-VCH.<br>\r\n<br>\r\nI found only styles with nummeric tags like [1]. Have someone a standardized format style with this spezial tags?<br>\r\n<br>\r\nbest regards,<br>\r\nne0n</p>\r\n",
+    "PostedDate": "2009-03-01T08:13:59.61-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "163200",
+    "ThreadId": "48878",
+    "Html": "How about using <a href=\"http://bibliography.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=15183\">http://bibliography.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=15183</a> ? <br>\r\n<br>\r\nAlso, on most BibWord styles (CSECitSeq.xsl, IEEE_referenence.xsl, LNCS.xsl, ...) you can just substitute %RefOrder% for %Tag%. Note that this will not sort the elements according to tag! To sort the elements based on Tag, you will have to add the following sortkey for all source types: &lt;sortkey&gt;%Tag%&lt;/sortkey&gt;. For more information on where to place that key, see the <a href=\"http://bibliography.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=23850\">BibWord Guide</a>.<br>\r\n<br>\r\nAll these styles are 2 column styles. So by dragging the column separator in Word, you can easily create your tab.\r\n",
+    "PostedDate": "2009-03-01T08:47:07.67-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "163382",
+    "ThreadId": "48878",
+    "Html": "Ah,<br>\r\n<br>\r\nI found my misstake. I download the files with opera and opera saved it as XML and not XSL. The renaming to XSL doesn't help, so I think the XML file will be a file to edit it and make the XSL file. Know I download it with IE and it works really good.<br>\r\n<br>\r\nBut one question: This style is for engl. use and I write my thesis in german (this is the reason for my bad engl.) I found at <a href=\"http://www.matze-bonn.de/progs/progs.html\">http://www.matze-bonn.de/progs/progs.html</a> a DIN 1505 style (<a href=\"http://www.matze-bonn.de/progs/DIN1505 APA-based.XSL\">http://www.matze-bonn.de/progs/DIN1505%20APA-based.XSL</a>). This style is also great, but the tabs are to small and and second line is not indented. Can someone fix this problem, please?\r\n",
+    "PostedDate": "2009-03-02T00:01:44.17-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "163389",
+    "ThreadId": "48878",
+    "Html": "Once you added a bibliography to your text, look for a style (not reference style, but ordinary Word formatting style) called 'Bibliography' or a localized name looking like that. There you can set the indentation. Once set, the identation will remain, even after updating the bibliography.<br>\r\n<br>\r\nYou have to contact the author of that style to ask him about other changes.\r\n",
+    "PostedDate": "2009-03-02T00:08:17.92-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "164449",
+    "ThreadId": "48878",
+    "Html": "Hi Yves,<br>\r\n<br>\r\nI have one more questions, but I'm wondering, why my last post isn't displayed... I would like to thank you for your fast and good helf! Thank a lot.<br>\r\n<br>\r\nBut my problem is, that if I add a quote with brackets ( [XX] ) there will be a space after the last bracket. So if I add a dot it shows terribly and word write it sometimes in the new line.<br>\r\n<br>\r\nExample:<br>\r\nfoo bar [FB09] . instead of <br>\r\nfoo bar [FB09].<br>\r\n<br>\r\nI edit the quote with &quot;Edit field&quot; and delete the space, but it doesn't work. Have you some idea?\r\n",
+    "PostedDate": "2009-03-04T11:06:04.08-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "164480",
+    "ThreadId": "48878",
+    "Html": "<p>As I don't see that behaviour with the styles I listed before, I'm assuming you are talking about the style you referenced in your previous post (<a href=\"http://www.matze-bonn.de/progs/DIN1505 APA-based.XSL\">http://www.matze-bonn.de/progs/DIN1505%20APA-based.XSL</a>).</p>\r\n<p>There is a line looking like this:</p>\r\n<p><span style=\"font-size:10pt;font-family:'courier new'\">[<span style=\"color:#0000ff\">&lt;</span><span style=\"color:#2b91af\">xsl:value-of</span> <span style=\"color:#ff0000\">select</span><span style=\"color:#0000ff\">=</span>&quot;<span style=\"color:#0000ff\">msxsl:node-set($ListPopulatedWithMain)/b:Citation/b:Source/b:Tag</span>&quot;<span style=\"color:#0000ff\"> /&gt;</span>]</span> </p>\r\n<p>Change it into:</p>\r\n<p><span style=\"font-size:10pt;color:#0000ff;font-family:'courier new'\">&lt;</span><span style=\"font-size:10pt;color:#2b91af;font-family:'courier new'\">xsl:text</span><span style=\"font-size:10pt;color:#0000ff;font-family:'courier new'\">&gt;</span><span style=\"font-size:10pt;font-family:'courier new'\">[<span style=\"color:#0000ff\">&lt;/</span><span style=\"color:#2b91af\">xsl:text</span><span style=\"color:#0000ff\">&gt;<br>\r\n&lt;</span><span style=\"color:#2b91af\">xsl:value-of</span> <span style=\"color:#ff0000\">select</span><span style=\"color:#0000ff\">=</span>&quot;<span style=\"color:#0000ff\">msxsl:node-set($ListPopulatedWithMain)/b:Citation/b:Source/b:Tag</span>&quot;<span style=\"color:#0000ff\"> /&gt;<br>\r\n&lt;</span><span style=\"color:#2b91af\">xsl:text</span><span style=\"color:#0000ff\">&gt;</span>]<span style=\"color:#0000ff\">&lt;/</span><span style=\"color:#2b91af\">xsl:text</span><span style=\"color:#0000ff\">&gt;</span></span></p>\r\n<p>Does that solve it?</p>\r\n<p>I think it is great that the guy tried to adjust the style, but I don't believe he created something looking like DIN 1505. DIN 1505 looks more like ISO690 than APA if I'm not mistaken. Also, I believe the author names should be in small-caps (e.g. <span style=\"font-variant:small-caps\">Dhondt</span>, Yves). But I'm not a specialist, so I could be wrong.</p>\r\n",
+    "PostedDate": "2009-03-04T11:58:27.037-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "164481",
+    "ThreadId": "48878",
+    "Html": "Also, unless you are playing around with the parameters (\\f, \\s), changing the spacing under &quot;Edit field&quot; has no effect on the output of the style.\r\n",
+    "PostedDate": "2009-03-04T12:00:15.197-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "164501",
+    "ThreadId": "48878",
+    "Html": "Now it works.<br>\r\n<br>\r\nThe problem was that I searched for a style like one I'm useing now. The guy write, that this style dependence to the DIN1505. The important think is, that the style meet my requirements. It isn't important to match the DIN1505 100%.<br>\r\n<br>\r\nI thank you a lot for you help!\r\n",
+    "PostedDate": "2009-03-04T12:31:56.517-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

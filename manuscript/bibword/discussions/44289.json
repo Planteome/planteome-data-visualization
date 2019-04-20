@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "147390",
+    "ThreadId": "44289",
+    "Html": "Hi,<br>\r\n<br>\r\nFirstly, thanks for a such a useful tool. I was wondering if its possible to include a version of the ACM citation style which uses an alphabetically-ordered reference list instead of citation-order? This is commonly required for many types of ACM publications.<br>\r\n<br>\r\nKind regards,<br>\r\n&nbsp;Clint<br>\r\n",
+    "PostedDate": "2009-01-15T07:22:08.053-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "147941",
+    "ThreadId": "44289",
+    "Html": "I added a version at <a href=\"http://www.codeplex.com/bibliography/Release/ProjectReleases.aspx?ReleaseId=19777\">http://www.codeplex.com/bibliography/Release/ProjectReleases.aspx?ReleaseId=19777</a> .<br>\r\n <br>\r\nMake sure to read the release notes on the usage.<br>\r\n<br>\r\nYves\r\n",
+    "PostedDate": "2009-01-17T08:14:22.367-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "148620",
+    "ThreadId": "44289",
+    "Html": "Brilliant! Thank you so much!<br>\r\n",
+    "PostedDate": "2009-01-19T23:44:12.547-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

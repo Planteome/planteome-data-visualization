@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "581742",
+    "ThreadId": "250022",
+    "Html": "\r\n<h1><span style=\"font-size:13px; font-weight:normal\">Hello, hope you can help me.</span></h1>\r\n<p>I've got a student, who uses MHRA-footnotes style for referencing.&nbsp;</p>\r\n<p>After installing MHRA-footnotes on the mac in question, we found that bibliography appears in the following format:</p>\r\n<h1><span lang=\"EN-US\" style=\"font-size:11pt\">Bibliography</span></h1>\r\n<p><span style=\"font-size:9pt\"><strong>Unsupported source type (BookSection) for source dfl09.</strong></span></p>\r\n<p><span style=\"font-size:9pt\">&nbsp;</span></p>\r\n<p>However in-text (or rather in-footnote) referencing tool works perfectly fine.</p>\r\n<p>Student's machine is mac osx, however it seems that the issue persists on PCs.</p>\r\n<p>Many thanks for your suggestions,</p>\r\n<p>&nbsp;</p>\r\n<p>Alex</p>\r\n",
+    "PostedDate": "2011-03-16T14:52:53.4-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "581747",
+    "ThreadId": "250022",
+    "Html": "<p>From the description at the download page: <a href=\"http://bibword.codeplex.com/releases/view/19998\">http://bibword.codeplex.com/releases/view/19998</a></p>\r\n<blockquote><em>This style only provides in-text citations in the means of footnotes. Currently, no bibliography is supported.</em></blockquote>\r\n<p>I don't have any plans on providing a bibliography implementation. The style is only intended as an example how footnote citations could be immulated in Word for Windows (which don't support them on out of the box like Word for Mac does). Of course, you are free to add an implementation for the bibliography. If you provide it, I'll host it on the site and give you the credit for it.</p>",
+    "PostedDate": "2011-03-16T15:01:35.713-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

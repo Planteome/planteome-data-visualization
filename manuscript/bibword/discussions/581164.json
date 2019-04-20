@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1353315",
+    "ThreadId": "581164",
+    "Html": "Hello.\r<br />\nIs it possibble to enter a text/comment into an individual instance of a citation  <em>before</em> the actual reference (i.e., before the &quot;Author Year, Page&quot;)? Here is an example, the same work is cited twice but the second citation has a text/comment in bold:<br />\n<blockquote>\n... and because of the explanation he gave in the previous chapter (Nartum 2008, pp. 32-40),  he can now deny the possibility of &quot;absolute knowledge&quot; (<strong>absolute Wissen:</strong> Nartum 2008, p. 45) .... <br />\n</blockquote>\nThank you very much in advance.<br />\n",
+    "PostedDate": "2015-02-17T01:25:16.117-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1355599",
+    "ThreadId": "581164",
+    "Html": "I don't think you can do it in bold, but you can add text in front using the \\f flag. For more info, see the Microsoft documentation on the citation field <a href=\"https://support.office.microsoft.com/en-ca/article/Field-codes-Citation-field-18b0c6a3-c0e6-4f76-a541-478f389b287d?ui=en-US&amp;rs=en-CA&amp;ad=CA\" rel=\"nofollow\">here</a>.<br />\n",
+    "PostedDate": "2015-02-25T05:50:48.21-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1432034",
+    "ThreadId": "581164",
+    "Html": "Dear Yves\r<br />\nThank you soooo much! The \\f switch does exactly what I want. By the way, after entering your text with  \\f switch in Edit Citation Dialogue Box and clicking Ok, you can choose and format your text (bold, italic etc.) in citation field itself. (I am very sorry for answering so late) Thanks again :)<br />\n",
+    "PostedDate": "2015-06-26T06:58:13.513-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

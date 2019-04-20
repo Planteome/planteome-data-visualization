@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "This can not be altered by BibWord but is a feature of Word itself.",
+    "ClosedDate": "2013-09-14T13:15:36.677-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I've just started using a BibWord stylesheet in a document that uses footnote references.\n The citations will insert into a footnote, but in Word 2010 the field switches are not available in the footnote citations as they normally are in running text citations.\n When right clicking in the citation field in a footnote citation, the usual 'Edit Field' option doesn't show.\n Anyone got any advice on how to use field switches in a footnote citation?\n\nLionel",
+    "LastUpdatedDate": "2013-09-14T13:15:36.677-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "bibword",
+    "ReportedDate": "2013-09-13T04:03:35.2-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "No issue"
+    },
+    "Summary": "Field Switches not available in Citations placed in Footnotes",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 11273
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Word has a context menu for footnotes. Apparently that context menu overwrites the default menu where the 'Edit Field' option is available. You can still use the Word shortcuts to display fields and edit them that way.",
+      "PostedDate": "2013-09-14T13:14:38.88-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-09-14T13:15:36.677-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

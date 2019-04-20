@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1477651",
+    "ThreadId": "655992",
+    "Html": "According to the BibWord documentation,<br />\n<blockquote>\nFor each type of source supported by the stylesheet, a set of important fields can be defined. Those are the fields which are shown by default by Word when adding a new source to a document.<br />\n</blockquote>\nHowever, in Word 2011 for Macintosh, it has no effect on which fields are shown in the &quot;Edit Source&quot; or &quot;Create New Source&quot; dialogs.  What it does change is which fields are marked as &quot;Recommended fields&quot; in the dialogs.  I haven't tested this behavior in other versions of Word.\r<br />\n<br />\n1) Is it possible to change which fields are shown?\r<br />\n<br />\n2) If not, could the documentation be changed to &quot;Those are the fields which are marked as Recommended by Word when adding a new source to a document.&quot;?<br />\n",
+    "PostedDate": "2016-06-29T08:59:20.85-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

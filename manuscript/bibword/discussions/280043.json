@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "700347",
+    "ThreadId": "280043",
+    "Html": "\r\n<p>I did some search here in discussions and I did not find anything related to my problem, so I'm posting this.</p>\r\n<p>I'm using Win7 Professional 64-bits and I have Office Home and Student 2010 installed.</p>\r\n<p>I followed the instructions for installing BibWord and the styles did not appear in the list here.</p>\r\n<p>Later I also tried to copy the Bibliography\\Styles folder into the 32-bit Program Files Folder, tried Common Files, AppData, and no one of them made Word show up those styles.</p>\r\n<p>&nbsp;</p>\r\n<p>I'm not finding anything related on MS Office Support, Google also did not return any good alternatives, and I'm stuck at this for 3h already =/</p>\r\n<p>Thanks for any help, sorry if I'm reposting something.</p>\r\n",
+    "PostedDate": "2011-11-18T11:14:48.743-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "700459",
+    "ThreadId": "280043",
+    "Html": "<p>The folder where you put the styles, does it already contain all the other styles like APA.XSL and ISO690Nmerical.XSL?</p>\r\n<p>Do you have the full version of Office installed or a click-to-run version? Click-to-run versions are virtualized and cannot be customized. So it is not possible to use extra stylesheets with them.</p>",
+    "PostedDate": "2011-11-18T15:03:59.677-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "700475",
+    "ThreadId": "280043",
+    "Html": "<p>Hm, I didn't know click-to-run was not customizable.</p>\r\n<p>So far, so bad =/</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks, I'll try to fix that. =)</p>",
+    "PostedDate": "2011-11-18T16:35:36.817-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "700479",
+    "ThreadId": "280043",
+    "Html": "<p>Just sharing the information:</p>\r\n<p>Follow these instructions</p>\r\n<p><a href=\"http://office.microsoft.com/en-us/excel-help/click-to-run-switch-to-using-an-msi-based-office-edition-HA101850538.aspx\">http://office.microsoft.com/en-us/excel-help/click-to-run-switch-to-using-an-msi-based-office-edition-HA101850538.aspx</a></p>\r\n<p>and you should get rid of the click-to-run version and go with a MSI-based installation (that requires an at least 1GB download).</p>\r\n<p>&nbsp;</p>\r\n<p>Peace, and thanks for the help. ;)</p>",
+    "PostedDate": "2011-11-18T16:55:21.52-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

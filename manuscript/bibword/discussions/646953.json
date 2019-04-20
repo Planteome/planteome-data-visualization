@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1450825",
+    "ThreadId": "646953",
+    "Html": "Hello,\r<br />\nI am studding a Master's degree and I want to use Word's bibliography tool. \r<br />\nMy problem is that we use citation in very exact way, the way that the university tell us. I have been looking for different templates but none of them suites to our citation form. So, I start editing the template to match the form we have to use.\r<br />\nMore less, I managed to put everything in the correct way for the bibliography. my problem is footnote citation.\r<br />\nAt university we use the following for bibliography:<br />\n<pre><code>        LAST NAME, Name, _Title. Subtitle_, Publisher, City year.\n</code></pre>\n\nAnd for footnote citation:<br />\n<pre><code>       Name LAST NAME, Name, _Title. Subtitle_, Publisher, City year.\n</code></pre>\n\nHow can I get different other for citation and bibliography? Can somebody help me?\r<br />\nI also, have another question. Is there any way to put the footnote citation with Ibid or Op. Cit if the book is already citated?\r<br />\n<br />\nThanks a lot.\r<br />\n<br />\nP.D: sorry for my bad English, I'm from Spain.<br />\n",
+    "PostedDate": "2015-11-04T00:32:30-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1471086",
+    "ThreadId": "646953",
+    "Html": "hi, im after the same solution than you. Did you fix it? In case, please share with me. Thanks<br />\n",
+    "PostedDate": "2016-04-22T22:12:13.193-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1471098",
+    "ThreadId": "646953",
+    "Html": "Hi,\r<br />\nafter reading some post in the forum and doing different guesses I manage to put the author (editor) in different order in footnote citation and in the bibliography.\r<br />\nIn the template under namelist tag I`ve put another field with the following definitions: <br />\n<pre><code>&lt;list name=&quot;author&quot; id=&quot;4&quot;&gt; &lt;!--name last name--&gt;\n        &lt;single_prefix&gt;&lt;/single_prefix&gt;\n        &lt;multi_prefix&gt;&lt;/multi_prefix&gt;\n        &lt;corporate&gt;{%Corporate%}&lt;/corporate&gt;\n        &lt;first_person&gt;{%First%}{ %Middle%}{ %Last:u%}&lt;/first_person&gt;\n        &lt;other_persons&gt;{%First%}{ %Middle%}{ %Last:u%}&lt;/other_persons&gt;\n        &lt;separator_between_if_two&gt; - &lt;/separator_between_if_two&gt;\n        &lt;separator_between_if_more_than_two&gt; - &lt;/separator_between_if_more_than_two&gt;\n        &lt;separator_before_last&gt; - &lt;/separator_before_last&gt;\n        &lt;max_number_of_persons_to_display&gt;3&lt;/max_number_of_persons_to_display&gt;\n        &lt;number_of_persons_to_display_if_more_than_max&gt;1&lt;/number_of_persons_to_display_if_more_than_max&gt;\n        &lt;overflow&gt; et al.&lt;/overflow&gt;\n        &lt;single_suffix&gt;&lt;/single_suffix&gt;\n        &lt;multi_suffix&gt;&lt;/multi_suffix&gt;\n&lt;/list&gt;</code></pre>\n\nalso in the footnote citation I've changed to:<br />\n<pre><code>&lt;source type=&quot;Book&quot;&gt;\n        &lt;format&gt;{%Author:4|Editor:5%}{, &amp;lt;i&amp;gt;%Title%{ Tomo %Volume%:%ShortTitle%}&amp;lt;/i&amp;gt;{, %Comments%}}{, %Publisher%}{, %City%}{ %Year%&amp;lt;sup&amp;gt;{%Edition%}&amp;lt;/sup&amp;gt;{, %CitationPages%}.}&lt;/format&gt;\n&lt;/source&gt;</code></pre>\n\nBibliography order remains as the original.\r<br />\n<br />\nI'm still looking how to change to Ibid o Op. Cit if the book is already citated.\r<br />\nI hope this clues can help you puting the template in the order you need.\r<br />\n<br />\nP.S sorry for my english<br />\n",
+    "PostedDate": "2016-04-23T02:50:32.663-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1471113",
+    "ThreadId": "646953",
+    "Html": "Hola\r<br />\n<br />\nGracias por tu respuesta, despues de tantos meses no tenia mucha fé en una respuesta. La verdad es que no sé cómo hacer lo que me indicas. Sería sencillísimo si pudieras mandarme el fichero XSL, donde ya tienes hechos los cambios. ¿podrías? mi direccion es el nick con el que escribo este correo en gmail punto com.\r<br />\nNo me importa que no cambie los ibidem, eso se puede hacer manualmente. Ya con lo demás es un gran avance.\r<br />\nMuchas gracias de nuevo.<br />\n",
+    "PostedDate": "2016-04-23T08:31:47-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

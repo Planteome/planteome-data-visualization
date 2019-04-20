@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello to every one, I'm writing my tesis and at the end I found that the format APA 6th edition of my word is not what I need. So I been looking for the 5th edition, and is in any where. \n   What I need is a format of citation as this: Last name of the authors, initial of the name, (year of publication). title of the work, name of the magazine, vol: number of the pages.\n   I know you could help me thanks.",
+    "LastUpdatedDate": "2014-11-19T06:21:24.597-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "bibword",
+    "ReportedDate": "2014-11-19T06:21:24.597-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Please APA 5th edition",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 11919
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

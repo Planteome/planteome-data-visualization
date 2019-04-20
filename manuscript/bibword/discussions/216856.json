@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "458443",
+    "ThreadId": "216856",
+    "Html": "<p>Hi,</p>\r\n<p>I need a citation style for my thesis.&nbsp;I don't know the style has a name, but in our university regulation there is no name. If you know about it, will you please tell me the name? If not, can you please show me where to start ? Here are the details and problems:</p>\r\n<p>&nbsp;</p>\r\n<p>For the first citation:,&nbsp;</p>\r\n<p>Name Surname, <strong>Book's Name</strong>, Editor, Translator, Total volume number, Edition, Publication place, Publisher, Publication Date, Volume number, page number.</p>\r\n<p>It is so much like ISO 690, looking like this:&nbsp;</p>\r\n<p>Giovanni Sartori, <strong>Demokrasi Kuramı</strong>, &Ccedil;ev. Deniz Baykal, Ankara: Siyasi İlimler T&uuml;rk Derneği Yayınları, Ocak 19xx, s. 11.</p>\r\n<p>The problem is, I need to make a footnote for this citation reference. &nbsp;MHRA footnotes could work but I also need to list them in bibliography, in alphabetical order of surnames.</p>\r\n<p>&nbsp;</p>\r\n<p>Also, another problem is the second or later citations. If I refer to a book once, the next time I need to write only:</p>\r\n<p>Surname, page.</p>\r\n<p>Sartori, s.11.</p>\r\n<p>Or I could use two other methods: a.g.e s.11 or Ibid. s.11, if there are no other books between these two same references. But the common styles repeat the full reference.</p>\r\n<p>&nbsp;</p>\r\n<p>Also, If there are more than one from that author, I should add a word which I notice in the bibliography, like:</p>\r\n<p>Sartori, otherbook, s.11.</p>\r\n<p>But I don't know if or how I can.</p>\r\n<p>&nbsp;</p>\r\n<p>I'd be very greatful If you could help. Thanks a lot.</p>",
+    "PostedDate": "2010-06-22T04:14:22.76-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "458488",
+    "ThreadId": "216856",
+    "Html": "<p>You will have to create a style from scratch for that. The MHRA one was just a proof of concept thing. It requires flag 'abuse'. Something which I don't really encourage.</p>\r\n<p>Alternatively, if ISO 690 fulfills your bibliography requirements, just use that. Once finished, convert the bibliography to static text. Then change the style to MHRA or whatever you need to (re)format your in-text citations.</p>",
+    "PostedDate": "2010-06-22T05:59:57.893-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "460008",
+    "ThreadId": "216856",
+    "Html": "I am not at all familiar with the codes, if it was only changing the places of datas, that was ok, but as I need to double each entry, and add more, that will be problem for coding. I don't have any intext citation, only the footnotes and bibliographie. ISO does not fulfill completely, because when I cite for the second time, I need to make a short reference as I told before. Any more ideas? wow, hard work huh? =)",
+    "PostedDate": "2010-06-25T09:53:48.117-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "460053",
+    "ThreadId": "216856",
+    "Html": "<p>Short of creating your own style (from scratch), you will have to combine features.</p>\r\n<p>For starters, you should use the ISO 690&nbsp;for your bibliography, not for your in-text citations. There you hopefully don't need ibid versions. If you do, then you are completely out of luck. BibWord doesn't handle such a thing either, the entire style will have to be programmed from scratch.</p>\r\n<p>But assuming you don't, start by&nbsp;using ISO 690 for formatting everything, even the in-text citations. I know they are incorrect, but bear with me. Now when you&nbsp;have finished your document, convert the bibliography to static text by using the little blue arrow&nbsp;on the box surrounding&nbsp;your bibliography. Once it is static text, change the style from ISO 690 to MHRA. All your in-text citations will update but your bibliography will remain. Now using the &quot;suppress options&quot; as described on the MHRA page, you can get the short versions of your in-text citations.</p>",
+    "PostedDate": "2010-06-25T12:28:48.673-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "460400",
+    "ThreadId": "216856",
+    "Html": "<p>Thank you very much. I will try to do so.</p>",
+    "PostedDate": "2010-06-27T12:37:10.093-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

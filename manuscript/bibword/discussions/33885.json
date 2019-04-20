@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "112277",
+    "ThreadId": "33885",
+    "Html": "How does one put a refrence in the bibliography that doesnt have a citation in the document?\r\n",
+    "PostedDate": "2008-08-20T03:36:57.82-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "112388",
+    "ThreadId": "33885",
+    "Html": "<p>If you click the 'Manage Sources' button, you can add new sources. Those sources will not show up as in-text citations until you add them. You would then create your bibliography as you normally would do. Also, if you add a source, then delete the in-text citation, the source will stay inside the document.</p>\r\n<p>If you use the RefOrder variable/element when displaying the bibliography, citations not used in the text will get a number greater than the number of the last&nbsp;in-text&nbsp;citation. This is the behaviour of Word 2007. I am not convinced that this is what is described by the open xml specification.</p>\r\n",
+    "PostedDate": "2008-08-20T09:48:29.74-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "112557",
+    "ThreadId": "33885",
+    "Html": "Thanks Yves<br>\r\n<br>\r\nI was so busy looking at hte more complex stuff like how you made the round brackets () square [] that i didnt see the most obviously simple thing. thanks. also thans for the ISO690 with square brackets.<br>\r\n",
+    "PostedDate": "2008-08-20T23:58:21.137-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

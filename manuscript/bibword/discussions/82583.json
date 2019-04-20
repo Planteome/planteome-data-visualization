@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "283890",
+    "ThreadId": "82583",
+    "Html": "<p>I have just started using BibWord and have during the last few days created my own bibliography style. I have been using CitationPages with success, but I am somewhat unsure about the use for CitationPrefix and CitationSuffix. Can somebody please give me an example of how it is used and where.</p>\r\n<p>Many thanks.</p>\r\n<p>Frode</p>",
+    "PostedDate": "2010-01-31T06:34:25.14-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "283909",
+    "ThreadId": "82583",
+    "Html": "<p>CitationPrefix and CitationSuffix contain the arguments of the&nbsp;\\f and \\s flags of the citation field. See <a href=\"http://office.microsoft.com/en-us/help/HA102157071033.aspx\">http://office.microsoft.com/en-us/help/HA102157071033.aspx</a>&nbsp;under optional switches.</p>\r\n<p>They are only useful if your style has to support the possibility to add a prefix or suffix to an in-text citation. In such a case, the layout of an in-text citation commonly&nbsp;is:</p>\r\n<p>&nbsp;&nbsp;&nbsp; openbracket&nbsp;prefix citation suffix closebracket</p>",
+    "PostedDate": "2010-01-31T07:06:10.067-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "283914",
+    "ThreadId": "82583",
+    "Html": "<p>Yves,</p>\r\n<p>Many thanks for the link to the Citation field codes. I had been to the Microsoft Office Web page but failed to find this information then. I must have done the wrong search. Many thanks for the quick reply. I now fully understand the utility of it.</p>\r\n<p>Frode</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-31T07:11:39.27-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

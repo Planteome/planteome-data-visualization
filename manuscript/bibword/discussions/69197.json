@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "235445",
+    "ThreadId": "69197",
+    "Html": "<p>Hey everyone,</p>\r\n<p>I am experiencing a problem in ASA with multiple-author citations.&nbsp; This is what I am getting:</p>\r\n<p><span style=\"font-size:12pt\">Abramowitz, Alan I. . a. K. L. S. 1998. &ldquo;Ideological Realignment in the U.S. Electorate.&rdquo; <em>The Journal of Politics</em> 60(3):634-652.</span></p>\r\n<p><span style=\"font-size:12pt\">When I should be getting:</span></p>\r\n<p><span style=\"font-size:12pt\">Abramowitz, Alan I., and Kyle L. Saunders 1998. &ldquo;Ideological Realignment in the U.S. Electorate.&rdquo; <em>The Journal of Politics</em> 60(3):634-652.</span></p>\r\n<p><span style=\"font-size:12pt\">How might I change this?</span></p>\r\n<p><br>Best,</p>\r\n<p>rob</p>",
+    "PostedDate": "2009-09-16T21:59:48.08-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "235447",
+    "ThreadId": "69197",
+    "Html": "<p>I think I just figured it out...</p>",
+    "PostedDate": "2009-09-16T22:04:01.52-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "235463",
+    "ThreadId": "69197",
+    "Html": "<p>My guess would be that you didn't enter the authors corretly in your source. Use the&nbsp;&quot;Edit&quot; button&nbsp;next to the author field to enter the authors one person at a time if you are not sure about the format of a string of authors.</p>",
+    "PostedDate": "2009-09-16T23:29:28.487-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "235642",
+    "ThreadId": "69197",
+    "Html": "<p>Yes, that was exactly the issue.&nbsp; Thanks</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-17T08:58:18.52-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

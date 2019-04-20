@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "138183",
+    "ThreadId": "41630",
+    "Html": "Hello,<br>\r\nI was wondering if anyone knew how to properly use the Turabian style.&nbsp; (Where when citing it creates a foot note with the full source and then following just does Author, Page (in the footnote).<br>\r\n<br>\r\n<br>\r\nAlso if something is cited twice in a row the second time is Ibid.<br>\r\n<br>\r\n<br>\r\nThanks,<br>\r\n<br>\r\nJosh \r\n",
+    "PostedDate": "2008-12-05T18:16:23.437-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "138219",
+    "ThreadId": "41630",
+    "Html": "Word currently doesn't have a Turabian style for the humanities.<br>\r\n<br>\r\nDue to the independence between citations, it is not possible to create such a style without hinting. That is, if you would reuse the same reference a second time, Word has no idea that it would have to show the short version the second time. It can be achieved if you provide the hinting yourself. That is, if you for example abuse the &quot;suppress&quot; options to indicate what version you want.<br>\r\n<br>\r\nI'm currently working on a version capable of doing the above for the Chicago style. I hope to get it finished somewhere next week. If it works, you can start from that one to create a Turabian version.<br>\r\n<br>\r\nYves\r\n",
+    "PostedDate": "2008-12-06T01:41:50.117-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

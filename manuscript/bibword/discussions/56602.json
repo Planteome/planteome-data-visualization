@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "191276",
+    "ThreadId": "56602",
+    "Html": "<p>I recently downloaded the Vancouver style (vancover.XSL) and saved in the bibliography\\style folder of my computer (C:\\...\\Program Files\\Microsoft Office\\Office12\\Bibliography\\Style&nbsp;).&nbsp;&nbsp; However, when looking at the folder, it does not seem to appear there at first glance.&nbsp; I have to click on the &quot;Compatibility files&quot; button in order to see it.&nbsp; When I open Microsoft Word and use my bibliography functions, it does not appear among the list of styles. I cannot seem to use it.&nbsp;&nbsp;</p>\r\n<p>Can you please help?</p>",
+    "PostedDate": "2009-05-17T17:30:40.99-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "191323",
+    "ThreadId": "56602",
+    "Html": "<p>If the file is&nbsp;only visible under &quot;Compatibility files&quot;, it means it is not really there but rather in a virtual store. Make sure you have elevated priviliges to actually put the file in the folder. That way it won't be sidetracked to a virtual store.</p>\r\n<p>(Note that all changes in the Program Files directory, or its subdirectories, normally require administrator rights)</p>",
+    "PostedDate": "2009-05-17T23:46:38.603-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

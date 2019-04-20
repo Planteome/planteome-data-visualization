@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "1329937",
+    "ThreadId": "574374",
+    "Html": "How can I check if author is null. If it is I need to show title\r<br />\n<br />\nIf it has data I need it not to show anything\r<br />\n<br />\nObviously a test and an if statement are involved but where ?<br />\n",
+    "PostedDate": "2014-12-08T14:16:09.253-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1330169",
+    "ThreadId": "574374",
+    "Html": "BibWord uses { and } to allow for conditions. For more information and some examples, see the <a href=\"https://bibword.codeplex.com/wikipage?title=BibWord%20Format%20Strings&amp;referringTitle=Documentation#Conditions\" rel=\"nofollow\">documentation</a> . Make sure to check the example on volume, issue, and pages as it shows how complex you can go.<br />\n",
+    "PostedDate": "2014-12-09T07:57:48.667-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1330191",
+    "ThreadId": "574374",
+    "Html": "Thanks Yves I had already checked the volume,issue and pages section but can not figure a method which does the following\r<br />\n<br />\n&lt;citation&gt;<br />\n<pre><code>if author = is not NULL then display nothing\nif author = NULL then display TITLE</code></pre>\n\n",
+    "PostedDate": "2014-12-09T08:49:47.47-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1330204",
+    "ThreadId": "574374",
+    "Html": "This is a command that nearly works {%author|Title%}<br />\nHowever if author exists it display the author, I dont want it to ever display the author.<br />\nI want it to display the title if author does not exist<br />\n<br />\nThe programming I need is something like this:-<br />\n<br />\n{&lt;xsl:if test='Author=NULL' &gt; {%Title%} &lt;/xsl:if&gt;}<br />\n",
+    "PostedDate": "2014-12-09T09:10:58.03-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1330236",
+    "ThreadId": "574374",
+    "Html": "I think I understand what you are looking for. There is a trick you could use. You could create a format style for authors which produces no output. Then you could use {%Author:15|Title%} where 15 is the id of the contributor formatting you defined to output nothing.<br />\n",
+    "PostedDate": "2014-12-09T10:05:18.327-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": "2014-12-11T04:19:21.557-08:00"
+  },
+  {
+    "Id": "1330260",
+    "ThreadId": "574374",
+    "Html": "Brilliant, thanks Yves. I will give that a try tomorrow.<br />\n",
+    "PostedDate": "2014-12-09T10:35:42.423-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1330958",
+    "ThreadId": "574374",
+    "Html": "That was spot on, its working now thanks yves<br />\n",
+    "PostedDate": "2014-12-11T04:17:23.013-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

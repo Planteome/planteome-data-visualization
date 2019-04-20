@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "1048101",
+    "ThreadId": "444844",
+    "Html": "Hi there,<br />\n<br />\nI'm using a lightly modified version of the CSE Citation Sequence style in Word 2010, and I have a cosmetic problem with my PDF output. The bibliography is formatted as a two column table, and it seems to adjust the column size dynamically when distilling to PDF, no matter what manual overrides I may have made to the bibliography in Word.<br />\n<br />\nAs a general rule, this results in the numeric citation (i.e. the first column) wrapping more than I would like. For instance, instead of say<br />\n<ol>\n<li>\nAuthor. Title.<br />\n</li>\n</ol>\nI usually get<br />\n<br />\n12 Author. Title.<br />\n.<br />\n<br />\nIt gets worse if I remove the full stop following the numeric citation from the stylesheet. This results in <br />\n<br />\n1 Author. Title.<br />\n2<br />\n<br />\nHow can I control this? <br />\n<br />\nThanks in advance,<br />\n<br />\nAndrew<br />\n",
+    "PostedDate": "2013-05-24T00:37:37.43-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1048103",
+    "ThreadId": "444844",
+    "Html": "For some reason, the number &quot;2&quot; disappears from the above post when I post this, but it reappears when I edit. The first example should read &quot;12. Author. Title.&quot;, all on one line.\r<br />\n<br />\nThanks again,\r<br />\n<br />\nAndrew<br />\n",
+    "PostedDate": "2013-05-24T00:42:23.047-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1048984",
+    "ThreadId": "444844",
+    "Html": "Hi again,\r<br />\n<br />\nI see that there was a previous discussion a little like this at <a href=\"https://bibword.codeplex.com/discussions/82187\" rel=\"nofollow\">https://bibword.codeplex.com/discussions/82187</a>. I can adjust the table manually without problems, but my manual overrides get wiped out during the PDF creation process.\r<br />\n<br />\nThe default MS bibliography styles don't seem to have this problem, but so far I haven't been able to understand their XSL files.\r<br />\n<br />\nThanks again,\r<br />\n<br />\nAndrew<br />\n",
+    "PostedDate": "2013-05-26T22:20:19.583-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1049038",
+    "ThreadId": "444844",
+    "Html": "The best workaround that I've found so far is to copy the bibliography into a new table, and manually create index numbers for each one. <br />\n",
+    "PostedDate": "2013-05-27T00:54:06.687-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1052317",
+    "ThreadId": "444844",
+    "Html": "The default MS bibliography styles don't have this problem because they are not using a table layout. Try adding more than 100 sources to a bibliography and you will see that sources are no longer correctly aligned for those styles.  A table layout is the only way to guarantee that this problem doesn't occur.\r<br />\n<br />\nWhen you have finished your Word document, convert your bibliography to static text. Then set the column widths of the table columns to fixed sizes. The pdf generator should honor fixed sizes.<br />\n",
+    "PostedDate": "2013-06-03T12:29:19.807-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1052858",
+    "ThreadId": "444844",
+    "Html": "Thanks Yves, I have to admit I haven't tried creating bibliographies with 100+ entries.\r<br />\n<br />\nWhile I'm personally happy to convert bibliographies to static text, I know that my end users won't. This is compounded by the fact that most of our references cite URLs, which produce an ugly HYPERLINK marker which will then need to be deleted for each instance.\r<br />\n<br />\nI suppose the technical fix that I was hoping for was some way of fixing the width of the first table column in the output to say 1cm, and then letting the other column fill the rest of the available horizontal space. \r<br />\n<br />\nIf that's more difficult than I'd hoped, I'm thinking that I should revise the stylesheet to output via a single column instead of a table, and formatting each line with a hanging indent.\r<br />\n<br />\nKind regards,\r<br />\n<br />\nAndrew<br />\n",
+    "PostedDate": "2013-06-04T17:39:51.09-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1064771",
+    "ThreadId": "444844",
+    "Html": "Hi Yves,<br />\n<br />\nI'm happy to say that I've found a simple solution to my problem. The stylesheet defines a single table cell, with a paragraph inside it, i.e. <br />\n<pre><code>&lt;td&gt;&lt;p&gt;\nstuff\n&lt;/p&gt;&lt;/td&gt;</code></pre>\n\nAre all the two column stylesheets like this? I would imagine so. <br />\n<br />\nAnyhow, the solution (or hack, if you like) is to insert non-breaking spaces before the end of the paragraph. Inserting four works well for me, thus:<br />\n<pre><code>\n&lt;td&gt;&lt;p&gt;\nstuff\n&amp;#160;&amp;#160;&amp;#160;&amp;#160;&lt;/p&gt;&lt;/td&gt;</code></pre>\n\nKind regards<br />\n<br />\nAndrew<br />\n",
+    "PostedDate": "2013-07-04T23:47:38.473-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

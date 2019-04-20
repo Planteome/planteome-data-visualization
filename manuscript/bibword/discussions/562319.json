@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1294211",
+    "ThreadId": "562319",
+    "Html": "Dear everyone\r<br />\nThe current styles do not let us include all the information required such as DOI, Standard Numbers etc. I have observed the same problem in most of the styles including IEEE Reference order. Can anyone please help me in this regard?\r<br />\nI look forward to hearing from you.<br />\n",
+    "PostedDate": "2014-08-28T02:41:50.7-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1297665",
+    "ThreadId": "562319",
+    "Html": "I can't tell for Word 2013, but Word 2007 and 2010 did not provide any fields for including the DOI. So it is normal that the styles can't display them either.\r<br />\n<br />\nNote that it is possible to extend Word to include those extra fields, but this results in invalid XML according to the schema. It works because the software doesn't care about the validity of the XML, but it is not something I would advise to do. If you still want to do it, just search this discussions list as there is some info on how to do it.<br />\n",
+    "PostedDate": "2014-09-01T02:30:14.42-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1302526",
+    "ThreadId": "562319",
+    "Html": "Dear Yves\r<br />\nThank you for your reply. However, word 2010 provides option for DOI input (including ISSN, ISBN as Standard Number). But in most of the styles, these information are not included in the reference list. Can you please suggest me how can I extend the schema?<br />\n",
+    "PostedDate": "2014-09-08T11:09:43.723-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

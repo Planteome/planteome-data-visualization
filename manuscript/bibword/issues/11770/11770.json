@@ -1,0 +1,71 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "From the screenshot, it looks like you entered the names incorrectly. You most likely copy/pasted the author strings directly into the author field rather than using the proper formatting.\n\nAlthough it is more tedious, you should use the 'Edit' button next to the Author field to fill in all parts of an author's name separately. Try this for at least one citation and then you will see the difference between how you entered the author's names and how Word does it.",
+    "ClosedDate": "2014-07-17T04:08:29.16-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I am using IEEE-Alphabetical order reference style in Word 2013 to insert the references in my paper , when i check the master list in the reference functions , they are already in order and it put it in the documents it is in the order but it the second name first instead of the first name which makes it does not seem to be in alphabetical order",
+    "LastUpdatedDate": "2014-07-17T04:08:29.16-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "bibword",
+    "ReportedDate": "2014-07-07T02:50:44.16-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "No issue"
+    },
+    "Summary": "order",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 11770
+  },
+  "FileAttachments": [
+    {
+      "FileId": 3868,
+      "FileName": "sc-1.jpg",
+      "DownloadUrl": ".\\3868"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "I am using IEEE-Alphabetical order reference style in Word 2013 to insert the references in my paper , when i check the master list in the reference functions , they are already in order and it put it in the documents it is in the order but it the second name first instead of the first name which makes it does not seem to be in alphabetical orde",
+      "PostedDate": "2014-07-07T02:51:27.73-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I don't really understand the issue. Sorting is always done on last name, never on first name. Even when first name is displayed first. If that is not what you want, you will have to adapt the sortkey to include the first name.\r\n\r\nIn case I'm misinterpreting the issue, can you provide an example document illustrating the problem?\r\n\r\n\r\n\r\n",
+      "PostedDate": "2014-07-08T06:20:33.367-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2014-07-09T07:52:44.21-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Ok , Thank for email;\n \nsee the references how is it look like in the document and in the attached image in citation.\r\n\r\nZarubaa A., Kreppera E., Prassera H.-M., and Reddy Vangap B.N. , \"Experimental study on bubble motion in a rectangular bubble column using high-speed video observations,\" Flow Measurement and Instrumentation, vol. 16, no. 5, pp. 277–287, 2005.\nDukler A.E., Wickes III M., and Cleveland R.G., \"Frictional pressure drop in two-phase flow: an approach through similarity analysis,\" AIChE Journal, vol. 10, no. 1, pp. 44–51, 1964.\nMurat Ozbayoglu A. and Ertan Yuksel H., \"Analysis of gas–liquid behavior in eccentric horizontal annuli with image processing and artificial intelligence techniques,\" Journal of Petroleum Science and Engineering, vol. 81, pp. 31–40, 2012.\nRobert A. and Webb P.E., \"Multiphase Flow Measurement,\" Huston Texas USA.,.\nBonilla Riano A, Bannwart A.C., and Rodriguez O.M.H, \"Holdup estimation in core flow using image processing,\" in Instrumentation and Measurement Technology Conference, Campinas, Brazil, 2013.\nBarnea D., \"A unified model for prediction flow pattern transitions in the whole range of pipe inclination,\" International Journal of Multiphase Flow, vol. 13, pp. 1-12, 1987.\nBurkle D., Preusser T., and Rumpf M, \"Transport and anisotropic diffusion in time dependent flow visualization,\" in IEEE Visualization Conference, San Diego, 2001.\r\n\r\n",
+      "PostedDate": "2014-07-09T07:52:45.823-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2014-07-17T04:08:29.16-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "431399",
+    "ThreadId": "209433",
+    "Html": "<p>Hi.</p>\r\n<p>I have a two-column reference list setup, and I have citations breaking across pages. I do not like this, and I can force the table to keep the rows by checking off &quot;allow row to break across pages&quot;. However, upon refreshing the reference list, the setting is back again... Is it possible to change once-and-for-all?</p>\r\n<p>Thank you very much for a fantastic script.</p>\r\n<p>/Jakob</p>",
+    "PostedDate": "2010-04-15T05:19:57.847-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "431444",
+    "ThreadId": "209433",
+    "Html": "<p>Doubtful.</p>\r\n<p>The output of the stylesheet is HTML. As HTML doesn't know the concept of pages, I doubt there is some HTML/CSS setting which would translate to the Word option for &quot;allow row to break across pages&quot;.</p>\r\n<p>A&nbsp;similar issue exists when the first column isn't width enough and you have to set it by hand after each update. I have been looking to output WordML rather than HTML by wrapping the WordML inside the HTML but without luck so far.</p>",
+    "PostedDate": "2010-04-15T06:46:25.007-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "431542",
+    "ThreadId": "209433",
+    "Html": "<p>I have to correct myself here. Now that I had some time to look into the issue, I found that there is a&nbsp;CSS parameter to 'disable' breaks. More important, it looks like Word even understands it.</p>\r\n<p>In the source of the xsl, look for:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">tr</span><span style=\"color:Blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>and replace it by:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">tr</span> <span style=\"color:Red\">style</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">page-break-inside:avoid</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>Hope this helps.</p>",
+    "PostedDate": "2010-04-15T09:41:50.017-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "431783",
+    "ThreadId": "209433",
+    "Html": "<p>It works! Thank you very much for your very fast response.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-04-15T22:56:32.833-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

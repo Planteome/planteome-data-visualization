@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I use mostly Harvard (Anglia) style for referencing in my work. After I updated to Mac Word 2011, all the references with the surname of the first author starting with a 'W' keep appearing on the top of my bibliography. I am not sure if this is a BibWord-related problem, since those references appear on the top of the list in Citation Source Manager, too.\n \nIs there a workaround for this?",
+    "LastUpdatedDate": "2013-02-21T18:20:26.15-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "bibword",
+    "ReportedDate": "2011-03-11T09:12:45.88-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Mac Word 2011 and reference sorting",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 8225
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

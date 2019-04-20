@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "242549",
+    "ThreadId": "71123",
+    "Html": "<p>The titles of the references in the bibliography are displayed with a comma attached, like this:</p>\r\n<table border=0 cellpadding=0 width=\"100%\">\r\n<tbody>\r\n<tr>\r\n<td valign=top>\r\n<p>... Van Wijk, &quot;Squarified treemaps,&quot; in <em>Proceedings of the   joint Eurographics ....</em></p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td valign=top>\r\n<p>... Jackson, &quot;Using dependency models to manage complex   software architecture,&quot; , 2005, .....</p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>",
+    "PostedDate": "2009-10-06T07:18:48.767-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "242578",
+    "ThreadId": "71123",
+    "Html": "<p>I'm not sure what the point of your message is.</p>\r\n<p>Are your examples of what you did&nbsp;get from the stylesheet or what you expected from it? Could you provide an example of what the stylesheet gave and what you expected?</p>",
+    "PostedDate": "2009-10-06T08:11:12.467-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "242663",
+    "ThreadId": "71123",
+    "Html": "<p>Well I would expect a title in the bibliography to be &quot;this is the title&quot; and not &quot;this is the title,&quot; . Note the comma before the closing &quot;.</p>\r\n<p>So:&nbsp;</p>\r\n<table border=0 cellpadding=0 width=\"100%\">\r\n<tbody>\r\n<tr>\r\n<td style=\"border-style:none\" valign=top>\r\n<p style=\"margin-top:1em;margin-bottom:1em\">... Van Wijk, &quot;Squarified treemaps,&quot; in&nbsp;<em>Proceedings of the joint Eurographics ....</em></p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td style=\"border-style:none\" valign=top>\r\n<p style=\"margin-top:1em;margin-bottom:1em\">... Jackson, &quot;Using dependency models to manage complex software architecture,&quot; , 2005, .....</p>\r\n<p style=\"margin-top:1em;margin-bottom:1em\">Should be:</p>\r\n<table border=0 cellpadding=0 width=\"100%\">\r\n<tbody>\r\n<tr>\r\n<td style=\"border-style:none\" valign=top>\r\n<p style=\"margin-top:1em;margin-bottom:1em\">... Van Wijk, &quot;Squarified treemaps&quot; in&nbsp;<em>Proceedings of the joint Eurographics ....</em></p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td style=\"border-style:none\" valign=top>\r\n<p style=\"margin-top:1em;margin-bottom:1em\">... Jackson, &quot;Using dependency models to manage complex software architecture&quot; , 2005, .....</p>\r\n<p style=\"margin-top:1em;margin-bottom:1em\">Or is it just me?</p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-10-06T11:57:36.333-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "242683",
+    "ThreadId": "71123",
+    "Html": "<p>It's you. See the <a title=\"IEEE style manual\" href=\"http://www.ieee.org/portal/cms_docs_iportals/iportals/publications/authors/transjnl/stylemanual.pdf\">IEEE style manual</a>:</p>\r\n<p style=\"padding-left:30px\">Periodicals (p. 6, example 4):</p>\r\n<p style=\"padding-left:60px\" align=justify>H. Eriksson and P. E. Danielsson, &quot;Two problems on Boolean memories,&quot; <em>IEEE Trans. Electron. Devices</em>, vol. ED-11, pp. 32&ndash;33, Jan. 1959.</p>\r\n<p style=\"padding-left:30px\">Books (p. 7, example 3):</p>\r\n<p style=\"padding-left:60px\" align=justify>R. L. Myer, &quot;Parametric oscillators and nonlinear materials,&quot; in <em>Nonlinear Optics</em>, vol. 4, P. G. Harper and B. S. Wherret, Eds. San Francisco, CA: Academic, 1977, pp. 47-160.</p>\r\n<p>There is an error though where you see the ' <strong><span style=\"color:#ff0000\">,&quot; ,</span></strong> '. That's because you are&nbsp;not providing enough parameters.&nbsp;The style can handle a number of missing parameters, but not all of them.&nbsp;</p>",
+    "PostedDate": "2009-10-06T12:38:41.423-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

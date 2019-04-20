@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1434908",
+    "ThreadId": "641543",
+    "Html": "I am trying to place brackets around the numbers marking an entries position in the bibliography.  So as, the bibliography usually says, \r<br />\n<br />\n1 Some author\r<br />\n<br />\nI need,\r<br />\n<br />\n[1] Some author\r<br />\n<br />\nI've been trying to find where to make this change in the .xsl, and I can't find the correct position.<br />\n",
+    "PostedDate": "2015-07-18T11:47:39.277-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1434911",
+    "ThreadId": "641543",
+    "Html": "I figured it out.  In the bibliography section of the .xsl, under source / column 1 / format, there will be text to something of the effect of: %BibOrder|&quot;BO&quot;%.  Surround that string with brackets, like such: [%BibOrder|&quot;BO&quot;%], and output (hopefully...) should change.<br />\n",
+    "PostedDate": "2015-07-18T12:35:18.68-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

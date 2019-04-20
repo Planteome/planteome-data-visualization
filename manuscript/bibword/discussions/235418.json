@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "524684",
+    "ThreadId": "235418",
+    "Html": "\r\n<p>My university (Wrocław Univeristy of Technology) has its own requirements on how bibliography should be formated in Master's Thesis.</p>\r\n<p>As could be easly forseen they do not mach neither any of default styles nor any of the styles provided in this library. I tried to adapt one of the styles (ISO with square brackets) to my needs but there is one thing I don't even now how to deal with.</p>\r\n<p>Here it is how it should look like:</p>\r\n<pre>[1]   blah blah blah\r\n      blah blah blah\r\n[2]   blah blah blah\r\n      blah blah blah</pre>\r\n<p>As you can see the reference numbers form a separate column. (See also the <a href=\"http://www.wiz.pwr.wroc.pl/files/w8/studenci/do_pobrania/Praca_dyplom_wymogi_edyt.rtf\">\r\ndocument itself</a>. Point 12 contains the example.&nbsp;) How to do it?</p>\r\n",
+    "PostedDate": "2010-11-20T03:43:03.063-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "524687",
+    "ThreadId": "235418",
+    "Html": "\r\n<p>BibWord allows for multicolumn layouts. There are several example styles available illustrating this behaviour (e.g. IEEE at&nbsp;<a href=\"http://bibword.codeplex.com/releases/view/19764\">http://bibword.codeplex.com/releases/view/19764</a>&nbsp;).</p>\r\n<p>If you are working with one of the styles that come with Word, then it is up to you to look into the code yourself. Those styles are not supported here.</p>\r\n<p>One tip I can give is that Word will insert a blank paragraph before and after your bibliography if you try to work with a table. A workaround consists in wrapping your table between two paragraphs where you put 1 letter and make those invisible. The way\r\n BibWord does this is by putting the following line above and below the table:</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">p</span> <span style=\"color:red\">class</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">MsoBibliography</span><span style=\"color:black\">&quot;</span> <span style=\"color:red\">style</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">display:none;</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">&gt;</span>x<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">p</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n",
+    "PostedDate": "2010-11-20T04:06:19.28-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "524892",
+    "ThreadId": "235418",
+    "Html": "\r\n<p>Thanks for the tips. The &quot;display:none&quot; doesn't work in my custom style as the &quot;x&quot; shows in the bibliography. However this is less important the another issue.</p>\r\n<p>I am unable to make the first column show [1]. Instead Word breaks the line after &quot;[&quot; ans shows &quot;1]&quot; on the second line. It does so for IEEE as well. How to solve it? Any ideas?</p>\r\n<p>I know I am not asking about your styles so you are not &quot;obligated&quot; to help me. But I hope you will know how to deal with it as I don't know where else to look for help.</p>\r\n",
+    "PostedDate": "2010-11-21T01:49:12.71-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "524896",
+    "ThreadId": "235418",
+    "Html": "\r\n<p>See <a href=\"http://bibword.codeplex.com/wikipage?title=Styles_FAQ#Q15\">http://bibword.codeplex.com/wikipage?title=Styles_FAQ#Q15</a>&nbsp;for the issue of the number being spread over multiple lines.</p>\r\n<p>Concerning the 'x'. You are probably seeing them because they are marked as hidden text and you are currently displaying hidden text. If you hide hidden text, they should be invisble.</p>\r\n",
+    "PostedDate": "2010-11-21T02:09:45.87-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "524907",
+    "ThreadId": "235418",
+    "Html": "\r\n<p>Thanks! So there is no way of expressing it in the style it self (setting column width large enough)?</p>\r\n<p>Is there a way to donate or somthing to express my greatfulness? ;)</p>\r\n",
+    "PostedDate": "2010-11-21T02:53:37.583-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "524914",
+    "ThreadId": "235418",
+    "Html": "\r\n<p>Well you could try setting a fixed width for your column, but the necessary width would depend on the amount of sources (less than 10, between 10 and 100, more than 100, ....) and on the size of the font used. In theory there is a nowrap attribute for columns,\r\n but it seems Word is ignoring it.</p>\r\n",
+    "PostedDate": "2010-11-21T03:45:41.007-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

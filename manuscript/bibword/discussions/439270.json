@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "1026188",
+    "ThreadId": "439270",
+    "Html": "I have word 2007 and would like to add Harvard style for Oxford Brookes business school. one friend told me that he used anglia style from ms word 2010. (this is not given by default in 2007) and his dissertation was cleared. so how could I update word 2007 to bring at par with word 2010 to install anglia style in my word 2007.\r<br />\nThanks experts.<br />\n",
+    "PostedDate": "2013-04-05T08:56:41.18-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1026758",
+    "ThreadId": "439270",
+    "Html": "Ask your friend for the styles and copy them in the styles directory. Word 2010 styles can be used in Word 2007 without any problem.\r<br />\n<br />\nIn case your friend (or someone else) can't give them to you, you could follow the step-by-step tutorial I gave in the Word forums to do it yourself (check the hard way) at <a href=\"http://answers.microsoft.com/en-us/office/forum/office_2007-word/apa-6th-edition-and-mla-7th-edition-in-office-2007/7ec9a800-b406-4a04-b257-c2d7d64f5fc3\" rel=\"nofollow\">http://answers.microsoft.com/en-us/office/forum/office_2007-word/apa-6th-edition-and-mla-7th-edition-in-office-2007/7ec9a800-b406-4a04-b257-c2d7d64f5fc3</a><br />\n",
+    "PostedDate": "2013-04-07T04:24:08.127-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1026814",
+    "ThreadId": "439270",
+    "Html": "Thanks for your guidance. I have copy pasted angila style present on bibword website, is this the very same used by ms word 2010? Thanks for assistance. Bb<br />\n",
+    "PostedDate": "2013-04-07T10:17:17.47-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1026821",
+    "ThreadId": "439270",
+    "Html": "No. That one is older than the one created by Microsoft and does not cover every type of source the Microsoft one does.\r<br />\n<br />\nKeep in mind that there is no such thing as a Harvard referencing style. It is actually a family of styles all using the (author, year) format for in-tekst citations but each with their own format for the bibliography. Actually, even the APA referencing style could be defined as a Harvard style.<br />\n",
+    "PostedDate": "2013-04-07T10:54:41.56-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1026893",
+    "ThreadId": "439270",
+    "Html": "Hi Yves, Please can you confirm whether this is the latest version, I found it on this website:\r<br />\n<a href=\"http://chomikuj.pl/Zgredziomen4/Galeria/Microsoft+Office/Office12/Bibliography/Style/HarvardAnglia2008OfficeOnline,2035403699.xsl\" rel=\"nofollow\">http://chomikuj.pl/Zgredziomen4/Galeria/Microsoft+Office/Office12/Bibliography/Style/HarvardAnglia2008OfficeOnline,2035403699.xsl</a>\r<br />\ndownloaded and pasted into style folder and it is working. Appreciate your help.\r<br />\nBB<br />\n",
+    "PostedDate": "2013-04-07T15:02:42.51-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1026895",
+    "ThreadId": "439270",
+    "Html": "by the way what is bibword extender?<br />\n",
+    "PostedDate": "2013-04-07T15:04:58.37-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1027309",
+    "ThreadId": "439270",
+    "Html": "It is a way to work around some of the limitation of bibliographies in Word like year suffices for Harvard style styles.\r<br />\n<br />\nSee the documentation at <a href=\"https://bibword.codeplex.com/wikipage?title=BibWord%20Extender&amp;referringTitle=Documentation\" rel=\"nofollow\">https://bibword.codeplex.com/wikipage?title=BibWord%20Extender&referringTitle=Documentation</a><br />\n",
+    "PostedDate": "2013-04-08T08:53:28.087-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1027310",
+    "ThreadId": "439270",
+    "Html": "<strong>bassaniobroke wrote:</strong><br />\n<blockquote>\nHi Yves, Please can you confirm whether this is the latest version, I found it on this website:<br />\n<a href=\"http://chomikuj.pl/Zgredziomen4/Galeria/Microsoft+Office/Office12/Bibliography/Style/HarvardAnglia2008OfficeOnline,2035403699.xsl\" rel=\"nofollow\">http://chomikuj.pl/Zgredziomen4/Galeria/Microsoft+Office/Office12/Bibliography/Style/HarvardAnglia2008OfficeOnline,2035403699.xsl</a><br />\ndownloaded and pasted into style folder and it is working. Appreciate your help.<br />\nBB<br />\n</blockquote>\nThere is only one version, so it should be the latest.<br />\n",
+    "PostedDate": "2013-04-08T08:54:15.777-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

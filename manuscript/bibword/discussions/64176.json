@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "218267",
+    "ThreadId": "64176",
+    "Html": "<p>Any ideas how it is possible to put text in the beginnig of a citation? For example, instead of (Smith 2000), I want it te be (cf. Smith 2000).</p>\r\n<p>&nbsp;</p>\r\n<p>Or should I just disable the brackets globally altogether, and type them by myself whenever I really need them?</p>",
+    "PostedDate": "2009-08-01T02:16:34.5-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "218269",
+    "ThreadId": "64176",
+    "Html": "<p>Just like you have a &quot;\\l&quot; flag, you have a &quot;\\f&quot; for prefix and &quot;\\s&quot; for suffix.</p>\r\n<p>See the &quot;Optional switches&quot; section of <a href=\"http://office.microsoft.com/en-us/help/HA102157071033.aspx\">http://office.microsoft.com/en-us/help/HA102157071033.aspx</a>&nbsp;for a full explaination including some examples on how to use those.</p>",
+    "PostedDate": "2009-08-01T02:33:52.757-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "218271",
+    "ThreadId": "64176",
+    "Html": "<p>works perfectly, thanks!</p>",
+    "PostedDate": "2009-08-01T02:39:49.157-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

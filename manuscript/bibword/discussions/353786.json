@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "829285",
+    "ThreadId": "353786",
+    "Html": "\r\n<p>I succesfully downloaded the styles and imported them to Word, and the system for inserting references according to the Harvard system works ok, but the styles did not get imported so that I can create a bibliography according to the Harvard system.</p>\r\n<p>When I open Insert -&gt;&quot;documentelements&quot; (not sure of the translation, since I use word in Swedish)--&gt; bibliography, there are only the four original styles to use for inserting the bibliography. How do i import the styles so they work for the bibliography\r\n as well so I can create the bibliography according to the Harvard system?</p>\r\n<p>And another question: When using the Harvard reference system it works fine for books and articles, but not when referencing to interviews. Anybody knows how to fix this?</p>\r\n<p>Thanks in advance for your help!</p>\r\n",
+    "PostedDate": "2012-04-27T02:10:43.107-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "829290",
+    "ThreadId": "353786",
+    "Html": "<p>1)That's a bug in Word for Mac. See <a href=\"http://bibword.codeplex.com/wikipage?title=Styles_FAQ&amp;referringTitle=Documentation#Q2\">http://bibword.codeplex.com/wikipage?title=Styles_FAQ&amp;referringTitle=Documentation#Q2</a>&nbsp;for the solution.</p>\r\n<p>2)It doesn't work for interviews, because it isn't defined for interviews. If it is not defined, it is mostly because at the time it was created, no 'official' information was available on how to format interviews. Rather than making a guess (which could be wrong), it was just left out.&nbsp;Most release pages contain information about the supported types (e.g. <a href=\"http://bibword.codeplex.com/releases/view/22890\">http://bibword.codeplex.com/releases/view/22890</a>)</p>\r\n<p>Of course, if you know the format, you can easily add it yourself to the style.</p>",
+    "PostedDate": "2012-04-27T02:26:46.397-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "829296",
+    "ThreadId": "353786",
+    "Html": "<p>You are an angel and you just saved my day! Hell, you saved my weekend! :)</p>",
+    "PostedDate": "2012-04-27T02:51:43.5-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

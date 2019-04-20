@@ -1,0 +1,65 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "There are installation instructions for all versions between 2007 and 2013 on the download page.",
+    "ClosedDate": "2014-07-17T04:12:54.1-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "How do you install the ieee bibliography style for word 2010.  I tried to copy to the suggested location but the files were not there.  The files that were present were: \n%programfiles%\\Microsoft Office\\Office14\\ \nThe bibliography\\style files were not present.",
+    "LastUpdatedDate": "2014-07-17T04:12:54.1-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "bibword",
+    "ReportedDate": "2010-11-21T14:30:55.183-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Fixed"
+    },
+    "Summary": "IEEE bibliography style for word",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 7638
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "1)Are you certain you are looking in the correct place? Depending on your installation you might have an x86 and x64 version of your program files directory. It's worth checking them both.\r\n\r\n2)Have you installed the full version of Word or the click-to-run one? The styles are only working with the full version. There is no way to use them with the click-to-run installation. To check if you are running the click-to-run version, check if your Office14 folder contains winword.exe? If not, you are using the click-to-run version and you are out of luck.",
+      "PostedDate": "2010-11-22T12:17:46.793-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi. \nThese are the places where the style files should be copied to (Windows 7/Vista):\r\n\r\nWord 2010\n64 bits: %ProgramFiles%\\Microsoft Office\\Office14\\Bibliography\\Style\n32 bits: %ProgramFiles(x86)%\\Microsoft Office\\Office14\\Bibliography\\Style\r\n\r\nWord 2007\n64 bits: %ProgramFiles%\\Microsoft Office\\Office12\\Bibliography\\Style\n32 bits: %ProgramFiles(x86)%\\Microsoft Office\\Office12\\Bibliography\\Style\r\n\r\nHope that helps.\r\n\r\nAgos",
+      "PostedDate": "2012-11-16T19:23:12.523-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:20:26.71-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-06-02T04:11:45.647-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2014-07-17T04:12:54.1-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

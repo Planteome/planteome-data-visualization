@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "248783",
+    "ThreadId": "72835",
+    "Html": "<p>Hey,</p>\r\n<p>BibWord is a true enrichment!</p>\r\n<p>I created my own style but have one last issue. I added</p>\r\n<p>&lt;sortkey&gt;{%Author:0}{%Year%}{%Title%}&lt;/sortkey&gt;</p>\r\n<p>for every type extension under bibliography. But the citations in my bibliography now sort for books, journalarticles etc. each and not globally. How do I manage to sort type extensions in one list?</p>\r\n<p>So instead of</p>\r\n<p>a (book)</p>\r\n<p>e (book)</p>\r\n<p>g (book)</p>\r\n<p>b (article)</p>\r\n<p>d (article)</p>\r\n<p>f (article)</p>\r\n<p>c (booksection)</p>\r\n<p>&nbsp;</p>\r\n<p>I need</p>\r\n<p>a (book)</p>\r\n<p>b (article)</p>\r\n<p>c (booksection)</p>\r\n<p>d (article)</p>\r\n<p>e (book)</p>\r\n<p>f (article)</p>\r\n<p>g (book)</p>\r\n<p>How do I implent this? I tried to get some hints by taking a deeper look into other styles, but I didn't look through. Hope this is not too complex... Thank you very much for your support!</p>",
+    "PostedDate": "2009-10-22T14:46:43.6-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "248877",
+    "ThreadId": "72835",
+    "Html": "<p>This is extremely odd. For bibliographies all sorting is done on a global level. You would have to actually add the SourceType element to the sortkey to obtain a sorting by type.</p>\r\n<p>If&nbsp;you mail me your style and a sample document I will look into it. My email can be found at the top of the stylesheet.</p>",
+    "PostedDate": "2009-10-22T23:32:48.643-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

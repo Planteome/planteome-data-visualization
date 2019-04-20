@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "466780",
+    "ThreadId": "219296",
+    "Html": "<p>Hello,</p>\r\n<p>I am trying to adjust the layout of the bibliography used in the Harvard - Anglia style. When I insert a bibliography all the references appear correctly but I would like to insert a blank line between each reference for ease of reading.</p>\r\n<p>e.g.</p>\r\n<p>Ref1.<br>Blank Line<br>Ref2.<br>Blank Line<br>Ref3.<br>Etc.</p>\r\n<p>I can manually insert the carriage return but when I &lsquo;update citations and bibliography&rsquo; the table returns without blanks between references.</p>\r\n<p>Is there a formatting change I can make to automatically insert a carriage return between each reference in the bibliography?</p>\r\n<p>Thanks in advance.</p>\r\n<p><br>KPC&nbsp;</p>",
+    "PostedDate": "2010-07-13T06:03:39.303-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "466839",
+    "ThreadId": "219296",
+    "Html": "Never use a carriage return to insert white space between paragraphs. It is one of the worst errors people make when creating documents. To add whitespace before or after a paragraph use the properties of the paragraph (style).\r\n\r\nIn this specific case, you can change the Bibliography style so that the white space after a paragraph becomes larger.\r\n\r\nOnce you inserted a bibliography, a &quot;Bibliography&quot; (or a localized version of that word) style becomes available in the normal style pane (CTRL+SHIFT+ALT+S). Right click on &quot;Bibliography&quot; and choose &quot;Modify...&quot;. Press the &quot;Format&quot; button and choose &quot;Paragraph...&quot;. On the indent and spacing tab, set the value for &quot;Spacing after&quot; to something larger than it currently is. Press &quot;Ok&quot; twice to close all dialogs. Now there will be more whitespace between entries. The whitespace will also remain when updating your bibliography and will be applied to all new entries added to your bibliography.",
+    "PostedDate": "2010-07-13T07:44:21.963-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "466861",
+    "ThreadId": "219296",
+    "Html": "<p>Thank you very much Yves!</p>\r\n<p>A&nbsp;very quick response well explained.</p>\r\n<p>Very helpful.</p>\r\n<p>Cheers.</p>\r\n<p>KPC</p>",
+    "PostedDate": "2010-07-13T08:42:43.47-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

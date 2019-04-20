@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "577837",
+    "ThreadId": "249047",
+    "Html": "\r\n<p>Hi!</p>\r\n<p>I'm currently using the modified AMA style with Word 2007.</p>\r\n<p>I decided to add&nbsp;square brackets to in-text citations:<br>\r\n&lt;openbracket&gt;[&lt;/openbracket&gt;<br>\r\n&lt;closebracket&gt;]&lt;/closebracket&gt;</p>\r\n<p>I also want to keep all citations as clickable links:<br>\r\n&lt;citation_as_link&gt;yes&lt;/citation_as_link&gt;</p>\r\n<p>But when the&nbsp;above option is enabled then all in-text citations are in bold.<br>\r\nIs it possible to remove the bold style from&nbsp;clickable citations?</p>\r\n<p>BTW, I have to keep all my Word Headings in bold.</p>\r\n<p>Thank you for all advices.</p>\r\n<p>Regards,<br>\r\nProzac<br>\r\n<br>\r\n</p>\r\n",
+    "PostedDate": "2011-03-09T08:36:02.763-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "577945",
+    "ThreadId": "249047",
+    "Html": "<p>The problem is that HTML hyperlinks which the XSLT produces are imported into Word as Heading 2 Character Style. Nobody at Microsoft seems to know why this is. Theoretically you could unlink the header 2 character style from the header 2 paragraph style however there has been a bug in Word back since 2003&nbsp;preventing this feature to work. As of the 2007 docx format, someone with open xml knowledge can do it by hand.</p>\r\n<p>There is a workaround possible: you can apply a selfcreated character style to each in-text citation. When in-text citations are updated, the character style remains applied. At <a href=\"http://bibword.codeplex.com/wikipage?title=Styles_FAQ#Q9\">http://bibword.codeplex.com/wikipage?title=Styles_FAQ#Q9</a>&nbsp;you can find a macro which does just that. The macro is intended to put in-text citations to superscript, but you can easily adapt it to ensure that in-text citations do not turn up as bold by changing the line</p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre>s.Font.Superscript = <span style=\"color: blue;\">True</span>\r\n</pre>\r\n</div>\r\n<p>into</p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre>s.Font.Bold = <span style=\"color: blue;\">False</span>\r\n</pre>\r\n</div>\r\n<p>You can apply the macro each time you insert a new in-text citation, or you can run it once at the end.</p>",
+    "PostedDate": "2011-03-09T11:17:34.267-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "578107",
+    "ThreadId": "249047",
+    "Html": "<p>I see. The macro is a good working workaround - thank you!</p>\r\n<p>&gt; You can apply the macro each time you insert a new in-text citation, or you can run it once at the end.</p>\r\n<p>I think the second option will be much better for me since I already have almost 200 citations so it takes several seconds to update them all.</p>",
+    "PostedDate": "2011-03-09T15:24:13.363-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

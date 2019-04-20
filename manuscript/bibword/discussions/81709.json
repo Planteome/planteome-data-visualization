@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "280571",
+    "ThreadId": "81709",
+    "Html": "<p>The Nature style has a maximum authors of 4. If you enter 5 authors it will be et al.</p>\r\n<p>&nbsp;</p>\r\n<p>The problem is that on their website it states that it only counts for larger than 5.</p>\r\n<p>&nbsp;</p>\r\n<p><a href=\"http://www.nature.com/app_notes/nmeth/info/index.html\">http://www.nature.com/app_notes/nmeth/info/index.html</a></p>\r\n<p>&nbsp;</p>\r\n<p>Thank you&nbsp;for the excellent job creating the style!!!</p>",
+    "PostedDate": "2010-01-22T06:35:08.917-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "280842",
+    "ThreadId": "81709",
+    "Html": "<p>I'll upload an adjusted template somewhere next week.</p>\r\n<p>For the moment, you can do it yourself. Just look for all occurences of the following line</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">max_number_of_persons_to_display</span><span style=\"color:Blue\">&gt;</span>4<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">max_number_of_persons_to_display</span><span style=\"color:Blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>and change the 4 into 5.</p>",
+    "PostedDate": "2010-01-22T21:23:10.663-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "416956",
+    "ThreadId": "81709",
+    "Html": "<p>Thank you very much!</p>",
+    "PostedDate": "2010-03-11T06:35:32.547-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

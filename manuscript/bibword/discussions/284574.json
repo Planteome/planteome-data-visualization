@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "718657",
+    "ThreadId": "284574",
+    "Html": "\r\n<p>Is there any way to export the master bibliography or convert the xml file to a common format like bibtex or zotero?</p>\r\n<p>&nbsp;</p>\r\n<p>thank!</p>\r\n",
+    "PostedDate": "2011-12-30T05:21:03.437-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "718956",
+    "ThreadId": "284574",
+    "Html": "<p>EndNote can import master lists. And it has an export to the BibTeX format. But it is rather pricy if you don't have access to some kind of campus license.</p>\r\n<p>JabRef is a&nbsp;free java based reference manager&nbsp;and since v.2.6 can import Word 2007 bibliographies.</p>\r\n<p>And then there is BibUtils by Chris Putnam. It is a set of command line tools which can convert between different formats. It uses the MARC format as an intermediate.</p>\r\n<p>Keep in mind that whatever tool you use, translations are not always 1-to-1. So fields might go missing or might be incorrectly labelled. This is especially the case with BibUtils as you have 2 translations there (XML =&gt; MARC, MARC =&gt; BibTeX).</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2011-12-31T01:43:24.25-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "718979",
+    "ThreadId": "284574",
+    "Html": "<p>thanks Yves,</p>\r\n<p>&nbsp;</p>\r\n<p>as far as I can see, Endnote has no possibility to import word master lists; the same seems to be true for BibUtils, which only converts to word xml, but not from word xml.</p>\r\n<p>&nbsp;</p>\r\n<p>JabRef in fact does the job, but quite badly unfortunately.</p>\r\n<p>&nbsp;</p>\r\n<p>It is really a shame that MS does not seem to be interested in further developing its bibliography tools, not even allowing to export the master list.</p>",
+    "PostedDate": "2011-12-31T04:39:17.913-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "719339",
+    "ThreadId": "284574",
+    "Html": "<p>I don't have a copy around but I'm pretty certain EndNote can import Word bibliographies. IIRC, the option can be found somewhere on the EndNote tab on the Word ribbon. If not, it probably is something which is triggered on first run.</p>",
+    "PostedDate": "2012-01-02T03:54:11.723-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "719554",
+    "ThreadId": "284574",
+    "Html": "<p>you're right... EndNote x5 does import the Word master list, and actually quite well... thanks again...</p>",
+    "PostedDate": "2012-01-02T13:47:50.33-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

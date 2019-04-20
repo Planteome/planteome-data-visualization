@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "135971",
+    "ThreadId": "40984",
+    "Html": "Hi<br>\r\n<br>\r\nApologies, I have just started academic referencing and am trialing the word 2007 to assist with referencing.<br>\r\n<br>\r\nHowever the style used seems to be MHRA. Is there a download for this style or is it close to any others already listed.<br>\r\n<br>\r\nSorry but all this referencing is a bit of a minefield at the moment.<br>\r\n<br>\r\nThe link to the guide is <a href=\"http://www.mhra.org.uk/Publications/Books/StyleGuide/download.shtml\">http://www.mhra.org.uk/Publications/Books/StyleGuide/download.shtml</a><br>\r\n<br>\r\nThank You\r\n",
+    "PostedDate": "2008-11-27T17:27:52.58-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "136097",
+    "ThreadId": "40984",
+    "Html": "At first glance it looks like MHRA is mostly a footnote style. All current styles, the ones provided by Microsoft, the ones on this site, or the ones in 'the wild' I encountered are endnote styles. So I don't think you will find any styles looking familiar to what you are looking for.<br>\r\n<br>\r\nIf the author-date variant would be used, there are a number of styles with similar properties, both in Word 2007 and on this site. None, will be an exact match though.<br>\r\n<br>\r\nAs there are no footnote styles yet, I might give it a shot tomorrow to see if it works as nicely as the endnote styles and create something basic. But don't depend on it or wait for it.\r\n",
+    "PostedDate": "2008-11-28T07:34:13.907-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "136171",
+    "ThreadId": "40984",
+    "Html": "\r\n<div>Hi Yves</div>\r\n<div> </div>\r\n<div>Thank You, That would be great. Your time and \r\neffort is much appreciated</div>\r\n<div> </div>\r\n<div>Mark</div>\r\n<blockquote dir=ltr style=\"padding-right:0px;padding-left:5px;margin-left:5px;border-left:#000000 2px solid;margin-right:0px\">\r\n  <div style=\"font:10pt arial\">----- Original Message ----- </div>\r\n  <div style=\"background:#e4e4e4;font:10pt arial;font-color:black\"><b>From:</b> \r\n  [email removed] </div>\r\n  <div style=\"font:10pt arial\"><b>To:</b> [email removed] </div>\r\n  <div style=\"font:10pt arial\"><b>Sent:</b> Friday, November 28, 2008 3:34 \r\n  PM</div>\r\n  <div style=\"font:10pt arial\"><b>Subject:</b> Re: MHRA style \r\n  [bibliography:40984]</div>\r\n  <div><br></div>\r\n  <p>From: yves</p>\r\n  <div id=ThreadNotificationPostBody>At first glance it looks like MHRA is \r\n  mostly a footnote style. All current styles, the ones provided by \r\n  Microsoft, the ones on this site, or the ones in 'the wild' I encountered are \r\n  endnote styles. So I don't think you will find any styles looking familiar to \r\n  what you are looking for.<br><br>If the author-date variant would be used, \r\n  there are a number of styles with similar properties, both in Word 2007 and on \r\n  this site. None, will be an exact match though.<br><br>As there are no \r\n  footnote styles yet, I might give it a shot tomorrow to see if it works as \r\n  nicely as the endnote styles and create something basic. But don't depend on \r\n  it or wait for it. </div>\r\n  </blockquote>",
+    "PostedDate": "2008-11-28T14:58:29.547-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "136228",
+    "ThreadId": "40984",
+    "Html": "I added <a href=\"http://www.codeplex.com/bibliography/Release/ProjectReleases.aspx?ReleaseId=19998\" title=\"MHRA footnote style\">MHRA Footnotes</a> to the releases.<br>\r\n<br>\r\nNote that the style is a footnote style. Hence, it only displays footnotes. It will not generate an entire bibliography at the end of your work. Using it is pretty straightforward. Whenever you need to insert a citation, insert a footnote and then in the footnote insert a citation.<br>\r\n<br>\r\nYves\r\n",
+    "PostedDate": "2008-11-29T02:41:07.667-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "136233",
+    "ThreadId": "40984",
+    "Html": "\r\n<div>Thank You, Yves </div>\r\n<div> </div>\r\n<div>Thats Great</div>\r\n<blockquote dir=ltr style=\"padding-right:0px;padding-left:5px;margin-left:5px;border-left:#000000 2px solid;margin-right:0px\">\r\n  <div style=\"font:10pt arial\">----- Original Message ----- </div>\r\n  <div style=\"background:#e4e4e4;font:10pt arial;font-color:black\"><b>From:</b> \r\n  [email removed] </div>\r\n  <div style=\"font:10pt arial\"><b>To:</b> [email removed] </div>\r\n  <div style=\"font:10pt arial\"><b>Sent:</b> Saturday, November 29, 2008 10:41 \r\n  AM</div>\r\n  <div style=\"font:10pt arial\"><b>Subject:</b> Re: MHRA style \r\n  [bibliography:40984]</div>\r\n  <div><br></div>\r\n  <p>From: yves</p>\r\n  <div id=ThreadNotificationPostBody>I added <a title=\"MHRA footnote style\" href=\"http://www.codeplex.com/bibliography/Release/ProjectReleases.aspx?ReleaseId=19998\">MHRA \r\n  Footnotes</a> to the releases.<br><br>Note that the style is a footnote \r\n  style. Hence, it only displays footnotes. It will not generate an entire \r\n  bibliography at the end of your work. Using it is pretty straightforward. \r\n  Whenever you need to insert a citation, insert a footnote and then in the \r\n  footnote insert a citation.<br><br>Yves </div>\r\n  </blockquote>",
+    "PostedDate": "2008-11-29T04:48:03.81-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "416865",
+    "ThreadId": "204621",
+    "Html": "<p>Hi</p>\r\n<p>I am a newby and a little bit lost with BibWord. Perhaps somebody can help me.&nbsp;I want to have in Word for Windows the footnote citation like:</p>\r\n<p>&nbsp;Krugman (1979), On Trade</p>\r\n<p>Author-Lastname (Year), Title</p>\r\n<p>How can I change the xml-sheet (I use Harvard at the moment) to get this format?</p>\r\n<p>Thanks for any help</p>\r\n<p>Arnyeinstein</p>",
+    "PostedDate": "2010-03-11T02:18:48.837-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "417085",
+    "ThreadId": "204621",
+    "Html": "<p>There is no such thing as <em>the</em> Harvard style. On this site alone, there are 4 dialects (Anglia, Exeter, ...). So which one are you talking about?</p>\r\n<p>Anyway, Word for Windows does not support footnote citation, it's either in-text citation (which is in the author-year format for a Harvard&nbsp;dialect) or a bibliography somewhere.</p>\r\n<p>The <a title=\"BibWord documentation\" href=\"http://bibword.codeplex.com/releases/view/36507#DownloadId=94750\">documentation for BibWord</a>&nbsp;contains all the information you need. Section 3 describes where you can find the formatting information for citations and bibliographies inside a stylesheet. If you are looking for more information for creating your own format strings, I suggest you check the <a title=\"Format Strings Documentation\" href=\"http://bibword.codeplex.com/wikipage?title=BibWord Format Strings&referringTitle=Documentation\">documentation</a> page on the site. In your case you probably want something along the lines of:</p>\r\n<p>{%Author:1%}{ (%Year%)}{, %Title%}</p>\r\n<p>Where the '1' indicates how to format the authors.</p>",
+    "PostedDate": "2010-03-11T10:36:14.417-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "417095",
+    "ThreadId": "204621",
+    "Html": "<p>&nbsp;</p>\r\n<p>Thanks Yves, I came that far, after I found the documentation. I now have the citation in the footnote I like: I just cite two times:</p>\r\n<p>- Krugman (1979)</p>\r\n<p>- the same citation, but now I show only the title.</p>\r\n<p>This works fine with one exception: I get a closing parenthesis after the title and I have no idea where that one comes from</p>\r\n<p>(I removed the opening and closing brackets in the style sheet, so that is not what I am looking for).</p>\r\n<p>By the way I am using Word 2010 (Betaversion)</p>\r\n<p>Arnyeinstein</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-03-11T11:05:25.98-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "417202",
+    "ThreadId": "204621",
+    "Html": "<p>There are hardly any changes to the Word 2010 functionality when it comes to the bibliography tools. Even&nbsp;most of the bugs aren't fixed. So I doubt it has anything to do with that.</p>\r\n<p>My guess would be that something is wrong with the format string. Could you post it?</p>\r\n<p>There is no point in citing something twice when you call put it in one format string.</p>",
+    "PostedDate": "2010-03-11T15:34:52.967-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "424889",
+    "ThreadId": "204621",
+    "Html": "<p>Hi Yves</p>\r\n<p>I tried to post the whole xml-sheet so you could have a look at my changes, but it looks like the forum did not accept it. Can I send it to you directly?</p>\r\n<p>&nbsp;</p>\r\n<p>Arnyeinstein</p>",
+    "PostedDate": "2010-03-29T05:30:57.66-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "424913",
+    "ThreadId": "204621",
+    "Html": "<p>You can. You can find my email on top of most stylesheets.</p>\r\n<p>On a side note, there is no point in posting the entire xml sheet. Everything outside the data variable should be the same for every style. That's the point of BibWord, that all changes are limited to a small section. And unless you went making changes all over the data variable, the only thing of real concern is the format string you changed.</p>",
+    "PostedDate": "2010-03-29T06:26:22.837-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "537215",
+    "ThreadId": "238736",
+    "Html": "\r\n<p>I'm having a dificult time trying to use bibword Styles. I've copied all the files to their respective folders but word cant recognize the styes. I't only shows &quot;unsupported source type... tried everithing ... bit disappointed. Glad if you could help.</p>\r\n<p>I'm using windows 7 x64, with office 2010 professional x64, in portuguese.&nbsp;</p>\r\n",
+    "PostedDate": "2010-12-17T03:16:59.337-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "537220",
+    "ThreadId": "238736",
+    "Html": "\r\n<p>Are the original styles which come with Word 2010&nbsp;(APA.XSL,&nbsp;MLA.XSL) located in&nbsp;the same directory you put your files in?</p>\r\n<p>Do the original styles which come with Word 2010 (APA.XSL, MLA.XSL) work when you try to use then with Word 2010?</p>\r\n",
+    "PostedDate": "2010-12-17T03:29:38.757-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "537222",
+    "ThreadId": "238736",
+    "Html": "\r\n<p>The original styles are working fine. I've put the bibword styles inthe styles folder and i can select then in the dropdown menu, but they doesn't have iput field boxes to fill while creatind new bibliographic sources.</p>\r\n",
+    "PostedDate": "2010-12-17T03:33:01.627-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "537223",
+    "ThreadId": "238736",
+    "Html": "\r\n<p>perhaps i've been uncapable of using bibtype.exe correctly. Can you help me using it?</p>\r\n",
+    "PostedDate": "2010-12-17T03:36:49.81-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "537228",
+    "ThreadId": "238736",
+    "Html": "\r\n<p>Sorry, I overlooked something in your first post.</p>\r\n<p>If you see &quot;Unsupported source type&quot; that means there is no defintion available for such a type of source entry. The release pages normally have the information on which entries are supported and which are not. The styles only provide a definition on how\r\n to format an entry if it is known/published how such an entry should look. It looks like you are using a type of source for which that information is not available. If you have documentation on the specific format, provide it here and I'll see what I can do\r\n to add it.</p>\r\n<p>For example, for ABNT, if you check <a href=\"http://bibword.codeplex.com/releases/view/27212\">\r\nhttp://bibword.codeplex.com/releases/view/27212</a>&nbsp;you will see that &quot;Book&quot;, &quot;Book Section&quot;, &quot;Website&quot;, and a number of other types are supported while&nbsp;&quot;Document from Internet Site&quot; and &quot;Art&quot; are not for example.</p>\r\n",
+    "PostedDate": "2010-12-17T03:47:48.8-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "537229",
+    "ThreadId": "238736",
+    "Html": "\r\n<p>Thank you for your help!!!</p>\r\n",
+    "PostedDate": "2010-12-17T03:51:58.007-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

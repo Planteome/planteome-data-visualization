@@ -1,0 +1,815 @@
+[
+  {
+    "Id": "0",
+    "Name": "BibWord v.2.9",
+    "DevelopmentStatus": "Stable",
+    "Description": "*New Features*\n* Added support for Word 2013 \n* Check [here|BibWord] for more general information on what [BibWord] is.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2013-04-01T06:56:52.877-07:00",
+    "Files": [
+      {
+        "Id": "32d3d8cb-e871-46a4-b7c5-8f46e19f4d4b",
+        "FileName": "BibWord_Stylesheet.XSL",
+        "Url": "./0/32d3d8cb-e871-46a4-b7c5-8f46e19f4d4b",
+        "Type": "Source Code",
+        "UploadDate": "2013-04-01T06:56:46.17-07:00"
+      },
+      {
+        "Id": "4763b438-6d9e-40c0-867c-bc40f5a9f2ed",
+        "FileName": "BibWord_Guide.docx",
+        "Url": "./0/4763b438-6d9e-40c0-867c-bc40f5a9f2ed",
+        "Type": "Documentation",
+        "UploadDate": "2013-04-01T06:56:46.23-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "1",
+    "Name": "APA with DOI - Proof of Concept",
+    "DevelopmentStatus": "Stable",
+    "Description": "!!! Introduction\nThis release is a proof of concept (POC) demonstrating a possible way of adding a digital object identifier (DOI) field to the APA style which comes with Microsoft Word 2007/2010. Details of this POC were first posted on the [url:microsoft.public.word.docmanagement newsgroup|http://groups.google.com/group/microsoft.public.word.docmanagement/browse_thread/thread/8a28a5a9a2a607d7/5b594105d46d9ba7?hl=en]. \n!!! Important notes\n# The techniques used in this release produce XML which *does not validate against the open xml specification*. This note should only concern you if you are working with an editor which requires strict validation. Microsoft Word 2007/2010 does not care if your xml validates or not!\n# The files are *not* intended for use with Microsoft Word 2008 for Mac. Although the principles of the POC remain, the Mac version of Word uses slightly differently structured source files.\n# This style is a direct extension of the version that comes with Word 2010. Hence, all errors spotted in this style are also available in the original style and will *not* be fixed.\n!!! Files\n!!!! _bibform.xml_\nThis is a replacement file for the original _bibform.xml_. The file adds a _DOI_ field to every type of source in the 'Edit Source' dialog. To access the field, you will have to ensure that 'Show All Bibliography Fields' is selected.\n\n_bibform.xml_ is language dependent and you can find the one you use in \n\n{code:css}\n  <winword.exe directory>\\<LCID>\\Bibliography\n{code:css}\nwhere _LCID_ is your language and cultural identifier. It's a 4 (or 5) digit value. The default one (en-us) is 1033. This is also the one attached to this release. For a full list of LCID codes, see the [url:Microsoft site|http://msdn.microsoft.com/en-us/goglobal/bb964664.aspx].\n\n*_The file attached to this release is for an English - International version of Microsoft Word 2007/2010, i.e., the LCID code is 1033._* \n!!!! _APA - DOI.xsl_\nThis is the actual stylesheet and is language and culture independent. Once the file is copied to the style directory and Microsoft Word is restarted, the style will show up in the dropdown box as _APA - DOI_.\n\nThe style will add the value of the DOI field to the end of the entry preceded by _doi:_.\n\nFor more information on installing a new style, see [here|Styles#Installation]",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2010-07-02T11:53:02.58-07:00",
+    "Files": [
+      {
+        "Id": "2a5d8613-30ee-4e3d-973a-d60d9a1dd273",
+        "FileName": "APA - DOI.XSL",
+        "Url": "./1/2a5d8613-30ee-4e3d-973a-d60d9a1dd273",
+        "Type": "Source Code",
+        "UploadDate": "2010-07-02T11:52:18.36-07:00"
+      },
+      {
+        "Id": "e1eb49dc-89c6-4aa8-a4c4-7303c3058764",
+        "FileName": "bibform.xml",
+        "Url": "./1/e1eb49dc-89c6-4aa8-a4c4-7303c3058764",
+        "Type": "Source Code",
+        "UploadDate": "2010-04-22T02:50:17.537-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "2",
+    "Name": "Chicago v2",
+    "DevelopmentStatus": "Stable",
+    "Description": "!! !!! This is not a BibWord style !!!\n\nThe style available in this release is in adjustment of the Chicago style that comes with Word 2007. It is not a BibWord style, so making modifications to the style might be rather hard and the style will most likely not work in Word 2008 for Mac. \n\n!!!! Differences with the original Chicago style from Word 2007:\n!!!!! 1. Display separator between year and page information for in-text citations when the author is suppressed\nIn the original version, when extra page information was provided and the author was suppressed, year and page information were concatenated. In this version, they are now separated.\n* Old version : (200050)\n* New version : (2000, 50)\n!!!!! 2. Fields now accept simple HTML formatting\nIn the original version, it was not possible to insert formatting information into a source field. In this version, simple HTML formatting can be added.\n\nFor example, assuming no extra formatting is added, the field containing:\n* A title containing <b>bold</b>, <i>italics</i>, <u>underlines</u>, and a < and > mark\nwill be displayed as\n* A title containing *bold*, _italics_, +underlines+, and a < and > mark  \n!!!! Installation instructions (Word 2007)\nCopy the file into the Microsoft Word bibliography style directory. This directory can vary depending on where Word is installed: \n\n{{\n    <winword.exe directory>\\Bibliography\\Style\n}} On most _32-bits_ machines with Microsoft Word 2007 this will be:\n\n{{\n    %programfiles%\\Microsoft Office\\Office12\\Bibliography\\Style\n}}Once the style is copied to the directory, it will show up as *Chicago v2*.\n\n!!!! Credits\nThis version uses the code from http://lenzconsulting.com/xml-to-string/xml-to-string.xsl to process html formatting in fields. ",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2010-01-07T00:51:44.467-08:00",
+    "Files": [
+      {
+        "Id": "38c27147-218a-4734-90ed-c4ee7d36d56d",
+        "FileName": "CHICAGOv2.XSL",
+        "Url": "./2/38c27147-218a-4734-90ed-c4ee7d36d56d",
+        "Type": "Source Code",
+        "UploadDate": "2010-01-07T00:51:44.28-08:00"
+      }
+    ]
+  },
+  {
+    "Id": "3",
+    "Name": "BibWord v.2.8",
+    "DevelopmentStatus": "Stable",
+    "Description": "*New Features*\n* added the 's' option to split URLs over multiple lines (splitting is done after a '/')\n* added more separators for page ranges (dash, en dash, colon)\n*More information*\n* Check [here|BibWord] for more general information on what [BibWord] is.\n*Notes*\n* Except for bug fixes, this will probably be the last version in the 2.x series.\n* Series 3 will have a reorganized data element which will allow for grouping, more detailed style definitions, and more configurable settings for non-english styles. The release of 3.0 will probably be shortly after the release of Office 2010 to incorporate any changes Microsoft might introduce to the tools.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2009-11-28T04:18:47.923-08:00",
+    "Files": [
+      {
+        "Id": "928d0fc9-c23c-4054-b026-828318c8cbe5",
+        "FileName": "BibWord_Stylesheet.XSL",
+        "Url": "./3/928d0fc9-c23c-4054-b026-828318c8cbe5",
+        "Type": "Source Code",
+        "UploadDate": "2009-11-28T04:18:47.767-08:00"
+      },
+      {
+        "Id": "177d7a81-dee4-44d3-abe6-8ab292fe46fe",
+        "FileName": "BibWord_Guide.docx",
+        "Url": "./3/177d7a81-dee4-44d3-abe6-8ab292fe46fe",
+        "Type": "Documentation",
+        "UploadDate": "2009-11-28T04:18:47.783-08:00"
+      }
+    ]
+  },
+  {
+    "Id": "4",
+    "Name": "BibWord v.2.7",
+    "DevelopmentStatus": "Stable",
+    "Description": "*New Features*\n* added the 'n' option to always display Month and MonthAccessed with 2 digits\n* added the 'i' option to invert Month and MonthAccessed (13 - Month) (useful for sorting purposes)\n* added the 'i' option to invert Day and DayAccessed (32 - Month) (useful for sorting purposes)\n* added the 's' option to SourceType\n*Bug Fixes*\n* fixed a bug in the options of Year and YearAccessed formatting where the options were ignored in combination with the 'r' flag\n*More information*\n* Check [here|BibWord] for more general information on what [BibWord] is.\n",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2009-10-24T15:37:39.197-07:00",
+    "Files": [
+      {
+        "Id": "ffc40ea9-fd56-41b9-aed6-50b2a3c35c97",
+        "FileName": "BibWord_Stylesheet.XSL",
+        "Url": "./4/ffc40ea9-fd56-41b9-aed6-50b2a3c35c97",
+        "Type": "Source Code",
+        "UploadDate": "2009-10-24T15:37:39.07-07:00"
+      },
+      {
+        "Id": "b205f5de-ffde-4602-bf23-1d840088576e",
+        "FileName": "BibWord_Guide.docx",
+        "Url": "./4/b205f5de-ffde-4602-bf23-1d840088576e",
+        "Type": "Documentation",
+        "UploadDate": "2009-10-24T15:36:03.38-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "5",
+    "Name": "Fix for Source Author Bugs in Microsoft Word",
+    "DevelopmentStatus": "Stable",
+    "Description": "!!!! Bug description\nIn Word 2007 and Word 2008, when using the editor to enter a new source, a dialog is presented to enter the three parts of an author's name: last, first, and middle. Word then converts those elements from their XML representation into a single string to display in the main source dialog. When saving the reference, the string is transformed back to the XML representation. Unfortunately, the transformations are not a 1:1 operation. Hence, in some cases, information gets moved to the wrong element. Two examples:\n\n*1. Persons with only a last name consisting of multiple words are converted incorrectly*\nFor example:\n\n{{\n  Last  : The Artist Formerly Known as Prince\n  First :\n  Middle:\n}} Results in:\n\n{code:xml}\n  <b:Person>\n    <b:Last>Prince</b:Last>\n    <b:First>The</b:First>\n    <b:Middle>Artist Formerly Known as</b:Middle>\n  </b:Person>\n{code:xml}\n*2. Persons with multiple first names are converted incorrectly*\nFor example:\n\n{{\n  Last  : de Borbón y Borbón-Dos Sicilias\n  First : Juan Carlos\n  Middle: Alfonso Victor Maria\n}} Results in:\n\n{code:xml}\n  <b:Person>\n    <b:Last>de Borbón y Borbón-Dos Sicilias</b:Last>\n    <b:First>Juan</b:First>\n    <b:Middle>Carlos Alfonso Victor Maria</b:Middle>\n  </b:Person>\n{code:xml}\n!!!! Fix description\n* If no commas are present, the fix assumes the format to be \"Last\" rather than \"First Middle Last\".\n* The XML representation is transformed into \"Last, First, Middle\" rather than \"Last, First Middle\". An extra comma is placed between _First_ and _Middle_ allowing for a two-way transformation. *People inputting the authors directly as a string should take this into account.*\n!!!! Who should apply this fix\nAlthough the fix has no known side effects, only people who care about these bugs should use this fix. If you do not care about the bugs, it is never a good idea to tamper with your installation.\n\nIf the fix has side effects, you can download the original files to place them back.\n!!!! Applying the fix\nThe fix consists of replacing two existing XSL files with the ones you can download from this page.\n!!!!! Applying the fix in Windows (Word 2007)\nExtract the files to:\n\n{{\n    <winword.exe directory>\\Bibliography\\\n}} On most machines with Microsoft Word 2007 this will be:\n\n{{\n    %program files%\\Microsoft Office\\Office12\\Bibliography\\\n}}\n!!!!! Applying the fix in Mac OS X (Word 2008)\nExtract the files to:\n\n{{\n    Contents/Resources/\n}} On most Macs with Microsoft Word 2008 this will be:\n\n{{\n    /Applications/Microsoft Office 2008/Microsoft Word.app/Contents/Resources/\n}}\n!!!! Note\nThe bug still exists in Word 2010 Technical Preview so the patch applies there as well.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2009-05-26T00:27:32.213-07:00",
+    "Files": [
+      {
+        "Id": "8bd893d0-c10a-4aa6-bc35-d410ab8776c8",
+        "FileName": "Fixed.zip",
+        "Url": "./5/8bd893d0-c10a-4aa6-bc35-d410ab8776c8",
+        "Type": "Source Code",
+        "UploadDate": "2009-05-25T23:47:51.083-07:00"
+      },
+      {
+        "Id": "ee266a29-2347-41a8-b591-a4076021d22c",
+        "FileName": "WindowsOriginal.zip",
+        "Url": "./5/ee266a29-2347-41a8-b591-a4076021d22c",
+        "Type": "Source Code",
+        "UploadDate": "2009-05-25T12:57:20.15-07:00"
+      },
+      {
+        "Id": "b2a7ddc0-0a96-4077-9e45-97a44db91e7b",
+        "FileName": "MacOriginal.zip",
+        "Url": "./5/b2a7ddc0-0a96-4077-9e45-97a44db91e7b",
+        "Type": "Source Code",
+        "UploadDate": "2009-05-25T23:46:46.91-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "6",
+    "Name": "Associação Brasileira de Normas Técnicas style",
+    "DevelopmentStatus": "Stable",
+    "Description": "!!!!! Description\nImplementation of the Associação Brasileira de Normas Técnicas (ABNT) reference style as defined by NBR 6023:2002.\n\nThree versions are available. The regular _author-date_ version and two _numerical_ versions where references are ordered based on their appearance in the text. The difference between the numerical versions is mostly on how the numbers are displayed both in the text and in the bibliography.\n!!!!! Examples\n* ALVES, C. *Navio negreiro*. {\"[S.l.]\"}: Virtual Books, 2000. Disponivel em: <http://www.terra.com.br/virtualbooks/freebook/port/Lport2/navionegreiro.htm>. Acesso em: 10 jan. 2002.\n* ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. *NBR 10520:* informação e documentação: citações em documentos: apresentação. Rio de Janeiro, 2002.\n* MANSILLA, H. C. F. La controversia entre universalismo y particularismo en la filosofia de la cultura. *Revista Latinoamericana de Filosofia*, Buenos Aires, v. 24, n. 2, primavera 1998.\n* RAMALHO, J. A. Variáveis. In: {\"______\"} *Clipper 5.0:* básico. São Paulo: Makron Books, 1991. Cap. 4, p. 67-92.\n* LIMA, R. S. *Expansão urbana e acessibilidade o caso das cidades médias brasileiras*. 1998. 81. Dissertação (Mestrado em Transporte). Escola de Engenharia de São Carlos, Universidade de São Paulo, São Carlos, 1998.\n!!!!! Author(s)\nYves Dhondt\n!!!!! Style Name\n{\"ABNT NBR 6023:2002*\"} {\"(ABNT_Author.XSL)\"}\nABNT NBR 6023:2002 - Numerical {\"(ABNT_Num.XSL)\"}\nABNT NBR 6023:2002 - Numerical Alternative {\"(ABNT_Num_Alt.XSL)\"}\n!!!!! Supported Types\n* ArticleInAPeriodical\n* Book\n* BookSection\n* ConferenceProceedings\n* Film\n* InternetSite\n* JournalArticle\n* Patent\n* Report\n** Standard\n** Thesis\n* SoundRecording\n*Note*: To use the subtypes (e.g. Thesis), enter the data using the base type (e.g. Report) and set the *Type* field of the source to the value of the subtype (e.g. Thesis).\n!!!! Usage\nSee [styles|Styles]\n!!!! Remarks\n* {\"ABNT NBR 6023:2002*\"} can display year suffices in combination with [BibWord Extender]. Without [BibWord Extender], all year suffices will be left blank.\n* If neither the place nor the publisher is known, the style displays {\"[S.l.]: [s.n.]\"} rather than {\"[S.l.: s.n.]\"}.\n* The author of this style does NOT speak Portuguese, so please do not contact him in Portuguese.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2013-04-01T07:58:09.897-07:00",
+    "Files": [
+      {
+        "Id": "8cc9d5bc-6b06-4e68-a473-0c716253abdd",
+        "FileName": "ABNT_Author.XSL",
+        "Url": "./6/8cc9d5bc-6b06-4e68-a473-0c716253abdd",
+        "Type": "Application",
+        "UploadDate": "2013-04-01T07:58:02.707-07:00"
+      },
+      {
+        "Id": "469744fe-7441-44cb-aa7c-d3e900b1ebbb",
+        "FileName": "ABNT_Num.XSL",
+        "Url": "./6/469744fe-7441-44cb-aa7c-d3e900b1ebbb",
+        "Type": "Application",
+        "UploadDate": "2013-04-01T07:58:02.783-07:00"
+      },
+      {
+        "Id": "66aad249-8d96-4580-98f1-52003f19f7bd",
+        "FileName": "ABNT_Num_Alt.XSL",
+        "Url": "./6/66aad249-8d96-4580-98f1-52003f19f7bd",
+        "Type": "Application",
+        "UploadDate": "2013-04-01T07:58:02.783-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "7",
+    "Name": "American Sociological Association style",
+    "DevelopmentStatus": "Stable",
+    "Description": "!!!!! Description\nImplementation of the reference style used by the [url:American Sociological Association|http://www.asanet.org].\n\nThis style is an author-date style and can be seen as one of the Harvard family.\n!!!!! Author(s)\nYves Dhondt\n!!!!! Style Name\nASA _(ASA.xsl)_\n!!!!! Supported Types\n* ArticleInAPeriodical\n* Book\n* BookSection\n* DocumentFromInternetSite\n* InternetSite\n* JournalArticle\n* Misc\n* Report (use this for dissertations as well)\n!!!!! Remarks\n* [BibWord Extender] is needed if you require suffices behind years.\n* For detailed installation instructions see [here|Styles].\n* Use the \"Short Title\" field for storing the series title in _BookSection_ and _Misc_.\n* In case a work in the bibliography has the same author as the previous work, the author needs to be manually replaced by 6 dashes (-).",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2013-04-01T08:03:00.423-07:00",
+    "Files": [
+      {
+        "Id": "933f094f-dd33-42aa-be76-e109deaf3d88",
+        "FileName": "ASA.XSL",
+        "Url": "./7/933f094f-dd33-42aa-be76-e109deaf3d88",
+        "Type": "Source Code",
+        "UploadDate": "2013-04-01T08:02:49.223-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "8",
+    "Name": "BibWord v.2.4",
+    "DevelopmentStatus": "Stable",
+    "Description": "*New Features*\n* added default 'MsoBibliography' style to footnote citations (Word 2008 only)\n* added a 'c' option to contributors so they can be counted (e.g. %Author:c%)\n*Bug Fixes*\n* fixed a year suffix issue where sources where not sorted but still required year suffices\n*More information*\nCheck [here|BibWord] for more general information on what [BibWord] is.\n",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2009-04-26T07:43:44.26-07:00",
+    "Files": [
+      {
+        "Id": "ada5aa77-f5b0-4902-ba72-38e3cf03daea",
+        "FileName": "BibWord_Stylesheet.XSL",
+        "Url": "./8/ada5aa77-f5b0-4902-ba72-38e3cf03daea",
+        "Type": "Source Code",
+        "UploadDate": "2009-04-26T07:43:22.63-07:00"
+      },
+      {
+        "Id": "2cfa47fb-0866-456e-9bfc-d899c2624b2b",
+        "FileName": "BibWord_Guide.docx",
+        "Url": "./8/2cfa47fb-0866-456e-9bfc-d899c2624b2b",
+        "Type": "Documentation",
+        "UploadDate": "2009-04-26T06:47:07.157-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "9",
+    "Name": "Nature style",
+    "DevelopmentStatus": "Stable",
+    "Description": "!!!!! Description\nImplementation of the reference style used by Nature.\n!!!!! Author(s)\nYves Dhondt\n!!!!! Style Name\nNature _(Nature.xsl)_\n!!!!! Supported Types\n* Book\n* BookSection\n* ConferenceProceedings\n* Film\n* InternetSite\n* JournalArticle\n* Misc\n* Patent\n* Report\n** Thesis\n*_Note:_* To use the subtypes (e.g. Thesis), enter the data using the base type (e.g. Report) and set the Type field of the source to the value of the subtype (e.g. Thesis).\n!!!!! Remarks\n* These styles are made using [BibWord].\n* For detailed installation instructions see [here|Styles].\n* For more information on how to set the in-text citations in superscript, see [here|Styles_FAQ].",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2013-04-01T08:13:37.05-07:00",
+    "Files": [
+      {
+        "Id": "4fd9738f-6196-41d2-b051-36b110072127",
+        "FileName": "Nature.XSL",
+        "Url": "./9/4fd9738f-6196-41d2-b051-36b110072127",
+        "Type": "Source Code",
+        "UploadDate": "2013-04-01T08:13:17.24-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "10",
+    "Name": "American Chemical Society styles",
+    "DevelopmentStatus": "Stable",
+    "Description": "!!!!! Description\nImplementation of the American Chemical Society (ACS) reference style. There are two versions of this style:\n* numeric italic in-text citation based on the order of appearance in the text (e.g.: (_1_));\n* numeric superscript in-text citation based on the order of appearance in the text (e.g.: 1);\n!!!!! Author(s)\nYves Dhondt\n!!!!! Style Name\nACS - Citation Sequence (italic)_(ACSCitSeq.xsl)_\nACS - Citation Sequence (superscript)_(ACSCitSeq2.xsl)_\n!!!!! Supported Types\n* ArticleInAPeriodical\n* Book\n** ElectronicBook \n* BookSection\n** ElectronicBookSection \n* ConferenceProceedings\n* DocumentFromInternetSite\n* InternetSite\n* JournalArticle\n** ElectronicJournalArticle \n* Patent\n* Report\n** Thesis\n*_Note:_* To use the subtypes (e.g. Thesis), enter the data using the base type (e.g. Report) and set the Type field of the source to the value of the subtype (e.g. Thesis).\n!!!!! Remarks\n* These styles are made using [BibWord].\n* For detailed installation instructions see [here|Styles].\n* For more information on how to set the in-text citations in superscript, see [here|Styles_FAQ].",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2013-04-01T08:01:05.437-07:00",
+    "Files": [
+      {
+        "Id": "cf9f6d57-183b-42f0-97cb-e5bedaab407e",
+        "FileName": "ACSCitSeq.xsl",
+        "Url": "./10/cf9f6d57-183b-42f0-97cb-e5bedaab407e",
+        "Type": "Source Code",
+        "UploadDate": "2013-04-01T08:00:53.957-07:00"
+      },
+      {
+        "Id": "705ec87f-4ac3-443e-8559-07fa7d8021d0",
+        "FileName": "ACSCitSeq2.xsl",
+        "Url": "./10/705ec87f-4ac3-443e-8559-07fa7d8021d0",
+        "Type": "Source Code",
+        "UploadDate": "2013-04-01T08:00:54.017-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "11",
+    "Name": "BibWord Extender v.2.0",
+    "DevelopmentStatus": "Stable",
+    "Description": "*New Features*\n* Allows for selection of a different style directory than the default one.\n* Allows for creating backups of your file (just so you can always be on the safe side).\n* Handles non-BibWord styles better.\n*Requirements*\n* For Windows\n** [url:.Net framework 3.5|http://www.microsoft.com/downloads/details.aspx?FamilyId=333325FD-AE52-4E35-B531-508D977D32A6&displaylang=en]\n* For Mac OS X\n** [url:Mono v.2.2|http://www.go-mono.com]. *!!! Newer versions of Mono seem to result in corrupt documents, do not use them !!!*\n** libgdiplus (does not always come automatically with Mono)\n** WindowsBase.dll (comes with this release)\n*Usage*\nThe common way to work with the BibWord Extender is:\n# Create your document.\n# Select the bibliography style you want to use.\n# Save your document and close Word 2007.\n# Run the BibWord Extender tool.\n# Open your document and select the style again (so all citation and bibliography fields get updated).\n*Notes for Mac OS X*\n* Place _WindowsBase.dll_ in the same folder as BibWordExtender2.exe.\n* You can run the application on Mac OS X by typing the following in a terminal window:\n{code}\n    mono BibWordExtender2\n{code}",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2010-09-26T01:53:34.403-07:00",
+    "Files": [
+      {
+        "Id": "1b759344-9a9a-4198-9d48-995d59616982",
+        "FileName": "BibWordExtender2.exe",
+        "Url": "./11/1b759344-9a9a-4198-9d48-995d59616982",
+        "Type": "Application",
+        "UploadDate": "2009-03-16T15:57:35.16-07:00"
+      },
+      {
+        "Id": "7056df49-ed5c-427f-a883-528af4c64774",
+        "FileName": "WindowsBase.zip",
+        "Url": "./11/7056df49-ed5c-427f-a883-528af4c64774",
+        "Type": "Application",
+        "UploadDate": "2009-03-16T15:57:35.27-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "12",
+    "Name": "Harvard - Exeter style",
+    "DevelopmentStatus": "Stable",
+    "Description": "!!!!! Description\nImplementation of the Harvard reference style. As the Harvard reference style is only defined as an _(author, date)_ reference style, its specification varies. This is an implementation for the specification at University of Exeter. As the guide only describes a limited number of types, this style is rather limited. Feel free to contact the authors if you have more information about other types.\n!!!!! Examples\n* Hart, G., Albrecht, M., Bull, R. and Marshall, L. (1992) 'Peer consultation: A professional development opportunity for nurses employed in rural settings', Australian Rural Health Conference, Toowoomba, 143-148.\n* McCarthy, P. and Hatcher, C. (1996) _Speaking persuasively: Making the most of your presentations_, Sydney: Allen and Unwin.\n* Muller, V. (1994) 'Trapped in the body: Transsexualism, the law, sexual identity', _The Australian Feminist Law Journal_, vol. 3, no. 2, Aug, pp. 103-107.\n* Napier, A. (1993a) _Fatal storm_, Sydney: Allen and Unwin.\n* Napier, A. (1993b) _Survival at sea_, Sydney: Allen and Unwin.\n* Skagren, E.I. and Odberg, B. (1998) 'Predictive factors for 1-year outcome of low-back and neck pain in patients treated in primary care: Comparison between the treatment strategies chiropractic and physiotherapy', _Pain_, vol. 77, no. 2, pp. 201-208, Available: Elsevier/ScienceDirect/ O304-3959(98)00101-8 {\"[8 Feb 1999]\"}.\n* 'Tax-free savings push', _Sunday Mail_ (4 Apr 1999), p. 3.\n* _The University Encyclopedia_ (1985), London: Roydon.\n* Young, C. (2001) _English Heritage position statement on the Valletta Convention_, {\"[Online]\"}, Available: http://www.archaeol.freeuk.com/EHPositionStatement.htm {\"[24 Aug 2001]\"}.\n!!!!! Author(s)\nYves Dhondt\n!!!!! Style Name\nHarvard - Exeter* _(HarvardExeter.xsl)_\n!!!!! Supported Types\n* ArticleInAPeriodical\n* Book\n* BookSection\n* ConferenceProceedings\n* InternetSite\n* JournalArticle\n* Misc\n!!!! Usage\nSee [styles|Styles]\n!!!! Remarks\n* This style is made using [BibWord].\n* For detailed installation instructions see [here|Styles].\n* Supports year suffices. To use them, the [BibWord Extender] tool is required. Without using the tool, all year suffices will be left blank.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2013-04-01T08:08:16.47-07:00",
+    "Files": [
+      {
+        "Id": "296d3b39-fea1-4efc-9b8b-7f59d31672b2",
+        "FileName": "HarvardExeter.XSL",
+        "Url": "./12/296d3b39-fea1-4efc-9b8b-7f59d31672b2",
+        "Type": "Source Code",
+        "UploadDate": "2013-04-01T08:08:03.21-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "13",
+    "Name": "Harvard - AGPS style",
+    "DevelopmentStatus": "Stable",
+    "Description": "!!!!! Description\nImplementation of the Harvard reference style. As the Harvard reference style is only defined as an _(author, date)_ reference style, its specification varies. Feel free to contact the authors if you have more information about non-supported types.\n!!!!! Examples\n* Arruda, W & Dixson, K 2007, _Career distinction: stand out by building your brand_, Wiley, Hoboken, NJ, viewed 19 August 2008, <http://library.books24x7.com.ezproxy.usq.edu.au/toc.asp?site=JE61N&bookid=20349>.\n* Berger, IE 2008, 'High (on) technology: producing tourist identities through technologized adventure', _Journal of Sport Tourism_, vol 13, no. 2, pp. 89-96.\n* _Courier Mail_ 2008, 'Parties still bicker in blended family', 29 July 2008, p. 10.\n* _Fahrenheit 9/11_ 2004, DVD, Columbia Tristar Home, Culver City, California. Written, produced and directed by Michael Moore.\n* Porteous, C 2008, 'Parties still bicker in blended family', _Courier Mail_, 29 July 2008, p. 10, viewed 12 August 2008, EBSCOHost MegaFILE Premier, Academic Search Premier, item: 200807291010646512.\n* Sandler, L 2008, _Becoming an extraordinary manager the 5 essentials for success_, AMACOM, New York, viewed 19 August 2008, <http://library.books24x7.com.ezproxy.usq.edu.au/toc.asp?site=JE61N&bookid=22370>.\n!!!!! Author(s)\nYves Dhondt\n!!!!! Style Name\nHarvard - AGPS* _(HarvardAGPS.xsl)_\n!!!!! Supported Types\n* ArticleInAPeriodical\n* Book\n* BookSection\n* ConferenceProceedings\n* DocumentFromInternetSite\n* Film\n* JournalArticle\n* Report\n** Standard\n_*Note:*_ To use the subtypes (e.g. Standard), enter the data using the base type (e.g. Report) and set the Type field of the source to the value of the subtype (e.g. Standard).\n!!!! Usage\nSee [styles|Styles]\n!!!! Remarks\n* This style is made using [BibWord].\n* For detailed installation instructions see [here|Styles].\n* Supports year suffices. To use them, the [BibWord Extender] tool is required. Without using the tool, all year suffices will be left blank.\n* Use the _comments_ field to put information about online databases.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2013-04-01T08:06:10.637-07:00",
+    "Files": [
+      {
+        "Id": "b0c9db02-d1b1-427b-9b57-edb882972b0e",
+        "FileName": "HarvardAGPS.XSL",
+        "Url": "./13/b0c9db02-d1b1-427b-9b57-edb882972b0e",
+        "Type": "Source Code",
+        "UploadDate": "2013-04-01T08:05:56.237-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "14",
+    "Name": "APA with square brackets and only one author",
+    "DevelopmentStatus": "Stable",
+    "Description": "An customized version of the APA reference style where the round brackets are replaced with square ones and only one author is shown followed by \", et al.\" if there is more than one.\n\nModifications are found between comments containing my name: *<!-- Yves Dhondt* ...\n\nThe style shows up in Word as *APA - Square Brackets - One Author*",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2009-01-20T07:52:50.55-08:00",
+    "Files": [
+      {
+        "Id": "f08e3739-bee1-49b5-a3cd-5dbde9994ba6",
+        "FileName": "APASquareBracketsOneAuthor.XSL",
+        "Url": "./14/f08e3739-bee1-49b5-a3cd-5dbde9994ba6",
+        "Type": "Source Code",
+        "UploadDate": "2009-01-20T07:52:50.283-08:00"
+      }
+    ]
+  },
+  {
+    "Id": "15",
+    "Name": "Chicago footnote style",
+    "DevelopmentStatus": "Beta",
+    "Description": "!!!!! Description\nImplementation of the Chicago footnote reference style. This style is mainly used by humanities. This style only provides in-text citations by means of footnotes. Currently, the bibliography field is not supported.\n!!!!! Author(s)\nYves Dhondt\n!!!!! Style Name\nCMS - Footnotes _(CMSFootnote.xsl)_\n!!!!! Supported Types\n* ArticleInAPeriodical\n* Book\n* BookSection\n* ConferenceProceedings\n* DocumentFromInternetSite\n* ElectronicSource\n* Film\n* InternetSite\n* JournalArticle \n* Report (used for thesis and dissertations)\n* SoundRecording\n!!!!! Usage\nAs there is no intelligent connection between citations in Word, users have to indicate if they want to use the full, short or ibid version of a citation themselves. Selecting which version to display, is done by using the suppress switches which can be reached by clicking the arrow next to a citation and selecting \"Edit Citation\".\n* To display the *full* version, do _not_ suppress anything.\n* To display the *short* version, suppress the _year_.\n* To display the *ibid* version, suppress the _author_, _title_, and _year_.\nAlternatively, the field can be edited manually by putting the cursor on it and pressing _shift+F9_.\n* To display the *full* version, make sure \\n, \\t, and \\y are not used.\n* To display the *short* version, add _\\y_ to the field.\n* To display the *ibid* version, add _\\n_, _\\t_, and _\\y_ to the field.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2008-12-09T11:13:31.387-08:00",
+    "Files": [
+      {
+        "Id": "11b79978-9008-45b6-878b-3a772293bca3",
+        "FileName": "CMSFootnote.XSL",
+        "Url": "./15/11b79978-9008-45b6-878b-3a772293bca3",
+        "Type": "Source Code",
+        "UploadDate": "2008-12-09T11:10:49.313-08:00"
+      }
+    ]
+  },
+  {
+    "Id": "16",
+    "Name": "MHRA footnote style",
+    "DevelopmentStatus": "Stable",
+    "Description": "!!!!! Description\nImplementation of the MHRA footnote reference style. This style only provides in-text citations in the means of footnotes. Currently, no bibliography is supported.\n\nThe following sources contain more information on the formatting guidelines of the MHRA style:\n* [url:http://www.mhra.org.uk/Publications/Books/StyleGuide/download.shtml]\n!!!!! Author(s)\nYves Dhondt\n!!!!! Style Name\nMHRA - Footnotes _(MHRAFootnote.xsl)_\n!!!!! Supported Types\n* ArticleInAPeriodical\n* Book\n* BookSection\n* ConferenceProceedings\n* DocumentFromInternetSite\n* ElectronicSource\n* Film\n* InternetSite\n* JournalArticle \n* Report (used for thesis and dissertations)\n* SoundRecording\n!!!!! Remarks\n* The current version of the style is made using [BibWord v.2.1|BibWord].\n* For detailed installation instructions see [here|Styles].",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2009-02-11T14:30:17.423-08:00",
+    "Files": [
+      {
+        "Id": "ee0a943e-98cb-4ee9-bbb8-efe649484fbd",
+        "FileName": "MHRAFootnote.XSL",
+        "Url": "./16/ee0a943e-98cb-4ee9-bbb8-efe649484fbd",
+        "Type": "Source Code",
+        "UploadDate": "2009-02-11T14:30:17.143-08:00"
+      }
+    ]
+  },
+  {
+    "Id": "17",
+    "Name": "Humana Press style",
+    "DevelopmentStatus": "Stable",
+    "Description": "!!!!! Description\nImplementation of the Humana Press reference style. \n\nThe style is based on the information from the following site: [url:http://www.springerprotocols.com/cdp/view/contributors#ref].\n\nNote that their claim of using the *New England Journal of Medicine* style is incorrect as can be seen on the web page of the journal at [url:http://authors.nejm.org/help/NewMs.asp#jstyle].\n!!!!! Author(s)\nJohannes Knabe\nYves Dhondt\n!!!!! Style Name\nHumana Press _(Humana.xsl)_\n!!!!! Supported Types\n* ArticleInAPeriodical\n* Book\n* BookSection\n* ConferenceProceedings\n* DocumentFromInternetSite\n* ElectronicSource\n* InternetSite\n* JournalArticle \n* Misc\n* Report\n!!!!! Remarks\n* This style is made using [BibWord].\n* For detailed installation instructions see [here|Styles].",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2013-04-01T08:10:08.323-07:00",
+    "Files": [
+      {
+        "Id": "60cff474-54bd-4ead-97c7-e3c185b90661",
+        "FileName": "Humana.XSL",
+        "Url": "./17/60cff474-54bd-4ead-97c7-e3c185b90661",
+        "Type": "Source Code",
+        "UploadDate": "2013-04-01T08:09:50.15-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "18",
+    "Name": "APA - Numerical with Square Brackets",
+    "DevelopmentStatus": "Stable",
+    "Description": "!!!!! Description\nA numerical style where the bibliography entries are sorted in reference order but with an APA formatting style.\n!!!!! Author(s)\nSteve Charles\n!!!!! Style Name\nAPA - Numerical with Square Brackets _(APANmericalSquare.XSL)_\n!!!!! Supported Types\n* Art\n* ArticleInAPeriodical\n* Book\n* BookSection\n* ConferenceProceedings\n* Case\n* DocumentFromInternetSite\n* ElectronicSource\n* Film\n* InternetSite\n* Interview\n* JournalArticle\n* Misc\n* Patent\n* Performance\n* Report\n* SoundRecording\n!!!!! Remarks\n* Derived from the _APA style_ which comes with Microsoft Word 2007.\n* Updated by Yves Dhondt to remove the title from in-text citations in case of multiple works by the same author where shown)",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2009-04-25T01:25:40.873-07:00",
+    "Files": [
+      {
+        "Id": "06dbf9f6-35a3-4c0b-a2f9-e2b18bc349e1",
+        "FileName": "APANmericalSquare.XSL",
+        "Url": "./18/06dbf9f6-35a3-4c0b-a2f9-e2b18bc349e1",
+        "Type": "Application",
+        "UploadDate": "2009-04-25T01:25:40.717-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "19",
+    "Name": "IEEE styles",
+    "DevelopmentStatus": "Stable",
+    "Description": "!!!!! Description\nImplementation of two variants of the IEEE bibliography style. One variant uses the reference order for in-text citations while the other uses the alphabetical order by author for in-text citations.\n!!!!! Author(s)\nYves Dhondt\n!!!!! Style Name\nIEEE - Alphabetical Order{\"*\"} _(IEEE{\"_\"}Alphabetical.xsl)_\nIEEE - Reference Order _(IEEE{\"_\"}Reference.xsl)_\n!!!!! Supported Types\n* ArticleInAPeriodical\n* Book\n* BookSection\n* ConferenceProceedings\n* DocumentFromInternetSite\n* ElectronicSource\n* InternetSite\n* JournalArticle \n* Misc\n* Patent\n* Report\n** Standard\n** Thesis \n*_Note:_* To use the subtypes (e.g. Thesis), enter the data using the base type (e.g. Report) and set the Type field of the source to the value of the subtype (e.g. Thesis).\n!!!!! Remarks\n* These styles are made using [BibWord].\n* To use the _IEEE - Alphabetical style{\"*\"}_ the [BibWord Extender] tool is required.\n* For detailed installation instructions see [here|Styles].\n!!!!! FAQ\n_*Q: Why do I get 'BO' between brackets instead of a number when using the IEEE - Alphabetical style{\"*\"}?*_\n\n_*A:* The IEEE - Alphabetical{\"*\"} style requires the [BibWord Extender] tool to function properly. This tool will decide the on the numbers to place instead of 'BO'._\n\n_*Q: The number column is too small and is spread over multiple rows. Is this a bug?*_\n\n_*A:* No. BibWord lets Word select the best width for each column. And sometimes, Word's best, is just not what you want. In that case, just place your cursor on the cell border between the number and the text and drag the border to the right._",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2013-04-01T08:11:42.813-07:00",
+    "Files": [
+      {
+        "Id": "b3ebac6d-3c17-462e-ac96-63a6d0fe7065",
+        "FileName": "IEEE_Reference.XSL",
+        "Url": "./19/b3ebac6d-3c17-462e-ac96-63a6d0fe7065",
+        "Type": "Source Code",
+        "UploadDate": "2013-04-01T08:11:25.513-07:00"
+      },
+      {
+        "Id": "a64fe4eb-9e31-4f96-b68a-88d25fe360fd",
+        "FileName": "IEEE_Alphabetical.XSL",
+        "Url": "./19/a64fe4eb-9e31-4f96-b68a-88d25fe360fd",
+        "Type": "Source Code",
+        "UploadDate": "2013-04-01T08:11:25.527-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "20",
+    "Name": "Council of Science Editors styles",
+    "DevelopmentStatus": "Stable",
+    "Description": "!!!!! Description\nImplementation of the Council of Science Editors (CSE) reference style. There are three versions of this style:\n* _Citation Sequence_: numeric in-text citation based on the order of appearance in the text;\n* _Name Sequence_: numeric in-text citation based on the position of the source within the alphabetically ordered bibliography;\n* _Name Year_: classic author-date citation system. \nCurrently, only an implementation of the first two is available.\n\nAs the current version of the bibliography tools in Word 2007 does not support to order a bibliography and use the position as in-text citation, the [BibWord Extender] tool is needed to achieve the _Name Sequence_ version of the style.\n!!!!! Author(s)\nYves Dhondt\n!!!!! Style Name\nCSE - Citation Sequence _(CSECitSeq.xsl)_\nCSE - Name Sequence{\"*\"} _(CSENameSeq.xsl)_\n!!!!! Supported Types\n* ArticleInAPeriodical\n* Book\n** ElectronicBook \n* BookSection\n** ElectronicBookSection \n* ConferenceProceedings\n* DocumentFromInternetSite\n* ElectronicSource\n* Film\n* InternetSite\n* JournalArticle \n* Patent\n* Report\n** Thesis \n* SoundRecording\n*_Note:_* To use the subtypes (e.g. Thesis), enter the data using the base type (e.g. Report) and set the Type field of the source to the value of the subtype (e.g. Thesis).\n!!!!! Remarks\n* These styles are made using [BibWord].\n* For detailed installation instructions see [here|Styles].\n* To use the _CSE - Name Sequence style{\"*\"}_ the [BibWord Extender] tool is required.\n!!!!! FAQ\n_*Q: Why do I get 'BO' between brackets instead of a number when using the CSE - Name Sequence style{\"*\"}?*_\n\n_*A:* The CSE - Name Sequence{\"*\"} style requires the [BibWord Extender] tool to function properly. This tool will decide the on the numbers to place instead of 'BO'._",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2013-04-01T08:04:51.06-07:00",
+    "Files": [
+      {
+        "Id": "c5b471a9-c65e-4a81-8482-d76fcdd95bff",
+        "FileName": "CSECitSeq.XSL",
+        "Url": "./20/c5b471a9-c65e-4a81-8482-d76fcdd95bff",
+        "Type": "Application",
+        "UploadDate": "2013-04-01T08:04:39.157-07:00"
+      },
+      {
+        "Id": "51e49675-3db3-4f3f-9c20-69ff0022c08f",
+        "FileName": "CSENameSeq.XSL",
+        "Url": "./20/51e49675-3db3-4f3f-9c20-69ff0022c08f",
+        "Type": "Application",
+        "UploadDate": "2013-04-01T08:04:39.203-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "21",
+    "Name": "Vancouver style",
+    "DevelopmentStatus": "Stable",
+    "Description": "!!!!! Description\nImplementation of the Vancouver reference style. This style uses numeric in-text citations based on the order of the first appearance of a source in the text.\n\nThe following sources contain more information on the formatting guidelines of the Vancouver style:\n* [url:http://www.library.uq.edu.au/training/citation/vancouv.pdf]\n* [url:http://www.library.uwa.edu.au/education_training_and_support/guides/vancouver_citation_style]\n!!!!! Author(s)\nYves Dhondt\n!!!!! Style Name\nVancouver _(Vancouver.xsl)_\n!!!!! Supported Types\n* ArticleInAPeriodical\n* Book\n* BookSection\n* ConferenceProceedings\n* DocumentFromInternetSite\n* ElectronicSource\n* InternetSite\n* JournalArticle \n** ElectronicArticle \n* Misc\n* Patent\n* Report\n** Thesis\n*_Note:_* To use the subtypes (e.g. Thesis), enter the data using the base type (e.g. Report) and set the Type field of the source to the value of the subtype (e.g. Thesis).\n!!!!! Remarks\n* This style is made using [BibWord].\n* For detailed installation instructions see [here|Styles].\n* See the [FAQ|Styles_FAQ] for more instructions on how to use superscript.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2013-04-01T08:12:37.233-07:00",
+    "Files": [
+      {
+        "Id": "e8f78424-dda7-40b5-808f-34c1be1517eb",
+        "FileName": "Vancouver.XSL",
+        "Url": "./21/e8f78424-dda7-40b5-808f-34c1be1517eb",
+        "Type": "Source Code",
+        "UploadDate": "2013-04-01T08:12:19.607-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "22",
+    "Name": "Lecture Notes in Computer Science style",
+    "DevelopmentStatus": "Stable",
+    "Description": "!!!!! Description\nImplementation of the Lecture Notes in Computer Science (LNCS) reference style. Sources are sorted based on their occurrence in the text.\n\nThe implementation is based on the BibTeX style for LNCS ([url:splncs.bst|http://www.springer.com/computer/lncs?SGWID=0-164-7-72376-0])\n!!!!! Auhtor(s)\nYves Dhondt\n!!!!! Style Name\nLNCS _(LNCS.xsl)_\n!!!!! Supported Types\n* ArticleInAPeriodical\n* Book\n* BookSection\n* ConferenceProceedings\n* DocumentFromInternetSite\n* ElectronicSource\n* InternetSite\n* JournalArticle\n* Misc\n* Report\n** Thesis\n_*Note:*_ To use the subtypes _(e.g. Thesis)_, enter the data using the base type _(e.g. Report)_ and set the *Type* field of the source to the value of the subtype _(e.g. Thesis)_.\n!!!!! Remarks\n* LNCS does not provide formatting guidelines for any type of electronic content. Hence, the formatting rules provided in here are the authors own preference.\n* For detailed installation instructions see [here|Styles].\n* When using the templates provided by LNCS, the bibliography might not be formatted nicely by default. This is because, the \"Bibliographyé style inherits from the \"Normal\" style to which LNCS added indentation. To solve this problem, press {\"SHIFT+CTRL+ALT+S\"} to get to the style pane. Once your bibliography is added, you will find a style in there called \"Bibliography\" or a localized variant of that name. Right click it and select \"Modify ...\". Now click the \"Format\" button and select \"Paragraph...\". Under \"Indentation\", change \"Special\" to \"(none)\". Press \"Ok\" a few times to close all dialogs. Everything should be visible now.\n* The LNCS bibliography is created as a two column table. So if you want a wider tab between the number and the text, you can just drag the column border to the right.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2013-04-01T08:14:06.437-07:00",
+    "Files": [
+      {
+        "Id": "498b6abf-9bb5-420f-9e19-77557a64db9c",
+        "FileName": "LNCS.XSL",
+        "Url": "./22/498b6abf-9bb5-420f-9e19-77557a64db9c",
+        "Type": "Source Code",
+        "UploadDate": "2013-04-01T08:13:47.903-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "23",
+    "Name": "Harvard - Leeds style",
+    "DevelopmentStatus": "Stable",
+    "Description": "!!!!! Description\nImplementation of the Harvard reference style. As the Harvard reference style is only defined as an _(author, date)_ reference style, its specification varies. This is an implementation for the specification at Leeds University.\n!!!!! Examples\n* MIDDLETON, D. and A. D. SPAULDING. 1986. _A Tutorial Review of Elements of Weak Signal Detection in Non-Gaussian EMI Environments_.\n* MIKKELSEN, B., G. RAYBON, R.-J. ESSIAMBRE et al. 1999. 160 Gbit/s Single-channel Transmission Over 300 km Nonzero-dispersion Fiber With Semiconductor Based Transmitter and Demultiplexer. _In: Proc. ECOC'99._, pp.28-29.\n* OKADA, Y., K. DEJIMA, and T. OHISHI. 1995. Analysis and Comparison of PM Synchronous Motor and Induction Motor Type Magnetic Bearings. _IEEE Trans. Ind. Appl._ *31*, pp.1047-1053.\n* PADHYE, J., V. FIROIU, and D. TOWSLEY. 1999. _A Stochastic Model of TCP Reno Congestion Avoidance and Control_. Amherst.\n* PATASHNIK, Oran. 1988. _Designing BibTex Styles_. {\"[online]\"}. Available from World Wide Web: <[url:http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc]>\n* RAMAKRISHNAN, K. K. and S. FLOYD. 1999. RFC 2481. _A Proposal to Add Explicit Congestion Notification (ECN) to IP_. IETF.\n* ROSE, H. E. 1988. _In: A Course in Number Theory_, New York: Oxford Univ. Press, 3.\n!!!!! Author(s)\nYves Dhondt\n!!!!! Style Name\nHarvard - Leeds{\"*\"} _(HarvardLeeds.xsl)_\n!!!!! Supported Types\n* Art\n* ArticleInAPeriodical\n* Book\n** ElectronicBook\n* BookSection\n* ConferenceProceedings\n* Case\n* DocumentFromInternetSite\n* ElectronicSource\n* Film\n* InternetSite\n** AnonymousInternetSite\n** Blog\n* Interview\n* JournalArticle\n** ElectronicJournalArticle\n* Misc\n* Patent\n* Performance\n* Report\n** Standard\n** Thesis\n* SoundRecording\n_*Note:*_ To use the subtypes _(e.g. Thesis)_, enter the data using the base type _(e.g. Report)_ and set the *Type* field of the source to the value of the subtype _(e.g. Thesis)_.\n!!!! Remarks\n* This style is made using [BibWord].\n* For detailed installation instructions see [here|Styles].\n* Supports year suffices. To use them, the [BibWord Extender] tool is required. Without using the tool, all year suffices will be left blank.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2013-04-01T08:09:01.4-07:00",
+    "Files": [
+      {
+        "Id": "8bc2fce8-6676-4eca-8cf8-0ca45bf6e1a0",
+        "FileName": "HarvardLeeds.XSL",
+        "Url": "./23/8bc2fce8-6676-4eca-8cf8-0ca45bf6e1a0",
+        "Type": "Source Code",
+        "UploadDate": "2013-04-01T08:08:46.44-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "24",
+    "Name": "Association for Computing Machinery style",
+    "DevelopmentStatus": "Stable",
+    "Description": "!!!!! Description\nImplementation of the Association for Computing Machinery (ACM) reference style. Currently two versions of this style are supported:\n* _Citation Sequence_: numeric in-text citation based on the order of appearance in the text;\n* _Name Sequence_: numeric in-text citation based on the position of the source within the alphabetically ordered bibliography.\nAs the current version of the bibliography tools in Word 2007 does not support to order a bibliography and use the position as in-text citation, the [BibWord Extender] tool is needed to achieve the Name Sequence version of the style.\n!!!!! Author(s)\nYves Dhondt\n!!!!! Style Name\nACM - Citation Sequence _(ACMCitSeq.xsl)_\nACM - Name Sequence{\"*\"} _(ACMNameSeq.xsl)_\n!!!!! Supported types\n* ArticleInAPeriodical\n* Book\n* BookSection\n* ConferenceProceedings\n* JournalArticle\n* Misc\n* Report\n** Thesis\n_*Note:*_ To use the subtypes _(e.g. Thesis)_, enter the data using the base type _(e.g. Report)_ and set the *Type* field of the source to the value of the subtype _(e.g. Thesis)_.\n!!!!! Remarks\n* These styles are made using [BibWord].\n* For detailed installation instructions see [here|Styles].\n* To use the _ACM - Name Sequence{\"*\"}_ style the [BibWord Extender] tool is required.\n!!!!! FAQ\n_*Q: Why do I get 'BO' between brackets instead of a number when using the ACM - Name Sequence style{\"*\"}?*_\n\n_*A:* The ACM - Name Sequence{\"*\"} style requires the [BibWord Extender] tool to function properly. This tool will decide on the numbers to place instead of 'BO'._",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2013-04-01T07:59:30.97-07:00",
+    "Files": [
+      {
+        "Id": "b7534986-c0f9-4ae5-98be-0e8f19caddd4",
+        "FileName": "ACMCitSeq.XSL",
+        "Url": "./24/b7534986-c0f9-4ae5-98be-0e8f19caddd4",
+        "Type": "Application",
+        "UploadDate": "2013-04-01T07:59:21.983-07:00"
+      },
+      {
+        "Id": "991de459-e42a-4e8c-b362-13dd241c1db4",
+        "FileName": "ACMNameSeq.XSL",
+        "Url": "./24/991de459-e42a-4e8c-b362-13dd241c1db4",
+        "Type": "Application",
+        "UploadDate": "2013-04-01T07:59:22.03-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "25",
+    "Name": "American Medical Association style",
+    "DevelopmentStatus": "Stable",
+    "Description": "!!!!! Description\nImplementation of the American Medical Association (AMA) reference style.\n!!!!! Author(s)\nYves Dhondt\n!!!!! Style Name\nAMA _(AMA.xsl)_\n!!!!! Supported types\n* ArticleInAPeriodical\n* Book\n* BookSection\n* ConferenceProceedings\n* Case\n* DocumentFromInternetSite\n* Film\n* InternetSite\n* JournalArticle\n* Misc\n* Patent\n* Report\n** Thesis\n* SoundRecording\n_*Note:*_ To use the subtypes _(e.g. Thesis)_, enter the data using the base type _(e.g. Report)_ and set the *Type* field of the source to the value of the subtype _(e.g. Thesis)_.\n!!!!! Remarks\n* These styles are made using [BibWord].\n* For detailed installation instructions see [here|Styles].",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2013-04-01T08:02:15.48-07:00",
+    "Files": [
+      {
+        "Id": "1f00866c-b9ac-4879-9a39-07a908c8adcf",
+        "FileName": "AMA.XSL",
+        "Url": "./25/1f00866c-b9ac-4879-9a39-07a908c8adcf",
+        "Type": "Application",
+        "UploadDate": "2013-04-01T08:02:04.733-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "26",
+    "Name": "Harvard - Anglia style",
+    "DevelopmentStatus": "Stable",
+    "Description": "!!!!! Description\nImplementation of the Harvard reference style. As the Harvard reference style is only defined as an _(author, date)_ reference style, its specification varies. This is an implementation for the specification at Anglia Rushkin University.\n!!!!! Examples\n* Okada, Y., Dejima, K. & Ohishi, T., 1995. Analysis and Comparison of PM Synchronous Motor and Induction Motor Type Magnetic Bearings. _IEEE Trans. Ind. Appl._, 31, pp.1047-53.\n* Padhye, J., Firoiu, V. & Towsley, D., 1999. _A Stochastic Model of TCP Reno Congestion Avoidance and Control_. CMPSCI Tech. Rep. Univ. of Massachusetts\n* Rose, H.E., 1988. In _A Course in Number Theory_. New York: Oxford Univ. Press. Ch. 3.\n* Sorin, W.V., 1998. Optical Reflectometry for Component Characterization. In Derickson, D. ed. _Fiber Optic Test and Measurement_. Englewood Cliffs: Prentice-Hall.\n* Wegmuller, M., von der Weid, J.P., Oberson, P. & Gisin, N., 2000. High Resolution Fiber Distributed Measurements With Coherent OFDR. In _Proc. ECOC'00_. Munich, Germany.\n!!!!! Author(s)\nYves Dhondt\n!!!!! Style Name\nHarvard - Anglia* _(HarvardAnglia.xsl)_\n!!!!! Supported Types\n* ArticleInAPeriodical\n* Book\n* BookSection\n* ConferenceProceedings\n* DocumentFromInternetSite\n* Film\n* InternetSite\n* JournalArticle\n* Report (also use for dissertations and standards)\n!!!! Usage\nSee [styles|Styles]\n!!!! Remarks\n* This style is made using [BibWord].\n* For detailed installation instructions see [here|Styles].\n* Year suffices are now supported. To use them, the [BibWord Extender] is required. Without using the tool, they will all be left blank.\n* Special thanks to David McGowan for reporting some bugs.\n* If you want a space between p./pp. and the actual page number, open the file and replace all ':p.:pp.:' by ':p. :pp. '",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2013-04-01T08:07:25.47-07:00",
+    "Files": [
+      {
+        "Id": "de24e44d-2211-4b81-ab42-856720a73386",
+        "FileName": "HarvardAnglia.XSL",
+        "Url": "./26/de24e44d-2211-4b81-ab42-856720a73386",
+        "Type": "Source Code",
+        "UploadDate": "2013-04-01T08:07:11.85-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "27",
+    "Name": "APA without space",
+    "DevelopmentStatus": "None",
+    "Description": "According to some people the APA style provided by Microsoft in Word 2007 is incorrect when it comes to spacing between journal names, volumes and issues. This release addresses this issue.\n\n!!! Usage\nTo use the style, copy the XSL file into the Word 2007 bibliography style directory. This directory can vary depending on where Word is installed: \n{{\n    <winword.exe directory>\\Bibliography\\Style\n}} On most machines this will be:\n{{\n    %program files%\\Microsoft Office\\Office12\\Bibliography\\Style\n}}Once the style is copied to the directory, it will show up every time Word 2007 is opened. It will be labeled as \"APA without space\".",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2008-10-23T11:20:58.507-07:00",
+    "Files": [
+      {
+        "Id": "74335f7a-b606-4f99-af2d-c5c05810a266",
+        "FileName": "APASpace.XSL",
+        "Url": "./27/74335f7a-b606-4f99-af2d-c5c05810a266",
+        "Type": "Application",
+        "UploadDate": "2008-10-23T11:20:58.163-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "28",
+    "Name": "ISO 690 - Always use names first",
+    "DevelopmentStatus": "None",
+    "Description": "This is a custom style made as an answer to a question asked on the [url:Microsoft Word newsgroups|http://groups.google.be/group/microsoft.public.word.docmanagement/browse_thread/thread/8a28a5a9a2a607d7/5559508d714a50fa?hl=nl&].",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2008-09-24T08:37:41.44-07:00",
+    "Files": [
+      {
+        "Id": "363db697-b585-48e1-b4fe-8efbdf7edfc1",
+        "FileName": "ISO690Alt.XSL",
+        "Url": "./28/363db697-b585-48e1-b4fe-8efbdf7edfc1",
+        "Type": "Application",
+        "UploadDate": "2008-09-24T08:37:41.457-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "29",
+    "Name": "BibOrder",
+    "DevelopmentStatus": "Stable",
+    "Description": "!!! Note\n*_BibOrder is deprecated, you should use [release:BibWord Extender|19474] instead._*\n!!! Description\n*_BibOrder_* is a command-line utility which allows the position of sorted bibliographic entries to be used as a reference number in in-text citations, something which is not possible with the default Word 2007 bibliographic tools.\n\n*_BibOrder_* works in combination with all *_BibWord_* derived styles and adds an extra _b:BibOrder_ element to every _b:Source_ element. The value of that element is the position of the source in the sorted bibliography and can then be used by the in-text citation.\n!!! Usage\n*_BibOrder_* is run from the command-line. When no parameters are specified, *_BibOrder_* will list the different available parameters:\n\n{{\nUsage: BibOrder /d:doc [/s:stylesheet] [/l:styleloc]\n\n    /d:doc       Path to the document to adapt. If no other parameters are\n                 specified, the program uses the stylesheet specified by the\n                 the document and looks for it in the default directory.\n    /s:style     Optional. Overwrites the stylesheet to use.\n    /l:styleloc  Optional. Overwrites the directory to look for the stylesheet.\n                 Ignored if /s is used.\n}}Only, the _/d_ parameter is required.\n\nThe common way to work with *_BibOrder_* is:\n# Create your document.\n# Select the bibliography style you want to use.\n# Save your document and close Word 2007.\n# Run the *_BibOrder_* tool.\n# Open your document and select the style again (so all citation and bibliography fields get reformatted).\n\nRemark: If *_BibOrder_* is executed using an invalid style, an exception will be thrown.\n!!! History\n*version 1.0.0.1*:\n-fixed encoding type bug\n*version 1.0.0.0*:\n-initial version",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2008-11-15T15:18:00.027-08:00",
+    "Files": [
+      {
+        "Id": "f1e81e9e-5e2c-4148-ac0f-ae23d9bf693b",
+        "FileName": "BibOrder.exe",
+        "Url": "./29/f1e81e9e-5e2c-4148-ac0f-ae23d9bf693b",
+        "Type": "Application",
+        "UploadDate": "2008-09-08T11:01:07.793-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "30",
+    "Name": "BibType",
+    "DevelopmentStatus": "None",
+    "Description": "When adding a new bibliographic source to a Word document, Word offers a form in which you can select the type of the source and fill in specific fields. The form presented to the user is generated from a localized xml file called _bibform.xml_ which you can find in a subdirectory of the Microsoft Office 12 directory.\n\nAt the moment 17 unique types of sources are defined:\n\n{code}\n  Art                        ConferenceProceedings           Interview             SoundRecording\n  ArticleInAPeriodical       DocumentFromInternetSite        JournalArticle        Report\n  Book                       ElectronicSource                Misc\n  BookSection                Film                            Patent\n  Case                       InternetSite                    Performance\n{code}\nThere are two problems with this set. First, some of the types are defined to broad. For example, Report covers both reports and thesis while they are often formatted differently. Second, some types such as Bill and Grant are completely absent. *BibType* tackles those issues.\n\n*BibType* is a small command-line utilty which allows users to generate new (localized) bibform.xml files tailored to their own specifications. It is not only possible to add extra fields to existing types, but also to create new types. Of course, styles not aware of those extra fields and types, will not generate output for them.\n\nWhen executed without parameters, the *BibType* tool will display a short explaination on how to use it. More information on the subject can also be found in the *BibType guide*.\n\n\n*Remark 1*: adding entirely new types violates the Word bibliography schema and might result in sources not being processed correctly by applications sticking to the schema. However, Word 2007 does not require the type to be valid.\n\n*Remark 2*: the _types.xml_ included with this release generates a _bibform.xml_ equal to the current one with one exception: the fields of the 'Misc' source type are extended to contain any valid bibliographic source field.\n",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2008-08-07T09:54:14.06-07:00",
+    "Files": [
+      {
+        "Id": "bffd1e78-d525-4109-84cb-a8ed6703b539",
+        "FileName": "BibType.exe",
+        "Url": "./30/bffd1e78-d525-4109-84cb-a8ed6703b539",
+        "Type": "Application",
+        "UploadDate": "2008-08-04T14:39:05.797-07:00"
+      },
+      {
+        "Id": "9a0eb5de-f7e9-4006-ac90-fe43cedae007",
+        "FileName": "BibType.xsd",
+        "Url": "./30/9a0eb5de-f7e9-4006-ac90-fe43cedae007",
+        "Type": "Source Code",
+        "UploadDate": "2008-08-04T14:39:05.89-07:00"
+      },
+      {
+        "Id": "5795f5f1-0cde-483f-b96d-12b5b667e1fb",
+        "FileName": "Types.xml",
+        "Url": "./30/5795f5f1-0cde-483f-b96d-12b5b667e1fb",
+        "Type": "Source Code",
+        "UploadDate": "2008-08-04T14:40:17.09-07:00"
+      },
+      {
+        "Id": "17822477-c988-46b0-b2a8-5506ab9fb0e9",
+        "FileName": "BibType_Guide.docx",
+        "Url": "./30/17822477-c988-46b0-b2a8-5506ab9fb0e9",
+        "Type": "Documentation",
+        "UploadDate": "2008-08-07T09:54:14.123-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "31",
+    "Name": "APA with Title",
+    "DevelopmentStatus": "None",
+    "Description": "This style is made by request. It is an extension of the APA style where the title is shown as well for in-text citations. \n\n*Usage*\nCopy the style to your Word 2007 style directory, open Word 2007 and select 'APA with Title' from the reference tab.\n\n*Remarks*\nSuppressing the title in an in-text citation can be done by adding the \\t switch to the field or by right-clicking the citation, selecting 'Edit Citation...' and then checking the box next to Title.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2008-07-26T16:36:44.177-07:00",
+    "Files": [
+      {
+        "Id": "165e20d7-da26-4fdd-9421-c179fdadad16",
+        "FileName": "APAwithTitle.XSL",
+        "Url": "./31/165e20d7-da26-4fdd-9421-c179fdadad16",
+        "Type": "Source Code",
+        "UploadDate": "2008-07-26T16:36:44.177-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "32",
+    "Name": "IEEE style (v.2.5)",
+    "DevelopmentStatus": "Stable",
+    "Description": "\n! Depecrated, use one of the [release:BibWord variants|19764] instead.\n\n\n\n*General*\nA stylesheet for an IEEE formatted bibliography. The stylesheet is based on the formatting guidelines from the following three sources:\n* [url:IEEE style manual|http://www.ieee.org/portal/cms_docs_iportals/iportals/publications/authors/transjnl/stylemanual.pdf];\n* [url:IEEE standards style manual|http://standards.ieee.org/guides/style/2007_Style_Manual.pdf];\n* [url:IEEEtran.bst stylesheet for LaTeX|http://www.ctan.org/get/macros/latex/contrib/IEEEtran/bibtex/IEEEtran.bst].\n\n*Supported source types*\nThis release supports the following types of bibliographical entry\n* Book\n* BookSection\n* JournalArticle\n* ArticleInAPeriodical\n* ConferenceProceedings\n* Report (use Report with type containing 'rep')\n* InternetSite (alternatively, use ElectronicSource)\n* DocumentFromInternetSite (alternatively, use ElectronicSource)\n* Patent\n* Standard (use Report)\n* M.S. thesis (use Report with type containing 'm' and 'thesis')\n* PhD. dissertation (use Report with type containing 'phd')\n* Blog (use ElectronicSource with medium being 'Blog')\n* CD-ROM (use ElectronicSource with medium containing 'CD-rom')\n\n*Usage*\nTo use this style, it should be copied to the Microsoft Office 12 style directory. Commonly this directory is located at:\n \n_%programfiles%\\Microsoft Office\\Office12\\Bibliography\\Style_\n\nOnce the style is copied, 'IEEE' comes available in the list with styles supported by Microsoft Word 2007.\n\nCheck out the docx file with examples for more information.\n\n*Changes*\n* The bibliography is now automatically formatted according to the 'Bibliography' style defined in Word.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2009-08-07T15:43:05.417-07:00",
+    "Files": [
+      {
+        "Id": "ec3127ef-34a4-44bb-a590-00b2af8e24bc",
+        "FileName": "IEEE.XSL",
+        "Url": "./32/ec3127ef-34a4-44bb-a590-00b2af8e24bc",
+        "Type": "Source Code",
+        "UploadDate": "2008-07-16T01:15:45.327-07:00"
+      },
+      {
+        "Id": "20746d44-2af8-4a44-80fb-4f1d534a2007",
+        "FileName": "IEEE_formatting_examples.docx",
+        "Url": "./32/20746d44-2af8-4a44-80fb-4f1d534a2007",
+        "Type": "Source Code",
+        "UploadDate": "2008-07-16T01:15:45.357-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "33",
+    "Name": "IEEE style with tags",
+    "DevelopmentStatus": "None",
+    "Description": "This is a custom style based on the IEEE style v.2.4. Instead of reference order numbers, tags are used to identify citations.\n\n*Usage*\nCopy the style to your Word 2007 style directory, open Word 2007 and select 'IEEE with tags' from the reference tab.\n\n*Remarks*\nUsing tags over numbers gives you the capability to sort the entries in the bibliography in whatever order you want. For example, if you wanted to sort the references in the bibliography based on the tag rather than their occurence in the list, you would change line 198 from:\n&nbsp;&nbsp;&nbsp;&nbsp;_<xsl:sort select=\"b:RefOrder\" data-type=\"number\"/>_\ninto\n&nbsp;&nbsp;&nbsp;&nbsp;_<xsl:sort select=\"b:Tag\" data-type=\"text\"/>_\n\nRemember, if you want to sort the entries based on the authors name, it is not always as easy. You have to take special care for cases where there are no authors, or where the authors are actually the editors for example.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2008-07-09T23:41:36.893-07:00",
+    "Files": [
+      {
+        "Id": "52ef4334-4961-475a-a211-3f19f679724a",
+        "FileName": "IEEEwithTags.XSL",
+        "Url": "./33/52ef4334-4961-475a-a211-3f19f679724a",
+        "Type": "Source Code",
+        "UploadDate": "2008-07-09T23:41:36.91-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "34",
+    "Name": "ISO 690 Numerical Extension",
+    "DevelopmentStatus": "Stable",
+    "Description": "This style is made by request. It is an extension of the ISO 690 numerical style using square brackets rather than rounded ones. It also aligns numbers and text in the bibliography. \n\n*Usage*\nCopy the style to your Word 2007 style directory, open Word 2007 and select 'ISO690 - Numerical Reference - Extension' from the reference tab.\n\n*Changes*\n-Fixed a bug with MsoBibliography. (version 2008.7.20)\n\n*Remarks*\nThe numbers in the final bibliography are aligned to the left. If you want them aligned to the right, you will have to change the following line (4084) from\n\n{code:xml}\n<td valign=\"top\" align=\"left\">\n{code:xml}\ninto\n\n{code:xml}\n<td valign=\"top\" align=\"right\">\n{code:xml}\n\nThe numbers at the bibliography are now listed between square brackets. If you want to use the original style, i.e. the number followed by a dot, you will have to change the following lines (4106-4108) from\n\n{code:xml}\n<xsl:text>[</xsl:text>\n<xsl:value-of select=\"./b:RefOrder\"/>\n<xsl:text>]</xsl:text>\n{code:xml}\ninto\n\n{code:xml}\n<xsl:value-of select=\"./b:RefOrder\"/>\n<xsl:text>.</xsl:text>\n{code:xml}",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2009-10-08T15:01:57.203-07:00",
+    "Files": [
+      {
+        "Id": "135c625a-4f3b-42b6-b205-84782ab2aabc",
+        "FileName": "ISO690NmericalExtension.XSL",
+        "Url": "./34/135c625a-4f3b-42b6-b205-84782ab2aabc",
+        "Type": "Source Code",
+        "UploadDate": "2008-07-20T14:37:16.637-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "35",
+    "Name": "ISO 690 - Numeric Reference with Square Brackets",
+    "DevelopmentStatus": "None",
+    "Description": "This style is made by request. It is the ISO 960 numeric referencing style with square brackets. \n\n*Usage*\nCopy the style to your Word 2007 style directory, open Word 2007 and select 'ISO 690 - Numerical with Square Brackets' from the reference tab.\nThe latter can be useful if you plan on editing the numbers by hand afterwards.\n\nThe Word 2007 style directory is often located at 'C:\\Program Files\\Microsoft Office\\Office12\\Bibliography\\Style'",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2008-07-05T02:20:01.53-07:00",
+    "Files": [
+      {
+        "Id": "2f80df76-5c1a-445a-9324-a0a7748b0ee0",
+        "FileName": "ISO690NmericalSquare.XSL",
+        "Url": "./35/2f80df76-5c1a-445a-9324-a0a7748b0ee0",
+        "Type": "Source Code",
+        "UploadDate": "2008-06-23T05:34:35.82-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "36",
+    "Name": "Chicago with numbers",
+    "DevelopmentStatus": "None",
+    "Description": "This style is made by request. It is a combination of Harvard referencing with numbers. \n\n*Usage*\nCopy the style to your Word 2007 style directory, open Word 2007 and select 'Chicago Numbered Extension' from the reference tab.\n\n*Remarks*\nDue to the limitations of the Word 2007 bibliography numbering system, the bibliography entries are not ordered alphabetically but rather by their occurence as in-text citations. If you want to keep them alphabetically (and get the numbers all mingled up), you just have to comment out (or remove) line 3971 from the stylesheet:\n&nbsp;&nbsp;&nbsp;&nbsp;*<xsl:sort select=\"./b:RefOrder\" data-type=\"number\"/>*\nThe latter can be useful if you plan on editing the numbers by hand afterwards.\n",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2008-06-20T16:25:13.703-07:00",
+    "Files": [
+      {
+        "Id": "3232a1d0-6d6e-4a66-9d40-bffe057e4682",
+        "FileName": "CHICAGO2.XSL",
+        "Url": "./36/3232a1d0-6d6e-4a66-9d40-bffe057e4682",
+        "Type": "Source Code",
+        "UploadDate": "2008-06-20T16:25:13.733-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "37",
+    "Name": "Advanced Stylesheet Template",
+    "DevelopmentStatus": "None",
+    "Description": "A template of a stylesheet for creating a new bibliography.\n\n*Remarks*\n* The template contains an an extension framework for b:Source elements. Each b:Source element can be extended with one or more child elements which can then be used for faster or alternative processing. An example (b:ExtSortKey) is provided in the style sheet for alternative sorting of elements based on a combination of title and year.     \n* The templates for 'Book' are filled in as an example.\n\n*Usage*\nOnce completed, the stylesheet should be placed in the style directory for Microsoft Office 12 Bibliographies. This usually is %programfiles%\\Microsoft Office\\Office12\\Bibliography\\Style.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2008-05-27T06:41:06.913-07:00",
+    "Files": [
+      {
+        "Id": "4dddf02b-d617-48bd-a81a-16bdb62ddfdd",
+        "FileName": "Bibliography_Stylesheet.XSL",
+        "Url": "./37/4dddf02b-d617-48bd-a81a-16bdb62ddfdd",
+        "Type": "Source Code",
+        "UploadDate": "2008-05-27T06:28:15.247-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "38",
+    "Name": "Stylesheet template",
+    "DevelopmentStatus": "None",
+    "Description": "A template of a stylesheet for creating a new bibliography.\n\nOnce completed, the stylesheet should be placed in the style directory for Microsoft Office 12 Bibliographies. This usually is %programfiles%\\Microsoft Office\\Office12\\Bibliography\\Style.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2008-05-06T12:12:13.253-07:00",
+    "Files": [
+      {
+        "Id": "5e28981d-878d-4cc1-acf9-64ba5af1f33a",
+        "FileName": "Bibliography_Stylesheet.XSL",
+        "Url": "./38/5e28981d-878d-4cc1-acf9-64ba5af1f33a",
+        "Type": "Source Code",
+        "UploadDate": "2008-05-06T12:09:01.117-07:00"
+      }
+    ]
+  },
+  {
+    "Id": "39",
+    "Name": "BibWord styles",
+    "DevelopmentStatus": "Stable",
+    "Description": "This release is a combination of all other Word bibliography style releases in this project. This release gets updated whenever one of the other releases gets updated. To get more information on the different styles and how to use them, check the *[styles|Styles]* page.\n\nStyle names ending on a *{\"*\"}* indicate that the *[BibWord Extender]* tool is needed to use their complete functionality.\n\n!!!! Installation on Windows (Word 2007/2010/2013)\nTo use the bibliography styles, they have to be copied into the Microsoft Word bibliography style directory. This directory can vary depending on where Word is installed: \n!!!!! Word 2007\n{{\n    <winword.exe directory>\\Bibliography\\Style\n}} On most _32-bits_ machines with Microsoft Word 2007 this will be:\n\n{{\n    %programfiles%\\Microsoft Office\\Office12\\Bibliography\\Style\n}}Once the styles are copied to the directory, they will show up every time Microsoft Word is opened.\n\n!!!!! Word 2010\n{{\n    <winword.exe directory>\\Bibliography\\Style\n}} On most _32-bits_ machines with Microsoft Word 2010 this will be:\n\n{{\n    %programfiles%\\Microsoft Office\\Office14\\Bibliography\\Style\n}}Once the styles are copied to the directory, they will show up every time Microsoft Word is opened.\n\n!!!!! Word 2013\n{{\n    <user directory>\\AppData\\Roaming\\Microsoft\\Bibliography\\Style\n}} On most machines with Micrososft Word 2013 this will be:\n\n{{\n    %userprofile%\\AppData\\Roaming\\Microsoft\\Bibliography\\Style\n}}Once the styles are copied to the directory, they will show up every time Microsoft Word is opened.\n\n*Remark:* the _types.xml_ included with the stylesheets should be used in combination with [release:BibType|15976] to create some extra fields for the different types.\n!!!! Installation for Word 2008 or 2011 for Mac\nTo use the bibliography styles, right-click on Microsoft Word 2008 and select show package contents. Put the files in:\n\n{{\n    Contents/Resources/Style/\n}} On most Macs with Microsoft Word 2008 this will be:\n\n{{\n    /Applications/Microsoft Office 2008/Microsoft Word.app/Contents/Resources/Style/\n}}\n!!!! Installation for Word 2016 for Mac (version 15.17.0 and up)\nTo use the bibliography styles, place them in the following folder\n\n{{\n    /Library/AppSupport/Microsoft/Office365/Citations/\n}}\n\n!!!! Extending sources with YearSuffix and BibOrder\nThe *[BibWord Extender]* tool can be used to extend the capabilities of BibOrder. It allows the addition of year suffices to certain styles as well as alphabetical numbered ordering.\n\nCheck the *[BibWord Extender]* wiki page on how to use the tool on both Windows and Mac OS X. Note that Mac OS X users will have to download an extra library from the latest release. A link to the latest release can be found at the top of the *[BibWord Extender]* wiki page.\n!!!! FAQ\nFor a list of *[FAQ|Styles_FAQ]* about these styles, see *[here|Styles_FAQ]*.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2015-12-17T03:58:42.973-08:00",
+    "Files": [
+      {
+        "Id": "29e58974-ef0c-4f2d-936a-e4f537c8a7f5",
+        "FileName": "styles.zip",
+        "Url": "./39/29e58974-ef0c-4f2d-936a-e4f537c8a7f5",
+        "Type": "Source Code",
+        "UploadDate": "2013-04-01T07:49:36.453-07:00"
+      },
+      {
+        "Id": "522cfffd-2fe0-47e6-bc22-329c7c9ff633",
+        "FileName": "BibWordExtender2.exe",
+        "Url": "./39/522cfffd-2fe0-47e6-bc22-329c7c9ff633",
+        "Type": "Application",
+        "UploadDate": "2009-03-16T16:18:57.34-07:00"
+      }
+    ]
+  }
+]

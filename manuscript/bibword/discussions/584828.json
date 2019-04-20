@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1360596",
+    "ThreadId": "584828",
+    "Html": "Using the ISO960 reference order, the citations appear in '(' and ')'. For example:\r<br />\n<br />\nIn this work (1), we write...\r<br />\n<br />\nHowever, I want to change it to [1]. So, how can I replace the '(' with '[' and ')' with ']' in the xml file? where should I modify?<br />\n",
+    "PostedDate": "2015-03-07T00:18:27.603-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1366666",
+    "ThreadId": "584828",
+    "Html": "If this is a BibWord style file, see the <a href=\"https://bibword.codeplex.com/wikipage?title=Styles_FAQ#Q8\" rel=\"nofollow\">BibWord FAQ</a>\r<br />\n<br />\nIf this is one of the styles that comes with Word, see the <a href=\"https://bibword.codeplex.com/wikipage?title=FAQ#Q6\" rel=\"nofollow\">general FAQ</a><br />\n",
+    "PostedDate": "2015-03-18T07:46:38.587-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

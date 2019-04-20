@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "179579",
+    "ThreadId": "53363",
+    "Html": "I'm using IEEE style with reference order, but when I add in-text citations with<br>\r\nmultiple references they appear like this [60,22,13,71,1]<br>\r\n<br>\r\nThere is some way to put the numbers in order when I update the fields? [1,13,22,60,71]<br>\r\n<br>\r\nThanks!<br>\r\n<br>\r\n",
+    "PostedDate": "2009-04-15T06:46:15.133-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "179590",
+    "ThreadId": "53363",
+    "Html": "<p>Not automatically. In-text citations are formatted completely independent of each other. Hence, it is not possible to format them in ranking order or to do something like transform [1,2,3] into [1-3].</p>\r\n<p>If you do it manually, you can place them in the order you want. Put your mouse on the citation field (if it is a hyperlinked one, put your cursor between the last number and the closing bracket ([1,2,3&lt;&lt;right here&gt;&gt;]), right click and select &quot;Edit Field...&quot;. In the textbox on the right of the dialog that appears you will see something looking like:</p>\r\n<p>CITATION Hed95 \\l 2060 \\m Abd03 \\m DEF09</p>\r\n<p>&quot;Hed95&quot;, &quot;Abd03&quot;, and &quot;DEF09&quot; are the tags uniquely identifying the in-text citations and their order. Just put them in the order you want. Keep in mind that for the second and later tags, each tag has to be preceded with a &quot;\\m&quot;.</p>\r\n",
+    "PostedDate": "2009-04-15T07:02:55.78-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "179617",
+    "ThreadId": "53363",
+    "Html": "Ok, I have changed the order of tags and it works.<br>\r\n<br>\r\nThanks a lot!<br>\r\n",
+    "PostedDate": "2009-04-15T07:52:03.817-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

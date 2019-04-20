@@ -1,0 +1,106 @@
+[
+  {
+    "Id": "292781",
+    "ThreadId": "86001",
+    "Html": "<p>I get the following sorted bibliography:</p>\r\n<p>&nbsp;</p>\r\n<p>Derrida, Jacques, ...</p>\r\n<p><span style=\"font-size:9.5pt\" lang=DE>Žižek Slavoj, ...</span></p>\r\n<p><span style=\"font-size:9.5pt\" lang=DE>Fink Bruce, ...</span></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size:9.5pt\" lang=DE>Note, that Z is after D and before F</span></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size:9.5pt\" lang=DE>Butler, Judith, ...</span></p>\r\n<p><span style=\"font-size:9.5pt\" lang=DE>de Saussure, Ferdinand, ...</span></p>\r\n<p><span style=\"font-size:9.5pt\" lang=DE>Deleuze, Gilles, ...</span></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size:9.5pt\" lang=DE>Note that S (Saussure) is after B and before D</span></p>\r\n<p>&nbsp;</p>\r\n<p>Is there a work around or a possiblity to fix this problem in the next release?</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards, A.</p>",
+    "PostedDate": "2010-02-19T11:08:24.947-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "292797",
+    "ThreadId": "86001",
+    "Html": "<p>I tested your first example, but it was sorted correctly in the few styles I tried (Harvard Anglia, Harvard Exeter, ABNT, ASA) so I can't reproduce the issue.</p>\r\n<p>There is indeed the possibility of sorting going wrong in case you mix international alphabets but there is not much you can do about it. Some things just can't be compared.</p>\r\n<p>Regarding your second example. The sorting will always happen on the first letter of the last name. BibWord nor the styles that come with Word are currently capable of sorting on the second part. There is no workaround available.</p>\r\n<p>This feature already exists in BibWord for titles, so I don't think it would cause major redesign to introduce it for names. However, I do not plan on creating a new version in the next few months so don't expect anything. If you are interested in trying it yourself, the code for titles is incorporated in the <em>format-title</em> template.</p>",
+    "PostedDate": "2010-02-19T11:46:57.59-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "292810",
+    "ThreadId": "86001",
+    "Html": "<p>Your fast replies are amazing! Just awesome.</p>\r\n<p>&nbsp;</p>\r\n<p>The first issue didn't appear with finished styles (I tried and compared) but with the framework (bibword tool for developers). Maybe you can give me a hint of how to fix this problem.</p>\r\n<p>The second issue: It would be fantastic if you could incorporate this feature in a future release as this &raquo;problem&laquo; is probably useful for many people. Meanwhile I will try to figure it out myself for my own style based on your excellent framework. As soon as I have finished this style I will send it to you as it might be very useful for German and Austrian writers (philosophy, social studies, cultural studies, etc.). There are still a few details that need to be fixed.</p>\r\n<p>&nbsp;</p>\r\n<p>Cheers, A.</p>",
+    "PostedDate": "2010-02-19T12:20:12.163-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "292861",
+    "ThreadId": "86001",
+    "Html": "<p>That is most likely because you didn't define a sortkey. There isn't one in the example that is in the template as no sortkey means the citations are just ordered according to in-text appearance.</p>\r\n<p>A sortkey is a format string just like a display string and should be under source:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">source</span> <span style=\"color:Red\">type</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">ArticleInAPeriodical</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">&gt;</span>\r\n  <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">column</span> <span style=\"color:Red\">id</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">1</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">&gt;</span>\r\n    <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">halign</span><span style=\"color:Blue\">&gt;</span>left<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">halign</span><span style=\"color:Blue\">&gt;</span>\r\n    <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">valign</span><span style=\"color:Blue\">&gt;</span>top<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">valign</span><span style=\"color:Blue\">&gt;</span>\r\n    <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">format</span><span style=\"color:Blue\">&gt;</span>{%Author:2%.}{ %Year|&quot;n.d.&quot;%{%YearSuffix%}.}{ &ldquo;%Title%.&rdquo;}{ <span style=\"color:Red\">&amp;lt;</span>i<span style=\"color:Red\">&amp;gt;</span>%PeriodicalTitle%<span style=\"color:Red\">&amp;lt;</span>/i<span style=\"color:Red\">&amp;gt</span>.}<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">format</span><span style=\"color:Blue\">&gt;</span>\r\n  <span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">column</span><span style=\"color:Blue\">&gt;</span>\r\n  <strong><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">sortkey</span><span style=\"color:Blue\">&gt;</span>{%Author:0|Title:a%}{ %Year%}{ %Title:a%}<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">sortkey</span><span style=\"color:Blue\">&gt;</span></strong>\r\n<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">source</span><span style=\"color:Blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>If the above&nbsp;example isn't clear enough, just check out one of the Harvard styles or ASA. They are all sorted alphabetically. Just look for <strong>sortkey</strong>. For example sortkey values, see <a title=\"BibWord Format Strings\" href=\"http://bibword.codeplex.com/wikipage?title=BibWord Format Strings&referringTitle=Documentation#ex3\">here</a>.</p>\r\n<p>Note that ':a' at the end of the title in the above sortkey example is what I was talking about in my previous post. It ensures that&nbsp;if you sort based on title, the articles 'A', 'An', and 'The' are moved to the end of the title. For example 'The Scientific Method' becomes 'Scientific Method, The'.</p>\r\n<p>Thinking a bit more about this, the best approach would be to use the <em>create-sortkey</em> template to realise the alternative name sorting. Currently this template takes a source as input and processes it directly. What you could do is first create a copy by going over each non-name&nbsp;element and if you come across names you could change them by moving the 'articles' to the end. You could then use that&nbsp;generated source in the rest of the template function. This idea is similar to what happens in the <em>format-bibliography</em> template where a copy of a source is made with an extra sortkey element added.</p>",
+    "PostedDate": "2010-02-19T14:49:45.73-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "295667",
+    "ThreadId": "86001",
+    "Html": "<p>Žižek</p>\r\n<p>&nbsp;</p>\r\n<p>I had already used the sortkey functionality. This name also gets ordered wrong with ASA. Is there a String or something that provides the order of the characters such as a&auml;bcdefghijklmno&ouml;pqrstu&uuml;vwxyzž?</p>\r\n<p>For the second problem, (A-AN-THE) your hint was very helpful</p>\r\n<p>Regards, A.</p>",
+    "PostedDate": "2010-02-20T02:27:28.723-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "297939",
+    "ThreadId": "86001",
+    "Html": "<p>The sorting is done by MSXSL internal sorting mechanism, there is nothing you can do about the order of the characters.</p>\r\n<p>But I can't reproduce&nbsp;a wrong ordering with ASA so I'm not sure what is happening on your end. Just to check, open the source manager, and choose &quot;Sort by Author&quot; from the dropdown box at the top right. Are the names sorted correctly in that case?</p>\r\n<p>You can try mailing me a document containing the sources and&nbsp;a stylesheet. I will take a look at them, but as I currently can't reproduce the error with ASA, there probably won't be much I can do.</p>",
+    "PostedDate": "2010-02-20T03:56:44.55-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "304255",
+    "ThreadId": "86001",
+    "Html": "<p>Dear Yves,</p>\r\n<p>ok, maybe that's the problem. With Word 2008 (Macintosh) there is no dropdown box; no way to choose a sorting method. I checked on the Microsoft Website and found a screenshot that shows the dropdown box in the Windows version. It's crazy, they left out this important feature in the Mac version. So there is probably no work around for the Mac version or is there a possiblity to give a &raquo;sorting hint&laquo; within the stylesheet?</p>\r\n<p>Version: Word 2008 12.2.3</p>\r\n<p>Thank you very much for your help!</p>\r\n<p>&nbsp;</p>\r\n<p>Cheers, A.</p>",
+    "PostedDate": "2010-02-20T07:01:28.583-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "305789",
+    "ThreadId": "86001",
+    "Html": "<p>I downloaded the Word 2010 Windows trial; it works fine; I saved the file and opened it in Word 2008 (Mac) and again the same problem. Guess it is one of the many many mistakes in the Mac-version ...</p>",
+    "PostedDate": "2010-02-20T08:16:50.58-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "306954",
+    "ThreadId": "86001",
+    "Html": "<p>Sounds indeed as something wrong in Word 2008. I don't have a Mac around but I do have some of the original stylesheets from the days I made BibWord platform independent. I checked them and the sorting is done in a similar way as BibWord does it. So this makes me wondering, does this mean that if you format your bibliography according to Chicago in Word 2008 (predefined style)&nbsp;it doesn't get sorted either?</p>",
+    "PostedDate": "2010-02-20T10:55:44.083-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "315951",
+    "ThreadId": "86001",
+    "Html": "<p>Unfortunately yes, same problem. Seems they implemented a different sorting algorithm. The question would be if there is a possibility to give the system a clue on what basis it should sort (in case the code is done the same way as the windows version)...</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-02-20T22:34:27.527-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "351655",
+    "ThreadId": "86001",
+    "Html": "<p>The&nbsp;best solution I can think of is implementing sorting yourself in xslt. But that would be a major pain.</p>\r\n<p>An alternative could be to generate the bibliography outside Word, using another XSLT processor. This is basically what the extender program does. You would then have to (manually) copy the bibliography html into place.</p>",
+    "PostedDate": "2010-02-21T14:14:21.423-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "362595",
+    "ThreadId": "86001",
+    "Html": "<p>I've been thinking about it some more. If common sorting (A-Z) works, you might want to extend on that by replacing unwanted characters by their wanted replacements.</p>\r\n<p>In a previous post, I wrote about the <em>create-sortkey</em> template where you could move part of the name of the contributor out of the way (van, von, de, ...). In the same step, you could replace &ouml; with o, ž with z, ... A simple translate function could do that for you.</p>",
+    "PostedDate": "2010-02-22T04:40:02.09-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "815117",
+    "ThreadId": "86001",
+    "Html": "<p>Regarding the name prefix thing, the type of solution Yves is suggesting seems to be that the algorithm would put the prefixes at the end, then sort. Wouldn't that mean that they would still be at the end in the final product? So not \"von Fintel, Kai\" but  \"Fintel, Kai von\"? Apparently that particular German hates that.</p>\n<p>I found a simple workaround though, for this problem at least: put the prefix in some other field you never use, like \"Station\", and list the author as if it had no prefix. Then, in the bibliography format, put {%Station% } before the author for ever field  type. Word ignores the prefix, alphabetizing based on the last name of the author.</p>\n<p>Of course, this means that such an author should only be listed this way when he or she is the author that will be alphabetized; non-first authors or editors should be listed with the prefix as part of the word, but that's ok, since the author is listed  separately for every source anyway.</p>\n<p>I don't suppose this has any bearing on the non-English letter issue though.</p>\n<p><del>It also wouldn't allow you to automatically switch between this style and the (wrong) style where the name is listed as \"von Fintel, Kai\" and sorted by the \"v\", though it does allow you to create a style where the name is listed as \"Fintel, Kai von\", by just switching where \"station\" goes. That shouldn't be a problem, but I remember seeing a journal that actually advized the former.</del></p>\n<p>I'm wrong. You can. You can simply put {%Station} as the first member of the sortkey for that sort of style.</p>",
+    "PostedDate": "2012-03-24T20:40:55.483-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

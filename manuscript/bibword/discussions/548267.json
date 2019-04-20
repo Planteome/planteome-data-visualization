@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1255087",
+    "ThreadId": "548267",
+    "Html": "I want the reference style as written below \r<br />\nAhmad, N., M. Asgher, M. Shafique, and A. Qureshi. 2007. An evidence of high prevalence of hepatitis c virus in faisalabad, pakistan. Saudi medical journal. 28: 390-395. with citation Ahmad et al. (2007). How can I develop this style in MS word 2013. I have make XSL file but word does not read my style. Can any body help me to solve this problem.<br />\n",
+    "PostedDate": "2014-06-11T01:19:47.507-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1255150",
+    "ThreadId": "548267",
+    "Html": "If your style does not show up in the dropdown, then it is most likely because your xslt is not a well formed XML document. Probably you forgot to close a tag somewhere. If you have access to an xml editor, it might be usefull to check the file in there to see if it is well formed.<br />\n",
+    "PostedDate": "2014-06-11T03:53:53.97-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

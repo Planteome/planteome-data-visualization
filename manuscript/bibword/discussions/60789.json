@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "205947",
+    "ThreadId": "60789",
+    "Html": "<p>Hi Guys,</p>\r\n<p>all the template styles only give the in bracket citation style. Because my citations are all in the footnotes i want all my APA citations to look like &gt;&gt;Jones (2007)&lt;&lt; and not (Jones, 2007). I do not need to be able to change it, i just want them all that way.</p>\r\n<p>Thanks in Advance!</p>\r\n<p>David</p>",
+    "PostedDate": "2009-06-26T09:07:47.177-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "206071",
+    "ThreadId": "60789",
+    "Html": "<p>That is not supported by the APA style delivered by Word. What you could try is to type the name yourself and then enter the citation where you suppress the author (and probably the title) so only the year gets shown. I no longer do changes directly to the styles that come with Word.</p>\r\n<p>If you would create a BibWord style, you would leave the openbracket and closebracket elements empty and use a format string looking along the following lines:</p>\r\n<p style=\"padding-left:30px\">{%Author:1%}{ (%Year%{%YearSuffix%})}</p>",
+    "PostedDate": "2009-06-26T13:52:35.977-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "206181",
+    "ThreadId": "60789",
+    "Html": "<p>Ok, thanks, but of the styles that are supplied in the BibWord styles archive is there one that does the intext citations? As I am studying in Germany i have to always cite in the footnote, so i think german people would really appriciate if there would be such styles :).</p>\r\n<p>&nbsp;</p>\r\n<p>cheers,</p>\r\n<p>David</p>",
+    "PostedDate": "2009-06-27T04:25:58.91-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "206196",
+    "ThreadId": "60789",
+    "Html": "<p>Unlike Word 2008, Word 2007 has no special support for footnote styles. I have two example of footnote styles:</p>\r\n<ul>\r\n<li><a href=\"http://bibword.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=19998\">MHRA</a></li>\r\n<li><a title=\"CMS footnote\" href=\"http://bibword.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=20331\">CMS footnote</a> (beta)</li>\r\n</ul>\r\n<p>The most used German standard is actually DIN 1505-2 which isn't a footnote style.</p>",
+    "PostedDate": "2009-06-27T07:41:14.267-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

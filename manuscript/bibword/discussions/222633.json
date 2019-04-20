@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "477105",
+    "ThreadId": "222633",
+    "Html": "<p>I am using&nbsp;customising a&nbsp;version of the Harvard - Anglia* Bibliography style for use at Cardiff medical School (they want all the authors with Full Stops on Initials&nbsp;- no et al)!&nbsp; I have some questions about how it all works and I'll post another discussion for a response.&nbsp; However, the Referencing Style Guide from Cardiff's website says that typical style of citing are:</p>\r\n<p>&quot;It has been argued (Scully 2006, p. 7) that the main considerations are...&quot;</p>\r\n<p>&quot;It has been argued by Scully (2006, p. 7) that the main considerations are...&quot;</p>\r\n<p>But when I insert a citation into a Word 2007 document, it <span style=\"text-decoration:underline\">always</span> puts in the first citation style.&nbsp; ie I end up with:</p>\r\n<p>&quot;It has been argued by Scully (Scully 2006, p. 7) that the main considerations are...&quot;</p>\r\n<p>This means I can only cite in one way.&nbsp; Obviously, I can cite manually, but that seems to negate the whole point of the bibliography.&nbsp; I know I can change the citation style in the .XSL file to exclude that author, but that means I can only cite in the other style.&nbsp; So how can I create a choice of citation such as:</p>\r\n<p>either (Scully 2006, p. 7) or Scully (2006, p. 7)<br><br>Any advice on how to&nbsp;define and select the appropriate style?</p>\r\n<p>Thanks,</p>\r\n<p>Tim</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-08-05T13:53:00.723-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "477241",
+    "ThreadId": "222633",
+    "Html": "The official way (described by Microsoft) is to type the name yourself, then insert the citation. Then use the dropdown arrow to edit the citation and check suppress author.\r\n\r\nUnofficially you could hack your own version together by using the suppress flags for your own purposes. That way, you could use 'suppress author' to indicate that the author should be displayed outside the brackets. There are posts on this discussion list which handle this subject.\r\n\r\n",
+    "PostedDate": "2010-08-05T23:23:16.247-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

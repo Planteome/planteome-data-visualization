@@ -70,7 +70,8 @@ function getMatrixData(inputGenes, ontologyTerms, speciesId, selectedCategory) {
 			continue;
 		
 		matrixData["nodes2"].push({
-			"name": ontologyTerms[i].ontologyId
+			"name": ontologyTerms[i].ontologyId,
+            "synonym":ontologyTerms[i].ontologyName
 		})
 		let onid = ontologyTerms[i].ontologyId;
 		
@@ -273,6 +274,10 @@ function loadMatrixView(inputGenes, ontologyTerms, speciesId) {
 		.attr("text-anchor", "end")
 		.text(function (d, i) {
 			return nodes1[i].name;
+		})
+        .append("title")
+        .text(function (d, i) {
+			return nodes1[i].id;
 		});
 
 		var column = svg.selectAll(".column")
@@ -299,7 +304,11 @@ function loadMatrixView(inputGenes, ontologyTerms, speciesId) {
 		.attr("text-anchor", "start")
 		.text(function (d, i) {
 			return nodes2[i].name;
-		});
+		})
+        .append("title")
+        .text(function (d, i) {
+			return nodes2[i].synonym;
+		});;
 
 		function row(row) {
 			var cell = d3.select(this).selectAll(".cell")

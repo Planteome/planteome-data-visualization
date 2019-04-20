@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1235445",
+    "ThreadId": "542657",
+    "Html": "I would like to insert citations in-text without brackets or parentheses.  Can someone explain to me exactly how to do this?  I am particularly interested in doing this for MLA style.  For background, I am preparing legal documents.\r<br />\n<br />\nThanks!<br />\n",
+    "PostedDate": "2014-04-18T09:08:33.603-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1235483",
+    "ThreadId": "542657",
+    "Html": "Given that this is one of the built-in styles in Word, the following FAQ entry might help you: <a href=\"https://bibword.codeplex.com/wikipage?title=FAQ&amp;referringTitle=Home#Q6\" rel=\"nofollow\">How do I change the brackets around an in-text citation?\r\n</a> <br />\n",
+    "PostedDate": "2014-04-18T10:33:38.623-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "649909",
+    "ThreadId": "267139",
+    "Html": "\r\n<p>Hello Yves,</p>\r\n<p>Is there any possibility do add another field to Bibliography for book (book section)?</p>\r\n<p>If I had a book like this:</p>\r\n<p>Author: Douglas R. Frayne</p>\r\n<p>Title: Sargonic and Gutian Periods</p>\r\n<p>City: Toronto</p>\r\n<p>Year: 1993</p>\r\n<p>Series: Royal Inscriptions of Mesopotamia Early Periods</p>\r\n<p>Volume: 2</p>\r\n<p>I can't add the name of book series into citation nor into bibliography. What can I do with this?</p>\r\n",
+    "PostedDate": "2011-07-30T02:02:24.85-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "649912",
+    "ThreadId": "267139",
+    "Html": "<p>Yes.</p>\r\n<p>Before Microsoft released their new version of APA which supports DOI, I published a proof of concept illustrating how it could be done.</p>\r\n<p>The full 'article' describing all the steps involved can be found at <a href=\"http://groups.google.com/group/microsoft.public.word.docmanagement/browse_thread/thread/8a28a5a9a2a607d7/5b594105d46d9ba7?hl=en\">http://groups.google.com/group/microsoft.public.word.docmanagement/browse_thread/thread/8a28a5a9a2a607d7/5b594105d46d9ba7?hl=en</a>&nbsp;. Just do a search on \"DOI\" on that page and read the rather long post.</p>\r\n<p>Unless you have some xml/xslt knowledge, it is going to be a hard thing to do but not impossible.</p>",
+    "PostedDate": "2011-07-30T02:37:38.437-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "650120",
+    "ThreadId": "267139",
+    "Html": "<p>Thank you,</p>\r\n<p>It works great!!!!</p>",
+    "PostedDate": "2011-07-30T23:36:39.403-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

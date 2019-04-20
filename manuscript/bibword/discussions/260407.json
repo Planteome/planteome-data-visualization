@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "623818",
+    "ThreadId": "260407",
+    "Html": "\r\n<p>Hello!</p>\r\n<p>When creating my bibliography list I used hyphens between page numbers, ie. 234-235<br>\r\nAnd now I was told to change all hyphens to longer en dashes -&gt; 234&ndash;235</p>\r\n<p>So I started changing all sources one by one but unfortunately my changes are not saved. They are saved in the left (main) list of sources but in the right list they remain with hyphens after reopening the file. So the main list contains pages with en dashes\r\n and the right one with hyphens. I also tried to copy some items from the left list and overwrite corresponding items in the right list but after reopening the file there are still hyphens on the right side.</p>\r\n<p>Is there any solution to implement such changes?</p>\r\n<p>Regards,<br>\r\nProzac</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2011-06-06T16:21:59.5-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "626358",
+    "ThreadId": "260407",
+    "Html": "<p>The fastest way is probably by abusing a bug in the Word API. Normally directly setting fields in a source shouldn't work, but if they exist, it works. So you could use the following macro:</p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre><span style=\"color: blue;\">Sub</span> ChangePageSeparator()    \r\n    <span style=\"color: blue;\">Dim</span> s <span style=\"color: blue;\">As</span> Source\r\n    \r\n    <span style=\"color: blue;\">For</span> <span style=\"color: blue;\">Each</span> s <span style=\"color: blue;\">In</span> ActiveDocument.Bibliography.Sources\r\n        <span style=\"color: blue;\">If</span> InStr(s.xml, <span style=\"color: #a31515;\">\"&lt;b:Pages&gt;\"</span>) &gt; 0 <span style=\"color: blue;\">Then</span>\r\n            s.field(<span style=\"color: #a31515;\">\"Pages\"</span>) = Replace(s.field(<span style=\"color: #a31515;\">\"Pages\"</span>), <span style=\"color: #a31515;\">\"-\"</span>, <span style=\"color: #a31515;\">\"&ndash;\"</span>)\r\n        <span style=\"color: blue;\">End</span> <span style=\"color: blue;\">If</span>\r\n    <span style=\"color: blue;\">Next</span> s\r\n<span style=\"color: blue;\">End</span> <span style=\"color: blue;\">Sub</span> \r\n</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<div id=\"_mcePaste\" class=\"mcePaste\" style=\"position: absolute; width: 1px; height: 1px; overflow: hidden; top: 0px; left: -10000px;\">﻿</div>",
+    "PostedDate": "2011-06-11T06:30:47.523-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "626369",
+    "ThreadId": "260407",
+    "Html": "<p>Thanks&nbsp;yves!</p>\r\n<p>I forgot to mention that I don't use the Pages field. It was much faster for me to paste the page ranges together with the title in the Title field.<br />So in most cases I save everything in the Title Field like this: <em>Adiponectin in youth: relationship to visceral adiposity, insulin sensitivity, and &beta;-cell function. Diabetes Care 2004; 27: 547-552</em></p>\r\n<p>So I guess it won't be so easy now to change page separators from hyphens to en dashes :-(</p>",
+    "PostedDate": "2011-06-11T07:23:38.897-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "626527",
+    "ThreadId": "260407",
+    "Html": "<p>Just add some more logic. Check the character before and after the hyphen and if they are numbers, then change it to an n-dash.</p>\r\n<p>On top of my head, that would give you something like:</p>\r\n<div style=\"color: black; background-color: white;\">\r\n<div style=\"color: black; background-color: white;\">\r\n<pre><span style=\"color: blue;\">Sub</span> ChangePageSeparator()\r\n    <span style=\"color: blue;\">Dim</span> s <span style=\"color: blue;\">As</span> Source\r\n    <span style=\"color: blue;\">Dim</span> title <span style=\"color: blue;\">As</span> <span style=\"color: blue;\">String</span>\r\n    <span style=\"color: blue;\">Dim</span> offset <span style=\"color: blue;\">As</span> <span style=\"color: blue;\">Integer</span>\r\n    <span style=\"color: blue;\">Dim</span> previousChar <span style=\"color: blue;\">As</span> <span style=\"color: blue;\">String</span>\r\n    <span style=\"color: blue;\">Dim</span> nextChar <span style=\"color: blue;\">As</span> <span style=\"color: blue;\">String</span>\r\n        \r\n    <span style=\"color: blue;\">For</span> <span style=\"color: blue;\">Each</span> s <span style=\"color: blue;\">In</span> ActiveDocument.Bibliography.Sources\r\n        <span style=\"color: blue;\">If</span> InStr(s.xml, <span style=\"color: #a31515;\">\"&lt;b:Title&gt;\"</span>) &gt; 0 <span style=\"color: blue;\">Then</span>\r\n            <span style=\"color: green;\">' Get the title.</span>\r\n            title = s.field(<span style=\"color: #a31515;\">\"Title\"</span>)\r\n            \r\n            <span style=\"color: green;\">' Get the first dash.</span>\r\n            offset = InStr(1, title, <span style=\"color: #a31515;\">\"-\"</span>, vbTextCompare)\r\n            \r\n            <span style=\"color: green;\">' Walk over all dashes.</span>\r\n            <span style=\"color: blue;\">While</span> offset &lt;&gt; 0\r\n                <span style=\"color: green;\">' This will crash around corner cases (first or last character of your title being a dash)</span>\r\n                previousChar = Mid(title, offset - 1, 1)\r\n                nextChar = Mid(title, offset + 1, 1)\r\n                \r\n                <span style=\"color: green;\">' Change dash to n-dash if surrounded by numbers.</span>\r\n                <span style=\"color: blue;\">If</span> previousChar &gt;= <span style=\"color: #a31515;\">\"0\"</span> <span style=\"color: blue;\">And</span> previousChar &lt;= <span style=\"color: #a31515;\">\"9\"</span> <span style=\"color: blue;\">And</span> nextChar &gt;= <span style=\"color: #a31515;\">\"0\"</span> <span style=\"color: blue;\">And</span> nextChar &lt;= <span style=\"color: #a31515;\">\"9\"</span> <span style=\"color: blue;\">Then</span>\r\n                    title = Mid(title, 1, offset - 1) &amp; <span style=\"color: #a31515;\">\"&ndash;\"</span> &amp; Mid(title, offset + 1)\r\n                <span style=\"color: blue;\">End</span> <span style=\"color: blue;\">If</span>\r\n            \r\n                <span style=\"color: green;\">' Get the next dash.</span>\r\n                offset = InStr(offset + 1, title, <span style=\"color: #a31515;\">\"-\"</span>, vbTextCompare)\r\n            Wend\r\n            \r\n            <span style=\"color: green;\">' Set the title.</span>\r\n            s.field(<span style=\"color: #a31515;\">\"Title\"</span>) = title\r\n        <span style=\"color: blue;\">End</span> <span style=\"color: blue;\">If</span>\r\n    <span style=\"color: blue;\">Next</span> s\r\n<span style=\"color: blue;\">End</span> <span style=\"color: blue;\">Sub</span>\r\n</pre>\r\n</div>\r\n</div>",
+    "PostedDate": "2011-06-12T01:34:29.697-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "626542",
+    "ThreadId": "260407",
+    "Html": "<p>Thank you so much!</p>\r\n<p>The code works perfectly. But as I see it changes all separators only in the document and not in the source list. So after updating the bibliography the dashes are again replaced by hyphens.</p>",
+    "PostedDate": "2011-06-12T03:27:30.31-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "626592",
+    "ThreadId": "260407",
+    "Html": "<p>They shouldn't be. As long as you don't edit a source, there should be no connection between the source in your document and its counterpart in your master list. If there would be, you wouldn't be able to open a document on another computer. Sources between a master list and document are kept in sync by looking for a source with the same tag but&nbsp;a different&nbsp;guid code. The source with the&nbsp;most recent guid wins and overwrites the other version(s).</p>\r\n<p>Anyway, you can run the&nbsp;macro for all sources in your master list as well. Just change</p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre><span style=\"color: blue;\">For</span> <span style=\"color: blue;\">Each</span> s <span style=\"color: blue;\">In</span> ActiveDocument.Bibliography.Sources\r\n</pre>\r\n</div>\r\n<p>into</p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre><span style=\"color: blue;\">For</span> <span style=\"color: blue;\">Each</span> s <span style=\"color: blue;\">In</span> Application.Bibliography.Sources\r\n</pre>\r\n</div>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2011-06-12T08:53:35.7-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "626599",
+    "ThreadId": "260407",
+    "Html": "<p>Indeed, I want to change page separators in both lists: in the current and in the master list. Actually, both lists contain the same bibliography items.</p>\r\n<p>I used both macros and have to say that the lists are untouched. The first macro correctly changes all page separators in the document (text) but after opening the Bibliography module there are still hyphens in both lists. So after updating the Bibliography I will always loose my changes.</p>\r\n<p>After running the second macro and opening the Bibliography module I saw that all hyphens were changed to dashes but only in the master list. Then I closed Word and after reopening I found hyphens in both lists.</p>\r\n<p>I'm not sure but maybe the reason is that the master list is saved as a plain text to the xml file and hyphens/dashes are not recognised.</p>",
+    "PostedDate": "2011-06-12T09:34:55.93-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

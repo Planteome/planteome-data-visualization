@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "670422",
+    "ThreadId": "272243",
+    "Html": "\r\n<p>Hello,</p>\r\n<p>I have a question about the two digit year format. When I use %Year:s% it seems to always produce 00 for the year in in-text citations. I'm using the IEEE style, but this issue seems to happen for me in other styles as well.</p>\r\n<p>Thanks for any help!</p>\r\n",
+    "PostedDate": "2011-09-11T20:30:50.97-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "670767",
+    "ThreadId": "272243",
+    "Html": "<p>Seems to be a bug. Instead of the last 2 digits of the year, it takes the middle 2. So if you had a year like 200x, you would indeed see 00.</p>\r\n<p>Look for the line:</p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre><span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">xsl</span><span style=\"color: blue;\">:</span><span style=\"color: #a31515;\">value-of</span> <span style=\"color: red;\">select</span><span style=\"color: blue;\">=</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">substring($year, 2, 2)</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">/&gt;</span>\r\n</pre>\r\n</div>\r\n<p>and change it into:</p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre><span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">xsl</span><span style=\"color: blue;\">:</span><span style=\"color: #a31515;\">value-of</span> <span style=\"color: red;\">select</span><span style=\"color: blue;\">=</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">substring($year, 3, 2)</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">/&gt;</span>\r\n</pre>\r\n</div>",
+    "PostedDate": "2011-09-12T12:56:49.153-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "673466",
+    "ThreadId": "272243",
+    "Html": "<p>Thanks! This fixed it. All the citations I happened to be looking at were 200X as you say so I mistook the middle two digits for always being 00.</p>",
+    "PostedDate": "2011-09-18T20:34:09.47-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

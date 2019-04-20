@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "218560",
+    "ThreadId": "64241",
+    "Html": "<p>Is there any way to add an Encyclopaedia source type? It will be very similar to a journal source.</p>\r\n<p>Harvard style example:</p>\r\n<p>BRUNNER, H. 1984. Hieroglyphic writing. (<em>In </em>World book encyclopedia, 3:213-215.)</p>\r\n<p>Thank you</p>\r\n<p>Fugacity</p>",
+    "PostedDate": "2009-08-02T14:49:01.863-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "218643",
+    "ThreadId": "64241",
+    "Html": "<p>Technically, you can make all the changes to bibform.xml to accept a new type and Word will store/pass data using that new type. However, by introducing that new type, you would create an invalid document. Word would not complain about it being invalid, but that's not really an excuse to go invalid.</p>\r\n<p>BibWord uses an alternative approach. BibWord always tries to format sources using the type defined in the &quot;Type&quot; field. If&nbsp;it has no&nbsp;value,&nbsp;BibWord falls back to the &quot;SourceType&quot;.</p>\r\n<p>So basically what you do is define a BibWord format string for the the type &quot;Encyclopedia&quot;. Then when you enter a source, you pick one of the 17 predefined source types and start filling in the fields. As a last field, you fill in the &quot;Type&quot; field. There you put &quot;Encyclopedia&quot;. Then BibWord will look for a format string for &quot;Encyclopedia&quot; and format your entry as such.</p>\r\n<p>An example of this&nbsp;can be seen in <a href=\"http://bibword.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=19764\">http://bibword.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=19764</a>&nbsp;where &quot;Standard&quot; and &quot;Thesis&quot; are defined as 'children' of &quot;Report&quot;.</p>",
+    "PostedDate": "2009-08-03T00:21:16.413-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "223625",
+    "ThreadId": "64241",
+    "Html": "<p>As proposed I reviewed the IEEE style to see how the Thesis field was created.</p>\r\n<p>After reading the manual extensively, I still cannot see how the <em>type </em>field works. <a title=\"Create Source\" href=\"http://a.imagehost.org/0216/report.jpg\">Here</a> is a screen shot of my Create Source box; must the <em>type</em> field be completed there?</p>",
+    "PostedDate": "2009-08-14T11:15:55.253-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "223856",
+    "ThreadId": "64241",
+    "Html": "<p>Yes.</p>\r\n<p>BibWord first tries the value in the &quot;Type&quot; field, then the type in the &quot;Source Type&quot; field to select the correct formatting string (see <a href=\"http://img7.imageshack.us/img7/8020/encyclopedia.png\">here</a>).</p>\r\n<p>The &quot;Type&quot; field was chosen for two reasons:</p>\r\n<ol>\r\n<li>the meaning of its name can be easily assiociated with the type of a source;</li>\r\n<li>the field is only used by patents in the original bibform.xml.</li>\r\n</ol>\r\n<p>As the &quot;Type&quot; field is not available by default in other types, you have to either switch to &quot;Patent&quot; to fill in the&nbsp;&quot;Type&quot; field&nbsp;and then switch back to whatever &quot;Source Type&quot; you want &quot;Type&quot; to be a 'child' of, or you have to add &quot;Type&quot; to the specific source type in &quot;bibform.xml&quot;.</p>\r\n<p>&quot;bibform.xml&quot; can easily be adjusted to your needs, or, if this is a process you want to do in several languages, or on multiple computers, you might want to try <a title=BibType href=\"http://bibword.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=15976\">BibType</a>.</p>",
+    "PostedDate": "2009-08-15T08:48:48.507-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "223920",
+    "ThreadId": "64241",
+    "Html": "<p>Thank you yves! That really helped a lot.</p>\r\n<p>I have one last request:</p>\r\n<p>&nbsp;</p>\r\n<p>In the case when two authors with the same surname is used, e.g.</p>\r\n<p>JONES, S. 1990. Adolescence. New York: Wiley. 305 p.<br>JONES, T. 1990. Sibling rivalry. Journal of child psychology, 5(2):12-16.</p>\r\n<p>The initials must be included in the citation like this:</p>\r\n<p>(Jones, T.,1990)<br>(Jones, S., 1990)</p>\r\n<p>but it creates the following:</p>\r\n<p>(Jones,1990)<br>(Jones, 1990)</p>\r\n<p>Here is the result from the extension tool (which is also wrong):</p>\r\n<p>(Jones,1990a)<br> (Jones, 1990b)</p>\r\n<p>&nbsp;</p>\r\n<p>Is there a way to format the citation like this?</p>",
+    "PostedDate": "2009-08-15T15:00:54.19-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "223922",
+    "ThreadId": "64241",
+    "Html": "<p>No. BibWord does not support this feature.</p>\r\n<p>It might be possible to do it wrote the entire XSLT yourself, but I'm not sure. The information you get for in-text citations is rather sketchy.</p>",
+    "PostedDate": "2009-08-15T15:04:32.6-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

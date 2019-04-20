@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1325513",
+    "ThreadId": "572983",
+    "Html": "Hi,\r<br />\nI am using the Harvard Anglia ref. style and I need to add the vol to the ref. list.\r<br />\nFor example:\r<br />\nAlotto, P., Guarnieri, M. &amp; Moro, F., 2014. Redox flow batteries for the storage of renewable energy: A review. Renewable and Sustainable Energy Reviews, pp.325-35.\r<br />\n<br />\nThere the Vol is missing and I don't know how to add the Vol. to this.\r<br />\nThere is an optional field in the input mask, but the information does not appear in the ref. list.\r<br />\n<br />\nCan somebody help?\r<br />\n<br />\nRegards,<br />\n",
+    "PostedDate": "2014-11-24T05:03:30.513-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1329930",
+    "ThreadId": "572983",
+    "Html": "For Books Source - Edit the Harvard Anglia XLST file\r<br />\n<br />\nAt approx line 65 add &lt;b:ImportantField&gt;b:Volume&lt;/b:ImportantField&gt; (see below)\r<br />\n<br />\n&lt;source type=&quot;Book&quot;&gt;<br />\n<pre><code>    &lt;b:ImportantField&gt;b:Author/b:Author/b:NameList&lt;/b:ImportantField&gt;\n    &lt;b:ImportantField&gt;b:Author/b:Editor/b:NameList&lt;/b:ImportantField&gt;\n    &lt;b:ImportantField&gt;b:Title&lt;/b:ImportantField&gt;\n    &lt;b:ImportantField&gt;b:Edition&lt;/b:ImportantField&gt;\n    &lt;b:ImportantField&gt;b:Year&lt;/b:ImportantField&gt;\n    &lt;b:ImportantField&gt;b:City&lt;/b:ImportantField&gt;\n    &lt;b:ImportantField&gt;b:Publisher&lt;/b:ImportantField&gt;\n&lt;b:ImportantField&gt;b:Volume&lt;/b:ImportantField&gt;\n  &lt;/source&gt;\n</code></pre>\n\nAt approx line 207 add {Volume:%Volume%} (see below)\r<br />\n<br />\n&lt;source type=&quot;Book&quot;&gt;<br />\n<pre><code>    &lt;column id=&quot;1&quot;&gt;\n      &lt;halign&gt;left&lt;/halign&gt;\n      &lt;valign&gt;top&lt;/valign&gt;\n      &lt;format&gt;{%Author:2|Editor:3|Title% }{(%Year|&quot;n.d.&quot;%{%YearSuffix%})}{ &amp;lt;i&amp;gt;%Title|ShortTitle%&amp;lt;/i&amp;gt;.{ %Edition:o% edn.}}{ Translated for %Translator:5%.}{ [%Medium%]}{%Editor:3%  }{ %City|StateProvince|CountryRegion%{, %StateProvince|CountryRegion%{, %CountryRegion%}}{: %Publisher%}.}{ %Publisher%.}.{ Available at: &amp;lt;u&amp;gt;%URL:l%&amp;lt;/u&amp;gt;{ [accessed{{ %DayAccessed%} %MonthAccessed:s%} %YearAccessed%]}}.{ %Comments%.} {Volume:%Volume%}&lt;/format&gt;\n    &lt;/column&gt;\n    &lt;sortkey&gt;{%Author:0|Editor:0|Title%}{%Year|&quot;n.d.&quot;%}{%Title:a|ShortTitle:a%}&lt;/sortkey&gt;\n  &lt;/source&gt;\n</code></pre>\n\nIf you want other sources you will have to find the corresponding lines.<br />\n",
+    "PostedDate": "2014-12-08T13:55:46.717-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

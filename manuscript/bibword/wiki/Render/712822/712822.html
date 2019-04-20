@@ -1,0 +1,96 @@
+<div class="wikidoc"><h2>Project History</h2><a name="BibWord"></a>
+<h3>BibWord</h3><b>BibWord v.2.9</b> (01/04/2013)
+<ul><li>added support for Word 2013 </li></ul>
+<b>BibWord v.2.8</b> (28/11/2009)
+<ul><li>added the &#39;s&#39; option to split URLs over multiple lines (splitting is done after a &#39;/&#39;) </li>
+<li>added more separators for page ranges (dash, en dash, colon)</li></ul>
+<b>BibWord v.2.7</b> (25/10/2009)
+<ul><li>added the &#39;n&#39; option to always display Month and MonthAccessed with 2 digits </li>
+<li>added the &#39;i&#39; option to invert Month and MonthAccessed (13 - Month) (useful for sorting purposes) </li>
+<li>added the &#39;i&#39; option to invert Day and DayAccessed (32 - Month) (useful for sorting purposes) </li>
+<li>added the &#39;s&#39; option to SourceType</li>
+<li>fixed a bug in the options of Year and YearAccessed formatting where the options were ignored in combination with the &#39;r&#39; flag</li></ul>
+<b>BibWord v.2.6</b> (27/09/2009)
+<ul><li>added the &#39;i&#39; option to invert Year and YearAccessed (9999 - Year) (useful for sorting purposes) </li>
+<li>added the &#39;a&#39; option to abbreviate Corporate contributors</li>
+<li>grouped and cleaned up all sorting functionality</li></ul>
+<b>BibWord v.2.5</b> (10/05/2009)
+<ul><li>added the &#39;m&#39; option to title formatting to allow for the selection of the master title</li>
+<li>added the &#39;s&#39; option to title formatting to allow for the selection of the sub title</li>
+<li>added the &#39;f&#39; option to title formatting to capitalize the first word</li>
+<li>extended the &#39;a&#39; option so now other articles then &#39;a&#39;, &#39;an&#39;, and &#39;the&#39; can be moved to the end (i18n)</li>
+<li>fixed bug in name abbreviation where abbreviated parts without spaces did get further abbreviated (A.B. became A.)</li>
+<li>fixed a display bug where an URL between &lt; and &gt; was not shown</li></ul>
+<b>BibWord v.2.4</b> (26/04/2009)
+<ul><li>added default &#39;MsoBibliography&#39; style to footnote citations (Word 2008 only)</li>
+<li>added a &#39;c&#39; option to contributors so they can be counted (e.g. %Author:c%)</li>
+<li>fixed a year suffix issue where sources where not sorted but still required year suffices</li></ul>
+<b>BibWord v.2.3</b> (26/02/2009)
+<ul><li>added functionality to make in-text citations links which point to their accompanying bibliography entry through the citationaslink element in the general section </li>
+<li>added a version variable at the end of the stylesheet (for easier BibWord updates)</li>
+<li>removed an obsolete debugging routine </li></ul>
+<b>BibWord v.2.2</b> (17/02/2009) 
+<ul><li>added support for b:FootnoteCitation (Word 2008)</li>
+<li>added support for b:Description (Word 2008)</li>
+<li>added support for b:updateURL (Word 2008)</li></ul>
+<b>BibWord v.2.1</b> (11/02/2009) 
+<ul><li>changed both the file encoding and output encoding to utf-8 (Word 2008 support)</li>
+<li>changed html output encoding to utf-8 (Word 2008 support)</li></ul>
+<b>BibWord v.2.0</b> (04/02/2009) 
+<ul><li>renamed all key variables to skey to prevent double definition of key when the stylesheet is used in combination with Internet Explorer</li>
+<li>fixed a recursion bug in the get-person-parameter routine</li></ul>
+<b>BibWord v.1.9</b> (08/12/2008) 
+<ul><li>added the possibility to format placeholders using the &#39;Placeholder&#39; type for sources</li>
+<li>fixed two bugs in the abbreviate-name routine (reported by ilbajec)</li></ul>
+<b>BibWord v.1.8</b> (29/11/2008) 
+<ul><li>simplified ordinal formatting </li>
+<li>introduced roman numerals for CitationVolume, Edition, Month, MonthAccessed, and Volume </li>
+<li>added the possibility to specify a minimum length for abbreviated pages (e.g. &#39;a2&#39;: 135-137 becomes 135-37 rather than 135-7)</li>
+<li>fixed a bug in the recursion where sometimes a field was marked as used while it was not</li></ul>
+<b>BibWord v.1.7</b> (23/11/2008) 
+<ul><li>fixed a bug influencing all BibWord extensions</li></ul>
+<b>BibWord v.1.6</b> (22/11/2008)
+<ul><li>added the option to display only the first page of a range of pages </li>
+<li>added the option to display the ordinal suffix in superscript</li>
+<li>fixed a bug in the formatting of ordinals where sometimes the wrong suffix was shown </li>
+<li>fixed a bug in the abbreviation of pages where sometimes nothing was shown</li></ul>
+<b>BibWord v.1.5</b> (11/11/2008)
+<ul><li>fixed a namelist formatting bug where the wrong separator was displayed before the last contributor and the overflow </li>
+<li>fixed a bug in the formatting of ordinals </li>
+<li>added 4 new variables for in-text citations: CitationPages, CitationPrefix, CitationSuffix, CitationVolume </li>
+<li>added support for abbreviating and extending page ranges (e.g. 137-139 =&gt; 137-9) </li>
+<li>added support for year suffices (requires the BibWord Extender tool)</li></ul>
+<b>BibWord v.1.4</b>
+<ul><li>fixed a recursion error where variables got marked as being used while they were not </li>
+<li>added &#39;r&#39; parameter to all variables allowing variables being used multiple times within the same format </li>
+<li>added day formatting options </li>
+<li>added the possibility to use string laterals instead of variables (e.g.: %Author:2|&quot;Anonymous&quot;%) </li>
+<li>changed name abbreviation to support the display and/or removal of dashes and spaces between name parts </li>
+<li>added a possibility to display an error message when there is no formatting information for a source string</li></ul>
+<b>BibWord v.1.3</b>
+<ul><li>fixed the way the &#39;x&#39; at the start and the end of a bibliography are hidden in case tables are used</li></ul>
+<b>BibWord v.1.2</b>
+<ul><li>added month formatting</li></ul>
+<b>BibWord v.1.1</b>
+<ul><li>added the BibOrder extension</li></ul>
+<b>BibWord v.1.0</b>
+<ul><li>initial release</li></ul>
+<br /><a name="Extender"></a>
+<h3>BibWord Extender</h3><b>BibWord Extender v.2.0</b> (16/03/2009) 
+<ul><li>runs on Mono</li>
+<li>allows for selection of a different style directory than the default one </li>
+<li>allows for creating backups of your file (just so you can always be on the safe side) </li>
+<li>handles non-BibWord styles better</li></ul>
+<b>BibWord Extender v.1.2</b> (11/02/2009) 
+<ul><li>fixed encoding issue (this should hopefully also fix the \u2013 issues some people reported)</li></ul>
+<b>BibWord Extender v.1.1</b> (06/12/2008) 
+<ul><li>made stylesheet encoding independent</li>
+<li>compiled targetting x86 so registry access on a 64 bit machine does not fail </li></ul>
+<b>BibWord Extender v.1.0</b> (16/11/2008)
+<ul><li>initial release</li></ul>
+<br /><a name="BibOrder"></a>
+<h3>BibOrder <i>(deprecated)</i></h3><b>BibOrder v.1.0</b> (5/9/2008)
+<ul><li>initial release</li></ul>
+<br /><a name="BibType"></a>
+<h3>BibType</h3><b>BibType v.1.0</b> (4/8/2008)
+<ul><li>initial release</li></ul></div><div class="ClearBoth"></div>

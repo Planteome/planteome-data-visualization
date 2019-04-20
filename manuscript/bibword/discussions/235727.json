@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "525849",
+    "ThreadId": "235727",
+    "Html": "\r\n<p>I might just be missing something incredibly obvious here but I cant find the drop down box that people keep mentioning. The one you select the new referencing style on... can somebody explain where it is? (Word 2007)</p>\r\n<p>Thanks...</p>\r\n<p>Max.</p>\r\n",
+    "PostedDate": "2010-11-23T07:03:21.763-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "525969",
+    "ThreadId": "235727",
+    "Html": "\r\n<p>It's on the &quot;References&quot; tab in the &quot;Citations &amp; Bibliography&quot; group. If you can't find it there, then some add-in might have suppressed it. EndNote is known to do this because they are scared of any competition.</p>\r\n<p>The easiest workaround is to either temporarely disable the add-in causing the issue or to add the citations and bibliography group to the quick access toolbar (QAT).</p>\r\n",
+    "PostedDate": "2010-11-23T09:55:04.28-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "525985",
+    "ThreadId": "235727",
+    "Html": "\r\n<p>Oh yeah, I just didnt see it. Thanks for the help :)</p>\r\n",
+    "PostedDate": "2010-11-23T10:14:57.647-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

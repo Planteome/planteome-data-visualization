@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "This is a wonderful product !!!. Please can you help me to place pp after the page numbers in the Havard Anglia style. The company i work for uses p and pp diferently. e.g p. 1-2 and 175 pp.\n\nThanks",
+    "LastUpdatedDate": "2014-07-24T00:08:38.96-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "bibword",
+    "ReportedDate": "2014-07-24T00:07:01.56-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Please help to place pp after the page number",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 11792
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "This is a wonderful product !!!. Please can you help me to place pp after the page numbers in the Havard Anglia style. The company i work for uses p and pp diferently. e.g p. 1-2 and 175 pp.\r\n\r\nThanks",
+      "PostedDate": "2014-07-24T00:08:38.96-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

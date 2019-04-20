@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "See FAQ: https://bibword.codeplex.com/wikipage?title=Styles_FAQ#Q2",
+    "ClosedDate": "2013-11-09T13:07:44.233-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I have received a bug report from a student of mine that in Microsoft Office 2008: for Mac, while they can choose my Bibword-based style from the drop-down menu, it is not available to them when choosing the Bibliography document element. \n\nAny and all help regarding this would be much appreciated.\n\nRegards\n\nGergely",
+    "LastUpdatedDate": "2013-11-09T13:07:44.233-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "bibword",
+    "ReportedDate": "2013-11-09T01:46:23.49-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "No issue"
+    },
+    "Summary": "No after-text style in Microsoft Office 2008: for Mac",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 11392
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "This is a well-known bug in Word 2008. See the [FAQ](http://www.example.com) for a solution",
+      "PostedDate": "2013-11-09T13:07:16.807-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-11-09T13:07:44.233-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

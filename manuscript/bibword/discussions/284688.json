@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "719203",
+    "ThreadId": "284688",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>&nbsp;</p>\r\n<p>I followed the instructions and first set IEEE - alphabetic* in word 2007 in the document then saved and closed it. After that I opened the extender v2, selected the document and set IEEE - alphabetic* as the style and clicked extend. The program reported\r\n that the &quot;bibliography extension was successful&quot;. I opened the updated document but nothing has changed inside... Instead of the numbers there are the [BO] signs as in the original. Did I do something wrong? I'm using word 2007 with vista. Thanks for Your\r\n help!</p>\r\n<p>&nbsp;</p>\r\n<p>Best Regards</p>\r\n",
+    "PostedDate": "2012-01-01T13:22:07.44-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "719340",
+    "ThreadId": "284688",
+    "Html": "<p>You opened the document, but have you performed the last step?</p>\r\n<ol>\r\n<li>Create your document. </li>\r\n<li>Select the bibliography style you want to use. </li>\r\n<li>Save your document and close Word 2007. </li>\r\n<li>Run the BibWord Extender tool. </li>\r\n<li>Open your document and select the style again (so all citation and bibliography fields get updated).</li>\r\n</ol>\r\n<p>The last step is really important as it forces a refresh of all citation and bibliography fields. Without that refresh you will just see [BO].&nbsp;What you can do to ensure it is triggered correctly is change the style to for example APA and then change the style back to IEEE - Alphabetical*.</p>",
+    "PostedDate": "2012-01-02T03:57:10.697-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "719349",
+    "ThreadId": "284688",
+    "Html": "<p>Thanks a lot! I accidentally changed the style today and noticed that it actually works.:) Thank You!</p>\r\n<p>I changed the sourcecode now to show the number of the pages in the citition as well,&nbsp;which also works well.</p>\r\n<p>Now my last question would be: Can I make an alignment in the list, so that for example the books are going to be listed first and the internet sources at the end?</p>\r\n<p>That would be very nice, if I could accomplish that!</p>\r\n<p>Thank You for Your quick help!</p>\r\n<p>&nbsp;</p>\r\n<p>Best Regards!&nbsp;</p>",
+    "PostedDate": "2012-01-02T04:10:42.44-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "719426",
+    "ThreadId": "284688",
+    "Html": "<p>You can sort by source type before sorting by author. Keep in mind that there are no headers (yet) which you can automatically&nbsp;place above each item (Books, Internet Sites, ...). You can of course wait till you finished your document, then convert the bibliography to static text and then add the headers yourself.</p>\r\n<p>Anyway, in the&nbsp;xsl,&nbsp;do a find&nbsp;/ replace:</p>\r\n<p>find what:&nbsp;\"&lt;sortkey&gt;\"&nbsp; (without the quotes)<br />replace with:&nbsp;\"&lt;sortkey&gt;{%SourceType% }\" (without the quotes)</p>\r\n<p>This will order them by source type. Keep in mind that this will use the internal name of the type: ArticleInAPeriodical, Book, BookSection, Case,&nbsp;InternetSite, JournalArticle, ... If you want a different order you will have to use the string replacement for source types. It is the same as the one used for the months (already in your xsl) and more info can be found in the documentation.</p>",
+    "PostedDate": "2012-01-02T08:57:49.747-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "830564",
+    "ThreadId": "284688",
+    "Html": "<p>Hi,</p>\r\n<p>I have the problem of [BO] reference when I using the IEEE Alphabetical order, especially when I have more than article to the same exact author.</p>\r\n<p>I have done the mentioned steps exactly , but I still have the same problem. I can't solve it yet.</p>\r\n<p>Please I need help.</p>\r\n<p>I must submit my paper as soon as possible.</p>\r\n<p>Thank you so much in advance.</p>\r\n<p>Aya.</p>",
+    "PostedDate": "2012-05-01T03:57:42.577-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "830628",
+    "ThreadId": "284688",
+    "Html": "<p>What do you mean by 'problem of [BO] reference'? If you only get [BO] then the number is not yet calculated, or the number is calculated but the bibliography and references are outdated. If the latter is the case, just switch bibliography styles to something else and then go back to the IEEE one. This will force a refresh. If the values are not yet calculated, then you will need to run the extender program on your document as it needs to insert the elements in the open xml.</p>\r\n<p>A manual way of checking whether the extender ran correctly is by making a copy of your docx. Change the extension of docx to zip on the copy and then open the zip archive. In it there will be a folder customXml. It will contain a series of itemX.xml files (where X is a number). One of those will be the bibliographic information. Open it with your favourite xml editor (or notepad if you don't have one). If the exenteder ran successfully, there should be a &lt;b:BibOrder&gt; element inside the file for every source.</p>",
+    "PostedDate": "2012-05-01T06:39:47.82-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "830673",
+    "ThreadId": "284688",
+    "Html": "Hi,<br>\r\n<br>\r\nTry to save your document first with the IEEE alphabetic order and then restart word. In the meantime run the program (I don't know the name at the moment) which creates the right order of the names. Then start word again and select IEEE again, and the right\r\n numbers should be there. Very important: select IEEE anyway again, it doesn't matter that IEEE is selected in the menu. SELECT IT AGAIN! That was my problem also. But after I selected it again, the BO-s weren't there anymore.<br>\r\n<br>\r\nBest regards,<br>\r\nAkos<br>\r\n<br>\r\n<div>ZoghbyAya &lt;notifications@codeplex.com&gt; wrote:\r\n<blockquote style=\"margin:0pt 0pt 0pt 0.8ex; border-left:1px solid rgb(204,204,204); padding-left:1ex\">\r\n<p>From: ZoghbyAya</p>\r\n<div id=\"ThreadNotificationPostBody\">\r\n<p>Hi,</p>\r\n<p>I have the problem of [BO] reference when I using the IEEE Alphabetical order, especially when I have more than article to the same exact author.</p>\r\n<p>I have done the mentioned steps exactly , but I still have the same problem. I can't solve it yet.</p>\r\n<p>Please I need help.</p>\r\n<p>I must submit my paper as soon as possible.</p>\r\n<p>Thank you so much in advance.</p>\r\n<p>Aya.</p>\r\n</div>\r\n</blockquote>\r\n</div>\r\n",
+    "PostedDate": "2012-05-01T08:13:58.95-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

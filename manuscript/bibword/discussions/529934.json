@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1204700",
+    "ThreadId": "529934",
+    "Html": "Hey, first of all, I've to say that you did a great job with BibWord. \r<br />\nAnd secondly, I need help. I want to make my own style from modified Harvard Anglia..\r<br />\n<br />\nIn citation, instead of [Mehdi, 2005] I need it to appear [Meh-05].\r<br />\nSo the citation cutdown the name of the first outhor to the first three letters and cut the year to the last 2 digits.\r<br />\n<br />\nAnyone can help me please? Thanks a bunch <br />\n",
+    "PostedDate": "2014-02-07T17:16:31.47-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1213084",
+    "ThreadId": "529934",
+    "Html": "Basically you want to use the tag rather than the name of the author in the citation. Microsoft automatically fills in the tag as 3 letters and 2 digits if I'm not mistaken, but you are free to put in there whatever you want.<br />\n",
+    "PostedDate": "2014-02-23T10:44:34.773-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1213146",
+    "ThreadId": "529934",
+    "Html": "Thank you for the reply. I've managed to put tag in the citation, but it seems that tag cannot received symbols.. I can't put the &quot;-&quot; in tag box.. Is it default from Microsoft Word? Can I modified it from the style xml? I'm not that good with the programming language, but I can't find anything in the code that get rid of the symbols in tag.. Perhaps you can help??<br />\n",
+    "PostedDate": "2014-02-23T12:15:42.407-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

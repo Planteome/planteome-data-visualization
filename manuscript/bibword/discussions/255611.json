@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "604334",
+    "ThreadId": "255611",
+    "Html": "\r\n<p>Hello!</p>\r\n<p>I realise that the topic is not directly related to BibWord and the citation module but I thought that maybe you could help me.</p>\r\n<p>Is the 'Table of figures' module also based on some XML templates?</p>\r\n<p>The default&nbsp;'Table of figures' generator always uses the following format:<br>\r\nFigure I. Title ...................... page</p>\r\n<p>And I'd like to change this format to something like:<br>\r\nFigure I. ............................... page<br>\r\nTitle</p>\r\n<p>Could you please give me some hints what file I should edit to modify the default template or how I can add my own template?</p>\r\n<p>Regards,<br>\r\nProzac</p>\r\n",
+    "PostedDate": "2011-04-28T11:55:03.693-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "605437",
+    "ThreadId": "255611",
+    "Html": "<p>The mechanism used to format tables of contents is not open as far as I know. It resides somewhere in some dll that comes with Word and you can't change the algorithm like you can do with bibliographies. It has been way longer in Word from before Microsoft realised what good some openess could bring them.</p>\r\n<p>You could try asking your question on the Word newsgroup: <a href=\"http://answers.microsoft.com/en-us/office/forum/word?page=1&amp;tab=all\">http://answers.microsoft.com/en-us/office/forum/word?page=1&amp;tab=all</a></p>\r\n<p>Or it's technical alternative: <a href=\"http://social.technet.microsoft.com/Forums/en-us/word/threads\">http://social.technet.microsoft.com/Forums/en-us/word/threads</a></p>",
+    "PostedDate": "2011-05-01T01:48:40.25-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "605450",
+    "ThreadId": "255611",
+    "Html": "<p>OK, thanks a lot&nbsp;yves!</p>",
+    "PostedDate": "2011-05-01T02:27:18.977-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

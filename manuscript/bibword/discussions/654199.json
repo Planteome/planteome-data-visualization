@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1471922",
+    "ThreadId": "654199",
+    "Html": "Hello, I have installed the office, need to use the Vancouver style formatting works, I've been on the site bibiword and copied the template file for reading / style folder, but it does not appear the style in the options of word. you can help me with the problem?\r<br />\nI contacted technical support microsoft, and they told me that the version of the plugin is out of date because it is the year 2007. Did you guys have a 2013 version of this plugin?<br />\n",
+    "PostedDate": "2016-04-30T09:59:57.523-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1471928",
+    "ThreadId": "654199",
+    "Html": "The current version on this site works with any version of Word for Windows or Mac starting from Word 2007. Note that the place to put the file depends on the version of Word. For more information, see the installation instructions under the documentation tab.<br />\n",
+    "PostedDate": "2016-04-30T12:16:19.59-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

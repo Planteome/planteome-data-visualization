@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "275330",
+    "ThreadId": "80332",
+    "Html": "<p>I would like to know if it is possible to directly import pubmed generated xml files. I like to search my article on the pubmed website and add usefull article on the clipboard. When finishing with searching I export my findings to an xml file with [send it - file - format: xml]. I had tried to import the xml file directly into the source manager in the word bibliography. However an error is telling me that the xml file is not an correct bibliography source file.</p>\r\n<p>Does anyone knows how to make this work?</p>\r\n<p>Thank you in advance.</p>",
+    "PostedDate": "2010-01-10T05:44:00.37-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "275362",
+    "ThreadId": "80332",
+    "Html": "<p>You will have to convert the pubmed xml file into a Word bibliography xml file using some third party tool.</p>\r\n<p>One such tool is BibUtils (<a href=\"http://www.scripps.edu/~cdputnam/software/bibutils/\">http://www.scripps.edu/~cdputnam/software/bibutils/</a>). It uses the MODS format internally. You can use med2xml.exe followed by xml2wordbib.exe. You will have to verify the conversion process as there will probably be loss in precision between PubMed xml and MODS, and betweens MODS and Word bibliography xml.</p>\r\n<p>There is also a Memento plugin for Word which converts data from other formats (<a href=\"http://findnwrite.com/blog/?p=4\">http://findnwrite.com/blog/?p=4</a>). The software contacts the memento service online to do the conversion, so I'm not entirely thrilled on that subject. I also don't know how the conversion happens. There could be some kind of internal format as well causing loss of precision due to two conversions.</p>",
+    "PostedDate": "2010-01-10T09:11:32.177-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

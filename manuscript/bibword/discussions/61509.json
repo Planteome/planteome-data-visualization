@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "208676",
+    "ThreadId": "61509",
+    "Html": "<p>Hi , The LNCS style works nicely (thanks!)&nbsp; when i tried it in a regular default word file. However, when i use it in the WORD 2007 file from LNCS&nbsp;&nbsp; <br><a href=\"ftp://ftp.springer.de/pub/tex/latex/llncs/word/LNCS-Office2007.zip\">ftp://ftp.springer.de/pub/tex/latex/llncs/word/LNCS-Office2007.zip</a>&nbsp; (i use the file typeinst.doc after saved as mypaper.docx ) it doesn't work for me: &nbsp;<br>When I insert a new word2007 bibliography, the columns of the bibliography table overlap each other and numbers get occluded by the text of each entry. Also the entries are indented. I have to fix the columns and indentation manually with every refresh.</p>\r\n<p>I will greatly appreciate a quick answer.</p>\r\n<p>Many thanks,</p>\r\n<p>Assaf Marron</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-07-05T07:29:05.233-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "208709",
+    "ThreadId": "61509",
+    "Html": "<p>Bibliographies are using the MsoBibliography style to format the bibliography. By default, this style inherits from the &quot;Normal&quot; style. LNCS adds an indentation to the first line of a paragraph in the &quot;Normal&quot; style. What you should do is&nbsp;remove that for the bibliography style.</p>\r\n<p>In Word, press SHIFT+CTRL+ALT+S to get to&nbsp;the style pane.&nbsp;Once your bibliography is added, you will find a style in there called &quot;Bibliography&quot; or a localized variant of that name. Right click it and select &quot;Modify ...&quot;. Now click the &quot;Format&quot; button and select &quot;Paragraph...&quot;. Under &quot;Indentation&quot;, change &quot;Special&quot; to &quot;(none)&quot;. Press &quot;Ok&quot; a few times to close all dialogs. Everything should be visible now.</p>\r\n<p>Remember, the LNCS bibliography is created as a two column table. So if you want a wider tab between the number and the text, you can just drag the column border to the right.</p>",
+    "PostedDate": "2009-07-05T13:03:48.847-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "208725",
+    "ThreadId": "61509",
+    "Html": "<p>Hi Yves,&nbsp;</p>\r\n<p>Many thanks for the quick reply!!! It worked.&nbsp; (and i also changed&nbsp;the font size...)&nbsp;</p>\r\n<p>Best Regards,</p>\r\n<p>Assaf</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-07-05T14:20:06.667-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

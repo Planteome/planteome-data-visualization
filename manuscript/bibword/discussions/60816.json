@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "206062",
+    "ThreadId": "60816",
+    "Html": "<p>Hi there,&nbsp;</p>\r\n<p>I have couple of problems with Bib-externder. I'm using a style derived from the Harvard*. Only a few minor modifications.&nbsp;</p>\r\n<p>1) The extender works fine when there are several papers by the exact same authors: Jones, 2000a, and Jones, 2000b.</p>\r\n<p>But Im having problems for when there are two papers with the same first author but different other authors: (Smith, Jones, and Pritchard, 2000) and (Smith, Jackson and Newman, 2000). They both appear as Smith et al, 2000 and bib extender does not differentiate between them. How can I modify the code so that it differentiates between the two?</p>\r\n<p>2) the extender seems to put the suffix on the bibliography. But the citation in the text does not change? Why is this?</p>\r\n<p>I've got to hand in my Phd dissertation on wednesday and just found out of this bug.... not fun when you have 500 ref+ in the text....&nbsp;</p>\r\n<p>Otherwise, congratulation to the creator, great little tool~!!!... (really hope there is a solution to this.... otherwise I might shoot myself!)</p>\r\n<p>&nbsp;</p>\r\n<p>Many many thanks in advance for any help!!</p>\r\n<p>&nbsp;</p>\r\n<p>Nik</p>",
+    "PostedDate": "2009-06-26T13:33:56.477-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "206077",
+    "ThreadId": "60816",
+    "Html": "<p>Please provide exact information about the style you tried to modify. There are several harvard styles. I won't have time before sunday to look deeper into this issue but these notes should hopefully get you started.</p>\r\n<p>1)This is probably a bug in the style. My first guess would be that the &quot;extensions/source/yearsuffix&quot; element is not defined correctly. If you see it in your style with &quot;Author:0&quot; you might try to change it to &quot;Author:1&quot;. That way, the&nbsp;string deciding if a yearsuffix is required&nbsp;should be the same as the&nbsp;one for formatting an in-text citation. I know that some of the styles still have that issue.</p>\r\n<p>2)Are the in-text citations still citations? If you converted them&nbsp;to static text, they can no longer be updated by Word.&nbsp;You might want to post the format string for your in-text citation as there might be an issue there. OtherwiseI have no idea what the issue could be.</p>",
+    "PostedDate": "2009-06-26T14:05:37.84-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "206094",
+    "ThreadId": "60816",
+    "Html": "<p>Hi Yves,&nbsp;</p>\r\n<p>Thanks for the quick response!!</p>\r\n<p>The style I'm using is a slighly modified (formating of the bibliography mainly) of the Harvard - Exeter* &nbsp;created by you on the 2009.02.26 and downloaded in April.&nbsp;</p>\r\n<p>As you mention the &quot;Author&quot; in the Extensions section was set to 0, I've changed it 1 but nothing has happened. The string is now:&nbsp;{%Author:1%}{%Year%}</p>\r\n<p>The in-text citations are still citation. I'll post the string:</p>\r\n<p>{%CitationPrefix%}{%Author:1|ShortTitle|Title%, }{%Year|&quot;n.d.&quot;%}{: %CitationPages::%}{%CitationSuffix%}</p>\r\n<p>Maybe, rather than trying to repair my style, you could recomend me one that already has the formatting for extentions in the correct way?</p>\r\n<p>(i.e. one that will differentiate between the cases above mentioned and will correctly label the citations).&nbsp;</p>\r\n<p>It will definatelly take me less time to re-define the formatting of a new style than having to manually relabel all citations!!</p>\r\n<p>Again, than you very very much for your help!</p>\r\n<p>&nbsp;</p>\r\n<p>Nik</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-06-26T15:00:57.19-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "206097",
+    "ThreadId": "60816",
+    "Html": "<p>Sorry... The first problem is solved!! Now I've got the Smith et al, 2000a and Smith et al, 2000b at least in the bibliography.&nbsp;</p>\r\n<p>But the citations are still just Smith et al, 2000 in both cases. Any problems with the citations string posted above??</p>\r\n<p>By the way, if this gets sorted would you be interested in having a style for &quot;Molecular Ecology&quot; (the journal)??</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks again...</p>\r\n<p>&nbsp;</p>\r\n<p>Nik</p>",
+    "PostedDate": "2009-06-26T15:14:04.77-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "206195",
+    "ThreadId": "60816",
+    "Html": "<p>I'll update the Exeter style to fix the issue somewhere next week.</p>\r\n<p>Regarding the second problem the mistake is in the format string:</p>\r\n<p style=\"padding-left:30px\">{%CitationPrefix%}{%Author:1|ShortTitle|Title%, }{%Year|&quot;n.d.&quot;%}{: %CitationPages::%}{%CitationSuffix%}</p>\r\n<p>There is no <strong>%YearSuffix%</strong> element in there, so it isn't displayed anywhere. Try something like:</p>\r\n<p style=\"padding-left:30px\">{%CitationPrefix%}{%Author:1|ShortTitle|Title%, }{%Year|&quot;n.d.&quot;%<strong>{%YearSuffix%}</strong>}{: %CitationPages::%}{%CitationSuffix%}</p>\r\n<p>I'm always interested in getting new styles. If you want you can send them to me (email is on top of most styles) together with a little explaination and information on you. The information on you is only intended to give you credit for your work. If you don't want to be contacted about the style by others, that's fine by me. They will just have to use the forum then.</p>",
+    "PostedDate": "2009-06-27T07:36:34.963-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

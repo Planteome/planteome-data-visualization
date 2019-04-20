@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1316694",
+    "ThreadId": "570656",
+    "Html": "Hi,\r<br />\n<br />\nI have been trying to configure a university reference style to work on word for Mac 2011. I have pasted the xsl file in to the word style file in programme files but it still doesn't appear after a restart of both the programme or the pc. \r<br />\n<br />\nIt works perfectly within word 2010. Has anybody else been able to overcome this problem so that I could get this working as soon as possible. The style is a university modified version of Havard specifically designed for the university. \r<br />\n<br />\nThanks in advance. <br />\n",
+    "PostedDate": "2014-10-27T02:20:52.827-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1316760",
+    "ThreadId": "570656",
+    "Html": "Are you sure it is not picked up? Check if the style exists for citations instead of bibliographies. There is a known bug in different Word for Mac versions. Also see the <a href=\"https://bibword.codeplex.com/wikipage?title=Styles_FAQ#Q2\" rel=\"nofollow\">FAQ</a>.<br />\n",
+    "PostedDate": "2014-10-27T07:35:37.34-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1318409",
+    "ThreadId": "570656",
+    "Html": "Thanks Yves,\r<br />\n<br />\nI will have a look and see if it is picked up as a citation. \r<br />\n<br />\nIf this does not work is there a way to fix this bug you described in your previous post?\r<br />\n<br />\nSorry for the late reply been away with work this week. \r<br />\n<br />\nThanks for your help. <br />\n",
+    "PostedDate": "2014-11-02T09:16:40.66-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

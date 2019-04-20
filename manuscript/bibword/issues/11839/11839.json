@@ -1,0 +1,56 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Within the bibliography, superscript is not needed. To use superscript within the text, please check the  FAQ Q9.",
+    "ClosedDate": "2014-09-01T02:31:26.377-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Using __ACS - Citation Sequence (superscript)__ in Word 2013, Citation Reference numbers within the text and within the bibliography are not appearing as a superscript in Word 2013. I am not a programmer so I was not able to understand how to make the bug fix myself.",
+    "LastUpdatedDate": "2014-09-01T02:31:26.377-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "bibword",
+    "ReportedDate": "2014-08-22T08:20:48.867-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "No issue"
+    },
+    "Summary": "American Chemical Society (ACS) superscript",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 11839
+  },
+  "FileAttachments": [
+    {
+      "FileId": 3888,
+      "FileName": "Capture.JPG",
+      "DownloadUrl": ".\\3888"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Within the bibliography, superscript is not needed. To use superscript within the text, please check the [FAQ Q9](https://bibword.codeplex.com/wikipage?title=Styles_FAQ#Q9).",
+      "PostedDate": "2014-08-25T02:32:45.903-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2014-09-01T02:31:26.377-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

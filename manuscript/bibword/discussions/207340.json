@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "423756",
+    "ThreadId": "207340",
+    "Html": "<p>I need to modify the harvard style of my thesis to the following</p>\r\n<p>&nbsp;</p>\r\n<p>In the text (Brown, 1998, p2)</p>\r\n<p>&nbsp;</p>\r\n<p>i.e. just the persons surname in small letters with the first letter in capitals.</p>\r\n<p>&nbsp;</p>\r\n<p>Bibliography &nbsp;Brown, J.E., <em>The Little Brown Book, </em>New York, Harper Collins Publisher</p>\r\n<p>&nbsp;</p>\r\n<p>For more info see the university&nbsp;guidelines&nbsp;here <a href=\"http://www.ucd.ie/adulted/studyskills/referencing.htm\">http://www.ucd.ie/adulted/studyskills/referencing.htm</a></p>\r\n<p>&nbsp;</p>\r\n<p>Is this possible.</p>\r\n<p>I have my thesis complete and need to get this amended. For my thesis I used Harvard Leeds style.</p>\r\n<p>&nbsp;</p>\r\n<p>I am not very good at changing codes and file info so i'd appreciate if you could tell me where and what to change and if I could just copy it in if possible.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks in advance</p>\r\n<p>&nbsp;</p>\r\n<p>C</p>",
+    "PostedDate": "2010-03-25T13:25:55.223-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "423814",
+    "ThreadId": "207340",
+    "Html": "<p>I don't do requests for styles. This is a spare time project for me and I can't dedicate all that much time to it. That said, I do try to provide help for specific questions regarding the tools on this site or strange formatting requests for a specific source type. Of course, if somebody else wants to help you, they are free to do so :-)</p>\r\n<p>When entering sources in Word, it is important that you format the names correctly yourself. That is, you should already provide normal capitalization.&nbsp;BibWord styles are able to convert names to all lowercase or all uppercase and even abbreviate them for you, but they can't guess what the correct capitalization of a name is.</p>\r\n<p>As the Harvard - Leeds style capitalizes names in the bibliography and they aren't in your example, I would suggest that you first take a look at the other Harvard implementation on this site. Exeter might fit your needs better. Names correctly formatted, year between brackets, ...&nbsp;</p>\r\n<p>On a side note, your example for a bibliography entry is not&nbsp;correct as it doesn't contain the year. It would be pretty useless to identify a citation in the text by both the combination of name and year if the year wasn't used in the final bibliography.</p>",
+    "PostedDate": "2010-03-25T15:48:13.627-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "510457",
+    "ThreadId": "231791",
+    "Html": "<p>Dear BibWord Team.</p>\r\n<p>Thank you for an amasing product.</p>\r\n<p>I am busy adapting one of your citation styles to fit our version of the Harvard style.</p>\r\n<p>Our referencing guidelines state that one should only use <em>et al.</em> in the <span style=\"text-decoration:underline\"><strong>second and later</strong></span> in-text citation to a source with three or more authors. All the authors should be listed in the first citation to such a source. Is it possible to implement this requirement in BibWord?</p>\r\n<p>Kind regards</p>\r\n<p>Theuns</p>",
+    "PostedDate": "2010-10-21T05:25:30.913-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "510521",
+    "ThreadId": "231791",
+    "Html": "<p>No and there never will be.</p>\r\n<p>Word 2007/2008/2010 contains a flaw in that in-text citations have no knowledge of their environment. They don't know if they were cited before and when grouped together with other sources,&nbsp;they don't know who the others in the group are. So unfortunately, what you are asking is technically impossible.</p>",
+    "PostedDate": "2010-10-21T07:32:53.467-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

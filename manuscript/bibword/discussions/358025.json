@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "843677",
+    "ThreadId": "358025",
+    "Html": "\r\n<p>I am using &quot;CSECitSeq.XSL&quot; as base. But problem is, if i have more citations then 10, it will start showing 2 digital numbers on 2 lines. 10 is showed as 1 and 0 under it. I really need them to show normally side by side 10,11,12 etc. Can anyone tell me\r\n what changes must be done in that file?</p>\r\n",
+    "PostedDate": "2012-06-01T13:08:41.077-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "843678",
+    "ThreadId": "358025",
+    "Html": "<p>See <a href=\"http://bibword.codeplex.com/wikipage?title=Styles_FAQ&amp;referringTitle=Documentation#Q15\">http://bibword.codeplex.com/wikipage?title=Styles_FAQ&amp;referringTitle=Documentation#Q15</a></p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2012-06-01T13:11:36.547-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

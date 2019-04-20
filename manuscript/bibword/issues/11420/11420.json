@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I'm using a Harvard-type stylesheet to edit an article which has French sources.\nDiacritic marks output fine in the bibliography, but do not in the citations.\n\nThis is what I get:\n\n(BacquÃ©, 2005)\n\nBacqué, M.-H. 2005. Conclusion – La Démocratie Participative, Modèles et Enjeux. In Bacqué M.-H. and Rey, H. (eds.). In: Gestion de proximité et démocratie participative. Paris: La découverte. pp. 293-307.\n\nHow do I get the citations to output diacritics the same way that the bibliography does?\n\nAdvice will be greatly appreciated!",
+    "LastUpdatedDate": "2013-12-24T03:40:15.29-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "bibword",
+    "ReportedDate": "2013-11-25T07:21:03.383-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Diacritic/Accent marks not outputting in citation",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 11420
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "For those interested in using BibWord to process citations in various forms, the problem which I experienced in outputting citations with diacritics has been resolved. (Seven alternative forms of citation are available by suppressing combinations of citation elements.)\r\n\r\nI started by copying the <!-- Formats the citation > coding section from the Chicago Footnotes xsl and pasting it into a Harvard-type xsl. This worked, but the citations did not handle author names with diacritic letters (although the Bibliography output did).\r\n\r\nA line-by-line comparison showed that one line of relevant code was missing in the original <!-- Formats the citation > coding section in the Chicago Footnotes xsl:\r\n\r\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"></meta>\r\n\r\nOnce this is inserted in my combined Harvard-type xsl, the citations do output diacritics.\r\n\r\nThe relevant section should read:\n<!-- Formats the citation. -->\n  <xsl:template name=\"format-citation\">\n    <!-- Generate an XML node-set from the formatting data. -->\n    <xsl:variable name=\"params\" select=\"msxsl:node-set($data)\"/>\n    <html xmlns=\"http://www.w3.org/TR/REC-html40\">\n      <head>\n\t    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"></meta>\n      </head>\r\n\r\n\nI hope this will help those who may be interested.\n",
+      "PostedDate": "2013-12-24T03:40:15.29-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

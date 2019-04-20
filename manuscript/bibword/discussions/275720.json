@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "683597",
+    "ThreadId": "275720",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>Firstly I would like to commend you on the great work that you have done, it is of great help to someone like me who has little or no experience in code writing or referencing. The Havard-Exeter referencing style is very similar to that of the one I am required\r\n to use, with only a few small alterations. Is there any way to edit such things as the max number of people displayed in the code and if so what is the best way to go about it?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks in advance for your help :)</p>\r\n",
+    "PostedDate": "2011-10-13T03:37:18.007-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "683680",
+    "ThreadId": "275720",
+    "Html": "<p>There is a help page on <a href=\"http://bibword.codeplex.com/wikipage?title=BibWord%20Format%20Contributors&amp;referringTitle=Documentation\" target=\"_blank\">formatting contributors</a> with&nbsp;a specific subtopic on changing the <a href=\"http://bibword.codeplex.com/wikipage?title=BibWord%20Format%20Contributors&amp;referringTitle=Documentation#limitation\" target=\"_blank\">number of authors to display</a>.</p>\r\n<p>All you have to do is change the <em>max_number_of_persons_to_display</em> and/or the <em>number_of_persons_to_display_if_more_than_max</em> and you should be good to go.</p>",
+    "PostedDate": "2011-10-13T06:42:15.257-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "683703",
+    "ThreadId": "275720",
+    "Html": "<p>Thanks very much for the help and the quick response.&nbsp;</p>\r\n<p>Sorry again for asking a simple question but how do I view the code to edit it? When I open the \"style\" it brings me to a url that I cant seem to change anything and when I made changes using \"Notepad\" it saved as a xml file :'-( &nbsp;. If you could point me in the right direction it would really make my day?&nbsp;</p>",
+    "PostedDate": "2011-10-13T07:10:35.543-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "683724",
+    "ThreadId": "275720",
+    "Html": "<p>When you use Notepad, try using a 'Save As' operation (file name doesn't really matter to Word), where you set the 'Save as type' to 'All files'. That way you can type the extension you want in the box above.</p>\r\n<p>You can of course always change the extension manually from xml to xsl. xsl is nothing more than an xsl using a specific set of tags.</p>",
+    "PostedDate": "2011-10-13T07:39:29.363-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "683734",
+    "ThreadId": "275720",
+    "Html": "<p>MY HERO !! You are one clever guy.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks again :D !!!</p>",
+    "PostedDate": "2011-10-13T07:50:35.053-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

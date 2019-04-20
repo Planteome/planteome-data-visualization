@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1303712",
+    "ThreadId": "567160",
+    "Html": "Hey there, just having a couple of problems creating a style for my University's referencing system. The main issue at the moment is the way that URLs are handled for sorting... at the moment I have something like:\r<br />\n<br />\n<a href=\"http://www.academicallydodgywebsite.com\" rel=\"nofollow\">http://www.academicallydodgywebsite.com</a> (2005) (Accessed 1 January 2014)\r<br />\nGrey, G. (2012) <em>A Book</em>. London: A. Publishing Co.\r<br />\nSmith, J. (1980) <em>Old Book</em>. Cambridge: Cambridge University Press.\r<br />\n<br />\nHowever, the whole URL must be sorted, i.e:\r<br />\n<br />\nGrey, G. (2012) <em>A Book</em>. London: A. Publishing Co.\r<br />\n<a href=\"http://www.academicallydodgywebsite.com\" rel=\"nofollow\">http://www.academicallydodgywebsite.com</a> (2005) (Accessed 1 January 2014)\r<br />\nSmith, J. (1980) <em>Old Book</em>. Cambridge: Cambridge University Press.\r<br />\n<br />\nOf course, nobody recommends such sources but allowances for websites with only a URL are made in the style.<br />\n",
+    "PostedDate": "2014-09-11T10:59:07.213-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

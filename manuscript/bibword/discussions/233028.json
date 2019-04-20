@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "515368",
+    "ThreadId": "233028",
+    "Html": "\r\n<p>Hello</p>\r\n<p>Is it possible to instruct BibWord to print journal names or book titles in title case? It seems that only lower or upper case can be specified.</p>\r\n<p>Regards</p>\r\n<p>Theuns</p>\r\n",
+    "PostedDate": "2010-11-01T05:09:05.297-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "515768",
+    "ThreadId": "233028",
+    "Html": "\r\n<p>There is no such formatting switch available at the moment and I don't plan to add one. Title casing is extremely difficult to implement as the decision on which words to capitalize and which not is depending on the language&nbsp;of the sentence.&nbsp;(The\r\n implementation currently&nbsp;used by&nbsp;Word is not always correct either.)</p>\r\n<p>As the output is simple HTML with CSS, you could try out the text-transform CSS property, but I'm not certain Word can process that one correctly:</p>\r\n<pre>{ &lt;span style=&quot;text-transform: capitalize;&quot;&gt;%BookTitle%&lt;/span&gt;}\r\n</pre>\r\n<p>Note that you might to use &amp;lt; and &amp;gt; to represent &lt; and &gt; in the above example.</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2010-11-02T00:39:58.563-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

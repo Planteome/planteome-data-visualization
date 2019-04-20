@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "692061",
+    "ThreadId": "277871",
+    "Html": "\r\n<p>When I try to insert a bibliography it crashes.</p>\r\n",
+    "PostedDate": "2011-11-01T05:08:32.787-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "692568",
+    "ThreadId": "277871",
+    "Html": "<p>Does this happen only with the styles which you got from here or does it also happen with the styles that came with Word? If the latter is the case there is not much I can do about it.</p>\r\n<p>What language are you typing in? If you are using a non-Western alphabet there might be issues in the xslt engine. Does it crash when you only have 1 citation in your work which uses only ascii characters?</p>",
+    "PostedDate": "2011-11-02T01:35:57.88-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

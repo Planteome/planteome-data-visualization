@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "868277",
+    "ThreadId": "369434",
+    "Html": "\r\n<p>Right now I am using IEEE Alphabetical as the style, and it works fine with the bibtex extender tool, except that it is listing all the sources, even the ones that have not been cited. &nbsp;This is a real problem, because the way that MS sets up the bibliography\r\n source file, I have to work from one big master list of sources, and I cannot manually go through the document every single time that I write something to see which set of 200 references were used in this case - this is exactly why I need bibword styles -\r\n to automate this process. &nbsp;</p>\r\n<p>I've done a ton of searching, but I can't find any reference to this behavior, so I don't know if this is a bug, or the way that the style is set up. &nbsp;</p>\r\n<p>How do I get the bibliography to list only the sources that have been cited? &nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks for taking the time to read my post!</p>\r\n",
+    "PostedDate": "2012-07-15T11:18:22.73-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "868347",
+    "ThreadId": "369434",
+    "Html": "<p><strong>Sorry! - nevermind - ignore this post. </strong>After hours of fiddling,&nbsp;I realized that the problem is with word, that apparently the default is for it to list everything. &nbsp;:(</p>\r\n<p>I am used to bibtex, but have to use Word for a new research area because the journals require it, so it just never occurred to me that Word would do this!</p>\r\n<p>I hope no one wasted time reading this - I tried to find a way to delete this post, but couldn't figure it out. &nbsp;</p>",
+    "PostedDate": "2012-07-15T12:20:52.503-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "870689",
+    "ThreadId": "369434",
+    "Html": "<p>There is a difference between your master list (which is stored on your computer) and the sources used in your document (which&nbsp;are stored inside your document). It is the exact same way BibTeX handles things.</p>\r\n<p>Using the source manager in Word you can easily see which sources in your document aren't used. There is a small v mark next to them.</p>",
+    "PostedDate": "2012-07-17T03:43:18.143-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

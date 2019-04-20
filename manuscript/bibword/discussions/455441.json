@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1088066",
+    "ThreadId": "455441",
+    "Html": "I'm trying to modify in order to follow the author guidelines for advanced optical materials. I was able to change the citation style and the bibliography style but I still miss a feature of this journal. They say that:\r<br />\n&quot;Where possible, composite references should be used; the individual parts should be \r<br />\nseparated by a semicolon and labeled a), b), c), and not (a), (b), (c).&quot;\r<br />\nfor example:\r<br />\n[1] a) H. J. Ache, Angew. Chem. 1989, 101, 1; Angew. Chem. Int. Ed. Engl. 1989, 28, \r<br />\n1; b) H. Frey, Angew. Chem. 1998, 110, 2313; Angew. Chem. Int. Ed. 1998, 37, 2193; \r<br />\nc) G. M. Sheldrick, SHELXS-96, Program for the Solution of Crystal Structures, \r<br />\nUniversity of Göttingen, Göttingen, Germany, 1996.\r<br />\nThis means also that in the text the citation number (1) will be associated to the three articles. \r<br />\nHow can I do this?\r<br />\nThanks!!!<br />\n",
+    "PostedDate": "2013-09-03T23:45:15.08-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

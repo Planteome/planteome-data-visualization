@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1490711",
+    "ThreadId": "660523",
+    "Html": "Hi\r<br />\n I have downloaded the styles  folder which includes MHRA -  {which  is the one I need}.\r<br />\n<br />\nWord has successfully included all the other new styles, but not NHRA.   I wonder -  if that file corrupt?\r<br />\n<br />\n please help\r<br />\n<br />\n<br />\n Brian<br />\n",
+    "PostedDate": "2017-01-06T04:57:05.85-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1490820",
+    "ThreadId": "660523",
+    "Html": "<strong>brianpile wrote:</strong><br />\n<blockquote>\nHi<br />\n I have downloaded the styles  folder which includes MHRA -  {which  is the one I need}.<br />\n<br />\nWord has successfully included all the other new styles, but not NHRA.   I wonder -  if that file corrupt?<br />\n<br />\n please help<br />\n<br />\n<br />\n Brian<br />\n</blockquote>\n",
+    "PostedDate": "2017-01-09T04:43:21.947-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1490821",
+    "ThreadId": "660523",
+    "Html": "Oh, and the installation instructions do not work on my late 2016 Macbook Pro :-(<br />\n",
+    "PostedDate": "2017-01-09T04:46:34.297-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1490858",
+    "ThreadId": "660523",
+    "Html": "I followed theRospetto's Instructions from last year.   He is absolutely right - There are some instructions missing from that file, which once you put back [I used textedit, to open and then edit the file] works perfectly.   Thanks theRospetto!\r<br />\n<br />\n brian<br />\n&lt;!-- Sets a version number in Word 2013. --&gt;\r\n<pre><code>  &lt;xsl:when test=&quot;b:XslVersion&quot;&gt;\n    &lt;xsl:choose&gt;\n      &lt;xsl:when test=&quot;msxsl:node-set($data)/general/version2013&quot;&gt;\n        &lt;xsl:value-of select=&quot;msxsl:node-set($data)/general/version2013&quot;/&gt;\n      &lt;/xsl:when&gt;\n      &lt;xsl:otherwise&gt;\n        &lt;!-- Fallback method : use a dummy version number of 1. --&gt;\n        &lt;xsl:text&gt;1&lt;/xsl:text&gt;\n      &lt;/xsl:otherwise&gt;\n    &lt;/xsl:choose&gt;\n  &lt;/xsl:when&gt;\n\n  &lt;!-- Set the name of the style in Word 2013. --&gt;\n  &lt;xsl:when test=&quot;b:StyleNameLocalized&quot;&gt;\n    &lt;xsl:value-of select=&quot;msxsl:node-set($data)/general/stylename&quot;/&gt;\n  &lt;/xsl:when&gt;</code></pre>\n\n",
+    "PostedDate": "2017-01-09T09:10:12.36-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

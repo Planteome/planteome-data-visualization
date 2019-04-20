@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "498445",
+    "ThreadId": "228584",
+    "Html": "<p>I'm using a Mac. I tried using BibWordExtender via mono on a file,and it failed. When I went to open my file and just do things manually, I learned the file was corrupted. I cannot figure out how to restore the back-ups of my file. Please help me get my paper back (if that's even possible)!</p>",
+    "PostedDate": "2010-09-25T13:24:26.777-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "498519",
+    "ThreadId": "228584",
+    "Html": "<p>By default &quot;Create backup&quot; is checked so there should be a backup of your original file. If your file was called mywork.docx, then the backups will be labelled mywork_orig.docx or mywork_orig_cnt.docx where cnt is a counter going up by one for every time you run the program. The backups are stored in the same directory as your original file.</p>\r\n<p>If you somehow forgot to create a&nbsp; backup, send me a mail with your document and I'll see what I can do. My mail address can be found at the top of most stylesheets.</p>\r\n<p>As this is the second report I'm getting of this behaviour in a week, I'm assuming that my application is no longer compatible with the latest releases of&nbsp;Mono. As I no longer have access to a Mac to test with, I will (for the moment) discontinu the Mac version of the software. I have changed the release notes on the software page indicating that the application will only work with Mono 2.2.</p>",
+    "PostedDate": "2010-09-26T01:57:32.533-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "498597",
+    "ThreadId": "228584",
+    "Html": "<p>The backups all seem to be corrupted as well, but I found a copy of my work stored in Time Machine, so all is well. Sorry this didn't work -- I loved using it when I had a PC.</p>",
+    "PostedDate": "2010-09-26T10:04:12.653-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "281585",
+    "ThreadId": "81980",
+    "Html": "<p>Dear All,</p>\r\n<p>I have installed Vancouver style and my references started looking funny:</p>\r\n<p>Literature</p>\r\n<p>x</p>\r\n<table border=0 cellpadding=0 width=\"100%\">\r\n<tbody>\r\n<tr>\r\n<td valign=top>\r\n<p align=right>1.</p>\r\n</td>\r\n<td valign=top>\r\n<p>ICH. ICH Harmonised   Tripartite Guideline, Pharmaceutical Development: Q8(R2). ; 2009.</p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<p>x</p>\r\n<p>Does anybody know how to get rid of those x's?&nbsp; I never had this problem with vanilla Microsoft styles.</p>\r\n<p>Thank you,</p>\r\n<p>lm</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-25T14:21:35.823-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "281589",
+    "ThreadId": "81980",
+    "Html": "<p>Normally, you shouldn't be able to see the x's. They should be hidden. Of course, if you display non-printing characters, you will see them in your document but they should have little dots beneath them indicating they are hidden.</p>\r\n<p>The x's are a fix for a bug in Word. Basically what happens is that a style generates a HTML file which is then converted by Word and inserted into your document. Unfortunately, there is an issue with the conversion. If the HTML body does not start and end with a paragraph, Word inserts its own empty paragraphs. BibWord styles which use a table layout work around the conversion issue by adding a&nbsp;paragraph above and below the table. As empty paragraphs would get removed, a single 'x' is added as content for the paragraph and they are&nbsp;set to invisble.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-25T14:46:39.603-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "281610",
+    "ThreadId": "81980",
+    "Html": "<p>Thank you, silly me - I always display hidden symbols.</p>\r\n<p>lm</p>",
+    "PostedDate": "2010-01-25T16:02:53.567-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

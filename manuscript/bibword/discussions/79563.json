@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "272416",
+    "ThreadId": "79563",
+    "Html": "<p>Hi,</p>\r\n<p>Thanks for this organization! I can't use citations and bibliography section in Word 2007. All boxes are inactive and &quot;missing&quot; is inscribed in the style drop-down box. I downloaded all the styles from bibword. However I don't have any bibliography folder under Office12 (windows). Although I created bibliography/styles folder and pasted the styles there, I couldn't activate the service. Please help!</p>\r\n<p>Seljuk</p>",
+    "PostedDate": "2010-01-02T10:25:28.597-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "272535",
+    "ThreadId": "79563",
+    "Html": "<p>If the styles are indicating as missing and most of the options in the citations and bibliography section of the ribbon are grayed out, it is likely that something went wrong during the installation of Word.</p>\r\n<p>The only known solution to this problem is an uninstall followed by a reinstall of the program. A repair won't help.</p>",
+    "PostedDate": "2010-01-03T01:56:49.657-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "272743",
+    "ThreadId": "79563",
+    "Html": "<p>thanks,&nbsp; the problem is solved by reinstallation.</p>",
+    "PostedDate": "2010-01-03T23:07:29.617-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

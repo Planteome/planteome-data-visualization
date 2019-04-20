@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1109699",
+    "ThreadId": "462870",
+    "Html": "Hi,\r<br />\n<br />\nFirst of all, thank you for BibWord - it's certainly very interesting and powerful!  I am getting my head around how to get my citations to do what I want but I still haven't been able to do the same with my bibliography.\r<br />\n<br />\n1) Ordering.  Whatever I do, the biography seems to always sort by order cited in the text.  I have tried using %SourceType%, %Author|Editor% and even, in a fit of desperation, straight numerical values in the sortkey element of each source but nothing seems to make a difference - what am I missing?\r<br />\n<br />\n2) For some reason, the text in my bibliography comes out in a different style to my main document - is there any way to alter this?\r<br />\n<br />\n3) I'd like to use sub-headings for some (but not all) sections of my bibliography.  Is that possible?  Would it be simpler to just edit the sub-headings in if I can get the sorting figured out?<br />\n",
+    "PostedDate": "2013-10-20T08:27:01.38-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1113029",
+    "ThreadId": "462870",
+    "Html": "OK, I've figured out the problem in point one.  I had one source which was a BookSection but labelled as a Unit with the type variable.  I had only specified what to do for the Unit type in the bibliography (which was working fine for layout purposes).  As soon as I copied that section and labelled it BookSection, the sorting started working.  I'm not sure if that means that it's using the sorting for BookSection or just that the fact that BookSection appears elsewhere in the stylesheet but not there was causing a silent error in the sort code - I noticed that when I miscapitalized a variable in the sortkey it also stopped working silently.<br />\n",
+    "PostedDate": "2013-10-28T05:36:17.18-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

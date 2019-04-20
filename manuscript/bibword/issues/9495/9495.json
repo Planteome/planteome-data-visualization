@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I have installed bibword on my windows 7 PC using office2010. It appears to work perfectly. However when I add my first citation all typing AFTER this first  in text citation appears to be immune to the spell checker. Any word that is mistyped or mispelt does not get highlighted by the spell checker and is not shown as mispelt even when I run the spell checker. Any mispelt word in the text BEFORE the first citation is picked up by the spell checker. I am using Harvard - Exeter referencing style.\n \nI had the same thing happen qith my old vista PC but this only happened after i tried to alter the bibword harvard file to be more like the style for my university. When i noticed the problem i went back to using the original bibword file and the problem was solved. \n \nThsi time I have not tried to be clever and amend the code I just have used it as is. \n \nHelp?\n \nSandy",
+    "LastUpdatedDate": "2013-02-21T18:20:25.777-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "bibword",
+    "ReportedDate": "2011-11-05T07:31:57.993-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "problem with word and bibword",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 9495
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

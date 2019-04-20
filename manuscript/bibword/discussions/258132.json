@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "614829",
+    "ThreadId": "258132",
+    "Html": "\r\n<p>Would there be any way to include information about an corporate author only in the bibliography, but not in citations? I often use abbreviations for corporate authors, but I would like the non-abbreviated form to appear in the bib, like:</p>\r\n<p>&nbsp;</p>\r\n<p>as can be seen in WTO (2010) ...</p>\r\n<p>---</p>\r\n<p>WTO (World Trade Organization). 2010. Conference Paper xyz...</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks!</p>\r\n",
+    "PostedDate": "2011-05-18T13:03:15.61-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "616384",
+    "ThreadId": "258132",
+    "Html": "<p>No.</p>\r\n<p>If you would know that every corporate author can be abbreviated, you might be able to cook something up, but without that knowledge, it is impossible to make a decision on wheter a corporate author should be abbreviated or not.</p>",
+    "PostedDate": "2011-05-22T06:54:42.35-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "616479",
+    "ThreadId": "258132",
+    "Html": "<p>Would it be possible to use the \"comment\" field and have it printed in the bibliography behind the author?</p>",
+    "PostedDate": "2011-05-22T14:34:11.477-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

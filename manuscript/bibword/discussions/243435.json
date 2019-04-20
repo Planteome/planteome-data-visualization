@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "555877",
+    "ThreadId": "243435",
+    "Html": "\r\n<p>I have no skill in xml etc so I am at the mercy of the fine people who have created these Harvard styles. I need even more powerful options for types of sources. Consider us academics who often have to cite from Serial Book Publications (not Journal articles).\r\n Such a book could have an editor and also a general series editor. Citing a chapter in such a book could look something like this:</p>\r\n<p><span style=\"font-size:12pt\">Carlstadt, Andreas von 1995a. &quot;The Manifold, Singular Will of God, The Nature of Sin,&quot; in Furcha, E J (ed)\r\n<em>The Essential Carlstadt: Fifteen Tracts by Andreas Bodenstein</em>, H Wayne Pipkin (ed) Classics of the Radical Reformation 8. Scottdale, PA: Herald Press.</span></p>\r\n<p>Such a publication requires an author, date, chapter title, book title, book editor, series title, series volume number, general series editor, place of publication and publisher. While I would be happy merely to find a way manually to fit all this info\r\n into one of the pre-established source type dialogs, I have found it impossible to do so. Is it possible to account for Serial publications like this in a future release of your Bibliographic Styles?</p>\r\n<p>Thank you for the hard work and advice.</p>\r\n",
+    "PostedDate": "2011-01-26T13:25:25.137-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "556118",
+    "ThreadId": "243435",
+    "Html": "\r\n<p>Theoretically, you can't add new fields as that would result in an invalid xml document (not conform the OpenXML specification). However, Word doesn't verify this at all, so there is nothing stopping you from adding extra fields.</p>\r\n<p>It's a two step project:</p>\r\n<ol>\r\n<li>Change the way the input source dialog looks (and store the inputted data in your document)\r\n</li><li>Format the entered data to your wishes and display it </li></ol>\r\n<p>The first step is illustrated in the proof of concept I wrote for APA with a DOI field. The lenghty post explaining the changes made to obtain that result might be helpfull:&nbsp;\r\n<a href=\"http://groups.google.com/group/microsoft.public.word.docmanagement/browse_thread/thread/8a28a5a9a2a607d7/5b594105d46d9ba7?hl=en\">\r\nhttp://groups.google.com/group/microsoft.public.word.docmanagement/browse_thread/thread/8a28a5a9a2a607d7/5b594105d46d9ba7?hl=en</a>&nbsp;(somewhere halfway the page).</p>\r\n<p>The second step is creating a format string in BibWord. If you stored the data as SeriesAuthor, SeriesEditor, SeriesTitle, ... elements, then BibWord will automatically recognize them as variables and process them accordingly (so you can use the %SeriesTitle%\r\n variable for example). Standard switches like 'r', 'u', and 'l' (e.g. %SeriesTitle:u%) will also work. Extra switches won't. They will require a little bit of programming.</p>\r\n<p>Except for the extra&nbsp;switches, enough documentation should be available. If you need help with&nbsp;switches, post back with specifics and I will see what I can&nbsp;do. But looking at your example, I doubt there is any need for them.&nbsp;</p>\r\n",
+    "PostedDate": "2011-01-27T02:32:57.193-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

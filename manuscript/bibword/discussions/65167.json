@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "221936",
+    "ThreadId": "65167",
+    "Html": "<p>Is it possible to (easily) mix different stile templates, so I could use the citation style of one, and the Bibliography style of another?</p>",
+    "PostedDate": "2009-08-11T02:48:26.377-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "222122",
+    "ThreadId": "65167",
+    "Html": "<p>For BibWord styles, the answer is yes. You only have to do two things:</p>\r\n<ol>\r\n<li>Copy the &lt;citation&gt; or &lt;bibliography&gt; element of the data variable.</li>\r\n<li>Check the formatting of persons in the &lt;namelists&gt; element.</li>\r\n</ol>\r\n<p>For other styles it depends. For example, the predefined Word styles make calls to dozens of template functions. I'm not certain that each file contains all those templates. So simply cutting and pasting the citation or bibliography part might or might not work. Also, different styles might use the same template name but put different functionality in one. If you are using an 'intelligent' XSLT editor, it will probably tell you when you paste stuff which points to missing templates. If you are using notepad or something, you will just have to try and see.</p>",
+    "PostedDate": "2009-08-11T11:10:42.663-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

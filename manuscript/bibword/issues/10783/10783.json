@@ -1,0 +1,55 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi, yves.\nIs there any way to make items of bibliography list as a hyperlink? I'd like to use URL field from source as a link but  I don't want to show link text in the  bibliography list?",
+    "LastUpdatedDate": "2013-02-21T18:20:24.287-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "bibword",
+    "ReportedDate": "2013-01-31T00:41:42.133-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Bibliography Item as hyperlink",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 10783
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Sorry but from your explaination it is not clear to me what you are trying to achieve.\r\n\r\nIf you just use the %URL% variable then the URL will be displayed as ordinary text inside your bibliography. If you use the l parameter, so %URL:l% the URL will be displayed as a clickable link.\r\n\r\nIf you want to make an entire entry a clickable link, then you might try &lt;a href='{%URL%}'&gt;the rest of your entry here.&gt;/a:&lt; . Basically the same thing you would do when introducing bold, italics, ...\r\n\r\nBut I would advise against that approach as it is highly unlikely that you will have a URL for each entry.",
+      "PostedDate": "2013-01-31T01:56:01.987-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Actually I am interested in the second variant you described.  I'll try your solution. Probably it would be better to have not  entire entry a clickable but only a number before the entry. The first variant works well. But a URL could be very long sometimes and I don't want to show entire link while keeping it alive   ",
+      "PostedDate": "2013-01-31T02:33:05.747-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:20:24.287-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

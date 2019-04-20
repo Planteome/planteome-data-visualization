@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "827045",
+    "ThreadId": "353133",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I'm using the BibWord and I'm trying to make my own style. One problem that I have&nbsp;encountered&nbsp;is that I can't get the auto hyphenation working within the bibliography field. Is there a way to correct this somehow?</p>\r\n",
+    "PostedDate": "2012-04-22T09:17:55.95-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "827046",
+    "ThreadId": "353133",
+    "Html": "<p>Not sure, but I doubt that is possible.</p>\r\n<p>The bibliography is HTML which gets converted to Open XML by Word. I'm not aware of any automatic hyphenation options in HTML sort of manually providing soft hyphens in your source.</p>\r\n<p>I'm not even sure whether automatic hyphenation works in fields in Word.</p>",
+    "PostedDate": "2012-04-22T09:36:37.683-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "827051",
+    "ThreadId": "353133",
+    "Html": "\r\n<div>\r\n<p><span lang=\"EN-US\">Thanks for the quick reply. I guess I’ll have to do it manually then.</span></p>\r\n</div>\r\n",
+    "PostedDate": "2012-04-22T09:44:24.787-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

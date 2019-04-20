@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "619754",
+    "ThreadId": "259363",
+    "Html": "\r\n<p>I'd like to add two field to APA style:</p>\r\n<p>&nbsp;</p>\r\n<p>- original title of translated books</p>\r\n<p>- year of first publication</p>\r\n<p>&nbsp;</p>\r\n<p>would it be difficult to achieve that?</p>\r\n<p>&nbsp;</p>\r\n<p>thanks!</p>\r\n",
+    "PostedDate": "2011-05-28T07:24:19.647-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "620450",
+    "ThreadId": "259363",
+    "Html": "<p>Unfortunately there are no fields available for this type of data (it's a mistake if you ask me).</p>\r\n<p>One solution could be to make those fields available. That would involve extending bibform.xml with new elements. It's the cleanest solution but requires most work and theoretically the underlying xml is not valid (not that Word cares).</p>\r\n<p>Altenatively, you can abuse one or two existing but unused fields and put the data there. For a complete book you could use the BookTitle and YearAccessed elements.</p>\r\n<p>As to the complexity of adjusting the APA style. It depends on what sources you all want to update. You would look for</p>\r\n<p><span style=\"color: blue;\">&nbsp;&lt;</span><span style=\"color: #a31515;\">xsl</span><span style=\"color: blue;\">:</span><span style=\"color: #a31515;\">when</span> <span style=\"color: red;\">test</span><span style=\"color: blue;\">=</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">b:Bibliography</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">&gt;</span></p>\r\n<p>and then for the specific type of sources you want to adjust. E.G.:</p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre><span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">xsl</span><span style=\"color: blue;\">:</span><span style=\"color: #a31515;\">when</span> <span style=\"color: red;\">test</span><span style=\"color: blue;\">=</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">b:SourceType='Book'</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>anything under that section will handle the specific entry. If you are lucky, you can inject whatever extra info you want in between elements. If you're not, you will have to break up combined data and do the formatting by yourself. For example, the APA style generates a&nbsp;$tempJVIP variable&nbsp;used by Journal Articles which groups the Journal name, the Volume, the Issue, and the Pages. If you want to insert something in between the issue and pages, I would ignore the tempJVIP part and write my own formatting for the entire part. It's a lot easier than going chasing $tempJVIP and adjusting that. Also keep in mind that $tempJVIP might be used by other&nbsp;types of sources as well. Types you perhaps don't want to mess with.</p>",
+    "PostedDate": "2011-05-30T14:02:21.287-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

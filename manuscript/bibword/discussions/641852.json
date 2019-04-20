@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1435785",
+    "ThreadId": "641852",
+    "Html": "I am really sorry if these matters were discussed on this forum, but I couldn't find it...<br />\n<ol>\n<li>Is it possible to add a sortkey for in-text citations according to the publication year? E.g. if I have citation like this (Author1 1950; Author2 1980; Author3 2010) and then I want to add Author4 2000, system will automatically add this entry at the end of citation, and not before Author3 2010?</li>\n<li>Is it possible to create bibliography like this:<br />\nAuthor 1<br />\n2000 &lt;tab&gt; title<br />\n2005 &lt;tab&gt; title<br />\nAuthor 2<br />\n1980 &lt;tab&gt; title<br />\n1982 &lt;tab&gt; title<br />\nand so on?</li>\n</ol>\n",
+    "PostedDate": "2015-07-23T23:05:47.157-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1435823",
+    "ThreadId": "641852",
+    "Html": "<strong>stenow wrote:</strong><br />\n<blockquote>\nI am really sorry if these matters were discussed on this forum, but I couldn't find it...<br />\n<ol>\n<li>\nIs it possible to add a sortkey for in-text citations according to the publication year? E.g. if I have citation like this (Author1 1950; Author2 1980; Author3 2010) and then I want to add Author4 2000, system will automatically add this entry at the end of citation, and not before Author3 2010?<br />\n</li>\n</ol>\n</blockquote>\nNo. See the <a href=\"https://bibword.codeplex.com/wikipage?title=FAQ#Q2\" rel=\"nofollow\">FAQ</a>.\r<br />\n<br />\n<strong>stenow wrote:</strong><br />\n<blockquote>\n<ol>\n<li>\nIs it possible to create bibliography like this:<br />\nAuthor 1<br />\n2000 &lt;tab&gt; title<br />\n2005 &lt;tab&gt; title<br />\nAuthor 2<br />\n1980 &lt;tab&gt; title<br />\n1982 &lt;tab&gt; title<br />\nand so on?<br />\n</li>\n</ol>\n</blockquote>\nNot out of the box. It would require some serious XSLT manipulation. I have been thinking about adding headers in a future version, but I'm lacking time. Note that using a tab would never be a good idea as bibliographies are build as HTML which does not understand the concept of tab. A table layout would be better there.<br />\n",
+    "PostedDate": "2015-07-24T02:15:40.823-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1436189",
+    "ThreadId": "641852",
+    "Html": "\r\n<div dir=\"ltr\" style=\"font-family:'Calibri','Segoe UI','Meiryo','Microsoft YaHei UI','Microsoft JhengHei UI','Malgun Gothic','sans-serif'; font-size:12pt\">\r\n<div style=\"color:rgb(0,0,0)\">Alas, changing citation (edit field) does not work with Word 2013…<br>\r\n</div>\r\n<div style=\"color:rgb(0,0,0)\"><br>\r\n</div>\r\n<div style=\"padding-top:5px; border-top-color:rgb(229,229,229); border-top-width:1px; border-top-style:solid\">\r\n<div><font face=\" 'Calibri', 'Segoe UI', 'Meiryo', 'Microsoft YaHei UI', 'Microsoft JhengHei UI', 'Malgun Gothic', 'sans-serif'\" style=\"line-height:15pt; letter-spacing:0.02em; font-family:\"><b>Od:</b> [email removed]<br>\r\n<b>Wysłano:</b> ‎piątek‎, ‎24‎ ‎lipca‎ ‎2015 ‎11‎:‎15<br>\r\n<b>Do:</b> [email removed]</font></div>\r\n</div>\r\n<div><br>\r\n</div>\r\n<div dir=\"\">\r\n<p>From: Yves</p>\r\n<div id=\"ThreadNotificationPostBody\"><strong>stenow wrote:</strong><br>\r\n<blockquote style=\"margin-top:0px; margin-bottom:0px\">I am really sorry if these matters were discussed on this forum, but I couldn't find it...<br>\r\n<ol style=\"padding-top:0px; padding-bottom:0px; margin-top:0px; margin-bottom:0px; list-style-type:decimal\">\r\n<li>Is it possible to add a sortkey for in-text citations according to the publication year? E.g. if I have citation like this (Author1 1950; Author2 1980; Author3 2010) and then I want to add Author4 2000, system will automatically add this entry at the end\r\n of citation, and not before Author3 2010?<br>\r\n</li></ol>\r\n</blockquote>\r\nNo. See the <a href=\"https://bibword.codeplex.com/wikipage?title=FAQ#Q2\" target=\"_parent\" rel=\"nofollow\">\r\nFAQ</a>. <br>\r\n<br>\r\n<strong>stenow wrote:</strong><br>\r\n<blockquote style=\"margin-top:0px; margin-bottom:0px\">\r\n<ol style=\"padding-top:0px; padding-bottom:0px; margin-top:0px; margin-bottom:0px; list-style-type:decimal\">\r\n<li>Is it possible to create bibliography like this:<br>\r\nAuthor 1<br>\r\n2000 &lt;tab&gt; title<br>\r\n2005 &lt;tab&gt; title<br>\r\nAuthor 2<br>\r\n1980 &lt;tab&gt; title<br>\r\n1982 &lt;tab&gt; title<br>\r\nand so on?<br>\r\n</li></ol>\r\n</blockquote>\r\nNot out of the box. It would require some serious XSLT manipulation. I have been thinking about adding headers in a future version, but I'm lacking time. Note that using a tab would never be a good idea as bibliographies are build as HTML which does not understand\r\n the concept of tab. A table layout would be better there.<br>\r\n</div>\r\n</div>\r\n</div>\r\n",
+    "PostedDate": "2015-07-27T13:01:51.503-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1436202",
+    "ThreadId": "641852",
+    "Html": "<strong>stenow wrote:</strong><br />\n<blockquote>\nAlas, changing citation (edit field) does not work with Word 2013…  \n<br />\n</blockquote>\nIt does. But realize that if you have hyperlinking turned on (that is, clicking on an in-text citation brings you to a bibliography entry), the default context menu might be overridden if you don't right-click in the exact correct place.<br />\n",
+    "PostedDate": "2015-07-27T13:44:59.163-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1436447",
+    "ThreadId": "641852",
+    "Html": "\r\n<div dir=\"ltr\">Yeah, I've found my problem - you can't change citation if it's in a footnote. You must copy it to the main text, change, and then copy again....<br>\r\nBy the way - when I insert citation I can choose from the already cited items, clicking &quot;insert citation&quot; button. But everything on this list is sorted according to the first name of the author, what is very irritating. I solved it typing last name as the first\r\n name... But, maybe, I can change something in Word's settings?<br>\r\n<br>\r\n<div>\r\n<hr id=\"stopSpelling\">\r\n</div>\r\n</div>\r\n",
+    "PostedDate": "2015-07-28T23:05:03.69-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

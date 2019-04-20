@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "992401",
+    "ThreadId": "430937",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I'm try to change&nbsp;ABNT_Num and need help to translate pages and &nbsp;want change font of author.</p>\r\n<p>[4] <strong>Стефанов, Г.; Кре&#1084;акова, Б.</strong> Строителни свойства на българските льосови почви. София. Техника. 1960. 220 p.</p>\r\n<p>[5] <strong>SARSBY, R.</strong> Environmental Geotechnics. London. Thomas Telford. 2000. 584 p. ISBN 0-7277-2752-4.</p>\r\n<p>&nbsp;<span style=\"font-size:10pt\">&nbsp;to</span></p>\r\n<p>[4] <strong>Стефанов, Г.; Кре&#1084;акова, Б.</strong> Строителни свойства на българските льосови почви. София. Техника. 1960. 220\r\n<strong><span style=\"color:#ff0000\">c.</span></strong></p>\r\n<p>[5] <strong><span style=\"color:#ff0000\">Sarsby</span>, R.</strong> Environmental Geotechnics. London. Thomas Telford. 2000. 584 p. ISBN 0-7277-2752-4.</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2013-01-26T06:13:26.937-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "992411",
+    "ThreadId": "430937",
+    "Html": "\r\n<p>The p. doesn't get there automatically, it's a string. From your example in your other post: { %Pages::%\r\n<span style=\"color:#ff0000\"><strong>p.</strong></span>} you could just type&nbsp;{ %Pages::%\r\n<strong><span style=\"color:#ff0000\">c.</span></strong>} . If you want internationalization out of the box (one style for multiple languages), then that is not possible with BibWord. This was a specific design choice.</p>\r\n<p>What format string are you using for your authors? Check <a href=\"http://bibword.codeplex.com/wikipage?title=BibWord%20Format%20Contributors\" target=\"_blank\">\r\nFormatting a Set of Contributors</a>&nbsp;for general information on&nbsp;things you can change to format a set of contributors. Also check the\r\n<a href=\"http://bibword.codeplex.com/wikipage?title=BibWord%20Format%20Strings#ex2\">\r\nexample&nbsp;contributor format strings</a>&nbsp;, they give you a basic idea of the possibilities of formatting a single name.</p>\r\n",
+    "PostedDate": "2013-01-26T06:26:36.19-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "992414",
+    "ThreadId": "430937",
+    "Html": "\r\n<p>It is&nbsp;<span>ABNT_Num&nbsp;<span>format string</span></span></p>\r\n<p><span><span><br>\r\n</span></span></p>\r\n",
+    "PostedDate": "2013-01-26T06:37:54.037-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

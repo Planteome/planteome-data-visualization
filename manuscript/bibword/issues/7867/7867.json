@@ -1,0 +1,71 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "No issue.",
+    "ClosedDate": "2011-01-04T23:33:20.323-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I was recently helping out a friend. His references were coming out with a mangled author list.\n \nJ Fredrick, F A H W T H A C V J <rest of reference>\n \nI fixed it, and i also made some other changes to the file, to fit the Vancover style more correctly\n \nChanges include: \n \nFixing Author list. (Lines 381-395)\n \nThe Following only apply to Journal Articles: (Lines 221-233)\nAdding Issue Number tto end of reference.\nItalics around Journal name \nBold around Volume Number\n \nI did this for a friend, so i thought i would try and contribute back to you guys.\n \nKeep up the great work, this collection is a lifesaver.",
+    "LastUpdatedDate": "2013-05-16T05:29:23.697-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "bibword",
+    "ReportedDate": "2011-01-04T07:21:29.27-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Vancover Issues in Word 2010",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 7867
+  },
+  "FileAttachments": [
+    {
+      "FileId": 2498,
+      "FileName": "Vancouver.xsl",
+      "DownloadUrl": ".\\2498"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "The mangled author list is not a bug. Your friend entered the list incorrectly. By changing the code, you fixed things for your friend but the result will be incorrect for everybody who enters the names correctly. Your friend probably copy/pasted the entire line of authors into the source dialog. He shouldn't have done that. Instead, he should have used the the \"Edit\" button at the end of the author line to enter the authors one by one.  To illustrate my point, create a new source and enter the following in the author line (this is the correct formatting): \"Bush, George; Clinton, Bill; Truman, Harry;\". Now check what happens when you use your formatting, the names will be spelled out completely and the first names will be first (\"George Bush, Bill Clinton, and Harry Truman.\"). Compare this to the original style which will abbreviate the first names and display them after the last names with periods (\"Bush G, Clinton B, Truman H\").\r\n\r\nRegarding the second issue, according to http://www.library.uq.edu.au/training/citation/vancouv.pdf (p.7 and 8) on which this style is based, there should be no italics and bold.",
+      "PostedDate": "2011-01-04T12:22:56.57-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Ahhh i see, ok, i should have noticed he probably put his names in incorrectly.\r\n\r\nOn the second point i was working off a different source for how the referencing should look. I should have sure it was offical.\r\n\r\nThanks for pointing out he entered the names incorrectly.",
+      "PostedDate": "2011-01-04T12:55:01.1-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-01-04T23:33:20.323-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:20:26.503-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:29:23.697-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

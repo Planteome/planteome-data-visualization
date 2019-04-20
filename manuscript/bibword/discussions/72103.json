@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "246071",
+    "ThreadId": "72103",
+    "Html": "<p>Hi all!</p>\r\n<p>I've got&nbsp;a big file with all relevant citations of my research field.&nbsp;Everytime that&nbsp;I want to insert citation in documents,</p>\r\n<p>I have to scroll the huge list in order to find the right ones. Are there any other way to speed up the task?</p>\r\n<p>The desiderat would be to create a Task pane with a filterable&nbsp; list box</p>\r\n<p>that contains the citations, and simply drag from it the citations into the document?</p>\r\n<p>Thanks</p>\r\n<p>Nikozen</p>",
+    "PostedDate": "2009-10-15T07:49:55.833-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "246388",
+    "ThreadId": "72103",
+    "Html": "<p>There is a search function in the Manage Sources dialog. It works cross-fields and on master lists only&nbsp;though. There is no search pane.</p>\r\n<p>The best way to use the tool is by organizing things a bit yourself. For example, if you are working on multiple topics, you might want to consider using multiple master source lists. Using the 'Browse...' button under 'Manage Sources' can be used to select the master source list you want to use. Also, once you are creating your document, you should only copy the sources you intend to use to your local document in the 'Manage Sources' dialog. No point in having dozens of unused sources clutter up the 'Insert Citation' list.</p>\r\n<p>Each source is uniquely identified by its 'Tag'. If you know the tag of the source you want to insert, you could insert it manually. This is probably only useful if you use your own tagging mechanism instead of letting Word generate one for every source.</p>",
+    "PostedDate": "2009-10-15T23:38:55.993-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

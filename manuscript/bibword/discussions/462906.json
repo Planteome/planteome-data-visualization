@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1109797",
+    "ThreadId": "462906",
+    "Html": "Can someone please help this frustrated Novice?<br />\n<pre><code> I am using Windows 2013 and cannot find the MSWord files to download BibWord or Extentender into.  Incredibly, Incredibly, Incredibly Frustrating to say the least.  I have used the folder names of the &quot;How To&quot; section and tried multiple times to map them out but to no avail.  MS Search Tools is useless.   I did manage to find a file entitled &quot;MSOffice15&quot; but I cannot seem to find the MSWord system files at all.\n If anyone has a suggestion or a solution, I am all ears/eyes!!\n</code></pre>\n\nFrustrated User<br />\n",
+    "PostedDate": "2013-10-20T21:00:10.37-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1110962",
+    "ThreadId": "462906",
+    "Html": "I'm assuming you mean 'Office 2013' by 'Windows 2013'. There is no point in putting them in the MSOffice15 folder.\r<br />\n<br />\nOpen Explorer (Windows key + E) and paste the following in the top bar <br />\n<pre><code>%userprofile%\\AppData\\Roaming</code></pre>\n\nfollowed by an enter. That should get you to a directory.\r<br />\n<br />\nGo down the directory structure Microsoft =&gt; Bibliography =&gt; Style. If one of those subdirectories does not exist, create it. \r<br />\n<br />\nPut the files in the Style directory.<br />\n",
+    "PostedDate": "2013-10-23T02:50:13.467-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

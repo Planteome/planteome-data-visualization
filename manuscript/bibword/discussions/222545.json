@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "476742",
+    "ThreadId": "222545",
+    "Html": "Just thought this was interesting, jabref automatically converts jabref/bibtex databases to xml outputs.\r\nMore info on this here:\r\nhttp://www.paulkiddie.com/2009/07/jabref-exports-to-word-2007-xml/",
+    "PostedDate": "2010-08-05T01:05:07.403-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "486246",
+    "ThreadId": "222545",
+    "Html": "<p>Qiqqa (<a href=\"http://www.qiqqa.com\">http://www.qiqqa.com</a>) also does this.&nbsp; It will convert BibTeX chunks (e.g. from GoogleScholar) into XML that Word2007/2010 understands.</p>",
+    "PostedDate": "2010-08-29T17:55:37.887-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

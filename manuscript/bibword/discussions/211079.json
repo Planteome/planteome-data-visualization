@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "437313",
+    "ThreadId": "211079",
+    "Html": "<p>Hi, great work, indeed! Is there any simple style, which would just use the tag names in references? Like [Gat09]...</p>",
+    "PostedDate": "2010-04-29T13:37:59.397-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "437414",
+    "ThreadId": "211079",
+    "Html": "<p>There is an older IEEE style: <a href=\"http://bibword.codeplex.com/releases/view/15183\">http://bibword.codeplex.com/releases/view/15183</a></p>\r\n<p>None of the BibWord styles have tags afaik, but you could easily update one of the alphabetical two column styles. For example, if you would start from the <a title=\"IEEE - Alphabetical Order*\" href=\"http://bibword.codeplex.com/releases/view/19764#DownloadId=49964\">IEEE alphabetical order</a>, you could simply change</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>{%BibOrder|&quot;BO&quot;%}<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>into</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>{%Tag%}<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>And then</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>{[%BibOrder|&quot;BO&quot;%]}<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>into</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>{[%Tag%]}<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>The only thing left worrying about is how you want to sort your bibliography entries. If you want to sort them by tag, you will have to update the different sort keys. Just look for code looking like this</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">sortkey</span><span style=\"color:blue\">&gt;</span><span style=\"color:#808000\"><em> a format string </em></span><span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">sortkey</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>and change it into</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">sortkey</span><span style=\"color:blue\">&gt;</span>{%Tag%}<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">sortkey</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n</div>",
+    "PostedDate": "2010-04-29T22:47:27.44-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "437852",
+    "ThreadId": "211079",
+    "Html": "<p>Thanks Yves, works nicely! (although I had to fill in some source types, like Case). Also I have noticed the IEEE contains formating info for Standard and Thesis source types, but these are not offered by Word. Is there any updated BIBFORM.XML available, or do I have to add them on my own?</p>",
+    "PostedDate": "2010-05-01T07:10:27.873-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "438423",
+    "ThreadId": "211079",
+    "Html": "<p>IEEE has no citing rules for a 'Case'. I only added the formatting info of which there exists a definition.</p>\r\n<p>Unavailable types like 'Thesis' and/or 'Standard' can be used by either extending the bibform.xml or by just typing 'Standard' in the the 'Type' field.</p>\r\n<p>Considering the localization issues with bibform.xml, I mostly advise against manipulating it. But if you want to do it, check out <a href=\"http://bibword.codeplex.com/Thread/View.aspx?ThreadId=75287\">http://bibword.codeplex.com/Thread/View.aspx?ThreadId=75287</a></p>",
+    "PostedDate": "2010-05-03T09:22:21.783-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

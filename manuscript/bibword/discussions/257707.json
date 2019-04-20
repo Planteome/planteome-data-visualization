@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "613032",
+    "ThreadId": "257707",
+    "Html": "\r\n<p>Hello!</p>\r\n<p>I have no idea what the reason is - from time to time after updating my bibliography - all links become incorrect.<br>\r\nYesterday everything was fine. Today I added some text and some new citations and updated the Bibliography. All reference numbers in brackets (AMA) seem to be correct but when I click them with CTRL (links enabled) then I jump to strange unknown locations.\r\n After clicking the citation No 168 it jumps to the title page etc.</p>\r\n<p>Also, I've noticed that when updating bibliography with a large number of sources Word is &quot;not responding&quot; for several seconds. I'm not sure if this may be the reason.</p>\r\n<p>I know the issue may not be directly related to BibWord but probably to Word itself but... who knows the Bibliography module better than you :-)</p>\r\n<p>Thank you for your support!</p>\r\n<p>Regards,<br>\r\nM.</p>\r\n",
+    "PostedDate": "2011-05-15T12:05:18.083-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "613135",
+    "ThreadId": "257707",
+    "Html": "<p>Word becomes sluggish when it has to process a large number of sources, so the \"not responding\" doesn't surprise me.</p>\r\n<p>What you could try is to temporarly disable hyperlinking from the style, then update the in-text citations and bibliography with the non-hyperlinked version of the style and then reenable it and refresh them again.</p>\r\n<p>Disabling hyperlinking in the xsl can be done by setting</p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre><span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">citation_as_link</span><span style=\"color: blue;\">&gt;</span>yes<span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">citation_as_link</span><span style=\"color: blue;\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>to</p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre><span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">citation_as_link</span><span style=\"color: blue;\">&gt;</span>no<span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">citation_as_link</span><span style=\"color: blue;\">&gt;</span>\r\n</pre>\r\n</div>",
+    "PostedDate": "2011-05-15T23:10:08.52-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "613264",
+    "ThreadId": "257707",
+    "Html": "<p>Wow, THANKS!<br />The trick worked perfectly :-)</p>\r\n<p>I disabled hyperlinks, updated bibliography saved the file, enabled&nbsp;hyperlinks and after refreshing them again all links are correct :-)</p>\r\n<p>Seems there must have been some mess with links stored in the file.</p>\r\n<p>Thanks once again!</p>",
+    "PostedDate": "2011-05-16T04:36:35.887-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

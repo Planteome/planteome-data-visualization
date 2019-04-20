@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "233602",
+    "ThreadId": "68658",
+    "Html": "<p>Im new to this forum and trying to see if this is what i need.&nbsp; I stumbled across bibword during a google search.&nbsp; Im in the middle of writing a large document and the basic citations that word has are not sufficient.&nbsp; Basically, when i insert a citation it inserts it like this (author, year).&nbsp; Thats all fine and good for direct quotes, but i need the ability to insert a simple citation like this: Author (year) .&nbsp; In that way, i can put it inline for a summarized quote.</p>\r\n<p>&nbsp;</p>\r\n<p>Can bibword help with this?&nbsp; How do I make word give me an 'option'?</p>",
+    "PostedDate": "2009-09-11T07:35:16.777-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "233682",
+    "ThreadId": "68658",
+    "Html": "<p>The short answer is&nbsp;no. Word does not send out formatting information to the stylesheets. So all in-text citations should be of the same format: either (Author, Year) or Author (Year)</p>\r\n<p>However, there are a couple of workarounds. The easy one:&nbsp;you could type the author name yourself, then insert the citation and suppress the author. That way, the year would still be there between the brackets. To suppress the author, you have to right click on a citation&nbsp;and pick &quot;Edit citation&quot; from the menu. Of course, this requires you type out the names yourself.</p>\r\n<p>If you have some XSLT knowledge, you can get around things by giving the suppress flags a different meaning. You could create two versions of a citation format&nbsp;and depending on what you 'suppress', you could pick what citation to display. For an example of a style which 'abuses' these flags in a similar way, see <a href=\"http://bibword.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=20331\">http://bibword.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=20331</a>&nbsp;. But this requires some programming skills.</p>\r\n<p>Off-topic: one thing to keep in mind is that it is considered bad practice to use both types of citations in a work. You should stick to either Author (Year) or (Author, Year).</p>",
+    "PostedDate": "2009-09-11T10:26:00.477-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "233722",
+    "ThreadId": "68658",
+    "Html": "<p>Well, doesnt is look funny if I say</p>\r\n<p>&nbsp;</p>\r\n<p>(Smith, 1984) noted his research resulted in.....</p>\r\n<p>&nbsp;</p>\r\n<p>Vs.</p>\r\n<p>&nbsp;</p>\r\n<p>Smith (1984) noted his research resulted in.....</p>\r\n<p>&nbsp;</p>\r\n<p>The first is in-text citation for a direct quote and the second is in text citation for a summary.&nbsp; Both are used in the same document.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-11T12:14:25.47-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "233775",
+    "ThreadId": "68658",
+    "Html": "<p>It's all about how you form your sentence.</p>\r\n<p style=\"padding-left:30px\">Previous research resulted in ... (Smith, 1984).</p>\r\n<p>I certainly agree, that the lack of an&nbsp;option to switch between both forms of citation is&nbsp;a miss, but the comment at the end of my original reply still stands.</p>",
+    "PostedDate": "2009-09-11T15:35:11.417-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "233818",
+    "ThreadId": "68658",
+    "Html": "<p>Yeah, you are 100% correct.&nbsp; I appreciate the tip, its been a while since I had to do any sort of serious research or technical paper.&nbsp; Since Word only offers that one style, that's what I will use.&nbsp; I will just use it like you did in the above post.&nbsp; Using it that way makes it easier and helps keep my document tidy and easily fixable if I need to do some sort of mass update for some reason.&nbsp; Thanks again for the insight!</p>",
+    "PostedDate": "2009-09-11T20:44:00.717-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "249951",
+    "ThreadId": "68658",
+    "Html": "<p>I have a similar problem in that I need a style that looks like APA or ASA but gives me an inline citation that looks like Author (Year) instead of the ususal (Author Year). Can't find one - the closest I can get are styles like CMS Footnotes.</p>",
+    "PostedDate": "2009-10-26T14:54:12.48-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "250285",
+    "ThreadId": "68658",
+    "Html": "<p>Either you should do as suggested in the original reply (type the name yourself, then insert the citation and suppress the author) or you have to create a style yourself.</p>\r\n<p>Assuming you start from the ASA style on this site, you would probably need to change the following things:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>  <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">openbracket</span><span style=\"color:Blue\">&gt;</span>(<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">openbracket</span><span style=\"color:Blue\">&gt;</span>\r\n  <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">closebracket</span><span style=\"color:Blue\">&gt;</span>)<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">closebracket</span><span style=\"color:Blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>into</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>  <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">openbracket</span><span style=\"color:Blue\">&gt;</span><span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">openbracket</span><span style=\"color:Blue\">&gt;</span>\r\n  <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">closebracket</span><span style=\"color:Blue\">&gt;</span><span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">closebracket</span><span style=\"color:Blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>This way, there won't be any more parentheses around your citation at all. After this, you will have to manipulate every entry the way you want it to be. A quick suggestion you can try out is to look for:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>  { %Year|&quot;n.d.&quot;%}{%YearSuffix%}{:%CitationPages:::e%}{, vol.%CitationVolume%}\r\n</pre>\r\n</div>\r\n<p>and replace it by</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>  { <strong><span style=\"color:#ff0000\">(</span></strong>%Year|&quot;n.d.&quot;%}{%YearSuffix%}{:%CitationPages:::e%}{, vol.%CitationVolume%}<strong><span style=\"color:#ff0000\">)</span></strong>\r\n</pre>\r\n</div>\r\n<p>I wouldn't call it the most clean solution ever, but it might just do the trick for you.</p>\r\n<p>Yves</p>",
+    "PostedDate": "2009-10-27T11:29:25.3-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

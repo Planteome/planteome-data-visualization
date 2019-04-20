@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "283767",
+    "ThreadId": "82556",
+    "Html": "<p>Hi, I'm using Harvard-Exeter and it automatically creates link to provided URL. For my faculty I have to delete the link (but not the URL itself) - is it possible to change/delete anything here:</p>\r\n<p>&lt;!-- Handle URLs. --&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;xsl:when test=&quot;$name = 'URL' and string($source/b:URL)&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;xsl:call-template name=&quot;format-url&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;xsl:with-param name=&quot;url&quot; select=&quot;$source/b:URL&quot;&gt;&lt;/xsl:with-param&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;xsl:with-param name=&quot;options&quot; select=&quot;$options&quot;&gt;&lt;/xsl:with-param&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/xsl:call-template&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/xsl:when&gt;</p>\r\n<p>or here:</p>\r\n<p>&lt;!-- Formats an URL. --&gt;<br>&nbsp; &lt;xsl:template name=&quot;format-url&quot;&gt;<br>&nbsp;&nbsp;&nbsp; &lt;!-- URL to format. --&gt;<br>&nbsp;&nbsp;&nbsp; &lt;xsl:param name=&quot;url&quot;&gt;&lt;/xsl:param&gt;<br>&nbsp;&nbsp;&nbsp; &lt;!-- Formatting options. Currently only 'l' for link is supported. --&gt;<br>&nbsp;&nbsp;&nbsp; &lt;xsl:param name=&quot;options&quot;&gt;&lt;/xsl:param&gt;<br>&nbsp;&nbsp;&nbsp; &lt;xsl:if test=&quot;string-length($url) &amp;gt; 0&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;!-- Open tag. --&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;xsl:if test=&quot;$options = 'l'&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;xsl:text&gt;&amp;lt;a href=&quot;&lt;/xsl:text&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;xsl:value-of select=&quot;$url&quot;&gt;&lt;/xsl:value-of&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;xsl:text&gt;&quot;&amp;gt;&lt;/xsl:text&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/xsl:if&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;!-- Hack in case &lt;URL&gt; is requested and not as link. --&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;xsl:if test=&quot;$options != 'l'&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;xsl:text&gt;&amp;lt;span/&amp;gt;&lt;/xsl:text&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/xsl:if&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;!-- Display URL. --&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;xsl:value-of select=&quot;$url&quot;&gt;&lt;/xsl:value-of&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;!-- Close tag. --&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;xsl:if test=&quot;$options = 'l'&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;xsl:text&gt;&amp;lt;/a&amp;gt;&lt;/xsl:text&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/xsl:if&gt;<br>&nbsp;&nbsp;&nbsp; &lt;/xsl:if&gt;<br>&nbsp; &lt;/xsl:template&gt;</p>\r\n<p>&nbsp;</p>\r\n<p>Many thanks!</p>",
+    "PostedDate": "2010-01-30T14:31:50.963-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "283876",
+    "ThreadId": "82556",
+    "Html": "<p>You should not be making changes to the template itself (though you can). Instead, you should be making the changes to the format strings in the data element. In your case, just do a find and replace of &quot;URL:l&quot; to &quot;URL&quot; (without the quotes).</p>\r\n<p>(I do notice that their is an inconsistency in the style where some URLs are displayed as links, while others are not. As soon as I have some time, I will fix this)</p>",
+    "PostedDate": "2010-01-31T05:31:10.423-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "283884",
+    "ThreadId": "82556",
+    "Html": "<p>Thank you so much, so simple - yet so useful for me! Thanks a lot!<br><br>Marko<br><br></p>",
+    "PostedDate": "2010-01-31T06:05:42.92-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

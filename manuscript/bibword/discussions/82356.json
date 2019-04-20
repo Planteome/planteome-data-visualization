@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "282970",
+    "ThreadId": "82356",
+    "Html": "<p>Hi Yves and everyone,</p>\r\n<p>I&rsquo;m not sure if this is a BibWord problem or a Word problem. I&rsquo;m using a modified version of Yves&rsquo;s ASA stylesheet in Word 2007 with WinXP.</p>\r\n<p>I have a citation in my document that references 9 sources from the same corporate author. The CITATION field for this citation looks like so:</p>\r\n<pre>{ CITATION \\l 1033 ZZZ01 \\m ZZZ02 \\m ZZZ03 \\m ZZZ04 \\m ZZZ05 \\m ZZZ06 \\m ZZZ07 \\m ZZZ08 \\m ZZZ09 }</pre>\r\n<p>This works fine if all citations are shown using the default setting. However,&nbsp;the full citation takes up a lot of space in the document, so I tried suppressing the author and title on all but the first source. Weird things started happening! If I suppress author and title on the second source (ZZZ02), the source appears correctly in the citation (year only), but the last source (ZZZ09) disappears from the visible citation, even though its tag is still in the field code. If I suppress author and title for ZZZ02 and ZZZ03, these sources appear correctly (year only), but now ZZZ08 and ZZZ09 disappear from the visible citation, even though both tags are still in the field code. If I suppress author and title for all sources except ZZZ01 (which is what I want), then Word displays only the first 4 sources (ZZZ01 through ZZZ04), even though all 9 tags are in the field code, like so:</p>\r\n<pre>{ CITATION \\l 1033 ZZZ01 \\m ZZZ02 \\n \\t \\m ZZZ03 \\n \\t \\m ZZZ04 \\n \\t \\m ZZZ05 \\n \\t \\m ZZZ06 \\n \\t \\m ZZZ07 \\n \\t \\m ZZZ08 \\n \\t \\m ZZZ09 \\n \\t }</pre>\r\n<p>The position of \\l 1033 doesn&rsquo;t seem to matter much, except that if it&rsquo;s at the end of the field code after ZZZ09, then the first 5 sources will be visible in the document instead of the first 4.</p>\r\n<p><span style=\"font-size:11pt\">This has me totally perplexed. Any suggestions are appreciated!</span></p>",
+    "PostedDate": "2010-01-28T14:01:13.297-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "282994",
+    "ThreadId": "82356",
+    "Html": "<p>See what happens if you switch to one of the styles that came with Word (APA, Chicago, ...). If you are seeing similar behaviour, I'm expecting the issue is with Word.</p>\r\n<p>As far as I can tell, there is some kind of limit to what you can put into a field. For example, it is not possible to add more than 14 or 15 different sources to a citation field. I'm guessing that once you start adding other flags like \\n and \\t, that number drops and this is the behaviour you are seeing here.</p>\r\n<p>A possible solution might be to remove the open and close brackets (the openbracket and closebracket elements)&nbsp;and add each citation separately or at least in 2 groups.</p>",
+    "PostedDate": "2010-01-28T14:34:24.4-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "283008",
+    "ThreadId": "82356",
+    "Html": "<p>Thanks for the troubleshooting tip... same behavior with APA and MLA styles. Grrrrrr!&nbsp; I'll probably convert this citation to regular text just before printing and edit out the bits I don't need. Seems the easiest thing to do since I don't have any other citations this long. &nbsp;</p>\r\n<p>Thanks again!</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-28T15:06:29.08-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

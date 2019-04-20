@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "703123",
+    "ThreadId": "280767",
+    "Html": "<p>Hi,</p>\n<p>I see in&nbsp;<a href=\"http://bibword.codeplex.com/wikipage?title=BibWord%20Format%20Strings&amp;referringTitle=Documentation\">http://bibword.codeplex.com/wikipage?title=BibWord%20Format%20Strings&amp;referringTitle=Documentation</a>&nbsp;is mentioned a BibWord guide.</p>\n<p>Where can I download it? is not in styles.zip</p>\n<p>If someone can help me more, what I'm trying to do is to put some text in case a URL exists in the bibliographic entry, but I don't want the URL with this text.</p>\n<p>I am trying with:</p>\n<div style=\"color: black; background-color: white;\">\n<pre><span style=\"color: red;\">&amp;lt;</span>xsl:when test =\"$URL!=''\"<span style=\"color: red;\">&amp;gt;</span>here i put the text<span style=\"color: red;\">&amp;lt;</span>/xsl:when<span style=\"color: red;\">&amp;gt;</span>\n</pre>\n</div>\n<p>in the format tag, I don't know what I'm doing, so it, as expected, does not work. Any idea?</p>",
+    "PostedDate": "2011-11-24T12:12:58.337-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "703127",
+    "ThreadId": "280767",
+    "Html": "<p>The guide is released together with the template. Version 2.8 can be found at <a href=\"http://bibword.codeplex.com/releases/view/36507\">http://bibword.codeplex.com/releases/view/36507</a>&nbsp;. More specifically, <a href=\"http://bibword.codeplex.com/releases/view/36507#DownloadId=94750\">http://bibword.codeplex.com/releases/view/36507#DownloadId=94750</a></p>",
+    "PostedDate": "2011-11-24T12:23:45.377-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

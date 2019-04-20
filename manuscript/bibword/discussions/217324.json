@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "459969",
+    "ThreadId": "217324",
+    "Html": "<p>Hello,</p>\r\n<p>We need all parentheses removed.&nbsp; Because some of our project team uses footnotes, we've decided that it would be easier to&nbsp;remove all&nbsp;parentheses.&nbsp; Right now, we're using the Chicago style.</p>\r\n<p>Now I've already searched the boards and online.&nbsp; I've tried&nbsp;deleting the code&nbsp;openBracket and closeBracket.&nbsp; It isn't working at all.&nbsp;</p>\r\n<p>Here's some of the things that I've already tried:</p>\r\n<p><a href=\"http://www.wordbanter.com/showthread.php?t=128740\">http://www.wordbanter.com/showthread.php?t=128740</a></p>\r\n<p><a href=\"http://bibword.codeplex.com/Thread/View.aspx?ThreadId=81820&ANCHOR\">http://bibword.codeplex.com/Thread/View.aspx?ThreadId=81820&amp;ANCHOR</a></p>\r\n<p>Any help would be appreciated and many thanks!</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-06-25T08:27:04.153-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "460048",
+    "ThreadId": "217324",
+    "Html": "<p>That first link is all you need, although there seems to be some &lt; and &gt; missing obviously.&nbsp;Probably an issue with the forum you are viewing that message on as it was originally posted elsewhere.</p>\r\n<p>I'm not sure what you think the connection is with that second link.</p>\r\n<p>The xslt you have to remove is actually the same in the Chicago style as those posted for APA. Just look for</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">if</span> <span style=\"color:red\">test</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">msxsl:node-set($ListPopulatedWithMain)/b:Citation/b:FirstAuthor</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">&gt;</span>\r\n  <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">call-template</span> <span style=\"color:red\">name</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">templ_prop_OpenBracket</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">/&gt;</span>\r\n<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">if</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>and</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">if</span> <span style=\"color:red\">test</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">/b:Citation/b:LastAuthor</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">&gt;</span>\r\n  <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">call-template</span> <span style=\"color:red\">name</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">templ_prop_CloseBracket</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">/&gt;</span>\r\n<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">if</span><span style=\"color:blue\">&gt;</span></pre>\r\n</div>\r\n<p>If you say that that didn't work, what exactly did you remove? And what was the result? If you saw something like&nbsp;&quot;invalid source specified&quot; then you most likely wrecked the xslt file. That is, you removed something making the XSLT&nbsp;file invalid.</p>",
+    "PostedDate": "2010-06-25T12:21:25.59-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "460676",
+    "ThreadId": "217324",
+    "Html": "<p>Hi Yves,</p>\r\n<p>Thanks for your help!&nbsp; I took out those code lines.&nbsp; But I'm still seeing brackets when I<br>insert the citation into the body of the document.</p>\r\n<p>For example:</p>\r\n<p>This is a sentence that is being cited. (FineganWalters 2010)</p>\r\n<p>Because we rely on footnotes for a lot of our docs, instead of seeing<br>&quot; (FineganWalters 2010) &quot; ...<br>could we just have &quot;&nbsp;&nbsp; FineganWalters 2010&nbsp;&nbsp; &quot;&nbsp; with no parentheses.</p>",
+    "PostedDate": "2010-06-28T07:16:54.783-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "460709",
+    "ThreadId": "217324",
+    "Html": "<p>I just retried it, removing those 6 lines removes the brackets. Are you sure they aren't removed when you try? Have you tried on a blank document? You do know that to make the changes visible in a document you created using the old (unchanged)&nbsp;style, you do have to update the fields? The easiest way to do so is by selecting another style (e.g. APA) and then selecting the requested style (Chicago) again.</p>\r\n<p>If the brackets are still there, are you using some home-made version of the style rather than the one delivered with Word 2007/2010?</p>",
+    "PostedDate": "2010-06-28T08:40:47.26-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1131875",
+    "ThreadId": "471931",
+    "Html": "I'm using a Harvard-type BibWord stylesheet to edit an article which has French sources.\r<br />\nDiacritic marks output fine in the bibliography, but do not in the citations.\r<br />\n \r<br />\nThis is what I get:\r<br />\n \r<br />\n(BacquÃ©, 2005)\r<br />\n \r<br />\nBacqué, M.-H. 2005. Conclusion – La Démocratie Participative, Modèles et Enjeux. In Bacqué M.-H. and Rey, H. (eds.). In: Gestion de proximité et démocratie participative. Paris: La découverte. pp. 293-307.\r<br />\n \r<br />\nHow do I get the citations to output diacritics the same way that the bibliography does?\r<br />\n \r<br />\nAdvice will be greatly appreciated!<br />\n",
+    "PostedDate": "2013-12-04T12:29:20.243-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1141101",
+    "ThreadId": "471931",
+    "Html": "For those interested in using BibWord to process citations in various forms, the problem which I experienced in outputting citations with diacritics has been resolved. (Seven alternative forms of citation are available by suppressing combinations of citation elements.)\r<br />\n<br />\nI started by copying the &lt;!-- Formats the citation &gt; coding section from the Chicago Footnotes xsl and pasting it into a Harvard-type xsl. This worked, but the citations did not handle author names with diacritic letters (although the Bibliography output did).\r<br />\n<br />\nA line-by-line comparison showed that one line of relevant code was missing in the original &lt;!-- Formats the citation &gt; coding section in the Chicago Footnotes xsl:\r<br />\n<br />\n&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;&lt;/meta&gt;\r<br />\n<br />\nOnce this is inserted in my combined Harvard-type xsl, the citations do output diacritics.\r<br />\n<br />\nThe relevant section should read:<br />\n&lt;!-- Formats the citation. --&gt;\r\n&lt;xsl:template name=&quot;format-citation&quot;&gt;<br />\n<pre><code>&lt;!-- Generate an XML node-set from the formatting data. --&gt;\n&lt;xsl:variable name=&quot;params&quot; select=&quot;msxsl:node-set($data)&quot;/&gt;\n&lt;html xmlns=&quot;http://www.w3.org/TR/REC-html40&quot;&gt;\n  &lt;head&gt;\n    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;&lt;/meta&gt;\n  &lt;/head&gt;\n\n</code></pre>\n\nI hope this will help those who may be interested.<br />\n",
+    "PostedDate": "2013-12-24T03:42:09.26-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

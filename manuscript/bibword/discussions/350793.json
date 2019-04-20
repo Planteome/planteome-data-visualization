@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "818375",
+    "ThreadId": "350793",
+    "Html": "\r\n<p>Hello,&nbsp;</p>\r\n<p>I use this ISO690 style for Word. (https://docs.google.com/open?id=0B654pHGLZIJlU3pLTnF3X1ZSWjZzUUs3RWpWYXQzUQ).</p>\r\n<p>The problem is that I need to change a normal space in source to non-breaking space (https://docs.google.com/open?id=0B654pHGLZIJldldpNTF2TVZUbnFsZlJHcktrMUdSQQ) and change the list of references to look like in the picture. (https://docs.google.com/open?id=0B654pHGLZIJleE93VjFIMFBRLWVkc01fSG5fMFlBdw).\r\n Of course I need that for all types of sources (books, websites,...).</p>\r\n<p>Do you think it is possible?</p>\r\n<p>Thanks.</p>\r\n<p>Martin</p>\r\n",
+    "PostedDate": "2012-04-01T06:19:40.463-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "818418",
+    "ThreadId": "350793",
+    "Html": "<p>Using non-breaking spaces for in-text citations should be pretty straightforward. Just a matter of finding out in your style where the space is put and replace it with its non-breaking counterpart.</p>\r\n<p>Using alphabetical suffices (a, b) is possible for bibliographies but not for in-text citations. The problem is that in-text citations are not aware of other citations in the document. BibWord has a workaround through the extender which you have to run on your document. So if you would rewrite your entire style using BibWord, then yes, it would be possible.</p>",
+    "PostedDate": "2012-04-01T10:11:34.06-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "818454",
+    "ThreadId": "350793",
+    "Html": "<p>Please can you help me to find the place where should I change space to non-breaking space? :)</p>\r\n<p>Martin</p>",
+    "PostedDate": "2012-04-01T13:42:09.507-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "818764",
+    "ThreadId": "350793",
+    "Html": "<p>At first glance at your style, formatting in-text citations is done in the following code fragment:</p>\n<div style=\"color: black; background-color: white;\">\n<pre><span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">xsl</span><span style=\"color: blue;\">:</span><span style=\"color: #a31515;\">when</span> <span style=\"color: red;\">test</span><span style=\"color: blue;\">=</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">b:Citation</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">&gt;</span>\n  <span style=\"color: green;\">&lt;!-- code for formatting in-text citations --&gt;</span>\n<span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">xsl</span><span style=\"color: blue;\">:</span><span style=\"color: #a31515;\">when</span><span style=\"color: blue;\">&gt;</span>\n</pre>\n</div>\n<p>Inside it, the author is displayed with the following statement:</p>\n<div style=\"color: black; background-color: white;\">\n<pre><span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">xsl</span><span style=\"color: blue;\">:</span><span style=\"color: #a31515;\">value-of</span> <span style=\"color: red;\">select</span><span style=\"color: blue;\">=</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">$displayAuthor</span><span style=\"color: black;\">\"</span> <span style=\"color: blue;\">/&gt;</span>\n</pre>\n</div>\n<p>The lines following it are responsible for displaying the title if required and the year. I see some calls to</p>\n<div style=\"color: black; background-color: white;\">\n<pre><span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">xsl</span><span style=\"color: blue;\">:</span><span style=\"color: #a31515;\">call-template</span> <span style=\"color: red;\">name</span><span style=\"color: blue;\">=</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">templ_prop_ListSeparator</span><span style=\"color: black;\">\"</span> <span style=\"color: blue;\">/&gt;</span>\n</pre>\n</div>\n<p>Probably you will have to replace this \"template call\" with your code for with the ',' and the non-breaking space.</p>\n<p>&nbsp;</p>",
+    "PostedDate": "2012-04-02T06:31:13.543-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "819226",
+    "ThreadId": "350793",
+    "Html": "<p>it worked! :)</p>\r\n<p>Thanks.</p>",
+    "PostedDate": "2012-04-03T06:03:59.807-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

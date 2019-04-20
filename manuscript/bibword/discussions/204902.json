@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "417887",
+    "ThreadId": "204902",
+    "Html": "<p>I have figured out how to use the <em>type</em> field to get some special cases formated correctly in the bibliography and it works great.</p>\r\n<p>However I have one concern. The value in that field is case sensitive and so it doesn't work if it isn't entered exactly as expected. Given that this will be entered by end users it is sure to become a support issue.</p>\r\n<p>Can I do anything about it? e.g.</p>\r\n<ol>\r\n<li>Tweak BIBFORM.XML so it is always forced to lower case on entry.</li>\r\n<li>Tweak my style file to make it case insensitive when using <em>type</em>.</li>\r\n<li>Get it displayed as a dropdown list so the user can only supplythe values I support.</li>\r\n</ol>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-03-14T04:36:08.6-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "417900",
+    "ThreadId": "204902",
+    "Html": "<p>The thing is that the 'Type' field solution is a workaround to start with. It shouldn't have been necessary if Microsoft decided to support some more formats.</p>\r\n<p>Regarding your solutions:</p>\r\n<p>1)Not possible. Word generates the xml code internally. It follows the guidelines of bibform.xml but it doens't allow you to change the content of a field.</p>\r\n<p>2)You could do that. You could add a preprocess step which converts the value of the type field to all lower case and then use that. In case of citations and footnote citations, you could probably do that during the defintion of extendedSource:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">xsl</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">variable</span> <span style=\"color:Red\">name</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">extendedSource</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">&gt;</span>\r\n  <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">b</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">Source</span><span style=\"color:Blue\">&gt;</span>\r\n    <span style=\"color:Green\">&lt;!-- Copy everything except the Type field. --&gt;</span>\r\n    <span style=\"color:Green\">&lt;!-- Add the type field in lower or upper case. --&gt;</span><br>    <span style=\"color:Green\">&lt;!-- Do the rest of extending the source. --&gt;</span><br>  <span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">b</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">Source</span><span style=\"color:Blue\">&gt;</span>\r\n<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">xsl</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">variable</span><span style=\"color:Blue\">&gt;</span></pre>\r\n</div>\r\n<p>In case of a bibliography, you could do that during the generation of the sort key.</p>\r\n<p>3)This is possible. All you have to do is extend bibform.xml to incorporate your own type. The thing is, if you follow this road, you will be generating xml which no longer complies to the xml schema for bibliographies. As Word doesn't check the schemas when generating documents (which is a serious flaw if you ask me) this isn't a problem in Word. However, you have no idea how other programs will handle your document. If they follow the strict schema definition, they might throw some kind of exception. It is highely unlikely, but it is possible.</p>",
+    "PostedDate": "2010-03-14T06:48:11.53-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "420372",
+    "ThreadId": "204902",
+    "Html": "<p>Thanks Yves</p>\r\n<p>I wasn't sure where&nbsp;I would add that code for option 2 so I found another route. Everytime you use <em>Type</em> to pick a format (in things like format-citation or format-bibliography) you first create a variable so I just modified those statements e.g.</p>\r\n<p style=\"padding-left:30px\">replaced<br>&lt;xsl:variable name=&quot;temp&quot; select=&quot;./b:Type&quot;&gt;&lt;/xsl:variable&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>with<br>&lt;xsl:variable name=&quot;temp&quot; select=&quot;translate(./b:Type, $uppercase, $lowercase)&quot;&gt;&lt;/xsl:variable&gt;</p>\r\n<p>I ended up changing 4 or 5 points and maybe it could be done more efficiently but doing it this way means that if the format statement ever need to include %Type% then it will still display what the user entered.</p>\r\n<p>Thanks once again for your help.</p>",
+    "PostedDate": "2010-03-19T12:45:29.253-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

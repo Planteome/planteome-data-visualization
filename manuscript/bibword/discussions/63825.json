@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "217035",
+    "ThreadId": "63825",
+    "Html": "<p>I'm trying to create a bibliography style that looks like this:</p>\r\n<p>Smith, A.B., C. Jones and J.Q. Public, Title here, <em>Some Journal, 42,</em> 210-212, 1999.</p>\r\n<p>I got as far as:</p>\r\n<p>Smith, A.B., C.Jones and J.Q. Public, Title here, <em>Some Journal, 42,</em> 210-212, 1999.</p>\r\n<p>Note the lack of a space between C.Jones.&nbsp; My namelists formatting lines are:</p>\r\n<p>&lt;first_person&gt;{%Last|First|Middle%{, %First:adp|Middle:adp%{%Middle:adp%}}}&lt;/first_person&gt;<br>&lt;other_persons&gt;{%First:adp|Middle|Last%{%Middle:adp|Last%{ %Last%}}}&lt;/other_persons&gt;</p>\r\n<p>&nbsp;</p>\r\n<p>I get that the space is missing because there is no middle initial, so the last condition ({ %Last%}) never executes.&nbsp; But I have tried in vain to insert a space in the second condition that will apply only to the last name, and not to the middle initial.&nbsp; Anyone know how to do this?</p>",
+    "PostedDate": "2009-07-28T19:34:04.307-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "217071",
+    "ThreadId": "63825",
+    "Html": "<p>You could reverse your conditional logic:</p>\r\n<p>1)First display the last name, and if that is not available, fall back to first or middle name.</p>\r\n<p style=\"padding-left:30px\">{%Last|First|Middle%}</p>\r\n<p>2)Now display the&nbsp;first and middle name in front of it.</p>\r\n<p style=\"padding-left:30px\">{{%Middle:adp|First:adp%} %Last|First|Middle%}</p>\r\n<p>3)Finally, display the first name in front if not yet displayed/used.</p>\r\n<p style=\"padding-left:30px\">{{{%First:adp%}%Middle:adp|First:adp%} %Last|First|Middle%}</p>\r\n<p>Alternatively,&nbsp;you can simplify this logic to:</p>\r\n<p style=\"padding-left:30px\">{{%First:adp%}{%Middle:adp%} %Last|First|Middle%}.</p>\r\n<p><strong><em>Note that BibWord cleans up unwanted spaces. So if a name would only consists of a last name, you would not get a double space.</em></strong></p>\r\n<p style=\"padding-left:30px\">&nbsp;</p>",
+    "PostedDate": "2009-07-28T23:40:45.763-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

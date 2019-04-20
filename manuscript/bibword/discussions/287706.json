@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "731898",
+    "ThreadId": "287706",
+    "Html": "\r\n<p>Hi. In Office 14, Word. <br>\r\nCitations and References<br>\r\nStyle set to IEEE 2006.<br>\r\nInsert Citation.<br>\r\nAdd new source.<br>\r\nType = Interview (and others)<br>\r\nI enter Interviewee as &quot;CompanyName, Title, Firstname Lastname&quot;, eg: Cxxxx, Txxxx, Fxxxx Lxxxx<br>\r\nBut in bibliography it appears as T. F. L. Cxxxx.<br>\r\nI enter Interviewee as &quot;Firstname Lastname, Title, CompanyName&quot;, eg: Fxxxx Lxxxx, Txxxx, Cxxxx<br>\r\nBut in bibliography appears as T. C. Fxxxx Lxxxx.<br>\r\nI do NOT want anything converted to initials.<br>\r\nMuch appreciate ideas how to do this (or how to work around strict IEEE rules!).<br>\r\nRegards,<br>\r\nPaul</p>\r\n",
+    "PostedDate": "2012-01-27T20:04:07.67-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "732592",
+    "ThreadId": "287706",
+    "Html": "<p>If they should be considered separate contributors (a bit of strange way of looking at Title) they should be entered as such. That means they should be separated using \";\" and not \",\". If you don't know how to enter names, then use the 'Edit...' button next to the field and fill in each item separately to prevent any unwanted formatting issues.</p>",
+    "PostedDate": "2012-01-30T05:12:08.253-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

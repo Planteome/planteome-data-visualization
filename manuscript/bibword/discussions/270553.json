@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "663897",
+    "ThreadId": "270553",
+    "Html": "\r\n<p>Is there a way to convert endnotes that are inline superscripts to plain, superscript numbers?</p>\r\n<p>I am wrting a macro to convert a Word (2007) document that has endnotes into Wikimedia code.</p>\r\n<p>So far, I have written code that goes through the footnotes and saves all the important fields to an array. Included in that array is the text I want to replace the inline number with.</p>\r\n<p>For example, when the endnote 5 (a superscripted 5) is processed, the code will lookup line 5 in the array and change the superscripted number to the data is finds in the array....</p>\r\n<p>Hello, world.&lt;sup&gt;5&lt;/sup&gt;</p>\r\n<p>becomes..</p>\r\n<p>Hello, world.{{sfn|Smith|2005|p=15}}</p>\r\n<p>Because {{sfn|Smith|2005|p=15}} is what i8s found in the array on line five.</p>\r\n<p>The problem I'm having is that the superscripted numbers are not truly text. My &quot;find superscript&quot; process finds it, but .text of the selction does not equal 1,2,3,4, etc.</p>\r\n<p>Plus, when I change the first endnote, then it renumbers all the rest which ruins my life.</p>\r\n<p>SO... If I could make the entire document &quot;flat&quot; that is to say all the endnote numbers to true, superscripted numbers, I would be cured.</p>\r\n<p>I hope this is not impossible. I love writing for Wikipedia, but trying to write in Word for wikipedia is a nightmare as Word interprets all the wikicode as\r\n<span style=\"color:black; font-size:10pt\">misspellings</span>, etc.</p>\r\n<p>Thanks a lot</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2011-08-26T09:19:33.787-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "664560",
+    "ThreadId": "270553",
+    "Html": "<p>Instead of looking for superscripted characters, you could look for \"^e\" which is the 'official' search symbol for endnotes. Replace those and you should be fine.</p>",
+    "PostedDate": "2011-08-28T13:02:44.773-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

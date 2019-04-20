@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1212316",
+    "ThreadId": "533786",
+    "Html": "Hi All,\r<br />\n<br />\nI have a specific style which I would like to use that i based on the Harvard - Leeds style, with a few minor differences. I have edited it to my liking except for 2 small issues which I cannot seem to figure out:\r<br />\n<br />\nWhen adding a citation it displays as:\r<br />\n(JACK, B, 2012)\r<br />\nWhere i would like it to show in lower case:\r<br />\n(Jack, B, 2012)\r<br />\n<br />\nAnd the same for my bibliography, it display all caps where i would like the editor to be &quot;Jack, B.&quot;\r<br />\n<br />\nIn this code, where do i change the casing?<br />\n<pre><code>      &lt;source type=&quot;Book&quot;&gt;\n        &lt;format&gt;{%CitationPrefix%}{%Author:1|Editor:1|Title%}{, %Year%{%YearSuffix%}}{, %CitationVolume%}{: %CitationPages:%}{%CitationSuffix%}&lt;/format&gt;\n      &lt;/source&gt;</code></pre>\n\nThank you<br />\n",
+    "PostedDate": "2014-02-22T07:05:10.36-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1213073",
+    "ThreadId": "533786",
+    "Html": "In your format string, you have:<br />\n<pre><code>{%Author:1|Editor:1|Title%}</code></pre>\n\nthe 1 points towards the namelist formatting being used. So look for the 'namelists' element and then for the 'list' with the id equal to 1.\r<br />\n<br />\nIn it you will find the format string for the &quot;first_person&quot; and &quot;other_persons&quot;. There will be a &quot;:u&quot; indicating that the name should be in uppercase. Remove it.\r<br />\n<br />\nFor a bunch of example format strings, see the <a href=\"https://bibword.codeplex.com/wikipage?title=BibWord%20Format%20Strings&amp;referringTitle=BibWord%20Format%20Contributors#ex2\" rel=\"nofollow\">documentation</a>.<br />\n",
+    "PostedDate": "2014-02-23T10:31:58.277-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

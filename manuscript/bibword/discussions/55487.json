@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "187344",
+    "ThreadId": "55487",
+    "Html": "Will the &quot;Chicago (CMS) footnote&quot; style ever have the function of bibliography? Or perhaps the &quot;MHRA footnote&quot; style will have it soon? As an academic within humanities, I am myself fond of the Oxford style of using footnotes as well as a bibliography, and I will need it for my Master thesis.<br>\r\n<br>\r\nThanks Yves for a great set of styles!<br>\r\n",
+    "PostedDate": "2009-05-06T06:14:37.007-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "187439",
+    "ThreadId": "55487",
+    "Html": "By design, footnote styles are not really supported by Word, those two implementations are just demonstrations of how to implement them taking into account the limitations.<br>\r\n<br>\r\nSo I'm probably not going to expand on them. Of course, you could do it yourself. The basic structure is made and you can probably borrow heavily from other styles. So it should not be that difficult.\r\n",
+    "PostedDate": "2009-05-06T10:01:22.577-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

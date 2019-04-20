@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "912197",
+    "ThreadId": "395412",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>&nbsp;</p>\r\n<p>I am currently writing my PhD. thesis and am in a desperate need of advice (couldn't find answers anywhere...).</p>\r\n<p>&nbsp;</p>\r\n<p>I need to list my references in the order in which they are cited in the text, by position. In a perfect world, this would not be a problem. But people forget and reviewers bring &quot;suggestions&quot;. This results in the need of to add additional references which\r\n are cited in text, among other existing citations. Therefore, the citations which come after such a citation need to (automatically) change their position. How do I accomplish this?</p>\r\n<p>&nbsp;</p>\r\n<p>An illustrative example:</p>\r\n<p>&nbsp;before reviewer: text text text[1] othertext othertext othertext[2]</p>\r\n<p>&nbsp;after reviewer (wrong way): text text text[1] theirtext theirtext theirtext[3] othertext othertext othertext[2]</p>\r\n<p>after reviewer (desired): text text text[1] theirtext theirtext theirtext[3] othertext othertext othertext[2]</p>\r\n<p>&nbsp;</p>\r\n<p>Thank you,</p>\r\n<p>Andrei</p>\r\n",
+    "PostedDate": "2012-09-13T06:44:30.42-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "912234",
+    "ThreadId": "395412",
+    "Html": "<p>In-text&nbsp;citations and bibliographies are just standard Word field codes. Just update all fields and they should be updated accordingly.</p>\r\n<p>Alternatively if you don't want to update all fields but just citations and bibliographies, switch your bibliography to a different style and then back to your required style. This will trigger an update of all the fields (twice).</p>",
+    "PostedDate": "2012-09-13T07:41:03.883-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "912621",
+    "ThreadId": "395412",
+    "Html": "\r\n<p>Hey Yves.</p>\r\n<p>Thank you for replying. &nbsp;My initial concern was not about the strict <em>\r\nfield update process</em> but the mechanism that assigns and maintains the citation number. I would have wanted to use a system that could automatically input the citation number taking into account their position in text rather than their &quot;position in time&quot;.\r\n I am not sure that this is possible, but if you know a certain style that can do this, please let me know.</p>\r\n<p>Since my initial plan seams to fail and I don't want to manage all my 70&#43; references manually, I think I'll go with another (accepted) style. Therefore, I have another question: is there a style that can cite my references by combining the first letters\r\n of the authors' last name and publication year? (And possibly resolve situations in which the same author has more publications in the same year...)</p>\r\n<p>Here's an example:</p>\r\n<p>Thomas Smith, &quot;FirstArticle&quot;, 2012 &nbsp; &nbsp;-&gt; &nbsp; Smi2012</p>\r\n<p>Thomas Smith, &quot;SecondArticle&quot;, 2012 &nbsp; &nbsp;-&gt; &nbsp; Smi2012(2) (note that any multiple cite tag resolving method would work)</p>\r\n<p>&nbsp;</p>\r\n<p>Andrei</p>\r\n",
+    "PostedDate": "2012-09-14T04:48:35.563-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

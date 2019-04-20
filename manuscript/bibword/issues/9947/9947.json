@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "The newest APA style with DOI field supported.\n \nCombine the BibWord APA DOI with the Microsoft official APA Sixth Edition.",
+    "LastUpdatedDate": "2013-02-21T18:20:25.59-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "bibword",
+    "ReportedDate": "2012-02-21T10:14:50.24-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Feature: APA Sixth Edition with DOI field",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 9947
+  },
+  "FileAttachments": [
+    {
+      "FileId": 3264,
+      "FileName": "APA Sixth Edition with DOI.XSL",
+      "DownloadUrl": ".\\3264"
+    }
+  ],
+  "Comments": []
+}

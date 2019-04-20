@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1096900",
+    "ThreadId": "458539",
+    "Html": "Hi,\r<br />\nI have been given instructions to write an article using the Harvard AGPS system: <a href=\"http://www.usq.edu.au/library/referencing/harvard-agps-referencing-guide\" rel=\"nofollow\">http://www.usq.edu.au/library/referencing/harvard-agps-referencing-guide</a>\r<br />\n<br />\nI have downloaded it from BibWord and installed it onto MSWord.\r<br />\n<br />\nThe problem is I want citations to display Author (Year) instead of (Author Year), i.e. change the position of the brackets. I have tried to explore the .xsl but was not able to find a way to make this modification.\r<br />\n<br />\nIs it possible to change the way the citations are displayed?<br />\n",
+    "PostedDate": "2013-09-20T05:09:03.443-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1097064",
+    "ThreadId": "458539",
+    "Html": "The surrounding brackets can easily be removed.\r<br />\n<br />\nIn the code, just change<br />\n<pre><code>      &lt;openbracket&gt;(&lt;/openbracket&gt;\n      &lt;closebracket&gt;)&lt;/closebracket&gt;</code></pre>\n\ninto <br />\n<pre><code>      &lt;openbracket&gt;&lt;/openbracket&gt;\n      &lt;closebracket&gt;&lt;/closebracket&gt;</code></pre>\n\nAs for adding brackets around the year, you will have to edit the different format strings for all sources.\r<br />\n<br />\nFor example<br />\n<pre><code>{ %Year|&quot;n.d.&quot;{%YearSuffix%}}</code></pre>\n\nwould become<br />\n<pre><code>{ (%Year|&quot;n.d.&quot;{%YearSuffix%})}</code></pre>\n\n",
+    "PostedDate": "2013-09-20T09:41:54.457-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1097106",
+    "ThreadId": "458539",
+    "Html": "Hi,\r<br />\nThat's exactly what I wanted! Thanks for the quick reply.<br />\n",
+    "PostedDate": "2013-09-20T10:23:39.463-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

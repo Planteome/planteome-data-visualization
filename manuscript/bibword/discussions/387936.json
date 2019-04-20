@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "889648",
+    "ThreadId": "387936",
+    "Html": "\r\n<p>Dear developers,</p>\r\n<p>thank you very much for your outstanding project! I am currently working on my master thesis and this resource is a real saver of my time and nerves. Although I have found answers on most of my questions, there is still one which makes me confused. I will\r\n be forever grateful if someone could help me to figure out how can I merge two citations into one reference when using HarvardAnglia2008 style?</p>\r\n<p>For example, I am referencing two sources for one concept, Smith 2008 and Brown 2009. Both are created as two independent sources in my library. So if I write something like:\r\n<strong><em>the concept of blablabla is studied by various authors</em></strong> and then cite both I have:\r\n<strong><em>the concept of blablabla is studied by various authors (Smith, 2008) (Brown, 2009).\r\n</em></strong></p>\r\n<p>Whereas I need the following: <strong><em>the concept of blablabla is studied by various authors (Smith, 2008; Brown, 2009)</em></strong></p>\r\n<p>Thus my question is if it is possible to merge/include two indepentent sources into one in one paretheses when referencing?</p>\r\n<p>Thank you so much for any help/advice!</p>\r\n",
+    "PostedDate": "2012-07-24T05:35:38.417-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "892433",
+    "ThreadId": "387936",
+    "Html": "<p>See <a href=\"http://bibword.codeplex.com/wikipage?title=Styles_FAQ&amp;referringTitle=Documentation#Q13\">http://bibword.codeplex.com/wikipage?title=Styles_FAQ&amp;referringTitle=Documentation#Q13</a></p>\r\n<p>Keep in mind, you are responsible for the order of the grouped citations, not some algorithm.</p>",
+    "PostedDate": "2012-07-27T14:35:57.237-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

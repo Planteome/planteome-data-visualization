@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "208628",
+    "ThreadId": "61494",
+    "Html": "<p>Hello,&nbsp;</p>\r\n<p>I would like to specify full first names in a Word2007 source entry, and&nbsp;then&nbsp;alternate&nbsp;&nbsp;(in different docs)&nbsp;between generating&nbsp;bibliography entries with&nbsp;initials, as&nbsp;needed in LNCS guidelines, or with full first names. Is that possible today? Is there an easy&nbsp;way to add a field for the initial(s) and modify the&nbsp;style to use this field? or to modify the LNCS style to trims the first name?</p>\r\n<p>Thanks,</p>\r\n<p>Assaf Marron&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-07-04T23:26:25.117-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "208708",
+    "ThreadId": "61494",
+    "Html": "<p>Yes that is possible and no you don't need an extra field for that. If you enter a source, always try to provide a full name, as the style will/should abbreviate the name for you if required. Of course, if the name is already abbreviated it can't extend it.</p>\r\n<p>If you are creating your own style using BibWord, you can use the &quot;a&quot; option for name parts which indicates if a part of a name (be it first, middle, or last) should be abbreviated or not. You can extend this option with a combination of the parameters 's', 'd', and 'p' where</p>\r\n<ul>\r\n<li>s indicates if a space is required if the name exists of multiple parts (e.g. Juan Carlos will become J C);</li>\r\n<li>d indicates if dashes should be kept (e.g. Jean-Phillippe will become J-P);</li>\r\n<li>p indicates if periods should be used after every part (e.g. Juan Carlos will become J.C.).</li>\r\n</ul>\r\n<p>Consider the following example entry:</p>\r\n<ul>\r\n<li>Type: Book</li>\r\n<li>Author: Hawking, Stephen</li>\r\n<li>Title: A Brief History of Time</li>\r\n<li>Year: 1988</li>\r\n<li>City: New York</li>\r\n<li>Publsher: Bantam Books</li>\r\n</ul>\r\n<p>Now, when using <a title=\"Harvard - Anglia*\" href=\"http://bibword.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=19783\">Harvard Anglia</a>, the bibliography will look like:</p>\r\n<p style=\"padding-left:30px\">Hawking, S., 1988. <em>A Brief History of Time</em>. New York: Bantam Books.</p>\r\n<p>while using <a title=LNCS href=\"http://bibword.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=19773\">LNCS</a>, the bibliography will look like:</p>\r\n<p style=\"padding-left:30px\">1. Hawking, Stephen: A Brief History of Time. Bantam Books, New York (1988)</p>\r\n<p>So as you can see, the style decides how to display the name and the end-user&nbsp;does not have to&nbsp;worry about it.</p>",
+    "PostedDate": "2009-07-05T13:02:23.367-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "208726",
+    "ThreadId": "61494",
+    "Html": "<p>Hi Yves,</p>\r\n<p>Thanks for the quick and detailed reply again. However, in <a href=\"ftp://ftp.springer.de/pub/tex/latex/llncs/word/LNCS-Office2007.zip\">ftp://ftp.springer.de/pub/tex/latex/llncs/word/LNCS-Office2007.zip</a>&nbsp;&nbsp; the first names are initials only.</p>\r\n<p>Any thoughts?</p>\r\n<p>Best Regards, <br><br>Assaf</p>",
+    "PostedDate": "2009-07-05T14:26:40.413-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "208819",
+    "ThreadId": "61494",
+    "Html": "<p>You can't really use the examples in the Word document for anything.</p>\r\n<p>But you are right that there was indeed an inconstitency between the xslt and the latex bst. I uploaded an updated version of the style to <a href=\"http://bibword.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=19773\">http://bibword.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=19773</a></p>",
+    "PostedDate": "2009-07-05T23:59:08.553-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "208829",
+    "ThreadId": "61494",
+    "Html": "<p>Thank you for the quick update!!</p>\r\n<p>Regards</p>\r\n<p>Assaf</p>",
+    "PostedDate": "2009-07-06T00:35:55.077-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

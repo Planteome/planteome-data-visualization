@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "119610",
+    "ThreadId": "36014",
+    "Html": "Hello,<br>\r\n<br>\r\nI found the&nbsp;ISO960 Numerical with square brackets style very useful for me. The only thing that is incompatible with the requirments of my publisher is the view of the names in the bibliography. Now it starts with family names and initials follow. Is it possible to write initials first before the family name.<br>\r\n<br>\r\nThank you in advance.<br>\r\nSergey.\r\n",
+    "PostedDate": "2008-09-19T09:28:03.603-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "119765",
+    "ThreadId": "36014",
+    "Html": "This can be achieved pretty easily. In the stylesheet (ISO690NmericalSquare.XSL) you have, around line 5095, a routine looking like this:<br>\r\n<br>\r\n<span style=\"font-size:13px;color:#0000ff\">&lt;</span><span style=\"font-size:13px;color:#2b91af\">xsl:template</span> <span style=\"font-size:13px;color:#ff0000\">name</span><span style=\"font-size:13px;color:#0000ff\">=</span><span style=\"font-size:13px\">&quot;</span><span style=\"font-size:13px;color:#0000ff\">formatPersons</span><span style=\"font-size:13px\">&quot;</span><span style=\"font-size:13px;color:#0000ff\">&gt;</span> <br>\r\n&nbsp;&nbsp;&nbsp;...<br>\r\n<span style=\"font-size:13px;color:#0000ff\">&lt;/</span><span style=\"font-size:13px;color:#2b91af\">xsl:template</span><span style=\"font-size:13px;color:#0000ff\">&gt;</span><br>\r\n<br>\r\nIn it, it is decided how names are formatted:<br>\r\n<br>\r\n<span style=\"font-size:13px\"><span style=\"color:#0000ff\">&lt;</span><span style=\"color:#2b91af\">xsl:when</span></span> <span style=\"font-size:13px;color:#ff0000\">test</span><span style=\"font-size:13px;color:#0000ff\">=</span><span style=\"font-size:13px\">&quot;</span><span style=\"font-size:13px;color:#0000ff\">local-name(../..)='Main'</span><span style=\"font-size:13px\">&quot;</span><span style=\"font-size:13px;color:#0000ff\">&gt;</span>&nbsp;<br>\r\n&nbsp;&nbsp;&nbsp;<span style=\"font-size:13px\"><span style=\"color:#0000ff\">&lt;</span><span style=\"color:#2b91af\">xsl:call-template</span></span> <span style=\"font-size:13px;color:#ff0000\">test</span><span style=\"font-size:13px;color:#0000ff\">=</span><span style=\"font-size:13px\">&quot;</span><span style=\"font-size:13px;color:#0000ff\">formatLastFirst</span><span style=\"font-size:13px\">&quot;</span><span style=\"font-size:13px;color:#0000ff\">&gt;</span><br>\r\n<span style=\"font-size:13px;color:#0000ff\">&lt;/</span><span style=\"font-size:13px;color:#2b91af\">xsl:when</span><span style=\"font-size:13px;color:#0000ff\">&gt;<br>\r\n<span style=\"font-size:13px\"><span style=\"color:#0000ff\">&lt;</span><span style=\"color:#2b91af\">xsl:otherwise</span></span><span style=\"font-size:13px;color:#0000ff\">&gt;</span>&nbsp;<br>\r\n&nbsp;&nbsp;&nbsp;<span style=\"font-size:13px\"><span style=\"color:#0000ff\">&lt;</span><span style=\"color:#2b91af\">xsl:call-template</span></span> <span style=\"font-size:13px;color:#ff0000\">test</span><span style=\"font-size:13px;color:#0000ff\">=</span><span style=\"font-size:13px\">&quot;</span><span style=\"font-size:13px;color:#0000ff\">formatFirstLast</span><span style=\"font-size:13px\">&quot;</span><span style=\"font-size:13px;color:#0000ff\">&gt;<br>\r\n</span><span style=\"font-size:13px;color:#0000ff\">&lt;/</span><span style=\"font-size:13px;color:#2b91af\">xsl:otherwise</span><span style=\"font-size:13px;color:#0000ff\">&gt;</span></span><br>\r\n<br>\r\nSo, if the author is the 'Main' author, last name is displayed before the first name, otherwise, the first name is displayed before the last. So in your case, changing <strong><em>formatLastFirst</em></strong> into <strong><em>formatFirstLast</em></strong> (around line 5123) should do the trick.<br>\r\n<br>\r\nWas this what you were looking for?<br>\r\n<br>\r\n<span style=\"font-size:11px\">Note that if you would have performance issues, you could actually replace the entire xsl:choose structure.<br>\r\n(corrected&nbsp;a code&nbsp;copy/past error)</span>&nbsp;\r\n",
+    "PostedDate": "2008-09-20T05:31:48.787-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "119973",
+    "ThreadId": "36014",
+    "Html": "Thank you very much. It really works.\r\n",
+    "PostedDate": "2008-09-22T02:43:58.11-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "231661",
+    "ThreadId": "36014",
+    "Html": "<p>&nbsp;</p>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">Good day!</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">In Russian localization of the MS Office, in a bibliography, after &quot;Year&quot; field, the string &quot; r.&quot; follows ('R' character of the Latin alphabet) instead of string &quot; г.&quot; (letter 'Г' from cyrillic alphabet).</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">In &quot;templ_prop_SimpleDate_Y&quot; template there is a command &lt;xsl:value-of select=&quot;/*/b:Locals/b:Local[@LCID=$_LCID]/b:General/b:SimpleDate/b:Y&quot;/&gt; &nbsp; (line 2172), which generates string &quot;%Y r.&quot; and assigns it to the variable &quot;format&quot; (line 6519).</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">Where there is a definition of this &quot;General - SimpleDate - Y&quot; parameter? How can I change it?</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">I'll be glad for your help!</div>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow-x:hidden;overflow-y:hidden\">PS: sorry for my English )</div>\r\n<p>\r\n<p>Good day!</p>\r\n<p>In Russian localization of the MS Office, in a bibliography, after &quot;Year&quot; field, the string &quot; r.&quot; follows ('R' character of the Latin alphabet) instead of string &quot; г.&quot; ('Г' character from Cyrillic alphabet).</p>\r\n<p>In &quot;templ_prop_SimpleDate_Y&quot; template there is a command &lt;xsl:value-of select=&quot;/*/b:Locals/b:Local[@LCID=$_LCID]/b:General/b:SimpleDate/b:Y&quot;/&gt; &nbsp; (line 2172), which generates string &quot;%Y r.&quot; and assigns it to the variable &quot;format&quot; (line 6519).</p>\r\n<p>Where there is a definition of this &quot;General - SimpleDate - Y&quot; parameter? How can I change it?</p>\r\n<p>I'll be glad for your help!</p>\r\n<p>PS: sorry for my English )</p>\r\n</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-06T17:15:42.677-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "231732",
+    "ThreadId": "36014",
+    "Html": "<p>There is no way to change it at the source. The b:Locals element is passed along from Word to the citation and bibliography engine. Where Word gets the value is a mystery. It's probably a hardcoded resource in some dll.</p>\r\n<p>I can think of two ways to get around this:</p>\r\n<ol>\r\n<li>overwrite the b:Locals on entrance</li>\r\n<li>overwrite the templ_prop_SimpleDate_Y function so that when the LCID is russian, the correct symbol is returned</li>\r\n</ol>\r\n<p>The last is probably the easiest.</p>",
+    "PostedDate": "2009-09-06T23:46:32.56-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

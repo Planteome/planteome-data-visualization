@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "491167",
+    "ThreadId": "226596",
+    "Html": "<p>Hello,</p>\r\n<p>first of all thank you for your great work!! It really helped getting started using the literatur management in Word 2010.</p>\r\n<p>For my disseration I need a format like the following in the biblography:</p>\r\n<p>[Parasuraman et al., 2000]<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; R. Parasuraman, T.B. Sheridan &amp; C.D. Wickens (2000). A model for types and levels of human interaction with automation. In: <em>IEEE Transactions on Systems, Man and Cybernetics, Part A, 30(6)</em>, S. 286-297.</p>\r\n<p>Thus the %Last% author and &quot;et al.&quot; if more than one author and the year shall be displayed in the first line.<br>In the second line, all authors shall be named with their first names. This line shall also be indented.</p>\r\n<p>I managed to get the format so far with:</p>\r\n<p>&lt;columns&gt;1&lt;/columns&gt;&nbsp;&nbsp; &lt;!-- Use paragraph style formatting --&gt;</p>\r\n<p>&lt;format&gt;[{%Author:2%}{, %Year%}]&amp;lt;br/&amp;gt;{%Author:1%}{. %Title%}&lt;/format&gt;</p>\r\n<p>but in the second line, the authors are not shown as %Author% has already been used .... is there any way to cope with this??</p>\r\n<p>I tried to create a list name &quot;SecLineAuthor&quot; in &lt;namelists&gt;</p>\r\n<p>&lt;list name=&quot;SecLineAuthor&quot; id=&quot;1&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;single_prefix&gt;&lt;/single_prefix&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;multi_prefix&gt;&lt;/multi_prefix&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;corporate&gt;{%Corporate%}&lt;/corporate&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;first_person&gt;{%First:d% }{%Middle:d% }{ %Last%}&lt;/first_person&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;other_persons&gt;{%First:d% }{%Middle:d% }{ %Last%}&lt;/other_persons&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;separator_between_if_two&gt; and &lt;/separator_between_if_two&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;separator_between_if_more_than_two&gt;, &lt;/separator_between_if_more_than_two&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;separator_before_last&gt;, and &lt;/separator_before_last&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;max_number_of_persons_to_display&gt;5&lt;/max_number_of_persons_to_display&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;number_of_persons_to_display_if_more_than_max&gt;1&lt;/number_of_persons_to_display_if_more_than_max&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;overflow&gt; et al.&lt;/overflow&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;single_suffix&gt;&lt;/single_suffix&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;multi_suffix&gt;&lt;/multi_suffix&gt;<br>&lt;/list&gt;</p>\r\n<p>and use it in the format string for the biliography:</p>\r\n<p>&lt;format&gt;[{%Author:2%}{, %Year%}]&amp;lt;br/&amp;gt;{%SecLineAuthor:1%}{. %Title%}&lt;/format&gt;</p>\r\n<p>but without luck ... didn't work ....</p>\r\n<p>I would really appreciate any hints !!</p>\r\n<p>best regards,</p>\r\n<p>&nbsp;</p>\r\n<p>Mike</p>",
+    "PostedDate": "2010-09-09T03:39:33.833-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "491178",
+    "ThreadId": "226596",
+    "Html": "<p>Hi,</p>\r\n<p>I got a bit further:</p>\r\n<p>using %Author:r&quot; allows multiple use of parameter ...</p>\r\n<p>the last remaining &quot;problem&quot; is the indetation for the second line ... I tried &amp;nbsp; ... no luck ... anyone any ideas??</p>\r\n<p>&nbsp;</p>\r\n<p>best regards,</p>\r\n<p>Mike</p>",
+    "PostedDate": "2010-09-09T04:17:50.293-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "491225",
+    "ThreadId": "226596",
+    "Html": "<p>You could trick BibWord into using 2 paragraphs for a single entry. BibWord wraps the data into a paragraph by placing &lt;p&gt; and &lt;/p&gt; around it. You can place close the current paragraph and open a new one inside your format string.</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>[{%Author:2<strong>r</strong>%}{, %Year%}]<span style=\"color:red\">&amp;lt;</span>/p<span style=\"color:red\">&amp;gt;</span><span style=\"color:red\">&amp;lt;</span>p class='msobibliography' style='text-indent:20;'<span style=\"color:red\">&amp;gt;</span>{%Author:1%}{. %Title%}<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span> </pre>\r\n</div>\r\n<p>The text-indent style guarantees that your text is indented, while the msobibliography class ensure that everything is formatted the same (font, size, ...)</p>",
+    "PostedDate": "2010-09-09T06:12:30.333-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "491248",
+    "ThreadId": "226596",
+    "Html": "<p>Alternatively, you can use any type of space which doesn't get cleaned up, like x2002:</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>[{%Author:2r%}{, %Year%}]<span style=\"color:red\">&amp;lt;</span>br/<span style=\"color:red\">&amp;gt;</span>&amp;#x2002;&amp;#x2002;&amp;#x2002;&amp;#x2002;&amp;#x2002;{%Author:1%}{. %Title%}<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n</div>",
+    "PostedDate": "2010-09-09T06:55:40.993-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "491279",
+    "ThreadId": "226596",
+    "Html": "<p>Yves,</p>\r\n<p>thanks a lot for your quick replies! What happens now is as follows:</p>\r\n<p>[Cox &amp; Wilfong, 1990]<span style=\"font-size:12pt\"><br>&nbsp;&nbsp;&nbsp;&nbsp; Ingemar J. Cox &amp; Gordon T. Wilfong (1990). <em>Autonomous robot<br>vehicles</em>. Berlin, Heidelberg: Springer.</span></p>\r\n<p><span style=\"font-size:12pt\">The second line starts indented, but when the paragraph wraps it starts again at the beginning of the line. This is how I'd love to have it:</span></p>\r\n<p>[Cox &amp; Wilfong, 1990]<span style=\"font-size:12pt\"><br> &nbsp;&nbsp;&nbsp;&nbsp; Ingemar J. Cox &amp; Gordon T. Wilfong (1990). <em>Autonomous robot<br>&nbsp;&nbsp;&nbsp;&nbsp; vehicles</em>. Berlin, Heidelberg: Springer.</span></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size:12pt\">Any ideas?</span></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size:12pt\">best regards,</span></p>\r\n<p><span style=\"font-size:12pt\">Mike<br></span></p>\r\n<p><span style=\"font-size:12pt\"><br></span></p>",
+    "PostedDate": "2010-09-09T07:45:39.34-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "491282",
+    "ThreadId": "226596",
+    "Html": "<p>Hi Yves,</p>\r\n<p>found it!!</p>\r\n<p>&quot;text-indent:value&quot; -&gt; &quot;margin-left:value&quot; did the trick!</p>\r\n<p>Thanks again!!</p>\r\n<p>&nbsp;</p>\r\n<p>best regards,</p>\r\n<p>Mike</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-09-09T07:51:52.493-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "491417",
+    "ThreadId": "226596",
+    "Html": "Did that and works like a charm !!!<br><br>Thanks a lot for your wonderful project and your help!!!<br><br>I really appreciate it!!<br><br>best regards,<br><br>Mike<br><br><br>&gt; From: yves<br>&gt;<br>&gt; That was not what you posted in your original example :-)Anyway, use the<br>&gt; extra paragraph example, but instead ofstyle='text-indent:20;'try using<br>&gt; something likestyle='margin-left: 2em;'Of course, in a rtl world, that<br>&gt; would become margin-right.<br>&gt;<br>&gt; ",
+    "PostedDate": "2010-09-09T11:59:09.78-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

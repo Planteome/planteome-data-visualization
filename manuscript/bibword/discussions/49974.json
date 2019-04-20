@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "167267",
+    "ThreadId": "49974",
+    "Html": "Hi,<div><br></div><div>I found the styles from this site very useful, particulalry the ACM styles.</div><div><br></div><div>I was wondering how I could enable the following for ACM Name Sequence style:</div><div><br></div><div>1. Enclosing the numbers in the bibliography in square brackets - similar to APA Numerical with Square Brackets</div><div><br></div><div>2. How to add links to bibliography e.g. &quot;doi&quot; or &quot;accessed from&quot;</div><div><br></div><div>Many thanks,</div><div>Mohamed</div>",
+    "PostedDate": "2009-03-12T02:42:37.673-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "167290",
+    "ThreadId": "49974",
+    "Html": "<p>1.Change all occurences of </p>\r\n<p><span style=\"font-size:10pt;color:#0000ff;font-family:'courier new'\">&lt;</span><span style=\"font-size:10pt;color:#a31515;font-family:'courier new'\">format</span><span style=\"font-size:10pt;color:#0000ff;font-family:'courier new'\">&gt;</span><span style=\"font-size:10pt;font-family:'courier new'\">%BibOrder|&quot;BO&quot;%<span style=\"color:#0000ff\">&lt;/</span><span style=\"color:#a31515\">format</span><span style=\"color:#0000ff\">&gt;</span></span></p>\r\n<p>into</p>\r\n<p><span style=\"font-size:10pt;color:#0000ff;font-family:'courier new'\">&lt;</span><span style=\"font-size:10pt;color:#a31515;font-family:'courier new'\">format</span><span style=\"font-size:10pt;color:#0000ff;font-family:'courier new'\">&gt;</span><span style=\"font-size:10pt;font-family:'courier new'\">[%BibOrder|&quot;BO&quot;%]<span style=\"color:#0000ff\">&lt;/</span><span style=\"color:#a31515\">format</span><span style=\"color:#0000ff\">&gt;</span></span></p>\r\n<p>2. The open xml specification does not provide an entry for DOI. You could abuse the comments fields as that is displayed at the end of most entries. But more importantly, ACM does not provide guidelines on how to cite from electronic sources or websites (see for example their <a href=\"http://www.acm.org/publications/latex_style/acmtrans.bst\" title=\"http://www.acm.org/publications/latex_style/acmtrans.bst\">LaTeX bst</a>). So if you want to support 'ElectronicSource' or 'InternetSite', you will have to define and add such an entry yourself. For more information on adding stuff, see the <a href=\"http://bibliography.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=23850\" title=\"http://bibliography.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=23850\">BibWord Guide</a>.</p>\r\n<p>The fastest, but dirtiest solution could be extending the existing types such as JournalArticle to support URLs. This could be done by simply adding:</p>\r\n<p><span style=\"font-size:10pt;font-family:'courier new'\">{ Accessed from: %URL:l%}</span></p>\r\n<p>infront of:</p>\r\n<p><span style=\"font-size:10pt;font-family:'courier new'\">{ %Comments%.}</span></p>\r\n<p>for the entries which (should) support urls.</p>\r\n",
+    "PostedDate": "2009-03-12T03:21:19.66-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "167307",
+    "ThreadId": "49974",
+    "Html": "Many thanks, Yves,<br>\r\n<br>\r\nIt works and I am sure these templates will make my life a little bit easier. <br>\r\n<br>\r\nI was also wondering if you are aware of a bibliography manager (like JabRef) for managing XML based biblio files used by Word2007.<br>\r\n<br>\r\nAgain, many thanks,<br>\r\nMohamed\r\n",
+    "PostedDate": "2009-03-12T03:54:12.76-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "167342",
+    "ThreadId": "49974",
+    "Html": "I'm not aware of any bibliography managers for Word 2007/2008. <br>\r\n<br>\r\nThere are many tools out there which can convert bibtex entries into office open xml sources.\r\n<ul>\r\n    <li><a href=\"http://sdudah.googlepages.com/bibtex2word2007bibliographyconverter\" title=\"http://sdudah.googlepages.com/bibtex2word2007bibliographyconverter\">http://sdudah.googlepages.com/bibtex2word2007bibliographyconverter</a></li>\r\n    <li><a href=\"http://www.scripps.edu/~cdputnam/software/bibutils/\" title=\"http://www.scripps.edu/~cdputnam/software/bibutils/\">http://www.scripps.edu/~cdputnam/software/bibutils/</a></li>\r\n    <li><a href=\"http://www.codeplex.com/bib2Word07Xml\" title=\"http://www.codeplex.com/bib2Word07Xml\">http://www.codeplex.com/bib2Word07Xml</a></li>\r\n    <li><a href=\"http://ragrawal.wordpress.com/2009/03/07/releasing-reference-manager-beta-for-word-2007/\" title=\"http://ragrawal.wordpress.com/2009/03/07/releasing-reference-manager-beta-for-word-2007/\">http://ragrawal.wordpress.com/2009/03/07/releasing-reference-manager-beta-for-word-2007/</a></li>\r\n</ul>\r\n<p>The last one looks very promising from the video on the site, but I haven't tried it yet.</p>\r\n",
+    "PostedDate": "2009-03-12T06:07:51.29-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "167604",
+    "ThreadId": "49974",
+    "Html": "Many thanks, Yves,<br>\r\n<br>\r\nI will try the last one sometime this weekend. <br>\r\n<br>\r\nYou have been a great help, most appreciated.<br>\r\nMohamed\r\n",
+    "PostedDate": "2009-03-12T19:35:55.803-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

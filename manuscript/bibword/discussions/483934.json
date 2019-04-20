@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1150386",
+    "ThreadId": "483934",
+    "Html": "Hey\r<br />\nfirst of all, I've to say that you did a great job with BibWord.\r<br />\n<br />\nI have made my own style now. I would like to add / change two more things, but I don't know how.\r<br />\n<br />\n1) \r<br />\nIs it possible to group the sources in the bibliography?\r<br />\nIt should look somthing like:\r<br />\n<br />\n<strong>Bibliography</strong>\r<br />\nLiterature\r<br />\n[Tag01]\r<br />\n[Tag02]\r<br />\n.\r<br />\n.\r<br />\nInternet References\r<br />\n[1] (if not possible [Tag10] would work too)\r<br />\n[2] (if not possible [Tag11] would work too)\r<br />\n.\r<br />\n.\r<br />\n<br />\n<br />\n2)\r<br />\nThe second question is simpler. At the Moment, the bibliography Looks like\r<br />\n<br />\n[Tag01]  Author1......\r<br />\n<br />\nI would like to change it to\r<br />\n<br />\n[Tag01]________Author1.... (with whitespaces / tabulator instead of the underline)\r<br />\n<br />\nHow can I achieve this?\r<br />\nAdding a third column doesn't change anything (or I just don't know how to add a tab)\r<br />\n<br />\n<br />\n<br />\nWould be great, if those things are possible.\r<br />\nThanks in advance\r<br />\nMartin<br />\n",
+    "PostedDate": "2014-01-07T05:28:12.25-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1213108",
+    "ThreadId": "483934",
+    "Html": "1) Yes (and no). It is possible to group them, by providing the 'SourceType' as the first part of the sortkey. This will nicely list all your sources according to their type. However, when finished, you will have to convert the bibliography to static text and add the different titles (Literature, Internet References, ...) yourself.\r<br />\n<br />\n2) Use a column based format. Using whitespaces / tabulators will never get you perfect alignment, tables will. The IEEE style uses this if you are looking for an example.<br />\n",
+    "PostedDate": "2014-02-23T11:16:08.78-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1242447",
+    "ThreadId": "483934",
+    "Html": "Hey, <br />\n<br />\nat first, thanks for the great work here. <br />\n<br />\nI am trying to do the same as Martin91x, so grouping the source first after SourceType, then after Reference order, using the IEEE style on Mac Word 2011. <br />\n<br />\nLike This:<br />\nText: Text [2] more Text [3] even more Text [1]<br />\n<br />\nBibliography:<br />\nBooks:<br />\n[1] MrX etc.<br />\n<br />\nInternet References<br />\n[2] MrY etc.<br />\n[3] MrZ etc.<br />\n<br />\n(Adding in the titles myself at the end isnt a problem) <br />\n<br />\nSadly i have no clue about xsl, and as i am somewhat in the middle of my master thesis, so I hope to avoid putting too much time into learning it. ;)<br />\n<br />\nI really would appreciate it if someone could help me with an exact-as-possible instruction how to do so. <br />\n(I would guess I have to apply some changes to the create-sortkey-template at the very end of the code...)<br />\n",
+    "PostedDate": "2014-05-07T02:27:07.433-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

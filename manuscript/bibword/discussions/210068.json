@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "433709",
+    "ThreadId": "210068",
+    "Html": "Hello, \r\n\r\nI need to change a little bit ISO690 style. I need it to look like this:\r\n\r\nHuang, H. K. PACS AND IMAGING INFORMATICS: BASIC PRINCIPLES AND APPLICATIONS. New Jersey : John Wiley & Sons, Inc., Hoboken, 2004. 0-471-25123-2.\r\n\r\nand NOT like this (I need to delete the year at the begining:\r\n\r\nHuang, H. K. 2004. PACS AND IMAGING INFORMATICS: BASIC PRINCIPLES AND APPLICATIONS. New Jersey : John Wiley & Sons, Inc., Hoboken, 2004. 0-471-25123-2.\r\n\r\nPlease can you help me.\r\nPotmar",
+    "PostedDate": "2010-04-21T08:47:31.953-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "433773",
+    "ThreadId": "210068",
+    "Html": "<p>The styles which come with Word 2007 are not really structured, you will have to dig into the code to find what you need. You have one thing which works in your advantage. Only the author and the year are in bold (HTML element <strong>b</strong>). Locate the section between</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">b</span><span style=\"color:blue\">&gt;</span>\r\n  <span style=\"color:green\">&lt;!-- Bunch of code. --&gt;</span>\r\n<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">b</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>It seems there are two parts there:</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">choose</span><span style=\"color:blue\">&gt;</span>\r\n  <span style=\"color:green\">&lt;!-- Code taking care of the author/title part. --&gt;</span>\r\n<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">choose</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>and</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">if</span> <span style=\"color:red\">test</span> <span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">string-length(b:Year)&gt;0</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">&gt;</span>\r\n\r\n<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">if</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>Without testing it, it looks like removing that second part might be enough to fix your style.</p>",
+    "PostedDate": "2010-04-21T10:39:43.45-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

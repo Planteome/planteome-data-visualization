@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "897947",
+    "ThreadId": "390971",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I&acute;ve downloaded&nbsp;<strong>ACS - Citation Sequence (superscript) </strong>\r\nstyle from <a href=\"http://bibword.codeplex.com/releases/view/25693\">here</a> to be used in Word2010 but the citation numbers are not superscript.</p>\r\n<p>Do you have any solution for this problem?</p>\r\n",
+    "PostedDate": "2012-08-10T01:52:25.807-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "897973",
+    "ThreadId": "390971",
+    "Html": "\r\n<p>Check the FAQ. More specifically &quot;<a href=\"http://bibword.codeplex.com/wikipage?title=Styles_FAQ&referringTitle=Documentation#Q9\" target=\"_blank\">How do I get my in-text citations in superscript?</a>&quot;</p>\r\n<p>Also, the page you are referring to has a remarks section which answers your exact question in the last point.</p>\r\n",
+    "PostedDate": "2012-08-10T03:48:57.923-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "897978",
+    "ThreadId": "390971",
+    "Html": "\r\n<div dir=\"ltr\">I saw it already in the FAQ but it is not so clear to me what to do with that macro. Should I copy it somewhere?<br>\r\n<br>\r\n<br>\r\n<div>\r\n<div id=\"SkyDrivePlaceholder\"></div>\r\n<hr id=\"stopSpelling\">\r\nFrom: [email removed]<br>\r\nTo: [email removed]<br>\r\nDate: Fri, 10 Aug 2012 03:49:04 -0700<br>\r\nSubject: Re: American Chemical Society styles / superscript problem [bibword:390971]<br>\r\n<br>\r\nFrom: yves<br>\r\n<div id=\"ecxThreadNotificationPostBody\">Check the FAQ. More specifically <a href=\"http://bibword.codeplex.com/wikipage?title=Styles_FAQ&referringTitle=Documentation#Q9\" target=\"_blank\">\r\nQ9</a><br>\r\n</div>\r\n<div id=\"ecxThreadNotificationFooter\">Read the <a href=\"http://bibword.codeplex.com/discussions/390971#post897973\" target=\"_blank\">\r\nfull discussion online</a>.<br>\r\nTo add a post to this discussion, reply to this email (<a href=\"mailto:bibword@discussions.codeplex.com?subject=[bibword:390971]\">bibword@discussions.codeplex.com</a>)<br>\r\nTo start a new discussion for this project, email <a href=\"mailto:bibword@discussions.codeplex.com\">\r\nbibword@discussions.codeplex.com</a><br>\r\nYou are receiving this email because you subscribed to this discussion on CodePlex. You can\r\n<a href=\"https://bibword.codeplex.com/discussions/390971/unsubscribe/\" target=\"_blank\">\r\nunsubscribe</a> on CodePlex.com.<br>\r\nPlease note: Images and attachments will be removed from emails. Any posts to this discussion will also be available online at CodePlex.com<br>\r\n</div>\r\n</div>\r\n</div>\r\n",
+    "PostedDate": "2012-08-10T03:59:34.433-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "898687",
+    "ThreadId": "390971",
+    "Html": "<p>See this excellent tutorial on using and installing macros: <a href=\"http://www.gmayor.com/installing_macro.htm\">http://www.gmayor.com/installing_macro.htm</a></p>",
+    "PostedDate": "2012-08-13T02:16:05.023-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "847373",
+    "ThreadId": "359144",
+    "Html": "\r\n<p>I'll be happy if there's a possibility to change alpahabetical order. I'm creating a source list and it is demanded to start with cyrillics (Russian)</p>\r\n",
+    "PostedDate": "2012-06-11T03:20:45.537-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "847914",
+    "ThreadId": "359144",
+    "Html": "<p>Inside the code, there are several xsl:sort elements responsible for all the sorting. You could add the lang attribute to specify that you are using cyrillics and that your text should be sorted accordingly. Without the attribute, your system settings are used.</p>\r\n<p>More information on the xsl:sort element can be found at <a href=\"http://www.w3schools.com/xsl/el_sort.asp\">http://www.w3schools.com/xsl/el_sort.asp</a></p>\r\n<p>More information on the values allowed for the language attribute can be found at <a href=\"http://www.opentag.com/xfaq_lang.htm\">http://www.opentag.com/xfaq_lang.htm</a>&nbsp;which also points to an ISO&nbsp;list with current values.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2012-06-12T05:47:57.577-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "847918",
+    "ThreadId": "359144",
+    "Html": "<p>Many thanks, yves!=)</p>",
+    "PostedDate": "2012-06-12T05:51:32.32-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

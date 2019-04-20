@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "916540",
+    "ThreadId": "396629",
+    "Html": "\r\n<p>Hello Yves,</p>\r\n<p>I would like to automatically put DATE and/or other MS Word fields into the citation.</p>\r\n<p>e.g.: cited: { CREATEDATE \\@ &quot;MM/dd/yy&quot; } and so on.</p>\r\n<p>But as far as I know, fields can be only entered by pressing ctrl&#43;F9 and the second difficulty is, that citations are already inserted as field, so it would be inserted as field inside field.</p>\r\n<p>Do you see a way, how to achieve automaticaly inserted date into citations? Is it possible to do this through XSL code somehow.</p>\r\n<p>I would appreciate any advice, that will point me the right direction.</p>\r\n<p>Many thanks</p>\r\n<p>&nbsp;</p>\r\n<p>Vaclav</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2012-09-24T02:10:51.007-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "916567",
+    "ThreadId": "396629",
+    "Html": "<p>Where do you want that date? What exactly is the output you try to achieve?</p>\r\n<p>XSLT 1.0 has no support for retrieving the current date. So you won't be able to go that way.</p>\r\n<p>In theory you could nest the date field inside the citation field as a prefix or suffix.</p>",
+    "PostedDate": "2012-09-24T03:31:24.533-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "916656",
+    "ThreadId": "396629",
+    "Html": "\r\n<p>I'am working on ISO 690 norm style based on your styles.</p>\r\n<p>I would like to automaticaly add date to the bibliographic entry of every online source, where I need to specify date, when I read and cited that source. In most cases, it is date of creating citation entry. This is a bit tricky, because MS Word fields can\r\n only add actual date, or date of creating or last saving/printing of a document, so date of creating bibliographic entry would need some workaround eventually.</p>\r\n<p>Secondly, I would like to add actual year as information about time existence of an internet site, if user leave this information unfilled. e.g. Codeplex have dating &quot;(c) 2006-2012&quot;, but some sites, like youtube, have only &quot;(c) 2012&quot; or doesnt have dating\r\n at all and in that case, you could automatically add actual year (if the site is still working).</p>\r\n<p>In both cases, I need to add MS Word field inside (in the middle) bibliographic entry. It would be nice, if one can add MS Word fields through the XSL bibliographic style file, but I dont know, how to write a text string, that will MS Word understand as\r\n a field. I also tried go around this and get actual date by</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">script</span> <span style=\"color:red\">language</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">javascript</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">&gt;</span>\n   ...\n<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">script</span><span style=\"color:blue\">&gt;</span>\n</pre>\r\n</div>\r\n<p>but xsl:script seem to not work in this case.</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2012-09-24T07:22:16.78-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "917243",
+    "ThreadId": "396629",
+    "Html": "<p>No, scripting is disabled inside XSLT. There is some logic to that from a security point of view, although one could argue that if you manage to get an xslt inside the program files directory you already have proven that you have either the rights to do so or that you have stolen access to the computer already.</p>\r\n<p>A workaround would be to use&nbsp;a macro and the Word Object Model (WOM). Using the WOM, it is possible to retrieve the XML of a source. You could check if the year is available and if not, overwrite the entire source (unfortunately it is not possible to set a field which wasn't set before) with an adapted version where you inserted the year. Search for ActiveDocument.Bibliography.Sources for more info.</p>",
+    "PostedDate": "2012-09-25T06:55:53.327-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

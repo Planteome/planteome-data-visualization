@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I found an issue with AMA style that I cannot do without. The book section reference on the bibliography does not show the pages of the section, even though pages is an \"important field\". \n\nI can see in the code where to add {%pages%} so it will show, but I have no idea how to edit the code. After downloading, the file is opening with Windows Internet Explorer which I can only read, and if I try to save as or open it with something else and edit (creating a new XSL file), Word doesn't seem to recognize the new file as another style option, even though it says it is an xsl file and it is in the correct directory.\n\nCan you explain how to edit, in very simplistic steps?",
+    "LastUpdatedDate": "2013-10-31T10:32:53.787-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "bibword",
+    "ReportedDate": "2013-10-30T10:31:24.23-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "AMA style, necessary edit.",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 11371
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Download the file to somewhere on your computer where you can access it.\r\n\r\nNext open the file with an XML editor. If you don't have an XML editor, use __notepad__.\r\n\r\nIf Word does not pick up the style after editing it, then it is most likely because something in the XML is broken. If you only changed a few lines, post them here, and I'll take a look if you made some error perhaps.",
+      "PostedDate": "2013-10-31T08:04:07.53-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Thank you so very much! I used Notepad and it worked beautifully. When having trouble yesterday, I was using Wordpad (& even tried Word) but I guess these are not what you called XML editors. I'm unfamiliar with that. \nOnce the edit was complete, I reopened my docx, but updating bibliography didn't do it immediately. I did have to change to another style and back to the desired style, updating bibliography as I went, in order to get the new programming change to show.\r\n\r\nThanks again for your prompt help!!! I love your site!",
+      "PostedDate": "2013-10-31T10:32:53.787-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

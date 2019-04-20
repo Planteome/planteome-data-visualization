@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1317455",
+    "ThreadId": "570855",
+    "Html": "Dear all\r<br />\n<br />\nI'm facing an issue with the ABNT standard. When I try to use an Document from Internet site, either a citation or on Biography, it shows this message:\r<br />\n<br />\nUnsupported source type (DocumentFromInternetSite) for source Xxx##\r<br />\n<br />\n<br />\nIf I change to APA it works flawlessly. But I need ABNT.\r<br />\n<br />\nIs there any place in the code (ABNT_Author.XSL) where can I change or add something so I can fix it? Or any update?\r<br />\n<br />\nThe file I've got has this Header:<br />\n<pre><code>&lt;general&gt;\n  &lt;stylename&gt;ABNT NBR 6023:2002*&lt;/stylename&gt;\n  &lt;version&gt;2009.05.23&lt;/version&gt;\n  &lt;author&gt;Yves Dhondt (yves.dhondt@gmail.com)&lt;/author&gt;\n  &lt;description&gt;An implementation of the ABNT NBR 6023/2002 style.&lt;/description&gt;\n  &lt;URL&gt;http://bibliography.codeplex.com/updateStyle?id=ABNT1&lt;/URL&gt;\n  &lt;comments&gt;\n  &lt;/comments&gt;\n  &lt;display_errors&gt;yes&lt;/display_errors&gt;\n  &lt;citation_as_link&gt;no&lt;/citation_as_link&gt;\n&lt;/general&gt;\n\n</code></pre>\n\nThanks in advance!<br />\n",
+    "PostedDate": "2014-10-29T11:52:40.083-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

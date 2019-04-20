@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "811005",
+    "ThreadId": "348775",
+    "Html": "\r\n<p>Dear all,</p>\r\n<p>&nbsp;</p>\r\n<p>I've tried to achieve this on my own, but got a bit (to be honest - a lot) confused with BibOrder / RefOrder so I am asking for your help.</p>\r\n<p>What I am trying to do is to create a stylesheet similar to IEEE-Alphabetical Order. However, I would like the numbering to be as per alphabetical order, not per order of appearance. It is hard for me to explain this properly with words, so let me show you\r\n what I mean:</p>\r\n<p>text text text [2] text text text [1] text text text [3]</p>\r\n<p>Bibliography:</p>\r\n<p>[1] Adams; ....</p>\r\n<p>[2] Brown; ...</p>\r\n<p>[3] Walther;...</p>\r\n<p>Thus, the first citation in the text does not have to be [1], but depends on the position in the bibliography.</p>\r\n<p>I already achieved an alphabetical order in tbe bibliography, but somehow the numbers are still as per appearance in the text. Can you help me with that?</p>\r\n<p>Thank you a lot, this stylesheet already saved me a lot of trouble,</p>\r\n<p>cheers,</p>\r\n<p>fabi</p>\r\n",
+    "PostedDate": "2012-03-15T11:25:24.15-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "811104",
+    "ThreadId": "348775",
+    "Html": "<p>In the IEEE - Alphabetical Order the numbers are per alphabetical order (hence the name).</p>\r\n<p>Your in-text citation should be of the format %BibOrder%. Note that you can only generate the value for BibOrder by using the Extender program. Word is not capable by itself to calculate the value as the in-text citations and bibliography are not aware of each other.</p>\r\n<p>Personally I use %BibOrder|\"BO\"%. That way it is easy to see if you ran the Extender program or not. If you haven't, the document will just show 'BO' for your in-text citations. Only after you ran the program, a value for BibOrder is available.</p>\r\n<p>Make it easy on yourself and start from IEEE - Alphabetical Order. Just take a copy of the xsl, change the name, and then start changing whatever formatting you want.</p>",
+    "PostedDate": "2012-03-15T14:23:12.423-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "811714",
+    "ThreadId": "348775",
+    "Html": "<p>Hi yves!</p>\r\n<p>Thanks a lot for the quick reply! Indeed, you are right, I don't know why the bibliography was not shown correctly the first time I tried IEEE-AO...</p>\r\n<p>Anyway, I adjusted the IEEE-skript with the only alteration that I wanted the chapter of the books displayed (since all my citations are booksections, but I didn't find that option at first, I saved the chapter in the \"page\" variable. Thus, I simply changed the p. pp. to ch. - not an elegant solution, I know, but I just wanted to make it work). However, I rechecked the bibliography, and sometimes (when the same book is cited more than once) I get this:</p>\r\n<table border=\"0\" cellpadding=\"0\" width=\"100%\">\r\n<tbody>\r\n<tr>\r\n<td valign=\"top\">\r\n<p>[79]</p>\r\n</td>\r\n<td valign=\"top\">\r\n<p>Willborn,   Walter, <em>Audit Standards</em>, 1st ed. Milwaukee: ASQC Quality Press, 1987,   ch. 2.</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td valign=\"top\">\r\n<p>[78]</p>\r\n</td>\r\n<td valign=\"top\">\r\n<p>Willborn,   Walter, <em>Audit Standards</em>, 1st ed. Milwaukee: ASQC Quality Press, 1987,   ch. 3.</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td valign=\"top\">\r\n<p>[77]</p>\r\n</td>\r\n<td valign=\"top\">\r\n<p>Willborn,   Walter, <em>Audit Standards</em>, 1st ed. Milwaukee: ASQC Quality Press, 1987,   ch. 6.</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td valign=\"top\">\r\n<p>[76]</p>\r\n</td>\r\n<td valign=\"top\">\r\n<p>Willborn,   Walter, <em>Audit Standards</em>, 1st ed. Milwaukee: ASQC Quality Press, 1987,   ch. 7.</p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<p>Is there any simple explanation, why this happens?</p>\r\n<p>Thanks again, and have a nice weekend,</p>\r\n<p>fabi</p>",
+    "PostedDate": "2012-03-16T18:37:21.5-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "813716",
+    "ThreadId": "348775",
+    "Html": "<p>Hi!</p>\r\n<p>Does no one have any idea?</p>\r\n<p>Help would be great,</p>\r\n<p>thanks,</p>\r\n<p>&nbsp;</p>\r\n<p>fabi</p>",
+    "PostedDate": "2012-03-21T13:25:02.257-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "813767",
+    "ThreadId": "348775",
+    "Html": "<p>The sortkey element decides how your entries are sorted in your bibliography. If two entries generate the same sortkey, there is no way to tell in which order they will appear in your bibliography since those entries will be the same for the sorting algorithm. You will have to extend the format string of the sortkey to include the chapter / page number to make the entries in your example look different to the sorting algorithm. The easiest way to achieve this is probably using the same format string for the bibliography entry and the sortkey.</p>",
+    "PostedDate": "2012-03-21T14:37:04.39-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "820323",
+    "ThreadId": "348775",
+    "Html": "<p>Dear yves,</p>\r\n<p>thank you for your reply again! After many struggles I started over with your file and now it works. This way, the above problem was solved. But anyway, as soon as there are chapters of a higher number than nine, problems occure. The sortkey sorts it as follows:</p>\r\n<p>1<br />22<br />25<br />3<br />7</p>\r\n<p>This is only a small problem and not so important, but can I change this?</p>\r\n<p>Thanks again and happy easter,</p>\r\n<p>fabi</p>",
+    "PostedDate": "2012-04-05T04:36:38.423-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

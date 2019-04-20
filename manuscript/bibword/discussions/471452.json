@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1130102",
+    "ThreadId": "471452",
+    "Html": "Hi All,\r<br />\n<br />\nI recently modified the APA.xsl file for ASCE style bibliography. Hope this will be helpful for some of you:\r<br />\n<a href=\"https://bitbucket.org/simbaforrest/myscripts/wiki/ASCE.xsl.usage\" rel=\"nofollow\">ASCE.xsl</a>\r<br />\n<br />\nFeel free to contact me if any bug shows up :)<br />\n",
+    "PostedDate": "2013-11-28T14:39:28.3-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1181360",
+    "ThreadId": "471452",
+    "Html": "I just wanted to acknowledge your efforts in sharing this. To get it to work on my machine (running Word 2011), I had to change the encoding to utf-8 at two locations in the code, but now (at least preliminarily), it seems to be working.\r<br />\n<br />\nThanks!\r<br />\n<br />\n-Ben<br />\n",
+    "PostedDate": "2014-01-19T10:39:18.393-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1303939",
+    "ThreadId": "471452",
+    "Html": "Hi,\r<br />\n<br />\nIt looks doesn't work for Word 2013, do you have any update for this?<br />\n",
+    "PostedDate": "2014-09-12T00:48:02.39-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

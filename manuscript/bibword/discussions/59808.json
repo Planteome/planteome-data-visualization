@@ -1,0 +1,90 @@
+[
+  {
+    "Id": "202483",
+    "ThreadId": "59808",
+    "Html": "<p>I mean, by default Word put literature with english named author first (if we sort by author in style, of course), and my native language named author after. And I need to put it in reverse.</p>\r\n<p>Is there a way to do this?</p>\r\n<p>Thx in advance)</p>",
+    "PostedDate": "2009-06-17T06:39:08.947-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "202534",
+    "ThreadId": "59808",
+    "Html": "<p>I don't really understand what you try to achieve. Maybe you could try providing an example bibliography with 3 or 4 entries to illustrate your question.</p>\r\n<p>Both the predefined styles and the BibWord styles offered here use a 'key' string to sort entries. How that key is generated is&nbsp;entirely up to you.</p>",
+    "PostedDate": "2009-06-17T08:55:25.33-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "202570",
+    "ThreadId": "59808",
+    "Html": "<p>And 'key' consist of symbols. And who decides that letter 'b' should be before 'a' and integers: '1','2', etc. should be before all letters?</p>\r\n<p>Is there a way to change string comparison method?</p>\r\n<p>Example, that u ask:</p>\r\n<p>I have in bibliography:</p>\r\n<p>1. Xiaozhan Xu The SIR method: A superiority and inferiority ranking method for multiple criteria decision making // European Journal of Operational Research. - 2001. - № 131 - с. 587-602.<br>2. Zopounidis C. Multicriteria decision aid in financial management // European Journal of Operational Research. - 1999. - № 119 - с. 404-415.<br>3. Айвазян С.А., Бухштабер В.М., Енюков И.С., Мешалкин Л.Д. Прикладная статистика / Классификация и снижение размерности. -М.: Финансы и статистика- 1989. <br>4. Айвазян С.А., Мхитарян В.С. Прикладная статистика и основы эконометрики. -М.: Юнити- 1998.</p>\r\n<p>I need:</p>\r\n<p>1. Айвазян С.А., Бухштабер В.М., Енюков И.С., Мешалкин Л.Д. Прикладная статистика / Классификация и снижение размерности. -М.: Финансы и статистика- 1989. <br>2. Айвазян С.А., Мхитарян В.С. Прикладная статистика и основы эконометрики. -М.: Юнити- 1998. <br>3. Xiaozhan Xu The SIR method: A superiority and inferiority ranking method for multiple criteria decision making // European Journal of Operational Research. - 2001. - № 131 - с. 587-602.<br>4. Zopounidis C. Multicriteria decision aid in financial management // European Journal of Operational Research. - 1999. - № 119 - с. 404-415.<br><br>&nbsp;I think it's very ease to achieve, just i don't understand bibword completely and don't have much time for it ((</p>",
+    "PostedDate": "2009-06-17T10:23:27.397-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "202592",
+    "ThreadId": "59808",
+    "Html": "<p>The &quot;lang&quot; attribute of the &quot;xsl:sort&quot; element (<a href=\"http://www.w3.org/TR/xslt#sorting\">http://www.w3.org/TR/xslt#sorting</a>)&nbsp;decides on the sorting algorithm. The implementation of the&nbsp;sorting algorithm should be the same for every XSL&nbsp;engine and has nothing to do with any Word bibliography style implementation. If no attribute is given, then the default language is assumed (that holds for BibWord).</p>\r\n<p>But I'm not sure if the Microsoft engine (or any other XSL&nbsp;engine for that matter) has support for sorting&nbsp;using multiple languages/character sets as you want to do.</p>\r\n<p>Without having time to test it, two ideas come to mind:</p>\r\n<ol>\r\n<li>Play around with the encoding parameter to see if you can find a common factor for latin and cyrillic.</li>\r\n<li>Write a small replace routine in XSL which converts cyrillic characters to their latin counterparts and then do an ordinary sorting based on the converted string.</li>\r\n</ol>\r\n<p>As I'm not a specialist when it comes to different languages and encodings, the second one sounds like the option guaranteed to give a solution. It's also the solution requiring most work.</p>",
+    "PostedDate": "2009-06-17T11:25:59.107-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "202654",
+    "ThreadId": "59808",
+    "Html": "<p>Choosing option 2, where i should put my procedure?</p>\r\n<p>I tried to add it where &lt;b:SortKey&gt; is created. Like this                                                                                                                                                                                                                                                         :</p>\r\n<p><span style=\"color:Blue\">\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>                <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">xsl</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">call-template</span> <span style=\"color:Red\">name</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">cyrillic_before_english</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">&gt;</span>\r\n                  <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">xsl</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">with-param</span> <span style=\"color:Red\">name</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">string</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">&gt;</span>\r\n                \r\n                <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">xsl</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">call-template</span> <span style=\"color:Red\">name</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">upper-case</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">&gt;</span>\r\n                  <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">xsl</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">with-param</span> <span style=\"color:Red\">name</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">string</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">&gt;</span>\r\n                    <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">xsl</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">call-template</span> <span style=\"color:Red\">name</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">format-source</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">&gt;</span>\r\n                      <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">xsl</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">with-param</span> <span style=\"color:Red\">name</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">format</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">select</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">msxsl:node-set($data)/bibliography/source[@type = $type]/sortkey</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Blue\">/&gt;</span>\r\n                      <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">xsl</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">with-param</span> <span style=\"color:Red\">name</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">source</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Red\">select</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">.</span><span style=\"color:Black\">&quot;</span> <span style=\"color:Blue\">/&gt;</span>\r\n                    <span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">xsl</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">call-template</span><span style=\"color:Blue\">&gt;</span>\r\n                  <span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">xsl</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">with-param</span><span style=\"color:Blue\">&gt;</span>\r\n                <span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">xsl</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">call-template</span><span style=\"color:Blue\">&gt;</span>\r\n\r\n                  <span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">xsl</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">with-param</span><span style=\"color:Blue\">&gt;</span>\r\n                <span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">xsl</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">call-template</span><span style=\"color:Blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n</span></p>\r\n<p>But got no result. Maybe u can give me another tip)</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-06-17T14:09:55.54-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "202660",
+    "ThreadId": "59808",
+    "Html": "<p>Ok. I got it to work.</p>\r\n<p>The problem was in procedure itself, not in the place where it's called.</p>\r\n<p>Actually I never even heard about xsl before yesterday, so the only thing i can do is 32 statements for each alphabet letter:</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>    <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">xsl</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">if</span> <span style=\"color:Red\">test</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">contains(substring($string, 2, 1),'А')</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">&gt;</span>\r\n      <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">xsl</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">text</span><span style=\"color:Blue\">&gt;</span>0<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">xsl</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">text</span><span style=\"color:Blue\">&gt;</span>\r\n    <span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">xsl</span><span style=\"color:Blue\">:</span><span style=\"color:#A31515\">if</span><span style=\"color:Blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;Is there a way to do it in one line?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-06-17T14:24:54.74-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "202663",
+    "ThreadId": "59808",
+    "Html": "<p>And another problem appears.</p>\r\n<p>Though i get the right bibliography now, BibWordExtender doesn't update citations and numbers in file properly (((((</p>",
+    "PostedDate": "2009-06-17T14:32:31.403-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "202670",
+    "ThreadId": "59808",
+    "Html": "<p>You could reverse your contains operation as &quot;substring($string, 2, 1)&quot; returns only a single character. So&nbsp;you can check that single character against your entire alphabet.&nbsp;So something along:</p>\r\n<p>contains('ABCDEFGHI...', substring($string, 2, 1))</p>\r\n<p>The Extender uses the same sortkey but calculates its output in a different place. So&nbsp;you have to&nbsp;add the change twice. Once in &quot;format-bibliography&quot; (which you probalby did)&nbsp;and once&nbsp;in &quot;bibword-extensions&quot;.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-06-17T14:48:15.663-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "202679",
+    "ThreadId": "59808",
+    "Html": "<p>Oh, yes! It became much shorter)</p>\r\n<p>And I have already guessed about second change by myself.</p>\r\n<p>So, thank you for all the help. And for working for such usefull thing)</p>\r\n<p>Also, can I add my style to the collection? Mb it'll help someone.</p>",
+    "PostedDate": "2009-06-17T15:35:37.36-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "203140",
+    "ThreadId": "59808",
+    "Html": "<p>If you mail it to me, I'll check it and provide a release page for it. Also provide a short description and a way to identify you (author name or something) so I can give appropriate credit.</p>",
+    "PostedDate": "2009-06-18T15:46:58.663-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "664230",
+    "ThreadId": "59808",
+    "Html": "<p>Please, post your solution here - I have the same problem, but I'm sure I won't be able to code anything by myself. You help will be really appreciated!</p>",
+    "PostedDate": "2011-08-27T07:12:54.643-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

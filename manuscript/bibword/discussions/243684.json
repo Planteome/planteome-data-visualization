@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "556875",
+    "ThreadId": "243684",
+    "Html": "\r\n<p>All this xml is beyond me. I can't seem to get my head arround all the code. Must be getting old. Would it be possible for you to post the Harvard Referecing-Sheffield University style?</p>\r\n",
+    "PostedDate": "2011-01-28T07:00:38.567-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "557274",
+    "ThreadId": "243684",
+    "Html": "\r\n<p>Sorry, but I don't do requests. I do help with specific problems with format strings you might have.</p>\r\n<p>All the code you need is listed between &lt;xsl:variable name=&quot;data&quot;&gt; and the corresponding &lt;/xsl:variable&gt;. Normally it should be listed right at the top of the file. The 3500 lines which comes after that part can be ignored by you. They form the&nbsp;'engine'\r\n for the top part.&nbsp;The content of the &lt;xsl:variable name=&quot;data&quot;&gt; is pretty much selfexplaining. Citation stands for citation, bibliography for bibliography, namelists contains info on formatting names,&nbsp;and so on. The only 'difficult' thing are\r\n the format strings. And that part is covered by the documentation: <a href=\"http://bibword.codeplex.com/wikipage?title=BibWord%20Format%20Strings&referringTitle=Documentation\">\r\nhttp://bibword.codeplex.com/wikipage?title=BibWord%20Format%20Strings&amp;referringTitle=Documentation</a></p>\r\n",
+    "PostedDate": "2011-01-29T03:50:05.893-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

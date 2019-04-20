@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "992609",
+    "ThreadId": "430993",
+    "Html": "\r\n<p>Hi,&nbsp;</p>\r\n<p>I need to have source type&quot;Standard&quot; ho to add it to the list? There is&nbsp;</p>\r\n<p>&lt;source type=&quot;Standard&quot;&gt;&nbsp; &nbsp; &nbsp; &nbsp; &lt;column id=&quot;1&quot;&gt;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;halign&gt;centre&lt;/halign&gt;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;valign&gt;centre&lt;/valign&gt;</p>\r\n<p>but when I add New Source there is no this type of source</p>\r\n<p>Thank you in advance!</p>\r\n",
+    "PostedDate": "2013-01-27T02:39:54.663-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "992610",
+    "ThreadId": "430993",
+    "Html": "\r\n<p>There is no source type standard. Check the first page of the <a href=\"http://bibword.codeplex.com/downloads/get/94750\">\r\ndocumentation</a>&nbsp;to get a list of the official 17 available types.</p>\r\n<p>It is possible to have a Standard source type but it requires some changes to other files as well. If you plan on deploying the style to other users, I would advise against it. Just do a search on this forum, it contains a full explaination on this topic.</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2013-01-27T02:50:14.507-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

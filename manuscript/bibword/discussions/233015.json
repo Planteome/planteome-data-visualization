@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "515342",
+    "ThreadId": "233015",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I have been creating a bespoke version of Harvard referencing for use on Word 2007 on XP for use at my university. Using the BibWord XSL templates has been very successful this - what a great tool!</p>\r\n<p>However, some of my students have been asking about a version for Word 2008 on Mac.</p>\r\n<p>I have been able to get the Mac to recognise my Harvard XSL stylesheet as an available style, but my version of Harvard is not then given as a possible bibliography style. I wondered if anyone else has had some difficulties with this and whether they were\r\n able to find a work around.</p>\r\n<p>I wonder if it is something to do with the location of the BIBFORM.xml file that seems to determine available bibliography fields in the Windows version (and which I have been required to edit in my Windows version of the style), but cannot find this file\r\n on the Mac system.</p>\r\n<p>Any suggestions would be gratefully received.</p>\r\n<p>With thanks in advance</p>\r\n<p>&nbsp;</p>\r\n<p>John</p>\r\n",
+    "PostedDate": "2010-11-01T03:54:30.797-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "515762",
+    "ThreadId": "233015",
+    "Html": "\r\n<p>It's a bug in Word 2008 for Mac. See <a href=\"http://bibword.codeplex.com/wikipage?title=Styles_FAQ#Q2\">\r\nhttp://bibword.codeplex.com/wikipage?title=Styles_FAQ#Q2</a>&nbsp;for the solution.</p>\r\n<p>Note that there is a bibform.xml on&nbsp;a Mac system, but it is slightly different from the one on a Windows system. But that file has nothing to do with the issue you are seeing.</p>\r\n",
+    "PostedDate": "2010-11-02T00:24:44.587-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "520005",
+    "ThreadId": "233015",
+    "Html": "\r\n<p>Thanks for the very useful reply. The work round seems highly effective and I am already passing it on to my Mac-using students. It doesn't seem to be an issue for the most recent version of Word 2011 (!) - typical of Mac users that they get to be time travellers\r\n as well...&nbsp; ;-)</p>\r\n<p>Thanks again,</p>\r\n<p>John</p>\r\n",
+    "PostedDate": "2010-11-10T08:01:30.683-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "520015",
+    "ThreadId": "233015",
+    "Html": "\r\n<blockquote style=\"border:solid .1em #ccc; font-style:italic; margin:.25em 1em 0 1em; padding:0 .25em 0 .25em\">\r\n<strong>yves wrote:</strong><br>\r\n<p>It's a bug in Word 2008 for Mac. See <a href=\"http://bibword.codeplex.com/wikipage?title=Styles_FAQ#Q2\">\r\nhttp://bibword.codeplex.com/wikipage?title=Styles_FAQ#Q2</a>&nbsp;for the solution.</p>\r\n<p>Note that there is a bibform.xml on&nbsp;a Mac system, but it is slightly different from the one on a Windows system. But that file has nothing to do with the issue you are seeing.</p>\r\n</blockquote>\r\n<p>&nbsp;</p>\r\n<p>Actually, while I'm here... If I needed to provide users with a modified bibform.xml file (for example, to provide them with fields unavailable in the default version), where would I find the Mac version and would it be editable in the way that the Windows\r\n one is?</p>\r\n<p>Best wishes</p>\r\n<p>John</p>\r\n",
+    "PostedDate": "2010-11-10T08:16:49.127-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "520517",
+    "ThreadId": "233015",
+    "Html": "\r\n<p>I don't have a Mac around at the moment, but if I remember correctly, the bibform.xml file should be one directory up from the style folder where you put the files.</p>\r\n<p>The difference between the Windows and Mac version is a dimensional thing. Where in Windows you can only specify the row on which an item is displayed in the 'Edit Source' dialog, on a Mac, you can also&nbsp;change the column. This makes things like date\r\n inputs look a little nicer I guess.</p>\r\n",
+    "PostedDate": "2010-11-11T04:48:41.807-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "520531",
+    "ThreadId": "233015",
+    "Html": "\r\n<p>Once again - a very useful response.</p>\r\n<p>Thanks a lot for your help, Yves.</p>\r\n<p>John</p>\r\n",
+    "PostedDate": "2010-11-11T05:21:44.853-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

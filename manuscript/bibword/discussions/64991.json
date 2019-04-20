@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "221335",
+    "ThreadId": "64991",
+    "Html": "<p>At first I thought that citations was linked automatically to bibliography, but recently I realized that they are not. Is there any way to make that?, so I can click on a citation and get me to the reference in the bibliography.</p>\r\n<p>Any help you can give me would be appreciated.</p>",
+    "PostedDate": "2009-08-09T16:16:42.823-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "221403",
+    "ThreadId": "64991",
+    "Html": "<p>BibWord supports this through the &quot;citation_as_link&quot; element. If you set the value of that element to &quot;yes&quot;, then in-text citations will be linked to their bibliography entries. So in the XSL file, just look for &quot;citation_as_link&quot; in the &quot;data&quot; variable and change its value. See also section 3.2 of the BibWord guide (<a href=\"http://bibword.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=27210\">http://bibword.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=27210</a>)</p>\r\n<p>Note that using the citation as a link will suppress the default right click menu in Word and replace it by the hyperlink menu. If you still want to be able to access the default menu with options such as &quot;Edit source...&quot; you have to right click between the citation and the last bracket. So for example if your entry would look like &quot;(1,2)&quot; you would have to click between &quot;1&quot; and &quot;,&quot; for the first citation and between &quot;2&quot; and &quot;)&quot; for the second.</p>",
+    "PostedDate": "2009-08-09T23:24:35.527-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "221538",
+    "ThreadId": "64991",
+    "Html": "<p>Thanks, it worked great</p>",
+    "PostedDate": "2009-08-10T07:47:15.807-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

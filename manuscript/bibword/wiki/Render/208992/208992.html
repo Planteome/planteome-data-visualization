@@ -1,0 +1,97 @@
+<div class="wikidoc"><h2>Formatting a set of contributors</h2><h3>Table of Contents</h3><ul><li><a href="#intro">Introduction</a></li>
+<li><a href="#vars">Variables</a>
+<ul><li><a href="#names">Formatting a single name</a></li>
+<li><a href="#combination">Combining names</a></li>
+<li><a href="#limitation">Limiting the number of authors shown</a></li>
+<li><a href="#presuf">Prefix and suffix</a></li></ul></li>
+<li><a href="#examples">Examples</a></li></ul>
+<a name="intro"></a>
+<h3>Introduction</h3>Cited works often have multiple authors, editors, and other types of contributors. To format a set of contributors, BibWord use 13 variables. All the variables are grouped inside a single <i>list</i> element which in turn belongs to the <i>namelists</i> section of the BibWord <i>data</i> element. To make this a bit more clear, consider the following definition of a list:<br /><br /><div style="color:Black;background-color:White;"><pre>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">xsl</span><span style="color:Blue;">:</span><span style="color:#A31515;">variable</span> <span style="color:Red;">name</span><span style="color:Blue;">=</span><span style="color:Black;">&quot;</span><span style="color:Blue;">data</span><span style="color:Black;">&quot;</span><span style="color:Blue;">&gt;</span>
+    <span style="color:Blue;">&lt;</span><span style="color:#A31515;">namelists</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">list</span> <span style="color:Red;">name</span><span style="color:Blue;">=</span><span style="color:Black;">&quot;</span><span style="color:Blue;">citation</span><span style="color:Black;">&quot;</span> <span style="color:Red;">id</span><span style="color:Blue;">=</span><span style="color:Black;">&quot;</span><span style="color:Blue;">1</span><span style="color:Black;">&quot;</span><span style="color:Blue;">&gt;</span>
+        <span style="color:Green;">&lt;!-- The 13 variables influencing the look of a list of contributors. --&gt;</span>
+      <span style="color:Blue;">&lt;/</span><span style="color:#A31515;">list</span><span style="color:Blue;">&gt;</span>
+    <span style="color:Blue;">&lt;/</span><span style="color:#A31515;">namelists</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;/</span><span style="color:#A31515;">xsl</span><span style="color:Blue;">:</span><span style="color:#A31515;">variable</span><span style="color:Blue;">&gt;</span>
+</pre></div>As you can see in the example, the <i>list</i> element contains two attributes: <i>name</i> and <i>id</i>.<br /><br />The <i>id</i> attribute is a mandatory numerical value and is used by <a href="https://bibword.codeplex.com/wikipage?title=BibWord%20Format%20Strings&referringTitle=BibWord%20Format%20Contributors">format strings</a> to know which <i>list</i> to use when formatting a set of contributors. For example, a format string looking like {%Author:5%} indicates that the authors should be formatted according to the rules provided in the <i>list</i> with an id equal to 5.<br /><br />The <i>name</i> attribute is optional and purely intended for developers. It can help them identify what the <i>list</i> is used for. In the above example, it indicates that this list is probably used to format contributors in a citation.<br /><a name="vars"></a>
+<h3>Variables</h3><a name="names"></a>
+<h4>Formatting a single name</h4>BibWord provides three variables/elements to format names in a set of contributors:
+<ul><li><i>first_person</i>: format information for the name of the first contributor in the set</li>
+<li><i>other_persons</i>: format information for all contributors in the set except the first one</li>
+<li><i>corporate</i>: format information in case the contributor is a corporation</li></ul>
+Each of these three elements take a <a href="https://bibword.codeplex.com/wikipage?title=BibWord%20Format%20Strings&referringTitle=BibWord%20Format%20Contributors">format strings</a> as value. For example:<br /><br /><div style="color:Black;background-color:White;"><pre>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">first_person</span><span style="color:Blue;">&gt;</span>{%Last:u%}{, %First%}<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">first_person</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">other_persons</span><span style="color:Blue;">&gt;</span>{%First% }{%Last%}<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">other_persons</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">corporate</span><span style="color:Blue;">&gt;</span>{%Corporate:u%}<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">corporate</span><span style="color:Blue;">&gt;</span>
+</pre></div><a name="combination"></a>
+<h4>Combining names</h4>When there is more than one contributor in a set, the contributors have to be grouped in some way. BibWord provides three variables to do this grouping:
+<ul><li><i>separator_between_if_two</i>: the separator to display if there are only two contributors</li>
+<li><i>separator_between_if_more_than_two</i>: the separator to display if there are more than two contributors</li>
+<li><i>separator_before_last</i>: the separator to display before the last contributor if there are more than two contributors</li></ul>
+For each of these elements, any possible string value can be used. For example:<br /><br /><div style="color:Black;background-color:White;"><pre>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">separator_between_if_two</span><span style="color:Blue;">&gt;</span> and <span style="color:Blue;">&lt;/</span><span style="color:#A31515;">separator_between_if_two</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">separator_between_if_more_than_two</span><span style="color:Blue;">&gt;</span>; <span style="color:Blue;">&lt;/</span><span style="color:#A31515;">separator_between_if_more_than_two</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">separator_before_last</span><span style="color:Blue;">&gt;</span>; and <span style="color:Blue;">&lt;/</span><span style="color:#A31515;">separator_before_last</span><span style="color:Blue;">&gt;</span>
+</pre></div><a name="limitation"></a>
+<h4>Limiting the number of authors shown</h4>Sometimes a set of contributors consists of more persons than the style allows to display. In such case, only a limited number of contributors is shown followed by a string like &#39;et al.&#39; to indicate that there are more contributors. BibWord can do this by means of 3 elements:
+<ul><li><i>max_number_of_persons_to_display</i>: indicates the maximum number of contributors that can be displayed</li>
+<li><i>number_of_persons_to_display_if_more_than_max</i>: indicates the number of contributors to display if the set of contributors contains more contributors than the maximum number that can be displayed</li>
+<li><i>overflow</i>: contains the string to display after the last contributor if there are too many contributers</li></ul>
+The first two elements require a numerical value while for the last one any string value can be used. For example:<br /><br /><div style="color:Black;background-color:White;"><pre>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">max_number_of_persons_to_display</span><span style="color:Blue;">&gt;</span>5<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">max_number_of_persons_to_display</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">number_of_persons_to_display_if_more_than_max</span><span style="color:Blue;">&gt;</span>1<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">number_of_persons_to_display_if_more_than_max</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">overflow</span><span style="color:Blue;">&gt;</span>, et al.<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">overflow</span><span style="color:Blue;">&gt;</span>
+</pre></div><a name="presuf"></a>
+<h4>Prefix and suffix</h4>Sometimes a set of contributors are no ordinary authors, they can be editors, translators, ... in which case you might want to add a prefix or suffix string like &#39;ed.&#39; or &#39;eds.&#39;.
+<ul><li><i>single_prefix</i>: the text to display in front of the contributors if there is only one</li>
+<li><i>single_suffix</i>: the text to display behind the contributors if there is only one</li>
+<li><i>multi_prefix</i>: the text to display in front of the contributors if there is more than one </li>
+<li><i>multi_suffix</i>: the text to display behind the contributors if there is more than one</li></ul>
+<br /><div style="color:Black;background-color:White;"><pre>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">single_prefix</span><span style="color:Blue;">&gt;</span>Editor: <span style="color:Blue;">&lt;/</span><span style="color:#A31515;">single_prefix</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">single_suffix</span><span style="color:Blue;">&gt;</span> (ed.)<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">single_suffix</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">multi_prefix</span><span style="color:Blue;">&gt;</span>Editors: <span style="color:Blue;">&lt;/</span><span style="color:#A31515;">multi_prefix</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">multi_suffix</span><span style="color:Blue;">&gt;</span> (eds.)<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">multi_suffix</span><span style="color:Blue;">&gt;</span>
+</pre></div><a name="examples"></a>
+<h3>Examples</h3>Consider the following contributor set:
+<ul><li>Mick Jagger</li>
+<li>Brian Jones</li>
+<li>Keith Richards</li>
+<li>Bill Wyman</li>
+<li>Charlie Watts</li></ul>
+With the following output:
+<ul><li>JAGGER M. and B. Jones</li>
+<li>JAGGER M., B. Jones, K. Richards, and B. Wyman</li>
+<li>JAGGER M., <i>et al.</i></li></ul>
+&#207;t is clear that the first contributor should be displayed in capitals with his last name first and his first name abbreviated:<br /><br /><div style="color:Black;background-color:White;"><pre>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">first_person</span><span style="color:Blue;">&gt;</span>{%Last:u%}{ %First:asdp%}<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">first_person</span><span style="color:Blue;">&gt;</span>
+</pre></div>The other contributors are formatted with an abbreviated first name followed by their last name:<br /><br /><div style="color:Black;background-color:White;"><pre>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">other_persons</span><span style="color:Blue;">&gt;</span>{%First:asdp% }{%Last%}<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">other_persons</span><span style="color:Blue;">&gt;</span>
+</pre></div>There is no information on how to format corporate contributors, but it seems logical that they follow the same rule as for the first contributor:<br /><br /><div style="color:Black;background-color:White;"><pre>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">corporate</span><span style="color:Blue;">&gt;</span>{%Corporate:u%}<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">corporate</span><span style="color:Blue;">&gt;</span>
+</pre></div>Now that the different names in the contributor set are formatted correctly, it is time to combine them. From the first example, one can see that if only two contributors are available, &quot; and &quot; is used to combine them. If there are more than two contributors, as in the second example, a comma is used for concatenating. Also, from the second example, one can see that &quot;, and &quot; is used to combine the last contributor with the others. So we get:<br /><br /><div style="color:Black;background-color:White;"><pre>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">separator_between_if_two</span><span style="color:Blue;">&gt;</span> and <span style="color:Blue;">&lt;/</span><span style="color:#A31515;">separator_between_if_two</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">separator_between_if_more_than_two</span><span style="color:Blue;">&gt;</span>, <span style="color:Blue;">&lt;/</span><span style="color:#A31515;">separator_between_if_more_than_two</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">separator_before_last</span><span style="color:Blue;">&gt;</span>, and <span style="color:Blue;">&lt;/</span><span style="color:#A31515;">separator_before_last</span><span style="color:Blue;">&gt;</span>
+</pre></div>The last example shows what happens in case there are too many contributors to display them all. Only the first is displayed, followed by &#39;et al.&#39; in italics. In combination with the second example, we see that 4 contributors can be displayed at most at one time. Hence, we get:<br /><br /><div style="color:Black;background-color:White;"><pre>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">max_number_of_persons_to_display</span><span style="color:Blue;">&gt;</span>4<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">max_number_of_persons_to_display</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">number_of_persons_to_display_if_more_than_max</span><span style="color:Blue;">&gt;</span>1<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">number_of_persons_to_display_if_more_than_max</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">overflow</span><span style="color:Blue;">&gt;</span>, <span style="color:Red;">&amp;lt;</span>i<span style="color:Red;">&amp;gt;</span>et al.<span style="color:Red;">&amp;lt;</span>/i<span style="color:Red;">&amp;gt;</span><span style="color:Blue;">&lt;/</span><span style="color:#A31515;">overflow</span><span style="color:Blue;">&gt;</span>
+</pre></div>Note that the overflow contains &quot;&amp;lt;i&amp;gt;&quot; which translates to the html tag &quot;&lt;i&gt;&quot; which is used to indicate that &quot;et al.&quot; should be displayed in italics.<br /><br />Combining all these items results in:<br /><br /><div style="color:Black;background-color:White;"><pre>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">xsl</span><span style="color:Blue;">:</span><span style="color:#A31515;">variable</span> <span style="color:Red;">name</span><span style="color:Blue;">=</span><span style="color:Black;">&quot;</span><span style="color:Blue;">data</span><span style="color:Black;">&quot;</span><span style="color:Blue;">&gt;</span>
+    <span style="color:Blue;">&lt;</span><span style="color:#A31515;">namelists</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;</span><span style="color:#A31515;">list</span> <span style="color:Red;">name</span><span style="color:Blue;">=</span><span style="color:Black;">&quot;</span><span style="color:Blue;">authors</span><span style="color:Black;">&quot;</span> <span style="color:Red;">id</span><span style="color:Blue;">=</span><span style="color:Black;">&quot;</span><span style="color:Blue;">2</span><span style="color:Black;">&quot;</span><span style="color:Blue;">&gt;</span>
+        <span style="color:Blue;">&lt;</span><span style="color:#A31515;">first_person</span><span style="color:Blue;">&gt;</span>{%Last:u%}{ %First:asdp%}<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">first_person</span><span style="color:Blue;">&gt;</span>
+        <span style="color:Blue;">&lt;</span><span style="color:#A31515;">other_persons</span><span style="color:Blue;">&gt;</span>{%First:asdp% }{%Last%}<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">other_persons</span><span style="color:Blue;">&gt;</span>
+        <span style="color:Blue;">&lt;</span><span style="color:#A31515;">corporate</span><span style="color:Blue;">&gt;</span>{%Corporate:u%}<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">corporate</span><span style="color:Blue;">&gt;</span>
+        <span style="color:Blue;">&lt;</span><span style="color:#A31515;">separator_between_if_two</span><span style="color:Blue;">&gt;</span> and <span style="color:Blue;">&lt;/</span><span style="color:#A31515;">separator_between_if_two</span><span style="color:Blue;">&gt;</span>
+        <span style="color:Blue;">&lt;</span><span style="color:#A31515;">separator_between_if_more_than_two</span><span style="color:Blue;">&gt;</span>, <span style="color:Blue;">&lt;/</span><span style="color:#A31515;">separator_between_if_more_than_two</span><span style="color:Blue;">&gt;</span>
+        <span style="color:Blue;">&lt;</span><span style="color:#A31515;">separator_before_last</span><span style="color:Blue;">&gt;</span>, and <span style="color:Blue;">&lt;/</span><span style="color:#A31515;">separator_before_last</span><span style="color:Blue;">&gt;</span>
+        <span style="color:Blue;">&lt;</span><span style="color:#A31515;">max_number_of_persons_to_display</span><span style="color:Blue;">&gt;</span>4<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">max_number_of_persons_to_display</span><span style="color:Blue;">&gt;</span>
+        <span style="color:Blue;">&lt;</span><span style="color:#A31515;">number_of_persons_to_display_if_more_than_max</span><span style="color:Blue;">&gt;</span>1<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">number_of_persons_to_display_if_more_than_max</span><span style="color:Blue;">&gt;</span>
+        <span style="color:Blue;">&lt;</span><span style="color:#A31515;">overflow</span><span style="color:Blue;">&gt;</span>, <span style="color:Red;">&amp;lt;</span>i<span style="color:Red;">&amp;gt;</span>et al.<span style="color:Red;">&amp;lt;</span>/i<span style="color:Red;">&amp;gt;</span><span style="color:Blue;">&lt;/</span><span style="color:#A31515;">overflow</span><span style="color:Blue;">&gt;</span>
+      <span style="color:Blue;">&lt;/</span><span style="color:#A31515;">list</span><span style="color:Blue;">&gt;</span>
+    <span style="color:Blue;">&lt;/</span><span style="color:#A31515;">namelists</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Blue;">&lt;/</span><span style="color:#A31515;">xsl</span><span style="color:Blue;">:</span><span style="color:#A31515;">variable</span><span style="color:Blue;">&gt;</span>
+</pre></div></div><div class="ClearBoth"></div>

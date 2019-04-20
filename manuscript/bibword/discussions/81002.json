@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "277774",
+    "ThreadId": "81002",
+    "Html": "<p>I noticed the default MLA citations on Word are outdated (No more <span style=\"text-decoration:underline\">underlines</span> or URLs and source type must be included ex. web).&nbsp; Is there an updated version circulating?&nbsp; Thanks.</p>",
+    "PostedDate": "2010-01-15T15:26:40.95-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "277869",
+    "ThreadId": "81002",
+    "Html": "<p>I'm not aware of any.</p>\r\n<p>I will only look into creating one if Microsoft decides not to release an updated version of the style with Word 2010. They are aware of the current implementation being outdated, so I would expect them to fix this for Word 2010. However, the Word 2010 beta&nbsp;does not contain a newer version yet.</p>",
+    "PostedDate": "2010-01-16T00:52:49.68-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

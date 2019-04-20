@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2013-04-02T11:10:20.053-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi, \n\nfor those that may be using a work computer with prudent and busy system administrators: anybody had the issue of not having the writing permission for the directory where Words finds its references styles? (for me some'n like: C:Program FilesMicrosoft OfficeOffice14BibliographyStyle ) \n\nOf course in theory you can get the administrator to do it... but these guys tend to have limited availability for such issues. \n\nSO: anybody would know how to tell Word to look for ref styles in another directory? e.g. one where I would have writing permission and could play around with the styles files.",
+    "LastUpdatedDate": "2013-05-16T05:29:22.97-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "bibword",
+    "ReportedDate": "2013-03-15T06:47:52.717-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Alternative directory for Word ref styles?",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 10874
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "With Word 2013 this was changed and the files are now in a subdirectory of the user directory. You might have more permissions there.\r\n\r\nUnfortunately, for Word 2007 and 2010, there is no other directory.\n",
+      "PostedDate": "2013-04-02T11:08:01.697-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-04-02T11:10:20.053-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "OK, well thanks Yves for clearing that up. ",
+      "PostedDate": "2013-04-03T12:44:02.1-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:29:22.97-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

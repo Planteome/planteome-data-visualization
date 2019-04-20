@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "992365",
+    "ThreadId": "430931",
+    "Html": "\r\n<p>Hi!</p>\r\n<p><span>please can you help me?&nbsp;</span>How to change code to&nbsp;<span>&nbsp;display the author's name in bold</span><span style=\"font-family:Consolas,'Courier New',Courier,monospace; font-size:1em\">:</span></p>\r\n<p><span style=\"font-family:Consolas,'Courier New',Courier,monospace; font-size:1em\"><span style=\"font-size:11pt\">&nbsp;<strong>SARSBY, R.</strong>; Environmental Geotechnics. London: Thomas Telford, 2000. 584 p. ISBN 0-7277-2752-4.</span><br>\r\n</span></p>\r\n<p>&nbsp;</p>\r\n<p></p>\r\n<pre>{%Author:2|Editor:3|Compiler:6|Title:f%.}{ %Title:mr% %Title:s%}.}{ Tradu��o de %Translator:5%.}{ %Edition%. ed.}{ %City|&quot;[S.l.]&quot;%: %Publisher|&quot;[s.n.]&quot;%,}{ v. %Volume%,}{ %Year%{%YearSuffix%}.}{ %Pages::% p.}.{ ISBN %StandardNumber%.}{ Disponivel em: &lt;%URL%&gt;.}{ Acesso em: {{%DayAccessed% }%MonthAccessed:s% }%YearAccessed%.}{ %Comments%.}</pre>\r\n<p></p>\r\n",
+    "PostedDate": "2013-01-26T04:09:37.42-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "992369",
+    "ThreadId": "430931",
+    "Html": "\r\n<p>Use the html codes for bold. An explaination can be found in the <a href=\"http://bibword.codeplex.com/wikipage?title=BibWord%20Format%20Strings#ex1\" target=\"_blank\">\r\ndocumentation</a>.</p>\r\n<pre>{<span style=\"color:red\">&amp;lt;</span>b<span style=\"color:red\">&amp;gt;</span>%Author:2|Editor:3|Compiler:6|Title:f%.<span style=\"color:red\">&amp;lt;</span>/b<span style=\"color:red\">&amp;gt;</span>}</pre>\r\n",
+    "PostedDate": "2013-01-26T04:22:45.497-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "992376",
+    "ThreadId": "430931",
+    "Html": "\r\n<p>Thank you yves!</p>\r\n",
+    "PostedDate": "2013-01-26T04:36:09.63-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "992379",
+    "ThreadId": "430931",
+    "Html": "\r\n<p>But now it doesn't shoe title : &nbsp;<span style=\"font-size:11pt\">[5] <strong>SARSBY, R.</strong> London: Thomas Telford, 2000. 584 p. ISBN 0-7277-2752-4.</span></p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size:11pt\">&lt;format&gt;[%RefOrder%] {&lt;b&gt;%Author:2|Editor:3|Compiler:6|Title:f%.&lt;/b&gt;}{ %Title:mr%%Title:s%}.}{ Tradução de %Translator:5%.}{ %Edition%. ed.}{ %City|&quot;[S.l.]&quot;%: %Publisher|&quot;[s.n.]&quot;%,}{ v. %Volume%,}{ %Year%{%YearSuffix%}.}{\r\n %Pages::% p.}.{ ISBN %StandardNumber%.}{ Disponivel em: &lt;%URL%&gt;.}{ Acesso em: {{%DayAccessed% }%MonthAccessed:s% }%YearAccessed%.}{ %Comments%.}&lt;/format&gt;</span></p>\r\n<p><span style=\"font-size:11pt\"><br>\r\n</span></p>\r\n",
+    "PostedDate": "2013-01-26T04:40:31.633-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "992383",
+    "ThreadId": "430931",
+    "Html": "\r\n<p>You have an extra unbalance&nbsp;bracket after the title part: {%Title:mr%%Title:s%}.<strong><span style=\"color:#ff0000\">}</span></strong>&nbsp;&nbsp; . Remember, { } always needs to be balanced.</p>\r\n<p>But what exactly are you trying to do with the title? Because normally you would just need %Title%. Not sure why you would try to split and then rejoin.</p>\r\n<pre>{&lt;b&gt;%Author:2|Editor:3|Compiler:6|Title%.&lt;/b&gt;}{%Title%}</pre>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2013-01-26T04:52:54.62-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "992385",
+    "ThreadId": "430931",
+    "Html": "\r\n<p>I try to change ABNT to Bulgarian Reference Standards</p>\r\n",
+    "PostedDate": "2013-01-26T04:57:13.767-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "992387",
+    "ThreadId": "430931",
+    "Html": "\r\n<p>Thank you again!</p>\r\n",
+    "PostedDate": "2013-01-26T04:57:44.673-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

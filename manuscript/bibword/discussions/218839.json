@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "465118",
+    "ThreadId": "218839",
+    "Html": "<p>Hi Ives,</p>\r\n<p>Thank you so much for replying to my thread on the microsoft webiste, as you suggested I thought it would be easier to move my query over here. I apologise if someone else has asked these questions but I was a bit stuck. I was given the Harvard Anglia, Exeter, AGPS and Leeds XSLs by dyslexia computer technician, so didn't get it directly from here but they're great so thank you so much for taking the time to create them. However, I am having a couple of issues that I need a bit of help with. I'm using the Harvard Anglia version as this is closest to what I need and any help you can give me with these questions would be great.</p>\r\n<p>1)&nbsp;I'm not even sure if it is to do with the XSL but I had a technician remotely look over word for me and he said it was to do with how something had been formatted. Basically, whenever I add the in text citation into my document and then I change it to static text, the citation itself came up in the reveal formatting box and not to check spelling and grammar. I assume that this may be because authors always come up as spelt wrong and perhaps this is formatted within the XSL but it's affecting the rest of my document so half of it is checked for spelling and grammar and then as soon as I add the citation and add a page number in by changing it to static text it alters the rest. Is there anyway to change this or is this not to do with the XSL?</p>\r\n<p>2) Is there a way to change how the citation appear if you are referencing a chapter in a book by a different author than the editor. For example rather than (Jones, 2008) can it be changed to (Jones in Heyes, 2008) so it goes author and then editor, if you see what I mean.</p>\r\n<p>3) Is there any way to change the format of how the bibliography is created into hanging indenting style or is it easier to just change this once the bibliography has been created?</p>\r\n<p>4) In terms of how I need my bibliography to look there are a few minor things that I have to change, if you can help me. For a book I need the bibliography to look like this:</p>\r\n<p>Schroeder, K. et al. (2003) <em>The Ethnographic Approach to Audiences</em>. London: Arnold Publishers.</p>\r\n<p>Rather than this:</p>\r\n<p>Schroeder, K., Murray, C. &amp; Drotner, K., 2003. <em>The Ethnographic Approach to Audiences</em>. London: Arnold Publishers.</p>\r\n<p>For a section within a book by a different author, I need it to look like this:</p>\r\n<p>Seiter, E. (2004) &quot;Qualitative Audience Reception&quot; in R. Allen &amp; A. Hill (eds.) <em>The Television Studies Reader</em>. New York/London: Routledge. pp. 461-78.</p>\r\n<p>Rather than this:</p>\r\n<p>Seiter, E., 2004. Qualitative Audience Reception. In R. Allen &amp; A. Hill, eds. <em>The Television Studies Reader</em>. New York/London: Routledge. pp.461-78.</p>\r\n<p>And for a journal, like this:</p>\r\n<p>Skeggs, B. et al.&nbsp;(2008) &quot;'Oh goodness, I am watching reality TV': How methods make class in audience research&quot;. <em>European Journal of Cultural Studies</em>, Vol. 11. No. 1. pp. 5-25.</p>\r\n<p>Rather than this:</p>\r\n<p>Skeggs, B., Thumin, N. &amp; Wood, H., 2008. 'Oh goodness, I am watching reality TV': How methods make class in audience research. <em>European Journal of Cultural Studies</em>, 11(1), pp.5-25.</p>\r\n<p>&nbsp;</p>\r\n<p>Any help at all would be so much appreciated!</p>\r\n<p>Thanks,</p>\r\n<p>Sara</p>",
+    "PostedDate": "2010-07-08T15:42:52.717-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "465119",
+    "ThreadId": "218839",
+    "Html": "<p>Sorry, my dyslexia got the better of me, I meant Yves.</p>",
+    "PostedDate": "2010-07-08T15:43:42.183-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "465307",
+    "ThreadId": "218839",
+    "Html": "<p>1)I don't really understand what the issue is here. Note however that you shouldn't convert citations to static text to add a page number to them. You should right-click on the citation and choose &quot;Edit Citation...&quot;. A small dialog box will pop up where you can specify a page number (and suppress the author, title, and year if wanted).</p>\r\n<p>2)Yes. The currently used format string for in-text citations is in most cases similar to</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>{%CitationPrefix%}{%Author:1|Editor:1|&quot;Anon.&quot;%}{, %Year|&quot;n.d.&quot;%}{%YearSuffix%}{, %CitationPages:p.:pp.:a2%}{%CitationSuffix%}<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>As you can see above, by default the author is shown, if the author is not available (&quot;|&quot;) the editor is shown, and if that one is not available, the string &quot;Anon.&quot; is shown. What you could do is use a format string which splits the author and the editor in two parts:</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>{%CitationPrefix%}{%Author:1%{ in %Editor:1%}}{%Editor:1%}{, %Year|&quot;n.d.&quot;%}{%YearSuffix%}{, %CitationPages:p.:pp.:a2%}{%CitationSuffix%}<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span></pre>\r\n</div>\r\n<p>This will work as follows. If there is an author, the author will be displayed. Then, if there is an editor, the author will be followed by &quot; in editorname&quot;. If there is no author, but there is an editor, then the editor will be displayed as if it were the author.</p>\r\n<p>3)Yes. See&nbsp;<a href=\"http://bibword.codeplex.com/wikipage?title=Styles_FAQ&referringTitle=Documentation#Q12\">http://bibword.codeplex.com/wikipage?title=Styles_FAQ&amp;referringTitle=Documentation#Q12</a>&nbsp;</p>\r\n<p>4)I'm not creating entire bibliography stylesheets. This project is intended to provide people with the tools to do it themselves. See <a href=\"http://bibword.codeplex.com/documentation\">http://bibword.codeplex.com/documentation</a>&nbsp;for more information on formatting settings. If you have specific problems, I will do my best to help solve them.</p>",
+    "PostedDate": "2010-07-09T03:24:06.63-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "465354",
+    "ThreadId": "218839",
+    "Html": "<p>Hi Yves,</p>\r\n<p>Thanks for getting back to me so quickly, I was shown how the use the the references by the guy who copied your XSL's over and he said that I should convert them in this way. So thanks for pointing that out for me, as you can tell I am a complete novice. I'm bumbling my way through and reading but I feel a lot of it's going over my head but I'm slowly getting there, so I am sure I will muddle through.</p>\r\n<p>One question I had which I couldn't quite work out is how to alter the in text citation so p. doesn't appear once you edit the citation and enter the page number. I know where this is on the XSL but I'm not sure what to change it and I've looked through the guide and can't seem to work it out.</p>\r\n<p>Any help you can give me would be much appreciated. Thank you so much for the styles, it's been a real help.</p>\r\n<p>Sara</p>",
+    "PostedDate": "2010-07-09T05:35:28.853-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "465360",
+    "ThreadId": "218839",
+    "Html": "<p>It's ok, I figured it out!</p>\r\n<p>Thanks again.</p>\r\n<p>Sara</p>",
+    "PostedDate": "2010-07-09T05:49:02.91-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1491426",
+    "ThreadId": "660838",
+    "Html": "Hi,\r<br />\n<br />\nIn the references section, for each reference, I need the name of the authors to appear alone in the first line. The year of publication should appear in the beginning of the second line followed by a tab character followed by the title and the other fields. Like this:\r<br />\n<br />\n Haidt, J., S. Koller, and M. Dias   <br />\n 1993    &quot;Affect, culture, and morality, or is it wrong to eat your dog?&quot; Journal of Personality and Social Psychology, 65: 613–628. \r<br />\n<br />\nI started from ASA style, which resembles what I need in other aspects and tried to change the format contents to insert the line break. The original format for a book  looks like this:<br />\n<pre><code>   &lt;format&gt;{%Author:2%.}{%Year|&quot;n.d.&quot;%{%YearSuffix%}.}{ “%Title%.”}{ &amp;lt;i&amp;gt;%PeriodicalTitle%&amp;lt;/i&amp;gt;,}{ %Month:s%{ %Day%},}{ %Pages:pp. :pp. :%}.{ Retrieved {%MonthAccessed:s% {%DayAccessed%, }}%YearAccessed%}{ (%URL%)}.{ %Comments%.}&lt;/format&gt;\n</code></pre>\n\nI tried insert a \\n after the author<br />\n<pre><code>    &lt;format&gt;{%Author:2%.\\n}{%Year|&quot;n.d.&quot;%     .... &lt;/format&gt;\n</code></pre>\n\nbut the \\n appeared literally in the final document. \r<br />\n<br />\nI tried an HTML tag &lt;br&gt; and that caused the style to stop working as a whole. I tried an HTML special character &#xa; but it was ignored. I broke the line  manually typing a &quot;return&quot;,but that was also useless.\r<br />\n<br />\nCan I insert a line break just editing the format string or do I need to go deeper in the xslt language?\r<br />\n<br />\nI also don't know how to insert the tab character. I tried &#9;, but got a simple space instead of a tab character.\r<br />\n<br />\nThank you for any help,\r<br />\n<br />\nJorge<br />\n",
+    "PostedDate": "2017-01-20T12:04:01.837-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1491469",
+    "ThreadId": "660838",
+    "Html": "I found the answer for the line break. I had to type &lt;br&gt;\r<br />\n<br />\nFor the tab character I tried to use &nbsp;&nbsp;&nbsp;&nbsp; instead. But that caused the style to disappear from MS Word menu. Still looking for an answer for this.<br />\n",
+    "PostedDate": "2017-01-22T06:08:20.153-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

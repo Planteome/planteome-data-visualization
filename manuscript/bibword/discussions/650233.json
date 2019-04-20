@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1459862",
+    "ThreadId": "650233",
+    "Html": "Hey guys. So I am doing my thesis and I believe I prefer something close to the Harvard System. I am doing it in Spanish if that helps any. I wonder if there is a system for Word 2013 that looks like this:\r<br />\n<br />\n1.Bibliography:\r<br />\nLAST NAMES, First Names (Year). The Book Title in Cursive. City Published In: Publisher. \r<br />\n<br />\n[*] If the book title has subtitles, it just goes on after the first period (.) and still in cursive.\r<br />\n<br />\n[*] In this case, I have found APA to be exactly on point.\r<br />\n<br />\n2.References (which I move to the bottom of the page): \r<br />\n<br />\nLAST NAMES First Names, Title of the Book: Subtitle, 2ºed., Ed. Franklin, City of Publisher, Year, p. 000\r<br />\n<br />\n[*] The rules let me write the title in  Regular, Bold, Cursive or Cursive and Quotation Marks if I choose.\r<br />\n<br />\n[*] ed. = Edition number. First Edition, Second...\r<br />\n<br />\n[*] Ed. = Publisher. Can include Ed. (as in Editor) or leave it out. \r<br />\n<br />\n[*] Year = Year it was published. I can include the word itself in front (e.g. 2009 or Year 2009)\r<br />\n<br />\n[*] p. 000 = Page number, which can be p. 000, pag. 000 or pg. 000, and can include a whole range (like 000 - 001). \r<br />\n<br />\nAfter the first citation of a source I am also supposed to use &quot;op. cit.&quot; &quot;ibid.&quot; and the like. However I've been reading on this and it seems it's not available as no one has decided to code all that in, so I could just do this last part manually if there's really no other way.<br />\n",
+    "PostedDate": "2016-01-19T22:24:15.74-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

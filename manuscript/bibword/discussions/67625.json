@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "229851",
+    "ThreadId": "67625",
+    "Html": "<p>I'm using the &quot;APA - Square Brackets - One Author&quot; style. When citing the following reference inline, I get a space before the first author name.</p>\r\n<p>Inline: [ Connon, et al., 2002]</p>\r\n<p>Bibliography: Connon, S. A., &amp; Giovannoni, S. J. (2002). High-throughput methods for culturing microorganisms in very-low-nutrient media yield diverse new marine isolates. Applied Environmental Biology , 68, 3878&ndash;3885.</p>\r\n<p>Pubmed ID: 12147485</p>\r\n<p>&nbsp;</p>\r\n<p>Two other questions I have:</p>\r\n<p>1. Where can I find a good reference/tutorial for creating my own styles.</p>\r\n<p>2. Is there a way to group references together in MS Word 2007, i.e. [Connon, et al., 2002; Smith, et al., 2003] ?</p>\r\n<p>&nbsp;</p>\r\n<p>Help with any of these issues would be greatly appreciated. Thanks!</p>\r\n<p>-Dan</p>",
+    "PostedDate": "2009-09-01T12:29:59.643-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "229913",
+    "ThreadId": "67625",
+    "Html": "<p>1)I do not get any leading space between the bracket and the first citation so I can't really help you with this.&nbsp;Maybe you put a leading space in your source entry. Or are you trying to type the brackets manually (doubtful if you are using that style). If so, the space is probably a byproduct of the insertion mechanism.</p>\r\n<p>2)There isn't much information available. There are 2 blog postings on the topic from MS:</p>\r\n<ul>\r\n<li><a href=\"http://blogs.msdn.com/microsoft_office_word/archive/2007/12/14/bibliography-citations-1011.aspx\">http://blogs.msdn.com/microsoft_office_word/archive/2007/12/14/bibliography-citations-1011.aspx</a></li>\r\n<li><a href=\"http://blogs.msdn.com/microsoft_office_word/archive/2009/04/29/bibliography-citations-102-building-custom-styles.aspx\">http://blogs.msdn.com/microsoft_office_word/archive/2009/04/29/bibliography-citations-102-building-custom-styles.aspx</a></li>\r\n</ul>\r\n<p>&nbsp; Alternatively, you might want to look into BibWord (this project). It is my attempt at concentrating whatever needs changing between styles in a small portion of 'easy to edit' code. The latest version, including the manual can be found <a title=\"BibWord v.2.5\" href=\"http://bibword.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=27210\">here</a>. And you can also find a dozen styles using this template on this site.</p>\r\n<p>3)See <a href=\"http://bibword.codeplex.com/Wiki/View.aspx?title=FAQ#Q1\">http://bibword.codeplex.com/Wiki/View.aspx?title=FAQ#Q1</a>&nbsp;on grouping in-text citations.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-01T14:53:26.107-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "229916",
+    "ThreadId": "67625",
+    "Html": "<p>Thanks Yves - those links look promising. I'll check them out : )</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-01T14:57:52.72-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

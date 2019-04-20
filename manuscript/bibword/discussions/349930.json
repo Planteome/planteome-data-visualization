@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "815181",
+    "ThreadId": "349930",
+    "Html": "<p>I have search the disccussions and FAQs however didn't seem to come across anything related to paraphrasing in Word 2010 using Bibword.</p>\n<p>At the moment I have created my sources, updated the citations used at the end of each paragraph such as:</p>\n<p><strong>end of a referenced paragraph. (Jones, 2012)</strong></p>\n<p>However what I need to do is create a citation for paraphrased text such as:</p>\n<p><strong>Jones (2012) states that ...</strong></p>\n<p>Rather than:</p>\n<p><strong>(Jones, 2012) states that ...</strong></p>\n<p>Is this possible, if not is there a work around / alternative?</p>\n<p>Thanks :)</p>",
+    "PostedDate": "2012-03-25T06:15:36.32-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "815228",
+    "ThreadId": "349930",
+    "Html": "<p>Word is not really a fan of variation. Either you always use \"(Jones, 2012)\" or you always use \"Jones (2012)\". Both can be easily defined by a format string in BibWord.</p>\r\n<p>If you insist on using both versions, Microsoft suggests that you use (Jones, 2012). Once inserted, right-click on the inline citation and choose Edit Citation. In the small dialog, select to suppress the author. This will result in (2012). You can then type Jones in front of it yourself to obtain Jones (2012).</p>\r\n<p>If you really want to create a style which allows easy choosing between the two versions, you will have to be a bit creative. You could 'abuse' one of the existing flags (like the one to suppress authors) to indicate that you want Jones (2012) instead of (Jones, 2012). It would of course be a bit more programming work in the xslt, but nothing spectacular.</p>",
+    "PostedDate": "2012-03-25T10:23:03.567-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

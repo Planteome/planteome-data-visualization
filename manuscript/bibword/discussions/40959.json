@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "135897",
+    "ThreadId": "40959",
+    "Html": "Hi,<br>\r\n<br>\r\nI use CSE - name sequence style, and when running the BibWordExtender I get the following error message,<br>\r\n&quot;Unable to translate Unicode character \\U2013 at index 3130 to specified code page.&quot; <br>\r\nHow can i solve this issue?<br>\r\n<br>\r\nThanks<br>\r\nYinon<br>\r\n",
+    "PostedDate": "2008-11-27T09:24:26.787-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "135921",
+    "ThreadId": "40959",
+    "Html": "Currently the set of styles, and the BibWord Extender tool, support iso-8859-1 (commonly referred to as Latin-1) as encoding style. I think the symbol you are using is not defined by that set and will therefore fail to be processed. Are you by any chance using some &quot;exotic&quot; language?<br>\r\n<br>\r\nAt first glance, \\u2013 seems to be a symbol looking pretty much like an ordinary dash (-). So if you could hunt it down in your sources, and replace it with the ordinary dash, your problem will probably be solved.<br>\r\n<br>\r\nI will try to create a permanent fix for the issue but my problem is that I can not reproduce the problem at the moment. It would help if you could give me an example docx with the problem so I can look into it. You can do so by either sending the docx directly to me (my email is inside the stylesheet) or by creating a new item under &quot;Issue Tracker&quot; where you can upload the example as well. Note that if you reply to this message by mail, CodePlex will strip any attachments so you have to use one of the two other methods I described.<br>\r\n<br>\r\nYves\r\n",
+    "PostedDate": "2008-11-27T10:54:35.257-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "149722",
+    "ThreadId": "40959",
+    "Html": "I get the same error using the Harvard - Anglia style but not using others like Harvard - Leeds.<div><br></div><div>I am using the Word 2007 spanish version. I have aprox. 150 bibliography entries in my document and I need to use the &quot;-&quot; because I need it to write the title of the publication among others.</div><div><br></div><div>Thanks in advance.</div>",
+    "PostedDate": "2009-01-22T05:44:59.853-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "149761",
+    "ThreadId": "40959",
+    "Html": "If there are dashes in the title, then it's doubtful that those are causing the error as they would cause it in all styles. It must be in some field which is only displayed by that style (most likely one or two page ranges).<br>\r\n<br>\r\nI haven't been able to fully recreate the problem so I have no full solution. The only thing I can advise at the moment is to display your bibliography in the APA style for example and then do a search for \\u2013. This will tell you which entries (and which parts) are affected and would allow you to easily update your source. To search in Word for \\u2013, in the 'Find' window, type 2013 followed by ALT+X. This will replace the number with the symbol.<br>\r\n<br>\r\nIf you could mail me (don't use this thread as the attachment will not reach me, look for my mail at the top of the stylesheet) an example, I could work with that.\r\n",
+    "PostedDate": "2009-01-22T07:23:26.317-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "Id": "248785",
+    "ThreadId": "72836",
+    "Html": "<p>Hi,</p>\r\n<p>Inserting citations into footnotes only adds static text and no dynamic field. Inserting citations in text creates dynamic fields which maintain dynamic if they are cut and paste into footnotes.</p>\r\n<p>Is this a known bug? Any fixes? Any ideas?</p>",
+    "PostedDate": "2009-10-22T14:53:34.263-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "248876",
+    "ThreadId": "72836",
+    "Html": "<p>I know that it only displays static text, but I have no idea if that is the intention or not.</p>\r\n<p>The use of footnote citations is unique to Word 2008. It doesn't exist in Word 2007 or Word 2010 TP.&nbsp;It makes me wonder if it isn't just an incomplete feature that is left in Word by mistake. I guess we will have to wait till the betas of Word 2010 come out.</p>",
+    "PostedDate": "2009-10-22T23:28:53.327-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "251396",
+    "ThreadId": "72836",
+    "Html": "<p>After some experimenting for a related question in a newsgroup, I discovered that if you insert the citation field manually they stay 'dynamic'.</p>\r\n<p>So when you want to insert a citation, you should pick 'Insert' -&gt; 'Field...' and then pick CITATION. After the word CITATION in the field, you should add the tag of the source you want to cite.</p>",
+    "PostedDate": "2009-10-29T14:45:01.117-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "284593",
+    "ThreadId": "72836",
+    "Html": "<p>I have found that I can manually insert a citation in a footnote also in Word 2007, however I am unable to right-click on the citation to open the Edit Citation box. If I right-click I only get contexts which are related to the footnote and not the citation itself. Is there another way, key short-cut, that allows one to open the Edit Citation box?</p>\r\n<p>Frode</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-02-02T00:21:25.96-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "284627",
+    "ThreadId": "72836",
+    "Html": "<div>Well yes, there is a work around. However I can only confirm for word 2008 and the context menu is a little buggy. For intance the pages insert does not work, but the citation gets checked in the sources manager. All you have to do is insert the citation in the text above, insert fn and copy/paste the citation into the fn. It will reformat once pasted in. Hope this helps a little!</div><div>Bye,</div><div>Jules<br><br>Am 02.02.2010 um 09:21 schrieb FrodeW &lt;<a href=\"mailto:notifications@codeplex.com\">notifications@codeplex.com</a>&gt;:<br><br></div><div></div><blockquote><div> <p>From: FrodeW</p> <div id=ThreadNotificationPostBody><p>I have found that I can manually insert a citation in a footnote also in Word 2007, however I am unable to right-click on the citation to open the Edit Citation box. If I right-click I only get contexts which are related to the footnote and not the citation itself. Is there another way, key short-cut, that allows one to open the Edit Citation box?</p>\r\n<p>Frode</p>\r\n<p> </p></div>   </div></blockquote>",
+    "PostedDate": "2010-02-02T01:45:33.627-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "284642",
+    "ThreadId": "72836",
+    "Html": "<p>Actually I don't have to copy and paste the citation into the footnote, I can directly insert it in the right place in the footnote and it gets the right tag and has the correct link. However, if I click in the citation tag I then only gets the following options: &quot;Convert citation to static text&quot; and &quot;Update Citations and Bibliography&quot;. The two other options &quot;Edit Citation&quot; and &quot;Edit Source&quot;, that you get for citations inserted in the main text, are missing. This is for Word 2007; I don't have Word 2008.</p>\r\n<p>Frode</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-02-02T02:21:24.443-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "284664",
+    "ThreadId": "72836",
+    "Html": "<div>Well maybe you just can't make changes using context menu. In word 2008 I have the context menu you wish to have, but none of the changes I make there apply. So I guess this is just another disability of Word... Hope remains it gets fixed... The evidence stated above may indicate, that word cannot process that much information in FNs for now.</div><div><br></div><div><br>Am 02.02.2010 um 11:21 schrieb FrodeW &lt;<a href=\"mailto:notifications@codeplex.com\">notifications@codeplex.com</a>&gt;:<br><br></div><div></div><blockquote><div> <p>From: FrodeW</p> <div id=ThreadNotificationPostBody><p>Actually I don't have to copy and paste the citation into the footnote, I can directly insert it in the right place in the footnote and it gets the right tag and has the correct link. However, if I click in the citation tag I then only gets the following options: &quot;Convert citation to static text&quot; and &quot;Update Citations and Bibliography&quot;. The two other options &quot;Edit Citation&quot; and &quot;Edit Source&quot;, that you get for citations inserted in the main text, are missing. This is for Word 2007; I don't have Word 2008.</p>\r\n<p>Frode</p>\r\n<p> </p></div>   </div></blockquote>",
+    "PostedDate": "2010-02-02T03:13:53.837-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "284683",
+    "ThreadId": "72836",
+    "Html": "<p>FrodeW,</p>\r\n<p>Rather than right clicking and using the context-menu, you can use the arrow from the box surrounding the in-text citation. There is an 'Edit Source' option there.</p>\r\n<p>Alternatively, you can try using a macro like:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">Sub</span> EditSourceMacro()\r\n  WordBasic.BibliographyEditSourceButton\r\n<span style=\"color:Blue\">End</span> <span style=\"color:Blue\">Sub</span>\r\n</pre>\r\n</div>\r\n<p>And then assign a shortcut key to that macro.</p>\r\n<p>Yves</p>",
+    "PostedDate": "2010-02-02T03:48:37.937-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "284724",
+    "ThreadId": "72836",
+    "Html": "<p>Many thanks for your replies. Jayjaycool's reply that the Edit options show up in Word 2008 is interesting. At least it shows that Microsoft is working on it and that it hopefully might work correctly in Word 2010. I have also tried the macro suggestion of Yves, which works just fine for all citations in the text. It gives exactly the same response as when using the menus from the arrow-box, but it does not work at all when doing the same thing on a citation which is in a footnote. So at least for Word 2007 this functionality is not available for citation in footnotes. I suspect the same will be the case for Word 2008.</p>\r\n<p>Frode</p>",
+    "PostedDate": "2010-02-02T05:51:38.113-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "284726",
+    "ThreadId": "72836",
+    "Html": "Yes, as I told, the functionality is not available, only the buttons... Either applies to makros. FNs cannot handle the commands... Unfortunately, it doesn't imply that microsoft is working on it. I think that the context menu shows up in the FN by error in 2008, as FNs are somehow handled differently in Word 2007 and 2008. But hope remains still :)",
+    "PostedDate": "2010-02-02T06:00:13.207-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

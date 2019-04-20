@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1342605",
+    "ThreadId": "577874",
+    "Html": "Hello all,\r<br />\n<br />\nI have come across an interesting issue in Word 2013. For styles that use tables to arrange entries in the bibliography (e.g., IEEE, Vancouver), the entry preview in the source manager in Word 2013 does not display correctly. This issue was brought up here in April of last year but it does not appear to have been resolved. Ultimately, the overall functionality is not affected. Basically, in the bibliography entry preview, the table columns are about 1 to 3 characters wide resulting in very long and narrow columns. This did not happen in Word 2010. Hopefully someone can shed some light into what is happening here. I am including an image in an attempt to illustrate the problem.\r<br />\n<br />\nThank you in advance for all your help.\r<br />\n<br />\n<img src=\"http://i.imgur.com/LwXtmFA.jpg\" alt=\"Image\" /><br />\n",
+    "PostedDate": "2015-01-16T05:29:34.347-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1342739",
+    "ThreadId": "577874",
+    "Html": "Also, I just found this:\r<br />\n<br />\n<a href=\"http://answers.microsoft.com/en-us/office/forum/office_365hp-word/bug-source-manager-dialog-preview-pane-word-wraps/62bb5565-110d-41d3-9c31-85b75d151f36\" rel=\"nofollow\">Source Manager bug</a>\r<br />\n<br />\nMaybe we'll need to wait for the powers that be at MS to handle this one ...<br />\n",
+    "PostedDate": "2015-01-16T11:48:14.607-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

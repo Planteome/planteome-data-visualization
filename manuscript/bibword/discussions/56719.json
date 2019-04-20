@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "191712",
+    "ThreadId": "56719",
+    "Html": "<p style=\"margin:0cm 0cm 0pt\"><span lang=EN-US><span style=\"font-family:Calibri\"><span style=\"font-size:small\">Hello Yves. How are you?</span></span></span></p>\r\n<p style=\"margin:0cm 0cm 0pt\"><span style=\"font-size:small\"><span lang=EN-US><span style=\"font-family:Calibri\">I just downloaded the file about Vancouver Bibliography: Vanvouver.xsl, and I like very much. &nbsp;However, unfortunately, that kind of citations and bibliography is already outdated. As you can see, at the Vancouver Group site, now known as </span></span><span style=\"font-family:'Arial','sans-serif'\" lang=EN-US>International Committee of Medical Journal Editors (<a href=\"http://www.icmje.org\">www.icmje.org</a>), they just published new uniform requirements. In the <em>&ldquo;IV.A.9.b. Reference Style and Format&rdquo;</em> paragraph they use the style from NLM&rsquo;s Citing Medicine, at the link <a href=\"http://www.nlm.nih.gov/citingmedicine/\">http://www.nlm.nih.gov/citingmedicine/</a>. </span></span></p>\r\n<p style=\"margin:0cm 0cm 0pt\"><span style=\"font-family:'Arial','sans-serif'\" lang=EN-US><span style=\"font-size:small\">So, if possible, can you update the Vancouver.xsl file about the new uniform requirements?</span></span></p>\r\n<p style=\"margin:0cm 0cm 0pt\"><span style=\"font-family:'Arial','sans-serif'\" lang=EN-US><span style=\"font-size:small\">Everybody who use this bibliography style will be very happy!</span></span></p>\r\n<p style=\"margin:0cm 0cm 0pt\"><span style=\"font-family:'Arial','sans-serif'\" lang=EN-US><span style=\"font-size:small\">Thank you very much!</span></span></p>\r\n<p style=\"margin:0cm 0cm 0pt\"><span style=\"font-family:'Arial','sans-serif'\" lang=EN-US><span style=\"font-size:small\">I&rsquo;m looking forward your answer!</span></span></p>\r\n<p style=\"margin:0cm 0cm 0pt\"><span style=\"font-family:'Arial','sans-serif'\" lang=EN-US><span style=\"font-size:small\">&nbsp;</span></span></p>\r\n<p style=\"margin:0cm 0cm 0pt\"><span style=\"font-family:'Arial','sans-serif'\" lang=EN-US><span style=\"font-size:small\">Renato Lopes</span></span></p>",
+    "PostedDate": "2009-05-18T19:03:09.723-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "192107",
+    "ThreadId": "56719",
+    "Html": "<p>I'm going to look into it when I have some time. So don't expect anything real soon.</p>\r\n<p>In the mean time, if the changes are minor, you might try to fix them yourself. More information on how the formatting works (including all variables), can be found in the <a title=\"BibWord guide\" href=\"http://bibword.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=27210#DownloadId=67899\">BibWord guide</a>.</p>",
+    "PostedDate": "2009-05-19T14:57:45.44-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "198604",
+    "ThreadId": "56719",
+    "Html": "<p>I managed to change it. It was pretty straightforward using notepad. The hardest part was finding the relevant pieces of punctuation that I wanted to delete (some spaces, full stops, and the p. before the page range). I just did it for 'journal articles'.</p>\r\n<p>My next challenge is to find and delete the brackets around the in-text citations, but they are harder to find! And after that, find a way to import PubMed citations into Word . . .</p>\r\n<p>Thank you to Yves for doing this stuff!</p>",
+    "PostedDate": "2009-06-06T14:21:52.313-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "198610",
+    "ThreadId": "56719",
+    "Html": "<p>BibWord uses the &quot;openbracket&quot; and &quot;closebracket&quot; elements under the citation element to decide on the brackets to display. If you leave those elements empty, no brackets will be shown around in-text citations. The &quot;separator&quot; element decides on the separator to show when multiple citations are grouped together.</p>\r\n<p>The following add-in claims to import PubMed citations into Word: <a href=\"http://ragrawal.wordpress.com/2009/03/07/releasing-reference-manager-beta-for-word-2007/\">http://ragrawal.wordpress.com/2009/03/07/releasing-reference-manager-beta-for-word-2007/</a>&nbsp;(download somewhere halfway the article). I requires an internet connection though because the conversion is done remotely. I haven't tested it, mainly because I want to analyze first what it sends home before I trust it to actually send something home.</p>",
+    "PostedDate": "2009-06-06T15:13:37.58-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "261880",
+    "ThreadId": "56719",
+    "Html": "<p>Thanks -- I found and removed the brackets.</p>\r\n<p>Also, I followed up on R Agrawal's useful webpage that you listed, and found a way to import&nbsp;PubMed citations into Word 2007. You have to join <a href=\"http://findnwrite.com/memento/\">http://findnwrite.com/memento/</a>&nbsp;and import the PubMed citations into Memento. You can then export the citation(s) as a Word XML file.</p>",
+    "PostedDate": "2009-11-30T06:16:57.56-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1480908",
+    "ThreadId": "657078",
+    "Html": "I've tried changing the number in all instances of &lt;max_number_of_persons_to_display&gt;... to 50 in the Nature.XSL stylesheet. My bibliography still doesn't list all authors. What should I do?<br />\n",
+    "PostedDate": "2016-08-11T19:14:38.887-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1481071",
+    "ThreadId": "657078",
+    "Html": "I looked in the wrong folder directory. Solved!<br />\n",
+    "PostedDate": "2016-08-13T16:40:11.493-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": "2016-08-13T16:40:21.523-07:00"
+  }
+]

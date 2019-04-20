@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1209982",
+    "ThreadId": "532532",
+    "Html": "The Law School I am in Brazil refuses to use the ABNT style. Instead, all academic works should use a former Brazilian style, in which citations are added in footnotes instead of part of the text. \r<br />\n<br />\nThe first footnote of a given author displays the same information of the bibliography, plus the page number. The second and following citations of the same author, also in footnotes, display the name of the author, the expression &quot;Op. cit. (footnote #)&quot;, where # means the number of the first footnote, and the page number.\r<br />\n<br />\nI wondered if it would be possible to use an XML BibWord style to do it, in a way that the end-user fills the blanks for the new citation entry and the program automatically converts it in a footnote where all the information will be informed. \r<br />\n<br />\nI guess that creating the footnote would be difficult, but recognizing that a previous footnote of the same work has been issued before in the text to then show its number would be harder. I always had to do it manually (using <em>insert cross-reference</em> for chasing footnote numbers).\r<br />\n<br />\nCan it be done?<br />\n",
+    "PostedDate": "2014-02-18T10:24:42.383-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1213088",
+    "ThreadId": "532532",
+    "Html": "No, it can't.\r<br />\n<br />\nThe problem is not BibWord, but the original architecture inside Word. Each footnote citation is on its own. It has no (well there is limited but not enough for your case) information about the other citations. So you can't know if it is the first, second, or n-th footnote and can therefore not decide on how to do the formatting.<br />\n",
+    "PostedDate": "2014-02-23T10:49:23.733-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

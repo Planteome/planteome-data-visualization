@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "702450",
+    "ThreadId": "280606",
+    "Html": "\r\n<p>Hi, I would like to use bibword styles on computers in labs in my university. However, I cannot make any changes to the program files directory since I do not have administrator privileges. Is it possible to have word use styles from an external folder?\r\n Thanks.</p>\r\n",
+    "PostedDate": "2011-11-23T09:17:10.19-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "702622",
+    "ThreadId": "280606",
+    "Html": "<p>No. That's a design flaw of Microsoft. They should have provided access through a folder under appdata as well but they didn't.</p>",
+    "PostedDate": "2011-11-23T13:51:32.14-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "702654",
+    "ThreadId": "280606",
+    "Html": "<p>Thank you yves for your answer.</p>",
+    "PostedDate": "2011-11-23T14:53:34.95-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

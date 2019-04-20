@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1211894",
+    "ThreadId": "533460",
+    "Html": "When you've got pages of sources in the Reference List it will help to assign a keyboard shortcut to insert a citation at the cursor.\r<br />\nI've been looking and can't find a quick answer for Word 2010.\r<br />\n<br />\nI can't find the <em>Built-in Dialog Box Argument</em> for the 'Insert Citation' dialogue box.\r<br />\n<br />\nI have managed to add sources quickly by assigning a keyboard shortcut to this short macro:\r<br />\n<br />\nDialogs(wdDialogCreateSource).Show\r<br />\n<br />\nYou can also quickly bring up the Source Manager dialogue box with this:\r<br />\n<br />\n Dialogs(wdDialogSourceManager).Show\r<br />\n<br />\nHere in South Africa it's late at night and there must be an easy answer.\r<br />\n<br />\nCan anyone help?\r<br />\n<br />\nThanks,\r<br />\n<br />\nLionel.<br />\n",
+    "PostedDate": "2014-02-21T12:57:10.613-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "828631",
+    "ThreadId": "353610",
+    "Html": "\r\n<p>Hello!&nbsp; I have spent a great deal of time trying to research something I thought was simple.&nbsp; In MS Word 2010 SP1 came with a new APA Sixth Edition-compliant XSL template.&nbsp; Sixth edition APA citations require Internet-based websites without\r\n pagination to contain&nbsp;paragraph number(s) in&nbsp;citations.&nbsp; For example a citation to an Internet reference might look like (Brown, 2012, para. 4).&nbsp; The new XSL file only allows for page number references.&nbsp; Any suggestions on how to deal\r\n with this?&nbsp; Thank you ever so much!&nbsp; Chris Brown</p>\r\n",
+    "PostedDate": "2012-04-25T13:24:12.647-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "829291",
+    "ThreadId": "353610",
+    "Html": "<p>Are paragraph numbers only needed for in-text citations and not in the final bibliography? If so, use the suffix option to specify them. For more information on the available options, see <a href=\"http://office.microsoft.com/en-us/help/field-codes-citation-field-HA010215707.aspx\">http://office.microsoft.com/en-us/help/field-codes-citation-field-HA010215707.aspx</a></p>",
+    "PostedDate": "2012-04-27T02:28:14.053-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "829340",
+    "ThreadId": "353610",
+    "Html": "<div>\n<p>Hello Yves, thank you so much for the reply and tip! Yes, according to APA 6<sup>th</sup> edition, the paragraph reference is only required in the citation, not the reference. I didn&rsquo;t know about the suffix switch &ndash; I just tried it and it is perfect. You are a lifesaver, and so is this site!!</p>\n</div>",
+    "PostedDate": "2012-04-27T05:50:24.74-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

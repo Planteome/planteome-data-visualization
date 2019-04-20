@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "719417",
+    "ThreadId": "284737",
+    "Html": "\r\n<p>I&nbsp;have installed bibword on my windows 7 PC using office2010. It appears to work perfectly. However when I add my first citation all typing AFTER this first in text citation appears to be immune to the spell checker. Any word that is mistyped or mispelt\r\n does not get highlighted by the spell checker and is not shown as mispelt even when I run the spell checker. Any mispelt word in the text BEFORE the first citation is picked up by the spell checker. I am using Harvard - Exeter referencing style.<br>\r\n<br>\r\nHelp!</p>\r\n<p>Sandy</p>\r\n",
+    "PostedDate": "2012-01-02T08:40:41.623-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "719422",
+    "ThreadId": "284737",
+    "Html": "<p>Do you have this with the styles which come with Word as well? For example, what if you&nbsp;pick APA from the dropdown?</p>\r\n<p>If not, then one thing you can try is to disable the hyperlinking between in-text&nbsp;citations and the bibliography if it is enabled. Look for</p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre><span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">citation_as_link</span><span style=\"color: blue;\">&gt;</span>yes<span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">citation_as_link</span><span style=\"color: blue;\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>in the xsl file and change the 'yes' into 'no'</p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre><span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">citation_as_link</span><span style=\"color: blue;\">&gt;</span>no<span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">citation_as_link</span><span style=\"color: blue;\">&gt;</span>\r\n</pre>\r\n</div>",
+    "PostedDate": "2012-01-02T08:50:14.84-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

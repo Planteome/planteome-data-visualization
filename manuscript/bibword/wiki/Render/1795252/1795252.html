@@ -1,0 +1,129 @@
+<div class="wikidoc"><h2>Frequently Asked Questions for BibWord Styles</h2>This pages contains answers regarding questions about the styles published through this project. For questions regarding the citations and bibliography tool in general, check the <a href="https://bibword.codeplex.com/wikipage?title=FAQ&referringTitle=Styles_FAQ">developer FAQ</a>.<br />
+<ul><li><a href="#Q1">Why is a new style not showing up in Word when I add it to the Style directory&#63;</a></li>
+<li><a href="#Q2">In Word 2008, new styles are only added for citations. How can I use the new styles for bibliographies&#63;</a></li>
+<li><a href="#Q3">Why does it take Word so long to show the dropdown list with style names the first time&#63;</a></li>
+<li><a href="#Q4">Why do I get &#39;BO&#39; instead of a number when using certain styles&#63;</a></li>
+<li><a href="#Q5">Why do certain styles have a &#42; at the end of their name&#63;</a></li>
+<li><a href="#Q6">Can I request to get a certain style&#63;</a></li>
+<li><a href="#Q7">Can I &#40;not&#41; link my in-text citations to their bibliography entries&#63;</a></li>
+<li><a href="#Q8">Can I change the surrounding brackets for in-text citations&#63;</a></li>
+<li><a href="#Q9">How do I get my in-text citations in superscript&#63;</a> </li>
+<li><a href="#Q10">How do I convert all my in-text citations to static text in one go&#63;</a></li>
+<li><a href="#Q11">Is there an easy way to get rid of sources which are not cited in the text&#63;</a></li>
+<li><a href="#Q12">How do I set the indentation of my bibliography&#63;</a></li>
+<li><a href="#Q13">Is it possible to group several citations&#63; Currently I have something like &#40;1&#41;&#40;2&#41; and I want &#40;1,2&#41;.</a></li>
+<li><a href="#Q14">Only the name of the first author is displayed correctly, all other author names are abbreviated. Is this a bug&#63;</a></li>
+<li><a href="#Q15">When using a numbered style &#40;e.g. IEEE&#41;, the number is wrapped over multiple lines. Is this a bug&#63;</a></li>
+<li><a href="#Q16">My in-text citations are displayed in bold. How do I change this&#63;</a></li></ul>
+<br /><a name="Q1"></a><br /><i><b>Q:</b></i> Why is a new style not showing up in Word when I add it to the Style directory?<br /><i><b>A:</b> The list of available reference styles gets loaded only once. So when you add a new style to the style directory, you need to restart Word.</i><br /><br /><a name="Q2"></a><br /><i><b>Q:</b></i> In Word 2008, new styles are only added for citations. How can I use the new styles for bibliographies?<br /><i><b>A:</b> Add the bibliography using one of the four predefined styles. Then go to the citation toolbox and select the style you want. This will update all the citations and bibliographies in your text to the new style.</i><br /><br /><a name="Q3"></a><br /><i><b>Q:</b></i> Why does it take Word so long to show the dropdown list with style names the first time?<br /><i><b>A:</b> Word has to retrieve the style names of every XSL in the style directory the first time. Hence, the more styles you put in the directory, the more time Word needs to fill the drop down list.</i><br /><br /><a name="Q4"></a><br /><i><b>Q:</b></i> Why do I get &#39;BO&#39; instead of a number when using certain styles?<br /><i><b>A:</b> &#39;BO&#39; is often printed when the BibOrder number is not available. Use the <a href="https://bibword.codeplex.com/wikipage?title=BibWord%20Extender&referringTitle=Styles_FAQ">BibWord Extender</a> tool on the document to add the missing numbers.</i><br /><br /><a name="Q5"></a><br /><i><b>Q:</b></i> Why do certain styles have a <b>*</b> at the end of their name?<br /><i><b>A:</b> Although the usage of a <b>*</b> is not mandatory, it often indicates that part of the functionality of the style can only be used in combination with the <a href="https://bibword.codeplex.com/wikipage?title=BibWord%20Extender&referringTitle=Styles_FAQ">BibWord Extender</a> tool.</i><br /><br /><a name="Q6"></a><br /><i><b>Q:</b></i> Can I request to get a certain style?<br /><i><b>A:</b> <b>No.</b> Using <a href="https://bibword.codeplex.com/wikipage?title=BibWord&referringTitle=Styles_FAQ">BibWord</a>, you really should try to create the style yourself. Keep in mind that even if you find someone prepared to create the style for you that you will have to provide him/her with detailed information about the formatting guidelines for your style. Messages containing &quot;I need style x.&quot; will most likely be ignored.</i><br /><br /><a name="Q7"></a><br /><i><b>Q:</b></i> Can I (not) link my in-text citations to their bibliography entries?<br /><i><b>A:</b> Yes. Set the value of <b>citation_as_link</b> to &#39;yes&#39; if you want in-text citations to link to their specific bibliography entry, or to any other value if you do not.</i><br /><br /><a name="Q8"></a><br /><i><b>Q:</b></i> Can I change the surrounding brackets for in-text citations?<br /><i><b>A:</b> Yes. You can change the surrounding brackets by changing the values of <b>openbracket</b> and <b>closebracket</b></i><br /><div style="color:Black;background-color:White;"><pre>
+<span style="color:Blue;">&lt;</span><span style="color:#A31515;">openbracket</span><span style="color:Blue;">&gt;</span>(<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">openbracket</span><span style="color:Blue;">&gt;</span>
+<span style="color:Blue;">&lt;</span><span style="color:#A31515;">closebracket</span><span style="color:Blue;">&gt;</span>)<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">closebracket</span><span style="color:Blue;">&gt;</span>
+</pre></div><a name="Q9"></a><br /><i><b>Q:</b></i> How do I get my in-text citations in superscript?<br /><i><b>A:</b> In-text citations inherit the style of their surroundings. Only limited formatting (bold, underline, italic) can be applied to them through the reference style. For any further formatting, such as superscript, a character style has to be applied to all CITATION fields.</i><br /><br /><i>The following macro creates a character style called <b>In-Text Citation</b> if it does not yet exist. When the style is newly created, it sets the font to superscript. Then the style is applied to all CITATION fields in the document. By changing/updating the style <b>In-Text Citation</b> you can then update the formatting of all citations</i><br /> <br /><div style="color:Black;background-color:White;"><pre>
+<span style="color:Blue;">Sub</span> ApplyCitationStyle()
+    <span style="color:Blue;">Dim</span> stylename <span style="color:Blue;">As</span> <span style="color:Blue;">String</span>
+    <span style="color:Blue;">Dim</span> exists <span style="color:Blue;">As</span> <span style="color:Blue;">Boolean</span>
+    <span style="color:Blue;">Dim</span> s <span style="color:Blue;">As</span> Style
+    <span style="color:Blue;">Dim</span> fld <span style="color:Blue;">As</span> Field
+                
+    stylename = <span style="color:#A31515;">&quot;In-Text Citation&quot;</span>
+        
+    <span style="color:Green;">&#39; Check if the style already exists.</span>
+    exists = <span style="color:Blue;">False</span>
+        
+    <span style="color:Blue;">For</span> <span style="color:Blue;">Each</span> s <span style="color:Blue;">In</span> ActiveDocument.Styles
+        <span style="color:Blue;">If</span> s.NameLocal = stylename <span style="color:Blue;">Then</span>
+           exists = <span style="color:Blue;">True</span>
+           <span style="color:Blue;">Exit</span> <span style="color:Blue;">For</span>
+        <span style="color:Blue;">End</span> <span style="color:Blue;">If</span>
+    <span style="color:Blue;">Next</span>
+    
+    <span style="color:Green;">&#39; If the style did not exist yet, create it.</span>
+    <span style="color:Blue;">If</span> exists = <span style="color:Blue;">False</span> <span style="color:Blue;">Then</span>
+        <span style="color:Blue;">Set</span> s = ActiveDocument.Styles.Add(stylename, wdStyleTypeCharacter)
+        s.BaseStyle = ActiveDocument.Styles(wdStyleDefaultParagraphFont).BaseStyle
+        s.Font.Superscript = <span style="color:Blue;">True</span>
+    <span style="color:Blue;">End</span> <span style="color:Blue;">If</span>
+    
+    <span style="color:Green;">&#39; Now that the style really exists, select it.</span>
+    <span style="color:Blue;">Set</span> s = ActiveDocument.Styles(stylename)
+     
+    <span style="color:Green;">&#39; Apply the style to all in-text citations.</span>
+    <span style="color:Blue;">For</span> <span style="color:Blue;">Each</span> fld <span style="color:Blue;">In</span> ActiveDocument.Fields
+        <span style="color:Blue;">If</span> fld.Type = wdFieldCitation <span style="color:Blue;">Then</span>
+            fld.<span style="color:Blue;">Select</span>
+            Selection.Style = s
+        <span style="color:Blue;">End</span> <span style="color:Blue;">If</span>
+    <span style="color:Blue;">Next</span>
+
+<span style="color:Blue;">End</span> <span style="color:Blue;">Sub</span>
+</pre></div><a name="Q10"></a><br /><i><b>Q:</b></i> How do I convert all my in-text citations to static text in one go?<br /><i><b>A:</b> You can use the following macro to convert all in-text citations:</i><br /><br /><div style="color:Black;background-color:White;"><pre>
+<span style="color:Blue;">Sub</span> CitationsToStaticText()
+    <span style="color:Blue;">Dim</span> fld <span style="color:Blue;">As</span> Field
+            
+    <span style="color:Green;">&#39; Go over all stories, including main, footnotes, ...</span>
+    <span style="color:Blue;">For</span> <span style="color:Blue;">Each</span> sr <span style="color:Blue;">In</span> ActiveDocument.StoryRanges
+        <span style="color:Green;">&#39; Find all citation fields and convert them to static text.</span>
+        <span style="color:Blue;">For</span> <span style="color:Blue;">Each</span> fld <span style="color:Blue;">In</span> sr.Fields
+            <span style="color:Blue;">If</span> fld.Type = wdFieldCitation <span style="color:Blue;">Then</span>
+                fld.<span style="color:Blue;">Select</span>
+                WordBasic.BibliographyCitationToText
+            <span style="color:Blue;">End</span> <span style="color:Blue;">If</span>
+        <span style="color:Blue;">Next</span>
+    <span style="color:Blue;">Next</span>
+
+<span style="color:Blue;">End</span> <span style="color:Blue;">Sub</span>
+</pre></div><a name="Q11"></a><br /><i><b>Q:</b></i> Is there an easy way to get rid of sources which are not cited in the text?<br /><i><b>A:</b> You can use the following macro to remove all uncited sources from a document:</i><br /><br /><div style="color:Black;background-color:White;"><pre>
+<span style="color:Blue;">Sub</span> RemoveUnusedCitations()
+    <span style="color:Green;">&#39; Get the number of sources.</span>
+    idx = ActiveDocument.Bibliography.Sources.<span style="color:Blue;">Count</span>
+    
+    <span style="color:Green;">&#39; Remmove unused sources starting from the last one.</span>
+    <span style="color:Blue;">Do</span> <span style="color:Blue;">While</span> (idx &gt; 0)
+        <span style="color:Blue;">If</span> ActiveDocument.Bibliography.Sources(idx).Cited = <span style="color:Blue;">False</span> <span style="color:Blue;">Then</span>
+            ActiveDocument.Bibliography.Sources(idx).Delete
+        <span style="color:Blue;">End</span> <span style="color:Blue;">If</span>
+        idx = idx - 1
+    <span style="color:Blue;">Loop</span>
+<span style="color:Blue;">End</span> <span style="color:Blue;">Sub</span>
+</pre></div><a name="Q12"></a><br /><i><b>Q:</b></i> How do I set the indentation of my bibliography?<br /><i><b>A:</b> Add a bibliography to your document. Open the &#39;Styles&#39; pane (CTRL+ALT+SHIFT+S) and look for a style called &#39;Bibliography&#39; (or a localized translation of the word &#39;Bibliography&#39;). Change the indentation settings there. That way, whenever your bibliography gets updated, the indentation will remain correct.</i><br /><br /><a name="Q13"></a><br /><i><b>Q:</b></i> Is it possible to group several citations? Currently I have something like (1)(2) and I want (1,2).<br /><i><b>A:</b> Yes. You can add a second source to a citation by using the &#39;\m&#39; switch and the tag of the source you want to add. In Word 2007, if you want to add a source with tag &#39;Bee99&#39; to an existing citation, right click the citation and select &#39;Edit Field...&#39;. It will show you something like &#39;CITATION Gup97 \l 2060&#39;. To add the extra source, change it to &#39;CITATION Gup97 \l 2060 \m Bee99&#39;. For more information, also see the Microsoft Office online help topic on the <a href="http://office.microsoft.com/en-us/word/HA102157071033.aspx">CITATION</a> field code.</i><br /><br /><i>Alternatively, you can put your cursor inside any in-text citation, then go to &#39;References&#39; tab in the ribbon and click &#39;Insert Citation&#39;.</i><br /><br /><i>To change the separator between two grouped in-text citations, BibWord uses the <b>separator</b> element.</i><br /><br /><a name="Q14"></a><br /><i><b>Q:</b></i> Only the name of the first author is displayed correctly, all other author names are abbreviated. Is this a bug?<br /><i><b>A:</b> No. You probably made a mistake when entering the different author names. You should enter them one by one in the dialog that comes up when clicking the &quot;Edit...&quot; button next to the author field. That way you will not make a mistake.</i><br /><br /><i>If you really want to enter them as a string, then be aware that the correct format is &quot;Last1, First1 Middle1; Last2, First2 Middle2; ...&quot;. So the names are separated by a &quot;;&quot; while name parts are separated by a &quot;,&quot;.</i><br /><br /><i>Note that there is a bug in Word where sometimes the name conversion goes wrong. For more info, see <a href="https://bibword.codeplex.com/releases/view/27834">here</a>.</i><br /><br /><a name="Q15"></a><br /><i><b>Q:</b></i> When using a numbered style (e.g. IEEE), the number is wrapped over multiple lines. Is this a bug?<br /><i><b>A:</b> No. Numbered styles are mostly represented using a 2 column table where the first column contains the number and the second column contains the text. The text wrap you see is caused by the first column not being wide enough. You can simple solve this by positioning your cursor on the the table border between the first and second column and drag it to the right.</i><br /><br /><i>This can also be used to add extra white space after the number if you set the halign element to left of the first column.</i><br /><br /><a name="Q16"></a><br /><i><b>Q:</b></i> My in-text citations are displayed in bold. How do I change this?<br /><i><b>A:</b> If you link your in-text citation to your bibliography, Word formats the link using the &#39;Heading 2 Character style&#39;. So if that style is configured to use bold, so will the in-text citation. Assuming you cannot or do not want to change that style, there are two possible solutions:</i>
+<ol><li><i>Disable linking between in-text citations and bibliographies. This can be done easily be setting the value of <b>citation_as_link</b> to &#39;no&#39; in the xsl file.</i></li>
+<li><i>Format each in-text citation with another character style. This way you will be able to keep using the links between in-text citations and bibliographies. To ease this job, you could use the following macro which you can run every time you insert an in-text citation or once at the end.</i> </li></ol>
+<div style="color:Black;background-color:White;"><pre>
+<span style="color:Blue;">Sub</span> ApplyCitationStyle()
+    <span style="color:Blue;">Dim</span> stylename <span style="color:Blue;">As</span> <span style="color:Blue;">String</span>
+    <span style="color:Blue;">Dim</span> exists <span style="color:Blue;">As</span> <span style="color:Blue;">Boolean</span>
+    <span style="color:Blue;">Dim</span> s <span style="color:Blue;">As</span> Style
+    <span style="color:Blue;">Dim</span> fld <span style="color:Blue;">As</span> Field
+                
+    stylename = <span style="color:#A31515;">&quot;In-Text Citation&quot;</span>
+        
+    <span style="color:Green;">&#39; Check if the style already exists.</span>
+    exists = <span style="color:Blue;">False</span>
+        
+    <span style="color:Blue;">For</span> <span style="color:Blue;">Each</span> s <span style="color:Blue;">In</span> ActiveDocument.Styles
+        <span style="color:Blue;">If</span> s.NameLocal = stylename <span style="color:Blue;">Then</span>
+           exists = <span style="color:Blue;">True</span>
+           <span style="color:Blue;">Exit</span> <span style="color:Blue;">For</span>
+        <span style="color:Blue;">End</span> <span style="color:Blue;">If</span>
+    <span style="color:Blue;">Next</span>
+    
+    <span style="color:Green;">&#39; If the style did not exist yet, create it.</span>
+    <span style="color:Blue;">If</span> exists = <span style="color:Blue;">False</span> <span style="color:Blue;">Then</span>
+        <span style="color:Blue;">Set</span> s = ActiveDocument.Styles.Add(stylename, wdStyleTypeCharacter)
+        s.BaseStyle = ActiveDocument.Styles(wdStyleDefaultParagraphFont).BaseStyle
+        s.Font.Bold = <span style="color:Blue;">False</span>
+    <span style="color:Blue;">End</span> <span style="color:Blue;">If</span>
+    
+    <span style="color:Green;">&#39; Now that the style really exists, select it.</span>
+    <span style="color:Blue;">Set</span> s = ActiveDocument.Styles(stylename)
+     
+    <span style="color:Green;">&#39; Apply the style to all in-text citations.</span>
+    <span style="color:Blue;">For</span> <span style="color:Blue;">Each</span> fld <span style="color:Blue;">In</span> ActiveDocument.Fields
+        <span style="color:Blue;">If</span> fld.Type = wdFieldCitation <span style="color:Blue;">Then</span>
+            fld.<span style="color:Blue;">Select</span>
+            Selection.Style = s
+        <span style="color:Blue;">End</span> <span style="color:Blue;">If</span>
+    <span style="color:Blue;">Next</span>
+
+<span style="color:Blue;">End</span> <span style="color:Blue;">Sub</span>
+</pre></div></div><div class="ClearBoth"></div>

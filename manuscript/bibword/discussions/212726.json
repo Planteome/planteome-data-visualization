@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "443168",
+    "ThreadId": "212726",
+    "Html": "<p>Hi,&nbsp;</p>\r\n<p>I have problem. I'm using the&nbsp;latest&nbsp;BibWord Style (updated 10th May 2010) of IEEE-Reference Order for my thesis. But, the author name is such below:</p>\r\n<table style=\"padding-left:30px\" border=0 cellpadding=0 width=\"100%\">\r\n<tbody>\r\n<tr>\r\n<td valign=top>\r\n<p>[1]<strong> S. W. Smye</strong>, J. M.   Chamberlain, A. j. Fitzgerald, and E. Berry, &quot;The interaction between   Terahertz radiation and biological tissue,&quot; <em>Phys. Med. Biol.</em>,   vol. 46, pp. R101&ndash;R112, August 2001.</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td valign=top>\r\n<p>[2]&nbsp;A. J. Fitzgerald et   al., &quot;An introduction to medical imaging with coherent,&quot; <em>Phys.   Med. Biol.</em>, vol. 47, pp. R67&ndash;R84, March 2002.</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td valign=top>\r\n<p>[3]&nbsp;E. Berry <strong>et al</strong>.,   &quot;Optical properties of tissue measured using Terahertz pulsed   imaging,&quot; in <em>Proceedings of SPIE: Medical Imaging 2003: Physics of   Medical imaging</em>, 2003, pp. 459-470.</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td valign=top>\r\n<p>[4]<strong>&nbsp;Fawwaz T. Ulab</strong>y, <em>Electromagnetics   for Engineers</em>. Upper Saddle River, NJ, USA: Pearson Education, Inc, 2005.</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td valign=top>\r\n<p>[5]&nbsp;Douglas C. Giancoli, <em>Physics:   Principles with Application, 6th Edition</em>. USA: Pearson Education, 2005.</p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<p>The problems are:</p>\r\n<p>1) S. W. Smye <em>should</em> -&gt; Smye S. W.</p>\r\n<p>2) E. Berry et. al., <em>should</em>&nbsp;-&gt; Berry E., J. M. Chamberlain, .<em>.. and other authors</em></p>\r\n<p>&nbsp;</p>\r\n<p><em><span style=\"font-style:normal\">Did someone have same problem with me?</span></em></p>",
+    "PostedDate": "2010-05-14T22:52:31.077-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "443182",
+    "ThreadId": "212726",
+    "Html": "<p>According to <a href=\"http://www.ieee.org/documents/ieeecitationref.pdf\">http://www.ieee.org/documents/ieeecitationref.pdf</a>&nbsp;and <a href=\"http://www.ieee.org/portal/cms_docs/pubs/transactions/auinfo03.pdf\">http://www.ieee.org/portal/cms_docs/pubs/transactions/auinfo03.pdf</a>&nbsp;the format is</p>\r\n<p style=\"padding-left:30px\">S. W. Smye</p>\r\n<p>and not</p>\r\n<p style=\"padding-left:30px\">Smye S. W.</p>\r\n<p>So the first name should always come first!</p>\r\n<p>Regarding the &quot;et al.&quot; in your third example. If there are more than 5 authors, IEEE only&nbsp;displays 1 author followed by &quot;et al.&quot;</p>\r\n<p>The only point open to discussion is if the first and middle names should be automatically abbreviated or not. Although it is nowhere officially stated that they should, it seems to be the common case. But as it is nowhere officially stated, the style&nbsp;doesn't do&nbsp;it automatically.</p>",
+    "PostedDate": "2010-05-15T01:26:55.86-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "443190",
+    "ThreadId": "212726",
+    "Html": "<p>OK. Understood. But, why in the Reference (Bibliography), there have 2 version of that?&nbsp; Number [1] to [3] is same but number [4] to [5] is different in author format in one document??</p>",
+    "PostedDate": "2010-05-15T02:19:58.127-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "443214",
+    "ThreadId": "212726",
+    "Html": "<p>What do you mean by 2 versions?&nbsp;The only difference I can see is the abbreviation of names between 1 to 3 and 4 to 5.</p>\r\n<p>Like I said in my original reply, the style doesn't abbreviate the names as I have no&nbsp;conclusive information that they should be. The style just takes the different parts of the names as you inputted them and outputs them in the correct order (first middle last). If you input some of them abbreviated and some not, then that is your choice.</p>\r\n<p>If you wanted them all abbreviated, you could change the formatting&nbsp;to always apply abbreviation. For more information on name formatting in general and a whole bunch of examples, see <a href=\"http://bibword.codeplex.com/wikipage?title=BibWord Format Strings#ex2\">http://bibword.codeplex.com/wikipage?title=BibWord%20Format%20Strings#ex2</a></p>",
+    "PostedDate": "2010-05-15T04:13:01.187-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "443232",
+    "ThreadId": "212726",
+    "Html": "<p>Sorry, I think you have misunderstanding of my question. I was filled properly the form of &quot;Insert Citation&quot; on Word 2007. Maybe the problem is, number [1]-[3] I just inputted it after I replace the older BibWord while number [4]-[5] is the older BibWord. Now, I need to delete all the data and refilled it again.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-05-15T05:46:13.757-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "443238",
+    "ThreadId": "212726",
+    "Html": "<p>You're right, I still don't grasp what the problem is.</p>\r\n<p>If you update the bibliography field (or switch temporarely to another style like APA or Chicago) the entire field gets updated. That is, all entries in your bibliography will be updated according to the active stylesheet. So the behaviour for all should be the same.</p>",
+    "PostedDate": "2010-05-15T06:53:36.607-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "443242",
+    "ThreadId": "212726",
+    "Html": "<p>Yes, I have tried everything. Before this I was using Office 2010 then when I switched back to Office 2007, it is still same. But, it's okay right now, I was clean and retyped all the information back. Thannk you for your help. <span id=\"result_box\"><span style=\"background-color:#ffffff\">Maybe it was an isolated case. Thank you again.</span></span><span id=\"result_box\"><span style=\"background-color:#ffffff\">&nbsp;</span></span></p>\r\n<p>&nbsp;</p>\r\n<div id=\"_mcePaste\" style=\"left:-10000px;top:0px;width:1px;height:1px;overflow:hidden\">But, it's okay right now, I was clean and retyped all the information back. Thank you for your help. Maybe it was an isolated case. Thank you again.<br><br><br></div>",
+    "PostedDate": "2010-05-15T07:01:36.223-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

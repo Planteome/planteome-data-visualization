@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "284725",
+    "ThreadId": "82863",
+    "Html": "<p>This is perhaps a somewhat off topic for BibWord, but I am generally missing a style for including references to archive holding either private or official as you find in the various national archives. I suppose some of you might be historians or persons, like me, working with archive material. I have made a brief search on the Web but so far I have not found any bibliographic styles for archive holdings. At the moment I have tried to adapt the Report style to fit my needs but it is would be so much nicer if there was a dedicated archive style. Do any of you have any experiences with this and perhaps can point me to some style I can use as a template.</p>\r\n<p>Frode</p>",
+    "PostedDate": "2010-02-02T05:58:30.11-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "284907",
+    "ThreadId": "82863",
+    "Html": "<p>You are using the terms 'report' and 'style' together, so I'm a bit confused? Are you talking about a full style like IEEE or APA? Or are you talking about a source type like book and journal article?</p>\r\n<p>In the first case, you could use BibWord to create such a style.</p>\r\n<p>In the latter case, you could extend bibform.xml (commonly located at C:\\Program Files\\Microsoft Office\\Office12\\1033\\Bibliography) to include your own type with its own fields. Combined with a style which also knows how to handle that type, you can create anything you want. Note that the custom xml is no longer valid if Word would do a schema validation test, but since that doesn't happen, and the bibliography/citations are only text, this doesn't really matter. Some info on bibform.xml can be found at <a href=\"http://bibword.codeplex.com/Thread/View.aspx?ThreadId=76871\">http://bibword.codeplex.com/Thread/View.aspx?ThreadId=76871</a>&nbsp;and <a href=\"http://bibword.codeplex.com/Thread/View.aspx?ThreadId=75287\">http://bibword.codeplex.com/Thread/View.aspx?ThreadId=75287</a>&nbsp;.</p>\r\n<p>Yves</p>",
+    "PostedDate": "2010-02-02T11:51:49.393-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "285255",
+    "ThreadId": "82863",
+    "Html": "<p>Yves, many thanks for the reply. Sorry for the mixed metaphors; what I was looking for was a style that would contain a source type for archive holdings that I could use as a kind of template for extending the bibform.xml as you suggests. My style is mainly based on the recommendations found in the Chicago Manual of Style but they are somewhat vague on archive style recommendations. I have found one document on the Web which gives a few hints and which is an adaptation of the APA style: http://www.tandf.co.uk/journals/authors/style/reference/tf_A.pdf</p>\r\n<p>I probably will start from there. Again many thanks for the encouragement and help.</p>\r\n<p>Frode</p>",
+    "PostedDate": "2010-02-03T05:06:11.2-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

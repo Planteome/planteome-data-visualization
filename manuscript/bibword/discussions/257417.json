@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "611894",
+    "ThreadId": "257417",
+    "Html": "\r\n<p>When I identify an author as &quot;corporate&quot; (which means he is the book editor?), the citation comes up with his first and last name, when he is a simple author, only with the last name. Any ideas what I could do to have corporate author cited with last name\r\n only? Thanks!</p>\r\n",
+    "PostedDate": "2011-05-12T11:48:17.67-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "612180",
+    "ThreadId": "257417",
+    "Html": "<blockquote>which means he is the book editor?</blockquote>\r\n<p>No it doesn't. Corporate is used when the author is not a physical person but an organization. There is no distinction between first and last name as there are none. Of course each style can choose the way they format a corporate contributor, but in reality that will come down to just display the entire value for the field.</p>\r\n<p>If what you want is the editor, then you should be using the editor field which is available separately. Depending on the style, the editor could be corporation as well.</p>",
+    "PostedDate": "2011-05-12T23:29:04.557-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "612320",
+    "ThreadId": "257417",
+    "Html": "<p>thanks yves, I had misunderstood this. everything is working fine now...</p>",
+    "PostedDate": "2011-05-13T04:42:43.623-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

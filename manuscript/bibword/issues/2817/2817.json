@@ -1,0 +1,65 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Fixed in BibWord v.1.9. Styles suffering from this bug will be updated in the next few days.",
+    "ClosedDate": "2008-12-08T13:26:52.697-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Yves this is just to let you know that there is a bug in the abbreviate-name function. The code that deals with inserting dashes (when keepDashes = 1) and spaces (when keepSpaces = 1) does not work. The reason is that you've missed the \"$\" when you test the two parameters (lines 1803 and 1820 are\n<xsl:if test=\"keepDashes = 1\"> and <xsl:if test=\"keepSpaces = 1\"> instead of <xsl:if test=\"$keepDashes = 1\"> and <xsl:if test=\"$keepSpaces = 1\">). I know that the issue occurs in HarvardAnglia.XLS and the main template. I haven't checked the rest.",
+    "LastUpdatedDate": "2013-05-16T05:29:24.31-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Medium",
+      "Severity": 100,
+      "Id": 2
+    },
+    "ProjectName": "bibword",
+    "ReportedDate": "2008-12-07T09:37:44.477-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Abbreviate-name bug",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 2817
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Fixed in BibWord v.1.9. The styles will be updated in the next few days.",
+      "PostedDate": "2008-12-08T13:25:56.87-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-12-08T13:25:59.213-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-12-08T13:26:52.697-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:20:27.61-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:29:24.31-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

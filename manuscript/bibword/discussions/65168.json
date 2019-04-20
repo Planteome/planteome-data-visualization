@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "221938",
+    "ThreadId": "65168",
+    "Html": "<p>Has anybody ever constructed a bibliography style template which does something like the following (this is one of the main styles used in cultural anthropology):</p>\r\n<p>&nbsp;</p>\r\n<p>Adam, Heribert, Frederik van Zyl Slabbert, and Kogila Moodley<br>&nbsp;&nbsp;&nbsp;&nbsp; 1998 Comrades in Business: Post-Liberation Politics in South Africa. Cape Town: Tafelberg.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Andrews, Edmund L.<br>&nbsp;&nbsp;&nbsp;&nbsp; 1997 Behind the Scams: Desperate People, Easily Duped. New York Times, January 29:3.</p>\r\n<p>Appadurai, Arjun<br>&nbsp;&nbsp;&nbsp;&nbsp; 1990 Disjuncture and Difference in the Global Cultural Economy. Public Culture 2:l-24.<br>&nbsp;&nbsp;&nbsp;&nbsp; 1995 Identity, Uncertainty and Secret Agency: Ethnic Violence in the Era of Globalization. Public<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lecture, Chicago Humanities Institute, November 28.<br>&nbsp;&nbsp;&nbsp;&nbsp; 1996 Modernity at Large: Cultural Dimensions of Globalization. Minneapolis: University of Minnesota<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Press.</p>",
+    "PostedDate": "2009-08-11T02:51:57.84-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "222123",
+    "ThreadId": "65168",
+    "Html": "<p>That's not doable with the current implementation of BibWord. You could design such a style from scratch though.</p>\r\n<p>One thing to keep in mind is that Word currently uses XSLT 1.0. Hence, useful XSLT 2.0 features like for-each-group are not available by default. Of course there are always workarounds, but they might be tricky to implement if you don't have an above average knowledge of XSLT.</p>",
+    "PostedDate": "2009-08-11T11:11:59.19-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "222169",
+    "ThreadId": "65168",
+    "Html": "<p><span style=\"color:#000000\"><span style=\"font-family:&quot;Segoe UI&quot;,&quot;Microsoft Sans Serif&quot;,Arial,Geneva,Sans-Serif\">Thanks, I rather wait then till a future version of Word makes it possible more easily...<br></span></span></p>",
+    "PostedDate": "2009-08-11T12:17:02.777-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

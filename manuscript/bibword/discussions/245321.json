@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "563481",
+    "ThreadId": "245321",
+    "Html": "\r\n<p>Hi all</p>\r\n<p>What is the <strong>name </strong>of such Citation and bibliography style??</p>\r\n<p>Within text: <strong>[THOM96]</strong></p>\r\n<p>In bibliography: <strong>[THOM96]</strong> <strong>Thom</strong> R.; Hufgard, A.: Continuous System Engineering. Vogel, W&uuml;rzburg 19<strong>96</strong> .</p>\r\n<p>Example Magazine Article:<br>\r\n<strong>[KAIP02]</strong> <strong>Kaip</strong> ia, R. et al.: VMI: What are you losing if you let your customer place orders? In: Pro-duction Planning &amp; Control 13 (20<strong>02</strong> ) 1, p. 17-25.</p>\r\n<p>I entered all references in database, and<strong> just need &quot;.xsl&quot;</strong> of&nbsp; above style.</p>\r\n<p>Regards,</p>\r\n<p>A.S</p>\r\n",
+    "PostedDate": "2011-02-09T11:27:18.89-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "563764",
+    "ThreadId": "245321",
+    "Html": "\r\n<p>I'm afraid you won't get more detailed answers here than you got on the Microsoft answer forum.</p>\r\n<p>The style is a tag based style.</p>\r\n<p>If you would use BibWord and simplified your work with providing the tag yourself, you could generate the following format strings for journal articles:</p>\r\n<p>First column: {[%Tag%]}</p>\r\n<p>Second column: {%Author:<strong>1</strong>%}{: %Title%.}{ In: %JournalName%}{ %Volume%}{ (%Year%)}{ %Issue%}{, %Pages:p. :p. %}.</p>\r\n<p>Sorting key: {%Tag%}</p>\r\n<p>Of course, you would have to specify the meaning of the bold <strong>1</strong> on how you would format authors. More info on that subject can be found at\r\n<a href=\"http://bibword.codeplex.com/wikipage?title=BibWord%20Format%20Contributors&referringTitle=Documentation\">\r\nhttp://bibword.codeplex.com/wikipage?title=BibWord%20Format%20Contributors&amp;referringTitle=Documentation</a>&nbsp;and\r\n<a href=\"http://bibword.codeplex.com/wikipage?title=BibWord%20Format%20Strings&referringTitle=Documentation#ex2\">\r\nhttp://bibword.codeplex.com/wikipage?title=BibWord%20Format%20Strings&amp;referringTitle=Documentation#ex2</a></p>\r\n",
+    "PostedDate": "2011-02-09T23:36:06.877-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

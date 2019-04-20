@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "618457",
+    "ThreadId": "259038",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I tried adding a bibliography to my document but it just displays article titles and the journal and page numbers (alphabetically) but not the authors...</p>\r\n<p>It worked fine two days ago, but as I have to hand in my thesis this weekend I'm a bit under pressure.</p>\r\n<p>Sources in the document are also highlighted in grey, this was not previously the case.</p>\r\n<p>Could somebody please help?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks so much..</p>\r\n<p>&nbsp;</p>\r\n<p>Jen</p>\r\n",
+    "PostedDate": "2011-05-25T22:55:14.103-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "618498",
+    "ThreadId": "259038",
+    "Html": "<p>The grey highlighting is probably just field code highlighting. Under Word Options on the 'Advanced' tab, in the 'Show document content' there is an option for field shading.</p>\r\n<p>The authors disappearing sounds strange though. What style are you using? Does it happen for all sources in your bibliography? Have you tried editing the XSL for some reason?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2011-05-26T00:27:19.307-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "618510",
+    "ThreadId": "259038",
+    "Html": "<p>Okay the field shading is now resolved, thanks for that.</p>\r\n<p>But the bibliography still only displays titles.. I'm using the APA style and it happens to all the sources. As I don't now what XSL is (sorry) so I doubt whether I edited it somehow.</p>\r\n<p>Should tell you its Word for mac 2010, although I don't know whether this is important or not.</p>\r\n<p>Thank you!</p>\r\n<p>&nbsp;</p>\r\n<p>Jen</p>",
+    "PostedDate": "2011-05-26T00:46:25.763-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "618724",
+    "ThreadId": "259038",
+    "Html": "<p>There is no Word for Mac 2010. It's either Word 2008 or 2011 for Mac, or 2010 for Windows.</p>\r\n<p>As APA.xsl is one of the styles which come with Word out of the box and I don't have a Mac to experiment with, I'm afraid I can't offer any help.</p>",
+    "PostedDate": "2011-05-26T07:29:39.933-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "618734",
+    "ThreadId": "259038",
+    "Html": "<p>Sorry I meant 2011...</p>\r\n<p>&nbsp;</p>\r\n<p>I</p>",
+    "PostedDate": "2011-05-26T07:47:41.733-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

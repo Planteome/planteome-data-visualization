@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "224087",
+    "ThreadId": "65877",
+    "Html": "<p>I'm using the CSE Citation Sequence reference style within a paper i'm working on. It works beautifully, accept for inserting the reference list. For references greater than 9, the reference numbers are displayed on multiple lines. Example: reference 12 would be like this:</p>\r\n<table border=0 cellpadding=0 width=\"100%\">\r\n<tbody>\r\n<tr>\r\n<td valign=top>\r\n<p>1<br>2</p>\r\n</td>\r\n<td valign=top>\r\n<p>Cremonese P, Vanni V.   UDDI4m: UDDI in Mobile Ad Hoc Network. In: IEEE Second Annual Conference on   Wireless On-demand Network Systems and Services; 2005.</p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<p>I'm thinking that simply adjusting the width of the number column would solve this. Of course the work around is to reduce the font size for the section. I'm using Calibri size 12.</p>\r\n<p>Would anyone happen to know what to adjust within the file?</p>",
+    "PostedDate": "2009-08-16T15:50:37.627-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "224145",
+    "ThreadId": "65877",
+    "Html": "<p>In Word, put your mouse on the column border (between the 1 and the C) and drag it to the right until the column is wide enough to put everything on one line.</p>\r\n<p>The next version of BibWord will contain a more permanent solution.</p>",
+    "PostedDate": "2009-08-16T23:07:43.72-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "224213",
+    "ThreadId": "65877",
+    "Html": "<p>awesome thanks!</p>",
+    "PostedDate": "2009-08-17T03:55:13.827-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "992838",
+    "ThreadId": "431052",
+    "Html": "\r\n<p>Hi all,</p>\r\n<p>First of all, thank you Yves.</p>\r\n<p>I have almost customized my own bibliographic style. For that, I used BibType to create my own forms, and modified the Harvard-Anglia bibliographic style to give the appearance that I wanted.</p>\r\n<p>However, I would like to make the formatting of &quot;Volume&quot;/&quot;Number&quot;/&quot;Issue&quot; easier and automatic. Some journals use the &quot;Volume&quot;/&quot;Number&quot;, others the &quot;Volume&quot;/&quot;Issue&quot; and&nbsp; others the\r\n &quot;Number&quot;/&quot;Issue&quot;. Since word do not recognized the &quot;Number&quot; variable, I have used the variable &quot;NumberVolumes&quot;, which I only need for this propose.</p>\r\n<p>What I would like to do is something like this:</p>\r\n<p>{%Volume:xv%|%NumberVolume:xn%|%Issue:xs%{, %NumberVolume:xn%|%Issue:xs%{, %Issue:xs%}}{, %Pages:p. :pp. :a2%}}</p>\r\n<p>where xv, xn and xs are options to include, respectively, &quot;vol. &quot;, &quot;no. &quot; and &quot;iss. &quot; before the corresponding field, with the correct capitalization on the first of them (uppercase if preceded by a point, or lowercase if preceded\r\n by a comma).</p>\r\n<p>My questions are: Is the scheme above already implemented? If so, which parameters are to be used? If not, can it be implemented? If so, can someone give me the right directions to implement it?</p>\r\n<p>&nbsp;</p>\r\n<p>Regards,</p>\r\n<p>Miguel</p>\r\n",
+    "PostedDate": "2013-01-27T18:01:37.913-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "993002",
+    "ThreadId": "431052",
+    "Html": "\r\n<p>You would have to code those options yourself, but can't you use the following:</p>\r\n<p style=\"padding-left:30px\">{vol. %Volume%{, no. %NumberVolume%}{, iss. %Issue%}}{no. %NumberVolume%{, iss. %Issue%}}{iss. %Issue%}</p>\r\n<p>That wouldn't solve the capitalisztion issue, but neither would adding those options to the formatting as you don't have knowledge of what was before. I think the capitalization issue could only be solved by the cleanup routine. It already removes things\r\n like ',.' so I'm guessing you could extend it to introduce capitalization.</p>\r\n",
+    "PostedDate": "2013-01-28T03:44:13.81-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "993046",
+    "ThreadId": "431052",
+    "Html": "\r\n<p>Thank you for your prompt answer.</p>\r\n<p>For now I have solved the problem as you suggested, but I will try to to implement the capitalization as you suggested.</p>\r\n<p>Regards,</p>\r\n<p>Miguel</p>\r\n",
+    "PostedDate": "2013-01-28T06:10:13.097-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

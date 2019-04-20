@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "450595",
+    "ThreadId": "214725",
+    "Html": "<p>hi!<br>I found an&nbsp;error in the APA- doi style, when I put in a book edition number, the brackets don't appear in the bibliography around it...</p>\r\n<p>eg: author 62 ed.,</p>\r\n<p>should be: author (62 ed.),</p>\r\n<p>any ideas how to fix this???</p>\r\n<p>Thanks!</p>",
+    "PostedDate": "2010-06-02T06:52:45.55-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "450608",
+    "ThreadId": "214725",
+    "Html": "<p>The APA - DOI style is a proof -of-concept not a bug fix version of the style that came with Word 2007.</p>\r\n<p>This means, it is an exact copy of the APA style that comes with Word 2007 which illustrates how a DOI field can be added. So if there are no brackets around the edition number, then it is because there are no bracket numbers around the edition number in the style that came with Word 2007.</p>",
+    "PostedDate": "2010-06-02T07:13:53.563-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "450624",
+    "ThreadId": "214725",
+    "Html": "<p>it mustn't be exact, tried citing the EXACT same thing with original APA style again just now to check, it has brackets, i use the version here, it no longer has brackets, i change it back to original version of APA referencing, it has brackets&nbsp;around the edition again,&nbsp;it's the only variable.</p>",
+    "PostedDate": "2010-06-02T07:40:22.527-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "450768",
+    "ThreadId": "214725",
+    "Html": "<p>My version of the Word 2007 APA style doesn't have the brackets. My version of the Word 2010 APA style has them. Are you using Word 2010 by any chance?</p>",
+    "PostedDate": "2010-06-02T11:56:24.687-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "450910",
+    "ThreadId": "214725",
+    "Html": "<p>haven't managed to get a copy of 2010 office, so stuck with 2007 word.</p>\r\n<p>microsoft:</p>\r\n<p><span style=\"font-size:11pt\"><span style=\"font-size:11pt\" lang=EN-US>Knight, M. (2010). <em>Individual Determinants of Health</em> (3rd ed.). Melbourne</span></span></p>\r\n<p><span style=\"font-size:11pt\"><span style=\"font-size:11pt\" lang=EN-US>I change the bibform.xml to your version, nothing changes, but add&nbsp;your&nbsp;APA-DOI style sheet&nbsp;and this becomes:</span></span></p>\r\n<p><span style=\"font-size:11pt\"><span style=\"font-size:11pt\" lang=EN-US><span style=\"font-size:11pt\" lang=EN-US>Knight, M. (2010). <em>Individual Determinants of Health</em> 3rd ed.. Melbourne.</span></span></span></p>\r\n<p><span style=\"font-size:11pt\"><span style=\"font-size:11pt\" lang=EN-US><span style=\"font-size:11pt\" lang=EN-US>I compared your version of APA-DOI style to my original microsoft 2007 word&nbsp;version. Found discrepencies around the edition no., when i added these lines from microsoft version to yours, it fixed the brackets. it's line:</span></span></span></p>\r\n<p><span style=\"font-size:11pt\"><span style=\"font-size:11pt\" lang=EN-US><span style=\"font-size:11pt\" lang=EN-US>line 4697 is missing from yours, you'll find it in line 4684 in the original word version.&nbsp;&nbsp;&lt;xsl:call-template name=&quot;templ_prop_APA_GeneralOpen&quot;/&gt;</span></span></span></p>\r\n<p><span style=\"font-size:11pt\"><span style=\"font-size:11pt\" lang=EN-US><span style=\"font-size:11pt\" lang=EN-US>and similar line which says generalClose is also missing but is present in original document.</span></span></span></p>\r\n<p><span style=\"font-size:11pt\"><span style=\"font-size:11pt\" lang=EN-US>&nbsp;</span></span></p>",
+    "PostedDate": "2010-06-02T17:21:13.647-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "451005",
+    "ThreadId": "214725",
+    "Html": "<p>I'm not sure why I don't have them, but if you replace them, you should be alright.</p>\r\n<p>I'll try getting another copy from another machine and see if I somehow changed something in the past and forgot about. If so, I'll update the APA-DOI style.</p>",
+    "PostedDate": "2010-06-02T23:11:05.72-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "451007",
+    "ThreadId": "214725",
+    "Html": "<p>already have, works great. if u need, i can send u a copy of my microsoft original APA style, just let me know.</p>",
+    "PostedDate": "2010-06-02T23:15:28.4-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

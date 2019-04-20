@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "423696",
+    "ThreadId": "207321",
+    "Html": "<p>Hi yves, I have finished (theoretically) my style Harvard - Bham, but to test it comprehensively I need to test the parts that require these two XML files. I tried searching for them when I first started using bibword, way before I decided to create my own style but couldnt find them so just used limited functionality. It says at numerous places on the site that its with the styles, but I just cant find it!</p>\r\n<p>&nbsp;</p>\r\n<p>By the way, if you want to use my University of Birmingham style when I have finished feel free. I will let you know.</p>\r\n<p>&nbsp;</p>\r\n<p>PS. I have tried downloading BibType.exe, but when I run it I cant see what it does, or any change to office12. It doesnt even ask me permission to change this folder (which it needs) I have also tried extracting this file with 7Zip to see if the xml files are inside but I just get jumbled garbage!</p>",
+    "PostedDate": "2010-03-25T11:05:44.697-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "423807",
+    "ThreadId": "207321",
+    "Html": "<p>The file <em>bibform.xml</em>&nbsp;contains information on how Word should display the &quot;Edit Source&quot; dialog. The thing is, the open xml specification defines a Source as a flat element. As a result, you can assign any field to any source if you wanted. So even crazy combinations as the theater where your journal article was first broadcasted can be made. What the creators of Microsoft Word did was make a subselection of what fields can be assigned to what source. And the result of their selection is what is stored in <em>bibform.xml</em>. The file&nbsp;is located on your system&nbsp;in the following directory:</p>\r\n<p style=\"padding-left:30px\">&lt;winword.exe directory&gt;\\&lt;LCID&gt;\\Bibliography</p>\r\n<p>where LCID is a 4 digit code identifying your language. Assuming a default installation of the United States - English (1033) version, this is</p>\r\n<p style=\"padding-left:30px\">C:\\Program Files\\Microsoft Office\\Office12\\1033\\Bibliography</p>\r\n<p>BibType takes things a step further in that it makes bibform.xml language independent. Unless you have the need to spread your <em>bibform.xml</em> in multiple languages, you better leave this alone.</p>\r\n<p>It is&nbsp;great that you can fully extend your <em>bibform.xml</em> to your liking. However, what if someone else wants to use your style? You can send them your <em>bibform.xml</em>, but what if their version of Word is in a different language? Then their copy of <em>bibform.xml</em> will be located in different subdirectory as it has a different LCID. Moreover, the description of the fields and the examples will be in their language. They could use your <em>bibform.xml</em> but then their UI would suddenly be in two languages. Not really user friendly.</p>\r\n<p>The above problem&nbsp;is why I made BibType. BibType is a <strong>command line</strong> utility that&nbsp;takes 2 input files:</p>\r\n<ul>\r\n<li>A&nbsp;<em>types.xml</em> which defines sets of fields assigned to specific sources. Basically, it is a slimmed down version of bibform.xml where all language specific information is stripped out.</li>\r\n<li>An instance of <em>bibform.xml</em> in a specific language.</li>\r\n</ul>\r\n<p>Based on those two files, it generates a new <em>bibform.xml</em> file which is a localized version. That is, it creates a version where all the strings will be in the language of the original <em>bibform.xml</em> it got as input. It just generates a file. You are responsible for where you put that file.</p>\r\n<p>I used to include a <em>types.xml</em> with the collection of all styles, but as there is no real request for extending the <em>bibform.xml</em> functionalty in an internationalised way I removed it. The&nbsp;version that was&nbsp;included is the same one that is offered as an example file on the download page of BibType.</p>\r\n<p><span style=\"color:#ff0000\">My advise is, only extend <em>bibform.xml</em> if you really have to, and even then, only do it in your own language. BibType isn't a bad tool, but to fully use its potential, you would have to wrap it in an installer which automatically generates the new <em>bibform.xml</em> and copies it to the appropriate destination. For most common&nbsp;Word users, the concept of the tool is too complicated to fully grasp. It is not something they should have to be bothered with.</span></p>",
+    "PostedDate": "2010-03-25T15:32:31.473-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "423962",
+    "ThreadId": "207321",
+    "Html": "<p>Ah, I understand. last night I found bibform and had a play with changing the examples! I dont really have the need to change bibform, I have never referenced anything that doesnt exist in word so I will take your advise and leave it alone.</p>\r\n<p>&nbsp;</p>\r\n<p>Thank you.</p>",
+    "PostedDate": "2010-03-26T01:16:03.537-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

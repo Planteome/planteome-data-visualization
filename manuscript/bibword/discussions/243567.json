@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "556388",
+    "ThreadId": "243567",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I have a problem with vancouver style in my word 2010. When I add my source list (after I have add the source information of the article in a timemagazine) the volume and issue information doesnt show up.</p>\r\n<p><span style=\"font-size:12pt\">&quot;Name. Title. Name of magazine. 2009: p. 40-45&quot; </span>\r\n</p>\r\n<p><br>\r\nWhy doesn't the volume and issue show up as vancouver style?</p>\r\n",
+    "PostedDate": "2011-01-27T09:54:13.477-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "557272",
+    "ThreadId": "243567",
+    "Html": "\r\n<p>Article in periodicals don't list volume or issue, only articles in journals do.</p>\r\n<p>Article in a periodical: Author. Title. PeriodicalTitle. Year Month Day: Pages</p>\r\n<p>Article in a journal: Author. Title. JournalName. Year Month Day; Volume(Issue): Pages</p>\r\n",
+    "PostedDate": "2011-01-29T03:45:15.447-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "841812",
+    "ThreadId": "243567",
+    "Html": "<blockquote style=\"padding-bottom: 0px; font-style: italic; margin: 0.25em 1em 0px; padding-left: 0.25em; padding-right: 0.25em; padding-top: 0px; border: #ccc 0.1em solid;\"><strong>yves wrote:</strong><br />\r\n<p>Article in periodicals don't list volume or issue, only articles in journals do.</p>\r\n<p>Article in a periodical: Author. Title. PeriodicalTitle. Year Month Day: Pages</p>\r\n<p>Article in a journal: Author. Title. JournalName. Year Month Day; Volume(Issue): Pages</p>\r\n</blockquote>\r\n<p><br />﻿﻿Hi Yves,</p>\r\n<p>First, please allow me to commend your work with styles references for Word. I would like to ask your suggestion about Voncouver style in Word 2007. I noticed the following regarding journal citation:</p>\r\n<p>﻿﻿﻿it only lists any citation as it was an Article in a Periodical instead of listing it as an Article from a Journal.</p>\r\n<p>I checked the script Vancouver.xsl to see if it was a problem when I selected the source list and it seems that Journal script is orderered in the script as a Periodical and Periodical script is ordered as a Journal. Please correct me if I have to do something different.</p>\r\n<p>In addition, could you please advise me how to delete ﻿the letter p. when reffering to pages? The reason for my request is that based on Vancouver examples published or used in papers, they show Author. Title. JournalName, Year, Month; Volume(Issue):45-67, i.e.,&nbsp;without letter p. before the numbers</p>\r\n<p>&nbsp;</p>\r\n<p>Thank you in advance for your help with this</p>",
+    "PostedDate": "2012-05-28T14:11:40.087-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

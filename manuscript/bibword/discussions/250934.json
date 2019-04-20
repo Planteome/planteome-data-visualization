@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "585366",
+    "ThreadId": "250934",
+    "Html": "\r\n<p>Hello!</p>\r\n<p>Using Word's bibliography I noticed that Word creates two lists of sources. One &quot;current list&quot; of used sources is saved directly to the file and the second (including all added sources) is saved in the\r\n<em>AppData\\Roaming\\Microsoft\\Bibliography\\Sources.xml<br>\r\n</em>I am wondering if this is a good place for storing this large list of citations? I mean I don't mind storing the file in this location. I just wonder whether the file is auto-loaded every time I open Word (even an empty document) so that it may slow down\r\n the editor?</p>\r\n<p>Regards,<br>\r\nProzac</p>\r\n",
+    "PostedDate": "2011-03-23T16:15:54.897-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "586021",
+    "ThreadId": "250934",
+    "Html": "<p>Bibliography stuff only gets loaded on the first access of the tool. As long as you don't use the bibliography tools, it shouldn't influence Word's performance.</p>\r\n<p>This can be seen if you have for example a lot of styles installed. The first time you access the dropdown, Word has to load the styles one by one to populate the list.</p>",
+    "PostedDate": "2011-03-24T13:55:09.313-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "586079",
+    "ThreadId": "250934",
+    "Html": "<p>I see. Thanks a lot&nbsp;yves :-)</p>",
+    "PostedDate": "2011-03-24T15:21:56.83-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

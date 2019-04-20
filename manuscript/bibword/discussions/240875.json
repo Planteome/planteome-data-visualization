@@ -1,0 +1,90 @@
+[
+  {
+    "Id": "545514",
+    "ThreadId": "240875",
+    "Html": "\r\n<p>Hey guys,</p>\r\n<p>I've got the problem, that when I'm using the IEEE - Reference Order style in my Word 2010, there is no possibility that the things form the field function, e.g. &quot; CITATION Zdz08 \\p 12 \\l 1031 \\f &quot;vgl. &quot; &quot;, are shown.</p>\r\n<p>Normally, with other styles, there must be a reference looking like this: [vgl. 1 S. 12]. What's the reason for this?</p>\r\n<p>The greatest thing would be, if anyone could tell me, how to format the style, that a reference is looking like this. [vgl. 1, S. 12]</p>\r\n<p>&nbsp;</p>\r\n<p>I hope you can help me guys :)</p>\r\n",
+    "PostedDate": "2011-01-07T09:52:14.687-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "545553",
+    "ThreadId": "240875",
+    "Html": "\r\n<p>You are seeing the actual field code rather than the result of it. Switch the view.</p>\r\n<p><a href=\"http://office.microsoft.com/en-us/word-help/field-codes-in-word-HA010100426.aspx\">http://office.microsoft.com/en-us/word-help/field-codes-in-word-HA010100426.aspx</a></p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2011-01-07T10:52:02.87-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "545560",
+    "ThreadId": "240875",
+    "Html": "\r\n<p>That's not the problem!</p>\r\n<p>With &quot;CITATION Zdz08 \\p 12 \\l 1031 \\f &quot;vgl. &quot; &quot;&quot; in the field function, I'll see &quot;[1]&quot; in the document using the IEEE reference style.</p>\r\n<p>Using the ISO690 numerical style I'll see this (with the same code within the function): (vgl. 1 S. 12)</p>\r\n<p>I want to modify the IEEE style in this way to get something looking like this: [vgl. 1, S. 12]</p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size:11pt\">so what's the problem?<br>\r\n</span></p>\r\n",
+    "PostedDate": "2011-01-07T11:01:07.723-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "545565",
+    "ThreadId": "240875",
+    "Html": "\r\n<p>None.</p>\r\n<p>IEEE does not require you to set anything in front of the number neither does it require you to set a page after it. Hence that is not included in that particular style. You could easily adapt it to fit your needs, just check the manual for the variables\r\n CitationPrefix and CitationPages.</p>\r\n",
+    "PostedDate": "2011-01-07T11:05:57.36-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "545568",
+    "ThreadId": "240875",
+    "Html": "\r\n<p>But sometimes I want to write something in front of the number!</p>\r\n<p>My question is, why it is not shwon with this style? With other styles it works fine!</p>\r\n",
+    "PostedDate": "2011-01-07T11:09:55.663-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "545570",
+    "ThreadId": "240875",
+    "Html": "\r\n<p>Because that style doesn't implement it. IEEE has no need for anything in front of it, so nothing is there.</p>\r\n<p>If you want it, just add the CitationPrefix and CitationPages variables to the format strings and you should be good to go. You can also get them from another style like Nature which does support them.</p>\r\n",
+    "PostedDate": "2011-01-07T11:13:00.987-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "545574",
+    "ThreadId": "240875",
+    "Html": "\r\n<p>Ok, I understand.</p>\r\n<p>But I'm not familiar with XML. So maybe you could give me the code segment for this?</p>\r\n<p>Thx</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2011-01-07T11:16:34.3-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "545597",
+    "ThreadId": "240875",
+    "Html": "\r\n<p>I got it :)!! Now it looks like this: <span style=\"font-size:11pt\">[vgl. 1, p. 12]</span></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size:11pt\">But how could the p. for Page converted to S. (german -&gt; Seite)?</span></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size:11pt\">thx<br>\r\n</span></p>\r\n",
+    "PostedDate": "2011-01-07T11:36:56.12-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "545881",
+    "ThreadId": "240875",
+    "Html": "\r\n<p>BibWord styles are language independent. If you always want an S. with your pages, you can specify that in the format string.</p>\r\n<p style=\"padding-left:30px\">%CitationPages:S. :S. :%</p>\r\n<p>This will display 'S. ' in front of both single pages and page ranges. Actually if you always wanted vgl. in front of your number, you wouldn't have to use the prefix. You could simply write</p>\r\n<p style=\"padding-left:30px\">{vgl. %RefOrder%}</p>\r\n<p>as format string. So in the end, your format string could look like:</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>{%CitationPrefix%}vgl. %RefOrder%{, %CitationPages:S. :S. %}{%CitationSuffix%}<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n",
+    "PostedDate": "2011-01-08T02:31:36.587-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "545890",
+    "ThreadId": "240875",
+    "Html": "\r\n<p>Thank you, now it works great, except one thing: Now when I click on the drop-down menu from a citation, there is no more the option to modify the citation (in german: &quot;Zitat bearbeiten&quot;). What's the reason for this?</p>\r\n<p>&nbsp;</p>\r\n<p>Here is the code-snip you have to replace within the original IEEE reference style xml:</p>\r\n<p></p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">source</span> <span style=\"color:red\">type</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">Placeholder</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">&gt;</span>\r\n        <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>{%CitationPrefix%}%RefOrder%{, vol. %CitationVolume%}{, %CitationPages:p. :pp. %}{%CitationSuffix%}<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>\r\n      <span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">source</span><span style=\"color:blue\">&gt;</span>\r\n      <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">source</span> <span style=\"color:red\">type</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">Book</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">&gt;</span>\r\n        <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>{%CitationPrefix%}%RefOrder%{, vol. %CitationVolume%}{, %CitationPages:p. :pp. %}{%CitationSuffix%}<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>\r\n      <span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">source</span><span style=\"color:blue\">&gt;</span>\r\n      <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">source</span> <span style=\"color:red\">type</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">BookSection</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">&gt;</span>\r\n        <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>{%CitationPrefix%}%RefOrder%{, vol. %CitationVolume%}{, %CitationPages:p. :pp. %}{%CitationSuffix%}<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>\r\n      <span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">source</span><span style=\"color:blue\">&gt;</span>\r\n      <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">source</span> <span style=\"color:red\">type</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">ConferenceProceedings</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">&gt;</span>\r\n        <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>{%CitationPrefix%}%RefOrder%{, vol. %CitationVolume%}{, %CitationPages:p. :pp. %}{%CitationSuffix%}<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>\r\n      <span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">source</span><span style=\"color:blue\">&gt;</span>\r\n      <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">source</span> <span style=\"color:red\">type</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">Film</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">&gt;</span>\r\n        <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>{%CitationPrefix%}%RefOrder%{, vol. %CitationVolume%}{, %CitationPages:p. :pp. %}{%CitationSuffix%}<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>\r\n      <span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">source</span><span style=\"color:blue\">&gt;</span>\r\n      <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">source</span> <span style=\"color:red\">type</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">InternetSite</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">&gt;</span>\r\n        <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>{%CitationPrefix%}%RefOrder%{, vol. %CitationVolume%}{, %CitationPages:p. :pp. %}{%CitationSuffix%}<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>\r\n      <span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">source</span><span style=\"color:blue\">&gt;</span>\r\n      <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">source</span> <span style=\"color:red\">type</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">JournalArticle</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">&gt;</span>\r\n        <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>{%CitationPrefix%}%RefOrder%{, vol. %CitationVolume%}{, %CitationPages:p. :pp. %}{%CitationSuffix%}<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>\r\n      <span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">source</span><span style=\"color:blue\">&gt;</span>\r\n      <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">source</span> <span style=\"color:red\">type</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">Misc</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">&gt;</span>\r\n        <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>{%CitationPrefix%}%RefOrder%{, vol. %CitationVolume%}{, %CitationPages:p. :pp. %}{%CitationSuffix%}<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>\r\n      <span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">source</span><span style=\"color:blue\">&gt;</span>\r\n      <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">source</span> <span style=\"color:red\">type</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">Patent</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">&gt;</span>\r\n        <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>{%CitationPrefix%}%RefOrder%{, vol. %CitationVolume%}{, %CitationPages:p. :pp. %}{%CitationSuffix%}<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>\r\n      <span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">source</span><span style=\"color:blue\">&gt;</span>\r\n      <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">source</span> <span style=\"color:red\">type</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">Report</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">&gt;</span>\r\n        <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>{%CitationPrefix%}%RefOrder%{, vol. %CitationVolume%}{, %CitationPages:p. :pp. %}{%CitationSuffix%}<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>\r\n      <span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">source</span><span style=\"color:blue\">&gt;</span>\r\n      <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">source</span> <span style=\"color:red\">type</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">Thesis</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">&gt;</span>\r\n        <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>{%CitationPrefix%}%RefOrder%{, vol. %CitationVolume%}{, %CitationPages:p. :pp. %}{%CitationSuffix%}<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>\r\n      <span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">source</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p></p>\r\n",
+    "PostedDate": "2011-01-08T03:40:50.643-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "545895",
+    "ThreadId": "240875",
+    "Html": "\r\n<p>It is still available but access to it is partially overwritten by the hyperlinking feature. Place the cursor after the citation and before the closing bracket. Then right click and the option should be available. So e.g.&nbsp;[vgl. 5, S. 12&lt;cursor here&gt;]\r\n and&nbsp;[vgl. 5, S. 12&lt;cursor here&gt;; vgl. 6, S. 13&lt;cursor here&gt;]</p>\r\n<p>Alternatively, if you don't&nbsp;need the hyperlinking feature, just disable it in the code by changing the value from yes to no (&lt;citation_as_link&gt;yes&lt;/citation_as_link&gt;).</p>\r\n",
+    "PostedDate": "2011-01-08T04:09:48.637-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

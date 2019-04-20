@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1010902",
+    "ThreadId": "435509",
+    "Html": "Hello,\r<br />\nFirst; This a great platform for poor Word 2011 Mac users like me.\r<br />\n<br />\nI actually looked for a citation style (IEEE) for my Word Mac 2011 some days ago, and i have to say that your style here once installed, works fine with my Word on Mac. It is easy to install (copy :) and also works with Citation Manager in Word.\r<br />\n<br />\nBut some important questions i have to ask:\r<br />\n<br />\n1.) Is it possible to get IEEE - Style in &quot;German&quot; Language (for 'and' between authors name for    example)?\r<br />\n<br />\n2.) I want to write my thesis at work and also at home. At home we have Word 2010 on Windows and at home as i mentioned i have Word on my Mac. So i want actually write my results at work  (Word 2010 with Windows) and at home (Word 2011 for Mac and your style IEEE included). Do you mean (as expert) that this situation is source for some troubles or is this combination o.k.?\r<br />\n<br />\nI know this not a nice situation for me, but i don't want to purchase Word 2010 (again), in order to be compatible with Word 2010 at my company.\r<br />\n<br />\nI want to thank you for your support and advise or other solutions\r<br />\n<br />\nKind Regards<br />\n",
+    "PostedDate": "2013-03-05T15:09:43.43-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1012020",
+    "ThreadId": "435509",
+    "Html": "<blockquote>\n1.) Is it possible to get IEEE - Style in &quot;German&quot; Language (for 'and' between authors name for    example)?<br />\n</blockquote>\nNo. I specifically choose to only support 1 language per style. However, just open the style in a text editor and go over the first 150 lines or so. You should easily find the few words you need to translate.<br />\n<blockquote>\n2.) I want to write my thesis at work and also at home. At home we have Word 2010 on Windows and at home as i mentioned i have Word on my Mac. So i want actually write my results at work  (Word 2010 with Windows) and at home (Word 2011 for Mac and your style IEEE included). Do you mean (as expert) that this situation is source for some troubles or is this combination o.k.?<br />\n</blockquote>\nThat works. Just keep in mind that your master source list is computer specific. That is, if you would enter a source on one machine and not add it to your document (cited or uncited), you would not see it if you open the document on your other machine. If you add them to your document, they can be used anywhere.<br />\n",
+    "PostedDate": "2013-03-07T13:26:36.257-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1012501",
+    "ThreadId": "435509",
+    "Html": "Hello Yves,\r<br />\n<br />\nThank you very much for your opinion. Useful advices you made for me...<br />\n",
+    "PostedDate": "2013-03-08T11:26:54.093-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

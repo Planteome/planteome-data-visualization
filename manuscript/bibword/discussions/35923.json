@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "119374",
+    "ThreadId": "35923",
+    "Html": "I've put Placeholders in various parts of my thesis.&nbsp; Now I want either to<br>\r\n1&nbsp; populate each of the &nbsp;Placeholders with the contents of&nbsp;a Source (which now appears in the left pane of &quot;Manage Sources&quot;)<br>\r\n&nbsp;&nbsp;&nbsp; OR<br>\r\n2&nbsp; delete a Placeholder&nbsp;(but when I click on the Placeholer the &quot;Delete&quot; button grays out) and replace it with a completed Source (which now appears in the left pane).<br>\r\n<br>\r\nAny help would be really appreciated.<br>\r\n<br>\r\nKim Wyman\r\n",
+    "PostedDate": "2008-09-18T06:41:40-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "119411",
+    "ThreadId": "35923",
+    "Html": "This sounds weird to me. Placeholders should not be in the left pane of &quot;Manage Sources&quot;. The left pane is your 'Master List', that is, all sources you add so far to all your works on this computer. Since placeholders aren't actual sources yet, they aren't added to your list. Anyway, if they are on the left, the delete button should work fine.<br>\r\n<br>\r\nIn case you mean you can't delete the placeholders from the RIGHT pane you are correct. You have to remove them from your work first. As long as the placeholder is displayed in your work, the delete button will be grayed out. So first select the entire placeholder (the entire field actually) in your text and delete it. Then go to 'Manage Sources' and the delete button should be available for the placeholder.<br>\r\n<br>\r\nHope this helps.\r\n",
+    "PostedDate": "2008-09-18T10:55:12.633-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

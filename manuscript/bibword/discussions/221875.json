@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "474344",
+    "ThreadId": "221875",
+    "Html": "<p><span style=\"color:black;font-size:8pt\">Hi Yves, (and other BibWord users),</span></p>\r\n<p><span style=\"color:black;font-size:8pt\">Thanks again for all your help with previous issues on Harvard and MHRA, the BibWord project has been incredibly valuable to me and has saved me hours of referencing work already. I'm now becoming more familiar with the code and am editing .xsl files myself - a minor achievement perhaps, but satisfying nonetheless!</span></p>\r\n<p><span style=\"color:black;font-size:8pt\">I have come across an issue with MHRA (which I have resolved on my own version by editing out some brackets from the code, but you may want to fix this on the version available for download). When a&nbsp;book citation appears in a footnote and a specific page is being referenced, it should (according to the 2008 MHRA Style Guide) appear like the following example (from the guide): </span></p>\r\n<p><span style=\"color:black;font-size:8pt\">Tom McArthur, <em>Worlds of Reference: Lexicography, Learning and Language from the Clay Tablet to the Computer </em>(Cambridge: Cambridge University Press, 1986), p. 59.</span></p>\r\n<p><span style=\"color:black;font-size:8pt\">However, when using the BibWord MHRA Footnote style, if you click the citation and then click 'Edit citation' in Word, and then add a page number, it&nbsp;encloses that page number in brackets, thus:</span></p>\r\n<p><span style=\"color:black;font-size:8pt\">Tom McArthur, <em>Worlds of Reference: Lexicography, Learning and Language from the Clay Tablet to the Computer </em>(Cambridge: Cambridge University Press, 1986), (p. 59).&nbsp;</span></p>\r\n<p><span style=\"color:black;font-size:8pt\">&nbsp;</span></p>\r\n<p><span style=\"color:black;font-size:8pt\">As far as I can gather, the specific page number only needs to be in brackets if you are first giving a range of pages which that page falls within. Again, here's an example from the Style Guide: Carlos Fuentes, <em>Aura</em>, ed. by Peter Standish, Durham Modern Language Series: Hispanic Texts,&nbsp;I (Durham: University of Durham, 1986), pp. 12-16 (p. 14).</span></p>\r\n<p><span style=\"color:black;font-size:8pt\">I don't know if it's feasible to fix the code so that it does this properly, but even if not, it's probably best to remove the sets of brackets from around 'CitationPages' in the code. Let me know if I'm getting this all wrong - maybe there is another way to enter the page number which means it doesn't get bracketed?</span></p>\r\n<p><span style=\"color:black;font-size:8pt\">Best regards,<br>Ben :) </span></p>",
+    "PostedDate": "2010-07-29T09:43:23.723-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "474994",
+    "ThreadId": "221875",
+    "Html": "<p>There seem to be some strange redundant&nbsp;things in the&nbsp;displayment&nbsp;of&nbsp;page information for that style. I will try to fix things when I have some time. You could do it yourself already:</p>\r\n<p>Remove all references to pages or citationpages (ensure you balance the { } when removing) and replace them by:</p>\r\n<p>{, %Pages:p. :pp. :a2%{ (%CitationPages:p. :pp. :a2%)}}{ %CitationPages:p. :pp. :a2%}</p>\r\n<p>In the above formatting, the given citation pages will only be in brackets if you already provided page numbers for the source.</p>",
+    "PostedDate": "2010-07-31T01:55:51.987-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

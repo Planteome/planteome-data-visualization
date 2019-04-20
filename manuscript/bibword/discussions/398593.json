@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "923795",
+    "ThreadId": "398593",
+    "Html": "\r\n<p>Hi there,</p>\r\n<p>It would be handy if our authors could input a short title for each citation in the bibliography, and then have that displayed in the in-body citation. This would help to ensure that our documents are referred to consistently throughout our documentation\r\n suite.</p>\r\n<p>To illustrate, the full title of a document might be&nbsp;<em>The Official Acme Widget Company Handbook for Employees</em>, with the short title being&nbsp;<em>The Employee Handbook</em>, since it's only used internally. It would be desirable if the in-body\r\n citation could call this short title along with a numeric reference, thus:</p>\r\n<p>&quot;... as noted in <em>The Employee Handbook</em> [1], all staff are required to ...&quot;.</p>\r\n<p>Any suggestions that you could offer about this would be greatly appreciated. For what it's worth, we're using the CSE - Citation Sequence style, which in other respects fits our needs very well.</p>\r\n",
+    "PostedDate": "2012-10-08T22:26:00.123-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "924545",
+    "ThreadId": "398593",
+    "Html": "<p>I don't really understand the question. There is a short title type available for most types of sources (Book, book section, article in a periodical, conference proceedings, report, internet site, ...) so why don't you use that one?</p>\r\n<p>All you would have to do is extend the in-text citation format string to include the short title using the 'variable' %ShortTitle%.</p>\r\n<p>So where you now have something like</p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre><span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">format</span><span style=\"color: blue;\">&gt;</span>%RefOrder%<span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">format</span><span style=\"color: blue;\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>you would then use something like</p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre><span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">format</span><span style=\"color: blue;\">&gt;</span>{%ShortTitle% }[%RefOrder%]<span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">format</span><span style=\"color: blue;\">&gt;</span></pre>\r\n</div>\r\n<p>and make the default open and close brackets empty to avoid the entire thing to be surrounded by [ ].</p>",
+    "PostedDate": "2012-10-10T01:27:56.23-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "925011",
+    "ThreadId": "398593",
+    "Html": "<p>Thanks Yves, that's exactly what I needed.</p>",
+    "PostedDate": "2012-10-10T19:30:56.75-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1360129",
+    "ThreadId": "584681",
+    "Html": "Dear Yves<br />\nI have followed your instruction to insert a separator between citations using the following code<br />\n<br />\n  &lt;xsl:if test=&quot;not(/b:Citation/b:LastAuthor)&quot;&gt;<br />\n<pre><code>&lt;!-- Comment: place your citation separator here. --&gt;\n&lt;xsl:text&gt;;&lt;/xsl:text&gt;</code></pre>\n\n&lt;/xsl:if&gt;<br />\n<br />\nBut it is not working - I have tried for Nature as well as for ACM-Citation Sequence, in both the cases the separator is not being printed.<br />\n<br />\nHere is the output as shown by ACM-Citation Sequence<br />\n<br />\nIt has also proved to be effective in protein classification [11] and gene expression-based cancer subtype discovery [12] [13] [5] [14] [1].<br />\n<br />\nAnd the output by Nature<br />\n<br />\nIt has also proved to be effective in protein classification 11 and gene expression-based cancer subtype discovery 12 13 5 14 1. <br />\n<br />\nWhat I have noticed is that the statement <br />\n<br />\nif test=&quot;not(/b:Citation/b:LastAuthor)&quot;<br />\n<br />\nis not getting executed.<br />\n<br />\nCan you help me out please?<br />\n",
+    "PostedDate": "2015-03-05T08:21:36.013-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1360197",
+    "ThreadId": "584681",
+    "Html": "Those are BibWord styles. For those type of styles, you just need to update the separator element.\r<br />\n<br />\nFor example, for the one from ACM-Citation Sequence, look for <br />\n<pre><code>&lt;separator&gt;,&lt;/separator&gt;</code></pre>\n\nJust change the comma to whatever you want.<br />\n",
+    "PostedDate": "2015-03-05T11:51:50.783-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1360301",
+    "ThreadId": "584681",
+    "Html": "Dear Yves\r<br />\n<br />\nThank you so much for your prompt reply. I have infact tried to replace the comma within the separator tags with semi-colon - that did not work and then had gone through all the discussions and FAQs, but still I could not get a solution. hen only I tried to replace with &lt;xsl:text&gt;;&lt;/xsl:text&gt;\r<br />\n<br />\nPlease correct me if I am wrong but if you will notice, the output by the default ACM-Citation Sequence does not show the comma between the citations, i.e., it appears as [12] [13] [5] [14] [1] instead of appearing as [12], [13], [5], [14], [1].<br />\n<blockquote>\nIt has also proved to be effective in protein classification [11] and gene expression-based cancer subtype discovery [12] [13] [5] [14] [1].<br />\n</blockquote>\nSame is the case of the output by Nature: appears as 12 13 5 14 1 instead of 12, 13, 5, 14, 1.<br />\n<blockquote>\nIt has also proved to be effective in protein classification 11 and gene expression-based cancer subtype discovery 12 13 5 14 1. <br />\n</blockquote>\nWhere am I going wrong? Is it that the statement<br />\n<blockquote>\nif test=&quot;not(/b:Citation/b:LastAuthor)&quot;<br />\n</blockquote>\nis not getting executed?\r<br />\n<br />\nThank you for your patience!<br />\n",
+    "PostedDate": "2015-03-05T18:33:40.963-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1360370",
+    "ThreadId": "584681",
+    "Html": "From the example you are giving, it looks like you are not grouping your in-text citations in Word but just entering them one by one. See <a href=\"https://bibword.codeplex.com/wikipage?title=FAQ#Q1\" rel=\"nofollow\">FAQ Q1</a> on how to group citations in Word.<br />\n",
+    "PostedDate": "2015-03-06T02:58:32.72-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1360404",
+    "ThreadId": "584681",
+    "Html": "Yes, you were correct, Yves! I was entering the citations one by one - no wonder they were being considered as single citations! Now after entering them the correct way, the problem is solved.<br />\n<blockquote>\nIt has also proved to be effective in protein classification 12 and gene expression-based cancer subtype discovery 13,14,6,4,1.<br />\n</blockquote>\nThanks a ton!<br />\n",
+    "PostedDate": "2015-03-06T06:07:16.543-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

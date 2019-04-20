@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "664228",
+    "ThreadId": "270624",
+    "Html": "\r\n<p>Hi, I need your help with one issue. I already found the list which helps me to achieve most of my goals &quot;CSE name sequence*&quot;. However my bibliography list has both English and Russian names in it.</p>\r\n<p>The default alphabetical order is:<br>\r\nEnglish A-Z<br>\r\nRussian &quot;A-Z&quot;&nbsp;<br>\r\n<br>\r\nWhat I need is:</p>\r\n<p>Russian A-Z<br>\r\nEnglish A-Z</p>\r\n<p>So i just need Russian Authors preceede the English ones in one list of books.</p>\r\n",
+    "PostedDate": "2011-08-27T07:06:39.133-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

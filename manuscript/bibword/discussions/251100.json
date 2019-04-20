@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "586024",
+    "ThreadId": "251100",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>first of all thanks for this amazing tool! I have been creating my own stylesheet during the last few days and I am stumped on how to justify text in the bibliography. &lt;halign&gt;justify&lt;/halign&gt; does not work and inserting HTML did not solve my\r\n problem either. And ideas?</p>\r\n<p>Thanks in advance!</p>\r\n",
+    "PostedDate": "2011-03-24T13:58:46.5-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "586029",
+    "ThreadId": "251100",
+    "Html": "<p>Set the bibliography paragraph style to justify in Word, not in the stylesheet.</p>\r\n<p>See <a href=\"http://bibword.codeplex.com/wikipage?title=Styles_FAQ&amp;referringTitle=Documentation#Q12\">http://bibword.codeplex.com/wikipage?title=Styles_FAQ&amp;referringTitle=Documentation#Q12</a></p>",
+    "PostedDate": "2011-03-24T14:03:08.13-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "586051",
+    "ThreadId": "251100",
+    "Html": "<p>That did it, thank you!</p>",
+    "PostedDate": "2011-03-24T14:23:14.15-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

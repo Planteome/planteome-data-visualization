@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1012216",
+    "ThreadId": "435857",
+    "Html": "Hello, \r<br />\n<br />\nI am not sure if there are different threads for this, but want to use vancouver style on MS word 2013. \r<br />\n<br />\nI tried copying the styles into a bibliography directory but i am not sure if it is the correct directory.\r<br />\n<br />\nSo i am just wondering what is the directory for MS office 2013 and is the bibword going to work on microsoft office 2013? thank you very much!<br />\n",
+    "PostedDate": "2013-03-08T00:15:59.57-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1012547",
+    "ThreadId": "435857",
+    "Html": "I haven't had time to make a new release. But check <a href=\"http://bibword.codeplex.com/discussions/404418\" rel=\"nofollow\">http://bibword.codeplex.com/discussions/404418</a> on how to fix it yourself.<br />\n",
+    "PostedDate": "2013-03-08T13:10:50.127-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

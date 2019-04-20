@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "See comment.",
+    "ClosedDate": "2010-02-03T10:55:38.21-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Using Word 2007 (12.0.6504.5000) SP2 MSO (12.0.6425.1000) and don't get superscripts when I use the above style...numbers are in-line with text.",
+    "LastUpdatedDate": "2013-05-16T05:29:24.007-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "bibword",
+    "ReportedDate": "2010-02-03T08:29:43.12-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "ACS Citation with superscript",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 5328
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Word has issues with in-text citation formatting. Unlike some claims made by the designers, only limited formatting (bold, underline, italics) is supported in the conversion process. Things like smallcaps, superscript, ... can not be used for in-text citations.\r\n\r\nAs indicated on the release page, this issue can be fixed by running a macro. See http://bibword.codeplex.com/wikipage?title=Styles_FAQ#Q9",
+      "PostedDate": "2010-02-03T10:55:10.63-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2010-02-03T10:55:38.21-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:20:27.263-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:29:24.007-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

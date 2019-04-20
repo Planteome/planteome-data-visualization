@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "178088",
+    "ThreadId": "52954",
+    "Html": "Hello!<div><br></div><div>Why wonder how could I resolve this: If certain string (such as author) is unavaiable, I need to that format to be applied to next variable. Like this.</div><div><br></div><div>FOREMAN, George. <span style=\"font-weight:bold\">How to lose weight swiftly</span>. 6th ed. New York: GF Publisher, 1969.<br></div><div>HOW TO LOSE WEIGHT SWIFTLY. 6th ed. New York: GF Publisher, 1969.</div><div><br></div><div><div>Something like...</div><div><br></div><div>IF string_is_avaiable FORMAT format_1</div><div>ELSE FORMAT format_2</div><div><br></div><div>Thanks in advance!</div></div>",
+    "PostedDate": "2009-04-10T17:57:07.983-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "178130",
+    "ThreadId": "52954",
+    "Html": "<p>You can put your basic condition first and all the rest as subparts. Then, you can repeat the all those subparts again after/outside the first one. As this sounds more complicated than it really is, let me illustrate with an example:</p>\r\n<p style=\"margin:0cm 0cm 0pt\"><span style=\"font-family:'courier new';color:#0000ff;font-size:10pt\">&lt;</span><span style=\"font-family:'courier new';color:#a31515;font-size:10pt\">format</span><span style=\"font-family:'courier new';color:#0000ff;font-size:10pt\">&gt;</span><span style=\"font-family:'courier new';font-size:10pt\">{%Author:2%{, %Title%}{, %Year%}}{%Title:u%}{, %Year:s%}</span><span style=\"color:#0000ff\">&lt;/</span><span style=\"color:#a31515\">format</span><span style=\"color:#0000ff\">&gt;</span></p>\r\n<p>Take a good look at the balancing of the brackets. To explain it a bit better, I'll number them between {}:</p>\r\n<p style=\"margin:0cm 0cm 0pt\"><span style=\"font-family:'courier new';font-size:10pt\"><strong>{0}</strong>%Author:2%{1}, %Title%{1}{2}, %Year%{2}<strong>{0}</strong>{3}%Title:u%{3}{4}, %Year:s%{4}</span></p>\r\n<p>So, the main condition is to format the author (between {0}). If the author is available, then the subparts {1} and {2} are processed. Once those are processed, the variables Title and Year are used and will not be used again (unless you would add a ':r' option to them). So since they are used, {3} and {4} will be empty and therefore not displayed.</p>\r\n<p>If the author is <strong>not</strong> available, then {1} and {2} will not be executed and Title and Year will remain available for {3} and {4}.</p>\r\n<p>Example output:</p>\r\n<ul>\r\n    <li><span style=\"font-family:'calibri','sans-serif';font-size:11pt\">Cullity BD, Introduction to Magnetic Materials, 1972</span> </li>\r\n    <li><span style=\"font-family:'calibri','sans-serif';font-size:11pt\">INTRODUCTION TO MAGNETIC MATERIALS, 72</span> </li>\r\n</ul>\r\n<p>Your format string might become a bit long this way, but you should be able to achieve almost anything you want.</p>\r\n",
+    "PostedDate": "2009-04-11T02:08:44.24-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "178135",
+    "ThreadId": "52954",
+    "Html": "The solution I presented in the above post will always work. However, if the difference in formatting is minor (upper/lower case, or just another variable), you could use a shortcut with the or'ing (|) of variables. For your example, the following might work:<br>\r\n<br>\r\n{%Author:2|Title:u}{, &amp;lt;b&amp;gt;%Title%&amp;lt;/b&amp;gt;}{. %Edition:o% ed}.<br>\r\n<br>\r\nThis will display the author followed by the the title in bold. If there is no author, than the title in uppercase will be displayed. As that means the title is already used before, the title won't be displayed again in bold then.\r\n",
+    "PostedDate": "2009-04-11T02:49:56.96-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "178178",
+    "ThreadId": "52954",
+    "Html": "Ahh, thank you, Yves! I had thought of the first way you wrote about, but I did get a bit worried about the mess it would be.<div><br></div><div>I actually didn't know you could { %variable1%|%variable2%} even if those variable weren't connected, that was my mistake. And surely had no idea the format would not display repeated info.</div><div><br></div><div>Thank you very much again! =) I'll be posting the style as soon as I finish it.</div>",
+    "PostedDate": "2009-04-11T08:25:23.837-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

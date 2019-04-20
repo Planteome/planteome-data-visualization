@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "105098",
+    "ThreadId": "31646",
+    "Html": "Is it possible to change the way it displays consecutive references in-text,&nbsp;1-3 instead of [1,2,3]? I am looking through the code but could not see where to do this. <br>\r\nAlso, can we change the in-text style, from [1] to supercript 1, for example? <br>\r\nThank you very much!\r\n",
+    "PostedDate": "2008-07-16T08:12:44.473-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "105167",
+    "ThreadId": "31646",
+    "Html": "Your&nbsp;question about superscript is the same I have done in the previous topic. I really think it is possible. I have tried to insert the commands &lt;sup&gt;&lt;/sup&gt; inside the templates, but this is not working. I hope Yves&nbsp;answer us about this.<br>\r\n",
+    "PostedDate": "2008-07-16T12:06:43.947-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "105751",
+    "ThreadId": "31646",
+    "Html": "<div class=radEditorContent id=\"ctl00_ctl00_Content_TabContentPanel_Content_PostRepeater_ctl04_BodyDiv\">\r\n<p>1)Is it possible to change the way it displays consecutive references in-text,&nbsp;1-3 instead of [1,2,3]?<br>\r\n<br>\r\nNo. Microsoft Word 2007 passes only one Source (with a few extra parameters)&nbsp;at&nbsp;a time to the stylesheet when formatting citations.&nbsp;So each part of the in-text&nbsp;citation has no knowledge regarding its siblings and therefore it is not possible to built in logic such as sorting or grouping of numbers. Also, while trying to find a workaround, I learned that Word expects a return value from the stylesheet&nbsp;for every citation in the group. If it does not get any (because you are not outputting anything for the second citation), it will add &quot;Invalid source specified.&quot; to the text.<br>\r\n<br>\r\nPersonally, I think Microsoft made a mistake here. It would have been a lot better if they had passed all sources in a grouped citation in one go, in the same way bibliography data is passed around now. That way, stylesheet developers could have added their own logic such as:<br>\r\n<ul>\r\n    <li>leaving out certain citations in the group\r\n    <li>sorting citations within the group </li>\r\n</ul>\r\n<p>2)Also, can we change the in-text style, from [1] to supercript 1, for example?<br>\r\n<br>\r\nSuperscript is not possible.&nbsp;It seems the&nbsp;in-text citation automatically copies the 'paragraph style' of the paragraph to which it is added. This does not hold for the full bibliography which&nbsp;uses a separate paragraph style called MsoBibliography. Formatting such as bold, underline and italic can be applied though. So it seems as Word 2007 does some 'sanatizing' of the HTML you pass for in-text citations.<br>\r\n<br>\r\nremark: this is a replacement of an earlier post which provided a flawed solution (empty citations)</p>\r\n</div>\r\n",
+    "PostedDate": "2008-07-19T04:54:15.257-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "105769",
+    "ThreadId": "31646",
+    "Html": "Thank you very much for your reply. Hopefully Microsoft will fix this at somepoint.\r\n",
+    "PostedDate": "2008-07-19T07:57:28.21-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "105777",
+    "ThreadId": "31646",
+    "Html": "I described a possible solution for the superscript issue in another thread. Check out the third post at <a href=\"http://www.codeplex.com/bibliography/Thread/View.aspx?ThreadId=31497\">http://www.codeplex.com/bibliography/Thread/View.aspx?ThreadId=31497</a><br>\r\n<br>\r\nHTH<br>\r\n<br>\r\n",
+    "PostedDate": "2008-07-19T08:30:42.897-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "651178",
+    "ThreadId": "31646",
+    "Html": "<p>Back to this question. Would it be possible to hide unnecessary citation using \"hidden\" type style? For example I add citations [1] [2] [3] [4] then hide [2] [3] and put \"-\" [1]-[4]</p>\n<p>It works perfect for picture and table links but for citation it doesn't work after updating. Is there any way to set&nbsp; type style for citation and keep it ?</p>",
+    "PostedDate": "2011-08-02T07:12:00.46-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "653356",
+    "ThreadId": "31646",
+    "Html": "<p>Convert them to static text and you can hide them all you want. Any other way won't work. It would be useless anyway. If you allow the in-text citation to be updated, you would allow the number to possibly change. Hence there is no guarantee that hidden in-text citations should remain hidden after an update.</p>",
+    "PostedDate": "2011-08-05T11:46:52.13-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

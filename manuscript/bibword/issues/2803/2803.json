@@ -1,0 +1,81 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Fixed in version 1.1.",
+    "ClosedDate": "2008-12-06T14:54:33.043-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I've just downloaded your tools, as I wish to design a style for a specific journal. I'm new to your tools and initially I'm just trying to get arround, but the BibWord Extender 1.8 crashes with the following .NET Framework exception when I want to run it (BTW: I'm using Vista x64 SP1):\n \nUnhandled exception has occured in a component in your application. If you click Continue, the application wil ignore this error and attempt to continue. \n \nObject reference not set to an instance of an object.\n \nDetails:\nSee the end of this message for details on invoking \njust-in-time (JIT) debugging instead of this dialog box.\n \n************** Exception Text **************\nSystem.NullReferenceException: Object reference not set to an instance of an object.\n   at BibWordExtender.Data.BibWord.GetBibliographyStylesPath()\n   at BibWordExtender.Data.BibWord.LoadBibliographyStylesInformation(BackgroundWorker worker)\n   at BibWordExtender.UI.GUI.Worker_DoWork(Object sender, DoWorkEventArgs e)\n   at System.ComponentModel.BackgroundWorker.WorkerThreadStart(Object argument)\n \n \n************** Loaded Assemblies **************\nmscorlib\n    Assembly Version: 2.0.0.0\n    Win32 Version: 2.0.50727.3053 (netfxsp.050727-3000)\n    CodeBase: file:///C:/Windows/Microsoft.NET/Framework64/v2.0.50727/mscorlib.dll\n----------------------------------------\nBibWordExtender\n    Assembly Version: 1.0.0.0\n    Win32 Version: 1.0.0.0\n    CodeBase: file:///C:/Users/ilbajec/Documents/Publications/LaTeX/Word%202007%20Bibliography%20Styles/BibWordExtender.exe\n----------------------------------------\nSystem.Windows.Forms\n    Assembly Version: 2.0.0.0\n    Win32 Version: 2.0.50727.3053 (netfxsp.050727-3000)\n    CodeBase: file:///C:/Windows/assembly/GAC_MSIL/System.Windows.Forms/2.0.0.0__b77a5c561934e089/System.Windows.Forms.dll\n----------------------------------------\nSystem\n    Assembly Version: 2.0.0.0\n    Win32 Version: 2.0.50727.3053 (netfxsp.050727-3000)\n    CodeBase: file:///C:/Windows/assembly/GAC_MSIL/System/2.0.0.0__b77a5c561934e089/System.dll\n----------------------------------------\nSystem.Drawing\n    Assembly Version: 2.0.0.0\n    Win32 Version: 2.0.50727.3053 (netfxsp.050727-3000)\n    CodeBase: file:///C:/Windows/assembly/GAC_MSIL/System.Drawing/2.0.0.0__b03f5f7f11d50a3a/System.Drawing.dll\n----------------------------------------\nSystem.Xml\n    Assembly Version: 2.0.0.0\n    Win32 Version: 2.0.50727.3053 (netfxsp.050727-3000)\n    CodeBase: file:///C:/Windows/assembly/GAC_MSIL/System.Xml/2.0.0.0__b77a5c561934e089/System.Xml.dll\n----------------------------------------\n \n************** JIT Debugging **************\nTo enable just-in-time (JIT) debugging, the .config file for this\napplication or computer (machine.config) must have the\njitDebugging value set in the system.windows.forms section.\nThe application must also be compiled with debugging\nenabled.\n \nFor example:\n \n<configuration>\n    <system.windows.forms jitDebugging=\"true\" />\n</configuration>\n \nWhen JIT debugging is enabled, any unhandled exception\nwill be sent to the JIT debugger registered on the computer\nrather than be handled by this dialog box.\n \n \nIf I continue with the execution the program does not go pass the info window.",
+    "LastUpdatedDate": "2013-05-16T05:29:24.463-07:00",
+    "PlannedForRelease": "BibWord Extender",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "bibword",
+    "ReportedDate": "2008-12-05T07:15:56.403-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "BibWord Extender crash",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 2803
+  },
+  "FileAttachments": [
+    {
+      "FileId": 1312,
+      "FileName": "BibWordExtender.zip",
+      "DownloadUrl": ".\\1312"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "The issue is caused because the application tries to read to a 32 bit registry on a 64 bit machine. I have no 64-bit machine to test on at the moment, but I rebuild the application for the x86 platform specifically. This should force it to solve the issue for x64 automatically. \r\n\r\nPlease try the attached file and let me know if it solved your problem.\r\n\r\nYves",
+      "PostedDate": "2008-12-05T09:45:49.747-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-12-05T09:45:52.293-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-12-06T02:34:03.66-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Yves thanx. The rebuild for x86 specifically solved the issue. Now it works.",
+      "PostedDate": "2008-12-06T11:56:24.487-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2008-12-06T14:54:33.043-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:20:27.79-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:29:24.463-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "529368",
+    "ThreadId": "236679",
+    "Html": "\r\n<p>Hi there,</p>\r\n<p>first of all, this is a very great project and it helped me a lot with my diploma thesis for now. Just something that is bugging me a bit right now:</p>\r\n<p>I modded Harvard Anglia to show 2 columns looking like that:</p>\r\n<table>\r\n<tbody>\r\n<tr>\r\n<td style=\"font-family:serif\"><strong>Axelrod, 1997a</strong></td>\r\n<td style=\"font-family:serif\">Axelrod, R., 1997. <em>Die Evolution der Kooperation.</em> M&uuml;nchen, Deutschland: Oldenbourg. 4. Auflage.</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<p>I'd like the bib-style to automatically change the first column to either a specific predefined layout paragraph style or at least change it to another (sans-serif-) font (and accordingly another font size), so it'll look like this:</p>\r\n<table>\r\n<tbody>\r\n<tr>\r\n<td><strong>Axelrod, 1997a</strong></td>\r\n<td style=\"font-family:serif\">Axelrod, R., 1997. <em>Die Evolution der Kooperation.</em> M&uuml;nchen, Deutschland: Oldenbourg. 4. Auflage.</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<p>Is there a way to do that inside the XSL or is that something I always have to do manually after updating the bibliography?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks a lot in advance,</p>\r\n<p>Alex</p>\r\n",
+    "PostedDate": "2010-12-01T03:40:47.56-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "545360",
+    "ThreadId": "236679",
+    "Html": "\r\n<p>*Bump*</p>\r\n<p>Any idea? =)</p>\r\n",
+    "PostedDate": "2011-01-07T06:00:29.07-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "545552",
+    "ThreadId": "236679",
+    "Html": "\r\n<p>Wrap the format string for the first column into a html span element with a style attribute. This should overwrite the default formatting.</p>\r\n<p>For example, where you have something like</p>\r\n<p style=\"padding-left:30px\">&lt;format&gt;{%Author%}{ %Year%}&lt;/format&gt;</p>\r\n<p>you could write</p>\r\n<p style=\"padding-left:60px\">&lt;format&gt;&amp;lt;span style=&quot;font-weight=bold;&quot;&amp;gt;{%Author%}{ %Year%}&amp;lt/span&amp;gt;&lt;/format&gt;</p>\r\n<p>It is basically the exact same way how in some styles the volume of a journal article is set in bold and the issue in italics.</p>\r\n",
+    "PostedDate": "2011-01-07T10:50:22.21-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "545914",
+    "ThreadId": "236679",
+    "Html": "\r\n<p>Thanks, but making the text bold is not the problem =)</p>\r\n<p>I'd like to assign another&nbsp;predefined layout paragraph style (the ones you can configure directly in word) &nbsp;to the first column, so it changes Font, Size, indents and so on when I update the bibliography. Do you think, that's somehow possible?</p>\r\n<p>btw thanks a lot for your effort, BibWord rescued me!</p>\r\n",
+    "PostedDate": "2011-01-08T05:11:53.637-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "545922",
+    "ThreadId": "236679",
+    "Html": "\r\n<p>Currently there is only one mapping that I'm aware of for bibliographies and that is the one through the MsoBibliography style. But I guess you could use others as well.</p>\r\n<p>A simple test could be to replace MsoBibliography with MsoNormal in the xsl and see if the bibliography adheres to the normal style paragraph formatting instead of the bibliography one. If it does, the change you want should be possible.</p>\r\n<p>If the above test succeeds, in the template format-bibliography-table-column you would have to insert a conditional option depending on the column you are in. Currently the style is fixed to MsoBibliography through &quot;&lt;p class=&quot;MsoBibliography&quot;&gt;&quot;. You\r\n could make the value of the class attribute variable (just check the line above it&nbsp;for an example).</p>\r\n",
+    "PostedDate": "2011-01-08T05:25:45.443-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

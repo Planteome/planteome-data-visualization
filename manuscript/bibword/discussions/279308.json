@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "697640",
+    "ThreadId": "279308",
+    "Html": "\r\n<p>Hi</p>\r\n<p>I installed the Vancouver style and it seems to be working ok so far. But I wanted to edit some things so decided to install BibWord Extender2.0 on my mac.</p>\r\n<p>It says I have to install Mono 2.2v and I did that.</p>\r\n<p>I found &quot;libgdiplus&quot; on google and downloaded the 2.2 v here: http://ftp.novell.com/pub/mono/sources/libgdiplus/</p>\r\n<p>I'm not sure if this is right. But I unzipped the file and there's a lot of files in there. I have no idea what to do with them. But I have put these into the same file with the bibword extender2.exe and WindowsBase.dll in the same file in my applications\r\n folder.</p>\r\n<p>I restarted word and my mac and I type this in the terminal window:</p>\r\n<p>{code}<br>\r\nmono BibWordExtender2<br>\r\n{code}</p>\r\n<p>All I get is this error:</p>\r\n<p>mono BibWordExtender2<br>\r\nCannot open assembly 'BibWordExtender2': No such file or directory.</p>\r\n<p>Please can someone help me get the Bibwordextender2 working on my mac?</p>\r\n<p>I'm running mac os x 10.6.8 snow leopard and Office word 2011.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks a million!</p>\r\n",
+    "PostedDate": "2011-11-13T16:04:53.29-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "698662",
+    "ThreadId": "279308",
+    "Html": "<p>The message states it all: there is no such file.</p>\r\n<p>If you don't run mono from the directory where BibWordExtender2 is located, you will have to provide the full path. So something like&nbsp;mono /abc/xyz/BibWordExtender2</p>\r\n<p>What changes do you want to make to the Vancouver style that you would require the BibWordExtender2? That program is only intended as a workaround for when you need special things like year suffices (you don't have them with a numbered style) or alphabetically ordered references (you don't have them with Vancouver). If all you need is a change of some periods, commas and name formatting, you don't need the extender.</p>",
+    "PostedDate": "2011-11-15T14:27:43.99-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "799705",
+    "ThreadId": "279308",
+    "Html": "<p>Extender keeps crashing for me. When I choose a file, I get a message \"Could not load file or assembly 'WindowsBase, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' or one of its dependencies.\" Then it lets me try to extend, but it crashed. Any thoughts?</p>",
+    "PostedDate": "2012-02-24T20:04:11.067-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "799913",
+    "ThreadId": "279308",
+    "Html": "<p>Mono has had a long line of problems with WindowsBase (Olive). I remember adding patches to it two years ago but since then it was broken again. Currently, it might or might not work I have no idea.</p>\r\n<p>Make sure you download the WindowsBase.dll provided with the Extender and place it in the same directory (this way it will overwrite the Mono version). Also, make sure you have the correct Mono version: 2.2. The version 2.4 and its successor were not working well. As I no longer have a Mac, I can no longer test the current versions of&nbsp;Mono with the Extender.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2012-02-25T11:09:11.71-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "799952",
+    "ThreadId": "279308",
+    "Html": "<p>Hmm. Well I did all that, and now it is ostensibly working, it says \"bibliography extension successful\", but it doesn't seem to be adding any year suffixes. What it does seem to do is duplicate the citation entries, but none of them have year suffixes. And  I made sure that two sources had the same author and year.</p>\n<p>&nbsp;</p>\n<p>Edit: I had not realized I had to update the bibliography. But now, it's duplicating every reference without a's and b's, and putting in the as and b where appropriate but duplicating the one with a as another entry without a letter. Also, in the citation, it's only putting an extension on the \"b\" entry, and there it's putting a space between the year and the suffix.</p>\n<p>Any ideas what's going wrong now?</p>\n<p>&nbsp;</p>\n<p>Edit: In case that wasn't clear: I only included one pair of sources by the same author and year, both Noam Chomsky 1986. It duplicated all the other sources as identical pairs, with no year suffixes. For Chomsky 1986, it had the two sources, one with the suffix a, the other with b, as desired, but it also had a copy of a with no year suffix.</p>",
+    "PostedDate": "2012-02-25T15:37:37.983-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "800446",
+    "ThreadId": "279308",
+    "Html": "<p>What do you mean by duplicate? The Extender does in no way add things to your Word document. The only thing it does is rewrite the xml with the sources. That is why you have to refresh your bibliography yourself. It is up to Word to get the sources xml and rebuild your Word document accordingly.</p>\r\n<p>If you see a space between the year and the year suffix, then it is because your style specifies that a space should be there.</p>",
+    "PostedDate": "2012-02-26T08:27:09.643-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "801057",
+    "ThreadId": "279308",
+    "Html": "<p>Well, it puts another copy of the reference in my local list of sources (but not the global ones), and puts another copy of the entry into the bibliography, once I refresh it. And you were right that the style file had spaces before the year suffixes, but when I took them out, they still showed up. I can send a pdf of what it's doing if you don't mind.</p>\r\n<p>Thank you for all your help,</p>\r\n<p>David</p>",
+    "PostedDate": "2012-02-26T16:41:49.057-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

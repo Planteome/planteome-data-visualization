@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "156892",
+    "ThreadId": "46897",
+    "Html": "Thank you so much for this!  I did however notice a problem, after entering all fields, it only puts the name of the first author and the rest is gibberish....This is what it looks like;<div><br></div><div><span style=\"font-family:'times new roman', serif;font-size:12pt\">Leung GM HLCMMJJWF. The effectsof cash and lottery incentives on mailed surveys to physicians: a randomizedtrial. Journal of Clinincal Epidemiolgy. 2002 Aug; 55(8): p. 801-7.</span><br></div><div><br></div><div>and it should have been;</div><div><p><span>Leung GM, Ho LM, ChanMF, M Johnston JM, Wong FK. &quot;The effects of cash and  lottery incentives on mailed surveys tophysicians: a randomized trial.&quot; <em>Journal of <span>           </span>Clinincal Epidemiolgy</em> 55, no. 8 (Aug 2002): 801-7.</span></p><p>How can I fix this?</p><p>Thanx!</p></div>",
+    "PostedDate": "2009-02-11T21:44:25.263-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "156913",
+    "ThreadId": "46897",
+    "Html": "I'm not able to reproduce the problem at the moment. It seems like everything after the first author is abbreviated in your example. There is nothing in the code which would cause an abbreviation of last names though.<br>\r\n<br>\r\nIn the insert citation dialog (right click the in-text citation and choose 'Edit Source ...'), are you certain your author list looks like: <br>\r\n<br>\r\n        Lueng, G M; Ho, L M; Chan, M F; M Johnston, J M; Wong, F K<br>\r\n<br>\r\nI'm asking because &quot;M Johnston JM&quot; seems an odd name. If the string is correct in the dialog (including ALL the punctuation marks), I suggest you try to download the style again from <a href=\"http://www.codeplex.com/bibliography/Release/ProjectReleases.aspx?ReleaseId=19772\">http://www.codeplex.com/bibliography/Release/ProjectReleases.aspx?ReleaseId=19772</a><br>\r\n<br>\r\nOn a side note, the example you give is not Vancouver style. Vancouver style does not use &quot;no. &quot; in front of issues nor does it put the publication date between brackets for journals. For examples of the Vancouver style, see the references listed with the style or <a href=\"http://www.nlm.nih.gov/bsd/uniform_requirements.html\">http://www.nlm.nih.gov/bsd/uniform_requirements.html</a> .\r\n",
+    "PostedDate": "2009-02-12T00:06:37.593-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

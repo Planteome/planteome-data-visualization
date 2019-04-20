@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "213541",
+    "ThreadId": "62888",
+    "Html": "<p>I'm using Office 2007 and I know that Word allows it to convert the Bibliography to static content. But after i do so, my document crashes. So I hope there is an oportunity to convert the whole Bibliography like in the FAQ for citations?</p>",
+    "PostedDate": "2009-07-19T07:06:36.533-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "213632",
+    "ThreadId": "62888",
+    "Html": "<p>I doubt this will solve your problem as the macro executes the exact same command (WordBasic.BibliographyBibliographyToText) as Word does. The only thing extra is that the macro looks for the citation, or in the case below for the bibliography field, to apply the conversion to.</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">Sub</span> BibliographyToStaticText()\r\n\r\n    <span style=\"color:Blue\">Dim</span> fld <span style=\"color:Blue\">As</span> Field\r\n            \r\n    <span style=\"color:Green\">' Go over all stories, including main, footnotes, ...</span>\r\n    <span style=\"color:Blue\">For</span> <span style=\"color:Blue\">Each</span> sr <span style=\"color:Blue\">In</span> ActiveDocument.StoryRanges\r\n        <span style=\"color:Green\">' Find all bibliography fields and convert them to static text.</span>\r\n        <span style=\"color:Blue\">For</span> <span style=\"color:Blue\">Each</span> fld <span style=\"color:Blue\">In</span> sr.Fields\r\n            <span style=\"color:Blue\">If</span> fld.Type = wdFieldBibliography <span style=\"color:Blue\">Then</span>\r\n                fld.<span style=\"color:Blue\">Select</span>\r\n                WordBasic.BibliographyBibliographyToText\r\n            <span style=\"color:Blue\">End</span> <span style=\"color:Blue\">If</span>\r\n        <span style=\"color:Blue\">Next</span>\r\n    <span style=\"color:Blue\">Next</span>\r\n\r\n<span style=\"color:Blue\">End</span> <span style=\"color:Blue\">Sub</span>\r\n\r\n</pre>\r\n</div>\r\n<p>Alternatively, you could just try to save your document as a Word 97-2003 document (the old .doc extension). That way, new fields such as citations and bibliographies should be converted to static text.</p>",
+    "PostedDate": "2009-07-19T16:13:49.7-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

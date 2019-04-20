@@ -1,0 +1,903 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!-- 
+     Template stylesheet for development of Word 2007 bibliographic styles.
+     
+     Author(s): Yves Dhondt (yves.dhondt@gmail.com)
+     
+     Version  : 1.0 - Initial release.
+     
+     Copyright: Copyright (c) 2008 Yves Dhondt
+
+                Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated 
+                documentation files (the "Software"), to deal in the Software without restriction, including without limitation 
+                the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, 
+                and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+                The above copyright notice and this permission notice shall be included in all copies or substantial portions 
+                of the Software.
+
+                THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED 
+                TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL 
+                THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF 
+                CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
+                IN THE SOFTWARE.
+                                
+     Usage    : 1)Set the name of your own stylesheet with the b:StyleName template.
+                2)Fill in the important fields for each type in the templates with 
+                  name SelectImportantFieldsForXYZ. This should be in the form:
+                    <b:ImportantField><xsl:text>b:Title</xsl:text></b:ImportantField>
+                    <b:ImportantField><xsl:text>b:Year</xsl:text></b:ImportantField>
+                  For a set of valid entries, check out the specs for 'Shared MLs
+                  Reference Material - Bibliography' in the ECMA standard under 
+                  7.6.2 or see http://www.freepatentsonline.com/20060236228.html.
+                3)Fill in the way the citation has to look for each type in the 
+                  templates with name FormatXYZInTextCitation.
+                4)Fill in the way the entry in the bibliography has to look for each 
+                  type in the templates with name FormatXYZBibEntry.
+                5)Copy the stylesheet to the 'Style'-directory of Office 2007. 
+                  On most computers this will be somewhere like
+                  '%programfiles%\Microsoft Office\Office12\Bibliography\Style'. 
+                  The style will show up in the 'Reference' bar next time you 
+                  launch Word 2007.
+          
+     Remarks  : The template contains an an extension framework for b:Source 
+                elements. Each b:Source element can be extended with one or 
+                more child elements which can then be used for faster or 
+                alternative processing. An example is provided in the style 
+                sheet for alternative sorting of elements based on title and 
+                year.
+     
+                The templates for 'Book' are filled in as an example.
+     
+-->
+
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:msxsl="urn:schemas-microsoft-com:xslt"	xmlns:b="http://schemas.openxmlformats.org/officeDocument/2006/bibliography" xmlns:t="http://www.microsoft.com/temp">
+  <xsl:output method="html" encoding="us-ascii"/>
+
+  <xsl:template match="/">
+    <xsl:choose>
+
+      <!-- Short name for the style to use. -->
+      <xsl:when test="b:StyleName">
+        <xsl:text>Bib Style Template</xsl:text>
+      </xsl:when>
+
+      <!-- Version information. -->
+      <!-- Version information should be in the form <xsl:text>yyyy.m.dd</xsl:text>. -->
+      <xsl:when test="b:Version">
+        <xsl:text>2006.5.07</xsl:text>
+      </xsl:when>
+
+      <!-- Retrieve the most important fields for a certain type of citation. -->
+      <xsl:when test="b:GetImportantFields">
+        <xsl:call-template name="SelectImportantFields" />
+      </xsl:when>
+
+      <!-- Formats a citation for display. -->
+      <xsl:when test="b:Citation">
+        <!-- Extend the b:Source elements of the b:Citation element. -->
+        <xsl:variable name="extendedCitation">
+          <xsl:call-template name="ExtendCitation">
+            <xsl:with-param name="citation" select="/b:Citation" />
+          </xsl:call-template>
+        </xsl:variable>
+
+        <!-- Create a node-set out of the extended result. -->
+        <xsl:variable name="citNodeSet" select="msxsl:node-set($extendedCitation)" />
+
+        <html xmlns="http://www.w3.org/TR/REC-html40">
+          <head>
+          </head>
+          <body>            
+            <p>
+              <xsl:call-template name="FormatInTextCitation">
+                <xsl:with-param name="citation" select="$citNodeSet/b:Citation"/>
+              </xsl:call-template>
+            </p>
+          </body>
+        </html>
+      </xsl:when>
+
+      <!-- Formats a bibliography for display. -->
+      <xsl:when test="b:Bibliography">
+        <!-- Extend the b:Source elements of the b:Bibliography element. -->
+        <xsl:variable name="extendedBib">
+          <xsl:call-template name="ExtendBibliography">
+            <xsl:with-param name="bibliography" select="/b:Bibliography" />
+          </xsl:call-template>
+        </xsl:variable>
+
+        <!-- Create a node-set out of the extended result. -->
+        <xsl:variable name="bibNodeSet" select="msxsl:node-set($extendedBib)" />
+        
+        <html xmlns="http://www.w3.org/TR/REC-html40">
+          <head>
+          </head>
+          <body>
+            <xsl:for-each select="$bibNodeSet/b:Bibliography/b:Source">
+              <!-- Sort by homemade key. -->
+              <xsl:sort select="b:ExtSortKey" data-type="text"/>
+              <!-- Sort by order they appear in text. -->
+              <!-- <xsl:sort select="b:RefOrder" data-type="number" /> -->
+              <p>
+                <xsl:call-template name="FormatBibEntry">
+                  <xsl:with-param name="source" select="." />
+                  <xsl:with-param name="locals" select="$bibNodeSet/b:Bibliography/b:Locals" />
+                </xsl:call-template>
+              </p>
+            </xsl:for-each>
+          </body>
+        </html>
+      </xsl:when>
+    </xsl:choose>
+  </xsl:template>
+
+  <!-- Template for selecting the important fields of a certain reference type. -->
+  <xsl:template name="SelectImportantFields">
+    <xsl:choose>
+      <xsl:when test="b:GetImportantFields/b:SourceType='Book'">
+        <xsl:call-template name="SelectImportantFieldsForBook" />
+      </xsl:when>
+      <xsl:when test="b:GetImportantFields/b:SourceType='BookSection'">
+        <xsl:call-template name="SelectImportantFieldsForBookSection" />
+      </xsl:when>
+      <xsl:when test="b:GetImportantFields/b:SourceType='JournalArticle'">
+        <xsl:call-template name="SelectImportantFieldsForJournalArticle" />
+      </xsl:when>
+      <xsl:when test="b:GetImportantFields/b:SourceType='ArticleInAPeriodical'">
+        <xsl:call-template name="SelectImportantFieldsForArticleInAPeriodical" />
+      </xsl:when>
+      <xsl:when test="b:GetImportantFields/b:SourceType='ConferenceProceedings'">
+        <xsl:call-template name="SelectImportantFieldsForConferenceProceedings" />
+      </xsl:when>
+      <xsl:when test="b:GetImportantFields/b:SourceType='Report'">
+        <xsl:call-template name="SelectImportantFieldsForReport" />
+      </xsl:when>
+      <xsl:when test="b:GetImportantFields/b:SourceType='InternetSite'">
+        <xsl:call-template name="SelectImportantFieldsForInternetSite" />
+      </xsl:when>
+      <xsl:when test="b:GetImportantFields/b:SourceType='DocumentFromInternetSite'">
+        <xsl:call-template name="SelectImportantFieldsForDocumentFromInternetSite" />
+      </xsl:when>
+      <xsl:when test="b:GetImportantFields/b:SourceType='ElectronicSource'">
+        <xsl:call-template name="SelectImportantFieldsForElectronicSource" />
+      </xsl:when>
+      <xsl:when test="b:GetImportantFields/b:SourceType='Art'">
+        <xsl:call-template name="SelectImportantFieldsForArt" />
+      </xsl:when>
+      <xsl:when test="b:GetImportantFields/b:SourceType='SoundRecording'">
+        <xsl:call-template name="SelectImportantFieldsForSoundRecording" />
+      </xsl:when>
+      <xsl:when test="b:GetImportantFields/b:SourceType='Performance'">
+        <xsl:call-template name="SelectImportantFieldsForPerformance" />
+      </xsl:when>
+      <xsl:when test="b:GetImportantFields/b:SourceType='Film'">
+        <xsl:call-template name="SelectImportantFieldsForFilm" />
+      </xsl:when>
+      <xsl:when test="b:GetImportantFields/b:SourceType='Interview'">
+        <xsl:call-template name="SelectImportantFieldsForInterview" />
+      </xsl:when>
+      <xsl:when test="b:GetImportantFields/b:SourceType='Patent'">
+        <xsl:call-template name="SelectImportantFieldsForPatent" />
+      </xsl:when>
+      <xsl:when test="b:GetImportantFields/b:SourceType='Case'">
+        <xsl:call-template name="SelectImportantFieldsForCase" />
+      </xsl:when>
+      <xsl:when test="b:GetImportantFields/b:SourceType='Misc'">
+        <xsl:call-template name="SelectImportantFieldsForMisc" />
+      </xsl:when>
+    </xsl:choose>
+
+  </xsl:template>
+
+  <!-- Template for selecting the citation type to format a citation correctly. -->
+  <!--   As parameter, the citation is required. -->
+  <xsl:template name="FormatInTextCitation">
+    <xsl:param name="citation" />
+
+    <xsl:choose>
+      <xsl:when test="$citation/b:Source/b:SourceType='Book'">
+        <xsl:call-template name="FormatBookInTextCitation">
+          <xsl:with-param name="citation" select="$citation" />
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:when test="$citation/b:Source/b:SourceType='BookSection'">
+        <xsl:call-template name="FormatBookSectionInTextCitation">
+          <xsl:with-param name="citation" select="$citation" />
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:when test="$citation/b:Source/b:SourceType='JournalArticle'">
+        <xsl:call-template name="FormatJournalArticleInTextCitation">
+          <xsl:with-param name="citation" select="$citation" />
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:when test="$citation/b:Source/b:SourceType='ArticleInAPeriodical'">
+        <xsl:call-template name="FormatArticleInAPeriodicalInTextCitation">
+          <xsl:with-param name="citation" select="$citation" />
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:when test="$citation/b:Source/b:SourceType='ConferenceProceedings'">
+        <xsl:call-template name="FormatConferenceProceedingsInTextCitation">
+          <xsl:with-param name="citation" select="$citation" />
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:when test="$citation/b:Source/b:SourceType='Report'">
+        <xsl:call-template name="FormatReportInTextCitation">
+          <xsl:with-param name="citation" select="$citation" />
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:when test="$citation/b:Source/b:SourceType='InternetSite'">
+        <xsl:call-template name="FormatInternetSiteInTextCitation">
+          <xsl:with-param name="citation" select="$citation" />
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:when test="$citation/b:Source/b:SourceType='DocumentFromInternetSite'">
+        <xsl:call-template name="FormatDocumentFromInternetSiteInTextCitation">
+          <xsl:with-param name="citation" select="$citation" />
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:when test="$citation/b:Source/b:SourceType='ElectronicSource'">
+        <xsl:call-template name="FormatElectronicSourceInTextCitation">
+          <xsl:with-param name="citation" select="$citation" />
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:when test="$citation/b:Source/b:SourceType='Art'">
+        <xsl:call-template name="FormatArtInTextCitation">
+          <xsl:with-param name="citation" select="$citation" />
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:when test="$citation/b:Source/b:SourceType='SoundRecording'">
+        <xsl:call-template name="FormatSoundRecordingInTextCitation">
+          <xsl:with-param name="citation" select="$citation" />
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:when test="$citation/b:Source/b:SourceType='Performance'">
+        <xsl:call-template name="FormatPerformanceInTextCitation">
+          <xsl:with-param name="citation" select="$citation" />
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:when test="$citation/b:Source/b:SourceType='Film'">
+        <xsl:call-template name="FormatFilmInTextCitation">
+          <xsl:with-param name="citation" select="$citation" />
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:when test="$citation/b:Source/b:SourceType='Interview'">
+        <xsl:call-template name="FormatInterviewInTextCitation">
+          <xsl:with-param name="citation" select="$citation" />
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:when test="$citation/b:Source/b:SourceType='Patent'">
+        <xsl:call-template name="FormatPatentInTextCitation">
+          <xsl:with-param name="citation" select="$citation" />
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:when test="$citation/b:Source/b:SourceType='Case'">
+        <xsl:call-template name="FormatCaseInTextCitation">
+          <xsl:with-param name="citation" select="$citation" />
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:when test="$citation/b:Source/b:SourceType='Misc'">
+        <xsl:call-template name="FormatMiscInTextCitation">
+          <xsl:with-param name="citation" select="$citation" />
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:text>[Unsupported citation type]</xsl:text>
+      </xsl:otherwise>
+    </xsl:choose>
+
+  </xsl:template>
+
+  <!-- Template for selecting a reference type to format the reference correctly. -->
+  <!--   As parameter, a single entry from the bibliography is required. -->
+  <xsl:template name="FormatBibEntry">
+    <xsl:param name="source" />
+    <xsl:param name="locals" />
+
+    <xsl:choose>
+      <xsl:when test="$source/b:SourceType='Book'">
+        <xsl:call-template name="FormatBookBibEntry">
+          <xsl:with-param name="source" select="$source" />
+          <xsl:with-param name="locals" select="$locals" />
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:when test="$source/b:SourceType='BookSection'">
+        <xsl:call-template name="FormatBookSectionBibEntry">
+          <xsl:with-param name="source" select="$source" />
+          <xsl:with-param name="locals" select="$locals" />
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:when test="$source/b:SourceType='JournalArticle'">
+        <xsl:call-template name="FormatJournalArticleBibEntry">
+          <xsl:with-param name="source" select="$source" />
+          <xsl:with-param name="locals" select="$locals" />
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:when test="$source/b:SourceType='ArticleInAPeriodical'">
+        <xsl:call-template name="FormatArticleInAPeriodicalBibEntry">
+          <xsl:with-param name="source" select="$source" />
+          <xsl:with-param name="locals" select="$locals" />
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:when test="$source/b:SourceType='ConferenceProceedings'">
+        <xsl:call-template name="FormatConferenceProceedingsBibEntry">
+          <xsl:with-param name="source" select="$source" />
+          <xsl:with-param name="locals" select="$locals" />
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:when test="$source/b:SourceType='Report'">
+        <xsl:call-template name="FormatReportBibEntry">
+          <xsl:with-param name="source" select="$source" />
+          <xsl:with-param name="locals" select="$locals" />
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:when test="$source/b:SourceType='InternetSite'">
+        <xsl:call-template name="FormatInternetSiteBibEntry">
+          <xsl:with-param name="source" select="$source" />
+          <xsl:with-param name="locals" select="$locals" />
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:when test="$source/b:SourceType='DocumentFromInternetSite'">
+        <xsl:call-template name="FormatDocumentFromInternetSiteBibEntry">
+          <xsl:with-param name="source" select="$source" />
+          <xsl:with-param name="locals" select="$locals" />
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:when test="$source/b:SourceType='ElectronicSource'">
+        <xsl:call-template name="FormatElectronicSourceBibEntry">
+          <xsl:with-param name="source" select="$source" />
+          <xsl:with-param name="locals" select="$locals" />
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:when test="$source/b:SourceType='Art'">
+        <xsl:call-template name="FormatArtBibEntry">
+          <xsl:with-param name="source" select="$source" />
+          <xsl:with-param name="locals" select="$locals" />
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:when test="$source/b:SourceType='SoundRecording'">
+        <xsl:call-template name="FormatSoundRecordingBibEntry">
+          <xsl:with-param name="source" select="$source" />
+          <xsl:with-param name="locals" select="$locals" />
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:when test="$source/b:SourceType='Performance'">
+        <xsl:call-template name="FormatPerformanceBibEntry">
+          <xsl:with-param name="source" select="$source" />
+          <xsl:with-param name="locals" select="$locals" />
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:when test="$source/b:SourceType='Film'">
+        <xsl:call-template name="FormatFilmBibEntry">
+          <xsl:with-param name="source" select="$source" />
+          <xsl:with-param name="locals" select="$locals" />
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:when test="$source/b:SourceType='Interview'">
+        <xsl:call-template name="FormatInterviewBibEntry">
+          <xsl:with-param name="source" select="$source" />
+          <xsl:with-param name="locals" select="$locals" />
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:when test="$source/b:SourceType='Patent'">
+        <xsl:call-template name="FormatPatentBibEntry">
+          <xsl:with-param name="source" select="$source" />
+          <xsl:with-param name="locals" select="$locals" />
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:when test="$source/b:SourceType='Case'">
+        <xsl:call-template name="FormatCaseBibEntry">
+          <xsl:with-param name="source" select="$source" />
+          <xsl:with-param name="locals" select="$locals" />
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:when test="$source/b:SourceType='Misc'">
+        <xsl:call-template name="FormatMiscBibEntry">
+          <xsl:with-param name="source" select="$source" />
+          <xsl:with-param name="locals" select="$locals" />
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:text>Unsupported source type: </xsl:text>
+        <xsl:value-of select="b:SourceType" />
+      </xsl:otherwise>
+    </xsl:choose>
+
+  </xsl:template>
+
+  <!-- Begin of templates for Book. -->
+
+  <xsl:template name="SelectImportantFieldsForBook">
+    <b:ImportantFields>
+      <b:ImportantField>
+        <xsl:text>b:Author/b:Author/b:NameList</xsl:text>
+      </b:ImportantField>
+      <b:ImportantField>
+        <xsl:text>b:Title</xsl:text>
+      </b:ImportantField>
+      <b:ImportantField>
+        <xsl:text>b:Year</xsl:text>
+      </b:ImportantField>
+    </b:ImportantFields>
+  </xsl:template>
+
+  <xsl:template name="FormatBookInTextCitation">
+    <xsl:param name="citation" />
+
+    <xsl:if test="$citation/b:FirstAuthor">
+      <xsl:text>[</xsl:text>
+    </xsl:if>
+
+    <xsl:value-of select="$citation/b:Source/b:Author/b:Author/b:NameList/b:Person[1]/b:Last" />
+    <xsl:text> </xsl:text>
+    <xsl:value-of select="$citation/b:Source/b:Year"/>
+
+    <xsl:if test="not($citation/b:LastAuthor)">
+      <xsl:text>; </xsl:text>
+    </xsl:if>
+
+    <xsl:if test="$citation/b:LastAuthor">
+      <xsl:text>]</xsl:text>
+    </xsl:if>            
+    
+  </xsl:template>
+
+  <xsl:template name="FormatBookBibEntry">
+    <xsl:param name="source" />
+    <xsl:param name="locals" />
+
+    <xsl:value-of select="$source/b:Author/b:Author/b:NameList/b:Person[1]/b:First" />
+    <xsl:text> </xsl:text>
+    <xsl:value-of select="$source/b:Author/b:Author/b:NameList/b:Person[1]/b:Last" />
+    <xsl:text>, </xsl:text>
+    <xsl:value-of select="$source/b:Title"/>
+    <xsl:text>, </xsl:text>
+    <xsl:value-of select="$source/b:Year"/>
+    <xsl:text>.</xsl:text>
+    
+  </xsl:template>
+
+  <!-- End of templates for Book. -->
+
+  <!-- Begin of templates for BookSection. -->
+
+  <xsl:template name="SelectImportantFieldsForBookSection">
+    <b:ImportantFields>
+
+    </b:ImportantFields>
+  </xsl:template>
+
+  <xsl:template name="FormatBookSectionInTextCitation">
+    <xsl:param name="citation" />
+
+    <xsl:text>[BookSection: TO DO.]</xsl:text>
+  </xsl:template>
+
+  <xsl:template name="FormatBookSectionBibEntry">
+    <xsl:param name="source" />
+    <xsl:param name="locals" />
+
+    <xsl:text>BookSection: TO DO.</xsl:text>
+  </xsl:template>
+
+  <!-- End of templates for BookSection. -->
+
+  <!-- Begin of templates for JournalArticle. -->
+
+  <xsl:template name="SelectImportantFieldsForJournalArticle">
+    <b:ImportantFields>
+
+    </b:ImportantFields>
+  </xsl:template>
+
+  <xsl:template name="FormatJournalArticleInTextCitation">
+    <xsl:param name="citation" />
+
+    <xsl:text>[JournalArticle: TO DO.]</xsl:text>
+  </xsl:template>
+
+  <xsl:template name="FormatJournalArticleBibEntry">
+    <xsl:param name="source" />
+    <xsl:param name="locals" />
+
+    <xsl:text>JournalArticle: TO DO.</xsl:text>
+  </xsl:template>
+
+  <!-- End of templates for JournalArticle. -->
+
+  <!-- Begin of templates for ArticleInAPeriodical. -->
+
+  <xsl:template name="SelectImportantFieldsForArticleInAPeriodical">
+    <b:ImportantFields>
+
+    </b:ImportantFields>
+  </xsl:template>
+
+  <xsl:template name="FormatArticleInAPeriodicalInTextCitation">
+    <xsl:param name="citation" />
+
+    <xsl:text>[ArticleInAPeriodical: TO DO.]</xsl:text>
+  </xsl:template>
+
+  <xsl:template name="FormatArticleInAPeriodicalBibEntry">
+    <xsl:param name="source" />
+    <xsl:param name="locals" />
+
+    <xsl:text>ArticleInAPeriodical: TO DO.</xsl:text>
+  </xsl:template>
+
+  <!-- End of templates for ArticleInAPeriodical. -->
+
+  <!-- Begin of templates for ConferenceProceedings. -->
+
+  <xsl:template name="SelectImportantFieldsForConferenceProceedings">
+    <b:ImportantFields>
+
+    </b:ImportantFields>
+  </xsl:template>
+
+  <xsl:template name="FormatConferenceProceedingsInTextCitation">
+    <xsl:param name="citation" />
+
+    <xsl:text>[Conference Proceeding Citation: TO DO]</xsl:text>
+  </xsl:template>
+
+  <xsl:template name="FormatConferenceProceedingsBibEntry">
+    <xsl:param name="source" />
+    <xsl:param name="locals" />
+
+    <xsl:text>ConferenceProceedings: TO DO.</xsl:text>
+  </xsl:template>
+
+  <!-- End of templates for ConferenceProceedings. -->
+
+  <!-- Begin of templates for Report. -->
+
+  <xsl:template name="SelectImportantFieldsForReport">
+    <b:ImportantFields>
+
+    </b:ImportantFields>
+  </xsl:template>
+
+  <xsl:template name="FormatReportInTextCitation">
+    <xsl:param name="citation" />
+
+    <xsl:text>Report: TO DO.</xsl:text>
+  </xsl:template>
+
+  <xsl:template name="FormatReportBibEntry">
+    <xsl:param name="source" />
+    <xsl:param name="locals" />
+
+    <xsl:text>Report: TO DO.</xsl:text>
+  </xsl:template>
+
+  <!-- End of templates for Report. -->
+
+  <!-- Begin of templates for InternetSite. -->
+
+  <xsl:template name="SelectImportantFieldsForInternetSite">
+    <b:ImportantFields>
+
+    </b:ImportantFields>
+  </xsl:template>
+
+  <xsl:template name="FormatInternetSiteInTextCitation">
+    <xsl:param name="citation" />
+
+    <xsl:text>InternetSite: TO DO.</xsl:text>
+  </xsl:template>
+
+  <xsl:template name="FormatInternetSiteBibEntry">
+    <xsl:param name="source" />
+    <xsl:param name="locals" />
+
+    <xsl:text>InternetSite: TO DO.</xsl:text>
+  </xsl:template>
+
+  <!-- End of templates for InternetSite. -->
+
+  <!-- Begin of templates for DocumentFromInternetSite. -->
+
+  <xsl:template name="SelectImportantFieldsForDocumentFromInternetSite">
+    <b:ImportantFields>
+
+    </b:ImportantFields>
+  </xsl:template>
+
+  <xsl:template name="FormatDocumentFromInternetSiteInTextCitation">
+    <xsl:param name="citation" />
+
+    <xsl:text>DocumentFromInternetSite: TO DO.</xsl:text>
+  </xsl:template>
+
+  <xsl:template name="FormatDocumentFromInternetSiteBibEntry">
+    <xsl:param name="source" />
+    <xsl:param name="locals" />
+
+    <xsl:text>DocumentFromInternetSite: TO DO.</xsl:text>
+  </xsl:template>
+
+  <!-- End of templates for DocumentFromInternetSite. -->
+
+  <!-- Begin of templates for ElectronicSource. -->
+
+  <xsl:template name="SelectImportantFieldsForElectronicSource">
+    <b:ImportantFields>
+
+    </b:ImportantFields>
+  </xsl:template>
+
+  <xsl:template name="FormatElectronicSourceInTextCitation">
+    <xsl:param name="citation" />
+
+    <xsl:text>ElectronicSource: TO DO.</xsl:text>
+  </xsl:template>
+
+  <xsl:template name="FormatElectronicSourceBibEntry">
+    <xsl:param name="source" />
+    <xsl:param name="locals" />
+
+    <xsl:text>ElectronicSource: TO DO.</xsl:text>
+  </xsl:template>
+
+  <!-- End of templates for ElectronicSource. -->
+
+  <!-- Begin of templates for Art. -->
+
+  <xsl:template name="SelectImportantFieldsForArt">
+    <b:ImportantFields>
+
+    </b:ImportantFields>
+  </xsl:template>
+
+  <xsl:template name="FormatArtInTextCitation">
+    <xsl:param name="citation" />
+
+    <xsl:text>Art: TO DO.</xsl:text>
+  </xsl:template>
+
+  <xsl:template name="FormatArtBibEntry">
+    <xsl:param name="source" />
+    <xsl:param name="locals" />
+
+    <xsl:text>Art: TO DO.</xsl:text>
+  </xsl:template>
+
+  <!-- End of templates for Art. -->
+
+  <!-- Begin of templates for SoundRecording. -->
+
+  <xsl:template name="SelectImportantFieldsForSoundRecording">
+    <b:ImportantFields>
+
+    </b:ImportantFields>
+  </xsl:template>
+
+  <xsl:template name="FormatSoundRecordingInTextCitation">
+    <xsl:param name="citation" />
+
+    <xsl:text>SoundRecording: TO DO.</xsl:text>
+  </xsl:template>
+
+  <xsl:template name="FormatSoundRecordingBibEntry">
+    <xsl:param name="source" />
+    <xsl:param name="locals" />
+
+    <xsl:text>SoundRecording: TO DO.</xsl:text>
+  </xsl:template>
+
+  <!-- End of templates for SoundRecording. -->
+
+  <!-- Begin of templates for Performance. -->
+
+  <xsl:template name="SelectImportantFieldsForPerformance">
+    <b:ImportantFields>
+
+    </b:ImportantFields>
+  </xsl:template>
+
+  <xsl:template name="FormatPerformanceInTextCitation">
+    <xsl:param name="citation" />
+
+    <xsl:text>Performance: TO DO.</xsl:text>
+  </xsl:template>
+
+  <xsl:template name="FormatPerformanceBibEntry">
+    <xsl:param name="source" />
+    <xsl:param name="locals" />
+
+    <xsl:text>Performance: TO DO.</xsl:text>
+  </xsl:template>
+
+  <!-- End of templates for Performance. -->
+
+  <!-- Begin of templates for Film. -->
+
+  <xsl:template name="SelectImportantFieldsForFilm">
+    <b:ImportantFields>
+
+    </b:ImportantFields>
+  </xsl:template>
+
+  <xsl:template name="FormatFilmInTextCitation">
+    <xsl:param name="citation" />
+
+    <xsl:text>Film: TO DO.</xsl:text>
+  </xsl:template>
+
+  <xsl:template name="FormatFilmBibEntry">
+    <xsl:param name="source" />
+    <xsl:param name="locals" />
+
+    <xsl:text>Film: TO DO.</xsl:text>
+  </xsl:template>
+
+  <!-- End of templates for Film. -->
+
+  <!-- Begin of templates for Interview. -->
+
+  <xsl:template name="SelectImportantFieldsForInterview">
+    <b:ImportantFields>
+
+    </b:ImportantFields>
+  </xsl:template>
+
+  <xsl:template name="FormatInterviewInTextCitation">
+    <xsl:param name="citation" />
+
+    <xsl:text>Interview: TO DO.</xsl:text>
+  </xsl:template>
+
+  <xsl:template name="FormatInterviewBibEntry">
+    <xsl:param name="source" />
+    <xsl:param name="locals" />
+
+    <xsl:text>Interview: TO DO.</xsl:text>
+  </xsl:template>
+
+  <!-- End of templates for Interview. -->
+
+  <!-- Begin of templates for Patent. -->
+
+  <xsl:template name="SelectImportantFieldsForPatent">
+    <b:ImportantFields>
+
+    </b:ImportantFields>
+  </xsl:template>
+
+  <xsl:template name="FormatPatentInTextCitation">
+    <xsl:param name="citation" />
+
+    <xsl:text>Patent: TO DO.</xsl:text>
+  </xsl:template>
+
+  <xsl:template name="FormatPatentBibEntry">
+    <xsl:param name="source" />
+    <xsl:param name="locals" />
+
+    <xsl:text>Patent: TO DO.</xsl:text>
+  </xsl:template>
+
+  <!-- End of templates for Patent. -->
+
+  <!-- Begin of templates for Case. -->
+
+  <xsl:template name="SelectImportantFieldsForCase">
+    <b:ImportantFields>
+
+    </b:ImportantFields>
+  </xsl:template>
+
+  <xsl:template name="FormatCaseInTextCitation">
+    <xsl:param name="citation" />
+
+    <xsl:text>Case: TO DO.</xsl:text>
+  </xsl:template>
+
+  <xsl:template name="FormatCaseBibEntry">
+    <xsl:param name="source" />
+    <xsl:param name="locals" />
+
+    <xsl:text>Case: TO DO.</xsl:text>
+  </xsl:template>
+
+  <!-- End of templates for Case. -->
+
+  <!-- Begin of templates for Misc. -->
+
+  <xsl:template name="SelectImportantFieldsForMisc">
+    <b:ImportantFields>
+
+    </b:ImportantFields>
+  </xsl:template>
+
+  <xsl:template name="FormatMiscInTextCitation">
+    <xsl:param name="citation" />
+
+    <xsl:text>Misc: TO DO.</xsl:text>
+  </xsl:template>
+
+  <xsl:template name="FormatMiscBibEntry">
+    <xsl:param name="source" />
+    <xsl:param name="locals" />
+
+    <xsl:text>Misc: TO DO.</xsl:text>
+  </xsl:template>
+
+  <!-- End of templates for Misc. -->
+
+  <!-- Begin of extension functionality -->
+
+  <!-- Extends a bibliography. -->
+  <!--   The parameter 'bibliography' contains a b:Bibliography of which each 'b:Source' element will be extended. -->
+  <xsl:template name="ExtendBibliography">
+    <xsl:param name="bibliography" />
+
+    <b:Bibliography>
+      <xsl:for-each select="$bibliography/*">
+        <xsl:choose>
+          <xsl:when test="name(.) = 'b:Source'">
+            <xsl:call-template name="ExtendSource">
+              <xsl:with-param name="source" select="." />
+            </xsl:call-template>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:copy-of select="."/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:for-each>
+    </b:Bibliography>
+
+  </xsl:template>
+
+  <!-- Extends a citation. -->
+  <!--   The parameter 'citation' should contain a 'b:Citation' element of which the 'b:Source' element will be extended. -->
+  <xsl:template name="ExtendCitation">
+    <xsl:param name="citation" />
+
+    <b:Citation>
+      <xsl:for-each select="$citation/*">
+        <xsl:choose>
+          <xsl:when test="name(.) = 'b:Source'">
+            <xsl:call-template name="ExtendSource">
+              <xsl:with-param name="source" select="." />
+            </xsl:call-template>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:copy-of select="."/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:for-each>
+    </b:Citation>
+
+  </xsl:template>
+
+  <!-- Allows adding extra elements to a 'b:Source' element. -->
+  <!--   Examples of useful extra functionality by adding extra elements could
+         be the ability to easily sort mulitple sources based on an element
+         containing data from several other elements. Also, common fields, such
+         as a 'base' author can be defined to make the formatting easier.
+    -->
+  <xsl:template name="ExtendSource">
+    <xsl:param name="source" />
+
+    <b:Source>
+      <!-- Copy all existing elements. -->
+      <xsl:copy-of select="./*"/>
+
+      <!-- Add a new element:
+           'b:ExtSortKey' : a key allowing sorting of sources by year and title.
+        -->
+      <b:ExtSortKey>        
+        <xsl:value-of select="$source/b:Year"/>
+        <xsl:value-of select="$source/b:Title"/>
+      </b:ExtSortKey>
+    </b:Source>
+
+  </xsl:template>
+
+  <!-- End of extension functionality -->
+
+</xsl:stylesheet>

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1325471",
+    "ThreadId": "572972",
+    "Html": "I'm looking for a citations style for a fulltext footnotes with bibliography index. I tried the <a href=\"https://bibword.codeplex.com/releases/view/19998\" rel=\"nofollow\">MHRA</a> which come close to what i'm looking for but it only works fine for the citation for the footnote like e.g. &quot;Publisher, Book (City: Year)&quot; etc. but the automatic bibliography index always show &quot;Unsupported source type (Book) for source&quot; for each citation. All other styles i tried are always formatted in brackets and ids. Does anyone has an alternative style? I'm using Microsoft Word 2014 on Windows and Word 2011 on Mac. Thanks!<br />\n",
+    "PostedDate": "2014-11-24T02:56:29.037-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

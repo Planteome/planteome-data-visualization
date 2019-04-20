@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "525829",
+    "ThreadId": "235722",
+    "Html": "\r\n<p>Hi Yves</p>\r\n<p>I have successfully modified one of the existing Harvard styles to comply with our university's referencing requirements. For most sources, the in-text citations are placed in round brackets, for example (Smith &amp; Jones, 2010:14). However, when students\r\n refer to a <strong>court case</strong>, the in-text citation should not be in round brackets, for example: As was argued in\r\n<em>Meyerowitz v CIR,</em> 1963 (3) SA 863 (A) ...</p>\r\n<p>I have managed to get the in-text citation correct by using the following specification:</p>\r\n<p>{&lt;i&gt;{%Title%}&lt;/i&gt;,} {%Year%} {({%Volume%})} SA {%CaseNumber%} {({%Court%})} {({%AbbreviatedCaseNumber%})}</p>\r\n<p>But, the citation is automatically placed in round brackets although I left out the usual {%CitationPrefix%} and {%CitationSuffix%}.</p>\r\n<p>The openbracket and closebracket fields are currently specified as ( and ) respectively, as this is required by the other source types.</p>\r\n<p>Is there a way to avoid the use of the round brackets in citations for court cases only?</p>\r\n<p>Kind regards</p>\r\n<p>Theuns</p>\r\n",
+    "PostedDate": "2010-11-23T06:20:30.02-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "525970",
+    "ThreadId": "235722",
+    "Html": "\r\n<p>What you should do is leave the elements <em>openbracket</em> and <em>closebracket</em> empty. This results in none of the entries having surrounding brackets. Then you can add brackets to the specific&nbsp;format strings which require them.</p>\r\n",
+    "PostedDate": "2010-11-23T09:57:53.25-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,55 @@
+<div class="wikidoc"><h2>Vancouver Reference Style</h2><h4>Table of Content</h4><ul><li><a href="#A1">Description</a></li>
+<li><a href="#A2">File</a></li>
+<li><a href="#A3">Based On</a></li>
+<li><a href="#A4">Supported Types</a></li>
+<li><a href="#A5">Variations</a></li></ul>
+<h4>Description<a name="A1"></a></h4>Implementation of the Vancouver reference style. This style uses numeric in-text citations based on the order of the first appearance of a source in the text.<br /><br />Examples:<br /><pre>
+ (1) Breckling J, editor. The Analysis of Directional Time Series: Applications to Wind Speed and 
+     Direction Berlin: Springer; 1989.
+ (2) Rose HE. In A Course in Number Theory. New York: Oxford Univ. Press; 1988.
+ (3) Bul BK. In Theory Principles and Design of Magnetic Circuits. Moscow: Energia Press; 1964.
+     p. 464.
+ (4) Sorin WV. Optical Reflectometry for Component Characterization. In Derickson D, editor. Fiber 
+     Optic Test and Measurement. Englewood Cliffs: Prentice-Hall; 1998.
+     ...
+(10) Anderson JB, Tepe K. Properties of the Tailbiting BCJR Decoder. In Codes, Systems and 
+     Graphical Models. New York: Springer-Verlag; 2000.
+(11) Hedelin P, Knagenhjelm P, Skoglund M. Theory for Transmission of Vector Quantization Data. 
+     In Kleijn WB, Paliwal KK, editors. Speech Coding and Synthesis. Amsterdam: Elsevier Science; 
+     1995. p. 347-396.
+</pre>
+<h4>File<a name="A2"></a></h4>vancouver.xsl - the file can be found in the <a href="https://bibword.codeplex.com/releases/view/15852">styles</a> collection
+<h4>Based On<a name="A3"></a></h4><ul><li><a href="http://www.library.uq.edu.au/training/citation/vancouv.pdf">http://www.library.uq.edu.au/training/citation/vancouv.pdf</a></li>
+<li><a href="http://www.library.uwa.edu.au/education_training_and_support/guides/vancouver_citation_style">http://www.library.uwa.edu.au/education_training_and_support/guides/vancouver_citation_style</a></li>
+<li><a href="http://www.endnote.com">http://www.endnote.com</a></li></ul>
+<h4>Supported Types<a name="A4"></a></h4>The current version of the style supports the following types and subtypes.
+<ul><li>ArticleInAPeriodical</li>
+<li>Book</li>
+<li>BookSection</li>
+<li>ConferenceProceedings</li>
+<li>DocumentFromInternetSite</li>
+<li>ElectronicSource</li>
+<li>InternetSite</li>
+<li>JournalArticle 
+<ul><li>ElectronicArticle</li></ul></li>
+<li>Misc</li>
+<li>Patent</li>
+<li>Report
+<ul><li>Thesis</li></ul></li></ul>
+<i><b>Note:</b></i> To use the subtypes <i>(e.g. Thesis)</i>, enter the data using the base type <i>(e.g. Report)</i> and set the <b>Type</b> field of the source to the value of the subtype <i>(e.g. Thesis)</i>.
+<h4>Variations<a name="A5"></a></h4><ul><li>You can change the surrounding brackets for in-text citations by changing the contents of the <b>openbracket</b> and <b>closebracket</b> elements. </li></ul>
+<div style="color:Black;background-color:White;"><pre>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">citation</span><span style="color:Blue;">&gt;</span>
+    <span style="color:Blue;">&lt;</span><span style="color:#A31515;">openbracket</span><span style="color:Blue;">&gt;</span>(<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">openbracket</span><span style="color:Blue;">&gt;</span>
+    <span style="color:Blue;">&lt;</span><span style="color:#A31515;">closebracket</span><span style="color:Blue;">&gt;</span>)<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">closebracket</span><span style="color:Blue;">&gt;</span>
+    ...
+  <span style="color:Blue;">&lt;/</span><span style="color:#A31515;">citation</span><span style="color:Blue;">&gt;</span>
+</pre></div><ul><li>You can change the look of the numbers in the first column of the bibliography by changing the <b>format</b> element of the first column <i>(column id=&quot;1&quot;)</i>. Note that you have to do this for each type separately. Some examples are:</li></ul>
+<div style="color:Black;background-color:White;"><pre>
+  <span style="color:Green;">&lt;!-- Number between round brackets (current implementation). Example: (1) --&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">format</span><span style="color:Blue;">&gt;</span>{(%RefOrder%)}<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">format</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Green;">&lt;!-- Number between square brackets. Example: [1] --&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">format</span><span style="color:Blue;">&gt;</span>{[%RefOrder%]}<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">format</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Green;">&lt;!-- Number followed by a period. Example: 1. --&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">format</span><span style="color:Blue;">&gt;</span>{%RefOrder%.}<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">format</span><span style="color:Blue;">&gt;</span>
+</pre></div></div><div class="ClearBoth"></div>

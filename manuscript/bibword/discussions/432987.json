@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1000694",
+    "ThreadId": "432987",
+    "Html": "Hi,\r<br />\n<br />\nSo firstly thank you for this really  useful resource. I've been looking at your APA alternatives, and was wondering how to remove the prefixes from the page numbers in the inline citations (but keep them in the bibliography). I've seen code like &quot;&lt;format&gt;{%RefOrder%{, %CitationPages:pp. :pp. %}}&lt;/format&gt;&quot;, and assume that could be altered to my needs - but I've no idea where to put it!\r<br />\n<br />\nThanks for any advice,\r<br />\n<br />\nSimon<br />\n",
+    "PostedDate": "2013-02-13T09:40:00.053-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

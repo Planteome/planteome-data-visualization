@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "571375",
+    "ThreadId": "247386",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I have a question concerning the IEEE reference order sheet:</p>\r\n<p>In my text I would like to reference more than one reference at a time, for instance:</p>\r\n<p>&quot;....according to [4] and [6]&ndash;[9].&quot;</p>\r\n<p>How can I do this ([6]-[9])? By adding&nbsp; [6] and use &quot;-&quot; (minus) and then [9], the references [7] and [8] won't occure in the reference list beacuse Word thinks that they aren't used in the text.</p>\r\n<p>And &quot;....according to [4] and [6], [7], [8], [9].&quot; is not conform to the IEEE standard.</p>\r\n<p>By the way, I'm not totally sure if it should be [6]-[9] or [6-9]. I think the first version is correct.</p>\r\n<p>&nbsp;</p>\r\n<p>Thank you!</p>\r\n<p>You did a very great job with all the style sheets! It bears repeating.&nbsp;</p>\r\n<p>regards</p>\r\n<p>Christian</p>\r\n",
+    "PostedDate": "2011-02-24T02:13:36.977-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "571486",
+    "ThreadId": "247386",
+    "Html": "<p>See <a href=\"http://bibword.codeplex.com/wikipage?title=FAQ&amp;referringTitle=Styles_FAQ#Q1\">http://bibword.codeplex.com/wikipage?title=FAQ&amp;referringTitle=Styles_FAQ#Q1</a>&nbsp;and <a href=\"http://bibword.codeplex.com/wikipage?title=FAQ&amp;referringTitle=Styles_FAQ#Q3\">http://bibword.codeplex.com/wikipage?title=FAQ&amp;referringTitle=Styles_FAQ#Q3</a></p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2011-02-24T05:53:33.097-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

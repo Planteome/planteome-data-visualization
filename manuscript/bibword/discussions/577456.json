@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1340971",
+    "ThreadId": "577456",
+    "Html": "I downloaded the IEEE reference style form codeplex. It works with English texts, but the problem is that when I write a document in non-english language, the references are inserted in English format. \r<br />\n<br />\nFor example, Hebrew is a right-to-left language and the the numbers style are different from Engish, so when I write a text like this\r<br />\n<br />\n<br />\n**<strong><strong><strong>[1]</strong></strong></strong>\r<br />\n<br />\nthe numbers appear in english format. How can I use Hebrew number styles?<br />\n",
+    "PostedDate": "2015-01-12T00:13:33.333-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

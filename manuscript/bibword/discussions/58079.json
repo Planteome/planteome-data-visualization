@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "196369",
+    "ThreadId": "58079",
+    "Html": "<p>Hi,</p>\r\n<p>in case of the FAQ <span id=\"ctl00_ctl00_MasterContent_Content_wikiSourceLabel\"><br><strong>Q:</strong> Is it possible to add grouping logic to citations? Currently I have something like [1,2,3,4] and I want something like [1-4].</span></p>\r\n<p><span>it is possible to create such an citation by using the b:FirstAuthor and b:LastAuthor and xsl:if</span></p>\r\n<p><span>In this case somthing like </span></p>\r\n<p><span>&lt;xsl:if test=&quot;b:Citation/bFirstAuthor&quot;&gt;</span></p>\r\n<p>&lt;xsl:text&gt;1-&lt;/xsl:text&gt;</p>\r\n<p><span>&lt;/xsl:if&gt;</span></p>\r\n<p><span>&lt;xsl:if test=&quot;b:Citation/bLastAuthor&quot;&gt;</span></p>\r\n<p>&lt;xsl:text&gt;4&lt;/xsl:text&gt;</p>\r\n<p><span>&lt;/xsl:if&gt;</span></p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p><span>greetz</span></p>\r\n<p><span>christian<br></span></p>",
+    "PostedDate": "2009-06-01T05:16:54.397-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "196405",
+    "ThreadId": "58079",
+    "Html": "<p>Unfortunately your solution won't work. There are at least two reasons I can think of:</p>\r\n<ol>\r\n<li>You can not display nothing for certain in-text citations. If you don't display anything (which you would do for 2 and 3 in your example), Word would display &quot;<strong>Invalid Source Specified.</strong>&quot;.</li>\r\n<li>If the sequence would be [6, 9, 10, 11, 12], your solution would abbreviate it to [6-12] rather than [6, 9-12].</li>\r\n</ol>\r\n<p>The problem is the way Word process in-text citations: 1-by-1, even if the citations are grouped together. If they would have send everything in one go, similar as to how a bibliography is send, then logic could be added.</p>",
+    "PostedDate": "2009-06-01T07:14:40.817-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

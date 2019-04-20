@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1064166",
+    "ThreadId": "448975",
+    "Html": "Hello,\r<br />\n<br />\nI'm using the styles given - they work brilliantly for the citation!\r<br />\n<br />\nWhen it comes to inserting the bibliography word then just doesn't respond, and closes.\r<br />\n<br />\nCan anyone advise on how to fix this?\r<br />\n<br />\nMany thanks!\r<br />\n<br />\nNicola<br />\n",
+    "PostedDate": "2013-07-03T08:55:32.83-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1064848",
+    "ThreadId": "448975",
+    "Html": "Does it happen with the styles that come with Word? Or is it only with BibWord styles?\r<br />\n<br />\nDo you have &quot;strange&quot; characters in your sources? Things like accented characters, non-latin characters, ...<br />\n",
+    "PostedDate": "2013-07-05T04:11:56.237-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

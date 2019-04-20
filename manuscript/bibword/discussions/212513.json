@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "442416",
+    "ThreadId": "212513",
+    "Html": "<p>Hi guys;</p>\r\n<p>I have a problem with bibliography index. I'm writing my thesis in Persian, so there will be both Persian and English references in my thesis. I want to sort bibliography index by name so that English and Persian references to be separated (English References on top of Persian ones or vice versa). Also I want to use &quot;ISO 690 - Numeric Reference with Square Brackets&quot; style (downloaded from <a href=\"http://bibword.codeplex.com/releases/view/14646\">here</a>), The problem is that I'm not familiar with XML script to do that myself and there is no such option for this style :( !</p>\r\n<p>Any help would be appreciated</p>\r\n<p>Thanks in advance</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-05-13T01:25:33.663-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "442439",
+    "ThreadId": "212513",
+    "Html": "<p>You are talking about one of the styles that come with Word 2007, not a BibWord one. Personally, I don't&nbsp;work with&nbsp;those styles anymore, because they are too hard to manage.</p>\r\n<p>Luckely what you want is probably confined to a small portion of the style. Assuming you set the language of your sources correctly (you can't do this in Word 2010, only in Word 2007 and 2008), you could extend the sort options to first start with the b:LCID field. Look for all occurrences of</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">sort</span> <span style=\"color:red\">select</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">b:SortingString</span><span style=\"color:black\">&quot;</span> <span style=\"color:blue\">/&gt;</span>\r\n</pre>\r\n</div>\r\n<p>and at the following line above them:</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">sort</span> <span style=\"color:red\">select</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">b:LCID</span><span style=\"color:black\">&quot;</span> <span style=\"color:blue\">/&gt;</span>\r\n</pre>\r\n</div>\r\n<p>(I have not tested the above suggestion)</p>",
+    "PostedDate": "2010-05-13T02:53:38.763-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "442480",
+    "ThreadId": "212513",
+    "Html": "<p>Thanks for your reply Yves;</p>\r\n<p>Unfortunately I'm using Word 2010, and according to what you said it doesn't applicable on this version of Word. You mean the XML Style files are different in Word 2007 and Word 2010, and I can't use your suggestion in Word 2010, is it right?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-05-13T05:20:09.853-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "442510",
+    "ThreadId": "212513",
+    "Html": "<p>No, the xml is the same. The problem is with the input dialog.</p>\r\n<p>In Word 2007 you can set the language (LCID)&nbsp;of your source. In the &quot;Edit Source&quot; dialog, there is a dropdown box in the upper right corner. In the betas of Word 2010&nbsp;I use(d), that box was removed and there doesn't seem to be an option to add your language (LCID) any other way. Based on that, I assume that there isn't such a box in the final version. Without that box, I have no idea how you would indicate which sources are in English, and which ones are Persian.</p>\r\n<p>I exchanged emails on this subject with the programmers responsible for this feature in Word, but I don't know if they listened to my feedback or not. My guess would be they didn't as the language box also introduced some translation issues.</p>",
+    "PostedDate": "2010-05-13T06:42:47.337-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "442647",
+    "ThreadId": "212513",
+    "Html": "<p>Thanks agian Yves;</p>\r\n<p>I think I should switch back to Word 2007, after all the new Word 2010 seems to have some issues.</p>",
+    "PostedDate": "2010-05-13T14:10:28.61-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "678458",
+    "ThreadId": "212513",
+    "Html": "<p>Maybe a bit late to reply here, but as I had a similar problem right now (the bibliography should cite pages, etc. in the language of the source, i.e.: p/pp (pages) S (Seiten)) and have just switched recently from O2k7 to O2010 I was a bit confused about  the fact that my old entries that had an assigned b:LCID value showed up with the dropdown box in O2010 &nbsp;and others not.</p>\n<p>So I &nbsp;added the old sources &nbsp;from my doc file to the master list and then I looked in the Sources.xml file and voila - all entries that were O2007 had a &lt;b:LCID&gt;#&lt;/bLCID&gt; tag, those from O2010 not. And the Source Dialog &nbsp;is only showing the requester if  the field has a number different from 0. But even if the LCID Value is present, the dropdown box will only show options for: default (0), Application LCID (in my case 1031) and the LCID from the source. For a \"dirty\" &nbsp;workaround (alike to DOI fields, etc.  which they introduced (and were inspired from here?) with SP1 but only updated the 1033 Bibform.xml (so even with the new styles my Bibform were not updated and I had to copy those fields from a 1033 one)) I included the b:LCID tag in there.</p>\n<p>And that seem to work fine for now (and shouldn't really break anything, as the b:LCID field is not a \"custom\" tag but an already known one for the application).</p>\n<p>EDIT: Ok, as I now was puzzled why O2010 ain't showed me the Table of Authorities field and found out that this Option only shows up in the Ribbon if Word is configured to include a language wich may utilize that one - so under Options Language I included English(US) and the TA Field became visible after a restart and what a coincidence also in the Bibliography Source Manager the DropDownBox where there for new entries with all the languages word is configured for (I've tested that with some others tongues to be sure).</p>",
+    "PostedDate": "2011-09-29T19:23:57.527-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

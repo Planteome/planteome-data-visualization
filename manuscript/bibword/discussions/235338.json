@@ -1,0 +1,106 @@
+[
+  {
+    "Id": "524413",
+    "ThreadId": "235338",
+    "Html": "\r\n<p>Hello,</p>\r\n<p>please can you help me? I have modified XSL file (http://www.edisk.cz/stahni/27482/ISO690_BP.XSL_255.28KB.html), but I do not know how to do one thing. I need to put [author, year] before each source in the list of sources.&nbsp;</p>\r\n<p>And other question is.... is it possible to format list of sources not in block?</p>\r\n<p>Thank you for your time and anwers.</p>\r\n<p>Martin</p>\r\n",
+    "PostedDate": "2010-11-19T09:05:36.767-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "524578",
+    "ThreadId": "235338",
+    "Html": "\r\n<p>This is based on one of the styles that came with Word. I don't work with those due to their problematic maintenance. So I can give you a few pointers, but you will have to look for it yourself.</p>\r\n<p>Look for the line</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">when</span> <span style=\"color:red\">test</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">b:Bibliography</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>A couple of lines below you will see</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">for-each</span> <span style=\"color:red\">select</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">msxsl:node-set($SortedList)/b:Bibliography/b:Source</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">&gt;</span>\r\n  <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">element</span> <span style=\"color:red\">name</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">p</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>Right after that line starts every entry in your bibliography. Here you could add something like (untested code!!!)</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">text</span><span style=\"color:blue\">&gt;</span>[<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">text</span><span style=\"color:blue\">&gt;</span>\r\n<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">value-of</span> <span style=\"color:red\">select</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">b:Author/b:Main/b:Last[1]</span><span style=\"color:black\">&quot;</span> <span style=\"color:blue\">/&gt;</span>\r\n<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">text</span><span style=\"color:blue\">&gt;</span>, <span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">text</span><span style=\"color:blue\">&gt;</span>\r\n<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">value-of</span> <span style=\"color:red\">select</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">b:Year</span><span style=\"color:black\">&quot;</span> <span style=\"color:blue\">/&gt;</span>\r\n<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">text</span><span style=\"color:blue\">&gt;</span>] <span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">text</span><span style=\"color:blue\">&gt;</span></pre>\r\n</div>\r\n<p>Note that you should probably move this after the third and last&nbsp;attribute element (class).</p>\r\n<div id=\"x__mcePaste\" style=\"width:1px; height:1px; overflow:hidden; top:0px; left:-10000px\">\r\n&#65279;</div>\r\n<p>I have no idea what you mean by &quot;not in block&quot;. You will have to elaborate a bit more and perhaps provide an example.</p>\r\n",
+    "PostedDate": "2010-11-19T15:17:38.197-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "819225",
+    "ThreadId": "235338",
+    "Html": "<p>thanks, it works! :)</p>\r\n<p>I would like to to put a tabulator after [author, year], is it possible?</p>\r\n<p>Martin</p>",
+    "PostedDate": "2012-04-03T06:03:22.65-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "819233",
+    "ThreadId": "235338",
+    "Html": "<p>Using a tab can be done by inserting a tab character inside a cdata xml element. So something like</p>\r\n<p style=\"padding-left: 30px;\">&lt;![CDATA[&amp;#x9;]]&gt;</p>\r\n<p>will probably work (not tested).</p>\r\n<p>But what would be the point? You can't go using tabs for alignment. Not unless you know what the length of all the names would be in advance. Otherwise you will get something like:</p>\r\n<p style=\"padding-left: 30px;\">[shortname, 2012]&lt;tab&gt;Text<br />[a_rather_long_name_which_is_more_than_a_tab_longer_than_the_shortest_name, 2012]&lt;tab&gt;Text</p>\r\n<p>If alignment is your goal, you should go for a table like style. And if alignment is not your concern, then you probably should go with spaces. A tab is character-wise about the worst choice you can make.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2012-04-03T06:23:17.743-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "819241",
+    "ThreadId": "235338",
+    "Html": "<p>unfortunately &lt;![CDATA[&amp;#x9;]]&gt; doesnt work. It writes <span style=\"font-size: 11pt;\">&amp;#x9;</span></p>",
+    "PostedDate": "2012-04-03T06:36:27.973-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "819243",
+    "ThreadId": "235338",
+    "Html": "<p>You did wrap them inside an xsl:text element? Normally the following should work IIRC:</p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre><span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">xsl</span><span style=\"color: blue;\">:</span><span style=\"color: #a31515;\">text</span> <span style=\"color: red;\">disable-output-escaping</span><span style=\"color: blue;\">=</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">yes</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">&gt;</span><span style=\"color: blue;\">&lt;![CDATA[</span><span style=\"color: gray;\">&amp;#x9;</span><span style=\"color: blue;\">]]&gt;</span><span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">xsl</span><span style=\"color: blue;\">:</span><span style=\"color: #a31515;\">text</span><span style=\"color: blue;\">&gt;</span></pre>\r\n<pre>\r\n</pre>\r\n</div>",
+    "PostedDate": "2012-04-03T06:40:32.097-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "819247",
+    "ThreadId": "235338",
+    "Html": "<p>Thanks. :)</p>\r\n<p>I have one more question. I use</p>\r\n<pre><span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">xsl</span><span style=\"color: blue;\">:</span><span style=\"color: #a31515;\">value-of</span> <span style=\"color: red;\">select</span><span style=\"color: blue;\">=</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">b:Author/b:Main/b:Last[1]</span><span style=\"color: black;\">\"</span> <span style=\"color: blue;\">/&gt;</span></pre>\r\n<p>and it wirites me first name and second name togehter. like \"secondnamefirstname\". Do you have any idea how to put there just second name?</p>",
+    "PostedDate": "2012-04-03T06:51:43.67-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "819250",
+    "ThreadId": "235338",
+    "Html": "<p>It shouldn't.</p>\r\n<p>Have you entered the names correctly? Edit the source. Next to the author field, click on the 'Edit' button. Are each of the name on a separate line in the box at the bottom of the dialog? If not, then you didn't enter them correctly. Unless you know what you are doing, always enter the names using the 'Edit' button. Especially since there is a bug in Word 2007 / 2008 (and partially in 2010) when entering names as discussed at <a href=\"http://bibword.codeplex.com/releases/view/27834\">http://bibword.codeplex.com/releases/view/27834</a></p>",
+    "PostedDate": "2012-04-03T06:57:16.237-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "819257",
+    "ThreadId": "235338",
+    "Html": "<p>I checked it and it is fine... and I even entered a new source.</p>\r\n<p>I guess the problem is with this part</p>\r\n<pre><span style=\"color: blue;\">b:Last[1]</span></pre>",
+    "PostedDate": "2012-04-03T07:05:37.6-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "819262",
+    "ThreadId": "235338",
+    "Html": "<p>What is the xml format of b:Author/b:Main?</p>\r\n<p>You&nbsp;might&nbsp;need something along the lines of b:Author/b:Main/b:Person[1]/b:Last . But without knowing the format it is just a wild guess.</p>",
+    "PostedDate": "2012-04-03T07:17:41.843-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "819264",
+    "ThreadId": "235338",
+    "Html": "<p>Here is the whole file https://docs.google.com/open?id=0B654pHGLZIJlU3pLTnF3X1ZSWjZzUUs3RWpWYXQzUQ. Please can you write me the correct syntex, which should write \"author\"? :)&nbsp;</p>\r\n<p>Thanks</p>",
+    "PostedDate": "2012-04-03T07:21:36.107-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "819354",
+    "ThreadId": "235338",
+    "Html": "<p>I'm not going to go over over 7000 lines of badly written code to find where you (or Microsoft) has hidden its formatting information.</p>\r\n<p>It's going to be something close to what I suggested, just play around with it for a bit and you will find something. Maybe try something like</p>\r\n<pre>b:Author/b:Main/b:NameList/b:Person/b:Last</pre>\r\n<p>and/or throw in some position information to get the correct person.</p>",
+    "PostedDate": "2012-04-03T11:18:40.553-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "819760",
+    "ThreadId": "235338",
+    "Html": "<p>I know...that code is not good. And it was written by MS. :( Your sollution was correct.</p>\r\n<p>Thanks.</p>\r\n<p>Martin</p>",
+    "PostedDate": "2012-04-04T04:48:26.043-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

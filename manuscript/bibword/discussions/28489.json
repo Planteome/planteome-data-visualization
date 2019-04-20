@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "95001",
+    "ThreadId": "28489",
+    "Html": "I want to use bibliography from ACM portal but they specify it in format of BibTex or ACM ref format. <br>\r\nCan anybody tell me how can i use that style in word 2007. I don't want to copy each field manually.<br>\r\n<br>\r\nregards,<br>\r\nAmit<br>\r\n",
+    "PostedDate": "2008-05-27T11:24:11.103-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "95155",
+    "ThreadId": "28489",
+    "Html": "In Word 2007, XML is used to store references. There is no way to use BibTex directly in Word 2007. You will have to convert them to the XML format.<br>\r\n<br>\r\nThere are some tools out there to automate the conversion. I did not test them yet, so I can not comment on how well they work.<br>\r\n<br>\r\nFirstly, there is the <a href=\"http://www.scripps.edu/~cdputnam/software/bibutils/\" title=Bibutils>Bibutils</a> program which allows converting BibTeX to MODS (bib2xml) and MODS to Microsoft's XML format (xml2wordbib). It comes in the form of a set of easy to use command line tools which work on most platforms.<br>\r\n<br>\r\nSecondly, there is the <a href=\"http://sdudah.googlepages.com/bibtex2word2007bibliographyconverter\" title=BibTeX2Word2007>BibTeX2Word2007</a> AWK script. AWK is a unix tool which also runs under cygwin but might be slightly harder to use then the first solution.<br>\r\n",
+    "PostedDate": "2008-05-28T01:51:12.207-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

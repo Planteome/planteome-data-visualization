@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1327034",
+    "ThreadId": "573446",
+    "Html": "Hi, i'm hoping someone can help because i've tried reading through everything on here and I can't get my head round it. I've been using the Harvard style already in Word 2013, however, I need it to reference ALL the authors in my reference list, currently it is shortening the long ones to et al. Any help would be so so so very appreciated, I have so many deadlines looming and this could be a real life saver if it referenced all the authors at the end for me! <br />\n",
+    "PostedDate": "2014-11-28T06:38:17.253-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1327111",
+    "ThreadId": "573446",
+    "Html": "Can't help you with the Harvard Anglia style which Microsoft ships with Word. (Don't know if anyone can easily change that code.)\r<br />\n<br />\nIf you use Yves' HarvardAnglia.XSL, the output of the Bibliography display is governed by the &lt;bibliography&gt; section (Book example shown here):\r<br />\n<br />\n&lt;format&gt;{%Author:2|Editor:3|&quot;Anon.&quot;%,}{ %Year|&quot;n.d.&quot;%{%YearSuffix%}.}{ &lt;i&gt;%Title|ShortTitle%&lt;/i&gt;.{ %Edition:o% ed.}}{ Translated by %Translator:5%.}{ [%Medium%]}{ %City|StateProvince|CountryRegion%{, %StateProvince|CountryRegion%{, %CountryRegion%}}{: %Publisher%}.}{ %Publisher%.}.{ Available at: &lt;u&gt;%URL:l%&lt;/u&gt;{ [accessed{{ %DayAccessed%} %MonthAccessed:s%} %YearAccessed%]}}.{ %Comments%.}&lt;/format&gt;.\r<br />\n<br />\nThe treatment of the author display is controlled by the {%Author:2|Editor:3|&quot;Anon.&quot;%,} element.\r<br />\n<br />\nGo to the &lt;namelists&gt; section, where the authors in category :2 are governed by in this subsection:<br />\n<pre><code>  &lt;list name=&quot;author&quot; id=&quot;2&quot;&gt;\n</code></pre>\n\nThe number of authors to display is set in this line (in this case, only 4):<br />\n<pre><code>    &lt;max_number_of_persons_to_display&gt;4&lt;/max_number_of_persons_to_display&gt;.\n</code></pre>\n\nYou can change the number to display to what you require, e.g. change the '4' here to '20'.\r<br />\n<br />\nHope this helps.\r<br />\n<br />\nLionel Crator,\r<br />\nTau Editing.\r<br />\nProfessional Language Practitioner.<br />\n",
+    "PostedDate": "2014-11-28T12:04:43.583-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1329924",
+    "ThreadId": "573446",
+    "Html": "Easy\r<br />\n<br />\nEdit the harvard Anglia style, look for the following at approx line 308\r<br />\n<br />\n&lt;list name=&quot;author&quot; id=&quot;2&quot;&gt;<br />\n<pre><code>    &lt;single_prefix&gt;&lt;/single_prefix&gt;\n    &lt;multi_prefix&gt;&lt;/multi_prefix&gt;\n    &lt;corporate&gt;{%Corporate%}&lt;/corporate&gt;\n    &lt;first_person&gt;{%Last|First|Middle%{, %First:adp|Middle:adp%{%Middle:adp%}}}&lt;/first_person&gt;\n    &lt;other_persons&gt;{%Last|First|Middle%{, %First:adp|Middle:adp%{%Middle:adp%}}}&lt;/other_persons&gt;\n    &lt;separator_between_if_two&gt; &amp;amp; &lt;/separator_between_if_two&gt;\n    &lt;separator_between_if_more_than_two&gt;, &lt;/separator_between_if_more_than_two&gt;\n    &lt;separator_before_last&gt; &amp;amp; &lt;/separator_before_last&gt;\n    &lt;max_number_of_persons_to_display&gt;4&lt;/max_number_of_persons_to_display&gt;\n    &lt;number_of_persons_to_display_if_more_than_max&gt;1&lt;/number_of_persons_to_display_if_more_than_max&gt;\n    &lt;overflow&gt; et al.&lt;/overflow&gt;\n    &lt;single_suffix&gt;&lt;/single_suffix&gt;\n    &lt;multi_suffix&gt;&lt;/multi_suffix&gt;\n  &lt;/list&gt;\n</code></pre>\n\nChange the max number of persons to say 10, this will list the first ten authors, or change it to whatever is needed.<br />\n",
+    "PostedDate": "2014-12-08T13:38:11.137-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1329927",
+    "ThreadId": "573446",
+    "Html": "Thank you thank you thank you both. Lifesavers :)<br />\n",
+    "PostedDate": "2014-12-08T13:43:28.507-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

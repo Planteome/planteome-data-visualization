@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "815091",
+    "ThreadId": "349906",
+    "Html": "\r\n<p>New to bibword - looks good - editied the original word XLS file to get what I needed (ish) though APA is probably just as close my attempts!</p>\r\n<p>Wanted to create my definitive style with Bibword but struggling here.</p>\r\n<p>Thought I'd try and create a new source (Module text) for my Open University work, but although it's in my style sheet, it's not appearing as a source...</p>\r\n<p>So, quick question - how do I add a source like this with it's own important fields so it shows up in Word?</p>\r\n<p>&nbsp;</p>\r\n<p>p.s. using Word 2010.... :-)</p>\r\n",
+    "PostedDate": "2012-03-24T16:39:53.697-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "815157",
+    "ThreadId": "349906",
+    "Html": "<p>Word loads the available source types from bibform.xml,&nbsp;not from your stylesheet.</p>\r\n<p>To implement a new source type, you will first have to adapt bibform.xml (for every language used). Once that is done, you will have to implement in your stylesheet how entries of such a source type should be formatted.</p>\r\n<p>There is some information on changing the bibform.xml file when looking at the BibType program. Also, there are some posts I made in the past:</p>\r\n<ul>\r\n<li><a href=\"http://groups.google.com/group/microsoft.public.word.docmanagement/browse_thread/thread/8a28a5a9a2a607d7/5b594105d46d9ba7?hl=en&amp;pli=1\">http://groups.google.com/group/microsoft.public.word.docmanagement/browse_thread/thread/8a28a5a9a2a607d7/5b594105d46d9ba7?hl=en&amp;pli=1</a></li>\r\n<li><a href=\"http://bibword.codeplex.com/discussions/76871?ProjectName=bibword\">http://bibword.codeplex.com/discussions/76871?ProjectName=bibword</a></li>\r\n</ul>\r\n<p>Keep in mind that adding new source types will result in xml which no longer fits the open xml specifications. Word doesn't check the specification at the moment, but that might change in newer versions.</p>\r\n<p>BibWord presents an alternatif approach where you make subtypes for one of the existing types by using the Type field. This way, the xml follows the specification. The IEEE styles on this site&nbsp;present an example of this approach.</p>",
+    "PostedDate": "2012-03-25T04:04:23.283-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "815161",
+    "ThreadId": "349906",
+    "Html": "<p>Thanks Yves. I'll have a look at that... :-)</p>",
+    "PostedDate": "2012-03-25T04:19:23.593-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

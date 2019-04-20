@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "204475",
+    "ThreadId": "60379",
+    "Html": "<p>Hello!</p>\r\n<p>I'm using ISO 690 Numerical Reference Extension and is very good, except writing out the bibliography. The problem appears when word write out [10]th reference. Example on figure: http://img37.imageshack.us/img37/6287/referm.jpg</p>\r\n<p>Any suggestion?</p>\r\n<p>Thanks.</p>",
+    "PostedDate": "2009-06-23T06:22:31.837-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "204478",
+    "ThreadId": "60379",
+    "Html": "<div>It's a table, just widen the first column to fit your needs.</div>\r\n<div> </div>\r\n<div>Yves<br><br></div>\r\n<div>On Tue, Jun 23, 2009 at 3:22 PM, markoM <span dir=ltr>&lt;<a href=\"mailto:notifications@codeplex.com\">notifications@codeplex.com</a>&gt;</span> wrote:<br>\r\n<blockquote style=\"border-left:#ccc 1px solid;margin:0px 0px 0px 0.8ex;padding-left:1ex\">\r\n<div>\r\n<p>From: markoM</p>\r\n<div>\r\n<p>Hello!</p>\r\n<p>I'm using ISO 690 Numerical Reference Extension and is very good, except writing out the bibliography. The problem appears when word write out [10]th reference. Example on figure: <a href=\"http://img37.imageshack.us/img37/6287/referm.jpg\">http://img37.imageshack.us/img37/6287/referm.jpg</a></p>\r\n\r\n<p>Any suggestion?</p>\r\n<p>Thanks.</p></div>\r\n<div>\r\n<p>Read the <a href=\"http://bibword.codeplex.com/Thread/View.aspx?ThreadId=60379&ANCHOR#Post204475\">full discussion online</a>.</p>\r\n<p>To add a post to this discussion, reply to this email (<a href=\"mailto:bibword@discussions.codeplex.com?subject=[bibword:60379]\">bibword@discussions.codeplex.com</a>)</p>\r\n<p>To start a new discussion for this project, email <a href=\"mailto:bibword@discussions.codeplex.com\">bibword@discussions.codeplex.com</a></p>\r\n<p>You are receiving this email because you subscribed to this discussion on CodePlex. You can <a href=\"http://www.codeplex.com/site/discussions/project/unsubscribe/bibword\">unsubscribe or change your settings</a> on codePlex.com.</p>\r\n\r\n<p>Please note: Images and attachments will be removed from emails. Any posts to this discussion will also be available online at <a href=\"http://codeplex.com/\">codeplex.com</a></p></div></div></blockquote>\r\n</div><br>",
+    "PostedDate": "2009-06-23T06:24:44.597-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "204821",
+    "ThreadId": "60379",
+    "Html": "<p>Sorry for dumb questions!</p>\r\n<p>Tkanks. :)</p>",
+    "PostedDate": "2009-06-23T23:28:04.603-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

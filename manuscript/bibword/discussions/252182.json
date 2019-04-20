@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "590327",
+    "ThreadId": "252182",
+    "Html": "\r\n<p>Hello,</p>\r\n<p>This may be a stupid question, but I can't seem to figure it out. I'm using Word 2008 on MacOS, with Vancouver style.</p>\r\n<p>When I try to add pages (e.g. from a book, to be more specific), like the following example:</p>\r\n<p>&quot;...Out of these injuries one can see that in men's handball, shoulder injuries has an incidensrate of 8,4% (1, p. 30)&quot;</p>\r\n<p>..:I can't seem to get the page reference in there, and when I click the &quot;edit this citation&quot; button to add pages to it, nothing happens. (Yes, I've tried to update the bibliography and citations)</p>\r\n<p>So, it's currently like this: &quot;...Out of these injuries one can see that in men's handball, shoulder injuries has an incidensrate of 8,4% (1)&quot;, although I refer to other pages in this specific book later in the text, so it would be nice to refer to specific\r\n pages.</p>\r\n<p>Anyone know a solution to my problem?</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2011-04-01T09:53:40.16-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "590478",
+    "ThreadId": "252182",
+    "Html": "<p>The Vancouver style doesn't support page numbers in in-text citations. It is purely a numerical reference.</p>\r\n<p>If you want page numbers, you will have to adapt the style. Where you have</p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre>      <span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">source</span> <span style=\"color: red;\">type</span><span style=\"color: blue;\">=</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">Book</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">&gt;</span>\r\n        <span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">format</span><span style=\"color: blue;\">&gt;</span>{%RefOrder%}<span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">format</span><span style=\"color: blue;\">&gt;</span>\r\n      <span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">source</span><span style=\"color: blue;\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>you would use something like</p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre>      <span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">source</span> <span style=\"color: red;\">type</span><span style=\"color: blue;\">=</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">Book</span><span style=\"color: black;\">\"</span><span style=\"color: blue;\">&gt;</span>\r\n        <span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">format</span><span style=\"color: blue;\">&gt;</span>{%RefOrder%{, %CitationPages:p. :pp. :%}}<span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">format</span><span style=\"color: blue;\">&gt;</span>\r\n      <span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">source</span><span style=\"color: blue;\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>You would have to do this for every type of source where you require it.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2011-04-01T14:19:16.953-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

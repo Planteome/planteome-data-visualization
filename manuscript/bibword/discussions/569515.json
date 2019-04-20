@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1312290",
+    "ThreadId": "569515",
+    "Html": "Hello,\r<br />\n<br />\nI'm trying to create a style for SAA, which groups works by the same author together by date, e.g.,\r<br />\n<br />\nIndiana Jones\r<br />\n  1930 <em>A Phase I Investigation of the Ark</em>...\r<br />\n  1935 <em>The Holy Grail</em>\r<br />\n<br />\nI see in the default stylesheet a comment that &quot;SameAuthors&quot; isn't implemented, which Word uses for the em-dashes in styles like Chicago which also list an author only once. Has anyone created a bibliography in BibWord that does this? It looks like in the default word, they have an index of authors and then check the current author against the previous item in the index, but I don't see anything like that implemented in BibWord. Thanks.<br />\n",
+    "PostedDate": "2014-10-10T11:55:49.213-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

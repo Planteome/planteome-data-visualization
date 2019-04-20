@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1040378",
+    "ThreadId": "442812",
+    "Html": "I tried to use BibWord, but I have a Problem in Word 2013. With the Word 2013 Styles I can specify the pages in citations. As soon as I Change the style to one which is created with BibWord, the appropriate menu button disappears:\r<br />\n<br />\n<img src=\"http://i40.tinypic.com/30cokee.png\" alt=\"Image\" />\r<br />\n<br />\nHow can I activate These Buttons in BibWord Styles?\r<br />\n<br />\nThank you for an answer<br />\n",
+    "PostedDate": "2013-05-07T07:01:01.487-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1040524",
+    "ThreadId": "442812",
+    "Html": "I don't have Word 2013, so I can't say for sure. But one thing could be the hyperlinking feature of BibWord. Try disabling hyperlinking in your style.\r<br />\n<br />\nIn the XSL, very close to the top, there is:<br />\n<pre><code>&lt;citation_as_link&gt;yes&lt;/citation_as_link&gt;</code></pre>\n\nTry changing the yes to no and see if that fixes things.<br />\n",
+    "PostedDate": "2013-05-07T11:14:47.653-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1042256",
+    "ThreadId": "442812",
+    "Html": "Hi Yves\r<br />\nThank you. That was the solution!<br />\n",
+    "PostedDate": "2013-05-11T07:35:19.59-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

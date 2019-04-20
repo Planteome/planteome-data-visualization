@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "429509",
+    "ThreadId": "208897",
+    "Html": "<p>Hi,</p>\r\n<p>I am using the IEEE - Reference Order style. &nbsp;I would like the space between the last word in my sentence and the start of the citation to be non-breaking. &nbsp;Currently I have citations appearing on the start of the next line. &nbsp;I have looked at the xslt but cannot find the place to change it.</p>\r\n<p>Any help would be greatly appreciated.</p>\r\n<p>Iain.</p>",
+    "PostedDate": "2010-04-10T03:47:06.7-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "429540",
+    "ThreadId": "208897",
+    "Html": "<p>Are you talking about the space just in front of the opening bracket? If so, that space is put there by the field code and&nbsp;not by the stylesheet. You can't remove that space using the stylesheet.</p>\r\n<p>I haven't tried it myself, but according to the second post at&nbsp;<a href=\"http://www.pcreview.co.uk/forums/thread-3707115.php\">http://www.pcreview.co.uk/forums/thread-3707115.php</a>&nbsp;you could wrap your citation field in a quote field&nbsp;to&nbsp;suppress the leading space.&nbsp;You could then enter your own non-breaking space in front of the quote field.</p>",
+    "PostedDate": "2010-04-10T06:23:59.83-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "429806",
+    "ThreadId": "208897",
+    "Html": "<p>Hi Yves,</p>\r\n<p>Thanks for your help. &nbsp;That sounds rather complicated and am not sure how to insert one field inside another. &nbsp;Anyway word has just trashed my document. I was playing with fields and cross references at the time it went screwey, I reopened it and 1/4 of my text had turned to box characters&nbsp;. &nbsp;I have spent the last 7 hours recovering what I can into a new document with as little word magic as possible. &nbsp;I am going through it now replacing the static text with citations. &nbsp;After this experience I don't feel too adventurous. &nbsp;I rephrased my sentence to get the citation on the same line as the rest of the sentence.</p>\r\n<p>I am not sure what caused it. &nbsp;I did have some text pasted in from pdf files where the citations didn't behave like the rest of the doc and some of the document headers would not appear in the xref list. &nbsp;I think the formating or similar must have got broken. &nbsp;So I started from scratch and pasted any rescues text into the document as unformatted text, then reapplied the formatting and citations. &nbsp;I am now going to wait until I am completely finished to insert xrefs across my document.</p>\r\n<p>Thanks again for your help.</p>\r\n<p>Iain.</p>\r\n<p>PS BibWord is great it enables me to use the IEEE style which means my Dissertation almost looks like it was done in Latex.</p>",
+    "PostedDate": "2010-04-11T14:44:50.467-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

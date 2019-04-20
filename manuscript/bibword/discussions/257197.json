@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "610898",
+    "ThreadId": "257197",
+    "Html": "\r\n<p>Hi, I'm using Microsoft office 2007 and the iso 690 square brackets style (download from here).</p>\r\n<p>In my report, some sentences have multiple sources eg. The data shows............ [1;2;4]</p>\r\n<p>I would like to change the separator in the data from ; to , (which will result in [1,2,4])</p>\r\n<p>Is there any way to do it? I am not good in XML and will appreciate if someone can walk me through it if changes need to be done at that level. Thanks! =)</p>\r\n",
+    "PostedDate": "2011-05-11T05:52:02.49-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "610955",
+    "ThreadId": "257197",
+    "Html": "<p>See <a href=\"http://bibword.codeplex.com/wikipage?title=FAQ&amp;referringTitle=Styles_FAQ#Q7\">http://bibword.codeplex.com/wikipage?title=FAQ&amp;referringTitle=Styles_FAQ#Q7</a></p>\r\n<p>Basically look for the first line (&nbsp; &lt;xsl:if test=\"not(/b:Citation/b:LastAuthor)\"&gt;&nbsp; ), find the matching end tag (&nbsp; &lt;/xsl:if&gt;&nbsp; ) which should only be 2 or 3 lines lower. Remove anything between those two lines. Finally, insert your own separator (&nbsp; &lt;xsl:text&gt;,&lt;/xsl:text&gt;&nbsp; ) between those lines.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2011-05-11T07:33:44.397-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "611413",
+    "ThreadId": "257197",
+    "Html": "<p>Thanks yves! I got it using your suggestion.&nbsp;Thanks for the walkthrough!</p>",
+    "PostedDate": "2011-05-11T21:16:51.69-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

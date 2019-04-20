@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "282355",
+    "ThreadId": "82187",
+    "Html": "<p>Hello, firstly this program is great, and it has been very helpful. I am a medical student so we are instructed to use the Vancouver style all the time. I'm now using this program to help me with my final year university project, but have encountered a problem. When adding references that are double-digits (i.e. 10.), then the alignment in the citations and bibliography box gets messed up.</p>\r\n<p>This is the reference that I am using:</p>\r\n<p><span style=\"color:#ff0000\">13.</span> NHS Primary Care Commissioning (PCC). NHS Community Pharmacy Contractual Framework Enhanced Service - Medication Review (Full Clinical Review). [Online].; 2005 [cited 2010 January 27. Available from: <a href=\"http://www.psnc.org.uk/data/files/PharmacyContract/enhanced_service_spec/en7__medication_review.pdf\">http://www.psnc.org.uk/data/files/PharmacyContract/enhanced_service_spec/en7__medication_review.pdf</a></p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<hr>\r\n<p>In the word document, the number 13 appears spread over both lines of text kind of like this: (except both lines are underneath each other like normal)</p>\r\n<p><span style=\"color:#ff0000\">1 </span>NHS Primary Care Commissioning (PCC). NHS Community Pharmacy Contractual Framework Enhanced Service - Medication Review (Full Clinical Review). [Online].; 2005 [cited 2010 January 27.</p>\r\n<p><span style=\"color:#ff0000\">3.</span> Available from: <a href=\"http://www.psnc.org.uk/data/files/PharmacyContract/enhanced_service_spec/en7__medication_review.pdf\">http://www.psnc.org.uk/data/files/PharmacyContract/enhanced_service_spec/en7__medication_review.pdf</a></p>\r\n<p>&nbsp;</p>\r\n<hr>\r\n<p>Is this a bug with the style or am I doing something wrong. It seems as if the column for the numbers does not auto-adjust when a larger number appears within it.</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-27T07:26:55.117-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "282374",
+    "ThreadId": "82187",
+    "Html": "<p>It's not really a bug. The style uses a HTML table layout where the column width is not fixed. When Word inserts the table, it makes an 'incorrect assumption' about the width of the first column.</p>\r\n<p>You can easily solve this manually. Just place your mouse cursor on the column border between the two parts (the cursor should change) and drag it to the right.</p>\r\n<p>Yves</p>",
+    "PostedDate": "2010-01-27T08:00:54.583-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "282382",
+    "ThreadId": "82187",
+    "Html": "<p>When I do that, the references go off the right-hand side edge of the page.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-27T08:18:25.607-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "282387",
+    "ThreadId": "82187",
+    "Html": "<p>Never mind, I figured it out. I was using the arrows in the ruler at the top of the page to widen the column, but using the arrow cursor actually beside the column worked.</p>\r\n<p>Thanks.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-27T08:27:29.513-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

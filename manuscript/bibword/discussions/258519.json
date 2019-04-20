@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "616334",
+    "ThreadId": "258519",
+    "Html": "\r\n<p>Is there any &quot;type of source&quot; to reference an essay (dissertation or thesis)?</p>\r\n<p>Here it is the model that I'm searching:</p>\r\n<p><span title=\"Clique para mostrar traduções alternativas\">AUTHOR</span><span title=\"Clique para mostrar traduções alternativas\">.</span>&nbsp;<span title=\"Clique para mostrar traduções alternativas\">Title</span><span title=\"Clique para mostrar traduções alternativas\">.</span>&nbsp;<span title=\"Clique para mostrar traduções alternativas\">Year\r\n of</span>&nbsp;<span title=\"Clique para mostrar traduções alternativas\">presentation.</span>&nbsp;<span title=\"Clique para mostrar traduções alternativas\">Number of pages</span>&nbsp;<span title=\"Clique para mostrar traduções alternativas\">or volumes</span><span title=\"Clique para mostrar traduções alternativas\">.</span>&nbsp;<span title=\"Clique para mostrar traduções alternativas\">(</span><span title=\"Clique para mostrar traduções alternativas\">category&nbsp;</span><span title=\"Clique para mostrar traduções alternativas\">and</span>&nbsp;<span title=\"Clique para mostrar traduções alternativas\">area\r\n of</span>&nbsp;<span title=\"Clique para mostrar traduções alternativas\">​​concentration</span><span title=\"Clique para mostrar traduções alternativas\">)</span>&nbsp;<span title=\"Clique para mostrar traduções alternativas\">-</span>&nbsp;<span title=\"Clique para mostrar traduções alternativas\">School</span>&nbsp;<span title=\"Clique para mostrar traduções alternativas\">Name</span><span title=\"Clique para mostrar traduções alternativas\">,\r\n</span><span title=\"Clique para mostrar traduções alternativas\">University Name</span><span title=\"Clique para mostrar traduções alternativas\">,</span>&nbsp;<span title=\"Clique para mostrar traduções alternativas\">city, year</span>&nbsp;<span title=\"Clique para mostrar traduções alternativas\">of\r\n defense</span><span title=\"Clique para mostrar traduções alternativas\">.</span></p>\r\n",
+    "PostedDate": "2011-05-21T20:58:34.223-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "616385",
+    "ThreadId": "258519",
+    "Html": "<p>The open xml specification puts a thesis or dissertation under the Report category.</p>\r\n<p>Styles like the IEEE styles offered on this site have a special subcategory for thesis/dissertation by using the Type field and specifying 'Thesis' as its value. But their output format is not the same as what you want. You will have to create your own formatting strings for those.</p>",
+    "PostedDate": "2011-05-22T06:57:36.86-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1491811",
+    "ThreadId": "661001",
+    "Html": "Hi, I'm attempting to modify the IEEE style to match a journal published by Elsevier. The biggest difference I can tell is the use of 'and' between the last two items in a list of authors in the bibliography. I've attempted to remove the &quot;, and &quot; and replace it just with &quot;, &quot; however, I now get a comma after every entry including if it is a single author. Any suggestions?\r<br />\n<br />\nThanks\r<br />\nSham<br />\n",
+    "PostedDate": "2017-01-28T02:33:37.7-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

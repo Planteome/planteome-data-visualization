@@ -1,0 +1,106 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2013-01-31T01:58:57.937-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I upgraded my Office from 2010 to 2013 RTM recently, but unfortunately the ABNT style stoped working. I tried moving it to \"C:\\Program Files\\Microsoft Office\\Office15\\Bibliography\\Style\" but the style isn't loaded to the styles list. It seens that the style structure has changed, but I was not able to find instructions about it. It'd be very welcome if this style was upgraded or at least any directions was given.",
+    "LastUpdatedDate": "2013-05-16T05:29:23.403-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "bibword",
+    "ReportedDate": "2012-11-19T17:20:39.52-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "ABNT 6023:2002 support in Word 2013",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 5,
+    "Id": 10615
+  },
+  "FileAttachments": [
+    {
+      "FileId": 3563,
+      "FileName": "ABNT_Author.XSL",
+      "DownloadUrl": ".\\3563"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Hi friend,\r\n\r\nSame problem here. =/ ",
+      "PostedDate": "2012-12-04T19:07:00.957-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2012-12-04T19:07:19.58-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Any news? I'm having the same issue here.",
+      "PostedDate": "2013-01-29T12:42:30.327-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I found a solution! -> [http://bibword.codeplex.com/discussions/404418](http://bibword.codeplex.com/discussions/404418)\nI changed the lines according [yves](http://www.codeplex.com/site/users/view/yves)'s instructions, and then I made a copy of the new XSL file to the path: \"C:\\Users\\user_name\\AppData\\Roaming\\Microsoft\\Bibliography\\Style\", like [NehemiahAdon86](http://www.codeplex.com/site/users/view/NehemiahAdon86) said ;)",
+      "PostedDate": "2013-01-29T13:22:12.517-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I found a way in another post at the Discussion area.\nPut these two new elements __<xsl:when ..>__ between the existing ones:\r\n\r\n```\n<!-- Handle the different types of input documents. -->\n<xsl:template match=\"/\">\r\n\r\n    <xsl:choose>\r\n\r\n        <!-- Sets a dummy version number. -->\n        <xsl:when test=\"b:XslVersion\">\n            <xsl:text>10</xsl:text>\n        </xsl:when>\r\n\r\n        <!-- We do not do localization, just use the default name. -->\n        <xsl:when test=\"b:StyleNameLocalized\">\n            <xsl:value-of select=\"msxsl:node-set($data)/general/stylename\"/>\n        </xsl:when>\r\n\r\n        <!-- Gets the name of the style as it will be displayed in Word 2007. -->\n        <xsl:when test=\"b:StyleName\">\n    ...\n```",
+      "PostedDate": "2013-01-29T13:27:42.403-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-01-31T01:47:35.097-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "When I have some time I will enclose this in the next release so stuff works out of the box with Office 2013.",
+      "PostedDate": "2013-01-31T01:58:48.81-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-01-31T01:58:57.937-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:20:24.847-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-03-20T10:58:19.27-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi friends,\r\n\r\nI made the change as suggested by Ives, but it is still not working.\r\n\r\nI am trying to compare the two different types to know what is wrong. The thing is, I am not a developer.\r\n\r\nIf anyone could help me.\r\n\r\nHere it is\r\n\r\n```\n<!-- Handle the different types of input documents. -->\n-<xsl:template match=\"/\">-<xsl:choose>\n<!-- Sets a dummy version number. -->\n-<xsl:when test=\"b:XslVersion\"><xsl:text>10</xsl:text></xsl:when>\n<!-- We do not do localization, just use the default name. -->\n-<xsl:when test=\"b:StyleNameLocalized\"><xsl:value-of select=\"msxsl:node-set($data)/general/stylename\"/></xsl:when>\n<!-- Gets the name of the style as it will be displayed in Word 2007. -->\n-<xsl:when test=\"b:StyleName\"><xsl:value-of select=\"msxsl:node-set($data)/general/stylename\"/></xsl:when>\n<!-- Gets the version information for the style. -->\n-<xsl:when test=\"b:Version\"><xsl:value-of select=\"msxsl:node-set($data)/general/version\"/></xsl:when>\n<!-- Gets a description of the style. (Word 2008 or later) -->\n-<xsl:when test=\"b:Description\"><xsl:value-of select=\"msxsl:node-set($data)/general/description\"/></xsl:when>\n<!-- Gets the URL for updates. (Word 2008 or later) -->\n-<xsl:when test=\"b:UpdateURL\"><xsl:value-of select=\"msxsl:node-set($data)/general/URL\"/></xsl:when>\n<!-- Retrieve the most important fields for a certain type of citation. -->\n-<xsl:when test=\"b:GetImportantFields\"><xsl:variable name=\"type\" select=\"b:GetImportantFields/b:SourceType\"/>-<b:ImportantFields><xsl:copy-of select=\"msxsl:node-set($data)/importantfields/source[@type = $type]/*\"/></b:ImportantFields></xsl:when>\n```\r\n\r\nAnd the version in APA (embedded to word 2013)\r\n\r\n```-<xsl:template match=\"/\">-<xsl:choose>-<xsl:when test=\"b:Version\"><xsl:text>2006.5.07</xsl:text></xsl:when>-<xsl:when test=\"b:OfficeStyleKey\"><xsl:text>APA</xsl:text></xsl:when>-<xsl:when test=\"b:XslVersion\"><xsl:text>6</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized\">-<xsl:choose>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='1033'\"><xsl:text>APA</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='1025'\"><xsl:text>APA</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='1037'\"><xsl:text>APA</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='1041'\"><xsl:text>APA</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='2052'\"><xsl:text>APA</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='1028'\"><xsl:text>APA</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='1042'\"><xsl:text>APA</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='1036'\"><xsl:text>APA</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='1040'\"><xsl:text>APA</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='3082'\"><xsl:text>APA</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='1043'\"><xsl:text>APA</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='1031'\"><xsl:text>APA</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='1046'\"><xsl:text>APA</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='1049'\"><xsl:text>APA</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='1035'\"><xsl:text>APA</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='1032'\"><xsl:text>APA</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='1081'\"><xsl:text>APA</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='1054'\"><xsl:text>APA</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='1057'\"><xsl:text>APA</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='1086'\"><xsl:text>APA</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='1066'\"><xsl:text>APA</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='1053'\"><xsl:text>APA</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='1069'\"><xsl:text>APA</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='1027'\"><xsl:text>APA</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='1030'\"><xsl:text>APA</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='1110'\"><xsl:text>APA</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='1044'\"><xsl:text>APA</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='1061'\"><xsl:text>APA</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='1062'\"><xsl:text>APA</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='1063'\"><xsl:text>APA</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='1045'\"><xsl:text>APA</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='2070'\"><xsl:text>APA</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='1029'\"><xsl:text>APA</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='1055'\"><xsl:text>APA</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='1038'\"><xsl:text>APA</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='1048'\"><xsl:text>APA</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='1058'\"><xsl:text>APA</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='1026'\"><xsl:text>APA</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='1050'\"><xsl:text>APA</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='1087'\"><xsl:text>Американдық психологиялық қауымдастық</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='2074'\"><xsl:text>APA</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='3098'\"><xsl:text>APA</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='1051'\"><xsl:text>APA</xsl:text></xsl:when>-<xsl:when test=\"b:StyleNameLocalized/b:Lcid='1060'\"><xsl:text>Standard APA</xsl:text></xsl:when></xsl:choose></xsl:when>\r\n\r\n```",
+      "PostedDate": "2013-03-20T10:58:21.387-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:29:23.403-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "476370",
+    "ThreadId": "222433",
+    "Html": "<p>Is there a way to avoid the author filed being split-up into first name, second name, not generally, but&nbsp; in individual cases (ASA style)? For instance, I would like</p>\r\n<p>World Health Organization</p>\r\n<p>to stay as it is, and not being transformed to</p>\r\n<p>Organization, World Health</p>",
+    "PostedDate": "2010-08-04T03:54:06.253-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "476416",
+    "ThreadId": "222433",
+    "Html": "<p>The easiest way is to use the corporate field.</p>\r\n<p>As an alternative, you might want to try using non-breaking spaces rather than normal spaces, but those are hard to insert, and I'm not&nbsp;certain they will give the proper result.</p>\r\n<p>Note that the behaviour you are experiencing is actually a bug in Word 2007/2008 (and partially in 2010). For more information on this bug, as well as a fix, see <a href=\"http://bibword.codeplex.com/releases/view/27834\">http://bibword.codeplex.com/releases/view/27834</a></p>",
+    "PostedDate": "2010-08-04T06:21:58.113-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "476431",
+    "ThreadId": "222433",
+    "Html": "<p>The corporate field did the job... Thanks!</p>",
+    "PostedDate": "2010-08-04T06:51:00.437-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

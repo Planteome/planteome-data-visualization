@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1453474",
+    "ThreadId": "647931",
+    "Html": "Thank you for the excellent work. Unlike Microsoft's files, BibWord makes possible to create new styles or modify them according to the editors requirements, with minimum effort (and xslt knowledge). Being a professional author of scholarly texts, this is great and I recommend my students to use it for their papers.<br />\n<br />\nI'd like to ask whether there is a way to have the authors' initials appear in the in-text citations, only for different authors with the same last name.<br />\n<br />\nExample:<br />\n(Peterson K., 2008; Peterson R.A., 2002; Lewis, 1999; Rogers, 1965)<br />\n<br />\nTwo different Petersons, but only one Lewis and only one Rogers. Some styles, including APA, require that in this case the authors' initials should be mentioned too.<br />\n<br />\nI guess that an additional option is needed for %First% and %Middle% in the &lt;namelists&gt; (&lt;first_person&gt; and &lt;other_persons&gt;) that would allow initials to appear for non-unique author names. An additional template, checking for non-unique author names is also needed. Unfortunately, my knowledge to create this option and the corresponding template, is insufficient.<br />\n<br />\nAnother option, I guess, would be to include this in a new BibWordExtender version, which anyway resolves the significant problems with the year extensions.<br />\n<br />\nThanks for any help<br />\nAleg51<br />\n",
+    "PostedDate": "2015-11-22T05:46:41.963-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

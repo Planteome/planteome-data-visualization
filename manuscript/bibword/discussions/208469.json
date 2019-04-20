@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "427965",
+    "ThreadId": "208469",
+    "Html": "<p>&nbsp;Dear all,</p>\r\n<p>I'm using LNCS style. Big thanks to the author for this work.</p>\r\n<p>Nevertheless, I would like all references to be ordered alphabetically, even those that I add afterwards.</p>\r\n<p>Is it possible? If so, how?</p>\r\n<p>Thanks in advance,</p>\r\n<p>&nbsp;morlop</p>",
+    "PostedDate": "2010-04-06T11:14:56.957-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "427990",
+    "ThreadId": "208469",
+    "Html": "<p>Yes, but it's not all that easy.</p>\r\n<p>For starters, alphabetically sorted bibliographies which use numbers for in-text citations can't be created by Word 2007. You will need the <a title=\"BibWord Extender\" href=\"http://bibword.codeplex.com/wikipage?title=BibWord Extender\">BibWord Extender</a> tool.</p>\r\n<p>You will have to replace all <em><span style=\"color:#0000ff\">RefOrder</span></em>&nbsp;with <em><span style=\"color:#0000ff\">BibOrder</span></em>. And you will have to add&nbsp;<span style=\"color:#0000ff\"><em>sortkey</em></span> elements specifying how items need to be sorted.</p>\r\n<p>As an alternative, you can look at the <a href=\"http://bibword.codeplex.com/releases/view/19764\">IEEE</a> styles. There is already an alphabetic version of that style, you could copy the <em><span style=\"color:#0000ff\">format</span></em>&nbsp;elements from the LNCS style to that style.</p>",
+    "PostedDate": "2010-04-06T12:24:48.033-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "428181",
+    "ThreadId": "208469",
+    "Html": "<p>Thank you very much for your quick answer.</p>\r\n<p>I will give a try to both solutions.</p>\r\n<p>All the best,</p>\r\n<p>&nbsp;morlop</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-04-07T00:44:45.803-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

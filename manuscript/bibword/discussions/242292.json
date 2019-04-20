@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "551427",
+    "ThreadId": "242292",
+    "Html": "\r\n<p>We are evaluating whether to recommend using the Word Bib tool more broadly in our organization. The following questions are related to Microsoft's support of the built-in Styles. We would appreciate any answers/pointers that might help us as we plan to\r\n move forward. Thank so much for your time and help.</p>\r\n<ol>\r\n<li><span style=\"font-size:10pt; color:black\">Does Microsoft have an official channel for logging errors/omissions in the built-in bib styles?</span>\r\n</li><li><span style=\"font-size:10pt; color:black\">Is there a list of known problems with the built-in Styles?</span>\r\n</li><li><span style=\"font-size:10pt; color:black\">Does Microsoft publish (or has it ever published) updates/corrections to their built-in bib styles?\r\n</span></li><li><span style=\"font-size:10pt; color:black\">If so, how are these updates propagated? (For example, are such updates distributed as part of standard MS service packs?)</span>\r\n</li><li>Are any major changes in store for the bib tool in Word 2010? For example, in Word 2010:<br>\r\n<ol>\r\n<li>Has MS incorporated an IEEE style as a built-in? </li><li>Has MS added/removed/fixed any existing built-in Styles? </li><li>Has MS added new bib-related features? </li></ol>\r\n</li></ol>\r\n",
+    "PostedDate": "2011-01-18T11:48:42.697-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "551535",
+    "ThreadId": "242292",
+    "Html": "\r\n<blockquote style=\"border:solid .1em #ccc; font-style:italic; margin:.25em 1em 0 1em; padding:0 .25em 0 .25em\">\r\n1. Does Microsoft have an official channel for logging errors/omissions in the built-in bib styles?</blockquote>\r\n<p>No. I guess you could open a ticket with Microsoft support or through the Connect site but I wouldn't hope for any fixes. Issues with the 2007 styles were known since the release and weren't fixed in over 2 years.</p>\r\n<blockquote style=\"border:solid .1em #ccc; font-style:italic; margin:.25em 1em 0 1em; padding:0 .25em 0 .25em\">\r\n2. Is there a list of known problems with the built-in Styles?</blockquote>\r\n<p>No.</p>\r\n<blockquote style=\"border:solid .1em #ccc; font-style:italic; margin:.25em 1em 0 1em; padding:0 .25em 0 .25em\">\r\n3. Does Microsoft publish (or has it ever published) updates/corrections to their built-in bib styles?</blockquote>\r\n<p>Yes ... but no.</p>\r\n<p>The 2010 versions of the styles contain some minor fixes over the 2007 ones. However, no other fixes have ever been released. So support is unexisting.</p>\r\n<blockquote style=\"border:solid .1em #ccc; font-style:italic; margin:.25em 1em 0 1em; padding:0 .25em 0 .25em\">\r\n4. If so, how are these updates propagated? (For example, are such updates distributed as part of standard MS service packs?)</blockquote>\r\n<p>Traces of an update mechanism can be found in the styles that came with Word 2008 for Mac. However, I have never seen any usage of this functionality.</p>\r\n<p>So far, no updates have been made during service pack releases. The only updates so far where with releases of new versions of Office.</p>\r\n<blockquote style=\"border:solid .1em #ccc; font-style:italic; margin:.25em 1em 0 1em; padding:0 .25em 0 .25em\">\r\n5. Are any major changes in store for the bib tool in Word 2010? For example, in Word 2010:<br>\r\n<ol>\r\n<li>Has MS incorporated an IEEE style as a built-in? </li><li>Has MS added/removed/fixed any existing built-in Styles? </li><li>Has MS added new bib-related features? </li></ol>\r\n</blockquote>\r\n<p>Except for a few fixes to styles (all were listed in the notes I provided MS), the change of the names to reflect the version of the styles (also a suggestion I made), and a broken fix for storing first names (unlike the full fix available here which they\r\n didn't want to use for some reason), no changes have been made.</p>\r\n<p>The tool has been misunderstood since the very beginning. MS has indicated that it wasn't their job to publish styles. Styles had to come from libraries and large publishing organizations.&nbsp; Unfortunately, MS didn't take the laziness of those organizations\r\n into account. They will&nbsp;never publish their own styles. Note that this&nbsp;issue is not restricted to&nbsp;Word, the IEEE bst style for LaTeX for example is a community effort and is not officially supported by IEEE either. The same hold for the EndNote\r\n version.</p>\r\n<p>The tool has to be seen as a framework were everyone can contribute his or her own styles to. Unfortunately, almost nobody is contributing.</p>\r\n<p>Microsoft used to have an Academic Search engine similar to Google's Scholar. This service was stopped 2 years ago. Together with the lack of input on the bibliography tools, it seems that Microsoft has lost its interest in the academic world for some reason.</p>\r\n",
+    "PostedDate": "2011-01-18T14:41:03.413-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "552544",
+    "ThreadId": "242292",
+    "Html": "\r\n<p>Many, many thanks for the detailed explanation, yves.</p>\r\n",
+    "PostedDate": "2011-01-20T05:07:59.833-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "120575",
+    "ThreadId": "36347",
+    "Html": "Hi,<br>\r\n<br>\r\nI have a problem with my bibliography lists in word 2007. Some of my references have up to 8 authors and I want all of the authors to be visible in the bibliography list using ISO 690. The default settings limit the author count to maximum 3 authors. When I add the 4th author, the bibliography list changes to &quot;First Author et. al&quot; which I of course dont want in the list. Within the document, the citation is format &quot;First Author, et. al&quot; is okay. <br>\r\n<br>\r\nI have looked around inside the ISO690.XSL file located in&nbsp;C:\\Program Files\\Microsoft Office\\Office12\\Bibliography\\Style\\ but i can not make any sense of which variable to change.<br>\r\n<br>\r\nWould really appreciate some help to increase the maximum of authors shown in the bibliography list. <br>\r\nSincerely\r\n",
+    "PostedDate": "2008-09-24T02:43:17.03-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "121318",
+    "ThreadId": "36347",
+    "Html": "Hello,<br>\r\n<br>\r\nI'm a bit confused myself on how to extend the number of persons displayed. On the one hand, Microsoft passes a 'b:_MaxAuthor' element which should be responsible for it, but on the other hand they hard coded some values in the code. The hard-coded values are located around lines 5112 and 5152:<br>\r\n<br>\r\n<span style=\"font-size:13px;color:#0000ff\">&lt;</span><span style=\"font-size:13px;color:#2b91af\">xsl:when</span> <span style=\"font-size:13px;color:#ff0000\">test</span><span style=\"font-size:13px;color:#0000ff\">=</span><span style=\"font-size:13px\">&quot;</span><span style=\"font-size:13px;color:#0000ff\">$cMaxAuthor &gt; 3</span><span style=\"font-size:13px\">&quot;</span><span style=\"font-size:13px;color:#0000ff\">&gt;</span> <br>\r\n<br>\r\nand<br>\r\n<br>\r\n<span style=\"font-size:13px;color:#0000ff\">&lt;</span><span style=\"font-size:13px;color:#2b91af\">xsl:when</span> <span style=\"font-size:13px;color:#ff0000\">test</span><span style=\"font-size:13px;color:#0000ff\">=</span><span style=\"font-size:13px\">&quot;</span><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\"><span style=\"font-size:13px;color:#0000ff\">count(b:NameList/b:Person[4]) &gt;0 </span></span></span><span style=\"font-size:13px\">&quot;</span><span style=\"font-size:13px;color:#0000ff\">&gt;</span> <br>\r\n<br>\r\nBy changing the 3 to for example 500 and 4 to 501, you should be good.&nbsp;<br>\r\n<br>\r\nAt first sight it seems that changing the hard coded values is enough to solve your problem. If not, drop a note and I'll look into it further.<br>\r\n<br>\r\nYves\r\n",
+    "PostedDate": "2008-09-27T05:00:41.457-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "121535",
+    "ThreadId": "36347",
+    "Html": "Hello Yves,<br>\r\n<br>\r\nYour solution works like clockwork! Thank you for the help!<br>\r\n<br>\r\nSincerely\r\n",
+    "PostedDate": "2008-09-29T03:48:05.857-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

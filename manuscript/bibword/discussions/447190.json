@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1057374",
+    "ThreadId": "447190",
+    "Html": "Hi, \r<br />\n<br />\nI wish to mix in-text and end of sentence citations so they read like this:\r<br />\n<br />\nAppleseed (2002) concurred with finding of the Antarctic study (Georges 1996).\r<br />\n<br />\nI'm nearly there. In order to do this, I've modified the APA citation style to remove the brackets (following this: <a href=\"http://www.pcreview.co.uk/forums/turnoff-parantheses-apa-citation-t4013302.html\" rel=\"nofollow\">http://www.pcreview.co.uk/forums/turnoff-parantheses-apa-citation-t4013302.html</a>). Then for the in-text citation &quot;Appleseed (2002)&quot; I enter the citation twice. Once for the &quot;Appleseed&quot; where I suppress the year and title, and once again for the &quot;2002&quot; where I suppress the author and title. The brackets are typed in manually as part of the text. My only remaining issue is that the citations now have unwanted spaces as shown below before the '2002' and before 'Georges':\r<br />\n<br />\nAppleseed ( 2002) concurred with finding of the Antarctic study ( Georges, 1996)\r<br />\n<br />\nI would like to edit the APA.xsl file further so that these unwanted spaces do not appear, but I don't know how to achieve this. Can anyone help?\r<br />\n<br />\nThankyou<br />\n<ul>\n<li>Mick</li>\n</ul>\n",
+    "PostedDate": "2013-06-16T03:28:55.077-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1062945",
+    "ThreadId": "447190",
+    "Html": "Honestly, you should try to stick to one in-tekst citation formatting format in your tekst. So either everything &quot;Georges (1996)&quot; or &quot;(Georges, 1996)&quot; not both. It helps readability for your audience.\r<br />\n<br />\nAnyway, the space comes from the field and can't be removed directly. However, there is a workaround. See [<a href=\"https://bibword.codeplex.com/discussions/208897]\" rel=\"nofollow\">https://bibword.codeplex.com/discussions/208897]</a><br />\n",
+    "PostedDate": "2013-06-30T09:51:47.557-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1062983",
+    "ThreadId": "447190",
+    "Html": "thanks for the reply Yves. \r<br />\n<br />\nPlacing quotes around the fields seems like a good strategy to follow, although I could immediately find what line(s) of code I needed to do this on. Is there a particular term in the code I should search for? Any help here would be greatly appreciated.\r<br />\n<br />\nRegarding your suggestion to standardise the format, I agree that avoiding confusion is important, but what I'm trying to achieve appears to be pretty much standard practice for in-text and end of sentence referencing. I checked against a few contemporary journals in my field and it seems to be as I remember it from many decades ago -  when directly referring to the author in the sentence of the text, the brackets enclose the date but not the author. But this is different to citing a reference at the end of a sentence, where everything is contained within the brackets. Given that it does seem to be common practice at least in my field (fisheries science), I'm surprised this issue has popped up more in this forum?\r<br />\n<br />\nThanks<br />\n<ul>\n<li>\nMick<br />\n</li>\n</ul>\n",
+    "PostedDate": "2013-06-30T16:07:30.297-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

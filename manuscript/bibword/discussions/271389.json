@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "667235",
+    "ThreadId": "271389",
+    "Html": "\r\n<p>Hi there,</p>\r\n<p>Thanks for bibword and the guide, has made word's bibliog feature useable for me - otherwise it would have been completely useless.</p>\r\n<p>I have a minor issue.&nbsp; I have tweaked one of the existing citation styles to get as close as I can to the pubmed/medline citation style, which looks a bit like this:</p>\r\n<p><span lang=\"EN-US\" style=\"font-size:14pt\">Andersen LO, Husted H, Otte KS, et al. High volume infiltration analgesia in total knee arthroplasty: a randomized double-blind placebo-controlled trial\r\n<em>Acta Anaesthesiol Scand</em> 2008;52:1331&ndash;5.</span></p>\r\n<p>However just occasionally I have a citation which I have no volume or issue number for, just year and page number.&nbsp; With my current xsl file it would give a result like this:</p>\r\n<p><span lang=\"EN-US\" style=\"font-size:14pt\">Andersen LO, Husted H, Otte KS, et al. High volume infiltration analgesia in total knee arthroplasty: a randomized double-blind placebo-controlled trial\r\n<em>Acta Anaesthesiol Scand</em> 2008;:1331&ndash;5.</span></p>\r\n<p>Which obviously looks weird and needs manually editing before submission.&nbsp; I have tried putting the colon all over the place in my xsl file, including inside&nbsp; a pair&nbsp; of braces which surround the vol and issue field in the hope it would then\r\n be hidden if these parameters had no value, but it keeps appearing.&nbsp;</p>\r\n<p>How should my format field look?&nbsp; It currently is as follows:</p>\r\n<p>&lt;format&gt;{%Author:1%.}{ %Title|ShortTitle% }{&amp;lt;i&amp;gt;%JournalName%&amp;lt;/i&amp;gt;} { {&nbsp; %Month:s% {%Day%, }}{ %Year%;}}{{%Volume%}{(%Issue%)}}{:%Pages::%}.{ %Comments%.}&lt;/format&gt;</p>\r\n<p>Many thanks!</p>\r\n<p>Jon</p>\r\n<p><span lang=\"EN-US\" style=\"font-size:14pt\"><br>\r\n</span></p>\r\n<p><span lang=\"EN-US\" style=\"font-size:14pt\"><br>\r\n</span></p>\r\n",
+    "PostedDate": "2011-09-03T12:07:01.763-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "667346",
+    "ThreadId": "271389",
+    "Html": "<p>Use conditional formatting with groupings as shown <a href=\"http://bibword.codeplex.com/wikipage?title=BibWord%20Format%20Strings&amp;referringTitle=Documentation#ex1\" target=\"_blank\">here</a>&nbsp;for volume, issue, and pages.</p>\r\n<p>So basically you only want the colon if pages are available and volume/issue? You could use something like:</p>\r\n<ul>\r\n<li>When pages, volume, and issue are available: {%Volume%(%Issue%):%Pages::%}</li>\r\n<li>When pages and volume are available but issue is not: {%Volume%:%Pages::%}</li>\r\n<li>When volume and issue are available but not pages: {%Volume%(%Issue%)}</li>\r\n<li>When just pages is available: {%Pages::%}</li>\r\n</ul>\r\n<p>If you would put those for strings after eachother, you would get the formatting you want:</p>\r\n<p>{%Volume%(%Issue%):%Pages::%}{%Volume%:%Pages::%}{%Volume%(%Issue%)}{%Pages::%}</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2011-09-04T01:28:44.4-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "667765",
+    "ThreadId": "271389",
+    "Html": "<p>&nbsp;</p>\r\n<p>Thanks Yves, that works perfectly.</p>",
+    "PostedDate": "2011-09-05T08:27:59.977-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

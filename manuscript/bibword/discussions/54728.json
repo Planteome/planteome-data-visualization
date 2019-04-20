@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "184559",
+    "ThreadId": "54728",
+    "Html": "Hi,<br>\r\n<br>\r\n&nbsp;need to quote my bibliography using the separator &quot;:&quot; instead of &quot;p.&quot; for the pages reference.<br>\r\n<br>\r\nHoe can I change teh style permanently in order to do this.<br>\r\n<br>\r\nthanks in advance \r\n",
+    "PostedDate": "2009-04-28T08:21:29.663-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "184561",
+    "ThreadId": "54728",
+    "Html": "Which style? And where does they have to be changed? In-text citations only or bibliography as well?<br>\r\n",
+    "PostedDate": "2009-04-28T08:30:45.92-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "184565",
+    "ThreadId": "54728",
+    "Html": "I only need it on in-text citations.<br>\r\n<br>\r\nI´m using ISO 690 with first element and date, but I think it appears in all styles.<br>\r\n<br>\r\nthanks<br>\r\n",
+    "PostedDate": "2009-04-28T08:35:07.97-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "184580",
+    "ThreadId": "54728",
+    "Html": "That's a Microsoft style. I don't really mess around with these anymore because it is just too hard to cover every possible exception.<br>\r\n<br>\r\nThat said, for in-text citations, you probably have to look at the variable &quot;ppPages&quot;. There the &quot;p.&quot; prefix gets added. And look wherever the &quot;ppPages&quot; element gets displayed to change the space after the year into a &quot;:&quot;.\r\n",
+    "PostedDate": "2009-04-28T09:07:34.43-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "184583",
+    "ThreadId": "54728",
+    "Html": "thanks for your approach. it´s a start.<br>\r\n<br>\r\n<br>\r\n",
+    "PostedDate": "2009-04-28T09:14:22.75-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

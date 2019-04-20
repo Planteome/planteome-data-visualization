@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "BibWord can easily be configured to use this type of behaviour. It is up to the end user to do this type of changes...",
+    "ClosedDate": "2013-06-24T04:10:25.643-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Can we get the citation parentheses to be normal: name, (year) instead of word default: (name, year)?",
+    "LastUpdatedDate": "2013-06-24T04:10:25.643-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "bibword",
+    "ReportedDate": "2013-06-24T03:17:35.33-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "No issue"
+    },
+    "Summary": "Citation parentheses",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 11100
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Yes. \r\n\r\nMicrosoft suggests using the suppress dialog to suppress the author. This way (Doe, 2013) would become (2013). It is then up to you to type the name. All BibWord styles support this behaviour.\r\n\r\nWord does not offer the flexiblity to switch between two styles. But if you are certain that you want to go 'Doe (2013)', you can easily adapt a BibWord style to use this format.\r\n\r\nFirst, you can remove the enclosing brackets by looking for \n```\n<openbracket>(</openbracket>\n<closebracket>)</closebracket>\n```\nand removing the ( and ). Now (Doe, 2013) will simply become Doe, 2013. \r\n\r\nSecond, you will have to update the formatting string so brackets are put around the year. This will mostly come down to looking for %Year% and replacing it by (%Year%). Of course, you will have to take into account year suffices if you use them. See the documentation for more information, including examples, on how format strings work in BibWord.",
+      "PostedDate": "2013-06-24T04:08:30.62-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-06-24T04:10:25.643-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

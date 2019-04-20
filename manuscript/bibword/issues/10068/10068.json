@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "According to ABNT NBR 6023:2002 (http://www.habitus.ifcs.ufrj.br/pdf/abntnbr6023.pdf) where says \"Disponivel\" should read \"Disponível\" (with accents).",
+    "LastUpdatedDate": "2013-02-21T18:20:25.233-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "bibword",
+    "ReportedDate": "2012-03-24T11:26:14.657-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Type error ABNT NBR 6023:2002",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 10068
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

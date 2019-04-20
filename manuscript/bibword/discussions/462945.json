@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1109903",
+    "ThreadId": "462945",
+    "Html": "Hello, \r<br />\n<br />\ncan someone help me please. I've been trying to add a hanging indent on one of the harvard plugins but I can't figure out where to add the formatting. I've read about the styles solution but am just wondering if there's a way to incorporate this in the style. \r<br />\n<br />\nthanks. <br />\n",
+    "PostedDate": "2013-10-21T02:32:18.727-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1110184",
+    "ThreadId": "462945",
+    "Html": "Styles output HTML which Word converts to open xml. So you could set this through the styles if you wanted to. There is some info on use html tags inside formatstrings in the documentation (see <a href=\"https://bibword.codeplex.com/wikipage?title=BibWord%20Format%20Strings&amp;referringTitle=Documentation#ex1\" rel=\"nofollow\">here</a>).\r<br />\n<br />\nHowever I don't really understand why you would want to do that. Indentation is not really part of formatting a bibliography (number of authors to show, order of fields, ...). It should be part of your document template. Basically, it is the same as formatting your titles, headings, captions, ...<br />\n",
+    "PostedDate": "2013-10-21T12:22:53.553-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

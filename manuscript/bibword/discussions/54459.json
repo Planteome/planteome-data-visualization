@@ -1,0 +1,90 @@
+[
+  {
+    "Id": "183556",
+    "ThreadId": "54459",
+    "Html": "Hi,<br>\r\n<br>\r\nI need to use the small-caps when formatting authors' names in my footnotes. I've already tried CSS tags, but they do not work. Does anyone know a workaround?\r\n",
+    "PostedDate": "2009-04-25T05:57:20.24-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "183644",
+    "ThreadId": "54459",
+    "Html": "If you are using Word 2007, then it is currently not possible. Word 2007 does not know the difference between in-text citations and footnote citations. In Word 2007, citations tend to inherit the paragraph/character style from the surrounding text. CSS formatting is just stripped out. Only the basic html formatting (&lt;b&gt;, &lt;i&gt;, ...) is applied.<br>\r\n <br>\r\nIf you are using Word 2008 for Mac, then the styles make a difference between in-text and footnote citations. So there you can probably use smallcaps. I have not tested it as I don't have access to a mac.<br>\r\n<br>\r\nWe can only hope that with SP2 (release date scheduled for April 28, 2009), the functionality for footnote citations will be introduced in Word 2007. If so, BibWord will be updated to support it.<br>\r\n<br>\r\nSmallcaps can be used in the bibliography though. There most CSS should work.\r\n",
+    "PostedDate": "2009-04-25T14:20:45.707-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "183714",
+    "ThreadId": "54459",
+    "Html": "Thank you for your complete answer.<br>\r\n<br>\r\nI use Word 2007 for PC, but I'm writing my thesis in &quot;compatibility mode&quot; as it was Word 2003, so I guess the difference between in-text citations and footnote citation wouldn't work anyway.<br>\r\n<br>\r\nAs for bibliography, I've implemented one in my customized footnote style file: do you think I can simply use CSS tags in the very same file? Is the common CSS small-caps tag valid?\r\n",
+    "PostedDate": "2009-04-26T01:52:01.647-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "183718",
+    "ThreadId": "54459",
+    "Html": "<p>A bibliography gets the 'MsoBibliography' style assigned to each paragraph. Once you inserted a bibliography into your document, the localized name of MsoBibliography (Bibliography, ...) should show up in the normal style pane (CTRL+ALT+SHIFT+S). Within a bibliography, the formatting gets not stripped as long as it can be processed by Word. For a list of what is supported, see: <a href=\"http://msdn.microsoft.com/en-us/library/aa338201.aspx\">http://msdn.microsoft.com/en-us/library/aa338201.aspx</a>.</p>\r\n<p>I did a quick test where I formatted the last name of the first person in small-caps using the following routine:</p>\r\n<p><span style=\"font-family:'courier new';color:#0000ff;font-size:10pt\">&lt;</span><span style=\"font-family:'courier new';color:#a31515;font-size:10pt\">first_person</span><span style=\"font-family:'courier new';color:#0000ff;font-size:10pt\">&gt;</span><span style=\"font-family:'courier new';font-size:10pt\">{<span style=\"color:#ff0000\">&amp;lt;</span>span style=&quot;font-variant: small-caps&quot;<span style=\"color:#ff0000\">&amp;gt;</span>%Last|First%<span style=\"color:#ff0000\">&amp;lt;</span>/span<span style=\"color:#ff0000\">&amp;gt;</span>}{ %First:a%}{%Middle:a%}<span style=\"color:#0000ff\">&lt;/</span><span style=\"color:#a31515\">first_person</span><span style=\"color:#0000ff\">&gt;</span></span></p>\r\n<p>The result looks like this:</p>\r\n<p><span style=\"font-variant:small-caps;font-family:'calibri','sans-serif';font-size:11pt\">Cullity</span><span style=\"font-family:'calibri','sans-serif';font-size:11pt\"> BD. Introduction to Magnetic Materials. </span><span style=\"font-family:'calibri','sans-serif';font-size:11pt\">Reading (MA): Addison-Wesley; 1972.</span></p>\r\n",
+    "PostedDate": "2009-04-26T02:58:55.08-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "183735",
+    "ThreadId": "54459",
+    "Html": "Ok, thank you again for your time.<br>\r\n<br>\r\nI'll try as soon as I have some spare time, and I'll let you know if I'm able to implement it.\r\n",
+    "PostedDate": "2009-04-26T05:19:35.043-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "195190",
+    "ThreadId": "54459",
+    "Html": "<p>The procedure you suggested works like a charm, thanks.&nbsp;&nbsp;I wasn't able to implement the bibliography feature into my customized version of the CMSFootnote file, though: every single entry&nbsp;is sorted by date and not by author's name.&nbsp;Now I&nbsp;use two files and consequently&nbsp;two different styles, &nbsp;one for the footnotes and the other for bibliography, but these do the trick anyway. Thanks.</p>",
+    "PostedDate": "2009-05-28T06:40:03.997-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "831342",
+    "ThreadId": "54459",
+    "Html": "<p>Hi,<br /><br />I also need to apply small-caps in my bibliography for the author's last name. When seeing this code I thought \"yes, this is it!\", but then I tried it and Word didn't recognise the xsl-file...</p>\r\n<p>Am I doing something wrong? I just added</p>\r\n<p>&lt;first_person&gt;{%First:a%}{%Middle:a%}{ &amp;lt;span style=\"font-variant: small-caps\"&amp;gt;%Last%&amp;lt;/span&amp;gt;}&lt;/first_person&gt;<br />&lt;other_persons&gt;{%First:a%}{%Middle:a%}{ &amp;lt;span style=\"font-variant: small-caps\"&amp;gt;%Last%&amp;lt;/span&amp;gt;}&lt;/other_persons&gt;</p>\r\n<p>for the \"first person\" and \"other persons\".<br />Before I had modified this, the xsl-file was still recognised by Word... This should be correct, wright? Or am I supposed to \"define\" the \"span style\" further in the xsl-file?</p>\r\n<p>I hope someone can help me! Thanks!</p>",
+    "PostedDate": "2012-05-02T14:33:56.823-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "831454",
+    "ThreadId": "54459",
+    "Html": "<p>If the style no longer shows up in Word, then the xslt is invalid. The only styles shown are those which are XML wellformed.</p>\r\n<p>At first glance, the problem doesn't seem to be the two lines you posted above. Could you have changed something else in the file by accident?</p>\r\n<p>If you have access to an xml validator, I would try that one first. If you don't, you could try comparing your file with the original to see what the differences are. you could check whether the problem is really with those two lines by substituting them with the most simple of examples: empty elements. If the style still doesn't show up in Word,&nbsp;then the problem is elsewhere.</p>",
+    "PostedDate": "2012-05-02T22:55:09.8-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "831906",
+    "ThreadId": "54459",
+    "Html": "<p>Thank you for the quick response, Yves!</p>\r\n<p>Indeed the small-caps were not the problem. I got dizzy comparing both files, so I just started to change everything again step by step and I found the problem. I changed the separator between two authors from \"and\" into \"&amp; and apparently the &amp; causes problems when it's not used as a part of an xml-code...</p>\r\n<p>This is the final adjustment I need to make and then the bibliography style, like I need it at the moment, is finished...</p>\r\n<p>I tried \"&amp;\" and {&amp;}, but it didn't work... Is there way to make it work?</p>",
+    "PostedDate": "2012-05-03T14:30:45.477-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "832050",
+    "ThreadId": "54459",
+    "Html": "<p>An ampersand is a special character in xml, try &amp;amp; instead.</p>\r\n<p>The full list of characters which you can't use directly in xml is defined at <a href=\"http://www.w3.org/TR/xml/#syntax\">http://www.w3.org/TR/xml/#syntax</a>&nbsp;. They are</p>\r\n<p style=\"padding-left: 30px;\"><code><span class=\"pln\">\" &nbsp;=&gt; &nbsp;&amp;quot;&nbsp;<br />'&nbsp;&nbsp;=&gt; &nbsp;&amp;apos;&nbsp;<br />&lt;&nbsp;&nbsp;=&gt; &nbsp;&amp;lt;&nbsp;<br />&gt;&nbsp;&nbsp;=&gt; &nbsp;&amp;gt;&nbsp;<br />&amp;&nbsp;&nbsp;=&gt;&nbsp; &amp;amp;&nbsp;<br /></span></code></p>",
+    "PostedDate": "2012-05-04T00:12:31.58-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "832152",
+    "ThreadId": "54459",
+    "Html": "<p>Ha! Brilliant! Thanks a million!</p>\r\n<p>Bibliography style: check</p>\r\n<p>Writing the article: ...</p>",
+    "PostedDate": "2012-05-04T05:19:44.597-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

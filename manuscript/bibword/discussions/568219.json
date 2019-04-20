@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1307643",
+    "ThreadId": "568219",
+    "Html": "Hi<br />\nI am using Word 2013 and I have downloaded the Harvard Anglia xsl and placed it in the correct folder, i would need to modify the brackets so that instead of (Author,Year) I see Author (Year), moreover instead &amp; between 2 surnames I would see &quot;and&quot;, i change the following the code  and the brackets still stay<br />\n<pre><code> &lt;openbracket&gt;&lt;/openbracket&gt;\n &lt;closebracket&gt;&lt;/closebracket&gt;\n\n</code></pre>\n\nI also have no idea how to surround the year with brackets. Can you please assist since this is a major requirement for schools that use Harvard style and I see there are a lot of questions out there regarding this topic.<br />\nThank you<br />\nOlga <br />\n",
+    "PostedDate": "2014-09-24T00:45:03.46-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1307654",
+    "ThreadId": "568219",
+    "Html": "Ok i figured out the paranthesis as well as substituting &amp; to and, however can you please demonstrate where are the lines that address the formatting in bibliography rather than in text citations. Thanks<br />\n",
+    "PostedDate": "2014-09-24T01:35:57.32-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1307673",
+    "ThreadId": "568219",
+    "Html": "The Bibliography coding section starts at line 177:\r<br />\n&lt;bibliography&gt;<br />\n",
+    "PostedDate": "2014-09-24T02:27:40.957-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

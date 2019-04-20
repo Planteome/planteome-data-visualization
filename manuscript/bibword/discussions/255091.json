@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "602107",
+    "ThreadId": "255091",
+    "Html": "\r\n<p>Hi,&nbsp;</p>\r\n<p><span title=\"Clique para mostrar traduções alternativas\">How</span>&nbsp;<span title=\"Clique para mostrar traduções alternativas\">do I make</span>&nbsp;<span title=\"Clique para mostrar traduções alternativas\">the citation</span>&nbsp;of<span title=\"Clique para mostrar traduções alternativas\">&nbsp;the</span>&nbsp;T<span title=\"Clique para mostrar traduções alternativas\">ranslator's</span>&nbsp;<span title=\"Clique para mostrar traduções alternativas\">footnotes</span>&nbsp;<span title=\"Clique para mostrar traduções alternativas\">appear</span>&nbsp;<span title=\"Clique para mostrar traduções alternativas\">in\r\n this&nbsp;</span><span title=\"Clique para mostrar traduções alternativas\">sequence</span><br>\r\n<br>\r\n{%First%}{ %Middle%}{%Last%}</p>\r\n<p><span title=\"Clique para mostrar traduções alternativas\">and</span>&nbsp;<span title=\"Clique para mostrar traduções alternativas\">not</span>&nbsp;<span title=\"Clique para mostrar traduções alternativas\">on this</span><span title=\"Clique para mostrar traduções alternativas\">:</span></p>\r\n<p>{%Last%}{, %First%}{ %Middle%}</p>\r\n<p>&nbsp;</p>\r\n<p>graciously</p>\r\n",
+    "PostedDate": "2011-04-24T06:36:00.463-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "605432",
+    "ThreadId": "255091",
+    "Html": "<p>That would depend on the list you use to format the translator. In the format string there will be a number after the Translator element, e.g. %Translator:10%. That number (10) indicated the list specifying the way the name should be formatted. You will have to adjust the format string in that list.</p>\r\n<p>See the examples at <a href=\"http://bibword.codeplex.com/wikipage?title=BibWord%20Format%20Contributors\">http://bibword.codeplex.com/wikipage?title=BibWord%20Format%20Contributors</a>&nbsp;and <a href=\"http://bibword.codeplex.com/wikipage?title=BibWord%20Format%20Strings#ex3\">http://bibword.codeplex.com/wikipage?title=BibWord%20Format%20Strings#ex3</a></p>",
+    "PostedDate": "2011-05-01T01:38:47.767-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

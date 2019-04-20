@@ -1,0 +1,106 @@
+[
+  {
+    "Id": "426693",
+    "ThreadId": "208126",
+    "Html": "<p>From the instruction here: <a href=\"http://bibword.codeplex.com/wikipage?title=Styles\">http://bibword.codeplex.com/wikipage?title=Styles</a></p>\r\n<p>I am using Microsoft Office 2010. I cannot find the folder there.</p>\r\n<p>What i see in Office12 is just &quot;InfoPath SDk&quot; and &quot;Visual Studio Tools for Office 9.0&quot;.</p>\r\n<p>I see an Office 14, but there is no such a folder there too.</p>\r\n<p>How do I go about finding it?</p>\r\n<p>Thanks.</p>",
+    "PostedDate": "2010-04-01T17:45:56.71-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "426737",
+    "ThreadId": "208126",
+    "Html": "<p>Like stated in the instructions, the</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>%programfiles%\\Microsoft Office\\Office12\\Bibliography\\Style\r\n</pre>\r\n</div>\r\n<p>directory is&nbsp;an example&nbsp;for <strong>Office 2007 on a 32-bit machine</strong>.</p>\r\n<p>In case of Office 2010 beta, Office12 will be Office14. The program files directory will change if you system is a 32- or 64-bit system. Furthermore, as of Office 2010 beta, there is a 64-bit version of Office as well. This might also influence the directory structure.</p>\r\n<p>If you&nbsp;can't find&nbsp;the directory, you can do a file search for &quot;APA.XSL&quot;. Make sure that hidden and system directories are included in the search. Normally you will get only one result in a map called &quot;style&quot;. You should put your other styles there as well.</p>",
+    "PostedDate": "2010-04-01T23:43:59.687-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "426972",
+    "ThreadId": "208126",
+    "Html": "<p>I can't find apa.xsl... There are only 2 options on &quot;What to search&quot;, namely &quot;In indexedc locations, search file names and contents. In non-indexed locations, search file names only.&quot; and &quot;Always search file names and contents (this might take several minutes)&quot; Both doesn't work.</p>\r\n<p>I even went to the folder Office 14 to search, don't hv...</p>",
+    "PostedDate": "2010-04-02T18:37:49.907-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "426973",
+    "ThreadId": "208126",
+    "Html": "<p>I am using Windows 7 btw... just upgrade to that...</p>\r\n<p>any ideas?</p>",
+    "PostedDate": "2010-04-02T18:41:07.043-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "427231",
+    "ThreadId": "208126",
+    "Html": "<p>I don't have Windows 7, so I can't help you with that.</p>\r\n<p>Try finding the location of &quot;winword.exe&quot;, that file is is the Word program. Once you have found its location, there should be a Bibliography\\Style subdirectory.</p>\r\n<p>If you are not able to find it, you could open a command prompt (type &quot;cmd&quot; followed by enter in the start field of Windows) and execute the following command:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>reg query HKLM\\Software\\Microsoft\\Office\\<strong>14.0</strong>\\Common\\InstallRoot /v Path</pre>\r\n</div>\r\n<p>The resulting text will contain&nbsp;information as to where winword.exe is located. The <strong>14.0</strong> indicates Word 2010, for Word 2007, use <strong>12.0</strong>.</p>",
+    "PostedDate": "2010-04-04T09:03:57.647-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "427315",
+    "ThreadId": "208126",
+    "Html": "<p>I really cannot find winword.exe, then i tried the cmd method...</p>\r\n<p>it returns me this:&nbsp;</p>\r\n<p>HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Office\\14.0\\Common\\InstallRoot<br>&nbsp;&nbsp;&nbsp; Path&nbsp;&nbsp;&nbsp; REG_SZ&nbsp;&nbsp;&nbsp; C:\\Program Files\\Microsoft Office\\Office14\\</p>\r\n<p>There is no winword.exe located in C:\\Program Files\\Microsoft Office\\Office14\\.</p>\r\n<p>I looked thru every possible subdirectories there still don't hv Bibliography\\Style or a single .XSL file</p>\r\n<p>I searched online b4 also cannot find :(</p>\r\n<p>I did check my Office 2010, my&nbsp;Bibliography and Citations&nbsp;are working fine!!</p>\r\n<p>I think is the way Office 2010 is installed not Windows 7 fault... but i don't know why...</p>",
+    "PostedDate": "2010-04-04T19:39:23.897-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "427375",
+    "ThreadId": "208126",
+    "Html": "<p>The result of the reg query shows that Office is installed in the default location. The&nbsp;programs must be located there otherwise it wouldn't be possible to update them for example. The only reason why you wouldn't see them is that for some reason, you don't have access to them.</p>\r\n<p>You could try disable UAC control or disable &quot;Hide protected system files&quot;&nbsp;but I'm not sure if that will help you. To disable them, just do a Google search. As I don't have Windows 7, I can't help you with it.</p>",
+    "PostedDate": "2010-04-05T02:20:01.943-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "427517",
+    "ThreadId": "208126",
+    "Html": "<p>Done the 2 steps, still cannot find the folders...</p>",
+    "PostedDate": "2010-04-05T10:04:59.327-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "427853",
+    "ThreadId": "208126",
+    "Html": "<p>I have saved a search of all the xsl files in my C:\\, not sure if u can see it. I hv nvr deal with a .search-ms file before...</p>\r\n<p><a href=\"http://dl.dropbox.com/u/4256111/xsl.search-ms\">http://dl.dropbox.com/u/4256111/xsl.search-ms</a></p>",
+    "PostedDate": "2010-04-06T07:00:06.607-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "427985",
+    "ThreadId": "208126",
+    "Html": "<p>That link seems to point to some kind of xml file. I can't find anything about possible XSL files on your system.</p>\r\n<p>I am convinced that if you can't find the directory, it must be caused by a lack of permissions as it must be there. You will have to contact someone who has Windows 7 for specific help.</p>",
+    "PostedDate": "2010-04-06T12:11:25.493-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "428126",
+    "ThreadId": "208126",
+    "Html": "<p>U sure it is not the problem of MS Office 2010? U using what version of MS Office?</p>",
+    "PostedDate": "2010-04-06T20:11:01.677-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "428186",
+    "ThreadId": "208126",
+    "Html": "<p>I have configurations with both Word 2007 and Word 2010 beta on both&nbsp;Windows XP and Windows Vista. The folder structure is the same on all of them.</p>\r\n<p>As the same installer for Office 2007 (resp 2010) is used for all the operating systems, the folder structure must be the same as Word seems to use hardcoded relative paths to retrieve the available reference styles.</p>",
+    "PostedDate": "2010-04-07T00:57:16.517-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "841434",
+    "ThreadId": "208126",
+    "Html": "<p>I had a similar problem installing style sheets into the right directory on windows 7 but with word 2007.&nbsp;</p>\r\n<p>1. You need to be able to execute commands as administrator.</p>\r\n<p>2. the search algorithem&nbsp; provided in word does not help you to find the right directory</p>\r\n<p>3. There are two directories with the name programme files (at least on my computer)</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a)Program Files</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b)Program Files (x86)</p>\r\n<p>I found the office directory in the Program Files (x86) to have the normal structure as per Yves's instructions.</p>\r\n<p>Hope that helps anyone else who is stuck</p>",
+    "PostedDate": "2012-05-27T12:07:52.24-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

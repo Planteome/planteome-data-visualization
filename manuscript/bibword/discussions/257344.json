@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "611557",
+    "ThreadId": "257344",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I'm using Microsoft Word 2010 and Windows 7 Professional. I'm using ISO 690 citation style. When I do &quot;Insert Citation&quot;, it inserts number (1) wherever I add a citation. I have 7 citations already but it inserts all of them as (1). When I look in &quot;Manage\r\n Sources&quot;, the Master List shows [index] which is correct and the Current List shows the&nbsp;numbers from 1 to 7, so it's all correct, except when I do&nbsp;&quot;Insert Citation&quot; I always get number (1).</p>\r\n<p>Any idea what I'm doing wrong?</p>\r\n<p>Thx.</p>\r\n",
+    "PostedDate": "2011-05-12T03:46:13.47-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "612183",
+    "ThreadId": "257344",
+    "Html": "<p>Are your fields updating? In the dropdown with the styles, pick another style. Then pick your ISO 690 again. This will force an update of all your citation and bibliography fields.</p>",
+    "PostedDate": "2011-05-12T23:36:44.987-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "612209",
+    "ThreadId": "257344",
+    "Html": "<p>No fileds are not updating. When I pick another style, nothing changes. In fact, it seems the citations are not updatable fields.</p>",
+    "PostedDate": "2011-05-13T00:51:16.373-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "612256",
+    "ThreadId": "257344",
+    "Html": "<p>That would imply the fields are no longer there but have been replaced by static text.</p>\r\n<p>Are you saving the document as a .doc file (Word 97-2003 format)? If so, that is probably the cause of the issue as that format doesn't understand the new fields. So on each save, all citations are converted to static text. So the next time you add one after a save, it will look like it is the first one all over again.&nbsp;You should save documents as .docx and only save the final version as .doc if necessary.</p>",
+    "PostedDate": "2011-05-13T02:25:11.073-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "612397",
+    "ThreadId": "257344",
+    "Html": "<p>indeed that was the issue; thanks!</p>",
+    "PostedDate": "2011-05-13T07:03:40.347-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

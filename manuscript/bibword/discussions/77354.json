@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "264410",
+    "ThreadId": "77354",
+    "Html": "<p>I would like to group the Bibliography by type, something like this:</p>\r\n<p>&nbsp;</p>\r\n<p>Articles</p>\r\n<p>&nbsp;* Author, Year, Paper, Issue</p>\r\n<p>Books</p>\r\n<p>&nbsp;* Author, Year, Publisher</p>\r\n<p>Internetresources</p>\r\n<p>&nbsp;* Author, Year, url</p>\r\n<p>&nbsp;</p>\r\n<p>is that possible?</p>",
+    "PostedDate": "2009-12-07T03:39:51.523-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "264421",
+    "ThreadId": "77354",
+    "Html": "<p>Not by default in the current version. However, with a little effort, it can be done.</p>\r\n<p>See <a href=\"http://bibword.codeplex.com/Thread/View.aspx?ThreadId=74667\">http://bibword.codeplex.com/Thread/View.aspx?ThreadId=74667</a>&nbsp;(second post) on how to group sources by type.</p>",
+    "PostedDate": "2009-12-07T04:18:32.567-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "264425",
+    "ThreadId": "77354",
+    "Html": "<p>thank you!</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-12-07T04:34:49.08-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "806270",
+    "ThreadId": "347510",
+    "Html": "<p>Does anybody know how to change apa5 or 6 style to omit the title when citing the two og three works from same author? Can anybody help me?</p>",
+    "PostedDate": "2012-03-06T08:17:56.263-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "806316",
+    "ThreadId": "347510",
+    "Html": "<p>Put your cursor on the citation and right click. From the context menu, pick 'Edit Citation'. Then check the box to suppress the year.</p>",
+    "PostedDate": "2012-03-06T09:34:27.303-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "806367",
+    "ThreadId": "347510",
+    "Html": "<p>Thanks for replying. What I meant was: Is it possible to do this automatically? Maybe implemented in the style?</p>",
+    "PostedDate": "2012-03-06T10:46:04.53-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "806374",
+    "ThreadId": "347510",
+    "Html": "<p>If you are talking about in-text citations, then the short answer is no. In-text citations have almost no knowledge of their surroundings. They can't tell if they have been used before or not. The only thing they know is whether they are part of a group or not, and whether they are at the boundaries of that group or not. They don't even know who else is with them in that group.</p>\r\n<p>There is a workaround though. Nobody is stopping you from writing a macro which does post-processing on all citation fields. You would have to implement your own logic of course but it is doable. Something along the lines of:</p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre><span style=\"color: blue;\">For</span> <span style=\"color: blue;\">Each</span> fld <span style=\"color: blue;\">In</span> ActiveDocument.Fields\r\n    <span style=\"color: blue;\">If</span> fld.Type = wdFieldCitation <span style=\"color: blue;\">Then</span>\r\n        fld.<span style=\"color: blue;\">Select</span>\r\n        <span style=\"color: green;\">' do something</span>\r\n    <span style=\"color: blue;\">End</span> <span style=\"color: blue;\">If</span>\r\n<span style=\"color: blue;\">Next</span>\r\n</pre>\r\n</div>\r\n<p>If you are talking about the bibliography, then it is certainly possible, but it will require a good deal of knowledge of XSLT. And if you have to start from the styles which come with Word, it is even more problematic as they are very difficult to understand. There is very little logic in the way they are build.</p>",
+    "PostedDate": "2012-03-06T10:55:35.757-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "806381",
+    "ThreadId": "347510",
+    "Html": "<p>I am referring to in-text citations</p>\r\n<p>I'm a newbie in writing macros</p>\r\n<p>If I would add /t to each citation code, what should I then write where you write do something?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks for your help!</p>",
+    "PostedDate": "2012-03-06T11:06:01.497-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "806459",
+    "ThreadId": "347510",
+    "Html": "<p>I just found out that it is a known bug. Look at: http://office.microsoft.com/en-us/word-help/apa-mla-chicago-automatically-format-bibliographies-HA102435469.aspx . Could anyone fix it?? Maybe with a macro?</p>",
+    "PostedDate": "2012-03-06T12:56:35.65-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "806491",
+    "ThreadId": "347510",
+    "Html": "<p>Isn't it enough to suppress all titles? Then you should only get (author, year) citations. But I'm no expert at APA.</p>",
+    "PostedDate": "2012-03-06T14:03:50.203-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "806692",
+    "ThreadId": "347510",
+    "Html": "<p>The problem is i have a text with 500 citations from the same author from multiple sources written in iso, so it will take very long time to convert them manually. Therefore I would like to create a scipt doing that. (add /t to each field)</p>\r\n<p>My idea is:</p>\r\n<p>Sub remove_title_in_txt_citations()<br />'<br />' remove_title_in_txt_citations Makro<br />'<br />For Each fld In ActiveDocument.Fields<br />&nbsp;&nbsp;&nbsp; If fld.Type = wdFieldCitation Then<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fld.Select<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dim cite As String<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If InStr(1, cite, \"/t\") = 0 Then<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dim ende As String<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dim newcite As String<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cite = wdFieldCitation<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; close_end = \" /t\"<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; newcite = cite &amp; close_end<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' = newcite<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' How do I add this to citation field?<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; End If<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />&nbsp;&nbsp;&nbsp; End If<br />Next<br />'<br /><br />End Sub</p>\r\n<p>But it doesn't work</p>\r\n<p>Do you have an idea?</p>",
+    "PostedDate": "2012-03-06T23:56:04.48-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

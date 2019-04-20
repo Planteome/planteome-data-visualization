@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1202625",
+    "ThreadId": "528910",
+    "Html": "hello yves,\r<br />\n<br />\ni used the IEEE style and I would like to add the accessed time of a website. \r<br />\nFor example:\r<br />\nAvailable at: <a href=\"http://www.bibword.com\" rel=\"nofollow\">www.bibword.com</a>, Accessed: 04. Feb. 2014, 8.40 pm\r<br />\n<br />\nThis is the code:\r<br />\n&lt;format&gt;{%Author:0%.}{ %Title%.}{ &lt;i&gt;%InternetSiteTitle|ShortTitle%&lt;/i&gt;}{ [%Medium%]}{. {%Month:s% {%Day%, }}%Year%;}{ %Edition%}{:%Comments%}{. Available at: %URL:l%}{. Accessed {%MonthAccessed:s% {%DayAccessed%, }}%YearAccessed%}.&lt;/format&gt;\r<br />\n<br />\nI hope you can help. Thank you.\r<br />\n<br />\nRegards Aylin<br />\n",
+    "PostedDate": "2014-02-04T11:28:16.057-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1213081",
+    "ThreadId": "528910",
+    "Html": "You cannot by default. There are no fields available for such detail.\r<br />\n<br />\nThere is the possiblity to add extra elements but that results in an invalid model. There are some posts on the forum explaining how to do that.\r<br />\n<br />\nA better option is probably to specify the time information in the comment field and move that from halfway to the end:\r<br />\n<br />\n&lt;format&gt;{%Author:0%.}{ %Title%.}{ &lt;i&gt;%InternetSiteTitle|ShortTitle%&lt;/i&gt;}{ [%Medium%]}{. {%Month:s% {%Day%, }}%Year%;}{ %Edition%}{. Available at: %URL:l%}{. Accessed {%MonthAccessed:s% {%DayAccessed%, }}%YearAccessed%}{, %Comments%}.&lt;/format&gt; <br />\n",
+    "PostedDate": "2014-02-23T10:43:15.617-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

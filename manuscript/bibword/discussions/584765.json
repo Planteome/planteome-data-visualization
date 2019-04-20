@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1360431",
+    "ThreadId": "584765",
+    "Html": "Consider the following citation\r<br />\n<br />\n<em>[1] Green, A., Black, B., Gray, C., &quot;The paper&quot;, IEEE, (5), pp.20-30, 2008.</em>\r<br />\n<br />\nWith the ISO690 (first element and date), I see this in my text\r<br />\n<br />\n<em>We reference that (The paper, 2008).</em>\r<br />\n<br />\nHowever I want to see \r<br />\n<br />\n<em>We reference that (Green, 2008).</em>\r<br />\n<br />\n<br />\nAs you can see, the first element is considered as the title, however I want to place the surname of the first author. \r<br />\n<br />\nIs there anyway to do that?<br />\n",
+    "PostedDate": "2015-03-06T08:13:52.133-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

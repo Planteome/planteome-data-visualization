@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1016507",
+    "ThreadId": "436914",
+    "Html": "When I type bibtype /t c:\\bib\\types /o c:\\bib\\norm I get an unhandled exception error that system.ArgumentOutOfRanngeException: startIndex can not be larger than the length of string.\r<br />\n<br />\nThe system hangs and when I say ok I get a long error message. According to what I can find, I have installed netFramework 3.5.1 I think I also have 4.5\r<br />\n<br />\nAny clues<br />\n",
+    "PostedDate": "2013-03-16T21:55:16.863-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1017332",
+    "ThreadId": "436914",
+    "Html": "Looks like you are using the wrong format for your parameter string:\r<br />\n<br />\nbibtype /t:&quot;c:\\bib\\types&quot; /o:&quot;...&quot;\r<br />\n<br />\nSo no space but rather a :<br />\n",
+    "PostedDate": "2013-03-18T14:51:16.343-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

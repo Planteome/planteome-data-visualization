@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "259185",
+    "ThreadId": "75754",
+    "Html": "<p>Why in the IEEE - Reference Order is the citation's number in bold?</p>\r\n<p>How can I modify this error?</p>",
+    "PostedDate": "2009-11-20T11:40:50.307-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "259330",
+    "ThreadId": "75754",
+    "Html": "<div style=\"color:Black;background-color:White\"></div>\r\n<p>In-text citation styles inherit their formatting from the surrounding paragraph style. In that style you must have something which triggers the bold setting.</p>\r\n<p>If you can't find what is causing it, you might want to try the macro at&nbsp;<a href=\"http://bibword.codeplex.com/wikipage?title=Styles_FAQ#Q9\">http://bibword.codeplex.com/wikipage?title=Styles_FAQ#Q9</a>&nbsp;with one twist. Change:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>s.Font.Superscript = <span style=\"color:Blue\">True</span></pre>\r\n</div>\r\n<p>into</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>s.Font.Bold = <span style=\"color:Blue\">False</span>\r\n\r\n</pre>\r\n</div>",
+    "PostedDate": "2009-11-21T07:15:04.917-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "429679",
+    "ThreadId": "75754",
+    "Html": "Is there another way of doing this? \r\nI found when I use linked cites, it uses title 2 style of my document (which is bold). So, how can I make to use another style?\r\n\r\nI'm using Havard-Anglia, here is a document with an example:\r\n\r\nhttp://www.sendspace.com/file/bhdf9p",
+    "PostedDate": "2010-04-11T01:31:23.69-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "429688",
+    "ThreadId": "75754",
+    "Html": "<p>There is no 'direct' solution. See the last post at&nbsp;<a href=\"http://bibword.codeplex.com/Thread/View.aspx?ThreadId=205334\">http://bibword.codeplex.com/Thread/View.aspx?ThreadId=205334</a></p>",
+    "PostedDate": "2010-04-11T02:41:19.883-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "429692",
+    "ThreadId": "75754",
+    "Html": "<p>I noticed something strange. In your example document, the citation is a heading 3 style, not a heading 2. It seems that even the conversion choice isn't consistent.</p>",
+    "PostedDate": "2010-04-11T03:14:54.853-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "429761",
+    "ThreadId": "75754",
+    "Html": "<p>Thanks, You are right, I didn't notice that before. When the citation is under a heading 3, gets the heading 3 style. But if it's under a heading 1 or 2 gets the heading 2 style.</p>\r\n<p>About the solution, the 3 ways results ok. But I want them linked, and I can't change the headings style.</p>\r\n<p>The &nbsp;macro with s.Font.Bold = False works ok, but I want a macro free document, so I'll use it if I don't found another way for fix it.</p>",
+    "PostedDate": "2010-04-11T11:03:18.757-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "429768",
+    "ThreadId": "75754",
+    "Html": "<p>Whenever you finished your document and ran the macro for a last time, you can remove it. Even when citations get updated, the formatting should remain the same as applied by the macro.</p>\r\n<p>Actually, the macro is just an automated helper function. You can do the exact same thing by hand. Basically you first create a character style with your preferences. Then, whenever you&nbsp;added a citation, you just select it, and apply the character&nbsp;style to it.</p>",
+    "PostedDate": "2010-04-11T11:46:34.47-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "429792",
+    "ThreadId": "75754",
+    "Html": "<p>Thanks Yves, I'm going to do it with the macro then. If I found another way, I let you know.</p>",
+    "PostedDate": "2010-04-11T12:53:20.217-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

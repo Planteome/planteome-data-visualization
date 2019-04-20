@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "508835",
+    "ThreadId": "231337",
+    "Html": "<p>Hi!</p>\r\n<p>I have a problem in citation using ABNT: when there are more than four authors, it appears with two of them plus the expression &quot;et al.&quot; For example, (COELLI, RAO, et al., 1993).</p>\r\n<p>In bibliography, it shows correctly, like &quot;COELLI, T. et al. Data Envelopment Analys.....&quot;.</p>\r\n<p>&nbsp;</p>\r\n<p>How should I fix it?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanx.</p>",
+    "PostedDate": "2010-10-18T08:03:48.627-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "508841",
+    "ThreadId": "231337",
+    "Html": "<p>You shouldn't. If there are more than 3 authors for a work, the first 2 should be shown in the in-text citation followed by et al.</p>\r\n<p>If you don't agree with this, you can easily change it though. Look for the following line:</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">list</span> <span style=\"color:red\">name</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">citation</span><span style=\"color:black\">&quot;</span> <span style=\"color:red\">id</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">1</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>A couple of lines lower you will find</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">max_number_of_persons_to_display</span><span style=\"color:blue\">&gt;</span>3<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">max_number_of_persons_to_display</span><span style=\"color:blue\">&gt;</span>\r\n<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">number_of_persons_to_display_if_more_than_max</span><span style=\"color:blue\">&gt;</span>2<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">number_of_persons_to_display_if_more_than_max</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>Change the value from 2 to 1 to get what you want.</p>",
+    "PostedDate": "2010-10-18T08:11:48.64-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "509718",
+    "ThreadId": "231337",
+    "Html": "<p>Yves,</p>\r\n<p>&nbsp;</p>\r\n<p>Thank you very much for your quick response.</p>\r\n<p>I could not understand what you said. I mean if there is two authors plus et al. in citation and one author plus et al. in bibliography, how do I suppose to find it there?</p>\r\n<p>&nbsp;</p>\r\n<p>Let me explain with an example because my English is not so good.</p>\r\n<p>there are two texts: one from COELLI, T.; BATTESE, G.; RAO, S. and YAISIWARNG, W. &nbsp;and other from&nbsp;COELLI, T.; FRIED, H.; SCHMIDT, S. and LOVELL, C.. Both were written in 2002.</p>\r\n<p>In bibliography it would show COELLI, T et al. Name of Book ... and COELLI, T. et al. Name of Other Book...</p>\r\n<p>In citation it would show (COELLI, BATTESE, et al., 2002) and (COELLI, FRIED, et al. 2002).&nbsp;</p>\r\n<p>Can you see the problem? The reader would never know which book I wrote about.</p>\r\n<p>&nbsp;</p>\r\n<p>But if you say that two authors in citation and one in bibliography is correct, I gonna keep it that way, because I am not an expert in it.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-10-19T18:45:56.103-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "509770",
+    "ThreadId": "231337",
+    "Html": "<p>I'm not saying it is logical, it is just how the specifications indicate it. I guess it comes from having a different standard for in-text citations and for bibliographies. Although the current version of the style&nbsp;is correct, I'm considering to change it to make it more logical.</p>",
+    "PostedDate": "2010-10-20T00:02:48.53-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "510510",
+    "ThreadId": "231337",
+    "Html": "<p>Hey Yves, only one more little thing: the word &quot;Disponivel&quot; in ABNT style misses a tilde. The correct word is &quot;Dispon&iacute;vel&quot;, not &quot;Disponivel&quot;.</p>",
+    "PostedDate": "2010-10-21T07:13:49.41-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

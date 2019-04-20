@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "870650",
+    "ThreadId": "371279",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I am relative new to the bibword world, so bear with me.</p>\r\n<p>I have successfully installed the IEEE style (from the site, no modifications) in MS word 2007. It works fine except for the fact that when i reference something in my text i cant get the page number to show.&nbsp;</p>\r\n<p>Example:&nbsp;</p>\r\n<p>This is a sensor network [1]. I want it to be&nbsp;</p>\r\n<p>This is a sensor network [1, pp. 23 ].</p>\r\n<p>or whatever style fits the IEEE style. Basically i want the reference to show the pagenumber, but i does not. I have edited the reference (dropdown menu, &quot;edit citation&quot;) as normal in word and inserted the page number, but it only shows [1]. If i change\r\n the style back to one of the built in word styles it show the reference and the page number.</p>\r\n<p>How do i make it do this in the IEEE style? or is it just not possible?</p>\r\n<p>&nbsp;</p>\r\n<p>-Thatcher</p>\r\n",
+    "PostedDate": "2012-07-17T02:48:29.37-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "870691",
+    "ThreadId": "371279",
+    "Html": "<p>IEEE styles do not use page numbers. You can of course create a derived style which includes page numbers.</p>\r\n<p>Assuming you are the reference order version, do a find/replace.</p>\r\n<p>Find:</p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre><span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">format</span><span style=\"color: blue;\">&gt;</span>{%RefOrder%}<span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">format</span><span style=\"color: blue;\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>Replace:</p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre><span style=\"color: blue;\">&lt;</span><span style=\"color: #a31515;\">format</span><span style=\"color: blue;\">&gt;</span>{%RefOrder%{, %CitationPages:pp. :pp. %}}<span style=\"color: blue;\">&lt;/</span><span style=\"color: #a31515;\">format</span><span style=\"color: blue;\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>Now if you are citing pages specifically they will show up.</p>\r\n<p>Don't forget to change the name of the style as you are no longer are using an IEEE style.</p>",
+    "PostedDate": "2012-07-17T03:49:17.76-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "983398",
+    "ThreadId": "371279",
+    "Html": "\r\n<p>Many thanks to you, Yves!</p>\r\n<p>I spend lots of time trying to understand how to do this… because I didn’t know the name of the variable which keeps the citation page numbers... Well, this was exactly what I was looking for. I already used it, and it works. :)</p>\r\n<p>However, now I have another problem, with word itself (I’m using Windows Word 2010).</p>\r\n<p>Apparently it is using Heading 1 style for creating citations (I don't know why).</p>\r\n<p>But this has two problems for me:</p>\r\n<p>1. My H1 style is using Small Caps, so instead of the &quot;pp.&quot; I'm getting &quot;PP.&quot; which is against all rules, and I must change it... :(</p>\r\n<p>2. I also can't change the colour of the linked citation to the same one I'm using everywhere (whenever it's a link). I managed to do that for the references list, by changing the CSS style, but it doesn't work for this.</p>\r\n<p>Any help would be appreciated. :)</p>\r\n<p>&nbsp;</p>\r\n<p>As for the fact that this is not compliant with the IEEE format, I’m afraid that is not correct.</p>\r\n<p>You can check the IEEE Editorial Style Manual (http://www.ieee.org/documents/stylemanual.pdf, page 5) or the IEEE Citation Reference (http://www.ieee.org/documents/ieeecitationref.pdf, page 7) to see that both give these examples on the citation section:</p>\r\n<p>[3, Th. 1]; [3, Lemma 2]; [3, pp. 5-10]; [3, eq. (2)]; [3, Fig. 1]; [3, Appendix I]; [3, Sec. 4.5]; [3, Ch. 2, pp. 5-10]; [3, Algorithm5].</p>\r\n<p>So it’s clearly supported, although not much used by most authors, but that’s another matter. :)</p>\r\n<p>Thanks and keep up the great work.</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2013-01-05T14:59:40.707-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

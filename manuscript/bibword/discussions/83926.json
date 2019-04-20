@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "288218",
+    "ThreadId": "83926",
+    "Html": "<p>I have noticed that some of the hyperlinks created when I insert a citation in my Word document do not link to the corresponding bibliographic reference but rather points me to the top of the document. Why they point to the top of the document is clear when you look at the corresponding hyperlink as it looks like: #&lt;tag&gt;, e.g. #T&uuml;r27. As there is now such tag in the document it will point to the top. Other citation hyperlinks shows up correctly in the list of Bookmarks. In the case just mentioned the tag T&uuml;r27 does not appear in the Bookmark list.</p>\r\n<p>I am wondering if somebody has an idea on what is going on. Why do I sometimes get citations with a correct link and sometimes not?</p>\r\n<p>Frode</p>",
+    "PostedDate": "2010-02-10T05:47:10.88-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "288262",
+    "ThreadId": "83926",
+    "Html": "<p>Not sure, but it could be you are hitting&nbsp;the bug in the bibliography update code of Word itself. If the bookmark doesn't work, just update the bibliography field once and see if that fixes it.</p>\r\n<p>Basically what happens when you update a bibliography is the following:</p>\r\n<ol>\r\n<li>Insert the updated bibliography&nbsp;with new bookmarks. But as the bookmarks are already in the old bibliography, they are overwritten.</li>\r\n<li>Remove the old bibliography with the old bookmark. But as the bookmark were overwritten with the new ones, the new ones get deleted.</li>\r\n</ol>\r\n<p>Hence, if you do another update, there are no more bookmarks and the new ones get added without being removed.</p>\r\n<p>Microsoft should do the removal before the insertion, but I'm guessing they see this as some kind of failsafe in case an update fails.</p>\r\n<p>(On a side note, you can completely break your bibliography by removing one bookmark and keep the rest, now it won't matter how many times you update, never will all the bookmarks be there)</p>",
+    "PostedDate": "2010-02-10T07:33:43.777-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "288267",
+    "ThreadId": "83926",
+    "Html": "<p>Great. You really hit the nail on the head. I just updated the bibliography field as you suggested and now it work.</p>\r\n<p>Again many thanks for your help. BibWord is simply amazing.</p>\r\n<p>Cheers,</p>\r\n<p>Frode</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-02-10T07:41:09.873-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "419659",
+    "ThreadId": "83926",
+    "Html": "Dear Yves,\r\n\r\nYour suggestion solved the link problem but only partly, which I discovered later. After having repaired a number of non-working hyperlinks by updating the bibliography field I then found that links previously repaired again had become unstuck and that the citation again was pointing at the top of the document. At the moment I have 30 bibliographic references but I only find 14 bookmark tags among which there are two OLE links. If I edit the hyperlink of one such non-working hyperlink I find a hyperlink that looks like this: #&lt;tag&gt;, e.g. #Tür27. If I click on the Bookmark button in the Edit Hyperlink window I will see as explained above a list of 14 bookmark tags including OLE_LINK1 and OLE_LINK2. If I now update the corresponding bibliography field the previously non-working hyperlinks is OK. However, if I do an Edit Hyperlink I will now directly get a list of bookmark in the Edit Hyperlink window (in this window there is no longer a Bookmark button) but this list is different from the previous list of bookmarks. The new list has 20 bookmarks including the to same OLE links, OLE_LINK1 and OLE-LINK2. If we subtract the OLE links from the two list we have two lists of 12 and 18 bookmarks which correspond exactly to my 30 references. What I can conclude is that somehow I have got two set of bookmark lists and when I update one bibliography field I will select one of these sets and then suddenly the citations using the other set is no longer hyper-linked. Do you understand what is going on here and do you know what I can do to put it right? \r\n\r\nCheers,\r\nFrode",
+    "PostedDate": "2010-03-18T04:20:03.86-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "419695",
+    "ThreadId": "83926",
+    "Html": "This is the behaviour I explained in my previous post.\r\n\r\nJust delete the 12 or 18 bookmarks (so anything except the OLE ones). Then update your bibliography and things should be alright.\r\n\r\nAlternatively, delete your current bibliography (which should result in all your bookmark destinations being deleted as well) and then add a new bibliography (which should result in all 30 bookmarks being added).\r\n\r\nThere is no way to prevent this scenario as that would require the operations described in my previous post to be reversed. Something which can only be done by Microsoft.",
+    "PostedDate": "2010-03-18T05:25:20.177-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "419849",
+    "ThreadId": "83926",
+    "Html": "It worked like a dream. I am sorry I should have studied your previous post in more detail and then I would probably have understood what you were trying to tell me.\r\nAgain many thanks.\r\n\r\nCheers,\r\nFrode",
+    "PostedDate": "2010-03-18T09:34:26.087-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

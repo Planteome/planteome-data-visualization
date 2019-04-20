@@ -1,0 +1,74 @@
+[
+  {
+    "Id": "173299",
+    "ThreadId": "51660",
+    "Html": "I tried using the AMA style to format my references (in citations they are authors separated by commas. eg. Morice MC, Serruys PW, Sousa JE...), but it can't seem to handle multiple authors. It generates lots of capital letters. Here is an example:<br>\r\n<br>\r\n<table cellpadding=0 border=0 width=\"100%\" style=\"width:100%\">\r\n    <tbody>\r\n        <tr>\r\n            <td valign=top style=\"padding:0.75pt\">\r\n            <p><span>Morice MC SPSJFJBHEPMCASGBPGGMFFR. A randomized comparison of a sirolimus-eluting stent with a standard stent for coronary revascularization. <em>N Engl J Med</em>. June 2002; 346(23): 1773-1780.</span> </p>\r\n            </td>\r\n        </tr>\r\n        <tr>\r\n            <td valign=top style=\"padding:0.75pt\">\r\n            <p><span>Moses JW LMPJFPHDOCCRKDWDTPJJKR. Sirolimus-eluting stents versus standard stents in patients with stenosis in a native coronary artery. <em>N Engl J Med</em>. Oct 2004; 349(14): 1315-1323.</span> </p>\r\n            </td>\r\n        </tr>\r\n        <tr>\r\n            <td valign=top style=\"padding:0.75pt\">\r\n            <p><span>Colombo A DJBAGEHKSSDDFSSFZKGGRM. Randomized study to assess the effectiveness of slow- and moderate- release polymer-based paclitaxel-eluting stents for coronary artery lesions. <em>Circulation</em>. Aug 2003; 108(7): 788-794.</span> </p>\r\n            </td>\r\n        </tr>\r\n    </tbody>\r\n</table>\r\n<br>\r\nI tried looking at the source code but can't figure it out.<br>\r\n<br>\r\nFormatting otherwise looks okay: <br>\r\nFor these journal articles:<br>\r\n<p><em><strong><span>Scholarly journals:</span><a name=\"ref_journals\" title=\"ref_journals\"></a> </strong></em></p>\r\n<p><span><em><strong>Capitalize the first letter in the first word of article titles and also any proper names or abbreviations which are normally capitalized, i.e. IBM. Journal titles are fully capitalized and italicized.</strong></em></span></p>\r\n<em><strong> </strong></em><blockquote>\r\n<p><span><em><strong>Brown BB. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem Ipsum Dolor. 1988;2:124-143.</strong></em></span></p>\r\n</blockquote><br>\r\n<br>\r\n<br>\r\nAny help would be appreciated. I'm trying to save some money and not get Endnote ;)<br>\r\n<br>\r\nThanks.<br>\r\n",
+    "PostedDate": "2009-03-29T18:12:04.257-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "173339",
+    "ThreadId": "51660",
+    "Html": "<p>Are you sure you are formatting the authors correctly when inputting them into Word? The capital letters make me assume that for some reason all names are abbreviated. To verify that the names are entered correctly, go to the &quot;Edit source&quot; window. Next to the author field, there is an &quot;Edit&quot; button. Click it, and verify that each name is listed on a separate line.</p>\r\n<p>An example of a valid name entry is:</p>\r\n<blockquote dir=ltr style=\"margin-right:0px\">Last1, First1 Middle1; Last2, First2 Middle2;</blockquote>\r\n<p>Note the use of '<i>,</i>' to indicate the separation between last and first name and the use of '<i>;</i>' to indicate the separation between authors.</p>\r\n",
+    "PostedDate": "2009-03-29T23:19:24.803-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "209601",
+    "ThreadId": "51660",
+    "Html": "<p>Yves - thank you for that correction. It fixed my intial problem as well (although the last names were not entered abbreviated). Now I notice that the numerical citations within the text are not superscript as I desire.&nbsp;Also, although the general AMA style allows for 'et al', the journal I am submitting my work to (Circulation) specifically prohibits this, preferring instead that all of the authors are written out. Could you guide me through the process of correcting these issues? My coding experience was limited to programming my calculator in high school... so I am very out of my league on my own!</p>\r\n<p>&nbsp;</p>\r\n<p>Many thanks.</p>\r\n<p>Jenni</p>",
+    "PostedDate": "2009-07-07T11:30:29.637-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "209620",
+    "ThreadId": "51660",
+    "Html": "<p>See <a href=\"http://bibword.codeplex.com/Wiki/View.aspx?title=Styles_FAQ#Q9\">http://bibword.codeplex.com/Wiki/View.aspx?title=Styles_FAQ#Q9</a>&nbsp;for a macro to put all your citations in superscript.</p>\r\n<p>In the style look for:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>        <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">max_number_of_persons_to_display</span><span style=\"color:Blue\">&gt;</span>6<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">max_number_of_persons_to_display</span><span style=\"color:Blue\">&gt;</span>\r\n        <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">number_of_persons_to_display_if_more_than_max</span><span style=\"color:Blue\">&gt;</span>3<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">number_of_persons_to_display_if_more_than_max</span><span style=\"color:Blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>Those values indicate the number of authors/editors/inventors to display. You can change those values to anything you want. If you would change both numbers to for example 500, all your authors should be displayed.</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre>        <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">max_number_of_persons_to_display</span><span style=\"color:Blue\">&gt;</span>500<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">max_number_of_persons_to_display</span><span style=\"color:Blue\">&gt;</span>\r\n        <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">number_of_persons_to_display_if_more_than_max</span><span style=\"color:Blue\">&gt;</span>500<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">number_of_persons_to_display_if_more_than_max</span><span style=\"color:Blue\">&gt;</span>\r\n</pre>\r\n</div>",
+    "PostedDate": "2009-07-07T12:06:46.08-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "209630",
+    "ThreadId": "51660",
+    "Html": "<p>Thank you, yves. I have successfully dealt the 'et al' issue. Please forgive the basic nature of the following question; Do I just copy that macro into the edited style? I presume there are guidlines for where that should go, but I am woefully uneducated about this!</p>",
+    "PostedDate": "2009-07-07T12:57:25.687-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "209669",
+    "ThreadId": "51660",
+    "Html": "<p>The macro has nothing to do with the style. It is a solution to a shortcoming of the bibliography tools in Word. The macro should be executed from inside Word. For more information on installing and running macros, see&nbsp;<a href=\"http://www.gmayor.com/installing_macro.htm\">http://www.gmayor.com/installing_macro.htm</a></p>",
+    "PostedDate": "2009-07-07T14:34:56.72-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "209676",
+    "ThreadId": "51660",
+    "Html": "<p>Thanks Yves; I'd never heard of Macros before and this opens up a whole new world of possibilities. Your help is greatly appreciated!</p>",
+    "PostedDate": "2009-07-07T14:51:52.34-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "237073",
+    "ThreadId": "51660",
+    "Html": "<div>quick question. If i have multiple references &quot;1 2 3 4 5 6 7&quot;, is there a way to put it as &quot;1-7&quot; or do I have to change it by hand?</div>\r\n<div> </div>\r\n<div><br><br> </div>\r\n<div>On Sun, Mar 29, 2009 at 6:12 PM, noncoder <span dir=ltr>&lt;<a href=\"mailto:notifications@codeplex.com\">notifications@codeplex.com</a>&gt;</span> wrote:<br>\r\n<blockquote style=\"padding-left:1ex;margin:0px 0px 0px 0.8ex;border-left:#ccc 1px solid\">\r\n<div>\r\n<p>From: noncoder</p>\r\n<div>I tried using the AMA style to format my references (in citations they are authors separated by commas. eg. Morice MC, Serruys PW, Sousa JE...), but it can't seem to handle multiple authors. It generates lots of capital letters. Here is an example:<br>\r\n<br>&lt;style&gt; &lt;!-- /* Font Definitions */ @font-face {font-family:&quot;Cambria Math&quot;; panose-1:2 4 5 3 5 4 6 3 2 4; mso-font-charset:0; mso-generic-font-family:roman; mso-font-pitch:variable; mso-font-signature:-1610611985 1107304683 0 0 159 0;} /* Style Definitions */ p.MsoNormal, li.MsoNormal, div.MsoNormal {mso-style-unhide:no; mso-style-qformat:yes; mso-style-parent:&quot;&quot;; margin:0in; margin-bottom:.0001pt; mso-pagination:widow-orphan; font-size:10.0pt; font-family:&quot;Arial&quot;,&quot;sans-serif&quot;; mso-fareast-font-family:&quot;Times New Roman&quot;;} p.MsoBibliography, li.MsoBibliography, div.MsoBibliography {mso-style-priority:37; mso-style-next:Normal; margin:0in; margin-bottom:.0001pt; mso-pagination:widow-orphan; font-size:10.0pt; font-family:&quot;Arial&quot;,&quot;sans-serif&quot;; mso-fareast-font-family:&quot;Times New Roman&quot;;} .MsoChpDefault {mso-style-type:export-only; mso-default-props:yes; font-size:10.0pt; mso-ansi-font-size:10.0pt; mso-bidi-font-size:10.0pt; mso-fareast-font-family:&quot;MS Mincho&quot;;} @page Section1 {size:8.5in 11.0in; margin:1.0in 1.0in 1.0in 1.0in; mso-header-margin:.5in; mso-footer-margin:.5in; mso-paper-source:0;} div.Section1 {page:Section1;} --&gt; &lt;/style&gt; \r\n<table style=\"width:100%\" cellpadding=0 width=\"100%\" border=0>\r\n<tbody>\r\n<tr>\r\n<td style=\"padding-right:0.75pt;padding-left:0.75pt;padding-bottom:0.75pt;padding-top:0.75pt\" valign=top>\r\n<p><span>Morice MC SPSJFJBHEPMCASGBPGGMFFR. A randomized comparison of a sirolimus-eluting stent with a standard stent for coronary revascularization. <em>N Engl J Med</em>. June 2002; 346(23): 1773-1780.</span> </p></td>\r\n</tr>\r\n<tr>\r\n<td style=\"padding-right:0.75pt;padding-left:0.75pt;padding-bottom:0.75pt;padding-top:0.75pt\" valign=top>\r\n<p><span>Moses JW LMPJFPHDOCCRKDWDTPJJKR. Sirolimus-eluting stents versus standard stents in patients with stenosis in a native coronary artery. <em>N Engl J Med</em>. Oct 2004; 349(14): 1315-1323.</span> </p></td></tr>\r\n<tr>\r\n<td style=\"padding-right:0.75pt;padding-left:0.75pt;padding-bottom:0.75pt;padding-top:0.75pt\" valign=top>\r\n<p><span>Colombo A DJBAGEHKSSDDFSSFZKGGRM. Randomized study to assess the effectiveness of slow- and moderate- release polymer-based paclitaxel-eluting stents for coronary artery lesions. <em>Circulation</em>. Aug 2003; 108(7): 788-794.</span> </p>\r\n</td></tr></tbody></table><br>I tried looking at the source code but can't figure it out.<br><br>Formatting otherwise looks okay: <br>For these journal articles:<br>\r\n<p><em><strong><span>Scholarly journals:</span><a title=\"ref_journals\" name=\"12054eef618b3a9b_ref_journals\"></a> </strong></em></p>\r\n<p><span><em><strong>Capitalize the first letter in the first word of article titles and also any proper names or abbreviations which are normally capitalized, i.e. IBM. Journal titles are fully capitalized and italicized.</strong></em></span></p>\r\n<em><strong></strong></em>\r\n<blockquote>\r\n<p><span><em><strong>Brown BB. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem Ipsum Dolor. 1988;2:124-143.</strong></em></span></p></blockquote><br><br><br>Any help would be appreciated. I'm trying to save some money and not get Endnote ;)<br>\r\n<br>Thanks.<br></div>\r\n<div>\r\n<p>Read the <a href=\"http://bibliography.codeplex.com/Thread/View.aspx?ThreadId=51660&ANCHOR#Post173299\">full discussion online</a>.</p>\r\n<p>To add a post to this discussion, reply to this email (<a href=\"mailto:bibliography@discussions.codeplex.com?subject=[bibliography:51660]\">bibliography@discussions.codeplex.com</a>)</p>\r\n<p>To start a new discussion for this project, email <a href=\"mailto:bibliography@discussions.codeplex.com\">bibliography@discussions.codeplex.com</a></p>\r\n<p>You are receiving this email because you subscribed to this discussion on CodePlex. You can <a href=\"http://www.codeplex.com/site/discussions/thread/unsubscribe/51660\">unsubscribe</a> on codePlex.com.</p>\r\n\r\n<p>Please note: Images and attachments will be removed from emails. Any posts to this discussion will also be available online at <a href=\"http://codeplex.com/\">codeplex.com</a></p></div></div></blockquote>\r\n</div><br>",
+    "PostedDate": "2009-09-21T16:21:02.567-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "237185",
+    "ThreadId": "51660",
+    "Html": "<p>No. Word sends the citations one by one to the stylesheet. Hence, the stylesheet has no idea that certain citations should be grouped.</p>\r\n<p>The best solution is to convert the citations to static text first and then hide or remove the ones in the middle. It is important to convert the citation to static text as otherwise your edits might be lost the next time the field gets updated.</p>",
+    "PostedDate": "2009-09-22T00:54:36.787-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

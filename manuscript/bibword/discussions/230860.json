@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "507062",
+    "ThreadId": "230860",
+    "Html": "<p>Hello,</p>\r\n<p>i am using the &quot;IEEE_Alphabetical&quot; style and the German Word 2007 version, but the output of the tag in the text and in the index is only [BO].</p>\r\n<p>In the stylesheet is written this:</p>\r\n<p>&lt;openbracket&gt;[&lt;/openbracket&gt;<br> &lt;closebracket&gt;]&lt;/closebracket&gt;<br> &lt;separator&gt;,&lt;/separator&gt;<br> &lt;source type=&quot;Placeholder&quot;&gt;<br> &lt;format&gt;%Tag%&lt;/format&gt;<br> &lt;/source&gt;<br> &lt;source type=&quot;Book&quot;&gt;<br> &lt;format&gt;{%BibOrder|&quot;BO&quot;%}&lt;/format&gt;</p>\r\n<p>Can anybody help me?</p>",
+    "PostedDate": "2010-10-13T23:54:35.963-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "507098",
+    "ThreadId": "230860",
+    "Html": "<p>Word can't handle alphabetical numbered sorting by itself. See <a href=\"http://bibword.codeplex.com/wikipage?title=Styles_FAQ&referringTitle=Styles#Q4\">http://bibword.codeplex.com/wikipage?title=Styles_FAQ&amp;referringTitle=Styles#Q4</a></p>",
+    "PostedDate": "2010-10-14T01:01:05.657-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "507196",
+    "ThreadId": "230860",
+    "Html": "<p>Thanks a lot for the fast reply. But now i want to change the Numbers in [..] to &nbsp;a tag-Name, like [Bid08] for Marc Bidmus ,..., .., .., 2008.</p>\r\n<p>what is the code for it and how to insert it into the style sheet?</p>",
+    "PostedDate": "2010-10-14T05:26:44.08-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "507325",
+    "ThreadId": "230860",
+    "Html": "<p>Change the</p>\r\n<p style=\"padding-left:30px\">{%BibOrder|&quot;BO&quot;%}</p>\r\n<p>into</p>\r\n<p style=\"padding-left:30px\">{%Tag%}</p>\r\n<p>For a list of all available variables, check the help.</p>",
+    "PostedDate": "2010-10-14T10:46:51.313-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

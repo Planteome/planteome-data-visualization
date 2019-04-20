@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "983288",
+    "ThreadId": "428582",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>&nbsp;</p>\r\n<p>first of all, thanks for the great work! you really make the life of students a lot easier:))</p>\r\n<p>So here's my problem - this is probably an easy fix, however i'm new to the subject so please bear with me:)</p>\r\n<p>&nbsp;</p>\r\n<p>I successfully added AMA style to Word, however when i add page numbers to a citation they are not showing up. is there a way to fix this?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks alot in advance, cheers!</p>\r\n",
+    "PostedDate": "2013-01-05T01:52:03.443-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "983469",
+    "ThreadId": "428582",
+    "Html": "\r\n<p>Never mind - fixed it myself, for anyone who is facing the same problem:</p>\r\n<p>&nbsp;</p>\r\n<p>replace all occurences of&nbsp;</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>{%CitationPrefix%}%RefOrder%{%CitationSuffix%}<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>\n</pre>\r\n<p>with</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>{%CitationPrefix%}%RefOrder%{(p%CitationPages:p.:%)}{%CitationSuffix%}<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span></pre>\r\n<p>That's it - will result in [INDEX](pPAGENUMBERS) format.</p>\r\n<p>Cheers!</p>\r\n</div>\r\n</div>\r\n",
+    "PostedDate": "2013-01-06T04:57:33.86-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

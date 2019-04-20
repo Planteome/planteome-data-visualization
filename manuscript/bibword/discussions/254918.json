@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "601400",
+    "ThreadId": "254918",
+    "Html": "<p>hai</p>\n<p>I am writing my thesis, and I have several different chapters within a single word document using <span style=\"text-decoration: underline;\"><em><strong>office 2007 or 2010</strong></em></span>.</p>\n<p>I would like to have a different bibliography for each chapter, and</p>\n<p>&nbsp;have each bibliography have independent numbering (i.e. each chapter's bibliography starts at 1 instead of continuing the numbering from before).</p>\n<p>Can someone help me figure out how to do this?</p>\n<p>thanks</p>",
+    "PostedDate": "2011-04-22T00:05:57.07-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "601429",
+    "ThreadId": "254918",
+    "Html": "<p>You can't. Without some serious abuse of the language field, you can only have one bibliography per document.</p>\r\n<p>One&nbsp;solution is&nbsp;to create one document with a bibliography, convert the bibliography to static text once you finished the document and split it over the different chapters.</p>\r\n<p>Another solution is to create each chapter in a separate document. Once you finished, you convert the in-text citations, bibliography, and possible other elements to static text and combine the different chapters into one document using a boiler template or master document (though the use of master documents is discouraged in Word).</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2011-04-22T01:55:33.79-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "601811",
+    "ThreadId": "254918",
+    "Html": "<p>Dear Yves</p>\r\n<p>now i have small problem in using your style\"nature\"</p>\r\n<p>all the biblogrophy are coming in table formate and my static conversion is not converting into static</p>\r\n<p>kindly give me some idea how to hANDLE IT</p>\r\n<p>THANKING YOU</p>",
+    "PostedDate": "2011-04-23T00:30:41.72-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "601832",
+    "ThreadId": "254918",
+    "Html": "<p>Numbered bibliographies have to be in a&nbsp;table format if you want them aligned nicely. This is because of the limitations of the HTML importer&nbsp;used by Word. But that shouldn't stop you from converting the result into static text.</p>\r\n<p>If the conversion is really failing, you might want to try the following macro:</p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre><span style=\"color: blue;\">Sub</span> BibliographyToStaticText()\r\n  <span style=\"color: blue;\">Dim</span> fld <span style=\"color: blue;\">As</span> field\r\n \r\n  <span style=\"color: green;\">' Go over all stories, including main, footnotes, ...</span>\r\n  <span style=\"color: blue;\">For</span> <span style=\"color: blue;\">Each</span> sr <span style=\"color: blue;\">In</span> ActiveDocument.StoryRanges\r\n    <span style=\"color: green;\">' Find all bibliography fields and convert them to static text.</span>\r\n    <span style=\"color: blue;\">For</span> <span style=\"color: blue;\">Each</span> fld <span style=\"color: blue;\">In</span> sr.Fields\r\n      <span style=\"color: blue;\">If</span> fld.Type = wdFieldBibliography <span style=\"color: blue;\">Then</span>\r\n        fld.<span style=\"color: blue;\">Select</span>\r\n        WordBasic.BibliographyBibliographyToText\r\n      <span style=\"color: blue;\">End</span> <span style=\"color: blue;\">If</span>\r\n    <span style=\"color: blue;\">Next</span>\r\n  <span style=\"color: blue;\">Next</span>\r\n<span style=\"color: blue;\">End</span> <span style=\"color: blue;\">Sub</span>\r\n \r\n</pre>\r\n</div>",
+    "PostedDate": "2011-04-23T01:37:59.83-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "640159",
+    "ThreadId": "254918",
+    "Html": "<p>Did anyone help me how to how to rectify sentence case error</p>\r\n<p>suppose i had journal name like this</p>\r\n<p>phys. rev. b</p>\r\n<p>but it should appear like this</p>\r\n<p>Phys. Rev. B</p>\r\n<p>How to get this&nbsp;</p>\r\n<p>other word what is the string command that i have use to get sentence case.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2011-07-10T14:42:40.563-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "643233",
+    "ThreadId": "254918",
+    "Html": "<p>There is no such thing. And it is rather hard to implement one since it has to take language characteristics in account. For example, a journal called \"maths in economy\" would become \"Maths in Economy\" with a small \"i\" and not \"Maths In Economy\".&nbsp;So it is not like you can capitalize every word just like that.</p>\r\n<p>Even Word's own capitalize function does not take such things into account. It is just too language dependent. Of course, if you don't care about language specific cases and only want every word capitalized whether it should be or not, I would suggest writing a macro which picks up all your sources, gets the title of each one, applies Word's capitalization function (Selection.Range.Case = wdTitleWord) and then inserts that as the new title.</p>",
+    "PostedDate": "2011-07-16T02:20:55.42-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

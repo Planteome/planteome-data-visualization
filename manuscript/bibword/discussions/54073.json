@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "182129",
+    "ThreadId": "54073",
+    "Html": "When you get the time, how about tackling The BlueBook and ALWD Legal Citations?<br>\r\n",
+    "PostedDate": "2009-04-21T21:14:49.8-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "182166",
+    "ThreadId": "54073",
+    "Html": "<p><a href=\"http://bibword.codeplex.com/Wiki/View.aspx?title=BibWord\">BibWord</a> intends to make the development of styles easier, so you should really try to create the styles yourself.</p>\r\n<p>There are a few things you have to keep in mind though:</p>\r\n<ul>\r\n    <li>Word had no intention to support legal referencing. For example, the only 'legal' source type is <em>Case</em>. There is no source type for statutes, bills, hearings, laws, ...</li>\r\n    <li>Word generates citations independent of each other. This means that you manually have to indicate if a work has been cited before to ensure the short or ibid forms of the citation are displayed.</li>\r\n</ul>\r\n<p>There are ways around those shortcoming, but you have to wonder if the tool is working so much against you, if it is really worth the effort you are going to put into creating a style.</p>\r\n<p>You could use the <a href=\"http://bibword.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=20331\">Chicago footnote style</a> as a starting point as it contains built-in features for short and ibid versions.</p>\r\n",
+    "PostedDate": "2009-04-21T23:53:37.39-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

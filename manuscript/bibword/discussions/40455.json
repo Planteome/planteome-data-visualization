@@ -1,0 +1,82 @@
+[
+  {
+    "Id": "134204",
+    "ThreadId": "40455",
+    "Html": "Hi all,<br>\r\n<br>\r\nI really like the bibliography styles, but now I want to a tabulator between the the tag column and the other fields. How is this possible? <br>\r\n<br>\r\nTaking for example the IEEE Reference Order style<br>\r\n<br>\r\nCurrently it is like this<br>\r\n<br>\r\n[1] William Fool, Chronicles of a hero...<br>\r\n<br>\r\nbut I want it like this<br>\r\n<br>\r\n[1]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; William Fool, Chronicles of a hero...<br>\r\n<br>\r\nThank you<br>\r\n<br>\r\nChristoph<br>\r\n",
+    "PostedDate": "2008-11-21T04:13:48.033-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "134208",
+    "ThreadId": "40455",
+    "Html": "The IEEE Reference Order style is a table based style with hidden borders. The easiest way to obtain what you want, is to just select one of the two columns and set the indentation.<br>\r\n<br>\r\nFor example, you could select the first column (i.e. the numbers between square brackets) and then on the Home tab in Word 2007, click on the arrow next to 'Paragraph' and set the 'Indentation' 'Right' to the size of your tab. If you would do this with the second column, you would set the 'Left' indentation.<br>\r\n<br>\r\nNote that you might have to redo this every time you reformat your bibliography. I can explain you how to change it in the style, but that is more work.<br>\r\n<br>\r\nYves\r\n",
+    "PostedDate": "2008-11-21T04:31:53.013-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "134211",
+    "ThreadId": "40455",
+    "Html": "Hi Yves,<br>\r\n<br>\r\nthanks for your fast reply and the hint that the style is table bases. Now I could even manage it to modify the code by myself. I added the parameter &quot;width&quot; to column1 and I also added &quot;width&quot; to the td parameters in the template &quot;format-bibliography-table-column&quot;. This works quite well now.<br>\r\n<br>\r\nBut I have another question regarding the sorting:<br>\r\n<br>\r\nWhen I use IEEE Reference Order style it sorts the bibliography by occurence in the document, which is the intended behavior I think. So I thought, then I can take IEEE Alphabetical Order style to sort the bibliography by alphabet, but what happens now is, that I don't have any tag names. Just two bracket without content &quot;[]&quot;. What am I doing wrong?<br>\r\n<br>\r\nChristoph<br>\r\n<br>\r\n<br>\r\n",
+    "PostedDate": "2008-11-21T04:51:57.63-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "134215",
+    "ThreadId": "40455",
+    "Html": "The IEEE Alphabetical Order style requires the <a href=\"http://www.codeplex.com/bibliography/Release/ProjectReleases.aspx?ReleaseId=19474\" title=\"BibWord Extender\">BibWord Extender</a> tool to define the BibOrder element. <br>\r\n<br>\r\nThe page containing the tool also provide a brief description on its usage. Only after you executed the tool and refreshed your citations and bibliography, the order number will be displayed in your document.<br>\r\n<br>\r\nYves\r\n",
+    "PostedDate": "2008-11-21T05:00:14.793-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "134222",
+    "ThreadId": "40455",
+    "Html": "Great. Worked perfectly, but maybe you should mention on the BibWord page that .NET Framework 3.0 or later is required. The tool does not work with 2.0.<br>\r\n<br>\r\nThanks a lot for your work!<br>\r\n",
+    "PostedDate": "2008-11-21T05:28:57.06-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "218293",
+    "ThreadId": "40455",
+    "Html": "<p>Dear Yves,</p>\r\n<p>I am writing to ask you about the same problem, but I prefer to modify directly the style. In this way I can share with my colleagues that style without other instructions. So, it would be great if you have time to explane me the process to implement tabulators.</p>\r\n<p>Thanks a lot for your styles and your contributions.</p>\r\n<p>Regards,</p>\r\n<p>Alberto</p>",
+    "PostedDate": "2009-08-01T06:10:40.213-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "218309",
+    "ThreadId": "40455",
+    "Html": "<p>Tabs are simple characters just like spaces or periods. The easiest way to insert them is as &quot;&lt;![cdata[&amp;#09;]]&gt;&quot;. An example BibWord&nbsp;format string using tabs could be:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre style=\"padding-left:30px\"><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">format</span><span style=\"color:Blue\">&gt;</span>{[%RefOrder%]}<span style=\"color:Blue\">&lt;![CDATA[</span><span style=\"color:Gray\">&amp;#09;</span><span style=\"color:Blue\">]]&gt;</span>{%Author:1%, }{&quot;%Title%,&quot;}{ <span style=\"color:Red\">&amp;lt;</span>i<span style=\"color:Red\">&amp;gt;</span>%JournalName%<span style=\"color:Red\">&amp;lt;</span>/i<span style=\"color:Red\">&amp;gt;</span>}{, vol. %Volume%}{, no. %Issue%}{, %Pages:p. :pp. %}{,{ %Month:s%} %Year%}{, %Comments%}.{ [Online]. %URL:l%}<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">format</span><span style=\"color:Blue\">&gt;</span></pre>\r\n</div>\r\n<p>But why would you use tabs? They severly limit capabilities.</p>\r\n<p>If your entry would be longer than one line, the text on the second line would start right under the number. Then you would have to change the indentation of your style if you wanted things aligned. Not hard, but you still would have to give your colleagues instructions on doing that.</p>\r\n<p>With tabs, alignment can change if you have a lot of source entries. For example, &quot;[1]&quot; followed by a tab could be shorter than &quot;[100]&quot; without tab. Hence, &quot;[100]&quot; followed by a tab would mean your text should be &quot;[1]&quot; followed by two tabs if you wanted them aligned. Or more graphically represented:</p>\r\n<p style=\"padding-left:30px\">[1]&nbsp;&nbsp; A ...<br>[100]&nbsp;A ...</p>\r\n<p>You can't easily align to the right, something commonly asked for.</p>\r\n<p style=\"padding-left:30px\">&nbsp; [1] A ...<br>[10] A ...</p>",
+    "PostedDate": "2009-08-01T07:38:26.313-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "218446",
+    "ThreadId": "40455",
+    "Html": "<p>Dear Yves,</p>\r\n<p>thanks a lot for your answer and for your suggestion. I understand the limits of tabs and maybe I can try starting with a bibword template (as IEEE for instance) that is defined in two columns. Starting from this, there is a way to define the width of the first column in order to obtain a custom indentation of the second one? In my specific case a 2 columns template works great, but I need an indentation, between Ref number and Bibl. source, of 1 cm.&nbsp; There is the possibility to insert a width parameter?</p>\r\n<p>Thanks and regards,</p>\r\n<p>Alberto</p>",
+    "PostedDate": "2009-08-02T04:35:08.39-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "218640",
+    "ThreadId": "40455",
+    "Html": "<p>If you don't want to play around with the code, you can do it in a 'postprocessing step'. Once you added your bibliograpy, just select the first column. Then, from the &quot;Home&quot; tab, pick the little arrow next to &quot;Paragraph&quot; and set &quot;Indentation&quot; &quot;Right&quot; to 1 cm. Note that if the bibliography gets updated, this formatting feature will be lost.</p>\r\n<p>But your question gave me the idea of a feature which would also fix some other formatting issues which sometimes occur. A version of IEEE reference incorporating this feature can be found at <a href=\"http://users.ugent.be/~ydhondt/\">http://users.ugent.be/~ydhondt/</a>&nbsp;(it will probably only be there for a week or two). Basically, what I did was add a style element to the bibword bibliography element. In the style element, you can set the&nbsp;style properties for the table cells in each column. In the style I added the following two:</p>\r\n<div style=\"color:Black;background-color:White\">\r\n<pre><span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">style</span><span style=\"color:Blue\">&gt;</span>\r\n  <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">column</span> <span style=\"color:Red\">id</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">1</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">&gt;</span>white-space: nowrap;<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">column</span><span style=\"color:Blue\">&gt;</span>\r\n  <span style=\"color:Blue\">&lt;</span><span style=\"color:#A31515\">column</span> <span style=\"color:Red\">id</span><span style=\"color:Blue\">=</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">2</span><span style=\"color:Black\">&quot;</span><span style=\"color:Blue\">&gt;</span>padding-left:1cm;<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">column</span><span style=\"color:Blue\">&gt;</span>\r\n<span style=\"color:Blue\">&lt;/</span><span style=\"color:#A31515\">style</span><span style=\"color:Blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>This says that your first column should not be wrapped meaning that the number should always be on one line, while your second column should have a 1 cm margin to the left.</p>\r\n<p>Note that this is an alpha version. It is only my first go at this feature and has not been tested extensively. I already know that this is not how I want the final version to look. When I have the time, I will implement the feature in a decent way. But this should get you started.</p>",
+    "PostedDate": "2009-08-03T00:10:37.67-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "218687",
+    "ThreadId": "40455",
+    "Html": "<p>Dear Yves,</p>\r\n<p>I have added these four rows on my style and I have also substituted all the last part of your IEEE reference code in mine (all after months name definition). After some test with my sources it seems to work great, it is a fully automated version of my bibliography style. Thanks for your code and you suggestions!</p>\r\n<p>I hope for the future that all Journal publishers will give directly their word style, as it happends more frequently with latex!</p>\r\n<p>Regards,</p>\r\n<p>Alberto</p>",
+    "PostedDate": "2009-08-03T02:44:43.207-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

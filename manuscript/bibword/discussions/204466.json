@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "416443",
+    "ThreadId": "204466",
+    "Html": "<p>Is it possible to customize things so that a URL that we provide is displayed in the bib entry? Right now, we are kludging this by inserting the URL into other fields (such as page or some other field), but that is not optimal.</p>\r\n<p>Also, is there a way to force a style to show a particular field? It only seems to show required fields in the bibliography. If I input data into a field, how can I be sure that it'll be displayed in the bibliography?</p>",
+    "PostedDate": "2010-03-10T08:44:25.34-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "416613",
+    "ThreadId": "204466",
+    "Html": "<blockquote><em>Is it possible to customize things so that a URL that we provide is displayed in the bib entry? Right now, we are kludging this by inserting the URL into other fields (such as page or some other field), but that is not optimal.</em></blockquote>\r\n<p>The open xml bibliographic format is a flat format. That means that each type of source can actually contain all the available&nbsp;fields, even if those fields make no sense. For example, you could add the station on which&nbsp;the journal article first aired.</p>\r\n<p>One of the good things about the bibliography tools in&nbsp;Word 2007 is that they are like elephants, they remember everything. For example, you could start from&nbsp;a&nbsp;<em>Web Site</em> and add a <em>URL</em> field. If you would then change the type to something like <em>Journal Article</em> and&nbsp;add other fields like <em>Journal Name</em>, Word remembers that you added a <em>URL</em>.&nbsp;Of course, that is not really practical for editing. You can make extra fields available&nbsp;for any source type in the input&nbsp;dialog&nbsp;by editing <em>bibform.xml</em>. For an explaination see <a title=\"http://bibword.codeplex.com/Thread/View.aspx?ThreadId=75287\" href=\"http://bibword.codeplex.com/Thread/View.aspx?ThreadId=75287\">here</a>.</p>\r\n<blockquote><em>Also, is there a way to force a style to show a particular field? It only seems to show required fields in the bibliography. If I input data into a field, how can I be sure that it'll be displayed in the bibliography?</em></blockquote>\r\n<p>A style is what it is, nothing more and nothing less. If you don't agree with the output of a certain style, you will have to create your own style. You could start from a style close to what you want to speed things up rather than writing your own style from scratch. Everything is written in xslt and available for everyone to edit (yes, even the styles that come with Word). Of course, depending on how the original style was created, editing it might be a&nbsp;rather difficult task.</p>",
+    "PostedDate": "2010-03-10T14:22:08.753-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "416919",
+    "ThreadId": "204466",
+    "Html": "<p><a id=\"ctl00_ctl00_MasterContent_Content_PostRepeater_ctl02_UserNameLink\" href=\"http://www.codeplex.com/site/users/view/yves\">yves</a>, thank you for the thorough explanation and for pointing me to the online explanation.</p>\r\n<p>I read your instructions and used them to add several fields to my copy of BIBFORM.XML. I'm thrilled--it was easy. I'm looking into how our IT department can distribute updates to our baselined files for everyone at our organization.</p>\r\n<p>Many, many thanks for helping us!</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-03-11T05:29:59.507-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "416938",
+    "ThreadId": "204466",
+    "Html": "<p>I'm sorry--I neglected to ask one important question.</p>\r\n<p>I used the above instructions to add URL to all of my source types, but now I'm wondering what I need to do to make them actually appear in the bib.</p>\r\n<p>Can you point me to the instructions for how to customize the output so that the new fields are included in the formatted bib?</p>\r\n<p>Thanks (again).</p>",
+    "PostedDate": "2010-03-11T05:51:08.353-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "417080",
+    "ThreadId": "204466",
+    "Html": "<p>There is no default instruction set for adjusting a style to process different fields. Everything depends on how the original stylesheet containing the formatting information was created.</p>\r\n<p>If it's a BibWord style, its just a matter of looking for the format strings in the data variable and add the variables you want. For more information on format strings, see the <a title=\"BibWord documentation\" href=\"http://bibword.codeplex.com/documentation\">documentation</a>.</p>\r\n<p>If it's one of the styles that came with Word, then you will have to delve into the +3000 lines of code to find out where what is happening. It's slightly different for every style, but the general lines are the same.</p>",
+    "PostedDate": "2010-03-11T10:26:48.82-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

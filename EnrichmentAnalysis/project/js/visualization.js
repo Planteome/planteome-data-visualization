@@ -34,6 +34,8 @@ var networkTree;		// for tree visualization
 var selectedCategory;
 var getCategoriesFinished = false;
 
+var networkFontSize = 30;
+
 /*
 NodeProperty Object
 */
@@ -1406,7 +1408,7 @@ function drawNetwork() {
             },
             font: {
                 color: '#343434',
-                size: 20,
+                size: networkFontSize,
             },
         },
 
@@ -1482,6 +1484,36 @@ function drawNetwork() {
         ctx.fillRect(-clientWeight / scale, -clientHeight / scale, 2 * clientWeight / scale, 2 * clientHeight / scale);
 
     });
+    
+      network.on("configChange", function() {
+        // this will immediately fix the height of the configuration
+        // wrapper to prevent unecessary scrolls in chrome.
+        // see https://github.com/almende/vis/issues/1568
+        var div = container.getElementsByClassName('vis-configuration-wrapper')[0];
+        div.style["height"] = div.getBoundingClientRect().height + "px";
+      });
+}
+
+var showNetworkConfiguration = false;
+function toggleNetworkConfiguration(){
+    showNetworkConfiguration = !showNetworkConfiguration;
+    network.setOptions({
+        configure: {
+            enabled: showNetworkConfiguration,
+            filter: function (option, path) {
+              return (path.indexOf('font') !== -1 && path.indexOf('nodes') !== -1 && option == "size");
+            },
+            showButton: false
+        }
+    });
+    
+/*     network.setOptions({
+        nodes: {
+            font: {
+                size: 60,
+            }
+        }
+    }); */
 }
 
 function clickNode(params) {
@@ -1899,3 +1931,5 @@ function createLegend(){
 	// margin-right: 2px;
 	
 };
+
+

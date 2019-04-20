@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1325551",
+    "ThreadId": "572994",
+    "Html": "I am trying to get the MHRA footnote working with Microsoft Office 2013. I have downloaded the styles.zip folder and extracted the files from within it and copied these files (including the MHRAFootNote.XSL) into the <strong>%userprofile%\\AppData\\Roaming\\Microsoft\\Bibliography\\Style</strong> folder. \r<br />\n<br />\nWhen opening Microsoft Word I can now see all of the styles from the style.zip folder except for the MHRA one. Does anyone know how to resolve this?\r<br />\n<br />\nI have tried the same steps for Office 2010 (by copying into <strong>%programfiles%\\Microsoft Office\\Office14\\Bibliography\\Style</strong>) and this works fine. So seems to be an issue with Office 2013?<br />\n",
+    "PostedDate": "2014-11-24T07:01:38.263-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1327331",
+    "ThreadId": "572994",
+    "Html": "I have the exact same problem and I am using word 2013.  All the other styles from the package work perfectly, annoyingly the only one I want is the only one that does not come up<br />\n",
+    "PostedDate": "2014-11-30T04:04:59.71-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1431900",
+    "ThreadId": "572994",
+    "Html": "I also have this issue - it is very frustrating as I can't find any other way of producing footnote style references!  Does anyone have a solution for this?<br />\n",
+    "PostedDate": "2015-06-25T13:23:14.187-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

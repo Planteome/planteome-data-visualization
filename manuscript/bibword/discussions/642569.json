@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1438129",
+    "ThreadId": "642569",
+    "Html": "Hi all,\r<br />\n<br />\nGreat to be part of such a useful community!\r<br />\n<br />\nAnyway, I've created a new source section in BIBFORM.XML and then added the required information in our Harvard.XSL file.\r<br />\n<br />\nWhen I create a new source in the Word Citation manager, all of the fields appear and when I click add, the citation and bibliography information appear in the lower window but only the bracketed date appears in the Master List window.\r<br />\n<br />\nIf anyone can suggest what I've done wrong I'd be very grateful!\r<br />\n<br />\nBest,\r<br />\n<br />\nKarl.<br />\n",
+    "PostedDate": "2015-08-11T06:16:33.57-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

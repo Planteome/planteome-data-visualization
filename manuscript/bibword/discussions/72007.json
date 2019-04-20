@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "245746",
+    "ThreadId": "72007",
+    "Html": "<p>Hi everyone I'm a frustrated 1st year undergrad trying to reference my essay: found your add-on;t ried to download it; get an error message when I try to unzip saying 'it does not appear to be a valid archive'. I'm using Win Xp &amp; Office&nbsp; 2007. Can anyone suggest what I'm doing wrong or if there's another way to get Harvard into my bibliography styles in Word 2007 please?&nbsp; thanks in advance for any help.</p>\r\n<p>Rich</p>",
+    "PostedDate": "2009-10-14T13:54:31.26-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "245893",
+    "ThreadId": "72007",
+    "Html": "<p>I just tried it myself and there doesn't seem to be any problem with the zip archive. Have you tried saving the archive to your hard disk before extracting it?</p>\r\n<p>If you only need a couple of styles, you could download them separately. If you select the &quot;Downloads&quot; tab, there is a list with &quot;Releases&quot; to the right. It contains every style in the zip file and then some.</p>",
+    "PostedDate": "2009-10-14T23:35:09.587-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "245955",
+    "ThreadId": "72007",
+    "Html": "<p>Thanks for this Yves - I think I must be not doing something correctly as when&nbsp;I try to open the file I get a WinZip error saying it can't open: 'does not appear to be a valid archive. If you want to add the file to an archive, first create or open the archive &nbsp;then drop the file again'.</p>\r\n<p>Does this mean I should put the .zip file staright into the the styles folder?</p>\r\n<p>Also, I tried using the Harvard-Exeter* as it appeared closest to what I need - downloaded and saved fine, appears in the styles list in 2007 but returns a bibliography with the same detail as APA, just withoput italics. The example shown on the download window shows fuller information, eg web addresses and access dates. So I downloaded the BibWord Extender and ran this on the word doc with the same results. Can you help please?&nbsp; best wishes</p>",
+    "PostedDate": "2009-10-15T03:41:00.16-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "246048",
+    "ThreadId": "72007",
+    "Html": "<p>No. The files have to be extracted in the directory. Putting the zip file straight into the folder won't do a thing.</p>\r\n<p>The archive was created using the build-in compression feature of Windows which generates standard zip-files. I tried unpacking them with both winrar and tugzip and that worked without a problem.</p>\r\n<p>If you want to display things like website addresses, you have to fill them in. If you don't see the field listed when entering the source, either temporarely switch to a &quot;Source Type&quot; which has the field, like &quot;Website&quot;, or extend the bibform.xml to have them always there. The latter is described in the following <a title=\"http://bibword.codeplex.com/Thread/View.aspx?ThreadId=71252\" href=\"http://bibword.codeplex.com/Thread/View.aspx?ThreadId=71252\">thread</a>&nbsp;or can be done using BibType in combination with the types.xml file that is inside the zip archive.</p>\r\n<p>The example I think you are refering to had the following fields filled in:</p>\r\n<ul>\r\n<li>Author: Skagren, E. I.; Odberg, B.</li>\r\n<li>Title: Predictive factors for 1-year outcome of low-back and neck pain in patients treated in primary care: Comparison between the treatment strategies chiropractic and physiotherapy</li>\r\n<li>Journal name: Pain</li>\r\n<li>Year: 1998</li>\r\n<li>Volume: 77</li>\r\n<li>Issue: 2</li>\r\n<li>Pages: 201-208</li>\r\n<li>Standard Number: Elsevier/ScienceDirect/ O304-3959(98)00101-8</li>\r\n<li>Year Accessed: 1998</li>\r\n<li>Month Accessed: 2</li>\r\n<li>Day Accessed: 8</li>\r\n</ul>\r\n<p>which results in:</p>\r\n<p style=\"padding-left:30px\">Skagren, E.I. and Odberg, B. (1998) 'Predictive factors for 1-year outcome of low-back and neck pain in patients treated in primary care: Comparison between the treatment strategies chiropractic and physiotherapy', <em>Pain</em>, vol. 77, no. 2, pp. 201-208, Available: Elsevier/ScienceDirect/ O304-3959(98)00101-8 [8 Feb 1999].</p>\r\n<p>Note that instead of Standard Number, you can also provide a URL using the URL field.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-10-15T07:05:38.733-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

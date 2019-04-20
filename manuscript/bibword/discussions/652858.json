@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1467835",
+    "ThreadId": "652858",
+    "Html": "Hello,\r<br />\n<br />\nI got the subject bib-style at the homepage of our university. It should be used for  theses. A comment inside the XSL-file indicates that the style comes from BibWord version 2.8. That's why I think my question would be in the right place here.\r<br />\n<br />\nSince I use Microsoft Office 2013 I copied the XSL-file to <code>%APPDATA%\\Roaming\\Microsoft\\Bibliography\\Style\\</code> and restarted Word afterwards, but that style doesn't appear in the reference style list in Word.\r<br />\n<br />\nHas somebody an idea what could be a problem?\r<br />\n<br />\nRegards<br />\n",
+    "PostedDate": "2016-03-23T13:51:27.36-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

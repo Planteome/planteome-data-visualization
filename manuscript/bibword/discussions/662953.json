@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1496338",
+    "ThreadId": "662953",
+    "Html": "Hello everyone, \r<br />\nI am creating my bibliography and stumbling over something weird:\r<br />\nWhen I add the <strong>%Author%</strong> variable to my <strong>&lt;format&gt;</strong> section and want to put <strong>some character directly behind</strong> it, let's say a colon ( : ), then there is still a single '<strong>free space</strong>' <strong>in between</strong> (see yellow mark):\r<br />\n<img src=\"http://i.imgur.com/9gtmywI.png\" alt=\"Image\" />\r<br />\nNotice(!): When I add an entry of the same source type (<em>book</em>) with <em>company</em> information instead of <em>author</em> information, it <strong>does not show</strong> this extra 'free space' (see the second entry in the image above).\r<br />\n<br />\nHere's my respective XSL-Code:<br />\n<ul>\n<li><strong>&lt;bibliography&gt;-Section:</strong>\r<br />\n<img src=\"http://i.imgur.com/PQQ1GJH.png\" alt=\"Image\" /></li>\n<li>\n<strong>&lt;namelist&gt;-Section:</strong>\r<br />\n<img src=\"http://i.imgur.com/mzc0A4O.png\" alt=\"Image\" /><br />\n</li>\n</ul>\nAnyone with a solution to prevent that 'free space' in between?\r<br />\nThanks a million in advance!\r<br />\n<br />\nKind regards,\r<br />\nAbeldian<br />\n",
+    "PostedDate": "2017-05-13T06:09:17.49-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

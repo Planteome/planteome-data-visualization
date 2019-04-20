@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "136102",
+    "ThreadId": "41025",
+    "Html": "Hi there,<br>\r\n<br>\r\nhow likely is it, that a AMS (<a href=\"http://en.wikipedia.org/wiki/American_Mathematical_Society\" title=\"American Mathematical Society\">American Mathematical Society</a>) - style will be released?<br>\r\n<br>\r\nThanks,<br>\r\nSietsch.<br>\r\n",
+    "PostedDate": "2008-11-28T07:45:24.637-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "136132",
+    "ThreadId": "41025",
+    "Html": "Rather unlikely ... at least by me.<br>\r\n<br>\r\nYou might try to do it yourself using the <a href=\"http://www.codeplex.com/bibliography/Wiki/View.aspx?title=BibWord&referringTitle=Home\" title=\"BibWord template\">BibWord template</a> or ask the AMS people to do it for you. I did check out their site and noticed they have BibTeX styles which might be a good starting point if you would do it yourself.<br>\r\n<br>\r\nYves\r\n",
+    "PostedDate": "2008-11-28T09:55:41.55-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

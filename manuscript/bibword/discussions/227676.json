@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "495211",
+    "ThreadId": "227676",
+    "Html": "<p>Hi guys,</p>\r\n<p>First of all I would like to thank you for this site, because it really has helped me a lot!</p>\r\n<p>I do have a few questions though, because I'm not that great with html (this is my first time using it actually).</p>\r\n<p>I have succesfully changed a lot in Harvard *Anglia, but I would like to make some more changes and I don't know how to.</p>\r\n<ul>\r\n<li>I would like the middle names of the authors to appear fully in the bibliography and citations, instead of the abbreviations.</li>\r\n<li>I would like to have a blank sentence/space (or 'enter'? I don't know the word in English) between the sources.</li>\r\n</ul>\r\n<p>I hope someone can help me! And hopefully not in too difficult English or html language! ;)</p>\r\n<p>Lola</p>",
+    "PostedDate": "2010-09-17T14:23:11.117-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "495374",
+    "ThreadId": "227676",
+    "Html": "<p>Names are formatted using the information from the namelists elements in the style. You will have to change the first_person and other_persons elements to your&nbsp;requirements.&nbsp;A whole bunch of possible format strings for names can be found at <a href=\"http://bibword.codeplex.com/wikipage?title=BibWord Format Strings&referringTitle=Documentation#ex2\">http://bibword.codeplex.com/wikipage?title=BibWord%20Format%20Strings&amp;referringTitle=Documentation#ex2</a>&nbsp;</p>\r\n<p>Don't place empty paragraphs (enters) in your document. It is a bad form of document layout. You should always try to use styles to set the whitespace in your document. Once you inserted a bibliograpy in Word, press CTRL+ALT+SHIFT+S. The style pane will pop up. In it, look for a style called &quot;Bibliography&quot; (or a localized version of that word). Right click on it and choose &quot;Modify...&quot;. In the dialog that pops up, you can either use the button &quot;Increase Paragraph Spacing&quot; or you can use the &quot;Format&quot; button at the bottom and choose &quot;Paragraph...&quot;. Then you can set the settings more accurately to your needs. Once finished press ok or close till all panes are closed and you are good to go. The changes will remain even if you update your bibliography.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-09-18T04:59:44.593-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "495429",
+    "ThreadId": "227676",
+    "Html": "<p>Thank you very much! That link is very helpful. And that increased paragraph spacing indeed looks much better than empty paragrahps! Thanks again!</p>",
+    "PostedDate": "2010-09-18T08:53:21.6-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

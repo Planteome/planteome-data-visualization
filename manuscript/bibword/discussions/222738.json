@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "477409",
+    "ThreadId": "222738",
+    "Html": "Firstly thanks so much for this resource.\r\n\r\nI'm using the Vancouver style and sometimes need to reference more than one source at a time, e.g. (1, 2, 3).  I can do the multiple citations by clicking in the current citation and adding another but it orders itself in the order I click on them, rather than their numerical order e.g. (13, 21, 5) rather than (5, 13, 21).  Since the source doesn't tell you which number each citation is currently allocated, and this changes constantly as new documents are added, it is somewhat complicated to click them in the correct order.  \r\n\r\nAm I doing something wrong? Is there anyway to get it to order them correctly?\r\n\r\nThank you!",
+    "PostedDate": "2010-08-06T08:25:08.657-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "477615",
+    "ThreadId": "222738",
+    "Html": "<p>Unfortunately not. There is a serious (if you ask me)&nbsp;shortcoming in the bibliography and citation tool. In-text citations are not aware of their neighbours or their position within a group.</p>\r\n<p>The quickest fix is probably waiting till you finished your document. Then note down the order you see the numbers in (e.g. 13, 21, 5). Right-click on the citation and use &quot;Edit Field...&quot;. A dialog will pop-up showing a field code looking like &quot; CITATION src05 \\l 1033 \\m src06 \\m src07 &quot;. By switching the src05, src06 and src07 (they are the unique tags) you change the order of the output.</p>",
+    "PostedDate": "2010-08-07T05:45:53.423-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "478485",
+    "ThreadId": "222738",
+    "Html": "<p>Yes it is a pretty big flaw!! Crazy that it does not have this function - I am computer programming illiterate but it seems to me that if footnotes and endnotes can sort themselves out then it can't be that complicated to have the reference function do the same!</p>\r\n<p>Thanks for the suggestion on how to get around it; I thought I would have to wait til the end to sort it out.</p>\r\n<p>And thanks again for the style, even with this flaw it is still very useful!</p>",
+    "PostedDate": "2010-08-10T02:21:47.87-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

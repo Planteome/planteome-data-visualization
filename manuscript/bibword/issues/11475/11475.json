@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi, can someone please help me. \n\nI downloaded and followed the process so that Harvard Anglia would be available but it is not showing up in Microsoft Word.\n\nI downloaded Microsoft Office 365 today, on my dads laptop - Mac 2011 and it doesn't recognise the Harvard Anglia. I really need this asap as I have nearly completed my work and all my references were done on my computer before it stopped working.\n\nHelp, please!\n\nContact me on rudiwescombe@gmail.com\n\nThank you",
+    "LastUpdatedDate": "2013-12-19T15:45:33.783-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "bibword",
+    "ReportedDate": "2013-12-19T15:45:33.783-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Harvard Anglia is still not working - HELP!!!",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 11475
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

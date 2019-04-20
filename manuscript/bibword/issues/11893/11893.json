@@ -1,0 +1,45 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hello,\n\nwhen I run BibWordExtender2 and press \"extend\" button (word 2013 docx file) error occurs \"Bibliography extension failed\" (see attached screenshot) and nothing happens.\n\nDo you have any idea what's wrong?\n\nThanks for an answers",
+    "LastUpdatedDate": "2014-10-08T09:20:55.877-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "bibword",
+    "ReportedDate": "2014-10-08T09:20:50.927-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Bibliography extension failed - word 2013 file",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 11893
+  },
+  "FileAttachments": [
+    {
+      "FileId": 3915,
+      "FileName": "bib.jpg",
+      "DownloadUrl": ".\\3915"
+    }
+  ],
+  "Comments": []
+}

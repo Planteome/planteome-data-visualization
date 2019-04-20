@@ -1,0 +1,178 @@
+[
+  {
+    "Id": "544086",
+    "ThreadId": "240507",
+    "Html": "\r\n<p>I need the Harvard referencing style for my university work but I cannot find it in Word 2011. &nbsp;I have tried various files but nothing works. &nbsp;My university has an installer for the PC version of Word 2010 to add this referencing style but nothing\r\n for Mac. &nbsp;I even tried copying the PC XSL file from said reference style to the Mac version of Word 2011 but it did not work. &nbsp;Can anyone make or provide me with a working Harvard style for Word 2011? &nbsp;I also looked on this site, installed all\r\n current Mac styles and Harvard is there but has an asterisk next to it which means that it needs additional software and I do not know how to install this on Mac.</p>\r\n<p>If it helps the university in question is Sheffield Hallam in the UK.</p>\r\n<p>Many thanks.</p>\r\n<p>Ian</p>\r\n",
+    "PostedDate": "2011-01-04T19:25:11.137-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "544137",
+    "ThreadId": "240507",
+    "Html": "\r\n<blockquote style=\"border:solid .1em #ccc; font-style:italic; margin:.25em 1em 0 1em; padding:0 .25em 0 .25em\">\r\nI even tried copying the PC XSL file from said reference style to the Mac version of Word 2011 but it did not work.</blockquote>\r\n<p>What do you mean by it did not work? Did it show up in the list of styles when you wanted to enter a citation? Or didn't you see it there? If this is the style from your university, where did they get it from (or did they made it themselves)? To where did\r\n you copy the style?</p>\r\n<p>All the styles on this site are cross-platform and cross-version. That is, they work on Word 2007 (Windows), 2008 (Mac), 2010 (Windows), and 2011 (Mac).</p>\r\n<p>The asteriks means you can use the additional software if you need extra functionality which is not included in any version of Word. In case of the Harvard reference styles, the additional software is only needed if you require year suffices (e.g.: Doe,\r\n 2006a; Doe, 2006b). If you don't have the same author(s) publishing multiple works in the same year, you don't need the software. If you would use it, it wouldn't do anything.</p>\r\n<p>And even if you needed the year suffices and it is just one or 2 cases, you could do them manually and add the suffix after the year in the source dialog.</p>\r\n<p>I would advise against installing the software on a Mac as you need an older version of Mono. The current releases of windowsbase.dll (Mono) are broken and the software will only&nbsp;corrupt your document! Installing older versions of Mono might (or not)\r\n harm other software.</p>\r\n",
+    "PostedDate": "2011-01-04T23:32:04.61-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "544267",
+    "ThreadId": "240507",
+    "Html": "\r\n<p>I copied the XSL file to the correct folder (right-click Word 2011 &gt; Open Package Contents &gt; Resources &gt; Style) the same as I put the rest of the XSL files but it did not show once I opened Word 2011. &nbsp;I believe that the university made it\r\n themselves. &nbsp;The filename is 'HarvardLITS.xsl' if that helps. &nbsp;I can happily email you the file in question if you would be so kind as to take a look.</p>\r\n<p>Many thanks.</p>\r\n<p>ianwuk</p>\r\n",
+    "PostedDate": "2011-01-05T05:19:28.603-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "544300",
+    "ThreadId": "240507",
+    "Html": "\r\n<p>Do the rest of the styles show?</p>\r\n<p>Make sure you check both the citation style list and the bibliography style list. In Word 2008 (and probably still in 2011) there is a bug where the styles are not listed as bibliography styles but only as&nbsp;citation styles.&nbsp;See\r\n<a href=\"http://bibword.codeplex.com/wikipage?title=Styles_FAQ#Q2\">http://bibword.codeplex.com/wikipage?title=Styles_FAQ#Q2</a></p>\r\n<p>The styles which come with Word are not portable between Mac and Windows. So if they started from such a style, you would need to change some things to make them work on a Mac.</p>\r\n<p>Mail me a copy and I'll take a look but I can't promise anything. You can find my email on top of all stylesheets available on this site.</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2011-01-05T06:30:38.147-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "544778",
+    "ThreadId": "240507",
+    "Html": "\r\n<p>The rest of the styles I have show up. &nbsp;The file you sent me appears in the list as (Unknown). &nbsp;What am I doing wrong? &nbsp;Would the Word 2007 file be any different than the 2010 one I gave you and maybe work on a Mac? &nbsp;Alternatively do\r\n you know how I could manually create and save the same style in Word 2011 for Mac?</p>\r\n<p>Thanks.</p>\r\n<p>ianwuk</p>\r\n",
+    "PostedDate": "2011-01-06T05:48:44.45-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "545111",
+    "ThreadId": "240507",
+    "Html": "\r\n<p>I currently don't have access to a mac so I can't test. I'll try this weekend if I can get access to one.</p>\r\n<p>My first guess is that the mac is interpreting the first byte of the file (the BOM or byte-order-mark) incorrectly. So you might want to check that out already.</p>\r\n<p>Yves</p>\r\n",
+    "PostedDate": "2011-01-06T14:50:06.773-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "610768",
+    "ThreadId": "240507",
+    "Html": "<p>Hi, I have the exact same problem as ianwuk2010, has a solution been found? I have followed the steps on your website, but for some reason absolutely nothing is showing up in Word (for Mac 2011) other than the standard ref. style that came with Word... any help??</p>",
+    "PostedDate": "2011-05-11T01:02:01.52-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "610772",
+    "ThreadId": "240507",
+    "Html": "<p>Are you sure they aren't there?</p>\r\n<p>There was a bug in Word 2008 where new styles didn't show up in one place. I wouldn't be surprised if the same bug is still there in the 2011 version. See&nbsp;<a href=\"http://bibword.codeplex.com/wikipage?title=Styles_FAQ#Q2\">http://bibword.codeplex.com/wikipage?title=Styles_FAQ#Q2</a></p>",
+    "PostedDate": "2011-05-11T01:10:30.7-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "610855",
+    "ThreadId": "240507",
+    "Html": "\r\n<div>I may be mistaken, but I have followed the steps and copied them into the correct folder in Applications. However, when I opened it in Word and use the drop down menu for referencing they are not there. I see there are other users who have successfully\r\n installed it on Word 2011 on a Mac so there must be a solution I figure!!</div>\r\n<div><br>\r\n</div>\r\n<div>ANy advice? </div>\r\n<br>\r\n<div>\r\n<div>On 11 May 2011, at 09:10, yves wrote:</div>\r\n<br>\r\n<blockquote type=\"cite\"><span style=\"\">\r\n<div style=\"font-family:Verdana; font-size:0.75em\">\r\n<p>From: yves</p>\r\n<div id=\"ThreadNotificationPostBody\" style=\"margin-bottom:2em\">\r\n<p>Are you sure they aren't there?</p>\r\n<p>There was a bug in Word 2008 where new styles didn't show up in one place. I wouldn't be surprised if the same bug is still there in the 2011 version. See\r\n<a href=\"http://bibword.codeplex.com/wikipage?title=Styles_FAQ#Q2\">http://bibword.codeplex.com/wikipage?title=Styles_FAQ#Q2</a></p>\r\n</div>\r\n</div>\r\n</span></blockquote>\r\n</div>\r\n<br>\r\n",
+    "PostedDate": "2011-05-11T04:20:09.723-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "612955",
+    "ThreadId": "240507",
+    "Html": "<p>I got this working pretty easily, here are the steps I followed:</p>\r\n<ol>\r\n<li>Unzip the Styles.zip file that you downloaded</li>\r\n<li>Close Word if it's open</li>\r\n<li>Open Applications</li>\r\n<li>Navigate into the Microsoft Office folder</li>\r\n<li>Right click on the file Word.app or just Word if you have the file extensions hidden, click 'Show Package Contents'</li>\r\n<li>There should now be a folder called Contents, open the folder.&nbsp;</li>\r\n<li>Then open Resources</li>\r\n<li>Then open Styles</li>\r\n<li>Copy the Styles you want into this folder. I.e. HarvardAnglia</li>\r\n<li>Launch the Word application and the styles you copied in should be available.&nbsp;</li>\r\n</ol>\r\n<p>Let me know if that doesn't work, we can always try connect via Skype to help you out.&nbsp;</p>",
+    "PostedDate": "2011-05-15T06:06:10.647-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "612956",
+    "ThreadId": "240507",
+    "Html": "<p>By the way, this allow you to do both bibliographies and citations.&nbsp;</p>",
+    "PostedDate": "2011-05-15T06:09:39.073-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "614811",
+    "ThreadId": "240507",
+    "Html": "Iaian,\r\n<div><br>\r\n</div>\r\n<div><br>\r\n</div>\r\n<div>Legend!! Sorted, thanks for your help mate.</div>\r\n<div><br>\r\n</div>\r\n<div><br>\r\n</div>\r\n<div><br>\r\n</div>\r\n<div><br>\r\n<div>\r\n<div>On 15 May 2011, at 14:06, iainn wrote:</div>\r\n<br>\r\n<blockquote type=\"cite\"><span style=\"\">\r\n<div style=\"font-family:Verdana; font-size:0.75em\">\r\n<p>From: iainn</p>\r\n<div id=\"ThreadNotificationPostBody\" style=\"margin-bottom:2em\">\r\n<p>I got this working pretty easily, here are the steps I followed:</p>\r\n<ol>\r\n<li>Unzip the Styles.zip file that you downloaded</li><li>Close Word if it's open</li><li>Open Applications</li><li>Navigate into the Microsoft Office folder</li><li>Right click on the file Word.app or just Word if you have the file extensions hidden, click 'Show Package Contents'</li><li>There should now be a folder called Contents, open the folder. </li><li>Then open Resources</li><li>Then open Styles</li><li>Copy the Styles you want into this folder. I.e. HarvardAnglia</li><li>Launch the Word application and the styles you copied in should be available.\r\n</li></ol>\r\n<p>Let me know if that doesn't work, we can always try connect via Skype to help you out.\r\n</p>\r\n</div>\r\n</div>\r\n</span></blockquote>\r\n</div>\r\n<br>\r\n</div>\r\n",
+    "PostedDate": "2011-05-18T12:36:59.807-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "618657",
+    "ThreadId": "240507",
+    "Html": "<p>Hey guys. I go to SHU and think I've got it cracked.</p>\r\n<p>Find your HarvardLITS file and open it with textedit.</p>\r\n<p>First line says: &nbsp; &nbsp; &nbsp; &nbsp; &lt;?xml version=\"1.0\" encoding=\"iso-8859-1\"?&gt;</p>\r\n<p>Change this line to: &lt;?xml version=\"1.0\" encoding=\"utf-8\"?&gt;</p>\r\n<p>Save and place file in the styles folder.</p>\r\n<p>Hope this helps</p>",
+    "PostedDate": "2011-05-26T06:24:52.953-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "618723",
+    "ThreadId": "240507",
+    "Html": "<p>I have no idea where that HarvardLITS style comes from, but for more than 2 years all BibWord styles have been using utf-8 and are cross-platform.</p>\r\n<p>Note that changing iso-8859-1 to utf-8 might work but will most likely turn up strange results with accented characters.</p>",
+    "PostedDate": "2011-05-26T07:28:07.107-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "677719",
+    "ThreadId": "240507",
+    "Html": "<p>\"The styles which come with Word are not portable between Mac and Windows.\"</p>\n<p>Ives,</p>\n<p><span id=\"result_box\" lang=\"en\"><span class=\"hps\">I</span> <span class=\"hps\">have the same problem</span><span>.</span><br /> <span class=\"hps\">I have</span> <span class=\"hps\">my university style:&nbsp;</span> <span class=\"hps\"> XSL</span> <span class=\"hps\">ITTA.xsl</span> (<span class=\"hps\">windows</span> 7, <span class=\"hps\">in Word</span> <span class=\"hps\">2010</span><span>)</span><br /> <span class=\"hps\">But</span> <span class=\"hps\">when I copy this file</span> <span class=\"hps\"> in world</span> <span class=\"hps\">2011</span> <span class=\"hps\">for Mac</span> <span class=\"hps\"> 2011</span>, my style ITTA <span class=\"hps\">does not appear</span> <span class=\"hps\">in the list of</span> <span class=\"hps\">styles,...!!</span></span></p>\n<p><span id=\"result_box\" class=\"short_text\" lang=\"en\"><span class=\"hps\">Is</span> <span class=\"hps\">in the right address</span><span>!&nbsp; </span></span>Word/Package... Contents/Resources/Style/</p>",
+    "PostedDate": "2011-09-28T07:54:41.197-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "678108",
+    "ThreadId": "240507",
+    "Html": "<p>If the style is a BibWord style, see <a href=\"http://bibword.codeplex.com/wikipage?title=Styles_FAQ&amp;referringTitle=Documentation#Q2\">http://bibword.codeplex.com/wikipage?title=Styles_FAQ&amp;referringTitle=Documentation#Q2</a></p>\r\n<p>If the above is not the solution to your problem and you are sure that the style you have is a BibWord style, open the style in your text editor put a space at the beginning, delete the space again (no undo) and save the document. This might force an update of the BOM (Byte Order Mark) of your file. MacOS tends to be sensitive to such things.</p>\r\n<p>If the style is not a BibWord style, then you could try to change the formatting from \"us-ascii\"&nbsp;or \"ISO-8859-1\"&nbsp;to \"utf-8\" (just look for the strings). If you have name or titles with accents in them, that might introduce strange behaviour though.</p>\r\n<p>If the style is not a BibWord style and the accents are bothering you, you could adapt the html header which is outputted. Slightly more complicated then the other solutions, but that would be the best solution (and is how BibWord does it, so you can get the correct info from there).</p>",
+    "PostedDate": "2011-09-29T04:05:26.13-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "685968",
+    "ThreadId": "240507",
+    "Html": "<p>Thank you guyz I am using a new MacBookPro Mac OS X 10.6.8 and Microsoft office 2011 and it worked!!!! following the same steps :)</p>\r\n<blockquote><span>\r\n<div>\r\n<div id=\"ThreadNotificationPostBody\"><ol>\r\n<li>Unzip the Styles.zip file that you downloaded</li>\r\n<li>Close Word if it's open</li>\r\n<li>Open Applications</li>\r\n<li>Navigate into the Microsoft Office folder</li>\r\n<li>Right click on the file Word.app or just Word if you have the file extensions hidden, click 'Show Package Contents'</li>\r\n<li>There should now be a folder called Contents, open the folder.</li>\r\n<li>Then open Resources</li>\r\n<li>Then open Styles</li>\r\n<li>Copy the Styles you want into this folder. I.e. HarvardAnglia</li>\r\n<li>Launch the Word application and the styles you copied in should be available.</li>\r\n</ol></div>\r\n</div>\r\n</span></blockquote>",
+    "PostedDate": "2011-10-18T12:36:57.177-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "810769",
+    "ThreadId": "240507",
+    "Html": "<p>Hi Guys having an issue installing this, cant get number 5, 'show package contents' am I doing something wrong? I cannot right click, as nothing happens is there another way to access this?</p>",
+    "PostedDate": "2012-03-15T04:26:53.807-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "935327",
+    "ThreadId": "240507",
+    "Html": "<p>hi guys i have word for mac 2011 and i just spent a bit of time and i think i have solved the problem... follow the instructions as they state but you then have a couple more steps... open the style icon you have just pasted into resources and find the styles you want, i copied and pasted all the harvard styles into the resources they should show as harvardanglia.xsl for example rather than &nbsp;styles-1 . you now have one more step of pasting the styles you want into code resources which you can find in the selection when you open show content package. this has worked for me</p>",
+    "PostedDate": "2012-11-01T09:11:50.613-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1023387",
+    "ThreadId": "240507",
+    "Html": "<strong>timurdouglas wrote:</strong><br />\n<blockquote>\nhi guys i have word for mac 2011 and i just spent a bit of time and i think i have solved the problem... follow the instructions as they state but you then have a couple more steps... open the style icon you have just pasted into resources and find the styles you want, i copied and pasted all the harvard styles into the resources they should show as harvardanglia.xsl for example rather than &nbsp;styles-1 . you now have one more step of pasting the styles you want into code resources which you can find in the selection when you open show content package. this has worked for me<br />\n</blockquote>\nI'm using mac 2011 - followed the above additional steps and it worked well for me.\r<br />\nthanks<br />\n",
+    "PostedDate": "2013-03-31T00:41:52.39-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1036004",
+    "ThreadId": "240507",
+    "Html": "Yves, others, hi there,<br />\n<br />\nI'm also using Word for Mac 2011. I'm having difficulties with the alphabetical listing of my citations using Harvard Anglia style. I've seen in another topic that there is an Adjusted version for this style that resolves this issue. I've downloaded the file that you suggested there, followed the necessary steps, and although the style appears in the citation options, it doesn't fix the listing issue.<br />\n<br />\nCan anyone help me out please? I'm submitting my MSc thesis soon, so I really need to get this fixed. Thanks!:)<br />\n",
+    "PostedDate": "2013-04-26T03:08:40.12-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1325332",
+    "ThreadId": "240507",
+    "Html": "Hi Yves,\r<br />\n<br />\nI use Harvard - Exeter for Mac (Word 2011) and it is not working properly. I have two issues with it. One is when I have 3 or more authors, usually on Word in Windows Harvard Exeter is putting only the first Name in it and after that &quot;et al.&quot;. Which is the correct way of citing with the Harvard style. In Mac Harvard Exeter puts me all the surnames in the text, usually you are not allowed to do so when there are more than two authors.\r<br />\n<br />\nThe other problem is, that on the end in the Reference list I have no blank line (space line) between the different books, magazines, etc.\r<br />\n<br />\nBut on a Windows Platform (Word 2010) these problems doesn't occur at all. Do you got any advice how to solve it?\r<br />\n<br />\nThanks\r<br />\nRyu<br />\n",
+    "PostedDate": "2014-11-23T13:40:37.667-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

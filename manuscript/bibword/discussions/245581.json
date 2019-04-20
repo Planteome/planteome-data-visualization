@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "564441",
+    "ThreadId": "245581",
+    "Html": "\r\n<p>Hello, and thanks for BibWord.</p>\r\n<p>I'm using it for the first time to create a style for a degree I started recently. My only problem is that I can't seem to get italics to work. Can anyone tell me why the excerpt below isn't giving me italics for the Title field in citations? It's the same\r\n in the Bibliography. The arrangement is fine, but italics just don't appear. Bold (&lt;b&gt;) doesn't work either. Incidentally, in Notepad everything between the &lt;format&gt; and &lt;/format&gt; is all on one line. Viewing it in Internet Explorer breaks\r\n the lines as you see below? Maybe that reveals the problem?</p>\r\n<p>Thanks,</p>\r\n<p>Ben Price</p>\r\n<div>\r\n<div style=\"text-indent:-2em; margin-left:1em\"><a href=\"\">-</a> <span>&lt;</span><span>citation</span><span>&gt;</span></div>\r\n<div>\r\n<div>\r\n<div style=\"text-indent:-2em; margin-left:1em\"><span>&nbsp;</span> <span>&lt;</span><span>separator</span><span>&gt;</span><span>,</span><span>&lt;/</span><span>separator</span><span>&gt;</span></div>\r\n</div>\r\n<div>\r\n<div style=\"text-indent:-2em; margin-left:1em\"><span>&nbsp;</span> <span>&lt;</span><span>noauthor</span><span>&gt;</span><span>-Artist-Author-BookAuthor-Compiler-Composer-Conductor-Counsel-Director-Editor-Interviewee-Interviewer-Inventor-Performer-ProducerName-Translator-Writer-</span><span>&lt;/</span><span>noauthor</span><span>&gt;</span></div>\r\n</div>\r\n<div>\r\n<div style=\"text-indent:-2em; margin-left:1em\"><span>&nbsp;</span> <span>&lt;</span><span>notitle</span><span>&gt;</span><span>-Title-AlbumTitle-BookTitle-BroadcastTitle-InternetSiteTitle-PeriodicalTitle-PublicationTitle-ShortTitle-</span><span>&lt;/</span><span>notitle</span><span>&gt;</span></div>\r\n</div>\r\n<div>\r\n<div style=\"text-indent:-2em; margin-left:1em\"><span>&nbsp;</span> <span>&lt;</span><span>noyear</span><span>&gt;</span><span>-Year-YearAccessed-&quot;n.d.&quot;-</span><span>&lt;/</span><span>noyear</span><span>&gt;</span></div>\r\n</div>\r\n<div>\r\n<div style=\"text-indent:-2em; margin-left:1em\"><a href=\"\">-</a> <span>&lt;</span><span>source</span><span> type</span><span>=&quot;</span><strong>Placeholder</strong><span>&quot;</span><span>&gt;</span></div>\r\n<div>\r\n<div>\r\n<div style=\"text-indent:-2em; margin-left:1em\"><span>&nbsp;</span> <span>&lt;</span><span>format</span><span>&gt;</span><span>[%Tag%]</span><span>&lt;/</span><span>format</span><span>&gt;</span></div>\r\n</div>\r\n<div><span>&nbsp;</span> <span>&lt;/</span><span>source</span><span>&gt;</span></div>\r\n</div>\r\n</div>\r\n<div>\r\n<div style=\"text-indent:-2em; margin-left:1em\"><a href=\"\">-</a> <span>&lt;</span><span>source</span><span> type</span><span>=&quot;</span><strong>Book</strong><span>&quot;</span><span>&gt;</span></div>\r\n<div>\r\n<div>\r\n<div style=\"text-indent:-2em; margin-left:1em\"><a href=\"\">-</a> <span>&lt;</span><span>format</span><span>&gt;</span></div>\r\n<div>\r\n<div><span>&nbsp;</span> <span>{%Author:1|Editor:1|&quot;[Anonymous]&quot;%}{, </span></div>\r\n<div>\r\n<div style=\"text-indent:-2em; margin-left:1em\"><span>&nbsp;</span> <span>&lt;</span><span>i</span><span>&gt;</span><span>%ShortTitle|Title%</span><span>&lt;/</span><span>i</span><span>&gt;</span></div>\r\n</div>\r\n<div><span>&nbsp;</span> <span>}{, %CitationPages:p. :pp. %}</span></div>\r\n<div><span>&nbsp;</span> <span>&lt;/</span><span>format</span><span>&gt;</span></div>\r\n</div>\r\n</div>\r\n<div><span>&nbsp;</span> <span>&lt;/</span><span>source</span><span>&gt;</span></div>\r\n</div>\r\n</div>\r\n<div>\r\n<div style=\"text-indent:-2em; margin-left:1em\"><a href=\"\">-</a> <span>&lt;</span><span>source</span><span> type</span><span>=&quot;</span><strong>BookSection</strong><span>&quot;</span><span>&gt;</span></div>\r\n<div>\r\n<div>\r\n<div style=\"text-indent:-2em; margin-left:1em\"><span>&nbsp;</span> <span>&lt;</span><span>format</span><span>&gt;</span><span>{%Author:1|Editor:1|&quot;[Anonymous]&quot;%}{, '%ShortTitle|Title%'}{, %CitationPages:p. :pp. %}</span><span>&lt;/</span><span>format</span><span>&gt;</span></div>\r\n</div>\r\n<div><span>&nbsp;</span> <span>&lt;/</span><span>source</span><span>&gt;</span></div>\r\n</div>\r\n</div>\r\n<div><span>&nbsp;</span> <span>&lt;/</span><span>citation</span><span>&gt;</span></div>\r\n</div>\r\n</div>\r\n",
+    "PostedDate": "2011-02-11T00:22:28.27-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "564555",
+    "ThreadId": "245581",
+    "Html": "<p>Try using &amp;lt; and &amp;gt; instead of &lt; and &gt;. So</p>\r\n<p><span>&nbsp;&nbsp;&nbsp; &lt;</span><span>i</span><span>&gt;</span><span>%ShortTitle|Title%</span><span>&lt;/</span><span>i</span><span>&gt;</span></p>\r\n<p><span>would become</span></p>\r\n<p><span>&nbsp; &nbsp; &amp;lt;i&amp;gt;%ShortTitle%&amp;lt;/i&amp;gt;</span></p>",
+    "PostedDate": "2011-02-11T04:27:50.22-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "565162",
+    "ThreadId": "245581",
+    "Html": "<p>Thanks, that worked great.</p>",
+    "PostedDate": "2011-02-12T09:05:50.73-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

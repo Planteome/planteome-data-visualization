@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1037667",
+    "ThreadId": "442092",
+    "Html": "Maybe this has already been covered, but here’s an outline of my current experiment.\r<br />\n<br />\nI recently had to prepare a proposal on editing a book which will use Chicago footnote referencing and I immediately turned to Yves’ CMSFootnote.xsl, which is described as follows: “This style only provides in-text citations by means of footnotes. Currently, the bibliography field is not supported.”\r<br />\n<br />\nI was very interested to see that it allows various forms of citations to be processed. Then, I wondered if it could be adapted to process ‘et al.’ citations. Next, I wondered if it could be amended to output a bibliography. After much trial and error (mostly error) I have found that it can do both.\r<br />\n<br />\nFirst, I copied and pasted a complete Bibliography variable section from another XSL and adapted it to CMOS 16 Bibliography format. So, the Chicago referencing part of my project was sorted.\r<br />\n<br />\nThen I reverted to a typical Harvard type bibliography format and adapted the ‘Short’ Citation version to output an ‘et al.’ citation in the Harvard format. I have only worked on the Book type to see if it will work, and so far, it does.\r<br />\n<br />\nI have no coding experience and I ask if there are any potential problems with progressing further with this effort. I can see that the Harvard XSL code after the variables is more elaborate in parts than the Chicago, but it seems to work with the Harvard Bibliography variable section transplanted into the main body of the Chicago XSL.\r<br />\n<br />\nMaybe this has already been done by someone out there?\r<br />\n<br />\nLionel,\r<br />\nTau Editing.<br />\n",
+    "PostedDate": "2013-04-30T07:54:34.983-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

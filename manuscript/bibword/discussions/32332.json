@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "107259",
+    "ThreadId": "32332",
+    "Html": "Hello<br>\r\n<br>\r\ni've a trouble with my biblio under world <br>\r\nwhat i would like to do is to change the citation style when i've multi reference <br>\r\nexample :<br>\r\n<br>\r\n(author 2004a; author 2004b) <br>\r\nand not <br>\r\n(author,title1, 2004; author,title2, 2004) <br>\r\n<br>\r\nwhen the first author and the publication date is the same<br>\r\n<br>\r\ni've try to look into the apa.xls (i use the apa style) but the xsl language is unknow from me ... i learn fast but... a bit undigest at the first look<br>\r\nif someone could help me and tell me where to look it'll be great<br>\r\nthank you<br>\r\n<br>\r\nedit:<br>\r\n<br>\r\ni've resolve one part of my problem, i've disabled the forced display of the title when the flag &quot;RepeatedAuthor&quot; is set<br>\r\nbut i don't know how to access to entire bibliography in order to compute the complement of the date (2004&quot;a&quot; or 2004&quot;b&quot;)<br>\r\n...<br>\r\n",
+    "PostedDate": "2008-07-26T10:51:27.443-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "107293",
+    "ThreadId": "32332",
+    "Html": "Each reference in a multi-reference is formatted separately. Hence, there is no way in adding the kind of logic you want to the stylesheet. See also the&nbsp;<a href=\"http://www.codeplex.com/bibliography/Wiki/View.aspx?title=FAQ&referringTitle=Home#Q3\">Is it possible to add grouping logic to citations?</a>&nbsp;entry in the FAQ. RepeatedAuthor does not tell anything about the year. And a RepeatedYear does not exist.<br>\r\n<br>\r\nIn the article on <a href=\"http://office.microsoft.com/en-us/word/HA100674921033.aspx\">Create a bibliography</a>&nbsp;Microsoft added the following note:<br>\r\n<br>\r\n<blockquote>If you choose a GOST or ISO 690 style for your sources and a citation is not unique, append an alphabetic character to the year. For example, a citation would appear as [Pasteur, 1848a].</blockquote>So you will have to add the 'a' and 'b' yourself using the suffix switch (right-click the citation, select 'Edit Field...' and then add '\\s a' or '\\s b' depending on the entry. <br>\r\n<br>\r\nYves\r\n",
+    "PostedDate": "2008-07-26T16:50:53.61-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

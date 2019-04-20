@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1442073",
+    "ThreadId": "644268",
+    "Html": "Hello\r<br />\n<br />\nThanks for making these resources available. I've used BibWord to create a custom style for my university. Now I'd like to add a few new source types, in particular lectures or sermons. I understand I will need to modify the bibform.xml file using bibtype.exe. The following is what I've tried so far, but it doesn't seem to have worked. If anyone can help me figure this out I'd be very grateful!\r<br />\n<br />\nI've made my types.xml file and placed it in the following folder, along with the bibtype.exe file:\r<br />\nC:\\Users\\Ben\\Documents\\Computer stuff\\Office files\r<br />\n<br />\nSo, I open the command prompt as administrator, cd to the folder above, and type:\r<br />\n<br />\nBibType /t:C:\\Users\\Ben\\Documents\\Computer stuff\\Office files\\types /o:C:\\Users\\Ben\\Documents\\Computer stuff\\Office files\\\r<br />\n<br />\nI had expected that this process would create a new BibForm.xml file that I could use to replace the default one. Instead, I get a windows error saying that BibTypes.exe has stopped working, then the command prompt returns an error as follows:\r<br />\n<br />\nUnhandled Exception: System.ArgumentException: Item has already been added. Key in dictionary: 't' Key being added: 't'\r<br />\nat System.Collections/Hashtable.Insert(Object key, Object nvalue, Boolean add)\r<br />\nat System.Collections.Specialized.StringDictionary.Add(String key, String value)\r<br />\nat Bibword.Program.ParseArguments(String[] args, String&amp; bibformIn, String&amp; typedefs, String&amp; bibformOut)\r<br />\nat Bibword.Program.Main(String[] args)\r<br />\n<br />\nAny ideas what I'm doing wrong? Is there a more detailed help file than the BibType guide anywhere? That file doesn't really show how to use BibType\r<br />\n<br />\nThanks,\r<br />\nBen.<br />\n",
+    "PostedDate": "2015-08-26T16:12:07.12-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

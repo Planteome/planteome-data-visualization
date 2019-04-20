@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "para office 2016 en windows 10 x64 (español): \nc:/Usuarios/xxx(usuario)/AppData (si no lo ves abres la pestaña de vistas y despliegas la ventana de propiedades de carpeta y pones \"mostrar carpetas y archivos ocultos\")/Roaming/Microsoft/Bibliography/Style (y abre esta carpeta. Luego abres tu carpeta comprimita de Styles de BibWord actualizado abril 1 de 2013 y pegas todos los estilos que necesites de esta carpeta en la carpeta de Styles del disco C:, cierras el programa de word y reinicias. Ya está¡¡¡¡¡¡¡",
+    "LastUpdatedDate": "2016-02-14T08:14:15.96-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "bibword",
+    "ReportedDate": "2016-02-14T08:12:49.623-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "instalación de estilos en office 2016 para microsoft windows 10",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 1,
+    "Id": 12345
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

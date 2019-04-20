@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1460526",
+    "ThreadId": "650441",
+    "Html": "Hello,\r<br />\nCan anybody help me with sorting &quot;insert citation&quot; list? It is by default sorted by b:First instead of b:Last, so to have it properly displayed, I have to change all &quot;firsts&quot; into &quot;lasts&quot; in all files regarding citations (style, author etc.).\r<br />\nWhere the hack can I find the file that determines the way of sorting under this button?\r<br />\nBest,\r<br />\nStefan<br />\n",
+    "PostedDate": "2016-01-25T03:11:32.363-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,50 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I am missing one special Harvard style that uses the first 3 characters of the authors name in addition with the year.\n \nAuthor: Theisen\nYear: 2004\n==> [The04]\n \nIf there are more citations from 1 Autor in the same year then an alphabetic appendix is added, e.g. [The04c].",
+    "LastUpdatedDate": "2013-02-21T18:20:25.937-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "bibword",
+    "ReportedDate": "2011-05-13T06:21:54.667-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Harvard Style missing [Abc04]",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 8615
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "BibWord is currently not capable of taking the first 3 characters of a name. I suggest you do this yourself by defining the tag properly like \"The04\" and then just use the %Tag% variable in your format string.\r\n\r\nBy itself, Word cannot handle alphabetic appendices. But BibWord can through the BibWord extender. Just define the format string for the YearSuffix element and then create your citation format strings using something like [{%Tag%}{%YearSuffix%}]\r\n\r\nSo in the end you would get something like this for books (similar for other types of entries) for example (written on top of my head, not tested)\r\n\r\n <citation>\r\n     <openbracket>[</openbracket>\r\n     <closebracket>]</closebracket>\r\n     <separator>,</separator>\r\n     \r\n    <source type=\"Book\">\r\n        <format>{%Tag%}{%YearSuffix%}</format>\r\n    </source>\r\n</citation>\r\n\r\n<bibliography>\r\n    <columns>2</columns>\r\n    <source type=\"Book\">\r\n        <column id=\"1\">\r\n            <halign>right</halign>\r\n            <valign>top</valign>\r\n            <format>{%Tag%}{%YearSuffix%}</format>\r\n        </column>\r\n        <column id=\"2\">\r\n            <halign>left</halign>\r\n            <valign>top</valign>\r\n            <format>{%Author% }{%Title% } whatever else you need</format>\r\n        </column>\r\n        <sortkey>{%Tag%} whatever else you want to sort on</sortkey>\r\n    </source>\r\n</bibliography>\r\n\r\n<extensions>\r\n    <source type=\"Book\">\r\n        <yearsuffix>{%Tag%}</yearsuffix>\r\n     </source>\r\n</extensions>",
+      "PostedDate": "2011-05-13T12:21:44.75-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:20:25.937-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

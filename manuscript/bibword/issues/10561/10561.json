@@ -1,0 +1,75 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": "2013-01-31T01:57:27.517-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I have a 64 bit machine and I downloaded the Vancouver style reference code and cannot access it because it is locked.  How do I unlock it?\n\nThanks\n\nGalgut",
+    "LastUpdatedDate": "2013-05-16T05:29:23.553-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "bibword",
+    "ReportedDate": "2012-10-25T07:27:37.37-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Locked Folder",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 10561
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "What do you mean by 'locked'?",
+      "PostedDate": "2012-10-25T13:37:21.23-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Sorry for delay in reply,\r\n\r\nI mean I download the file and save it to the following location on my machine:\r\n\r\nprogram files (x86)/microsoft office/office14/bibliography/style\r\n\r\nThe referencing style doesn't appear in word, noe can i find it in the above location.\r\n\r\nHowever, when I come to download a new version, in the window where I can choose the location to save the file, the first verion is there, but has a little padlock symbol on the image next to its name.\r\n\r\nJust to reiterate, I am downloading the Vancouver style onto a 64-bit machine\r\n\r\nThanks\r\n\r\nTheGalgut ",
+      "PostedDate": "2013-01-06T03:22:37.43-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi there, I've sorted the problem\r\n\r\nfor future reference, the file was in the compatibility view",
+      "PostedDate": "2013-01-06T09:45:10.26-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-01-31T01:47:42.05-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-01-31T01:57:27.517-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:20:25.077-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:29:23.553-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

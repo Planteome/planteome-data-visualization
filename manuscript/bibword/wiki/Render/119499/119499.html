@@ -1,0 +1,57 @@
+<div class="wikidoc"><h2>Council of Science Editors Reference Style</h2><h4>Table of Content</h4><ul><li><a href="#A1">Description</a></li>
+<li><a href="#A2">Files</a></li>
+<li><a href="#A3">Requirements</a></li>
+<li><a href="#A4">Based On</a></li>
+<li><a href="#A5">Supported Types</a></li>
+<li><a href="#A6">Variations</a></li></ul>
+<h4>Description<a name="A1"></a></h4>Implementation of the Council of Science Editors (CSE) reference style. There are three versions of this style:
+<ul><li><i>Citation Sequence</i>: numeric in-text citation based on the order of appearance in the text;</li>
+<li><i>Name Sequence</i>: numeric in-text citation based on the position of the source within the alphabetically ordered bibliography;</li>
+<li><i>Name Year</i>: classic author-date citation system.</li></ul>
+Currently, only an implementation of the first two is available.<br /><br />As the current version of the bibliography tools in Word 2007 does not support to order a bibliography and use the position as in-text citation, the <a href="https://bibword.codeplex.com/releases/view/17130">BibOrder</a> tool is needed to achieve the <i>Name Sequence</i> version of the style.<br /><br />Examples:<br /><pre>
+11  Sorin WV. Optical Reflectometry for Component Characterization. In: Derickson D,
+    editor. Fiber Optic Test and Measurement. Englewood Cliffs (NJ): Prentice-Hall; 1998.
+12  Anderson JB, Tepe K. Properties of the Tailbiting BCJR Decoder. In: Codes, Systems
+    and Graphical Models. New York: Springer-Verlag; 2000.
+13  Hedelin P, Knagenhjelm P, Skoglund M. Theory for Transmission of Vector Quantization
+    Data. In: Kleijn WB, Paliwal KK, editors. Speech Coding and Synthesis. Amsterdam: Elsevier
+    Science; 1995. p. 347-396.
+</pre>
+<h4>Files<a name="A2"></a></h4><ul><li>CSECitSeq.xsl - Citation Sequence version of the style.</li>
+<li>CSENameSeq.xsl - Name Sequence version of the style.</li></ul>
+Both files can be found in the <a href="https://bibword.codeplex.com/releases/view/15852">styles</a> collection.
+<h4>Requirements<a name="A3"></a></h4><ul><li><a href="https://bibword.codeplex.com/releases/view/17130">BibOrder</a></li></ul>
+<h4>Based On<a name="A4"></a></h4><ul><li><a href="http://www.dianahacker.com/resdoc/p04_c11_s2.html">http://www.dianahacker.com/resdoc/p04_c11_s2.html</a>.</li></ul>
+<h4>Supported Types<a name="A5"></a></h4>The current versions of the style support the following types and subtypes:
+<ul><li>ArticleInAPeriodical</li>
+<li>Book
+<ul><li>ElectronicBook</li></ul></li>
+<li>BookSection
+<ul><li>ElectronicBookSection</li></ul></li>
+<li>ConferenceProceedings</li>
+<li>DocumentFromInternetSite</li>
+<li>ElectronicSource</li>
+<li>Film</li>
+<li>InternetSite</li>
+<li>JournalArticle </li>
+<li>Patent</li>
+<li>Report
+<ul><li>Thesis</li></ul></li>
+<li>SoundRecording</li></ul>
+<i><b>Note:</b></i> To use the subtypes <i>(e.g. Thesis)</i>, enter the data using the base type <i>(e.g. Report)</i> and set the <b>Type</b> field of the source to the value of the subtype <i>(e.g. Thesis)</i>.
+<h4>Variations<a name="A6"></a></h4><ul><li>You can change the surrounding brackets for in-text citations by changing the contents of the <b>openbracket</b> and <b>closebracket</b> elements. </li></ul>
+<div style="color:Black;background-color:White;"><pre>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">citation</span><span style="color:Blue;">&gt;</span>
+    <span style="color:Blue;">&lt;</span><span style="color:#A31515;">openbracket</span><span style="color:Blue;">&gt;</span>[<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">openbracket</span><span style="color:Blue;">&gt;</span>
+    <span style="color:Blue;">&lt;</span><span style="color:#A31515;">closebracket</span><span style="color:Blue;">&gt;</span>]<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">closebracket</span><span style="color:Blue;">&gt;</span>
+    ...
+  <span style="color:Blue;">&lt;/</span><span style="color:#A31515;">citation</span><span style="color:Blue;">&gt;</span>
+</pre></div><ul><li>You can change the look of the numbers in the first column of the bibliography by changing the <b>format</b> element of the first column <i>(column id=&quot;1&quot;)</i>. Note that you have to do this for each type separately. Some examples are:</li></ul>
+<div style="color:Black;background-color:White;"><pre>
+  <span style="color:Green;">&lt;!-- Number between square brackets (current implementation). Example: 1 --&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">format</span><span style="color:Blue;">&gt;</span>{%RefOrder%}<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">format</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Green;">&lt;!-- Number between round brackets. Example: (1) --&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">format</span><span style="color:Blue;">&gt;</span>{(%RefOrder%)}<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">format</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Green;">&lt;!-- Number followed by a period. Example: 1. --&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">format</span><span style="color:Blue;">&gt;</span>{%RefOrder%.}<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">format</span><span style="color:Blue;">&gt;</span>
+</pre></div></div><div class="ClearBoth"></div>

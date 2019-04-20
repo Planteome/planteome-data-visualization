@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "444574",
+    "ThreadId": "213090",
+    "Html": "<p>Using MS Word 2008 (for Mac OSX); BibWord downloaded to Styles directory per instruction</p>\r\n<p>Document originally created using Word Biblio style Chicago</p>\r\n<p>Issue 1: &nbsp;despite information to contrary, selecting different Bibliography style in Citation pull-down does not change How Biblio's are displayed.</p>\r\n<p>&nbsp;</p>\r\n<p>Issue 2 (reason for this note): &nbsp;Example: &nbsp;Choose IEEE - Reference order</p>\r\n<p>Instead of &quot;[1] xyz, blah blah</p>\r\n<p>I get</p>\r\n<p><span style=\"font-size:12pt\">[ HYPERLINK &quot;&quot; \\l &quot;Jet094&quot;   1 ]</span></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size:medium\"><span style=\"font-size:16px\">Did some file get corrupted?</span></span></p>",
+    "PostedDate": "2010-05-18T14:39:03.32-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "444702",
+    "ThreadId": "213090",
+    "Html": "<p>Issue 1: I just retested this. It seems to work over here.</p>\r\n<p>Issue 2: It looks as if you are displaying field codes (or at least parts of them). Either try to ensure you don't display field codes or disable linking from in-text citations to the bibliography. The latter&nbsp;can be done by changing</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">citation_as_link</span><span style=\"color:blue\">&gt;</span>yes<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">citation_as_link</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>into</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">citation_as_link</span><span style=\"color:blue\">&gt;</span>no<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">citation_as_link</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>&nbsp;in the xsl file.</p>\r\n<p>&nbsp;</p>\r\n<div id=\"_mcePaste\" style=\"width:1px;height:1px;overflow:hidden;top:0px;left:-10000px\">﻿</div>",
+    "PostedDate": "2010-05-18T22:38:55.13-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

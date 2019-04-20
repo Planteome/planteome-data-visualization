@@ -1013,17 +1013,109 @@ function appendOntologyToTable(obj){
 	let link = url_browse + "term/" + obj.ontologyId;
 	
 	let idNode = "<a target='_blank' href="+link + ">" + obj.ontologyId + "</a>";
-	
+	let inputGeneNum = "<a ontology="+obj.ontologyId+" GeneListQuery='' onclick='showInputGeneListFromOntology(this)'>" + obj.numberOfInput + "</a>";
 	table.row.add( [
 			idNode,
 			obj.ontologyName,
 			obj.ontologyCategory,
 			obj.description,
-			obj.numberOfInput,
+			inputGeneNum,
 			obj.numberOfReference,
 			obj.p.toExponential(4),
 		] ).draw( false );
 		
+}
+
+var OntologyAssociatedInputGenes = {};
+function showInputGeneListFromOntology(param) {
+    
+    let GeneListQuery = param.getAttribute("GeneListQuery");
+    if(GeneListQuery =="true"){
+        $(param).popover('show');
+        return;
+    }
+    
+    OntologyAssociatedInputGenes = {};
+    
+    let ontologyTerm = param.getAttribute("ontology");
+    //console.log(ontologyID);
+    
+    $.when(getInputGenesFromOntology(inputGenes, ontologyTerm, speciesID)).done(function (res) {
+        
+        $(param).popover({title: "Input Assoicated Genes", content: res, placement: "left", trigger: 'click'});
+        
+        if ($(param).prop('popShown') == undefined) {
+            $(param).prop('popShown', true).popover('show');
+        }
+        
+        $(param).attr("GeneListQuery", "true");
+    
+    });
+}
+
+function getInputGenesFromOntology(inputGenes, ontologyTerm, speciesId) {
+    
+	var getDataFlag = $.Deferred();
+
+	let inputGenesNum = inputGenes.length;
+
+    OntologyAssociatedInputGenes = {
+        "ontologyName": ontologyTerm,
+        "associatedGenes": [],
+    }
+
+	var promises = [];
+
+	for (let i of inputGenes) {
+		let geneId = i.id;
+		let geneName = i.input;
+		promises.push(getOntologyTermsFromGene(geneId, geneName, speciesId));
+
+	}
+
+    var geneList = [];
+    
+	$.when.apply($, promises).done(function () {
+		// console.log(ontologyList);
+        geneList = OntologyAssociatedInputGenes["associatedGenes"];
+/* 		for (let ontologyid in ontologyList) {
+
+			let index2 = node2Array.indexOf(ontologyid);
+			
+			if(index2 <0)
+				continue;
+			
+			for (let geneid of ontologyList[ontologyid].associatedGenes) {
+				let index1 = node1Array.indexOf(geneid);
+				matrixData["links"].push({
+					"source": index1,
+					"target": index2,
+					"value": 1
+				})
+			}
+		} */
+		// console.log(matrixData);
+		getDataFlag.resolve(geneList);
+	});
+	return getDataFlag.promise();
+}
+
+function getOntologyTermsFromGene(geneId, geneName, speciesID) {
+
+	return $.ajax({
+		type: 'post',
+		url: url_ApiLink + 'statistics/gene-to-term?',
+		dataType: 'json',
+		data: 'bioentity=' + geneId + '&species=NCBITaxon:' + speciesID,
+		success: function (res) {
+			// console.log(res.data['gene-to-term-summary-count']);
+			for (let ontologyId in res.data['gene-to-term-summary-count']) {
+				if (OntologyAssociatedInputGenes["ontologyName"] == ontologyId) {
+					OntologyAssociatedInputGenes["associatedGenes"].push(geneName);
+				}
+			}
+		}
+	})
 }
 
 function initializeDownloadContent(){

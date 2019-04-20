@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1487788",
+    "ThreadId": "659347",
+    "Html": "Hello,\r<br />\n<br />\nI am trying to work with the ACM style sheet as they have added both online documents and films to their list of reference-able formats. However, when I edit the code;\r<br />\n<br />\nLine 44\r<br />\n   &lt;source type=&quot;InternetSite&quot;&gt;<br />\n<pre><code>&lt;b:ImportantField&gt;b:Author/b:Author/b:NameList&lt;/b:ImportantField&gt;\n    &lt;b:ImportantField&gt;b:InternetSiteTitle&lt;/b:ImportantField&gt;\n    &lt;b:ImportantField&gt;b:Year&lt;/b:ImportantField&gt;\n    &lt;b:ImportantField&gt;b:Month&lt;/b:ImportantField&gt;\n    &lt;b:ImportantField&gt;b:Day&lt;/b:ImportantField&gt;\n    &lt;b:ImportantField&gt;b:URL&lt;/b:ImportantField&gt;\n    &lt;b:ImportantField&gt;b:DayAccessed&lt;/b:ImportantField&gt;\n    &lt;b:ImportantField&gt;b:MonthAccessed&lt;/b:ImportantField&gt;\n    &lt;b:ImportantField&gt;b:YearAccessed&lt;/b:ImportantField&gt;\n  &lt;/source&gt;\n</code></pre>\n\nline 151\r<br />\n&lt;source type=&quot;InternetSite&quot;&gt;<br />\n<pre><code>    &lt;format&gt;{%CitationPrefix%}%BibOrder|&quot;BO&quot;%{%CitationSuffix%}&lt;/format&gt;\n  &lt;/source&gt;\n</code></pre>\n\nline 242<br />\n<pre><code>   &lt;source type=&quot;InternetSite&quot;&gt;\n    &lt;column id=&quot;1&quot;&gt;\n      &lt;halign&gt;left&lt;/halign&gt;\n      &lt;valign&gt;top&lt;/valign&gt;\n      &lt;format&gt;%BibOrder|&quot;BO&quot;%&lt;/format&gt;\n    &lt;/column&gt;\n    &lt;column id=&quot;2&quot;&gt;\n      &lt;halign&gt;left&lt;/halign&gt;\n      &lt;valign&gt;top&lt;/valign&gt;\n      &lt;format&gt;{%Author:1%.}{ %Title|ShortTitle%}{. &amp;lt;i&amp;gt;%PeriodicalTitle%&amp;lt;/i&amp;gt;{, %Volume%}{, %Issue%}}{ ({%Month:s% {%Day%, }}%Year%)}{, %Pages::%}.{ %Comments%.}&lt;/format&gt;\n    &lt;/column&gt;\n    &lt;sortkey&gt;{%Author:0%}{ %Title:a|ShortTitle:a%}{ %PeriodicalTitle:a%}{ %Year%}&lt;/sortkey&gt;\n  &lt;/source&gt;\n</code></pre>\n\nI know my formatting for how it should present in 242 is off and I'm ok with that. I can't even get the fields to appear in word when I check the format as important fields, if I select all fields I still get the unsupported error. I realize no one has updated this in a while but I'm ok doing the work if I can get past this roadblock. \r<br />\n<br />\nAdditionally, ACM inline citation should be [Author Last Name Year] not a numbered citation, how would I correct that? Thank you all.<br />\n",
+    "PostedDate": "2016-11-11T17:16:56.82-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": "2016-11-11T20:07:31.713-08:00"
+  },
+  {
+    "Id": "1487790",
+    "ThreadId": "659347",
+    "Html": "SO I'm kinda an idiot, most of my code worked once I ensured it was in the roaming folder saved correctly as an xsl instead of the xml or xsl in the root folder. So if you are using 2016, it's important to use the correct folder. \r<br />\n<br />\nI will keep reading the threads to see if I can find a way to change the inline citations.<br />\n",
+    "PostedDate": "2016-11-11T17:35:32.963-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": "2016-11-11T20:07:26.957-08:00"
+  }
+]

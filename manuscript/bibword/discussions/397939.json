@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "921454",
+    "ThreadId": "397939",
+    "Html": "\r\n<p>Thank you an congratulations! This tool is very useful!</p>\r\n<p>I have some doubts about ABNT style.</p>\r\n<p>First: When I cite more than one page, the ABNT Style shows, for example: &quot;(COELHO, 2010, p. 10-13)&quot;. Accord to ABNT, this should be: &quot;&quot;(COELHO, 2010, pp. 10-13)&quot;. How can I put other &quot;p&quot;?</p>\r\n<p>Second: In the bibliography, when I have more than one book with the same author, ABNT tells to replace the author name in the second (third an so on) citation by &quot;______.&quot; Can I do that with ABNT style?</p>\r\n<p>Regards,</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2012-10-03T12:27:13.487-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "921475",
+    "ThreadId": "397939",
+    "Html": "<p>Look for %Pages:p. :p. % and change it into %Pages:p. :pp. %</p>\r\n<p>Basically, whatever is after the first ':' is the prefix for a single page and whatever is after the second ':' is the prefix for multiple pages.</p>",
+    "PostedDate": "2012-10-03T12:50:12.64-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

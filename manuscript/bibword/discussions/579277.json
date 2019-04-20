@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1348336",
+    "ThreadId": "579277",
+    "Html": "Hello, \r<br />\nI´m looking for the third cse style (Name Year). I found the two other styles, but not this one. May be someone have already generated  this style or a very similar one and can help me?<br />\n",
+    "PostedDate": "2015-02-02T10:36:06.51-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1348603",
+    "ThreadId": "579277",
+    "Html": "The ASA style is similar. I have reduced the maximal quoted authors in the text to two authors and I have changed the position of the first name in the reference list (now the first name comes always after the second name). But the note of the edition and volume in the reference list are missing completely. How can I integrate this information? I’m unexperienced in programming, so I need a simple solution for his problem.\r<br />\nThanks!<br />\n",
+    "PostedDate": "2015-02-03T05:43:34.823-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

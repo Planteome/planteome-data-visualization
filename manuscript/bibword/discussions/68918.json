@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "234520",
+    "ThreadId": "68918",
+    "Html": "<p>Hi guys, I'm having a problem with the page numbers and the book authors. I'm used a modified version of Harvard Anglia.</p>\r\n<p>The first problem is when I have more than one page I want to use the prefix pp. but sometimes use p. and other times use p. here are 2 examples (with Harvard Anglia):</p>\r\n<p>\r\n<p><span style=\"\">- Akimoto, H., 2003. Global Air Quality and Pollution. <em>Science</em>, 302, pp.1716-19.</span></p>\r\n<p><span style=\"\" lang=EN-US>- Boutahar, J. et al., 2004. Development and validation of a fully modular platform for numerical modelling of air pollution: POLAIR. <em>Int. J. Env. Pollut., 22</em>, p.17&ndash;28.</span></p>\r\n<p>The other problem is when the name of the author is complete and the middle name is abbreviated, there are no space between them. I modified Harvard Anglia to do this:\r\n<p><span style=\"\">- JACOBSON, MarkZ., (2005). <em>Fundamentals of atmospheric modeling</em>. 2nd ed. New York, Cambridge University Press.</span></p>\r\n</p>\r\n<p>I hope you have a solution for this.</p>\r\n<p>&nbsp;Thanks in advance!</p>\r\n<p><span style=\"\" lang=EN-US>&nbsp;</span></p>\r\n</p>",
+    "PostedDate": "2009-09-14T15:55:17.163-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "234610",
+    "ThreadId": "68918",
+    "Html": "<p>Regarding the p. / pp. issue:</p>\r\n<p style=\"padding-left:30px\">BibWord bases itself on the separator in a page range to decide if it is a page range or just a single page. Only &quot;-&quot; is recognized as a page range separtor, not &quot;&ndash;&quot;. The first one is an ordinary minus symbol while the second one is known as an &quot;en dash&quot;. If you are familiar with latex, the en dash is represented there with a double minus (&quot;--&quot;). So make sure that you use a single minus as a separator in your sources to display them correctly.</p>\r\n<p>Regarding the name issue:</p>\r\n<p style=\"padding-left:30px\">I have no idea how you made your format string look so I can't comment on what is wrong. The following will probably do what you want:</p>\r\n<p style=\"padding-left:30px\">{%Last:u|First:u|Middle:u%{, %First|Middle%{ %Middle:adp%}}}</p>\r\n<p style=\"padding-left:30px\">Note that this fills in the blanks if you have no last or first name by shifting them (so for example, if you have no last name, the first name is considered the last name and displayed in capital letters).</p>",
+    "PostedDate": "2009-09-14T23:34:15.987-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "234626",
+    "ThreadId": "68918",
+    "Html": "<p>Thanks, it worked great.</p>\r\n<p>The p./pp. issue was that. And this is what I was doing:</p>\r\n<p>{%Last:u|First|Middle:ad%{, %First:dp|Middle:adp%{%Middle:adp%}}}</p>",
+    "PostedDate": "2009-09-15T00:22:46.53-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "234641",
+    "ThreadId": "68918",
+    "Html": "<p>You don't have a space for the last Middle ({ %Middle:adp%}}}).</p>\r\n<p>But I don't think you understand the meaning of your format string. The &quot;|&quot; is an 'or' operation which is executed in case an item is not available. For example:</p>\r\n<p>%Last|First|Middle%&nbsp;</p>\r\n<p>means, show the last name. If there is no last name, show the first name. If there is no last name and no first name, show the middle name. This is to capture partial names.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-15T01:11:25.28-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "234741",
+    "ThreadId": "68918",
+    "Html": "<p>Thanks Yves,</p>\r\n<p>I didn't understand very much the format of the strings, and I didn't notice the missing space. But now everything is going perfect (I hope!).</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-09-15T07:52:03.907-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

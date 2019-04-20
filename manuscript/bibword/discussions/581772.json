@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1355472",
+    "ThreadId": "581772",
+    "Html": "Hi folks,\r<br />\n<br />\nI have been looking for a citation style that creates full-length citations (like you'd normally find in footnotes or endnotes), rather than the truncated (surname, date of publication) ones that come by default with Word and BibWord (Smith, 2006).\r<br />\n<br />\nI know that the Word citation styles are capable of doing this, because since 2008 BibWord has had a beta for Chicago Footnotes (<a href=\"https://bibword.codeplex.com/releases/view/20331\" rel=\"nofollow\">https://bibword.codeplex.com/releases/view/20331</a>). However, it does not support a bibliography.\r<br />\n<br />\nDo you know of any citation style (that works natively on Word, without Zotero, EndNote, etc.) that both shows full-length citations and has a working bibliography? \r<br />\n<br />\nOne thing I tried was just to copy-paste the bibliography code from the Harvard style into the Chicago Footnotes style. This actually worked pretty well, but for some reason all author and editor names are omitted (you can download my efforts here: <a href=\"http://www.filehosting.org/file/details/474770/CMSFootnote.XSL\" rel=\"nofollow\">http://www.filehosting.org/file/details/474770/CMSFootnote.XSL</a>. \r<br />\n<br />\nIs there an easy way to patch this so that it shows the author and editor names?\r<br />\n<br />\nThanks for your help. <br />\n",
+    "PostedDate": "2015-02-24T21:39:30.903-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1441129",
+    "ThreadId": "581772",
+    "Html": "Hi,\r<br />\n<br />\nI'm very interested in this topic.\r<br />\n<br />\nI am using Word 15.11.2 on a Mac. I am using Chicago citation styles, but it outputs just (surname, date). This style is correct for science papers, but I need it to output full-length citations (because I'm doing a humanities thesis), as well as a bibliography.\r<br />\n<br />\nI've tried with &quot;<a href=\"http://bibword.codeplex.com/releases/view/20331\" rel=\"nofollow\">Chicago footnote style</a>&quot;. I've copied the file in the right directory, but then when I open Word, the option is not available.\r<br />\n<br />\nAny help will be much appreciated, I'm stuck with this problem and I don't know how to solve it.\r<br />\n<br />\nThanks.<br />\n",
+    "PostedDate": "2015-08-20T01:45:30.323-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1445488",
+    "ThreadId": "581772",
+    "Html": "Hi Bernat, I have a draft style that works, by a man called Lionel. If you contact me using the form on this site, I'll send you a copy.<br />\n",
+    "PostedDate": "2015-09-22T21:23:49.87-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "510827",
+    "ThreadId": "231897",
+    "Html": "\r\n<p>Firstly, thanks so much for this tool - it's made my life SO much easier.</p>\r\n<p>I've got a problem with adding a 'website' source - I get this error message. <span style=\"font-size:11pt\">\r\n(<strong>Unsupported source type (InternetSite) for source CIA10.</strong>)</span></p>\r\n<p><span style=\"font-size:11pt\">Am I doing something wrong here??<br>\r\n</span></p>\r\n",
+    "PostedDate": "2010-10-21T16:51:21.037-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "510917",
+    "ThreadId": "231897",
+    "Html": "\r\n<p>No.</p>\r\n<p>When implementing a style, I only implement those types that are defined by the style specification. Otherwise, all I would be able to do was implement&nbsp;MY best guess, not necessarely the correct thing.&nbsp;Apparently, formatting rules&nbsp;for websites\r\n were not defined when I created the style you are using, hence I didn't include them.</p>\r\n<p>If you have 'official'&nbsp;information on how to format websites for the style, you can always post them here and I will look into it.</p>\r\n<p>On the release page of each style (e.g. <a href=\"http://bibword.codeplex.com/releases/view/22931\">\r\nhttp://bibword.codeplex.com/releases/view/22931</a>) there is normally a list of supported types for that specific style.</p>\r\n",
+    "PostedDate": "2010-10-21T23:51:23.187-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "511639",
+    "ThreadId": "231897",
+    "Html": "\r\n<div class=\"WordSection1\">\r\n<p class=\"MsoNormal\"><span style=\"font-family:\"Tahoma\",\"sans-serif\"\">Thanks for your reply Yves.</span></p>\r\n<p class=\"MsoNormal\"><span style=\"font-family:\"Tahoma\",\"sans-serif\"\"> </span></p>\r\n<p class=\"MsoNormal\"><span style=\"font-family:\"Tahoma\",\"sans-serif\"\">I have a book called “ Communication Skills Handbook” by Jane Summers and Brett Smith which was given to us by our University of the Sunshine Coast.</span></p>\r\n<p class=\"MsoNormal\"><span style=\"font-family:\"Tahoma\",\"sans-serif\"\"> </span></p>\r\n<p class=\"MsoNormal\"><span style=\"font-family:\"Tahoma\",\"sans-serif\"\">If I scan and email the relevant pages to you, will this be sufficient to update the style sheet?</span></p>\r\n<p class=\"MsoNormal\"><span style=\"font-family:\"Tahoma\",\"sans-serif\"\"> </span></p>\r\n<p class=\"MsoNormal\"><span style=\"font-family:\"Tahoma\",\"sans-serif\"\">Regards</span></p>\r\n<p class=\"MsoNormal\"><span style=\"font-family:\"Tahoma\",\"sans-serif\"\"> </span></p>\r\n<p class=\"MsoNormal\"><span style=\"font-family:\"Tahoma\",\"sans-serif\"\">Cheryl (abbier)</span></p>\r\n</div>\r\n",
+    "PostedDate": "2010-10-23T23:26:59.023-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1142575",
+    "ThreadId": "231897",
+    "Html": "I have the same problem, is there any solution ?<br />\n",
+    "PostedDate": "2013-12-27T08:38:26.223-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

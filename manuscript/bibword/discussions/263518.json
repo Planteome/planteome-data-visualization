@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "635866",
+    "ThreadId": "263518",
+    "Html": "\r\n<p>Hi.</p>\r\n<p>I was wondering if there is a way to edit the XML file to have square brackets on&nbsp;reference&nbsp;number in&nbsp;bibliography</p>\r\n<p>I mean instead of:&nbsp;</p>\r\n<p>1. <strong>A.</strong><strong>Smith.</strong> <em>book. </em>1992.</p>\r\n<p>&nbsp;</p>\r\n<p>to have&nbsp;</p>\r\n<p>[1]. <strong>A.</strong><strong>Smith.</strong> <em>book. </em>1992.</p>\r\n<p>Thanks</p>\r\n",
+    "PostedDate": "2011-07-01T01:01:02.27-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "636115",
+    "ThreadId": "263518",
+    "Html": "<p>See <a href=\"http://bibword.codeplex.com/releases/view/14646\">http://bibword.codeplex.com/releases/view/14646</a></p>\r\n<p>Note that if you have Word 2010, Microsoft just released SP1 which contains 4 new styles, including one for IEEE which also uses square brackets. I also posted a way to import those style into Word 2007 (<a href=\"http://answers.microsoft.com/en-us/office/forum/office_2007-word/apa-6th-edition-and-mla-7th-edition-in-office-2007/7ec9a800-b406-4a04-b257-c2d7d64f5fc3\">http://answers.microsoft.com/en-us/office/forum/office_2007-word/apa-6th-edition-and-mla-7th-edition-in-office-2007/7ec9a800-b406-4a04-b257-c2d7d64f5fc3</a>)</p>",
+    "PostedDate": "2011-07-01T10:30:36.183-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

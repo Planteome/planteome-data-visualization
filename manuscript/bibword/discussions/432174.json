@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "997206",
+    "ThreadId": "432174",
+    "Html": "Hi !\r<br />\n<br />\nFirst of all, thanks a lot because BibWord really makes Word bibliography customization easy !\r<br />\n<br />\nMy problem is quite simple. I built my own style by editing the Vancouver template, and almost everything works great.\r<br />\n<br />\nI have several journal articles for which I only have one or two authors, but there are more of them and I don't know who they are.\r<br />\n<br />\nThus, I would like to display the two author's names following by &quot;, et al.&quot;.\r<br />\n<br />\nThis issue cannot be solved with the &quot;max_number_of_persons_to_display&quot; option because I also use this option with articles having more than 6 authors, then &quot;et al.&quot; is perfectly displayed. But my problematic case doesn't fit in this category.\r<br />\n<br />\nUnfortunately there is no option to state &quot;there are other authors but I don't know who they are so please append et al&quot;.\r<br />\n<br />\nAny idea how I could overcome this issue ?\r<br />\n<br />\nThanks a lot !\r<br />\n<br />\nReenjii<br />\n",
+    "PostedDate": "2013-02-06T03:51:44.14-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "997273",
+    "ThreadId": "432174",
+    "Html": "The easiest 'workaround' I can think of is to use the corporate author option for that. You would have to format the author you know manually, but you can add et al without any problem. Corporate contributors are normally not formatted.<br />\n",
+    "PostedDate": "2013-02-06T06:05:48.15-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "997289",
+    "ThreadId": "432174",
+    "Html": "Thanks for your quick answer.<br />\n<br />\nI tried using the corporate field and it does the job. I will use this trick.<br />\n<br />\nAnyway, the best fix would be to have an &quot;add et al.&quot; checkbox in the Word's References Manager UI, but this is out the scope of BibWord.<br />\n<br />\nI was also thinking of a trick with BibWord, for example, we add an author in the author list whose last name is &quot;a&quot; only (no first/middle name, or use any other keyword instead of &quot;a&quot;), and then XSLT could be used to replace this author by &quot;, et al.&quot;. But my mastery of XSLT is too low to set up something like this.<br />\n",
+    "PostedDate": "2013-02-06T06:22:16.217-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

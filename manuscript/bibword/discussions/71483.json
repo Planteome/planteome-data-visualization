@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "243827",
+    "ThreadId": "71483",
+    "Html": "<p>Hello,</p>\r\n<p>I was wondering if there was any way to convert references listed using the 'insert footnote' feature, could be switched over to the the citation area, so that they could be put into vancouver style, linked to a bibliography, etc.</p>\r\n<p>I'm guessing this isn't possible, but if there is any way to do this besides typing them all over again using the 'insert citation' feature, it would be really great to know.</p>\r\n<p>The reason I want to do this, is so that if there is an reference that is repeated, say the first reference is used later in the text, I can use the number 1 again, which does not seem to be possible with the footnote feature. Or maybe there is a way to do this??</p>\r\n<p>Thank you.</p>",
+    "PostedDate": "2009-10-09T04:22:56.36-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "244146",
+    "ThreadId": "71483",
+    "Html": "<p>No, there is no way to do an automatic conversion like that at the moment (and there probably never will be). If you have access to the citations in some kind of structured format (BibTex, EndNote, ...), you could try using <a title=bibutils href=\"http://www.scripps.edu/~cdputnam/software/bibutils/\">BibUtils</a>. It is a set of command-line tools which allows conversion between different structured formats, including the open xml one used by Word.</p>\r\n<p>There is a way to do what you want without having to switch to the bibliography tools. On the &quot;Insert&quot; tab, select &quot;Cross-reference&quot;. As reference type, choose &quot;Footnote&quot; or &quot;Endnote&quot;. Then you can choose to show the number (formatted or not).</p>",
+    "PostedDate": "2009-10-10T03:03:12.31-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "244151",
+    "ThreadId": "71483",
+    "Html": "<p>Hi,</p>\r\n<p>Thank you! Just checked out the cross-reference option, and you are write, that does work. That is great - I am working on a book, and the authors had all the references in footnotes to start, so this will save a lot of confusion in getting the references formatted correctly and taking out all of the op cits and ibids. Thanks so much,</p>\r\n<p>Sara</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-10-10T03:42:01.38-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "244170",
+    "ThreadId": "71483",
+    "Html": "<p>It sounds as if the Word 2007 bibliography tools aren't suited for you anyway. They are intended to be used for in-text citations, not for footnote citations.</p>",
+    "PostedDate": "2009-10-10T06:01:31.793-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

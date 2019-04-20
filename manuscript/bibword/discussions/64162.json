@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "218175",
+    "ThreadId": "64162",
+    "Html": "<p>I found a very interesting hack to added double spaces; the <strong>&amp;#160;</strong> entity!</p>\r\n<p>The Harvard-Leeds style was modified:</p>\r\n<p>e.g. InternetSite:</p>\r\n<p>&lt;format&gt;{%Author:2%.{ %Year%{%YearSuffix%}.}}{&amp;#160; %Title|ShortTitle|InternetSiteTitle%.{&amp;#160; %Year%{%YearSuffix%}.}} {&amp;#160; Date of access: {{%DayAccessed% }%MonthAccessed:s% }%YearAccessed%.}{&amp;#160; %URL%}&lt;/format&gt;</p>",
+    "PostedDate": "2009-07-31T15:02:12.8-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

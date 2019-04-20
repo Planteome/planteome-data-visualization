@@ -1,0 +1,74 @@
+[
+  {
+    "Id": "173209",
+    "ThreadId": "51643",
+    "Html": "Hi, <br>\r\n<br>\r\nI wanted to be able to use Harvard citations in the text as follows:<br>\r\n<br>\r\nHarrison (2002) argues <br>\r\nor Harrison (2002: 14) states &quot;...&quot;<br>\r\n<br>\r\nAny advise on how I might be able to do this in word? <br>\r\n<br>\r\nThanks!\r\n",
+    "PostedDate": "2009-03-29T06:27:10.217-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "173215",
+    "ThreadId": "51643",
+    "Html": "<p>In Word 2007 or 2008, there is no concept of active or passive citing.</p>\r\n<p>There are a couple of options:</p>\r\n<ol>\r\n    <li>\r\n    <p>Write the name yourself then insert the citation. Once you entered the citation, right click and pick &quot;Edit Citation&quot; from the menu. Suppress the author.</p>\r\n    <p>If you only have to do this a couple of times, this will be the fastest solution.</p>\r\n    </li>\r\n    <li>\r\n    <p>If you want all your citations to be in the active form, you could create a style which does that. In BibWord, you would set the <i>openbracket</i> and <i>closebracket</i> elements to empty and then format a single entry like:</p>\r\n    <p><span style=\"font-family:'courier new';color:#0000ff;font-size:10pt\">&lt;</span><span style=\"font-family:'courier new';color:#a31515;font-size:10pt\">format</span><span style=\"font-family:'courier new';color:#0000ff;font-size:10pt\">&gt;</span><span style=\"font-family:'courier new';font-size:10pt\">%Author:1%{ (%Year%{: %CitationPages%})}{ (%CitationPages%)}<span style=\"color:#0000ff\">&lt;/</span><span style=\"color:#a31515\">format</span><span style=\"color:#0000ff\">&gt;</span></span></p>\r\n    </li>\r\n    <li>\r\n    <p>If you want both active and passive voicing within one style, your only option is to abuse the flags. An example of a style which does flag abuse (for different purposes) can be found in the <a href=\"http://bibliography.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=20331\">Chicago footnote style</a>. At least one person went to great lengths to make a style like that according to this <a href=\"http://bibliography.codeplex.com/Thread/View.aspx?ThreadId=41950\">discussion</a>.</p>\r\n    </li>\r\n</ol>\r\n",
+    "PostedDate": "2009-03-29T07:00:44.383-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "218283",
+    "ThreadId": "51643",
+    "Html": "<p>This is really a beginners question... I've tried to find the <em>openbracket</em> and <em>closebracket</em> elements in the CHICAGO style, but I only see the template:</p>\r\n<p>&lt;xsl:template name=&quot;templ_prop_OpenBracket&quot; &gt;<br>&nbsp;&nbsp;&nbsp; &lt;xsl:param name=&quot;LCID&quot; /&gt;<br>&nbsp;&nbsp;&nbsp; &lt;xsl:variable name=&quot;_LCID&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;xsl:call-template name=&quot;localLCID&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;xsl:with-param name=&quot;LCID&quot; select=&quot;$LCID&quot;/&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/xsl:call-template&gt;<br>&nbsp;&nbsp;&nbsp; &lt;/xsl:variable&gt;<br>&nbsp;&nbsp;&nbsp; &lt;xsl:value-of select=&quot;/*/b:Locals/b:Local[@LCID=$_LCID]/b:General/b:OpenBracket&quot;/&gt;<br>&nbsp; &lt;/xsl:template&gt;</p>\r\n<p>&nbsp;</p>\r\n<p>So where is the element itself defined?</p>",
+    "PostedDate": "2009-08-01T05:15:18.107-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "218288",
+    "ThreadId": "51643",
+    "Html": "<p>Externally.&nbsp;What&nbsp;Word does when you&nbsp;want it to format a citation, is passing along a huge number of localized variables. Things like, &quot;and&quot;, &quot;vol&quot;, &quot;editor&quot;, ...&nbsp;in different languages. Apparently, different languages, can use different brackets. So the brackets are passed along in the same way. I have no idea as to where Word stores these strings internally. I'm guessing they will be resources inside some dll.</p>\r\n<p>I would suggest not the play around with the template &quot;templ_prop_OpenBracket&quot; as it might be used by other parts in the stylesheet.</p>\r\n<p>What are you trying to achieve? Do you want to change the brackets around in-text citations? If so, check out <a href=\"http://bibword.codeplex.com/Wiki/View.aspx?title=FAQ#Q6\">http://bibword.codeplex.com/Wiki/View.aspx?title=FAQ#Q6</a>&nbsp;. By directly changing the template calls there to text elements, you can probably do what you want without influencing other parts.</p>",
+    "PostedDate": "2009-08-01T05:41:41.673-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "218291",
+    "ThreadId": "51643",
+    "Html": "<p>Actually I don't want to change them, I want to omit them occasionally, for instance when I have a citation in a text which itself appears within brackets.</p>\r\n<p>&nbsp;</p>\r\n<p>I wouldn't mind to disable them alltogether and get used to insert the brackets by myself whenever I need them. So would I then just delete the line where the template to open/close the bracket is called?</p>\r\n<p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;xsl:if test=&quot;msxsl:node-set($ListPopulatedWithMain)/b:Citation/b:FirstAuthor&quot;&gt;<br>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&lt;xsl:call-template name=&quot;templ_prop_OpenBracket&quot;/&gt;</p>",
+    "PostedDate": "2009-08-01T05:55:27.56-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "218306",
+    "ThreadId": "51643",
+    "Html": "<p>Yes.</p>\r\n<p>The availability of the FirstAuthor element indicates in all the styles that the opening bracket should be displayed while the availability of the LastAuthor element indicates that the close bracket should be displayed. If there is no LastAuthor element, then a second in-text citation will follow the first and the separator between those citations is displayed.</p>",
+    "PostedDate": "2009-08-01T07:04:36.677-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "218340",
+    "ThreadId": "51643",
+    "Html": "<p>Works! I find it actually easier to get all the citations without brackets, because it allows me to put inside the brackets whatever I want, without having to use switches etc.</p>\r\n<p>&nbsp;</p>\r\n<p>But: Now I get sometimes the problem that the citation is preceded by a space character... so sometimes I get (using my own brackets) things like:</p>\r\n<p>( Smith 1979) instead of (Smith 1979). Any idea why this could be?</p>",
+    "PostedDate": "2009-08-01T11:16:26.25-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "218627",
+    "ThreadId": "51643",
+    "Html": "<p>That's one of the side effects of the smart formatting of Word. I haven't found a way around that yet. The only suggestions I can think of is to convert your citation to static text or work in design mode. But the latter can be dangerous if fields get updated.</p>",
+    "PostedDate": "2009-08-02T23:19:13.987-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "218657",
+    "ThreadId": "51643",
+    "Html": "<p>I tried the same the the APA style, which is also ok for me, and the problem doesn't occur there, so I'll just use this one...</p>",
+    "PostedDate": "2009-08-03T00:59:17.11-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

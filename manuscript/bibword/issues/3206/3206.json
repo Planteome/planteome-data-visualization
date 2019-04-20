@@ -1,0 +1,60 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Closed by author request. Was fixed in one of the previous versions.",
+    "ClosedDate": "2009-02-16T00:05:50.64-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "It seems to be impossible to remove (suppress) the author or year from the inline citations.\nPlease email me if you need more information at dipunm@gmail.com.\n \nI saw that the disallowed variable was constructed using :\nmsxsl:node-set($data)/citation/noauthor\nmsxsl:node-set($data)/citation/notitle\nmsxsl:node-set($data)/citation/noyear\n \nThose node sets were non existant so I created them based on the commented out text nodes underneath.\nThis made no difference so I reverted and will await your solution.",
+    "LastUpdatedDate": "2013-05-16T05:29:24.15-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "bibword",
+    "ReportedDate": "2009-02-15T11:36:49.497-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Harvard Bug",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 3206
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "sorry, Please close this, it seems this has been fixed in the later versions",
+      "PostedDate": "2009-02-15T11:46:24.25-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-02-16T00:05:50.64-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:20:27.42-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T05:29:24.15-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

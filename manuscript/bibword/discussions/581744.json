@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1355338",
+    "ThreadId": "581744",
+    "Html": "I am having trouble with using the AMA tyle in Microfoft 15.  I used the following path:\r<br />\n C: program files\\Microsoft Office\\Office15\\Bibliography\\Style\r<br />\n<br />\nIt still is not working.  Can some one please help me !!!!  Thanks!<br />\n",
+    "PostedDate": "2015-02-24T10:52:44.077-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1355598",
+    "ThreadId": "581744",
+    "Html": "That is not the correct directory. As of Word 2013 (Office15) the directory has changed. See the installation instructions <a href=\"http://bibword.codeplex.com/wikipage?title=Styles&amp;referringTitle=Documentation&amp;ANCHOR#Installation\" rel=\"nofollow\">here</a><br />\n",
+    "PostedDate": "2015-02-25T05:46:02.403-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

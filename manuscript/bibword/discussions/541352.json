@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1230899",
+    "ThreadId": "541352",
+    "Html": "I'm working on a project for a professor who generally uses the Chicago style in MS Word.  Currently he would like to make a small change to the bibliography format, in that he would like the year to be the second field in each reference, following the author.  The stylesheet is the stock style supplied with Word and currently yield something like this:\r<br />\n<br />\nAuthor last, Author first. Title. Publisher: Location, Year.\r<br />\n<br />\nI need it to be:\r<br />\n<br />\nA Last, A first. Year. ...\r<br />\n<br />\nI'm not great with code, so if you could explain what needs to be done in the simplest terms that would be much appreciated.\r<br />\n<br />\nThank you!<br />\n",
+    "PostedDate": "2014-04-06T05:27:00.187-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

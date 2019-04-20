@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1360429",
+    "ThreadId": "584764",
+    "Html": "I have downloaded all bib styles. However, with all styles which use alphabetical order, I see [BO] in the text.\r<br />\n<br />\nIs there any idea about that?<br />\n",
+    "PostedDate": "2015-03-06T08:06:13.29-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1360531",
+    "ThreadId": "584764",
+    "Html": "See the FAQ: <a href=\"https://bibword.codeplex.com/wikipage?title=Styles_FAQ&amp;referringTitle=Documentation#Q4\" rel=\"nofollow\">https://bibword.codeplex.com/wikipage?title=Styles_FAQ&referringTitle=Documentation#Q4</a><br />\n",
+    "PostedDate": "2015-03-06T14:00:46.067-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1360590",
+    "ThreadId": "584764",
+    "Html": "It didn't solve the problem. Here is what I did in Word 2013 according to the guide.<br />\n<br />\n1- Create a new document and add some citations. Note that the style is set to <strong>IEEE Alphabetic order</strong> and as you can see there are only [BO]<br />\n<img src=\"http://mahmood62.persiangig.com/image/test.jpg\" alt=\"Image\" /><br />\n<br />\n<br />\n<br />\n<br />\n<br />\n<br />\n2- After saving and closing the document, I ran the bib extender. Then I set the style path to   <strong>%userprofile%\\AppData\\Roaming\\Microsoft\\Bibliography\\Style</strong> and the document path to <strong>test.docx</strong> then I click on <strong>Extend</strong><br />\n<img src=\"http://mahmood62.persiangig.com/image/bibext.jpg\" alt=\"Image\" /><br />\n<img src=\"http://mahmood62.persiangig.com/image/bibext2.jpg\" alt=\"Image\" /><br />\n<br />\n<br />\n<br />\n<br />\n<br />\n<br />\n3- I opened <strong>test.docx</strong> and <strong>test_orig.docx</strong>. Ignoring the test_orig.docx, I selected the style one more time. But now as you can see, although the style is set to IEEE Alphabetic, I see the numbers as the references!!<br />\n<br />\ntest_orig<br />\n<img src=\"http://mahmood62.persiangig.com/image/test_orig.jpg\" alt=\"Image\" /><br />\n<br />\n<br />\n<br />\n<br />\ntest<br />\n<img src=\"http://mahmood62.persiangig.com/image/test2.jpg\" alt=\"Image\" /><br />\n",
+    "PostedDate": "2015-03-06T22:28:08.783-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

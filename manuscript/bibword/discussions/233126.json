@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "515786",
+    "ThreadId": "233126",
+    "Html": "\r\n<p>Hello</p>\r\n<p>On p. 27 of the BibWord guide, it is mentioned that one can use %URL:s% option to split long URLs. I cannot get this option to work. Am I doing something wrong?</p>\r\n<p>Regards</p>\r\n<p>Theuns</p>\r\n",
+    "PostedDate": "2010-11-02T01:28:00.84-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "515847",
+    "ThreadId": "233126",
+    "Html": "\r\n<p>It should be working.</p>\r\n<p>If you started from another stylesheet, you might be working with an older version. Check the bottom of the stylesheet to ensure that it version 2.8:</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">variable</span> <span style=\"color:red\">name</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">version</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">&gt;</span>\r\n  <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">text</span><span style=\"color:blue\">&gt;</span>2.8<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">text</span><span style=\"color:blue\">&gt;</span> \r\n<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">variable</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>If you are working with an older version, all you have to do is copy/paste the data variable into the new stylesheet and everything should be working.</p>\r\n<p>If you are working with the current version, could you send an example style &#43; file? My mail is at the top of stylesheets normally.</p>\r\n",
+    "PostedDate": "2010-11-02T03:50:06.64-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "515891",
+    "ThreadId": "233126",
+    "Html": "\r\n<p>Hi Yves</p>\r\n<p>I was indeed working on an older version. I have copied the data variable to a version 2.8 stylesheet and the URL split now works fine!</p>\r\n<p>Is it possible to split the URLs at other characters such as ? or - in addition to /?</p>\r\n<p>Thanks for your speedy response and wonderful program.</p>\r\n<p>Regards</p>\r\n<p>Theuns</p>\r\n",
+    "PostedDate": "2010-11-02T05:41:31.597-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "516313",
+    "ThreadId": "233126",
+    "Html": "\r\n<p>Hi Yves</p>\r\n<p>Is it possible to ammend the BibWord tempate to split URLs at other characters (such as ?, = or -) in addition to the split at /?</p>\r\n<p>&nbsp;</p>\r\n<p>We often have very long URLs which one would preferably want to split at multiple locations. See the example below:</p>\r\n<p><span style=\"font-size:12pt\">http://www.google.co.za/patents?hl=en&amp;lr=&amp;vid=USPAT6293284&amp;id=hD4HAAAAEBAJ&amp;oi=fnd&amp;dq=definition&#43;colour&#43;cosmetics&amp;printsec=abstract#v=onepage&amp;q&amp;f=false\r\n</span></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size:12pt\">In this case it will be nice to be able to automatically split the URL at /, =, and &#43; to ensure that it wraps nicely across lines.</span></p>\r\n<p>Thanks again for your help.</p>\r\n<p>Theuns</p>\r\n<p><span style=\"font-size:12pt\"><br>\r\n</span></p>\r\n",
+    "PostedDate": "2010-11-03T01:53:24.713-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "516367",
+    "ThreadId": "233126",
+    "Html": "\r\n<p>I never added the option for the end-user, but the functionality should be built-in.&nbsp;Look for the following line:</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">with-param</span> <span style=\"color:red\">name</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">afterChars</span><span style=\"color:black\">&quot;</span> <span style=\"color:red\">select</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">'/'</span><span style=\"color:black\">&quot;</span> <span style=\"color:blue\">/&gt;</span>\r\n</pre>\r\n</div>\r\n<p>Just add whatever characters you want. So something like</p>\r\n<pre></pre>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">with-param</span> <span style=\"color:red\">name</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">afterChars</span><span style=\"color:black\">&quot;</span> <span style=\"color:red\">select</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">'/?=-'</span><span style=\"color:black\">&quot;</span> <span style=\"color:blue\">/&gt;</span>\r\n</pre>\r\n</div>\r\n",
+    "PostedDate": "2010-11-03T04:00:05.867-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "516460",
+    "ThreadId": "233126",
+    "Html": "\r\n<p>It works! Fantastic!!</p>\r\n<p>Thank you so much.</p>\r\n",
+    "PostedDate": "2010-11-03T07:18:26.24-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

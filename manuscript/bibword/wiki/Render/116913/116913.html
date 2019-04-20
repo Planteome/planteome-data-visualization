@@ -1,0 +1,55 @@
+<div class="wikidoc"><h2>IEEE Alphabetical Order Reference Style</h2><h4>Table of Content</h4><ul><li><a href="#A1">Description</a></li>
+<li><a href="#A2">File</a></li>
+<li><a href="#A3">Requirements</a></li>
+<li><a href="#A4">Based On</a></li>
+<li><a href="#A5">Supported Types</a></li>
+<li><a href="#A6">Variations</a></li></ul>
+<h4>Description<a name="A1"></a></h4>Implementation of the IEEE reference style. This style uses numeric in-text citations based on their alphabetical order in the entire list of sources.<br /><br />As the current version of the bibliography tools in Word 2007 does not support this directly, you will have to use the <a href="https://bibword.codeplex.com/releases/view/17130">BibOrder</a> tool to achieve the numbering.<br /><br />Examples:<br /><pre>
+ [1] N. H. F. Beebe. (2006, August) TeX User Group Bibliography Archive. [Online]. 
+     http://www.math.utah.edu:8080/pub/tex/bib/index-table.html
+ [2] J. C. Candy and G. C. Temes, Eds., Oversampling Delta-Sigma Data Converters Theory, 
+     Design and Simulation. New York, U.S.: IEEE Press, 1992.
+ [3] B. D. Cullity, Introduction to Magnetic Materials. Reading, MA: Addison-Wesley, 1972.
+     ...
+[16] D. Middleton and A. D. Spaulding, &quot;A Tutorial Review of Elements of Weak Signal Detection 
+     in Non-Gaussian EMI Environments,&quot; National Telecommunications and Information Administration 
+     (NTIA), U.S. Dept. of Commerce, NTIA Report 86-194, 1986.
+[19] J. Padhye, V. Firoiu, and D. Towsley, &quot;A Stochastic Model of TCP Reno Congestion Avoidance 
+     and Control,&quot; Univ. of Massachusetts, Amherst, CMPSCI Tech. Rep. 99-02, 1999.
+</pre>
+<h4>File<a name="A2"></a></h4>IEEE_Alphabetical.xsl - the file can be found in the <a href="https://bibword.codeplex.com/releases/view/15852">styles</a> collection.
+<h4>Requirements<a name="A3"></a></h4><ul><li><a href="https://bibword.codeplex.com/releases/view/17130">BibOrder</a></li></ul>
+<h4>Based On<a name="A4"></a></h4><ul><li><a href="http://www.ieee.org/portal/cms_docs_iportals/iportals/publications/authors/transjnl/stylemanual.pdf">IEEE style manual</a>;</li>
+<li><a href="http://standards.ieee.org/guides/style/2007_Style_Manual.pdf">IEEE standards style manual</a>;</li>
+<li><a href="http://www.ctan.org/get/macros/latex/contrib/IEEEtran/bibtex/IEEEtran.bst">IEEEtran.bst stylesheet for LaTeX</a>.</li></ul>
+<h4>Supported Types<a name="A5"></a></h4>The current version of the style supports the following types and subtypes.
+<ul><li>ArticleInAPeriodical</li>
+<li>Book</li>
+<li>BookSection</li>
+<li>ConferenceProceedings</li>
+<li>DocumentFromInternetSite</li>
+<li>ElectronicSource</li>
+<li>InternetSite</li>
+<li>JournalArticle </li>
+<li>Misc</li>
+<li>Patent</li>
+<li>Report
+<ul><li>Standard</li>
+<li>Thesis</li></ul></li></ul>
+<i><b>Note:</b></i> To use the subtypes <i>(e.g. Thesis)</i>, enter the data using the base type <i>(e.g. Report)</i> and set the <b>Type</b> field of the source to the value of the subtype <i>(e.g. Thesis)</i>.
+<h4>Variations<a name="A6"></a></h4><ul><li>You can change the surrounding brackets for in-text citations by changing the contents of the <b>openbracket</b> and <b>closebracket</b> elements. </li></ul>
+<div style="color:Black;background-color:White;"><pre>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">citation</span><span style="color:Blue;">&gt;</span>
+    <span style="color:Blue;">&lt;</span><span style="color:#A31515;">openbracket</span><span style="color:Blue;">&gt;</span>(<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">openbracket</span><span style="color:Blue;">&gt;</span>
+    <span style="color:Blue;">&lt;</span><span style="color:#A31515;">closebracket</span><span style="color:Blue;">&gt;</span>)<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">closebracket</span><span style="color:Blue;">&gt;</span>
+    ...
+  <span style="color:Blue;">&lt;/</span><span style="color:#A31515;">citation</span><span style="color:Blue;">&gt;</span>
+</pre></div><ul><li>You can change the look of the numbers in the first column of the bibliography by changing the <b>format</b> element of the first column <i>(column id=&quot;1&quot;)</i>. Note that you have to do this for each type separately. Some examples are:</li></ul>
+<div style="color:Black;background-color:White;"><pre>
+  <span style="color:Green;">&lt;!-- Number between square brackets (current implementation). Example: [1] --&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">format</span><span style="color:Blue;">&gt;</span>{[%RefOrder%]}<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">format</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Green;">&lt;!-- Number between round brackets. Example: (1) --&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">format</span><span style="color:Blue;">&gt;</span>{(%RefOrder%)}<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">format</span><span style="color:Blue;">&gt;</span>
+  <span style="color:Green;">&lt;!-- Number followed by a period. Example: 1. --&gt;</span>
+  <span style="color:Blue;">&lt;</span><span style="color:#A31515;">format</span><span style="color:Blue;">&gt;</span>{%RefOrder%.}<span style="color:Blue;">&lt;/</span><span style="color:#A31515;">format</span><span style="color:Blue;">&gt;</span>
+</pre></div></div><div class="ClearBoth"></div>

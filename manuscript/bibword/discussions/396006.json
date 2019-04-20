@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "914357",
+    "ThreadId": "396006",
+    "Html": "\r\n<p>I don't see the option for superscript for this source&nbsp;<a id=\"fileDownload0\" tabindex=\"9\" href=\"http://bibword.codeplex.com/releases/view/27212#DownloadId=67907\">ABNT NBR 6023:2002*</a>,&nbsp;</p>\r\n<p>How can I change it so that instead of parentesis it shows the citation numbers in superscript format?</p>\r\n",
+    "PostedDate": "2012-09-18T16:14:40.75-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "914498",
+    "ThreadId": "396006",
+    "Html": "<p>Check the FAQ, more specifically:</p>\r\n<ul>\r\n<li><a href=\"http://bibword.codeplex.com/wikipage?title=Styles_FAQ#Q8\" target=\"_blank\">Can I change the surrounding brackets for in-text citations?</a></li>\r\n<li><a href=\"http://bibword.codeplex.com/wikipage?title=Styles_FAQ#Q9\">How do I get my in-text citations in superscript?</a></li>\r\n</ul>\r\n<p>for removing brackets and putting stuff in superscript.</p>\r\n<p>But honestly, I don't really understand what you are trying to do. ABNT is an author based style, not a number based style. It sounds like you are asking to fit a square block into a round hole... Changes are going to be way more extensive then you expect. For example, author based styles just have a simple paragraph layout for a bibliography whereas number based styles use a table layout where the first column contains the number and the second the entry. You would be better of starting from a numbered style like IEEE or others and adapt the bibliography formatting for those to fit&nbsp;your needs.</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2012-09-19T02:03:29.79-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "914611",
+    "ThreadId": "396006",
+    "Html": "<p>Yves,</p>\r\n<p>I have an ABNT manual that says that it is possible to use two formats for citations. &nbsp;Your pluguin shows only numbers in parentesis, for instance Hello World (1), but not in superscript format such as Helo World&nbsp;<sup><span style=\"font-size: 11pt;\" lang=\"EN-US\">1 which is another format acceptable by ABNT NBR 6023:2022</span></sup></p>\r\n<p><span style=\"font-size: 11pt;\" lang=\"EN-US\">I just prefer the second option as it is more readable. But from what I understood you're saying it is too complicated to implement. If that is the case I just have to use the first option.</span></p>\r\n<p><span style=\"font-size: 11pt;\">Thank you</span></p>\r\n<p><span style=\"font-size: 11pt;\">Rod</span></p>",
+    "PostedDate": "2012-09-19T06:57:11.397-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "914638",
+    "ThreadId": "396006",
+    "Html": "<p>Sorry, I misread because your link points to the author based version. If you downloaded the reference order based version (numerical version from&nbsp;<a href=\"http://bibword.codeplex.com/releases/view/27212\">http://bibword.codeplex.com/releases/view/27212</a>) then the two links I posted from the FAQ should solve your issues. First one tells you how to remove your brackets, second tells you how to get them as superscript (and works around the bug in Word).</p>",
+    "PostedDate": "2012-09-19T07:44:27.333-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "914654",
+    "ThreadId": "396006",
+    "Html": "<p>Thanks I am already using both of them, specially the alternative, &nbsp;and none have option for superscript like you're saying. At least not by default.</p>",
+    "PostedDate": "2012-09-19T08:07:17.127-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "914691",
+    "ThreadId": "396006",
+    "Html": "<p>It is not possible by default. That is a limitation of Word, not of the xslt.</p>\r\n<p>I had lengthy discussions about this with people from MS. They claim it should work but they never provided any proof. I did illustrate that each of their suggestions (just use the superscript tag, use a span, ...) do not work for in-text citations. They do work perfectly fine for bibliographies but not for in-text citations. I went the extra mile and even tried some funky things like&nbsp;overwriteing one of the working tags (e.g. b)</p>\r\n<p>For now my best guess is that the problem is situated around the font sizing which for some reason can't be overridden. And you need to lower the font size to display superscripts.</p>\r\n<p>I do believe that their might be a more permanent solution but without&nbsp;an explaination on&nbsp;how the sanitization of the html is done inside Word, it is almost impossible to guess. And I doubt they will give me a peek at the source code :-)</p>\r\n<p>So you are stuck with the workaround from the FAQ. If you run it only once at the end of your document it is enough, so it is not that much of an issue.</p>",
+    "PostedDate": "2012-09-19T08:58:36.63-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "914693",
+    "ThreadId": "396006",
+    "Html": "<p>Thanks Yves.</p>",
+    "PostedDate": "2012-09-19T09:06:05.257-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

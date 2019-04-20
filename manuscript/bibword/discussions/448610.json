@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "1062784",
+    "ThreadId": "448610",
+    "Html": "I want to add a reference of a online journal article...\r<br />\n<br />\nJournal Article\r<br />\nLamoreaux, M. G., 2011. Beyond Convergence. <em>Journal of Accountancy</em>.\r<br />\n__however, the url and the date accessed is missing\r<br />\n__\r<br />\n<br />\nwhen i change to website/document from internet\r<br />\nLamoreaux, M. G., 2011. Beyond Convergence.  [Online]. Available at: <a href=\"http://www.journalofaccountancy.com/Issues/2011/Aug/20114208.htm?action=print\" rel=\"nofollow\">http://www.journalofaccountancy.com/Issues/2011/Aug/20114208.htm?action=print</a>\r<br />\n[Accessed 29 Jun 2013].\r<br />\n<strong>the journal title is missing...</strong><br />\n",
+    "PostedDate": "2013-06-29T08:20:11.323-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1062943",
+    "ThreadId": "448610",
+    "Html": "If you are using a BibWord style it is as simple as adding %URL% to the correct spot.\r<br />\n<br />\nFor information on BibWord format strings, check the documentation. Also, download some of the formatting styles. I believe there are several in the Harvard family which come with URLs for journal articles.<br />\n",
+    "PostedDate": "2013-06-30T09:47:11.39-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1063058",
+    "ThreadId": "448610",
+    "Html": "thx for the information...\r<br />\nI'm working on the formatting the BibWord style....\r<br />\nIf I want to find style with URLs for journal articles, where can i find?<br />\n",
+    "PostedDate": "2013-07-01T00:01:15.603-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1063068",
+    "ThreadId": "448610",
+    "Html": "I don't know how to edit it....\r<br />\n<br />\nam I suppose to edit it under &lt;bibliography&gt; ??\r<br />\n<br />\n  &lt;source type=&quot;JournalArticle&quot;&gt;<br />\n<pre><code>    &lt;column id=&quot;1&quot;&gt;\n      &lt;halign&gt;left&lt;/halign&gt;\n      &lt;valign&gt;top&lt;/valign&gt;\n      &lt;format&gt;{%Author:2|&quot;Anon.&quot;%,}{ %Year|&quot;n.d.&quot;%{%YearSuffix%}.}{ %Title|ShortTitle%.}{ &amp;lt;i&amp;gt;%JournalName%&amp;lt;/i&amp;gt;,}{ [%Medium%].{{%Day%} %Month:s%,}}{ %Volume%{(%Issue%)},}{ (%Issue%),}{ %Pages:p.:pp.:a2%.}{ Available at: &amp;lt;u&amp;gt;%URL:l%&amp;lt;/u&amp;gt;}{ [Accessed{{ %DayAccessed%} %MonthAccessed:s%} %YearAccessed%]}.{ %Comments%.}&lt;/format&gt;\n    &lt;/column&gt;\n    &lt;sortkey&gt;{%Author:0|&quot;Anon.&quot;%}{%Year|&quot;n.d.&quot;%}{%Title:a|ShortTitle:a%}&lt;/sortkey&gt;\n  &lt;/source&gt;\n\n</code></pre>\n\nis that it?\r<br />\n<br />\nBut the url still did not shown up.....?<br />\n",
+    "PostedDate": "2013-07-01T00:37:49.393-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

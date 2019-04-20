@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "266012",
+    "ThreadId": "77789",
+    "Html": "<p>Hi,</p>\r\n<p>I'm keen to try and develop a style for OSCOLA (http://denning.law.ox.ac.uk/published/oscola.shtml). This is the standard style for UK law schools and publications.</p>\r\n<p>Firstly, therefore, anybody who is interested in assisting with this or has a need for it, please let me know.</p>\r\n<p>Secondly, I would very much appreciate some help in getting started. I have read the tutorial and the FAQs, but still seem to have some blocks to proceeding; it may be that I am trying to go beyond the capabilities of BibWord - please let me know if so.</p>\r\n<p>So far, I have copied the HarvardExeter style sheet into the relevant directory and renamed it OSCOLA. My initial focus is on cases, since they are the most specific to this area. My starting difficulties are as follows:</p>\r\n<p>- Citations are generally handled differently in body text, footnotes and the bibliography.</p>\r\n<p>For example:</p>\r\n<p>Body Text: <em>Smith v Jones1</em></p>\r\n<p>Footnote: 1 [1991] 1 AC 208 (HL) (note that HL and 208 here should be a different fields, whereas [1991] 1 AC can be all one)</p>\r\n<p>Subsequent references would then be:</p>\r\n<p>Body Text: <em>Smith</em></p>\r\n<p>Footnote: 2 <em>Smith </em>(n 1) 215 (215 being a page number, after 208)</p>\r\n<p>Bibliography format would be:</p>\r\n<p><em>Smith v Jones </em>[1991] 1 AC 208 (HL)</p>\r\n<p>Is doing something like this within the capabilities of BibWord, or do I need to look further?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks,</p>\r\n<p>Ben</p>",
+    "PostedDate": "2009-12-10T17:38:13.587-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "266145",
+    "ThreadId": "77789",
+    "Html": "<p>I would look for something else.</p>\r\n<p>Microsoft Word does not know the concept of subsequent references to the same source. Each&nbsp;in-text citation is formatted&nbsp;entirely on its own. So unless you specifically 'tell' an in-text citation that it is not the first time a source is cited, you won't be able to achieve what you want. The style at&nbsp;<a href=\"http://bibword.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=20331\">http://bibword.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=20331</a>&nbsp;provides a workaround where you can use the suppress fields to 'tell' the style what you want. It works, but it isn't elegant.</p>\r\n<p>For Word 2007 and 2010, footnote citations and in-text citations are handled in the exact same way. Hence your body text and footnote would have the same looks. Word 2008 for Mac&nbsp;does support&nbsp;footnote citations by default. So if you work on a Mac, you can achieve what you want. If not, the same trick as above could work.</p>\r\n<p>There is very little support for legal matters. There is a 'Case' type and that's it. There is nothing for 'Bill', 'Statute', 'Hearing', ... Again this is something you could get around by using subtypes or by using invalid types, but it would be a huge hassle.</p>\r\n<p>So all in all, it probably is possible to achieve what you are looking for, but it would be so user unfriendly that it isn't worth the effort to develop such a style.</p>\r\n<p>Note that the above are not limitations of BibWord. They are limitations of the Word tools on which BibWord builds.</p>",
+    "PostedDate": "2009-12-11T02:13:50.743-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "598737",
+    "ThreadId": "77789",
+    "Html": "<p>Creating an OSCOLA citation style would be of great help, especially with EU legislation and EU case-law in mind. Please let me know if you have made any advancements in this. Thanks.</p>",
+    "PostedDate": "2011-04-17T11:58:06.08-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "598756",
+    "ThreadId": "77789",
+    "Html": "Sorry no, it would indeed have been good but in the end I just had to do it manually. Good luck!<br>\r\n<br>\r\n<div>On 17 April 2011 19:58, m1ch4L <span dir=\"ltr\">&lt;<a href=\"mailto:notifications@codeplex.com\">notifications@codeplex.com</a>&gt;</span> wrote:<br>\r\n<blockquote style=\"margin:0pt 0pt 0pt 0.8ex; border-left:1px solid rgb(204,204,204); padding-left:1ex\">\r\n<div>\r\n<p>From: m1ch4L</p>\r\n<div>\r\n<p>Creating an OSCOLA citation style would be of great help, especially with EU legislation and EU case-law in mind. Please let me know if you have made any advancements in this. Thanks.</p>\r\n</div>\r\n<div>\r\n<p>Read the <a href=\"http://bibword.codeplex.com/discussions/77789#post598737\" target=\"_blank\">\r\nfull discussion online</a>.</p>\r\n<p>To add a post to this discussion, reply to this email (<a href=\"mailto:bibword@discussions.codeplex.com?subject=[bibword:77789]\" target=\"_blank\">bibword@discussions.codeplex.com</a>)</p>\r\n<p>To start a new discussion for this project, email <a href=\"mailto:bibword@discussions.codeplex.com\" target=\"_blank\">\r\nbibword@discussions.codeplex.com</a></p>\r\n<p>You are receiving this email because you subscribed to this discussion on CodePlex. You can\r\n<a href=\"https://bibword.codeplex.com/discussions/77789/unsubscribe/\" target=\"_blank\">\r\nunsubscribe</a> on CodePlex.com.</p>\r\n<p>Please note: Images and attachments will be removed from emails. Any posts to this discussion will also be available online at CodePlex.com</p>\r\n</div>\r\n</div>\r\n</blockquote>\r\n</div>\r\n<br>\r\n",
+    "PostedDate": "2011-04-17T13:16:18.063-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

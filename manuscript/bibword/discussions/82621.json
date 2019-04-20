@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "283966",
+    "ThreadId": "82621",
+    "Html": "<p>I have just discovered that there is an error in the two IEEE styles, IEEE_Reference.XSL and IEEE_Alphabetical.XSL. The error is in the format for the type Report which is shown here:</p>\r\n<p>&lt;source type=&quot;Report&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;column id=&quot;1&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;halign&gt;right&lt;/halign&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;valign&gt;top&lt;/valign&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;format&gt;{[%RefOrder%]}&lt;/format&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/column&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;column id=&quot;2&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;halign&gt;left&lt;/halign&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;valign&gt;top&lt;/valign&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;format&gt;{%Author:1%, }{&quot;%Title%,&quot; }{%Departement%, }{%Institution%, }{%City|StateProvince|CountryRegion%, }{%StateProvince|CountryRegion%, }{%CountryRegion%, }{%ThesisType% }{%StandardNumber%, }{{%Month:s%{ %Day%,}} %Year%}.{ [Online]. %URL:l%}&lt;/format&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/column&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;sortkey&gt;&lt;/sortkey&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/source&gt;</p>\r\n<p>The error is the misspelling or typing error for the parameter %Department%. It has been spelt %Departement% which makes it to fail. I have not checked if this error also appears in some of the other styles.</p>\r\n<p>Frode</p>",
+    "PostedDate": "2010-01-31T10:12:15.66-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "283975",
+    "ThreadId": "82621",
+    "Html": "<p>That is indeed a typing error. It also occurs in the Vancouver style. I will fix them. Thanks for reporting.</p>",
+    "PostedDate": "2010-01-31T10:56:41.577-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

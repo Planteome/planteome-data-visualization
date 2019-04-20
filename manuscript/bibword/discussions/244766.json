@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "561200",
+    "ThreadId": "244766",
+    "Html": "\r\n<p>First of all, very great job!</p>\r\n<p>I have two things witch confused me (IEEE reference order):</p>\r\n<p>1) The authors list. In another discussion you wrote that if there are more than 5 authors, only the first is mentioned followed by et al. That's how it is implemented in the style sheet. But if you look into the standard:\r\n<a href=\"http://www.ieee.org/documents/ieeecitationref.pdf\">http://www.ieee.org/documents/ieeecitationref.pdf</a>&nbsp;it should be only 3 ?!?!?</p>\r\n<p>2) When creating the bibliography I get a &quot;x&quot; at the beginning and one at the end. Why is that?</p>\r\n<p>Bibliography&nbsp;</p>\r\n<p>x</p>\r\n<table border=\"0\" cellpadding=\"0\" width=\"100%\">\r\n<tbody>\r\n<tr>\r\n<td valign=\"top\">\r\n<p>[1]</p>\r\n</td>\r\n<td valign=\"top\">\r\n<p>C. Bur, P. Reimann, M. Andersson, A. Sch&uuml;tze, and A. Lloyd Spetz, &quot;Increasing the Selectivity of Pt-Gate SiC Field Effect Gas Sensors by Dynamic Temperature Modulation,&quot; in\r\n<em>Proc. IEEE Sensors</em>, Waikoloa, USA, 1-4 Nov. 2010, pp. 1267-1272.</p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<p>x</p>\r\n<p>&nbsp;</p>\r\n<p>In the source code it is in line 905 and 922</p>\r\n<p>&lt;!-- Empty paragraph hack for table. --&gt;<br>\r\n&nbsp;&nbsp;&nbsp; &lt;p style=&quot;display:none;&quot;&gt;x&lt;/p&gt;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>\r\n<p>regards</p>\r\n<p>Christian</p>\r\n",
+    "PostedDate": "2011-02-05T05:31:13.243-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "561238",
+    "ThreadId": "244766",
+    "Html": "\r\n<p>1/</p>\r\n<p>It seems to depend on the source. According to the updated templates at <a href=\"http://www.ieee.org/conferences_events/conferences/publishing/templates.html\">\r\nhttp://www.ieee.org/conferences_events/conferences/publishing/templates.html</a>&nbsp;there appears no longer to be a limit on the number of&nbsp;authors to display. And if&nbsp;a limit would be imposed, it would be 10 (according to the bst files on that page).\r\n I will see if I can find someone at IEEE to confirm the exact number and update the style accordingly.</p>\r\n<p>2/</p>\r\n<p>The x's are normally marked as&nbsp;hidden text. If you disable the showing of non-printing symbols in Word, you&nbsp;shouldn't see them.</p>\r\n<p>The x's are there&nbsp;as a workaround for a bug in Microsoft Word. If the stylesheet returns nothing but a table containing your bibliography, Word will automatically put an empty paragraph before and after your bibliography. By wrapping your table in between\r\n two&nbsp;non-empty paragraphs, Word won't add the empty paragraphs. As the paragraphs have to be non-empty, I simply added an x in them (a space won't work) and marked the entire paragraph as hidden.</p>\r\n",
+    "PostedDate": "2011-02-05T07:55:18.133-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "561256",
+    "ThreadId": "244766",
+    "Html": "\r\n<p>thank you very much!</p>\r\n<p>Another thing:</p>\r\n<p>I've seen in the source code that there is a source type called &quot;Thesis&quot;. How can I activate this?</p>\r\n<p>Probably, I have to modify the BIBFORM.XML and add some more lines in IEEE_Reference.xsl&quot; to define the important field?!?</p>\r\n<p>I tried the <a href=\"../releases/view/15976\">BibType</a> tool, but it seems like it doesn't work. Only for a short time the command window appears but nothing happened (I think). I'm using Windows 7 64bit, is that maybe the problem with the tool?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks again</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2011-02-05T09:10:25.567-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

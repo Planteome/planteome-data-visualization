@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "467663",
+    "ThreadId": "219543",
+    "Html": "<p>Any ideas what I could do to get rid of the unnecessary space which irregularly appears  in some citations after the Year in Chicago style, e.g. MacDougall (1972 ) instead of MacDougall (1972)?</p>\r\n<p>&nbsp;</p>\r\n<p>thanks...</p>",
+    "PostedDate": "2010-07-15T02:52:47.12-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "467798",
+    "ThreadId": "219543",
+    "Html": "<p>I've just found that entering design mode I can erase the space without problems...</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-07-15T07:11:19.557-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "467925",
+    "ThreadId": "219543",
+    "Html": "<p>But it will return after a field update.</p>",
+    "PostedDate": "2010-07-15T11:09:40.147-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "467926",
+    "ThreadId": "219543",
+    "Html": "<p>it does :(</p>\r\n<p>&nbsp;</p>\r\n<p>so what could I do about it?</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-07-15T11:13:33.75-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "467928",
+    "ThreadId": "219543",
+    "Html": "<p>I don't use the styles that come with Word as I find them badly designed. They are a nightmare to adjust.</p>\r\n<p>I can't see anything adding a space after the year in the code at first glance. Are you sure there isn't a space added at&nbsp;the end of the year in the source you entered?</p>\r\n<p>If you feel like delving into the code, the citation ends with a closing bracket, which is displayed using the following code:</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">if</span> <span style=\"color:red\">test</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">/b:Citation/b:LastAuthor</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">&gt;</span>\r\n    <span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">call-template</span> <span style=\"color:red\">name</span><span style=\"color:blue\">=</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">templ_prop_CloseBracket</span><span style=\"color:black\">&quot;</span><span style=\"color:blue\">/&gt;</span>\r\n<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">xsl</span><span style=\"color:blue\">:</span><span style=\"color:#a31515\">if</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<p>Hence, any irregularity should be just above.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-07-15T11:22:34.173-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "467930",
+    "ThreadId": "219543",
+    "Html": "<p>I had checked the source, which is ok.</p>\r\n<p>&nbsp;</p>\r\n<p>The space only appears very few times, I've had this before, so there's actually no point in diving into the code, it is a problem of the style as a whole I guess.</p>\r\n<p>&nbsp;</p>\r\n<p>I couldn't find a non-word style that is similar to Chicago, is there one?</p>\r\n<p>&nbsp;</p>\r\n<p>thanks!</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-07-15T11:26:26.13-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

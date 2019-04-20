@@ -1,0 +1,86 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "I have created a review paper with over 190 references using the IEEE (Alphabetical) Style sheet. In Word 2007 and 2010, there are no issues with using a .docx file. However, if I try to create a pdf of the file, the pdf converter often crashes. As well, I cannot convert the file into an .doc file as it will crash the programme. There seems to be some issues with this particular style sheet, since if I change the style sheet say to APA everything is okay and there are no problems with creating a pdf or converting to .doc file. As well, if I try to convert all the references to static text, I get blank results or general failures in the conversion.\n \nThank you.",
+    "LastUpdatedDate": "2013-02-21T18:20:26.33-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "bibword",
+    "ReportedDate": "2011-02-16T09:06:44.543-08:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Issues with IEEE (Alphabetical) Style",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 2,
+    "Id": 8103
+  },
+  "FileAttachments": [
+    {
+      "FileId": 2558,
+      "FileName": "TextError.docx",
+      "DownloadUrl": ".\\2558"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "How do you create the pdf? Are you using the built-in pdf function (Save As) or are you using some external printer?\r\n\r\nThe difference between the APA stylesheet and the IEEE one is that the latter uses a table layout. It could be that the pdf generator has issue with multipage tables which you certainly have with 190 references. Anything else seems doubtful.\r\n\r\nCould you provide a sample document as I can't reproduce the behaviour you describe? Perhaps the document without the text body but only the references. Assuming the problem still occurs then.",
+      "PostedDate": "2011-02-16T13:11:34.86-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-02-16T19:23:06.857-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Doing some more investigation, I have determined that the problem occurs with all BibWord formats (or most that I tried) and a few of the native methods. Basically, I am using the Adobe professional add-in that is located in the Save As function. Note I am not using Word's built-in save-as-pdf converter. I have uploaded a sample file that, at least on my computer, causes the observed problems. It does not seem that it is the table layout that is the source of the problem, but rather some hyperlinking or fields that are corrupted.\r\n\r\nThank you for the prompt response.",
+      "PostedDate": "2011-02-16T19:23:08.64-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi Yves,\r\n     I am having exactly the same problem and I only have 40 references. I am using Adobe Acrobat professional 8.0 to convert the word files to pdf. I was wondering if there is an update regarding this issue or if the conversion process to pdf works fine with more recent versions of Adobe.\r\nThanks a lot.",
+      "PostedDate": "2011-06-29T01:36:16.46-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-06-29T01:36:50.773-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi Bigworduser,\r\n\r\nI have found that using Adobe 10 to convert the files to pdf will solve the problem without causing a crash. Hope this helps.",
+      "PostedDate": "2011-06-29T09:32:03.497-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "There is a bug on IEEE style (the one sorted by numbers at least), regarding URLs. When they are long enough that they need to be broken in order to pass to the second line, the column of numbers breaks, because the link was not actually broken by word and I think it creates problems on the table formatting. Probably that is what is causing the crashes.\r\n\r\nI am devolipng that style for my own use and my university and I solved it with the option to break by \"\\\" character. ;-)\nI already sent an email two months ago to Yves, offering to publish this style, but I haven't received an answer yet...\n",
+      "PostedDate": "2013-01-04T08:18:33.28-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T18:20:26.33-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

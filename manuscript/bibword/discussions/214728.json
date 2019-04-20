@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "450600",
+    "ThreadId": "214728",
+    "Html": "<p>hi!</p>\r\n<p>just realised, a little problem with in text citations in bibform.xml (bibworld version). when you add a page number, using right-click, edit citation, the author is automatically supressed.</p>\r\n<p>Any ideas?</p>\r\n<p>Thanks!</p>",
+    "PostedDate": "2010-06-02T07:00:34.643-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "450610",
+    "ThreadId": "214728",
+    "Html": "<p>bibform.xml is the layout for the input/edit source dialog and has nothing to do with bibliography.</p>\r\n<p>With what style are you seeing this behaviour you describe?</p>",
+    "PostedDate": "2010-06-02T07:15:15.35-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "450620",
+    "ThreadId": "214728",
+    "Html": "<p>APA style</p>\r\n<p>never did this before in original word version</p>\r\n<p>I tried citing wih the original version of APA style referencing, but with the new bibform.xml, the problem was still there.</p>",
+    "PostedDate": "2010-06-02T07:36:42.007-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "450774",
+    "ThreadId": "214728",
+    "Html": "<p>I can't get the behaviour you describe. Not in the original Word 2007 version, nor the adjusted version, nor the Word 2010 version of APA.</p>\r\n<p>But that kind of behaviour has nothing to do with bibform.xml. bibform.xml only influences the layout of the edit source dialog and how your date is stored internally. If you add a page number, that part is not attached to your source but directly stored in your citation field code. For example, without that page number, the field code would look like</p>\r\n<p style=\"padding-left:30px\">{ CITATION xyz \\l 1033 }</p>\r\n<p>while with the page number, it would look like</p>\r\n<p style=\"padding-left:30px\">{ CITATION xyz \\l 1033 \\p 62 }</p>\r\n<p>So the only thing which can influence the result is an XSL file. If you say that your original APA.XSL also has this behaviour then the behaviour must have always been there.</p>",
+    "PostedDate": "2010-06-02T12:14:15.41-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

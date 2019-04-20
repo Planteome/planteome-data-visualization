@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "481401",
+    "ThreadId": "223826",
+    "Html": "Hello, i would like to know how to change the style of the reference numbers, that is:\r\n\r\nNow, the style is like this:\r\n\r\n109.\tP. Butko, F. Huang, M. Pusztai-Carey, W. Surewicz, Membrane permeabilization induced by cytolytic delta-endotoxin CytA from Bacillus thurigiensis var. israelensis, Biochemistry. 35 (1996),11355-11360.\r\n\r\ni would like it to be shown like this:\r\n\r\n[109]\tP. Butko, F. Huang, M. Pusztai-Carey, W. Surewicz, Membrane permeabilization induced by cytolytic delta-endotoxin CytA from Bacillus thurigiensis var. israelensis, Biochemistry. 35 (1996),11355-11360.\r\n\r\ni.e. square brackets around the number in the bibliography\r\n\r\nThank you,\r\nHenrique\r\n\r\nP.S.: I customized the LCNS style.",
+    "PostedDate": "2010-08-17T06:58:12.893-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "481947",
+    "ThreadId": "223826",
+    "Html": "The LNCS style is a two column style for the bibliography. The number is shown in the first column while the actual entry is in the second column.\r\n\r\nSo what you have to change is in the xsl:variable name=&quot;data&quot; / bibliograpy / source / column id=&quot;1&quot; / format elements.\r\n\r\nAs they are distinctive, you can probably get away with doing a global find replace of\r\n\r\n    &lt;format&gt;%RefOrder%.&lt;/format&gt;\r\n\r\nwith\r\n\r\n    &lt;format&gt;[%RefOrder%]&lt;/format&gt;\r\n\r\ninstead. If not, you will have to do them manually in the bibliography section.",
+    "PostedDate": "2010-08-18T09:58:28.037-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

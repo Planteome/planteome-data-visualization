@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "244666",
+    "ThreadId": "71713",
+    "Html": "<p>Hi,</p>\r\n<p>I am using the &quot;Harvard - Exeter*&quot; Style. There is a little issue when citing multiple sources. The sources are concatenated correctly with a semicolon, however, after the semi colon there is no blank added:</p>\r\n<p><span style=\"font-size:12pt\" lang=EN-US>(Roberts,  Hann and Slaughter, 2006;Hippel and Krogh, 2006)</span></p>\r\n<p>The issue can be solved when adding a blank to the separator parameter (node $params/citation/separator) in the HarvardExeter.XSL file.</p>\r\n<p>Thanks for your work!</p>\r\n<p>Hannes</p>",
+    "PostedDate": "2009-10-12T07:09:56.347-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "245895",
+    "ThreadId": "71713",
+    "Html": "<p>Thanks for the feedback. I'll fix it.</p>",
+    "PostedDate": "2009-10-14T23:35:41.693-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

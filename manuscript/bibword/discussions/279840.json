@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "699632",
+    "ThreadId": "279840",
+    "Html": "\r\n<p>Hello everyone,</p>\r\n<p>first of all, sorry for my real bad English. I hope the description of my problem will be clear enough to find a solution ;-)</p>\r\n<p>I want to create a bibliography which looks like this:</p>\r\n<p>&nbsp;</p>\r\n<p>Darwin 1859</p>\r\n<p>Darwin, Charles On the Origin of Species<em> 1859</em></p>\r\n<p><em><br>\r\n</em></p>\r\n<p>Dickens 1839</p>\r\n<p>Dickens, Charles Oliver Twist 1839</p>\r\n<p>&nbsp;</p>\r\n<p>The problem is the double use of the %author% and the %year% field. I tried to manage it the following way:</p>\r\n<p>&nbsp;</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">&nbsp;</span><div style=\"color:black; background-color:white\"><pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">bibliography</span><span style=\"color:blue\">&gt;</span>\r\n...\r\n<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>{{%Author%}{%Year%}<span style=\"color:red\">&amp;lt;</span>br<span style=\"color:red\">&amp;gt;</span>}{%Author%}{%Title%}{ %Year%}<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>\r\n...\r\n<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">bibliography</span><span style=\"color:blue\">&gt;</span>\r\n</pre>\r\n</div>\r\n<br>The new line (&lt;br&gt;) works properly but it seams, that I can't use the %Author% and the %Year%-Field twice, which is underlined by the fact, that also the simple test<br>&nbsp;</pre>\r\n</div>\r\n<p>&nbsp;</p>\r\n<pre><span style=\"color:blue\">&nbsp;</span><pre><pre><span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">bibliography</span><span style=\"color:blue\">&gt;</span>\r\n...\r\n<span style=\"color:blue\">&lt;</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>{%Author%}{%Author%}<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">format</span><span style=\"color:blue\">&gt;</span>\r\n...\r\n<span style=\"color:blue\">&lt;/</span><span style=\"color:#a31515\">bibliography</span><span style=\"color:blue\">&gt;<br><br></span></pre>\r\nis not working properly. In the Word document the name of the author is only displayed once.<br><br>I hope you can help me.<br>Unfortunately I only have basic understanding of xsl, xml, and consequently of BibWord<br><br>Thanks in advance<br></pre>\r\n</pre>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2011-11-17T07:58:30.313-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "700049",
+    "ThreadId": "279840",
+    "Html": "<p>By default BibWord only uses each parameter once. This allows for great flexibility in conditional formatting. See the example on Volume and Issue at <a href=\"http://bibword.codeplex.com/wikipage?title=BibWord%20Format%20Strings&amp;referringTitle=Documentation#ex1\">http://bibword.codeplex.com/wikipage?title=BibWord%20Format%20Strings&amp;referringTitle=Documentation#ex1</a></p>\r\n<p>However, you can simply enable the reuse of a parameter by using the '<strong>r</strong>' parameter. For example:</p>\r\n<p>&nbsp; {%Author:<strong>r</strong>%}{%Author%}</p>",
+    "PostedDate": "2011-11-18T01:37:06.667-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "700077",
+    "ThreadId": "279840",
+    "Html": "<p>Hi yves,</p>\r\n<p>thank you very much for your answer. Now I understand the advantages of the single use of each parameter, but can also realize the sort of bibliography I described.</p>\r\n<p>THANK YOU!!!</p>",
+    "PostedDate": "2011-11-18T02:41:19.047-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

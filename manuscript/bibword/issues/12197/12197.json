@@ -1,0 +1,65 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "",
+    "ClosedDate": null,
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Bibword styles seem to cause Word for Mac 2016 to crash when switching to a bibword style (e.g. IEEE). Installed as per previous versions by copying all xml files to Microsoft Word 2016.app->Content->Resources->Style.",
+    "LastUpdatedDate": "2017-02-27T12:58:38.65-08:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Unassigned",
+      "Severity": 0,
+      "Id": 0
+    },
+    "ProjectName": "bibword",
+    "ReportedDate": "2015-09-03T06:14:52.13-07:00",
+    "Status": {
+      "Name": "Proposed",
+      "Id": 1
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Bibword Styles & Word 2016 (Mac)",
+    "Type": {
+      "Name": "Unassigned",
+      "Id": 5
+    },
+    "VoteCount": 3,
+    "Id": 12197
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Word also crashes on my Mac (after a short time with a document with IEEE reference style). Only tested with \"IEEE reference.xsl\"\nWord: 15.13.1",
+      "PostedDate": "2015-09-12T08:02:39.397-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2015-09-12T08:03:25.047-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I confirm the bag on Word for Mac 2016 \nWord 15.14",
+      "PostedDate": "2015-10-02T02:38:34.433-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2015-10-07T05:04:41.93-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "I was able to get the styles installed. It is a very different location from previous versions of Word for Mac.\r\n\r\n~/Library/Group Containers/UBF8T346G9.Office/User Content/Citations",
+      "PostedDate": "2017-02-27T12:58:38.65-08:00",
+      "Id": -2147483648
+    }
+  ]
+}

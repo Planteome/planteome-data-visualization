@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1305346",
+    "ThreadId": "567621",
+    "Html": "Hi Everyone,\r<br />\nI'd like to change some minor issues in Turabian style. Currently style defines such citation: (Author Year) and I'ld like to change it to [Author, Year]. How could I do it?\r<br />\n<br />\nBest!<br />\n",
+    "PostedDate": "2014-09-16T13:46:18.74-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1312079",
+    "ThreadId": "567621",
+    "Html": "This is not a BibWord style, so unfortunately you will have to do the work yourself and locate the different parts.\r<br />\n<br />\nWith regards to the brackets, check <a href=\"https://bibword.codeplex.com/wikipage?title=FAQ#Q6\" rel=\"nofollow\">https://bibword.codeplex.com/wikipage?title=FAQ#Q6</a> <br />\n",
+    "PostedDate": "2014-10-10T01:05:58.617-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

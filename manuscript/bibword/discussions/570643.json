@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1316635",
+    "ThreadId": "570643",
+    "Html": "I have a problem with the bibliography display.  The first column number does not displayed correctly.  I found the problem was that it is displayed as a table with two columns.  The first column width is 0.25&quot;.  Since I uses a larger font, it is too narrow.  If I format it using Table layout to increase to 0.35&quot; or wider, it will be fine.  Is there anyway to change it in the style sheet so I don't have to do this every time manually?  Thanks.<br />\n",
+    "PostedDate": "2014-10-26T14:06:19.883-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1316762",
+    "ThreadId": "570643",
+    "Html": "Look in the source for<br />\n<pre><code>    &lt;td align=&quot;{$params/bibliography/source[@type = $type]/column[@id = $columnId]/halign}&quot; valign=&quot;{$params/bibliography/source[@type = $type]/column[@id = $columnId]/valign}&quot;&gt;\n</code></pre>\n\nIf you can update the td to use a fixed (or percentual) width in case of column id = 1, you might be able to get what you want. \r<br />\n<br />\nNote that I have not tested this at all.<br />\n",
+    "PostedDate": "2014-10-27T07:42:36.093-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

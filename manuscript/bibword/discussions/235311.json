@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "524310",
+    "ThreadId": "235311",
+    "Html": "\r\n<p>If I will choose one of these bibliography styles for my document and then later open that document on a different machine which does not have BibWord installed what will happen? Is the style carried with the document? If not then what other style will be\r\n used?</p>\r\n",
+    "PostedDate": "2010-11-19T05:30:57.4-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "524327",
+    "ThreadId": "235311",
+    "Html": "\r\n<p>No, styles are not carried with the document.</p>\r\n<p>If you open the document on another machine without the style, the style will be listed in the reference box as 'unknown'.</p>\r\n<p>Nothing will happen with your document, the look of in-text citations and bibliography will remain the same as long as you don't add new sources or try to update the existing fields. Of course, if you add new sources or update fields, Word won't be able\r\n to find the style and you will have to pick another style or install the style you need.</p>\r\n",
+    "PostedDate": "2010-11-19T06:19:01.51-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

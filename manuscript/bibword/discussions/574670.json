@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1330992",
+    "ThreadId": "574670",
+    "Html": "I'm trying to include Thesis, Dissertion and Standard -subtypes into Report type. \r<br />\n<br />\nThesis and dissertion are easy, as they follow same structure, but problem arises with standard, as our guide requires us to use following formats in the bibliography for standards<br />\n<pre><code>Thesist, T. 2000. How to draw a circle. HAMK University of Applied Sciences. Degree programme in mechanical engineering. Thesis.\n\nDissertionist, D. 2001. Computer aided generation of geometric forms. Aalto University. Department of Civil and Structural Engineering. Doctoral dissertions 001. Dissertion.\n\nSFS-ISO 128-1. 2009. Technical drawings -- General principles of presentation -- Part 1: Introduction and index. Helsinki: Suomen Standardisoimisliitto ry.\n</code></pre>\n\nCitation should be as <br />\n<pre><code>Lorem ipsum blaah blaah. (SFS-ISO 128-1:2009; Thesist 2000; Dissertionist 2001.)</code></pre>\n\nI would like to use source fields &quot;StandardNumber&quot; for the &quot;SFS-ISO 128-1&quot;.\r<br />\n<br />\n(Workaround would be to put the whole &quot;SFS-ISO 128-1. 2009. Technical drawings -- General principles of presentation -- Part 1: Introduction and index.&quot; as a title, but then citation would be impossible to format.\r<br />\n<br />\nWould it be possible to put &quot;SFS-ISO 128-1&quot; as an author and force it to display as written?<br />\n",
+    "PostedDate": "2014-12-11T05:58:34.273-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

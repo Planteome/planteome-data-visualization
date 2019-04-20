@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "1221596",
+    "ThreadId": "538675",
+    "Html": "Hi \r<br />\nI'm trying to add an XSL file of AMA citation (that i downloaded from this site) to my word 13 but it doesn't work... probably because it's an old version that matches word 10.\r<br />\ndo you have an AMA.XSL file that is good for word 2013??\r<br />\n(I tried to change the code according to the instructions here - i just can't :/ )\r<br />\ni'll appreciate your help\r<br />\nThanks!<br />\n",
+    "PostedDate": "2014-03-11T12:49:12.49-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1221760",
+    "ThreadId": "538675",
+    "Html": "If you take the first from this site, it should work with Word 2013 as I upgraded all styles except MHRA months ago.<br />\n",
+    "PostedDate": "2014-03-12T01:57:22.637-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1221991",
+    "ThreadId": "538675",
+    "Html": "I did... still doesn't work. maybe it's the location of the file?\r<br />\ni tried:\r<br />\nC:\\Program Files\\Microsoft Office(x86)\\Office14\\Bibliography\\Style\r<br />\nand\r<br />\nC:\\Program Files\\Microsoft Office15\\root\\office15\\Bibliography\\Style\r<br />\n(I have two office packages installed on my computer since i did an upgrade - maybe that's the problem??)\r<br />\nThanks<br />\n",
+    "PostedDate": "2014-03-12T10:53:15.14-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1222659",
+    "ThreadId": "538675",
+    "Html": "Those are not the folders where you should add the file for Word 2013. Check the <a href=\"https://bibword.codeplex.com/wikipage?title=Styles&amp;referringTitle=Documentation&amp;ANCHOR#Installation\" rel=\"nofollow\">installation instructions</a>.<br />\n",
+    "PostedDate": "2014-03-14T01:38:21.93-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1223003",
+    "ThreadId": "538675",
+    "Html": "Fount it! \r<br />\nThe problem was - it was a hidden folder so i couldn't see it when i first tried to paste the file.\r<br />\nThanks<br />\n",
+    "PostedDate": "2014-03-14T23:02:19.887-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "235799",
+    "ThreadId": "69311",
+    "Html": "<p>I am writing my dissertation using Word 2008 on a mac and the Harvard style from this project. &nbsp;Generally the experience had been great. &nbsp;Everyone complains about the Citation and Bibliography features in Word but I've found them quite usable -- especially since I have the Harvard style.</p>\r\n<p>My only problem I have is with the Word 2008 &quot;Edit This Citation&quot; dialog. &nbsp;It only allows me to add page numbers to citations (\\p switch) and prevents me from manually edit the field codes to add \\s or \\v switches.</p>\r\n<p>Can I use the configuration xml to configure the Edit This Citation dialog to support suffix and volume as well as pages? &nbsp;Or is there a way to disable the Edit This Citation dialog and edit the field codes by hand?</p>\r\n<p>John</p>",
+    "PostedDate": "2009-09-17T15:23:15.813-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "235922",
+    "ThreadId": "69311",
+    "Html": "<p>I don't think you can edit the dialog. As far as I can tell, it's hardcoded inside Word in both the Windows and Mac version. But to be honest, I only really looked into the Windows version.</p>\r\n<p>I think the only possibility to add those flags, is to show the field codes, edit those, and then hide the field&nbsp;codes&nbsp;again. At least that is how I do it in Word 2007. Showing or hiding the field codes in Word 2008 is done pressing OPTION+F9 if I remember correctly.</p>",
+    "PostedDate": "2009-09-18T00:52:32.203-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "235968",
+    "ThreadId": "69311",
+    "Html": "<p>Thanks Yves, but for some reason I can't edit the citation field codes. &nbsp;I get a message saying that the document is locked for edit. &nbsp;I've raised this on the Mactopia forum.</p>",
+    "PostedDate": "2009-09-18T03:34:04.257-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "235996",
+    "ThreadId": "69311",
+    "Html": "<p>That's strange. It is normal that in-text citation are locked, but when they are displayed as field codes you should be able to edit them. I just tried this in Word 2007 (don't have a Mac around atm) without problems.</p>",
+    "PostedDate": "2009-09-18T05:07:25.227-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

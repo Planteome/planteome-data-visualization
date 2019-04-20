@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1222278",
+    "ThreadId": "538878",
+    "Html": "Thank you for creating a Vancouver referencing system, it is a massive help with my work.\r<br />\n<br />\nI need to slightly change it so that it has the brackets are removed and the numbers are superscript. I have done a bit of research and I found the codes that I need to add or edit. However, I do not know how to edit the original code.\r<br />\n<br />\nCan you please advise me how to do this?\r<br />\nCheers\r<br />\n<br />\nFor the brackets it is:<br />\n<blockquote>\nJust remove the content of the openbracket and closebracket elements.<br />\n&lt;openbracket&gt;&lt;/openbracket&gt;<br />\n&lt;closebracket&gt;&lt;/closebracket&gt;<br />\n</blockquote>\nFor superscript it is:<br />\n<blockquote>\n</blockquote>\nSub ApplyCitationStyle()<br />\n<pre><code>Dim stylename As String\nDim exists As Boolean\nDim s As Style\nDim fld As Field\n\nstylename = &quot;In-Text Citation&quot;\n\n' Check if the style already exists.\nexists = False\n\nFor Each s In ActiveDocument.Styles\n    If s.NameLocal = stylename Then\n       exists = True\n       Exit For\n    End If\nNext\n\n' If the style did not exist yet, create it.\nIf exists = False Then\n    Set s = ActiveDocument.Styles.Add(stylename, wdStyleTypeCharacter)\n    s.BaseStyle = ActiveDocument.Styles(wdStyleDefaultParagraphFont).BaseStyle\n    s.Font.Superscript = True\nEnd If\n\n' Now that the style really exists, select it.\nSet s = ActiveDocument.Styles(stylename)\n\n' Apply the style to all in-text citations.\nFor Each fld In ActiveDocument.Fields\n    If fld.Type = wdFieldCitation Then\n        fld.Select\n        Selection.Style = s\n    End If\nNext\n</code></pre>\n\nEnd Sub<br />\n",
+    "PostedDate": "2014-03-13T03:58:03.01-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1222667",
+    "ThreadId": "538878",
+    "Html": "What part do you need help with?\r<br />\n<br />\nThe first part, changing the open and close brackets can be done by opening the XSL file in any text editor (e.g. notepad).\r<br />\n<br />\nThe second part, is just a simple macro. If you have no idea on what macros are, or how they can be used, just look online. There are plenty of sources with information on them, including Graham Mayor's excellent <a href=\"http://www.gmayor.com/installing_macro.htm\" rel=\"nofollow\">Idiots' guide to installing macros</a>.<br />\n",
+    "PostedDate": "2014-03-14T01:48:52.89-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1223150",
+    "ThreadId": "538878",
+    "Html": "And it seems so simple when you know how!\r<br />\nThanks for your help, I have dealt with the brackets and the superscript macro.\r<br />\n<br />\nThere is one more thing how do I remove the space between the sentence I wrote and the citation number?\r<br />\n<br />\nCheers.<br />\n",
+    "PostedDate": "2014-03-15T15:45:07.317-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

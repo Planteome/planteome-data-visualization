@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "926521",
+    "ThreadId": "399333",
+    "Html": "\r\n<p>Hello!</p>\r\n<p>I get an &quot;x&quot; at the top and bottom of my bibliography. Why? And can I get rid of it?</p>\r\n",
+    "PostedDate": "2012-10-14T21:41:28.953-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "926594",
+    "ThreadId": "399333",
+    "Html": "<p>See the first posts of the following discussion <a href=\"http://bibword.codeplex.com/discussions/250447\">http://bibword.codeplex.com/discussions/250447</a></p>",
+    "PostedDate": "2012-10-15T02:17:08.787-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

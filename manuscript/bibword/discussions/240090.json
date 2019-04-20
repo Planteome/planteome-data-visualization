@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "542491",
+    "ThreadId": "240090",
+    "Html": "\r\n<p>Hello</p>\r\n<p>I use IEEE - alphabetical order in MS Word 2007. When i put the citation in text it is add like [1] [2] etc. but the font of the numbers are set by default in BOLD. Is any chance that the font for numbers is not Bold or it must be done manualy? How to set\r\n the font of the number?</p>\r\n<p>&nbsp;</p>\r\n<p>Best Regards.</p>\r\n<p>Warko</p>\r\n",
+    "PostedDate": "2010-12-31T03:48:01.14-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "543044",
+    "ThreadId": "240090",
+    "Html": "\r\n<p>If you hyperlink in-text citations to the bibliography, the link is formatted using the &quot;Heading 2 Char&quot;-style. This was hardcoded by Microsoft. So if you are seeing your in-text citations in bold, then that style must be set to bold.</p>\r\n<p>You have 3 options to get rid of the:</p>\r\n<ol>\r\n<li>Disable hyperlinking from in-text citations to the bibliography. This can be done by setting the value of&nbsp;&quot;citation_as_link&quot; to no. So by changing &quot;&lt;citation_as_link&gt;yes&lt;/citation_as_link&gt;&quot; into &quot;&lt;citation_as_link&gt;no&lt;/citation_as_link&gt;&quot;.\r\n</li><li>Change the heading 2 style. The heading 2 char style is bound to the heading 2 style. If that style is no longer bold, then neither will your in-text citations be.\r\n</li><li>Overwrite the formatting of in-text citations by applying direct formatting to them. You can select an in-text citation and change its formatting to something non-bold. If you select the entire field, then the formatting will remain after a field update.\r\n You can do this for all your in-text citations in one go by using a macro like the one specified at\r\n<a href=\"http://bibword.codeplex.com/wikipage?title=Styles_FAQ#Q9\">http://bibword.codeplex.com/wikipage?title=Styles_FAQ#Q9</a>&nbsp;. Of course, you will have to replace the line for superscript with one for non-bold. You can use&nbsp;<br>\r\n&nbsp;&nbsp;&nbsp;s.Font.Superscript = <span style=\"color:blue\">True</span> </li></ol>\r\n<p>HTH</p>\r\n",
+    "PostedDate": "2011-01-02T22:27:28.817-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "559978",
+    "ThreadId": "240090",
+    "Html": "\r\n<p>Hi</p>\r\n<p>I just tried this IEE - alphabetical order template.&nbsp; It worked fine, except that the citations are placed by alphabetical order of authors' first names.&nbsp; Isn't the norm to sort them by family names?</p>\r\n<p>Thanks</p>\r\n<p>Patrice</p>\r\n",
+    "PostedDate": "2011-02-03T02:12:57.297-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "560053",
+    "ThreadId": "240090",
+    "Html": "\r\n<p>They are ordered by family name first.</p>\r\n<p>Are you sure you entered the names correctly? Go to the 'Edit Source' dialog and click the 'Edit...' button at the end of the author field. Enter a single test author to verify that you have entered your authors in the correct order. If you entered Jagger\r\n for the last name, and Mick for the first, the dialog below should show 'Jagger, Mick'. If it shows 'Mick, Jagger', then you entered the name in the incorrect order.</p>\r\n",
+    "PostedDate": "2011-02-03T04:51:57.613-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

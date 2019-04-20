@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "658326",
+    "ThreadId": "269115",
+    "Html": "\r\n<p>Hello,</p>\r\n<p>I have a bibliography composed by 20 elements ish. I want to use the IEEE, but I cannot suceed in showing in the inline text the author/s and number of reference. At the moment I can show only the number of reference (e.g. [1] state .... rather than Pippo\r\n et al. [1] state)<br>\r\n<br>\r\nI used the laste styles release you put and Microsoft Office 2007.</p>\r\n<p>Thanks for the reply, if my question is not well-explained, please let me know.</p>\r\n<p>Antonio</p>\r\n",
+    "PostedDate": "2011-08-15T06:41:13.947-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "658349",
+    "ThreadId": "269115",
+    "Html": "<p>That is the expected behaviour. IEEE only requires a number, not the name of the author for in-text citations.</p>\r\n<p>If you want both the reference number and author names, you will have to write your own style which supports that. You could check one of the harvard styles to see how in-text citation with authors is done. Combine that with the %RefOrder% variable used by the IEEE style and you should be good to go.</p>",
+    "PostedDate": "2011-08-15T07:42:14.353-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

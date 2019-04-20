@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "1110285",
+    "ThreadId": "463054",
+    "Html": "Hi\r<br />\nI'm having problems adding the MHRA style to the styles folder for Office 2013. I have downloaded the zip file, unzipped it and added the MHRA file to  C:\\Program Files\\Microsoft Office\\Office15\\Bibliography\\Style and it does not show in Word 2013. Any suggestions please?<br />\n",
+    "PostedDate": "2013-10-21T15:46:42.657-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1115100",
+    "ThreadId": "463054",
+    "Html": "I have Microsoft Office 2013, and my directory for styles is C:\\Users{user}\\AppData\\Roaming\\Microsoft\\Bibliography\\Style, not under Program Files.<br />\n",
+    "PostedDate": "2013-10-31T09:17:37.62-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1115127",
+    "ThreadId": "463054",
+    "Html": "Hi there\r<br />\nI have added it to that folder and re-started MS Word, but it still does not show, Would I have to re-start the computer?<br />\n",
+    "PostedDate": "2013-10-31T09:39:49.357-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1119100",
+    "ThreadId": "463054",
+    "Html": "Still no luck<br />\n",
+    "PostedDate": "2013-11-06T09:59:44.773-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1119433",
+    "ThreadId": "463054",
+    "Html": "I have had the same issue. \r<br />\n<br />\nI added MHRA and HarvardExeter styles in the same folder (C:\\Users{user}\\AppData\\Roaming\\Microsoft\\Bibliography\\Style). I re-started MS Word 2013 but only the HarvardExeter style was displayed.\r<br />\n<br />\nI know that HarvardExeter style did have a problem in MS Word 2013 but the issue was successfully resolved in the last month or so.<br />\n",
+    "PostedDate": "2013-11-06T15:12:39.21-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1119446",
+    "ThreadId": "463054",
+    "Html": "I hope this gets resolved soon. I can't seem to work out why its doing that. It should be straight forward.<br />\n",
+    "PostedDate": "2013-11-06T16:09:48.793-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1210775",
+    "ThreadId": "463054",
+    "Html": "alazhari is very easy to confuse the root you need to install the file in with the one you are installing it into. The one LynnVV is telling you is the one that you should be using. You just need to allow your windows account to see the hiden files to be able to see this folder. <br />\n",
+    "PostedDate": "2014-02-19T13:43:07.187-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

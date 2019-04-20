@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "242947",
+    "ThreadId": "71243",
+    "Html": "<p>Hello,</p>\r\n<p>I have just come across BibWord and I must say that this is a wonderful for everyone related to Academia! Great work guys!</p>\r\n<p>My Problem:<br>I am running OSX 10.6 (Snow Leopard) with Office 2008.<br>I have just downloaded the <em>styles.zip</em> (<a id=\"ctl00_ctl00_MasterContent_Content_ReleasePanelOrderingContainer_ReleaseFilesCtrl_recommendedFileHyperLink\" tabindex=9 href=\"../Release/ProjectReleases.aspx?ReleaseId=15852#DownloadId=40238\">BibWord styles</a>), from the website, extracted it and copied the contents into <em>/Applications/Microsoft Office 2008/Microsoft Word.app/Contents/Resources/Style/.</em></p>\r\n<p>All styles show up correctly in the Citation Manager (see http://yfrog.com/78screenshot20091007at7ocp)</p>\r\n<p>However when I click on <em>Insert -&gt; Document Elements -&gt; Bibliography </em>none of the newly imported styles appear in the list of availble Bibliography styles (see http://yfrog.com/5escreenshot20091007at7ocp)</p>\r\n<p>Am I missing a step to import the styles also for the Bibliography list / Works Cited? What am I doing wrong?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks for your help!</p>\r\n<p>&nbsp;</p>\r\n<p><span id=\"ctl00_ctl00_MasterContent_Content_ReleasePanelOrderingContainer_ReleaseDescriptionLiteral\"> </span></p>",
+    "PostedDate": "2009-10-07T06:26:33.453-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "242966",
+    "ThreadId": "71243",
+    "Html": "<p>You're not missing anything. It is a bug in Word 2008 where the bibliography list seems to be hardcoded. Just pick the style from the citations box after you inserted the bibliography in another style. See <a href=\"http://bibword.codeplex.com/Wiki/View.aspx?title=Styles_FAQ#Q2\">http://bibword.codeplex.com/Wiki/View.aspx?title=Styles_FAQ#Q2</a></p>\r\n<p>Keep in mind that if you are using Harvard Anglia (assuming from your screenshot) that you need the Extender tool for year suffices.</p>",
+    "PostedDate": "2009-10-07T07:19:29.6-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

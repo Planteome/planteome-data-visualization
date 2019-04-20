@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "935575",
+    "ThreadId": "401638",
+    "Html": "\r\n<p>Hi! This tool seems very promising, especially for users of Latex.</p>\r\n<p>After adding style sheets to the word (on MAC) I was able to get a proper numerical citation (IEEE style). However, when I try to add bibliography, the menu still offers only 4 in-built styles from Word. Using any of them changes the citation style in text\r\n as well to match the chosen bibliography style.</p>\r\n<p>Is there any solution for this?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>\r\n",
+    "PostedDate": "2012-11-02T00:32:54.637-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "936920",
+    "ThreadId": "401638",
+    "Html": "<p>It's a bug in Word for Mac. See <a href=\"http://bibword.codeplex.com/wikipage?title=Styles_FAQ&amp;referringTitle=Documentation#Q2\">http://bibword.codeplex.com/wikipage?title=Styles_FAQ&amp;referringTitle=Documentation#Q2</a>&nbsp;for a solution.</p>",
+    "PostedDate": "2012-11-05T12:44:26.83-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "937039",
+    "ThreadId": "401638",
+    "Html": "<p>Thanks! It does solve a problem.</p>",
+    "PostedDate": "2012-11-05T18:16:23.137-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

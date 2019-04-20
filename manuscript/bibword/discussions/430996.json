@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "992617",
+    "ThreadId": "430996",
+    "Html": "\r\n<p>Hi again,</p>\r\n<p>please tell me where is mistake in &nbsp;this:</p>\r\n<p><span style=\"font-size:11pt\">&nbsp;<strong>Minkov, M., Evatat, D.</strong> Loess in BG.\r\n<em>//Loess&gt;</em></span></p>\r\n<p>&lt;source type=&quot;BookSection&quot;&gt;&nbsp; &nbsp;</p>\r\n<p>&nbsp; &nbsp; &lt;column id=&quot;1&quot;&gt;&nbsp; &nbsp; &nbsp; &nbsp;</p>\r\n<p>&nbsp; &lt;halign&gt;centre&lt;/halign&gt;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;valign&gt;centre&lt;/valign&gt;&nbsp; &nbsp;</p>\r\n<p>&nbsp; &nbsp; &nbsp; &lt;format&gt;[%RefOrder%] {&lt;b&gt;%Author:2|BookAuthor:2|Title:f%.&lt;/b&gt;}{ %Title%.}{ &nbsp;&lt;i&gt;//%BookTitle%&lt;.} { Tradução de %Translator:5%.}{ %Edition%. ed.}{ %City|&quot;[S.l.]&quot;%: %Publisher|&quot;[s.n.]&quot;%,}{\r\n v. %Volume%,}{ %Year%{%YearSuffix%}.}{ Cap. %ChapterNumber%,}{ %Pages:p. :p. %}.{ ISBN %StandardNumber%.}{ Disponivel em: &lt;%URL%&gt;.}{ Acesso em: {{%DayAccessed% }%MonthAccessed:s% }%YearAccessed%.}{ %Comments%.}&lt;/format&gt;</p>\r\n",
+    "PostedDate": "2013-01-27T03:48:29.84-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "992620",
+    "ThreadId": "430996",
+    "Html": "\r\n<p>For starters you shouldn't be using &lt; and &gt; but rather &amp;lt; and &amp;gt; .</p>\r\n<p>Also, if you take a look at BookTitle then you see you didn't close the italics tags. You only have '&lt;' at the end.</p>\r\n",
+    "PostedDate": "2013-01-27T03:51:45.477-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "992626",
+    "ThreadId": "430996",
+    "Html": "\r\n<p>Thank you!</p>\r\n<p>I have one question: how to change order of&nbsp;languages in&nbsp;bibliography in ABNT Author?&nbsp;</p>\r\n<p>I need this:</p>\r\n<p>Стефанов, Г., Кре&#1084;акова, Б. <strong>Строителни свойства на българските льосови почви</strong>. София: Техника, 1960. 220 p.</p>\r\n<p>Sarsby, R. <strong>Environmental Geotechnics</strong>. London: Thomas Telford, 2000. 584 p. ISBN 0-7277-2752-4.</p>\r\n<p>&nbsp;</p>\r\n<p>not :</p>\r\n<p>Sarsby, R. <strong>Environmental Geotechnics</strong>. London: Thomas Telford, 2000. 584 p. ISBN 0-7277-2752-4.</p>\r\n<p>Стефанов, Г., Кре&#1084;акова, Б. <strong>Строителни свойства на българските льосови почви</strong>. София: Техника, 1960. 220 p.</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2013-01-27T04:31:46.363-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "992631",
+    "ThreadId": "430996",
+    "Html": "\r\n<p>There is a sortkey element (which also contains a format string) which decides on the order of your sources in a bibliography.</p>\r\n<p>Sorting by language is tricky. In Word 2007, you could enter your language through the UI. However Microsoft removed that option in Word 2010 and later version. Mostly because it was too complex for users to use:&nbsp;users frequently reported that their bibliography\r\n contained multiple languages without understanding why.</p>\r\n<p>You are going to have to do some experimentation to see if you can get things to work the way you want.</p>\r\n",
+    "PostedDate": "2013-01-27T04:56:04.937-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "992634",
+    "ThreadId": "430996",
+    "Html": "\r\n<p>Thank you</p>\r\n",
+    "PostedDate": "2013-01-27T05:00:30.743-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

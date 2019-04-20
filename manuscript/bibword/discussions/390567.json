@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "896461",
+    "ThreadId": "390567",
+    "Html": "\r\n<p>Hi</p>\r\n<p>I have been really grateful for the whole BibWord templates to use with MS Word. A few years ago I downloaded the Harvard (Anglia) template and made considerable alterations to the formatting in the template to use it for my own requirements. On Word 2007\r\n (PC) this has been working great. However, I've just moved onto Mac (Word 2011) and the problems have all begun!</p>\r\n<p>I have a dissertation I have been using on PC which has been displaying citations fine. I've loaded the styles successfully into the Resources/Styles directory in Word 2011 and so these are loading on Word startup and are available. I have opened the dissertation\r\n (docx) on the Mac and the citations are now displaying as &quot;Invalid Source Specified&quot;.</p>\r\n<p>Things I've tried:</p>\r\n<ul>\r\n<li>I've downloaded and installed the latest Harvard - Anglia template from the website and this shows the sources &quot;correctly&quot; (without erroring, but obviously with different formatting). &quot;Core&quot; styles (APA, Chicago) also &quot;work&quot;. Therefore there seems that\r\n isn't a problem with the data in the word file per se.&nbsp; </li><li>I've opened my adapted version and changed to UTF-8, put a space in at the beginning of the file and deleted it, resaved and tried again. Invalid Source still shown.\r\n</li><li>Scanned visually (and briefly) my adapted file and the Harvard - Anglia file to see whether there has been a change in variable names but there doesn't appear to be.\r\n</li><li>Opening the book in question in the Source Manager and re-selecting &quot;Book&quot; and saving in case that changes anything. No luck.\r\n</li></ul>\r\n<p>I'm desperately hoping that there is a quick and easy solution that springs to mind immediately, and that I don't need to re-create the entire template.&nbsp;I might have to work on the rest of this dissertation on the PC otherwise until I can get it working\r\n as I know the style works there.&nbsp;</p>\r\n<p>Any thoughts much appreciated.&nbsp;</p>\r\n",
+    "PostedDate": "2012-08-07T04:25:24.783-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "900559",
+    "ThreadId": "390567",
+    "Html": "<p>I don't have a Mac so I can't test things.</p>\r\n<p>However, you could check the template version you are using. Support for Word 2008 (and later) was only added as of version 2.1. As of that version you don't need to&nbsp;switch to&nbsp;UTF-8 encoding, so I'm guessing you are using an older template.</p>\r\n<p>Assuming all you did was changing the formatting output and not the underlying 'engine', you could download the latest version of the template (2.8) and just replace the data variable (&lt;xsl:variable name=\"data\"&gt;...&lt;/xsl:variable&gt;) with your own. Formatting should still be the same.</p>\r\n<p>If you made changes to the 'engine', I suggest you check the &lt;html&gt; definition in the latest template as it provides a clean way to get your bibliography to display in Word 2008 (or higher).</p>",
+    "PostedDate": "2012-08-17T04:47:13.973-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

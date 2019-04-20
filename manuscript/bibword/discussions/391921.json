@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "900062",
+    "ThreadId": "391921",
+    "Html": "\r\n<p>Dear all,</p>\r\n<p>I would like to ask whether BibWord can add yearsuffix automatically. For example, if I have two references, xxx et al., 2012a and xxx et al., 2012b, how to let word 2007 show &quot;a&quot; and &quot;b&quot; after 2012 automatically with BibWord?</p>\r\n<p>Thanks in advance.</p>\r\n<p>Ye Gao</p>\r\n",
+    "PostedDate": "2012-08-16T13:33:43.93-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "900554",
+    "ThreadId": "391921",
+    "Html": "<p>Yes. But it requires the use of the Extender program (<a href=\"http://bibword.codeplex.com/wikipage?title=BibWord%20Extender&amp;referringTitle=Documentation\">http://bibword.codeplex.com/wikipage?title=BibWord%20Extender&amp;referringTitle=Documentation</a>)</p>\r\n<p>Most Harvard-related styles on this site use year suffices if you are looking for examples.</p>",
+    "PostedDate": "2012-08-17T04:31:52.053-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

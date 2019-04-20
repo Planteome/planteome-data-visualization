@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "422490",
+    "ThreadId": "206986",
+    "Html": "<p>Hi, perhaps this has been covered before. &nbsp;I just wanted to know if it would be possible to generate a simple program (kind of like bib word extender tool or something) where there is a list of all the fields on the left. &nbsp;And you can select the type of reference, like book, journal etc on the top. &nbsp;And on the right you could click and drag the fields to however you want to order it. &nbsp;Then you could say compile style sheet.</p>\r\n<p>I don't think it should be too hard, the program could do all the editing as a text file and then save it as an XSLT file at the end. &nbsp;It would save every body having to code themselves, and you could use building blocks from what you have already created?.</p>\r\n<p>Just thought of it as a good idea?, would probably save time of having to create each referencing style&nbsp;individually.</p>\r\n<p>I can help with some of the coding, but I suppose the program language, gui, and these things would have to be decided upon? &nbsp;It might be a bit much for one person but maybe we can get some people to help.</p>\r\n<p>Regards</p>\r\n<p>Thanks for the great style sheets.</p>",
+    "PostedDate": "2010-03-23T04:24:54.003-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "422607",
+    "ThreadId": "206986",
+    "Html": "<p>Technically it shouldn't be all that hard to create a GUI to make the creation of new styles easier. All the important data is nicely grouped together.</p>\r\n<p>Originally I had the intention of creating the GUI myself. Unfortunately, lack of time and a move to some other interesting projects made me forget about the project.&nbsp;I do have a few pieces of C# code which can load some basic data from the XSLT and which provide wizards to generate contributor format strings. Drop me a private&nbsp;note if you are interested in them, and I will mail you the code.</p>\r\n<p>Note that I plan on rolling out a new version of BibWord in a couple of months which will use a different internal structure. The main things like namelists, format strings, ... will remain the same however. So if you plan on creating a GUI, you better try to keeep the data separate from the ui.</p>",
+    "PostedDate": "2010-03-23T08:47:08.57-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "426282",
+    "ThreadId": "206986",
+    "Html": "<p>I've thought about that too! but I don't know how to do that...</p>\r\n<p>good luck to anyone who'd make this program!</p>",
+    "PostedDate": "2010-03-31T21:24:25.683-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]
