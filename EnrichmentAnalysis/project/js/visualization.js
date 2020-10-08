@@ -342,14 +342,21 @@ function hasChildwithPvalue(n_Id) {
 
     var childrenIds = NodesProperties[n_Id].children;
 
+    if(NodesProperties[n_Id].visited == true)
+        return 0;
+
     if (NodesProperties[n_Id].pvalue != -1) {
+        NodesProperties[n_Id].visited = true;
         return 1;
-
-    } else if (NodesProperties[n_Id].pvalue == -1) {
-
+    }
+    
+    if (NodesProperties[n_Id].pvalue == -1) {
+        NodesProperties[n_Id].visited = true;
+        
         var total = 0;
-        for(cid of childrenIds)
+        for(cid of childrenIds){
 			total += hasChildwithPvalue(cid);
+        }
 
         if (total > 0)
             return 1;
