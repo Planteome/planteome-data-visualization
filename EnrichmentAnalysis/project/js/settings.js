@@ -445,6 +445,7 @@ var default_taxonList = [
 	   ['Oryza_officinalis', '4535',                  ],
 	   ['Oryza_punctata', '4537',                     ],
 	   ['Oryza_rufipogon', '4529',                    ],
+	   ['Oryza_sativa', '4530',                    ],
 	   ['Oryza_sativa.indica.gramene', '39946',       ],
 	   ['Oryza_sativa.indica.iplant', '39946',        ],
 	   ['Oryza_sativa.indica.IR29', '39946',          ],
